@@ -1,7 +1,5 @@
 ---
 import Service from "../components/Service";
-
-
 ---
 
 <html lang="en">
@@ -15,8 +13,17 @@ import Service from "../components/Service";
 	</head>
 	<body>
 		<main>
-			<h1>WHAT WE MAKE</h1>
-			<Service client:only></Service>
+			<!-- <h1>WHAT WE MAKE</h1> -->
+			<div class="nav" style="background-color: red; height: 100px;">
+				<div class="bar">
+					<ul>
+						<li>
+							Test
+						</li>
+					</ul>
+				</div>
+			</div>
+			<Service client:only="react"></Service>
 		</main>
 		<script>
 			
