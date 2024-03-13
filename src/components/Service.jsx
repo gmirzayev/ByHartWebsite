@@ -8,7 +8,7 @@ export default function Service() {
   const [isRunning, setIsRunning] = useState(true);
   const [isHighlighting, setIsHighlighting] = useState(true);
   const [highlightedElement, setHighlightedElement] = useState(0);
-  const [animatedPosition, setAnimatedPosition] = useState(0);
+  const [animatedPosition, setAnimatedPosition] = useState(null);
 
   function useInterval(callback, delay) {
     const savedCallback = useRef();
@@ -151,8 +151,17 @@ export default function Service() {
             </text>
           </svg>
         </div>
-        <div className="image-container">
-          <img className="image" src={rings.src} />
+        <div
+          className={`top image-container ${
+            animatedPosition == 0 ? "fade" : ""
+          }`}
+        >
+          <img src={rings.src} className="image" />
+        </div>
+        <div
+          className={`image-container ${animatedPosition > 0 ? "fade" : ""}`}
+        >
+          <img className="image" src={cut.src} />
         </div>
         {/* <div className="image1-container">
           <img className="image1" id="first-image" src={rings.src} />
