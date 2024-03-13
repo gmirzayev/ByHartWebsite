@@ -57,6 +57,10 @@
   transform: rotate(104deg);
 }
 
+#text-path:hover {
+  offset: 50%;
+}
+
 #rotate-text {
   transform-box: fill-box;
   transform-origin: center;
