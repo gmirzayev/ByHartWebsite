@@ -9,18 +9,17 @@ import Service from "../components/Service";
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<style>
+			main {
+				height: 200vh;
+			}
 		</style>
 	</head>
 	<body>
 		<main>
 			<!-- <h1>WHAT WE MAKE</h1> -->
-			<div class="nav" style="background-color: red; height: 100px;">
+			<div class="nav">
 				<div class="bar">
-					<ul>
-						<li>
-							Test
-						</li>
-					</ul>
+					<p>By Hart</p>
 				</div>
 			</div>
 			<Service client:only="react"></Service>
