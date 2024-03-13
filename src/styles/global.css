@@ -78,17 +78,17 @@
 }
 
 .pill--span-text {
-  /* text-decoration: underline; */
+  font-style: italic;
+  font-weight: bold;
+  fill: #dcc5b8;
 }
 
 .pill--span-text:hover {
-  fill: grey;
   cursor: pointer;
-  /* font-style: italic; */
 }
 
 .highlighted {
-  fill: grey;
+  fill: #f2e5dd;
 }
 
 .container1 .image2-container .image2 {

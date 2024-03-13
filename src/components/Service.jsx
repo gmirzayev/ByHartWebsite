@@ -4,11 +4,11 @@ import cut from "../assets/cut.png";
 import { useEffect, useRef, useState } from "react";
 
 export default function Service() {
-  const [offset, setOffset] = useState(59.5);
+  const [offset, setOffset] = useState(50);
   const [isRunning, setIsRunning] = useState(true);
   const [isHighlighting, setIsHighlighting] = useState(true);
-  const [highlightedElement, setHighlightedElement] = useState(0);
-  const [animatedPosition, setAnimatedPosition] = useState(null);
+  const [highlightedElement, setHighlightedElement] = useState(1);
+  const [animatedPosition, setAnimatedPosition] = useState(-1);
 
   function useInterval(callback, delay) {
     const savedCallback = useRef();
@@ -44,16 +44,23 @@ export default function Service() {
   useInterval(
     () => {
       if (isHighlighting) {
-        setHighlightedElement((highlightedElement + 1) % 6);
-        setAnimatedPosition((highlightedElement + 1) % 6);
+        setHighlightedElement((highlightedElement % 6) + 1);
+        setAnimatedPosition((highlightedElement % 6) + 1);
       }
     },
     isHighlighting ? 5000 : null
   );
 
-  function handleHighlight(index) {
+  function handleTextMouseEnter(index) {
     setIsHighlighting(false);
     setHighlightedElement(index);
+  }
+
+  function handleTextMouseExit() {
+    if (highlightedElement != animatedPosition) {
+      setHighlightedElement(Math.abs(animatedPosition));
+    }
+    setIsHighlighting(true);
   }
 
   return (
@@ -78,22 +85,22 @@ export default function Service() {
                 By Hart is a{" "}
                 <tspan
                   className={`pill--span-text ${
-                    highlightedElement == 0 ? "highlighted" : ""
+                    highlightedElement == 1 ? "highlighted" : ""
                   }`}
-                  onMouseEnter={() => handleHighlight(0)}
-                  onMouseLeave={() => setIsHighlighting(true)}
-                  onClick={() => setAnimatedPosition(0)}
+                  onMouseEnter={() => handleTextMouseEnter(1)}
+                  onMouseLeave={() => handleTextMouseExit()}
+                  onClick={() => setAnimatedPosition(1)}
                 >
                   story
                 </tspan>{" "}
                 +
                 <tspan
                   className={`pill--span-text ${
-                    highlightedElement == 1 ? "highlighted" : ""
+                    highlightedElement == 2 ? "highlighted" : ""
                   }`}
-                  onMouseEnter={() => handleHighlight(1)}
-                  onMouseLeave={() => setIsHighlighting(true)}
-                  onClick={() => setAnimatedPosition(1)}
+                  onMouseEnter={() => handleTextMouseEnter(2)}
+                  onMouseLeave={() => handleTextMouseExit()}
+                  onClick={() => setAnimatedPosition(2)}
                 >
                   {" "}
                   identity
@@ -101,11 +108,11 @@ export default function Service() {
                 +
                 <tspan
                   className={`pill--span-text ${
-                    highlightedElement == 2 ? "highlighted" : ""
+                    highlightedElement == 3 ? "highlighted" : ""
                   }`}
-                  onMouseEnter={() => handleHighlight(2)}
-                  onMouseLeave={() => setIsHighlighting(true)}
-                  onClick={() => setAnimatedPosition(2)}
+                  onMouseEnter={() => handleTextMouseEnter(3)}
+                  onMouseLeave={() => handleTextMouseExit()}
+                  onClick={() => setAnimatedPosition(3)}
                 >
                   {" "}
                   art
@@ -113,11 +120,11 @@ export default function Service() {
                 +
                 <tspan
                   className={`pill--span-text ${
-                    highlightedElement == 3 ? "highlighted" : ""
+                    highlightedElement == 4 ? "highlighted" : ""
                   }`}
-                  onMouseEnter={() => handleHighlight(3)}
-                  onMouseLeave={() => setIsHighlighting(true)}
-                  onClick={() => setAnimatedPosition(3)}
+                  onMouseEnter={() => handleTextMouseEnter(4)}
+                  onMouseLeave={() => handleTextMouseExit()}
+                  onClick={() => setAnimatedPosition(4)}
                 >
                   {" "}
                   design
@@ -125,11 +132,11 @@ export default function Service() {
                 +
                 <tspan
                   className={`pill--span-text ${
-                    highlightedElement == 4 ? "highlighted" : ""
+                    highlightedElement == 5 ? "highlighted" : ""
                   }`}
-                  onMouseEnter={() => handleHighlight(4)}
-                  onMouseLeave={() => setIsHighlighting(true)}
-                  onClick={() => setAnimatedPosition(4)}
+                  onMouseEnter={() => handleTextMouseEnter(5)}
+                  onMouseLeave={() => handleTextMouseExit()}
+                  onClick={() => setAnimatedPosition(5)}
                 >
                   {" "}
                   content
@@ -137,11 +144,11 @@ export default function Service() {
                 +
                 <tspan
                   className={`pill--span-text ${
-                    highlightedElement == 5 ? "highlighted" : ""
+                    highlightedElement == 6 ? "highlighted" : ""
                   }`}
-                  onMouseEnter={() => handleHighlight(5)}
-                  onMouseLeave={() => setIsHighlighting(true)}
-                  onClick={() => setAnimatedPosition(5)}
+                  onMouseEnter={() => handleTextMouseEnter(6)}
+                  onMouseLeave={() => handleTextMouseExit()}
+                  onClick={() => setAnimatedPosition(6)}
                 >
                   {" "}
                   experience
@@ -153,13 +160,13 @@ export default function Service() {
         </div>
         <div
           className={`top image-container ${
-            animatedPosition == 0 ? "fade" : ""
+            animatedPosition == 1 ? "fade" : ""
           }`}
         >
           <img src={rings.src} className="image" />
         </div>
         <div
-          className={`image-container ${animatedPosition > 0 ? "fade" : ""}`}
+          className={`image-container ${animatedPosition > 1 ? "fade" : ""}`}
         >
           <img className="image" src={cut.src} />
         </div>
