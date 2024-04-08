@@ -1,6 +1,4 @@
 import "../styles/global.css";
-import rings from "../assets/Rings.png";
-import cut from "../assets/Cut.png";
 import { useEffect, useRef, useState } from "react";
 
 export default function Service() {
@@ -163,12 +161,12 @@ export default function Service() {
             animatedPosition == 1 ? "fade" : ""
           }`}
         >
-          <img src={rings.src} className="image" />
+          <img src="/images/Rings.png" className="image" />
         </div>
         <div
           className={`image-container ${animatedPosition > 1 ? "fade" : ""}`}
         >
-          <img className="image" src={cut.src} />
+          <img className="image" src="/images/Cut.png" />
         </div>
         {/* <div className="image1-container">
           <img className="image1" id="first-image" src={rings.src} />
