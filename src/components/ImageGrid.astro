@@ -51,16 +51,18 @@ const items = [["../assets/Wizehire.gif", "Pizza"], ["Ample", "Test"]];
   .image-grid {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
-    column-gap: 58px;
+    justify-content: space-between;
+    /* column-gap: 3.5%; */
     max-width: 1820px;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: 50px;
+    margin-right: 50px; */
+    margin-left: 5%;
+    margin-right: 5%;
     box-sizing: border-box;
   }
 
   .image-grid--column {
-    width: calc(32% - 15px);
+    width: calc(32% - 1%);
     row-gap: 59px;
     display: none;
     flex-direction: column;
@@ -98,7 +100,7 @@ const items = [["../assets/Wizehire.gif", "Pizza"], ["Ample", "Test"]];
 
   @media screen and (max-width: 767px) {
     .image-grid--column {
-      width: 40%;
+      width: 46%;
     }
   }
 
@@ -301,6 +303,14 @@ const items = [["../assets/Wizehire.gif", "Pizza"], ["Ample", "Test"]];
       <a class="grid-item brand active-item">
         <img
           src={Horowitz.src}
+          class="grid-image"
+          alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
+        />
+      </a>
+
+      <a class="grid-item brand active-item">
+        <img
+          src={Firefly.src}
           class="grid-image"
           alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
         />
