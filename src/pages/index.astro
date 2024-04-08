@@ -1,5 +1,11 @@
 ---
-import Service from "../components/Service";
+import Service from "../components/Service.jsx";
+import Navigation from '../components/Navigation.astro';
+import HeartCursor from '../assets/HeartCursor.png';
+import Background from '../assets/Background.png';
+import ImageGrid from "../components/ImageGrid.astro";
+import Testimonial from "../components/Testimonial.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
@@ -9,21 +15,48 @@ import Service from "../components/Service";
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<style>
+			html {
+      			cursor: url('../assets/HeartCursor.png'), auto;
+				margin: 0;
+				padding: 0;
+			}
 			main {
-				height: 200vh;
+				background-image: url('../assets/Background.png');
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: relative;
+				z-index: 10;
+				box-sizing: border-box;
+				/* width: 100vw; */
+				padding: 0;
+				margin: 0;
+			}
+			body {
+				padding-bottom: 100vh;
+				margin: 0;
+			}
+			.placeholder {
+				height: 800px;
+				/* width: 1440px; */
+				background-color: gray;
+			}
+			.service-container {
+				height: 800px;
 			}
 		</style>
 	</head>
 	<body>
 		<main>
 			<!-- <h1>WHAT WE MAKE</h1> -->
-			<div class="nav">
-				<div class="bar">
-					<p>By Hart</p>
-				</div>
+			<Navigation />
+			<!-- <div class="placeholder"></div> -->
+			<div class="service-container">
+				<Service client:only="react"></Service>
 			</div>
-			<Service client:only="react"></Service>
+			<ImageGrid />
+			<Testimonial />
 		</main>
+		<Footer />
 		<script>
 			
 		</script>

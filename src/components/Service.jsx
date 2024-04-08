@@ -1,6 +1,6 @@
 import "../styles/global.css";
-import rings from "../assets/rings.png";
-import cut from "../assets/cut.png";
+import rings from "../assets/Rings.png";
+import cut from "../assets/Cut.png";
 import { useEffect, useRef, useState } from "react";
 
 export default function Service() {
@@ -64,7 +64,7 @@ export default function Service() {
   }
 
   return (
-    <>
+    <div id="pill--element">
       <div
         className="pill--container"
         style={{ transform: `rotate(${animatedPosition * 20}deg)` }}
@@ -177,6 +177,6 @@ export default function Service() {
           <img className="image2" id="second-image" src={cut.src} />
         </div> */}
       </div>
-    </>
+    </div>
   );
 }

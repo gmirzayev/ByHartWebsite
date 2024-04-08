@@ -1,13 +1,13 @@
 .pill--container {
   position: relative;
-  height: 500px;
-  margin-top: 200px;
+  height: 800px;
+  margin-top: 150px;
   width: 500px;
   margin-left: auto;
   margin-right: auto;
   /* background-color: azure; */
   transition: transform 2s ease;
-  transform-origin: center;
+  transform-origin: 250px 250px;
 }
 
 .pill {
@@ -67,6 +67,10 @@
   transform: rotate(104deg);
 }
 
+#text-path {
+  fill: #faf7f4;
+}
+
 #text-path:hover {
   offset: 50%;
 }
@@ -80,7 +84,7 @@
 .pill--span-text {
   font-style: italic;
   font-weight: bold;
-  fill: #dcc5b8;
+  fill: #ffb6c1;
 }
 
 .pill--span-text:hover {
@@ -103,41 +107,6 @@
   transform: rotate(284deg);
 }
 
-/* @keyframes spin {
-  from {
-    transform: rotate(104deg);
-  }
-  to {
-    transform: rotate(190deg);
-  }
-}
-
-.spin {
-  animation-name: spin;
-  animation-duration: 2000ms;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-
-@keyframes spin2 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(100deg);
-  }
-}
-
-.spin2 {
-  animation-name: spin2;
-  animation-duration: 2000ms;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-  transform-origin: center;
-}
-*/
 @keyframes fade {
   from {
     opacity: 0;

@@ -1,0 +1,115 @@
+---
+import '../styles/utils.css';
+import { Image } from 'astro:assets';
+import Logo from '../assets/HomeLogo.png';
+---
+
+<style>
+    nav {
+        font-family: 'Karla';
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 0.15em;
+        color: #FAF7F4;
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        /* max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto; */
+
+    }
+    /* .dropdown-link-container {
+        width: 100%;
+    } */
+    .nav-link {
+        position: relative;
+        box-sizing: border-box;
+        display: inline-block;
+        width: 150px;
+    }
+    .nav-link span {
+        display: inline-block;
+        max-width: 0%;
+        vertical-align: bottom;
+        overflow: hidden;
+        white-space: nowrap;
+        transition: max-width 1s ease-in-out;
+    }
+    .nav-link:hover span {
+        max-width: 100%;
+    }
+   .logo {
+        width: 80px;
+        height: auto;
+        margin-right: 95px;
+   }
+   .mobile-dropdown-toggle {
+        display: none; 
+    }
+
+    @media (max-width: 768px) { 
+        .dropdown-link-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            /* fix nav height on mobile safari, where 100vh is a little off */
+            height: -webkit-fill-available;
+            
+            /* then, arrange our links top to bottom */
+            display: flex;
+            flex-direction: column;
+            /* center links vertically, push to the right horizontally.
+            this means our links will line up with the rightward hamburger button */
+            justify-content: center;
+            align-items: flex-end;
+
+            /* add margins and padding to taste */
+            margin: 0;
+            padding-left: 7vw;
+            padding-right: 7vw;
+
+            background: gray;
+            z-index: 0;
+
+            opacity: 0; /* fade out */
+            transform: translateY(-100%); /* move out of view */
+            transition: transform 0.2s, opacity 0.2s; /* transition these smoothly */
+        }
+        .logo, .mobile-dropdown-toggle {
+            z-index: 1;
+        }
+        .mobile-dropdown-toggle {
+            display: initial;
+        }
+        nav.dropdown-opened > .dropdown-link-container {
+            opacity: 1; /* fade in */
+            transform: translateY(0); /* move into view */
+        }
+    }
+</style>
+<header>
+    <nav id="main-nav">
+        <a><Image class="logo" src={Logo} alt="The logo is the letter H in a cursive font."></a>
+        <button id="dropdown-toggle" class="mobile-dropdown-toggle" aria-hidden="true">
+            Test
+        </button>
+        <div class="dropdown-link-container">
+            <a class="nav-link" data-text="BY HART">SEE <span>BY HART</span></a>
+            <a class="nav-link" data-text="BY HART">KNOW <span>BY HART</span></a>
+            <a class="nav-link" data-text="BY HART">SPEAK <span>BY HART</span></a>
+        </div>
+    </nav>
+</header>
+<script>
+    const nav = document.getElementById("main-nav");
+    const navButton = document.getElementById("dropdown-toggle");
+
+    navButton.addEventListener("click", (event) => {
+        nav.classList.toggle("dropdown-opened");
+    });
+</script>
+
