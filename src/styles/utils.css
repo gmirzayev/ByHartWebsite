@@ -13,3 +13,10 @@
   font-style: normal;
   /* font-display: swap; */
 }
+
+@font-face {
+  font-family: "Covered By Your Grace";
+  src: url("/fonts/CoveredByYourGrace-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
