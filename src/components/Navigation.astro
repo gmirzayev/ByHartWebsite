@@ -2,6 +2,7 @@
 import '../styles/utils.css';
 import { Image } from 'astro:assets';
 import Logo from '../assets/HomeLogo.png';
+import HeartDropdown from '../assets/HeartDropdown.png';
 ---
 
 <style>
@@ -15,19 +16,13 @@ import Logo from '../assets/HomeLogo.png';
         padding: 25px;
         display: flex;
         align-items: center;
-        /* max-width: 1440px;
-        margin-left: auto;
-        margin-right: auto; */
-
     }
-    /* .dropdown-link-container {
-        width: 100%;
-    } */
+
     .nav-link {
         position: relative;
         box-sizing: border-box;
         display: inline-block;
-        width: 150px;
+        width: 200px;
     }
     .nav-link span {
         display: inline-block;
@@ -44,9 +39,13 @@ import Logo from '../assets/HomeLogo.png';
         width: 80px;
         height: auto;
         margin-right: 95px;
+        position: relative;
    }
    .mobile-dropdown-toggle {
         display: none; 
+        background: none;
+        padding: 0;
+        border: none;
     }
 
     @media (max-width: 768px) { 
@@ -80,7 +79,7 @@ import Logo from '../assets/HomeLogo.png';
             transition: transform 0.2s, opacity 0.2s; /* transition these smoothly */
         }
         .logo, .mobile-dropdown-toggle {
-            z-index: 1;
+            z-index: 9;
         }
         .mobile-dropdown-toggle {
             display: initial;
@@ -88,6 +87,7 @@ import Logo from '../assets/HomeLogo.png';
         nav.dropdown-opened > .dropdown-link-container {
             opacity: 1; /* fade in */
             transform: translateY(0); /* move into view */
+            z-index: 8;
         }
     }
 </style>
@@ -95,7 +95,7 @@ import Logo from '../assets/HomeLogo.png';
     <nav id="main-nav">
         <a><Image class="logo" src={Logo} alt="The logo is the letter H in a cursive font."></a>
         <button id="dropdown-toggle" class="mobile-dropdown-toggle" aria-hidden="true">
-            Test
+            <Image src={HeartDropdown} alt="hearts"/>
         </button>
         <div class="dropdown-link-container">
             <a class="nav-link" data-text="BY HART">SEE <span>BY HART</span></a>

@@ -1,4 +1,4 @@
-import "../styles/global.css";
+import "../styles/service.css";
 import { useEffect, useRef, useState } from "react";
 
 export default function Service() {
@@ -32,7 +32,7 @@ export default function Service() {
     () => {
       let newOffset = offset - 0.02;
       if (newOffset <= 0) {
-        newOffset = 59.5;
+        newOffset = 50;
       }
       setOffset(newOffset);
     },
@@ -42,8 +42,8 @@ export default function Service() {
   useInterval(
     () => {
       if (isHighlighting) {
-        setHighlightedElement((highlightedElement % 6) + 1);
-        setAnimatedPosition((highlightedElement % 6) + 1);
+        setHighlightedElement((highlightedElement % 8) + 1);
+        setAnimatedPosition((highlightedElement % 8) + 1);
       }
     },
     isHighlighting ? 5000 : null
@@ -73,7 +73,9 @@ export default function Service() {
               id="path"
               fill="none"
               stroke="none"
-              d="M 131.2244 5.251 H 131.2244 S 259.7939 5.251 259.7939 133.8205 V 302.432 S 259.7939 431.0015 131.2244 431.0015 H 131.2244 S 2.6549 431.0015 2.6549 302.432 V 133.8205 S 2.6549 5.251 131.2244 5.251 H 131.2244 S 259.7939 5.251 259.7939 133.8205 V 302.432 S 259.7939 431.0015 131.2244 431.0015 H 131.2244 S 2.6549 431.0015 2.6549 302.432"
+              d="M 126.4892 2.249 H 126.4892 S 250.6275 2.249 250.6275 126.3875 V 283.9355 S 250.6275 408.0739 126.4892 408.0739 H 126.4892 S 2.351 408.0739 2.351 283.9354 V 126.3874 S 2.351 2.2489 126.4892 2.2489 H 126.4892 S 250.6275 2.249 250.6275 126.3875 V 283.9355 S 250.6275 408.0739 126.4892 408.0739 H 126.4892 S 2.351 408.0739 2.351 283.9354 V 126.3874 S 2.351 2.2489 126.4892 2.2489 "
+              // d="M 128.976 1.273 H 128.9765 S 257.1555 1.273 257.1555 129.452 V 288.6035 S 257.1555 416.7825 128.9765 416.7825 H 128.976 S 0.797 416.7825 0.797 288.6035 V 129.452 S 0.797 1.273 128.976 1.273 H 128.9765 S 257.1555 1.273 257.1555 129.452 V 288.6035 S 257.1555 416.7825 128.9765 416.7825 H 128.976 S 0.797 416.7825 0.797 288.6035"
+              // d="M 131.2244 5.251 H 131.2244 S 259.7939 5.251 259.7939 133.8205 V 302.432 S 259.7939 431.0015 131.2244 431.0015 H 131.2244 S 2.6549 431.0015 2.6549 302.432 V 133.8205 S 2.6549 5.251 131.2244 5.251 H 131.2244 S 259.7939 5.251 259.7939 133.8205 V 302.432 S 259.7939 431.0015 131.2244 431.0015 H 131.2244 S 2.6549 431.0015 2.6549 302.432"
             />
             <text
               onMouseEnter={() => setIsRunning(false)}
@@ -101,7 +103,7 @@ export default function Service() {
                   onClick={() => setAnimatedPosition(2)}
                 >
                   {" "}
-                  identity
+                  style
                 </tspan>{" "}
                 +
                 <tspan
@@ -113,7 +115,7 @@ export default function Service() {
                   onClick={() => setAnimatedPosition(3)}
                 >
                   {" "}
-                  art
+                  identity
                 </tspan>{" "}
                 +
                 <tspan
@@ -125,7 +127,7 @@ export default function Service() {
                   onClick={() => setAnimatedPosition(4)}
                 >
                   {" "}
-                  design
+                  art
                 </tspan>{" "}
                 +
                 <tspan
@@ -137,7 +139,7 @@ export default function Service() {
                   onClick={() => setAnimatedPosition(5)}
                 >
                   {" "}
-                  content
+                  experience
                 </tspan>{" "}
                 +
                 <tspan
@@ -149,7 +151,31 @@ export default function Service() {
                   onClick={() => setAnimatedPosition(6)}
                 >
                   {" "}
-                  experience
+                  content
+                </tspan>{" "}
+                +
+                <tspan
+                  className={`pill--span-text ${
+                    highlightedElement == 7 ? "highlighted" : ""
+                  }`}
+                  onMouseEnter={() => handleTextMouseEnter(7)}
+                  onMouseLeave={() => handleTextMouseExit()}
+                  onClick={() => setAnimatedPosition(7)}
+                >
+                  {" "}
+                  design
+                </tspan>{" "}
+                +
+                <tspan
+                  className={`pill--span-text ${
+                    highlightedElement == 8 ? "highlighted" : ""
+                  }`}
+                  onMouseEnter={() => handleTextMouseEnter(8)}
+                  onMouseLeave={() => handleTextMouseExit()}
+                  onClick={() => setAnimatedPosition(8)}
+                >
+                  {" "}
+                  purpose
                 </tspan>{" "}
                 + actually creative studio by Sarah Hartley.
               </textPath>

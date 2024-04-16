@@ -1,3 +1,9 @@
+---
+import { Image } from "astro:assets";
+import SelectedHeart from '../assets/SelectedHeart.png';
+import UnselectedHeart from '../assets/UnselectedHeart.png';
+---
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
     .testimonial--container {
@@ -45,6 +51,17 @@
         letter-spacing: 0.04em;
         color: #F7F4ED;
     }
+    .testimonial--selector-container {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .testimonial--selector {
+        padding: 0;
+        border: none;
+        background: none;
+        margin: 0 5px;
+    }
 </style>
 <div class="testimonial--container">
     <h2>WHAT OUR CLIENTS ARE SAYING</h2>
@@ -56,4 +73,11 @@
     <p class="testimonial--quote-source">
         -Carmen Bryant, Head of Marketing, Wizehire
     </p>
+    <div class="testimonial--selector-container">
+        <button class="testimonial--selector"><Image src={SelectedHeart} alt="heart"/></button>
+        <button class="testimonial--selector"><Image src={UnselectedHeart} alt="heart"/></button>
+        <button class="testimonial--selector"><Image src={UnselectedHeart} alt="heart"/></button>
+        <button class="testimonial--selector"><Image src={UnselectedHeart} alt="heart"/></button>
+        <button class="testimonial--selector"><Image src={UnselectedHeart} alt="heart"/></button>
+    </div>
 </div>
