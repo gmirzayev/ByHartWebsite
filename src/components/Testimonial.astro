@@ -81,3 +81,9 @@ import UnselectedHeart from '../assets/UnselectedHeart.png';
         <button class="testimonial--selector"><Image src={UnselectedHeart} alt="heart"/></button>
     </div>
 </div>
+<script>
+    function rotateCursor(event) {
+        console.log(event.movementX);
+    }
+    document.addEventListener('mousemove', rotateCursor);
+</script>

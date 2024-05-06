@@ -6,7 +6,7 @@ export default function Service() {
   const [isRunning, setIsRunning] = useState(true);
   const [isHighlighting, setIsHighlighting] = useState(true);
   const [highlightedElement, setHighlightedElement] = useState(1);
-  const [animatedPosition, setAnimatedPosition] = useState(-1);
+  const [animatedPosition, setAnimatedPosition] = useState(1);
 
   function useInterval(callback, delay) {
     const savedCallback = useRef();
@@ -61,11 +61,29 @@ export default function Service() {
     setIsHighlighting(true);
   }
 
+  function getRotation(animatedPos) {
+    if (animatedPos == 1 || animatedPos == 5) {
+      return 340;
+    }
+    if (animatedPos == 2 || animatedPos == 6) {
+      return 110;
+    }
+    if (animatedPos == 3 || animatedPos == 7) {
+      return 200;
+    }
+    if (animatedPos == 4 || animatedPos == 8) {
+      return 250;
+    }
+  }
+
   return (
     <div id="pill--element">
       <div
         className="pill--container"
-        style={{ transform: `rotate(${animatedPosition * 20}deg)` }}
+        // style={{
+        //   transform: `rotate(${getRotation(animatedPosition)}deg)`,
+        // }}
+        // style={{ transform: "rotate(deg)" }}
       >
         <div className="pill">
           <svg viewBox="0 80 250 100" xmlns="http://www.w3.org/2000/svg">
@@ -74,8 +92,6 @@ export default function Service() {
               fill="none"
               stroke="none"
               d="M 126.4892 2.249 H 126.4892 S 250.6275 2.249 250.6275 126.3875 V 283.9355 S 250.6275 408.0739 126.4892 408.0739 H 126.4892 S 2.351 408.0739 2.351 283.9354 V 126.3874 S 2.351 2.2489 126.4892 2.2489 H 126.4892 S 250.6275 2.249 250.6275 126.3875 V 283.9355 S 250.6275 408.0739 126.4892 408.0739 H 126.4892 S 2.351 408.0739 2.351 283.9354 V 126.3874 S 2.351 2.2489 126.4892 2.2489 "
-              // d="M 128.976 1.273 H 128.9765 S 257.1555 1.273 257.1555 129.452 V 288.6035 S 257.1555 416.7825 128.9765 416.7825 H 128.976 S 0.797 416.7825 0.797 288.6035 V 129.452 S 0.797 1.273 128.976 1.273 H 128.9765 S 257.1555 1.273 257.1555 129.452 V 288.6035 S 257.1555 416.7825 128.9765 416.7825 H 128.976 S 0.797 416.7825 0.797 288.6035"
-              // d="M 131.2244 5.251 H 131.2244 S 259.7939 5.251 259.7939 133.8205 V 302.432 S 259.7939 431.0015 131.2244 431.0015 H 131.2244 S 2.6549 431.0015 2.6549 302.432 V 133.8205 S 2.6549 5.251 131.2244 5.251 H 131.2244 S 259.7939 5.251 259.7939 133.8205 V 302.432 S 259.7939 431.0015 131.2244 431.0015 H 131.2244 S 2.6549 431.0015 2.6549 302.432"
             />
             <text
               onMouseEnter={() => setIsRunning(false)}
