@@ -1,0 +1,32 @@
+---
+import InternalLayout from "../layouts/InternalLayout.astro";
+import Sage from '../assets/Sage.png';
+---
+<style>
+    div {
+        height: 1000px;
+    }
+    .animation {
+        transform: scale(0.5);
+        transition: all 0.7s ease-out;
+        transition-delay: 0.4s;
+    }
+    .scroll-animation {
+        transform: scale(1);
+    }
+</style>
+<InternalLayout style="light">
+    <div>
+        <img
+          src={Sage.src}
+          class="grid-image"
+          alt="Pizza being made through a cutout in the shape of a face on a purple rectangle."
+        />
+    </div>
+    <script>
+        console.log(window);
+    </script>
+</InternalLayout>
+
+
+

@@ -3,6 +3,7 @@ import '../styles/utils.css';
 import { Image } from 'astro:assets';
 import Logo from '../assets/HomeLogo.png';
 import HeartDropdown from '../assets/HeartDropdown.png';
+const { style } = Astro.props;
 ---
 
 <style>
@@ -16,6 +17,13 @@ import HeartDropdown from '../assets/HeartDropdown.png';
         padding: 25px;
         display: flex;
         align-items: center;
+    }
+
+    .dark {
+        color: #FAF7F4;
+    }
+    .light {
+        color: black;
     }
 
     .nav-link {
@@ -97,7 +105,7 @@ import HeartDropdown from '../assets/HeartDropdown.png';
         <button id="dropdown-toggle" class="mobile-dropdown-toggle" aria-hidden="true">
             <Image src={HeartDropdown} alt="hearts"/>
         </button>
-        <div class="dropdown-link-container">
+        <div class={`dropdown-link-container ${style}`}>
             <a class="nav-link" data-text="BY HART">SEE <span>BY HART</span></a>
             <a class="nav-link" data-text="BY HART">KNOW <span>BY HART</span></a>
             <a class="nav-link" data-text="BY HART">SPEAK <span>BY HART</span></a>
