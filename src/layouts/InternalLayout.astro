@@ -1,7 +1,5 @@
 ---
-import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-const { style } = Astro.props;
 ---
 <html lang="en">
   <head>
@@ -9,7 +7,7 @@ const { style } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         html {
-              cursor: url('../assets/HeartCursor.png'), auto;
+            cursor: url('../assets/HeartCursor.png'), auto;
             margin: 0;
             padding: 0;
         }
@@ -37,10 +35,7 @@ const { style } = Astro.props;
   </head>
   <body>
     <main>
-        <Navigation style={style} />
-        <article>
-            <slot /> <!-- your content is injected here -->
-        </article>
+        <slot /> <!-- your content is injected here -->
     </main>
     <Footer />
   </body>

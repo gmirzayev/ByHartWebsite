@@ -1,32 +1,107 @@
 ---
+import Navigation from "../components/Navigation.astro";
 import InternalLayout from "../layouts/InternalLayout.astro";
 import Sage from '../assets/Sage.png';
 ---
-<style>
-    div {
-        height: 1000px;
+<style is:global>
+    .internal-main {
+        height: 200vh;
+        width: 100vw;
+        /* position: fixed; */
     }
-    .animation {
-        transform: scale(0.5);
-        transition: all 0.7s ease-out;
-        transition-delay: 0.4s;
+    .text-grid {
+        display: flex;
+        flex-direction: row;
     }
-    .scroll-animation {
-        transform: scale(1);
+    .text-grid div {
+        display: flex;
+        flex-direction: column;
+    }
+    .scroll-container {
+        height: 200vh;
+    }
+    .sticky-container {
+        position: sticky;
+        top: 0;
+        
+    }
+    .image-container {
+        text-align: center;
+    }
+    #main-image {
+        //center image
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
     }
 </style>
-<InternalLayout style="light">
-    <div>
-        <img
-          src={Sage.src}
-          class="grid-image"
-          alt="Pizza being made through a cutout in the shape of a face on a purple rectangle."
-        />
+<InternalLayout>
+    <div class="internal-main">
+        <div class="scroll-container">
+            <div class="sticky-container">
+                <Navigation style="light" />
+                <div class="image-container">
+                    <img
+                        src={Sage.src}
+                        id="main-image"
+                        alt="Pizza being made through a cutout in the shape of a face on a purple rectangle."
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="text-grid">
+            <div>
+                <p>WIZEHIRE</p>
+            </div>
+            <div>
+                <p>BRAND IDENTITY + POSITIONING</p>
+                <p>VIDEO + PHOTOGRAPHY</p>
+                <p>ART + ILLUSTRATION</p>
+                <p>PROODUCT DESIGN UX/UI</p>
+            </div>
+            <div>
+                <p>EDITORIAL CONTENT</p>
+                <p>SOCIAL CONTENT + ADVERTISING</p>
+                <p>INTERVIEW</p>
+                <p>WRITING + EDITING</p>
+            </div>
+            <div>
+                <p>AN UNPRECEDENTED REBRAND</p>
+            </div>
+        </div>
     </div>
-    <script>
-        console.log(window);
-    </script>
 </InternalLayout>
+<script>
+    const image = document.getElementById("main-image");
+    let currentScroll = window.scrollY;
+    let totalHeight = window.innerHeight/2;
+
+    const minScroll = 0; // minimum scroll value
+    const minRange = 0.5; // minimum range value
+    const maxRange = 2; // maximum range value
+    if(currentScroll > totalHeight) {
+        currentScroll = totalHeight;
+    }
+    const range = (currentScroll - minScroll) * (maxRange - minRange) / (totalHeight - minScroll) + minRange;
+    console.log(range);
+    
+    let imageScale = 0.5 + (currentScroll / (totalHeight));
+    image.style.transform = `scale(${imageScale})`;
+    
+    document.addEventListener("scroll", (event) => {
+        console.log(window.scrollY);
+        //slow down scrolling so image doesn't grow as fast
+        if (currentScroll > totalHeight) {
+            currentScroll = totalHeight;
+        }
+        
+
+        imageScale = 0.5 + (currentScroll / (totalHeight));
+        image.style.transform = `scale(${imageScale})`;
+        currentScroll = window.scrollY;
+    });
+</script>
 
 
 

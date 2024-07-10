@@ -30,7 +30,7 @@ const { style } = Astro.props;
         position: relative;
         box-sizing: border-box;
         display: inline-block;
-        width: 200px;
+        width: 180px;
     }
     .nav-link span {
         display: inline-block;
@@ -55,6 +55,23 @@ const { style } = Astro.props;
         padding: 0;
         border: none;
     }
+
+    .nav-link:hover::after {
+            content: "SARAH + SERVICES";
+            position: absolute;
+            bottom: -50px;
+            left: -30px;
+            width: 185px;
+            height: 38px;
+            border-radius: 35px;
+            rotate: 8deg;
+            color: black;
+            font-size: 13px;
+            font-family: 'Karla';
+            background-color: #EBD4C7;
+            text-align: center;
+            line-height: 38px;
+        }
 
     @media (max-width: 768px) { 
         .dropdown-link-container {
@@ -97,11 +114,12 @@ const { style } = Astro.props;
             transform: translateY(0); /* move into view */
             z-index: 8;
         }
+        
     }
 </style>
 <header>
     <nav id="main-nav">
-        <a><Image class="logo" src={Logo} alt="The logo is the letter H in a cursive font."></a>
+        <a><Image class="logo" src={Logo} alt="The letter H."></a>
         <button id="dropdown-toggle" class="mobile-dropdown-toggle" aria-hidden="true">
             <Image src={HeartDropdown} alt="hearts"/>
         </button>

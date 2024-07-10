@@ -1,7 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import SelectedHeart from '../assets/SelectedHeart.png';
-import UnselectedHeart from '../assets/UnselectedHeart.png';
+
 ---
 
 <style>
@@ -57,33 +55,112 @@ import UnselectedHeart from '../assets/UnselectedHeart.png';
         margin: 0 auto;
     }
     .testimonial--selector {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
         padding: 0;
         border: none;
         background: none;
         margin: 0 5px;
+        cursor: url('../assets/HeartCursor.png'), auto;
+    }
+    .hidden {
+        display: none;
+    }
+    .shown {
+        display: block;
     }
 </style>
 <div class="testimonial--container">
     <h2>WHAT OUR CLIENTS ARE SAYING</h2>
-    <div class="testimonial--quote">
-        I turn to By Hart for <span>all of my branding needs.</span><br>
-        What amazes me most about Sarah + <br>her dream team is <span>all of my branding needs.</span><br>
-        I would recommend By Hart to <span>anyone<br> looking for all of my branding needs.</span><br>
+    <div class="testimonial">
+        <div class="testimonial--quote">
+            I turn to By Hart for <span>all of my branding needs.</span><br>
+            What amazes me most about Sarah + <br>her dream team is <span>all of my branding needs.</span><br>
+            I would recommend By Hart to <span>anyone<br> looking for all of my branding needs.</span><br>
+        </div>
+        <p class="testimonial--quote-source">
+            -Carmen Bryant, Head of Marketing, Wizehire
+        </p>
     </div>
-    <p class="testimonial--quote-source">
-        -Carmen Bryant, Head of Marketing, Wizehire
-    </p>
+    <div class="testimonial hidden">
+        <div class="testimonial--quote">
+            I turn to By Hart for <span>all of my design needs.</span><br>
+            What amazes me most about Sarah + <br>her team is <span>their creativity and attention to detail.</span><br>
+            I would recommend By Hart to <span>anyone<br> looking for exceptional design services.</span><br>
+        </div>
+        <p class="testimonial--quote-source">
+            -Gleb Mirzayev
+        </p>
+    </div>
+    <div class="testimonial hidden">
+        <div class="testimonial--quote">
+            By Hart has <span>transformed our brand image.</span><br>
+            Sarah and her team <br>consistently deliver <span>innovative and stunning designs.</span><br>
+            We are thrilled with <span>the results<br> and highly recommend them!</span><br>
+        </div>
+        <p class="testimonial--quote-source">
+            -Random Person
+        </p>
+    </div>
+    <div class="testimonial hidden">
+        <div class="testimonial--quote">
+            Our experience with By Hart <span>has been phenomenal.</span><br>
+            The team's ability to <br>capture our vision and <span>bring it to life is unmatched.</span><br>
+            For anyone <span>seeking top-tier<br> design expertise, By Hart is the answer.</span><br>
+        </div>
+        <p class="testimonial--quote-source">
+            -Anna Wintour
+        </p>
+    </div>
+    <div class="testimonial hidden">
+        <div class="testimonial--quote">
+            Choosing By Hart was <span>the best decision for our rebranding.</span><br>
+            Sarah's team went above and beyond <br>to deliver <span>exceptional and unique designs.</span><br>
+            I would confidently recommend By Hart to <span>anyone<br> seeking creative and professional design services.</span><br>
+        </div>
+        <p class="testimonial--quote-source">
+            -Audrey Hepburn
+        </p>
+    </div>
     <div class="testimonial--selector-container">
-        <button class="testimonial--selector"><Image src={SelectedHeart} alt="heart"/></button>
-        <button class="testimonial--selector"><Image src={UnselectedHeart} alt="heart"/></button>
-        <button class="testimonial--selector"><Image src={UnselectedHeart} alt="heart"/></button>
-        <button class="testimonial--selector"><Image src={UnselectedHeart} alt="heart"/></button>
-        <button class="testimonial--selector"><Image src={UnselectedHeart} alt="heart"/></button>
+        <button class="testimonial--selector"><img class="testimonial--heart" src="images/SelectedHeart.png" alt="heart"/></button>
+        <button class="testimonial--selector"><img class="testimonial--heart" src="images/UnselectedHeart.png" alt="heart"/></button>
+        <button class="testimonial--selector"><img class="testimonial--heart" src="images/UnselectedHeart.png" alt="heart"/></button>
+        <button class="testimonial--selector"><img class="testimonial--heart" src="images/UnselectedHeart.png" alt="heart"/></button>
+        <button class="testimonial--selector"><img class="testimonial--heart" src="images/UnselectedHeart.png" alt="heart"/></button>
     </div>
 </div>
 <script>
-    function rotateCursor(event) {
-        console.log(event.movementX);
+    const updateSelectedTestimonial = (currentIndex: number) => {
+        const quotes = document.querySelectorAll('.testimonial');
+
+        quotes.forEach((quote, i) => {
+                if (i === currentIndex) {
+                    quote.classList.remove('hidden');
+                    quote.classList.add('shown');
+                } else {
+                    quote.classList.remove('shown');
+                    quote.classList.add('hidden');
+                }
+        });
+
+        const icons: NodeListOf<HTMLImageElement> = document.querySelectorAll('.testimonial--heart');
+
+        icons.forEach((icon, i) => {
+            if (i === currentIndex) {
+                icon.src = '/images/SelectedHeart.png';
+            } else {
+                icon.src = '/images/UnselectedHeart.png';
+            }
+        });
     }
-    document.addEventListener('mousemove', rotateCursor);
+
+    const selectors = document.querySelectorAll('.testimonial--selector');
+    selectors.forEach((selector, index) => {
+        selector.addEventListener('click', () => {
+            updateSelectedTestimonial(index);
+        });
+    });
 </script>

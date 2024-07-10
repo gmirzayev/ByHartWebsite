@@ -7,6 +7,7 @@ export default function Service() {
   const [isHighlighting, setIsHighlighting] = useState(true);
   const [highlightedElement, setHighlightedElement] = useState(1);
   const [animatedPosition, setAnimatedPosition] = useState(1);
+  const [previousRotation, setPreviousRotation] = useState(0);
 
   function useInterval(callback, delay) {
     const savedCallback = useRef();
@@ -56,14 +57,18 @@ export default function Service() {
 
   function handleTextMouseExit() {
     if (highlightedElement != animatedPosition) {
-      setHighlightedElement(Math.abs(animatedPosition));
+      setHighlightedElement(animatedPosition);
     }
     setIsHighlighting(true);
   }
 
   function getRotation(animatedPos) {
     if (animatedPos == 1 || animatedPos == 5) {
-      return 340;
+      let angle = 340;
+      if (previousRotation > angle) {
+        angle += 360;
+        setPreviousRotation(angle + 360);
+      }
     }
     if (animatedPos == 2 || animatedPos == 6) {
       return 110;
@@ -78,7 +83,12 @@ export default function Service() {
 
   return (
     <div id="pill--element">
-      <div className="pill--container">
+      <div
+        className="pill--container"
+        // style={{
+        //   transform: `rotate(${getRotation(animatedPosition)}deg)`,
+        // }}
+      >
         <div className="pill">
           <svg viewBox="0 80 250 100" xmlns="http://www.w3.org/2000/svg">
             <path
