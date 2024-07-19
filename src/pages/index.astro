@@ -1,65 +1,63 @@
 ---
-import Service from "../components/Service.jsx";
-import Navigation from '../components/Navigation.astro';
-import HeartCursor from '../assets/HeartCursor.png';
-import Background from '../assets/Background.png';
+import Service from "../components/Service.astro";
+import Navigation from "../components/Navigation.astro";
+import HeartCursor from "../assets/HeartCursor.png";
+import Background from "../assets/Background.png";
 import ImageGrid from "../components/ImageGrid.astro";
 import Testimonial from "../components/Testimonial.astro";
 import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="stylesheet" href="https://use.typekit.net/qmm6obl.css">
-		<style>
-			html {
-      			cursor: url('../assets/HeartCursor.png'), auto;
-				margin: 0;
-				padding: 0;
-			}
-			main {
-				background-image: url('../assets/grain-background.png');
-				background-repeat: repeat;
-				background-size: auto;
-				position: relative;
-				z-index: 10;
-				box-sizing: border-box;
-				/* width: 100vw; */
-				padding: 0;
-				margin: 0;
-			}
-			body {
-				padding-bottom: 100vh;
-				margin: 0;
-			}
-			.placeholder {
-				height: 800px;
-				/* width: 1440px; */
-				background-color: gray;
-			}
-			.service-container {
-				height: 800px;
-			}
-		</style>
-	</head>
-	<body>
-		<main>
-			<!-- <h1>WHAT WE MAKE</h1> -->
-			<Navigation />
-			<!-- <div class="placeholder"></div> -->
-			<div class="service-container">
-				<Service client:only="react"></Service>
-			</div>
-			<ImageGrid />
-			<Testimonial />
-		</main>
-		<Footer />
-		<script>
-			
-		</script>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://use.typekit.net/qmm6obl.css" />
+    <style>
+      html {
+        cursor: url("../assets/HeartCursor.png"), auto;
+        margin: 0;
+        padding: 0;
+      }
+      main {
+        background-image: url("../assets/grain-background.png");
+        background-repeat: repeat;
+        background-size: auto;
+        position: relative;
+        z-index: 10;
+        box-sizing: border-box;
+        /* width: 100vw; */
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        padding-bottom: 100vh;
+        margin: 0;
+      }
+      .placeholder {
+        height: 800px;
+        /* width: 1440px; */
+        background-color: gray;
+      }
+      .service-container {
+        height: 800px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- <h1>WHAT WE MAKE</h1> -->
+      <Navigation />
+      <!-- <div class="placeholder"></div> -->
+      <!-- <div class="service-container"> -->
+      <Service />
+      <!-- </div> -->
+      <ImageGrid />
+      <Testimonial />
+    </main>
+    <Footer />
+    <script></script>
+  </body>
 </html>

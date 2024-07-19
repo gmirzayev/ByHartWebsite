@@ -1,26 +1,39 @@
+#pill--element {
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+
 .pill--container {
   position: relative;
-  height: 800px;
-  margin-top: 150px;
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  /* background-color: azure; */
+  height: 900px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: transform 2s ease;
-  transform-origin: 250px 250px;
+  transform-origin: center;
+  transform: rotate(30deg);
+}
+
+.iframe-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  clip-path: url(#svgPath);
+}
+
+.video-frame {
+  position: relative;
+  border: 0;
+  height: 860px;
+  width: 860px;
+  opacity: 0;
 }
 
 .pill {
   position: absolute;
-  left: 0;
-  right: 0;
-  /* margin: 0 auto; */
-  display: block;
-  /* background-color: gray; */
-  /* top: 0;
-  left: 0; */
-  /* width: 500px;
-  height: 500px; */
+  width: 500px;
+  height: 500px;
   z-index: 7;
 }
 
@@ -30,13 +43,11 @@
 }
 
 .image-container .image {
-  /* background-color: green; */
   position: absolute;
   top: -140px;
   right: 10px;
   display: block;
   z-index: 5;
-  /* transform: rotate(104deg); */
 }
 
 .image2 {
@@ -46,21 +57,18 @@
   margin: 0 auto;
   display: block;
   z-index: 0;
-  /* transform: rotate(100deg); */
 }
 
 .pill svg {
   display: block;
   margin: 0 auto;
   overflow: visible;
-  /* background-color: blue; */
 }
 
 #path {
   position: absolute;
   transform-box: fill-box;
   transform-origin: center;
-  /* transform: rotate(104deg); */
 }
 
 #text-path {
@@ -82,7 +90,7 @@
 }
 
 .pill--span-text:hover {
-  cursor: pointer;
+  cursor: url("../assets/HeartCursor.png"), auto;
   font-weight: 600;
   letter-spacing: 0.8px;
   fill: #ff97fd;
@@ -124,6 +132,14 @@
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   z-index: 10;
+}
+
+.hidden {
+  display: none;
+}
+
+.shown {
+  display: block;
 }
 
 /* 1440 px full width pages */

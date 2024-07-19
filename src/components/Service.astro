@@ -1,0 +1,225 @@
+---
+import "../styles/service.css";
+---
+
+<style></style>
+<div id="pill--element">
+  <div class="pill--container" id="pillRotate">
+    <div class="iframe-container">
+      <iframe
+        id="video-0"
+        class="video-frame fade"
+        style={{ transform: `rotate(0deg)` }}
+        src="https://player.vimeo.com/video/985333909?badge=0&autoplay=1&loop=1&autopause=0&controls=0&player_id=0&app_id=58479"
+      ></iframe>
+    </div>
+    <div class="iframe-container">
+      <iframe
+        id="video-1"
+        class="video-frame"
+        src="https://player.vimeo.com/video/987307124?badge=0&autoplay=1&loop=1&autopause=0&controls=0&player_id=0&player_id=0&app_id=58479"
+        style={{ transform: `rotate(270deg)` }}></iframe>
+    </div>
+    <div class="iframe-container">
+      <iframe
+        id="video-2"
+        class="video-frame"
+        src="https://player.vimeo.com/video/987307095?badge=0&autoplay=1&loop=1&autopause=0&controls=0&player_id=0&app_id=58479"
+        style={{ transform: `rotate(180deg)` }}></iframe>
+    </div>
+    <div class="iframe-container">
+      <iframe
+        id="video-3"
+        class="video-frame"
+        src="https://player.vimeo.com/video/987307108?badge=0&autoplay=1&loop=1&autopause=0&controls=0&player_id=0&app_id=58479"
+        style={{ transform: `rotate(90deg)` }}></iframe>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <clipPath id="svgPath" clipPathUnits="objectBoundingBox">
+        <path
+          id="svgPath-path"
+          fill="none"
+          stroke="none"
+          d="M 0.5 0.055 H 0.5 S 0.772 0.055 0.772 0.327 V 0.672 S 0.772 0.944 0.5 0.944 H 0.5 S 0.228 0.944 0.228 0.672 V 0.327 S 0.228 0.055 0.5 0.055 H 0.5"
+        ></path>
+      </clipPath>
+    </svg>
+    <div class="pill">
+      <svg viewBox="0 80 250 100" xmlns="http://www.w3.org/2000/svg">
+        <path
+          id="path"
+          fill="none"
+          stroke="none"
+          d="M 126.4892 2.249 H 126.4892 S
+      250.6275 2.249 250.6275 126.3875 V 283.9355 S 250.6275 408.0739 126.4892
+      408.0739 H 126.4892 S 2.351 408.0739 2.351 283.9354 V 126.3874 S 2.351
+      2.2489 126.4892 2.2489 H 126.4892 S 250.6275 2.249 250.6275 126.3875 V
+      283.9355 S 250.6275 408.0739 126.4892 408.0739 H 126.4892 S 2.351 408.0739
+      2.351 283.9354 V 126.3874 S 2.351 2.2489 126.4892 2.2489 "
+        ></path>
+        <text id="text-parent">
+          <textPath href="#path" id="text-path" startOffset="50">
+            By Hart is a
+            <tspan class="highlighted pill--span-text"> story </tspan> +
+            <tspan class="pill--span-text"> style </tspan> +
+            <tspan class="pill--span-text"> identity </tspan> +
+            <tspan class="pill--span-text"> art </tspan> +
+            <tspan class="pill--span-text"> experience </tspan> +
+            <tspan class="pill--span-text"> content </tspan> +
+            <tspan class="pill--span-text"> design </tspan> +
+            <tspan class="pill--span-text"> purpose </tspan> + actually creative
+            studio by Sarah Hartley.
+          </textPath>
+        </text>
+      </svg>
+    </div>
+  </div>
+</div>
+<script is:inline>
+  let highlightedElement = 0;
+  let animatedPosition = 0;
+  let offset = 50;
+  let previousPosition = 0;
+  let previousRotation = 20;
+  const rotations = [20, 110, 160, 290];
+
+  const pillSpans = document.getElementsByClassName("pill--span-text");
+  let previouslyHighlighted = pillSpans[0];
+
+  function handleTextMouseEnter(index) {
+    highlightedElement = index;
+    if (highlightedElement != animatedPosition) {
+      previouslyHighlighted.classList.remove("highlighted");
+    }
+  }
+
+  function handleTextMouseExit() {
+    if (highlightedElement != animatedPosition) {
+      highlightedElement = animatedPosition;
+      previouslyHighlighted.classList.add("highlighted");
+    }
+  }
+
+  function setAnimatedPosition(index) {
+    animatedPosition = index;
+    highlightedElement = index;
+    if (animatedPosition !== previousPosition) {
+      showVideo();
+      rotatePill();
+      highlightElement();
+    }
+  }
+
+  for (let i = 0; i < pillSpans.length; i++) {
+    let span = pillSpans[i];
+    span.addEventListener("mouseenter", () => {
+      handleTextMouseEnter(i);
+    });
+    span.addEventListener("mouseleave", () => {
+      handleTextMouseExit();
+    });
+    span.addEventListener("click", () => {
+      setAnimatedPosition(i);
+    });
+  }
+
+  /*     -------------------     */
+
+  function showVideo() {
+    const nextVideo = document.getElementById(`video-${animatedPosition % 4}`);
+    const previousVideo = document.getElementById(
+      `video-${previousPosition % 4}`
+    );
+    if (animatedPosition !== previousPosition) {
+      if (nextVideo) {
+        nextVideo.classList.add("fade");
+        // nextVideo.classList.add("shown");
+      }
+      if (previousVideo) {
+        // previousVideo.classList.remove("shown");
+        previousVideo.classList.remove("fade");
+      }
+    }
+  }
+
+  function getRotation(previousRot, previousPos, animatedPos) {
+    previousPos = previousPos % 4;
+    animatedPos = animatedPos % 4;
+    let newRotation = rotations[animatedPos];
+    if (animatedPos > previousPos || (animatedPos === 0 && previousPos === 3)) {
+      newRotation += Math.ceil((previousRot - newRotation) / 360) * 360;
+    }
+    if (animatedPos < previousPos) {
+      newRotation +=
+        Math.floor(Math.abs((previousRot - newRotation) / 360)) * 360;
+    }
+    if (animatedPos === 3 && previousPos === 0) {
+      newRotation -= 360;
+    }
+    return newRotation;
+  }
+
+  const textPath = document.getElementById("text-path");
+  let offsetInterval;
+
+  const createOffsetInterval = () => {
+    offsetInterval = setInterval(() => {
+      textPath.setAttribute("startOffset", offset + "%");
+      offset -= 0.02;
+      if (offset <= 0) {
+        offset = 50;
+      }
+    }, 16);
+  };
+  createOffsetInterval();
+
+  const textParent = document.getElementById("text-parent");
+  textParent.addEventListener("mouseenter", () => {
+    if (offsetInterval) {
+      clearInterval(offsetInterval);
+    }
+    if (autoInterval) {
+      clearInterval(autoInterval);
+    }
+  });
+  textParent.addEventListener("mouseleave", () => {
+    createOffsetInterval();
+    createAutoInterval();
+  });
+
+  let autoInterval;
+  const createAutoInterval = () => {
+    autoInterval = setInterval(() => {
+      highlightedElement = (highlightedElement + 1) % 8;
+      animatedPosition = (animatedPosition + 1) % 8;
+      if (animatedPosition !== previousPosition) {
+        showVideo();
+        rotatePill();
+        highlightElement();
+      }
+    }, 5000);
+  };
+  createAutoInterval();
+
+  function highlightElement() {
+    if (previouslyHighlighted) {
+      previouslyHighlighted.classList.remove("highlighted");
+    }
+    const element = pillSpans[highlightedElement];
+    element.classList.add("highlighted");
+    previouslyHighlighted = element;
+  }
+  function rotatePill() {
+    const pillContainer = document.getElementById("pillRotate");
+    const svg = document.getElementById("svgPath-path");
+    svg.style.transformOrigin = ".5px .4px";
+    let rotationAmount = getRotation(
+      previousRotation,
+      previousPosition,
+      animatedPosition
+    );
+    pillContainer.style.transform = `rotate(${rotationAmount}deg)`;
+    previousRotation = rotationAmount;
+    previousPosition = animatedPosition;
+  }
+</script>

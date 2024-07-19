@@ -85,6 +85,7 @@ export default function Service() {
     <div id="pill--element">
       <div
         className="pill--container"
+        id="pill--container"
         // style={{
         //   transform: `rotate(${getRotation(animatedPosition)}deg)`,
         // }}

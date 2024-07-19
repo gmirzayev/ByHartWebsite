@@ -1,72 +1,88 @@
 ---
-import { Image } from 'astro:assets';
-import FooterGlasses from '../assets/FooterGlasses.png';
+import { Image } from "astro:assets";
+import FooterGlasses from "../assets/FooterGlasses.png";
 ---
+
 <style>
-    footer {
-        text-align: center;
-        min-height: 100%;
-        z-index: 0;
-        background-color: #F7F4ED;
-        position: fixed;
-        overflow-y: auto;
-        inset: 0;
-    }
-    footer h1 {
-        position: relative;
-        font-family: 'utile-display', sans-serif;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 105px;
-        line-height: 120px;
-        /* identical to box height */
-        letter-spacing: 0.03em;
-        color: #363131;
-    }
-    .email-header {
-        width: 100%;
-        text-align: center;
-    }
-    .pink-background {
-        position: absolute;
-        width: 1259px;
-        height: 111px;
-        margin-left: auto;
-        margin-right: auto;
-        left: 0;
-        right: 0;
-        background: #FF97FD;
-        transform: rotate(0.88deg);
-    }
-    .glasses {
-        
-    }
-    .footer--text-container {
-        position: absolute;
-        bottom: 0;
-        display: flex;
-        justify-content: space-between;
-        text-align: left;
-        margin-left: 50px;
-    }
-    .footer--text-left {
-        width: 60%;
-        font-family: 'Karla';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 11px;
-        line-height: 17px;
-        color: #363131;
-    }
+  footer {
+    text-align: center;
+    min-height: 100%;
+    z-index: 0;
+    background-color: #f7f4ed;
+    position: fixed;
+    overflow-y: auto;
+    inset: 0;
+  }
+  footer h1 {
+    position: relative;
+    font-family: "utile-display", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 105px;
+    line-height: 120px;
+    /* identical to box height */
+    letter-spacing: 0.03em;
+    color: #363131;
+  }
+  .email-header {
+    width: 100%;
+    text-align: center;
+  }
+  .pink-background {
+    position: absolute;
+    width: 1259px;
+    height: 111px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    background: #ff97fd;
+    transform: rotate(0.88deg);
+  }
+  .glasses {
+  }
+  .footer--text-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin-left: 50px;
+  }
+  .footer--text-left {
+    width: 60%;
+    font-family: "Karla";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 17px;
+    color: #363131;
+  }
 </style>
 <footer>
-    <div class="email-header">
-        <div class="pink-background"></div>
-        <h1>getcreative@byhart.studio</h1>
-    </div>
-    <Image class="glasses" src={FooterGlasses} alt="Cutout of eyes wearing glasses."/>
-    <div class="footer--text-container">
-        <p class="footer--text-left">ADDITIONAL CREDITS: It takes a village. The vast majority of this portfolio is original work created by a dream team under Sarah Hartley's direction. There are also some reference materials and inspiration mood boards, which are an industry standard aspect of the research, conception, and pitch phases of the creative process. Please feel free to reach out if you are curious about who may be credited with any aspect of the work you see here. It's more than likely us! In the rare event it is not entirely authored by Sarah and team, we will do our very best to connect you with the source of our inspiration.</p>
-        <p class="footer--text-right">© Sarah Hartley     See Sarah Work LLC d/b/a By Hart</p>
-    </div>
+  <div class="email-header">
+    <div class="pink-background"></div>
+    <h1>getcreative@byhart.studio</h1>
+  </div>
+  <Image
+    class="glasses"
+    src={FooterGlasses}
+    alt="Cutout of eyes wearing glasses."
+  />
+  <div class="footer--text-container">
+    <p class="footer--text-left">
+      ADDITIONAL CREDITS: It takes a village. The vast majority of this
+      portfolio is original work created by a dream team under Sarah Hartley's
+      direction. There are also some reference materials and inspiration mood
+      boards, which are an industry standard aspect of the research, conception,
+      and pitch phases of the creative process. Please feel free to reach out if
+      you are curious about who may be credited with any aspect of the work you
+      see here. It's more than likely us! In the rare event it is not entirely
+      authored by Sarah and team, we will do our very best to connect you with
+      the source of our inspiration.
+    </p>
+    <p class="footer--text-right">
+      © Sarah Hartley See Sarah Work LLC d/b/a By Hart
+    </p>
+  </div>
 </footer>
