@@ -143,3 +143,20 @@
 }
 
 /* 1440 px full width pages */
+@media (max-width: 768px) {
+  #pill--element {
+    scale: 0.4;
+    overflow: visible;
+    /* width: 100vw; */
+  }
+  .pill--container {
+    height: 500px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 2s ease;
+    transform-origin: center;
+    transform: rotate(30deg);
+  }
+}

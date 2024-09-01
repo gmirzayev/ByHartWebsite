@@ -1,0 +1,402 @@
+---
+import "../styles/utils.css";
+import Image from "astro/components/Image.astro";
+import Navigation from "../components/Navigation.astro";
+import InternalLayout from "../layouts/InternalLayout.astro";
+import SageHeroVideo from "../assets/Sage/Sage_Hero_Desktop.mp4";
+import SagePhoto from "../assets/Sage/Sage_Photo.png";
+import SageSiteDesktop from "../assets/Sage/Sage_Site_Desktop.png";
+import SageSiteMobile from "../assets/Sage/Sage_Site_Mobile.png";
+import SageSocial1 from "../assets/Sage/Sage_Social_1.png";
+import SageSocial2 from "../assets/Sage/Sage_Social_2.png";
+import SageGraphic1 from "../assets/Sage/Sage_Graphic_1.png";
+import SageGraphic2 from "../assets/Sage/Sage_Graphic_2.png";
+import SageQuote from "../assets/Sage/Sage_Quote.png";
+import SageBrochure1 from "../assets/Sage/Sage_Brochure_1.png";
+import SageBrochure2 from "../assets/Sage/Sage_Brochure_2.png";
+import SageBrandGuideGrid1 from "../assets/Sage/Sage_Brand_Guide_Grid_01.png";
+import SageBrandGuideGrid2 from "../assets/Sage/Sage_Brand_Guide_Grid_02.png";
+import SageBrandGuideGrid3 from "../assets/Sage/Sage_Brand_Guide_Grid_03.png";
+import SageBrandGuideGrid4 from "../assets/Sage/Sage_Brand_Guide_Grid_04.png";
+import SageBrandGuideGrid5 from "../assets/Sage/Sage_Brand_Guide_Grid_05.png";
+import SageBrandGuideGrid6 from "../assets/Sage/Sage_Brand_Guide_Grid_06.png";
+import SageBrandGuideGrid7 from "../assets/Sage/Sage_Brand_Guide_Grid_07.png";
+import SageBrandGuideGrid8 from "../assets/Sage/Sage_Brand_Guide_Grid_08.png";
+import SageBrandGuideGrid9 from "../assets/Sage/Sage_Brand_Guide_Grid_09.png";
+import SageBrandGuideGrid10 from "../assets/Sage/Sage_Brand_Guide_Grid_10.png";
+import SageBrandGuideGrid11 from "../assets/Sage/Sage_Brand_Guide_Grid_11.png";
+import SageBrandGuideGrid12 from "../assets/Sage/Sage_Brand_Guide_Grid_12.png";
+import SageBrandGuideGrid13 from "../assets/Sage/Sage_Brand_Guide_Grid_13.png";
+import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
+---
+
+<style is:global>
+  .internal-main {
+    /* height: 100%; */
+    width: 100vw;
+    position: relative;
+    background-color: white;
+    /* overflow-x: hidden; */
+
+    /* padding-bottom: 100vh; */
+    /* position: fixed; */
+  }
+  .text-grid {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: "Karla";
+    margin-bottom: 100px;
+  }
+  .text-grid--header {
+    margin-left: 60px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  .text-grid--header p {
+    display: inline-block;
+  }
+  .text-grid--flex {
+    flex: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 250px;
+  }
+  .text-grid--flex li {
+    list-style: none;
+    width: 300px;
+    padding: 10px 0;
+  }
+  .scroll-container {
+    height: 200vh;
+  }
+  .sticky-container {
+    position: sticky;
+    top: 0;
+  }
+  .image-container {
+    text-align: center;
+  }
+  #main-video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .image-container--half {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .image--half {
+    width: 50%;
+    height: auto;
+    box-sizing: border-box;
+  }
+  .image-container--three-quarter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #1f3333;
+    padding: 120px 0;
+  }
+  .image--three-quarter {
+    width: 75%;
+    height: auto;
+    box-sizing: border-box;
+  }
+  .image-container--grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .image--grid {
+    width: 50%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  .text-two-column-centered {
+    width: 50%;
+    margin: 100px auto;
+    font-family: "Karla";
+    font-size: 1.2em;
+    line-height: 1.5em;
+    column-count: 2;
+    column-gap: 20px;
+  }
+</style>
+<InternalLayout>
+  <div class="internal-main">
+    <div class="scroll-container">
+      <div class="sticky-container">
+        <Navigation style="light" />
+        <div class="image-container">
+          <video id="main-video" autoplay loop muted>
+            <source src={SageHeroVideo} type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div class="text-grid">
+      <div class="text-grid--header">
+        <p>SAGE</p>
+        <p style={{ marginLeft: "190px" }}>WHAT WE DID</p>
+      </div>
+      <ul class="text-grid--flex">
+        <li>Brand Identity + Positioning</li>
+        <li>Logo Design</li>
+        <li>Art + Illustration</li>
+        <li>Product Design (UX/UI)</li>
+        <li>Social Content + Advertising</li>
+        <li>Interviews</li>
+        <li>Writing + Editing</li>
+        <li>Qualitative Research</li>
+        <li>Surprise + Delight</li>
+      </ul>
+    </div>
+    <Image
+      style={{
+        width: "90%",
+        height: "auto",
+        margin: "0 auto",
+        display: "block",
+      }}
+      src={SagePhoto}
+      alt="Sage Collage"
+    />
+    <div class="text-two-column-centered">
+      <p style={{ fontWeight: "bold" }}>
+        Sage Integrative Health is a haven for people to dig, discover, and
+        reveal.
+      </p>
+      <p>
+        We believe healing is a deeply personal journey that requires a
+        multifaceted and highly individualized approach. We do hard work with
+        people who have lived through hard things. We respect clients, earn
+        their trust, and let them lead their own way to mental, physical, and
+        emotional wellness via our comprehensive mind-body approach.
+      </p>
+      <p>
+        Our practice is built on clinically proven therapies—both traditional
+        and emerging, Western and Eastern, innovative and of the Earth—multiple
+        therapies working in concert, all in service of our clients’ safety,
+        comfort and well-being.
+      </p>
+      <p>
+        As a team and as individuals, we are passionately curious, always eager
+        to expand our understandings of the human spirit. We guide, grow and
+        learn together.
+      </p>
+      <p>
+        Our mission is facilitating self-actualization: Leading a life of
+        courage, confidence, and compassion. But first, we meet everyone exactly
+        where they are and let them breathe and be.
+      </p>
+      <p>
+        We are trauma-informed and sensitive, living in the real world, and
+        recognizing that individual struggle doesn't exist in a vacuum. We are
+        not afraid to address and confront complex inequities. We are
+        sympathetic and empathic to how mental health and identity intersect, as
+        many of us are trauma survivors or carry marginalized identities. Like
+        our clients, we also have needed to cultivate resilience, learning to
+        live fully and flourish through anything that may come in present or
+        future times.
+      </p>
+      <p>
+        Ultimately, we wholeheartedly believe in the power of
+        interconnectedness: with each other, the world, and the universe at
+        large. Like our namesake herb, we aspire to bloom—in sunlight or in
+        shade—while staying grounded and then, just by existing, enrich the soil
+        around us so more growth can sprout.
+      </p>
+    </div>
+    <Image
+      style={{
+        width: "60%",
+        height: "auto",
+        margin: "0 auto",
+        display: "block",
+      }}
+      src={SageSiteDesktop}
+      alt="Sage Site Desktop"
+    />
+    <Image
+      style={{
+        width: "24%",
+        height: "auto",
+        margin: "120px auto",
+        display: "block",
+        borderRadius: "25px",
+      }}
+      src={SageSiteMobile}
+      alt="Sage Site Mobile"
+    />
+    <div style={{ padding: "0 60px 100px 60px" }} class="image-container--half">
+      <Image
+        style={{ paddingRight: "20px" }}
+        class="image--half"
+        src={SageSocial1}
+        alt="Sage Social 1"
+      />
+      <Image
+        style={{ paddingLeft: "20px" }}
+        class="image--half"
+        src={SageSocial2}
+        alt="Sage Social 2"
+      />
+    </div>
+    <div style={{ padding: "0 60px 100px 60px" }} class="image-container--half">
+      <Image
+        style={{ paddingRight: "10px" }}
+        class="image--half"
+        src={SageGraphic1}
+        alt="Sage Graphic 1"
+      />
+      <Image
+        style={{ paddingLeft: "10px" }}
+        class="image--half"
+        src={SageGraphic2}
+        alt="Sage Graphic 2"
+      />
+    </div>
+    <Image class="image--half" src={SageQuote} alt="Sage Quote" />
+    <div class="image-container--three-quarter">
+      <Image
+        class="image--three-quarter"
+        src={SageBrochure1}
+        alt="Sage Brochure 1"
+      />
+      <Image
+        class="image--three-quarter"
+        src={SageBrochure2}
+        alt="Sage Brochure 2"
+      />
+    </div>
+    <div
+      class="image-container--grid"
+      style={{
+        backgroundColor: "#242121",
+        paddingTop: "60px",
+        paddingLeft: "60px",
+        paddingRight: "60px",
+      }}
+    >
+      <Image
+        class="image--grid"
+        src={SageBrandGuideGrid1}
+        alt="Sage Brand Guide Grid 1"
+      />
+      <Image
+        class="image--grid"
+        src={SageBrandGuideGrid4}
+        alt="Sage Brand Guide Grid 4"
+      />
+      <Image
+        class="image--grid"
+        src={SageBrandGuideGrid3}
+        alt="Sage Brand Guide Grid 3"
+      />
+      <Image
+        class="image--grid"
+        src={SageBrandGuideGrid5}
+        alt="Sage Brand Guide Grid 5"
+      />
+      <Image
+        class="image--grid"
+        src={SageBrandGuideGrid6}
+        alt="Sage Brand Guide Grid 6"
+      />
+      <Image
+        class="image--grid"
+        src={SageBrandGuideGrid7}
+        alt="Sage Brand Guide Grid 7"
+      />
+      <Image
+        class="image--grid"
+        src={SageBrandGuideGrid2}
+        alt="Sage Brand Guide Grid 2"
+      />
+      <Image
+        class="image--grid"
+        src={SageBrandGuideGrid8}
+        alt="Sage Brand Guide Grid 8"
+      />
+      <Image
+        class="image--grid"
+        src={SageBrandGuideGrid9}
+        alt="Sage Brand Guide Grid 9"
+      />
+      <Image
+        class="image--grid"
+        src={SageBrandGuideGrid10}
+        alt="Sage Brand Guide Grid 10"
+      />
+      <Image
+        class="image--grid"
+        src={SageBrandGuideGrid11}
+        alt="Sage Brand Guide Grid 11"
+      />
+      <Image
+        class="image--grid"
+        src={SageBrandGuideGrid12}
+        alt="Sage Brand Guide Grid 12"
+      />
+      <Image
+        class="image--grid"
+        src={SageBrandGuideGrid13}
+        alt="Sage Brand Guide Grid 13"
+      />
+      <Image
+        class="image--grid"
+        src={SageBrandGuideGrid14}
+        alt="Sage Brand Guide Grid 14"
+      />
+    </div>
+  </div>
+</InternalLayout>
+<script>
+  const image = document.getElementById("main-video");
+  let currentScroll = window.scrollY;
+
+  const minScroll = 0; // minimum scroll value
+  const maxScroll = 800;
+  const minWidth = 20; // minimum range value
+  const maxWidth = 100;
+
+  // const range =
+  //   ((currentScroll - minScroll) / (maxWidth - minScroll)) *
+  //     (maxRange - minRange) +
+  //   minRange;
+  // console.log(range);
+
+  // let imageWidth = 0.5 + currentScroll / maxWidth;
+  //   image.style.transform = `scale(${imageScale})`;
+  //   image.style.width = "20vw";
+
+  const getScrollScale = () => {
+    let currentScroll = window.scrollY;
+    if (currentScroll > 800) {
+      currentScroll = 800;
+    }
+    const rangeValue =
+      ((currentScroll - minScroll) / (maxScroll - minScroll)) *
+        (maxWidth - minWidth) +
+      minWidth;
+    // console.log(rangeValue);
+    return rangeValue;
+  };
+
+  let widthScale = getScrollScale();
+  image.style.width = `${widthScale}vw`;
+
+  document.addEventListener("scroll", (event) => {
+    //slow down scrolling so image doesn't grow as fast
+    let widthScale = getScrollScale();
+    // imageScale = 0.5 + currentScroll / totalWidth;
+    image.style.width = `${widthScale}vw`;
+  });
+</script>

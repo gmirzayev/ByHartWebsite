@@ -11,28 +11,31 @@ import "../styles/service.css";
         class="video-frame fade"
         style={{ transform: `rotate(0deg)` }}
         src="https://player.vimeo.com/video/985333909?badge=0&autoplay=1&loop=1&autopause=0&controls=0&player_id=0&app_id=58479"
-      ></iframe>
+        allow="autoplay"></iframe>
     </div>
     <div class="iframe-container">
       <iframe
         id="video-1"
         class="video-frame"
         src="https://player.vimeo.com/video/987307124?badge=0&autoplay=1&loop=1&autopause=0&controls=0&player_id=0&player_id=0&app_id=58479"
-        style={{ transform: `rotate(270deg)` }}></iframe>
+        style={{ transform: `rotate(270deg)` }}
+        allow="autoplay"></iframe>
     </div>
     <div class="iframe-container">
       <iframe
         id="video-2"
         class="video-frame"
         src="https://player.vimeo.com/video/987307095?badge=0&autoplay=1&loop=1&autopause=0&controls=0&player_id=0&app_id=58479"
-        style={{ transform: `rotate(180deg)` }}></iframe>
+        style={{ transform: `rotate(180deg)` }}
+        allow="autoplay"></iframe>
     </div>
     <div class="iframe-container">
       <iframe
         id="video-3"
         class="video-frame"
         src="https://player.vimeo.com/video/987307108?badge=0&autoplay=1&loop=1&autopause=0&controls=0&player_id=0&app_id=58479"
-        style={{ transform: `rotate(90deg)` }}></iframe>
+        style={{ transform: `rotate(90deg)` }}
+        allow="autoplay"></iframe>
     </div>
     <svg xmlns="http://www.w3.org/2000/svg">
       <clipPath id="svgPath" clipPathUnits="objectBoundingBox">
@@ -190,6 +193,7 @@ import "../styles/service.css";
   let autoInterval;
   const createAutoInterval = () => {
     autoInterval = setInterval(() => {
+      if (document.hidden) return;
       highlightedElement = (highlightedElement + 1) % 8;
       animatedPosition = (animatedPosition + 1) % 8;
       if (animatedPosition !== previousPosition) {
