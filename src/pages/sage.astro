@@ -4,6 +4,13 @@ import Image from "astro/components/Image.astro";
 import Navigation from "../components/Navigation.astro";
 import InternalLayout from "../layouts/InternalLayout.astro";
 import SageHeroVideo from "../assets/Sage/Sage_Hero_Desktop.mp4";
+import BreatheVideo from "../assets/Sage/Breathe_Desktop.mp4";
+import WeAreVideo from "../assets/Sage/We_Are_Desktop.mp4";
+import SocialVideo from "../assets/Sage/Social_Carousel.mp4";
+import CompVideo from "../assets/Sage/Comp_1.mp4";
+import StoryVideo from "../assets/Sage/Story_Social_2.mp4";
+import SageStorySocial1 from "../assets/Sage/Story_Social_1.png";
+import SageStorySocial3 from "../assets/Sage/Story_Social_3.png";
 import SagePhoto from "../assets/Sage/Sage_Photo.png";
 import SageSiteDesktop from "../assets/Sage/Sage_Site_Desktop.png";
 import SageSiteMobile from "../assets/Sage/Sage_Site_Mobile.png";
@@ -31,15 +38,10 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
 ---
 
 <style is:global>
-  .internal-main {
-    /* height: 100%; */
-    width: 100vw;
+  .sage-main {
+    width: 100%;
     position: relative;
-    background-color: white;
-    /* overflow-x: hidden; */
-
-    /* padding-bottom: 100vh; */
-    /* position: fixed; */
+    background-color: #f7f4ed;
   }
   .text-grid {
     width: 50%;
@@ -84,12 +86,22 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    /* width: 50%; */
   }
   .image-container--half {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+  }
+  .image-container--third {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .image-third {
+    width: 33%;
+    height: auto;
+    box-sizing: border-box;
   }
   .image--half {
     width: 50%;
@@ -130,11 +142,11 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
   }
 </style>
 <InternalLayout>
-  <div class="internal-main">
+  <div class="sage-main">
     <div class="scroll-container">
       <div class="sticky-container">
         <Navigation style="light" />
-        <div class="image-container">
+        <div style={{ marginTop: "100px" }} class="image-container">
           <video id="main-video" autoplay loop muted>
             <source src={SageHeroVideo} type="video/mp4" />
           </video>
@@ -249,7 +261,56 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
         alt="Sage Social 2"
       />
     </div>
-    <div style={{ padding: "0 60px 100px 60px" }} class="image-container--half">
+    <video
+      autoplay
+      loop
+      muted
+      style={{ marginBottom: "120px", width: "100vw" }}
+    >
+      <source src={BreatheVideo} type="video/mp4" />
+    </video>
+    <div
+      class="image-container--third"
+      style={{
+        padding: "0 60px",
+        marginBottom: "120px",
+      }}
+    >
+      <Image
+        src={SageStorySocial1}
+        class="image-third"
+        alt="Sage Story Social 1"
+      />
+      <video
+        class="image-third"
+        style={{ borderRadius: "5px" }}
+        autoplay
+        loop
+        muted
+      >
+        <source src={StoryVideo} type="video/mp4" />
+      </video>
+      <Image
+        src={SageStorySocial3}
+        class="image-third"
+        alt="Sage Story Social 3"
+      />
+    </div>
+    <video
+      autoplay
+      loop
+      muted
+      style={{ marginBottom: "120px", width: "100vw" }}
+    >
+      <source src={WeAreVideo} type="video/mp4" />
+    </video>
+    <div
+      style={{
+        padding: "0 60px",
+        marginBottom: "140px",
+      }}
+      class="image-container--half"
+    >
       <Image
         style={{ paddingRight: "10px" }}
         class="image--half"
@@ -263,7 +324,12 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
         alt="Sage Graphic 2"
       />
     </div>
-    <Image class="image--half" src={SageQuote} alt="Sage Quote" />
+    <div style={{ marginBottom: "24px" }} class="image-container--half">
+      <Image class="image--half" src={SageQuote} alt="Sage Quote" />
+      <video autoplay loop muted class="image--half">
+        <source src={SocialVideo} type="video/mp4" />
+      </video>
+    </div>
     <div class="image-container--three-quarter">
       <Image
         class="image--three-quarter"
@@ -276,6 +342,9 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
         alt="Sage Brochure 2"
       />
     </div>
+    <video autoplay loop muted style={{ margin: "24px 0", width: "100vw" }}>
+      <source src={CompVideo} type="video/mp4" />
+    </video>
     <div
       class="image-container--grid"
       style={{
