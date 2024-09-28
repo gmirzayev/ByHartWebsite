@@ -76,6 +76,22 @@ import Illustration from "../assets/Illustration.gif";
     border-radius: 5.87px;
   }
 
+  .tooltip {
+    position: absolute;
+    background-color: #f7eee3;
+    color: black;
+    font-family: Karla;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    border-radius: 35px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+    rotate: -15deg;
+  }
+
   @media screen and (max-width: 767px) {
     .image-grid--column {
       width: 46%;
@@ -93,6 +109,7 @@ import Illustration from "../assets/Illustration.gif";
         <img
           src={Wizehire.src}
           class="grid-image"
+          data-tooltip="WIZEHIRE"
           alt="Pizza being made through a cutout in the shape of a face on a purple rectangle."
         />
       </a>
@@ -101,6 +118,7 @@ import Illustration from "../assets/Illustration.gif";
         <img
           src={Lockwood.src}
           class="grid-image"
+          data-tooltip="LOCKWOOD"
           alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
         />
       </a>
@@ -405,7 +423,29 @@ import Illustration from "../assets/Illustration.gif";
       </a>
     </div>
   </div>
+  <div id="tooltip" class="tooltip"></div>
 </div>
+<script>
+  const tooltip = document.getElementById("tooltip");
+  const imageContainers = document.querySelectorAll(".grid-image");
+
+  imageContainers.forEach((container) => {
+    container.addEventListener("mouseenter", (event: MouseEvent) => {
+      const tooltipText = event.currentTarget.getAttribute("data-tooltip");
+      tooltip.innerText = tooltipText;
+      tooltip.style.opacity = "1";
+    });
+
+    container.addEventListener("mousemove", (event: MouseEvent) => {
+      tooltip.style.top = `${event.pageY - 10}px`;
+      tooltip.style.left = `${event.pageX}px`;
+    });
+
+    container.addEventListener("mouseleave", () => {
+      tooltip.style.opacity = "0";
+    });
+  });
+</script>
 <!-- <script is:inline>
   // Create a condition that targets viewports at least 768px wide
   const mediaQuery = window.matchMedia('(min-width: 768px)')
