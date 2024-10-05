@@ -5,7 +5,7 @@ import Logo from "../assets/HomeLogo.png";
 import DarkLogo from "../assets/LogoDark.png";
 import HeartDropdown from "../assets/HeartDropdown.png";
 import CloseButton from "../assets/CloseButton.png";
-const { style } = Astro.props;
+const { theme } = Astro.props;
 ---
 
 <style>
@@ -70,28 +70,33 @@ const { style } = Astro.props;
     letter-spacing: 0;
     margin-bottom: 50px;
   }
+
   .nav-link--email-button {
     color: black;
     background-color: #ff97fd;
     padding: 10px 20px;
     font-size: 16px;
   }
+
   .mobile-nav-link--email {
     color: white;
     font-size: 16px;
     letter-spacing: 0;
     font-weight: normal;
   }
+
   .mobile-nav-container {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   .dropdown-close {
     position: absolute;
     top: 20px;
     right: 20px;
   }
+
   .desktop-nav {
     display: flex;
     align-items: center;
@@ -168,7 +173,7 @@ const { style } = Astro.props;
       display: flex;
     }
     .nav-link:hover::after {
-      content: "SARAH + SERVICES";
+      content: attr(data-hover);
       position: absolute;
       bottom: -50px;
       left: -30px;
@@ -191,7 +196,15 @@ const { style } = Astro.props;
 <header>
   <nav id="main-nav">
     <div id="mobile-nav" class="mobile-nav-flex">
-      <a><Image class="logo" src={Logo} alt="The letter H." /></a>
+      <a href="/"
+        >{
+          theme == "light" ? (
+            <Image class="logo" src={DarkLogo} alt="The letter H." />
+          ) : (
+            <Image class="logo" src={Logo} alt="The letter H." />
+          )
+        }</a
+      >
       <button
         id="dropdown-toggle"
         class="mobile-dropdown-toggle"
@@ -212,14 +225,22 @@ const { style } = Astro.props;
     </div>
     <div
       class="desktop-nav"
-      style={{ color: `${style == "light" ? "black" : "white"}` }}
+      style={{ color: `${theme == "light" ? "black" : "white"}` }}
     >
-      <a style={{ marginRight: "80px" }}
-        ><Image class="logo" src={Logo} alt="The letter H." /></a
+      <a href="/" style={{ marginRight: "80px" }}>
+        {
+          theme == "light" ? (
+            <Image class="logo" src={DarkLogo} alt="The letter H." />
+          ) : (
+            <Image class="logo" src={Logo} alt="The letter H." />
+          )
+        }</a
       >
-      <a class="nav-link">SEE <span>BY HART</span></a>
-      <a class="nav-link">KNOW <span>BY HART</span></a>
-      <a class="nav-link">SPEAK <span>BY HART</span></a>
+      <a class="nav-link" data-hover="PORTFOLIO">SEE <span>BY HART</span></a>
+      <a class="nav-link" data-hover="SARAH + SERVICES"
+        >KNOW <span>BY HART</span></a
+      >
+      <a class="nav-link" data-hover="CONTACT">SPEAK <span>BY HART</span></a>
       <!-- <div class="mobile-nav-container"> -->
 
       <!-- </div> -->

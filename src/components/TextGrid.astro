@@ -5,17 +5,34 @@ const { title } = Astro.props;
 <style is:global>
   .text-grid {
     width: 50%;
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "a b" "c d";
+    align-items: start;
     font-family: "Karla";
     margin-bottom: 100px;
+    margin-left: 50px;
   }
-  .text-grid--header {
+  .item1 {
+    grid-area: a;
+  }
+  .item2 {
+    grid-area: b;
+  }
+  .item3 {
+    grid-area: c;
+  }
+  .item4 {
+    grid-area: d;
+  }
+  /* .text-grid--header {
     margin-left: 60px;
     margin-top: 10px;
     font-weight: bold;
-  }
+  } */
   .text-grid--header p {
     display: inline-block;
   }
@@ -25,20 +42,29 @@ const { title } = Astro.props;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin-left: 250px;
+    padding-left: 0px;
   }
   .text-grid--flex li {
     list-style: none;
     width: 300px;
     padding: 10px 0;
   }
+  @media screen and (max-width: 767px) {
+    .text-grid--header > p.brand-name {
+      display: none;
+    }
+    .sub-header {
+    }
+    .text-grid--flex {
+      flex-wrap: nowrap;
+      margin-left: 10px;
+    }
+  }
 </style>
 <div class="text-grid">
-  <div class="text-grid--header">
-    <p>{title}</p>
-    <p style={{ marginLeft: "190px" }}>WHAT WE DID</p>
-  </div>
-  <ul class="text-grid--flex">
+  <p class="brand-name item1">{title}</p>
+  <p class="sub-header item2">WHAT WE DID</p>
+  <ul class="text-grid--flex item4">
     <slot />
   </ul>
 </div>

@@ -1,5 +1,6 @@
 ---
 import "../styles/utils.css";
+import TextGrid from "../components/TextGrid.astro";
 import Image from "astro/components/Image.astro";
 import Navigation from "../components/Navigation.astro";
 import InternalLayout from "../layouts/InternalLayout.astro";
@@ -42,35 +43,6 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
     width: 100%;
     position: relative;
     background-color: #f7f4ed;
-  }
-  .text-grid {
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    font-family: "Karla";
-    margin-bottom: 100px;
-  }
-  .text-grid--header {
-    margin-left: 60px;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  .text-grid--header p {
-    display: inline-block;
-  }
-  .text-grid--flex {
-    flex: 100%;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin-left: 250px;
-  }
-  .text-grid--flex li {
-    list-style: none;
-    width: 300px;
-    padding: 10px 0;
   }
   .scroll-container {
     height: 200vh;
@@ -140,12 +112,28 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
     column-count: 2;
     column-gap: 20px;
   }
+  .collage-image {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+  @media screen and (max-width: 767px) {
+    .text-two-column-centered {
+      column-count: 1;
+      margin: 100px auto;
+      width: 85%;
+    }
+    .collage-image {
+      margin: 200px auto 0 auto;
+    }
+  }
 </style>
 <InternalLayout>
   <div class="sage-main">
     <div class="scroll-container">
       <div class="sticky-container">
-        <Navigation style="light" />
+        <Navigation theme="light" />
         <div style={{ marginTop: "100px" }} class="image-container">
           <video id="main-video" autoplay loop muted>
             <source src={SageHeroVideo} type="video/mp4" />
@@ -153,35 +141,20 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
         </div>
       </div>
     </div>
-    <div class="text-grid">
-      <div class="text-grid--header">
-        <p>SAGE</p>
-        <p style={{ marginLeft: "190px" }}>WHAT WE DID</p>
-      </div>
-      <ul class="text-grid--flex">
-        <li>Brand Identity + Positioning</li>
-        <li>Logo Design</li>
-        <li>Art + Illustration</li>
-        <li>Product Design (UX/UI)</li>
-        <li>Social Content + Advertising</li>
-        <li>Interviews</li>
-        <li>Writing + Editing</li>
-        <li>Qualitative Research</li>
-        <li>Surprise + Delight</li>
-      </ul>
-    </div>
-    <Image
-      style={{
-        width: "90%",
-        height: "auto",
-        margin: "0 auto",
-        display: "block",
-      }}
-      src={SagePhoto}
-      alt="Sage Collage"
-    />
+    <TextGrid title="SAGE">
+      <li>Brand Identity + Positioning</li>
+      <li>Logo Design</li>
+      <li>Art + Illustration</li>
+      <li>Product Design (UX/UI)</li>
+      <li>Social Content + Advertising</li>
+      <li>Interviews</li>
+      <li>Writing + Editing</li>
+      <li>Qualitative Research</li>
+      <li>Surprise + Delight</li>
+    </TextGrid>
+    <Image class="collage-image" src={SagePhoto} alt="Sage Collage" />
     <div class="text-two-column-centered">
-      <p style={{ fontWeight: "bold" }}>
+      <p style={{ fontWeight: "bold", fontSize: "26px", lineHeight: "38px" }}>
         Sage Integrative Health is a haven for people to dig, discover, and
         reveal.
       </p>

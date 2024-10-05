@@ -1,36 +1,36 @@
 ---
-import Ample from "../assets/Ample.png";
-import ComicsKingdom from "../assets/Comics_Kingdom.gif";
-import Wizehire from "../assets/Wizehire.gif";
-import Week from "../assets/Week.gif";
-import DancePartyTime from "../assets/Dance_Party_Time.png";
-import MetroVein from "../assets/Metro_Vein.gif";
-import Lockwood from "../assets/Lockwood.png";
-import PuzzlePalace from "../assets/Puzzle_Palace.png";
-import Sage from "../assets/Sage.png";
-import SixFeet from "../assets/6_Feet_Apart.png";
-import Blueprint from "../assets/Blueprint.gif";
-import Discovery from "../assets/Discovery.gif";
-import Fab from "../assets/Fab.gif";
-import GeniusKitchen from "../assets/Genius_Kitchen.png";
-import Horowitz from "../assets/Horowitz_Real_Estate.png";
-import Kindra from "../assets/Kindra.gif";
-import Magnolia from "../assets/Magnolia.png";
-import Nightingale from "../assets/Nightingale.png";
-import PearlyBites from "../assets/Pearly_Bites.png";
-import TheCurve from "../assets/The_Curve.png";
-import SayMore from "../assets/Say_More.png";
-import Archive from "../assets/Archive.png";
-import Firefly from "../assets/Firefly.png";
-import PetCenter from "../assets/Pet_Center.png";
-import HGTV2 from "../assets/HGTV_2.gif";
-import Photography from "../assets/Photography.png";
-import PresentationsAlt from "../assets/Presentations_ALT.png";
-import SarahVideo from "../assets/Sarah_Video.png";
-import WordOnly from "../assets/Word_Only.png";
-import Reach from "../assets/Reach.png";
-import ApartmentTherapy from "../assets/Apartment_Therapy.png";
-import Illustration from "../assets/Illustration.gif";
+import Ample from "../assets/Home/Ample.png";
+import ComicsKingdom from "../assets/Home/Comics_Kingdom.gif";
+import Wizehire from "../assets/Home/Wizehire.gif";
+import Week from "../assets/Home/Week.gif";
+import DancePartyTime from "../assets/Home/Dance_Party_Time.png";
+import MetroVein from "../assets/Home/Metro_Vein.gif";
+import Lockwood from "../assets/Home/Lockwood.png";
+import PuzzlePalace from "../assets/Home/Puzzle_Palace.png";
+import Sage from "../assets/Home/Sage.png";
+import SixFeet from "../assets/Home/6_Feet_Apart.png";
+import Blueprint from "../assets/Home/Blueprint.gif";
+import Discovery from "../assets/Home/Discovery.gif";
+import Fab from "../assets/Home/Fab.gif";
+import GeniusKitchen from "../assets/Home/Genius_Kitchen.png";
+import Horowitz from "../assets/Home/Horowitz_Real_Estate.png";
+import Kindra from "../assets/Home/Kindra.gif";
+import Magnolia from "../assets/Home/Magnolia.png";
+import Nightingale from "../assets/Home/Nightingale.png";
+import PearlyBites from "../assets/Home/Pearly_Bites.png";
+import TheCurve from "../assets/Home/The_Curve.png";
+import SayMore from "../assets/Home/Say_More.png";
+import Archive from "../assets/Home/Archive.png";
+import Firefly from "../assets/Home/Firefly.png";
+import PetCenter from "../assets/Home/Pet_Center.png";
+import HGTV2 from "../assets/Home/HGTV_2.gif";
+import Photography from "../assets/Home/Photography.png";
+import PresentationsAlt from "../assets/Home/Presentations_ALT.png";
+import SarahVideo from "../assets/Home/Sarah_Video.png";
+import WordOnly from "../assets/Home/Word_Only.png";
+import Reach from "../assets/Home/Reach.png";
+import ApartmentTherapy from "../assets/Home/Apartment_Therapy.png";
+import Illustration from "../assets/Home/Illustration.gif";
 ---
 
 <style is:global>
@@ -76,20 +76,22 @@ import Illustration from "../assets/Illustration.gif";
     border-radius: 5.87px;
   }
 
-  .tooltip {
-    position: absolute;
-    background-color: #f7eee3;
-    color: black;
-    font-family: Karla;
-    font-size: 14px;
-    letter-spacing: 2px;
-    padding: 10px 20px;
-    border-radius: 35px;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    white-space: nowrap;
-    rotate: -15deg;
+  @media screen and (min-width: 767px) {
+    .tooltip {
+      position: absolute;
+      background-color: #f7eee3;
+      color: black;
+      font-family: Karla;
+      font-size: 14px;
+      letter-spacing: 2px;
+      padding: 10px 20px;
+      border-radius: 35px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      white-space: nowrap;
+      rotate: -15deg;
+    }
   }
 
   @media screen and (max-width: 767px) {
@@ -135,6 +137,7 @@ import Illustration from "../assets/Illustration.gif";
         <img
           src={PearlyBites.src}
           class="grid-image"
+          data-tooltip="PEARLY BITES"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
       </a>
@@ -275,6 +278,7 @@ import Illustration from "../assets/Illustration.gif";
         <img
           src={ComicsKingdom.src}
           class="grid-image"
+          data-tooltip="COMICS KINGDOM"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
       </a>
@@ -283,6 +287,7 @@ import Illustration from "../assets/Illustration.gif";
         <img
           src={Sage.src}
           class="grid-image"
+          data-tooltip="SAGE"
           alt="Pizza being made through a cutout in the shape of a face on a purple rectangle."
         />
       </a>

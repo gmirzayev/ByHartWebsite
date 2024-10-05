@@ -1,0 +1,232 @@
+---
+import "../styles/utils.css";
+import InternalLayout from "../layouts/InternalLayout.astro";
+import TextGrid from "../components/TextGrid.astro";
+import ScrollImage from "../components/ScrollImage.astro";
+import Image from "astro/components/Image.astro";
+import CKAnimation from "../assets/ComicsKingdom/CK_Animation.mp4";
+import LogoIllustrationDesktop from "../assets/ComicsKingdom/CK_Logo_Illustration_Desktop.png";
+import LogoIllustrationMobile from "../assets/ComicsKingdom/CK_Logo_Illustration_Mobile.png";
+import AppDesktop from "../assets/ComicsKingdom/CK_App_Desktop.png";
+import AppMobile from "../assets/ComicsKingdom/CK_App_Mobile.png";
+import IconsDesktop from "../assets/ComicsKingdom/CK_Icons_Desktop.png";
+import IconsMobile from "../assets/ComicsKingdom/CK_Icons_Mobile.png";
+import Creator from "../assets/ComicsKingdom/CK_App_Creator.png";
+import Home from "../assets/ComicsKingdom/CK_App_Home.png";
+import Cat from "../assets/ComicsKingdom/CK_Cat.mp4";
+import Friends from "../assets/ComicsKingdom/CK_Friends.mp4";
+import Social from "../assets/ComicsKingdom/CK_Social.png";
+import Email from "../assets/ComicsKingdom/CK_Email.png";
+import Mark from "../assets/ComicsKingdom/CK_Mark.png";
+import Book from "../assets/ComicsKingdom/CK_Book.png";
+---
+
+<style>
+  #comics-main {
+    width: 100%;
+    background-color: #f7f4ed;
+  }
+  .image-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .image-92 {
+    width: 92%;
+    height: auto;
+  }
+  .image-73 {
+    width: 73%;
+    height: auto;
+  }
+  .image-66 {
+    width: 66%;
+    height: auto;
+  }
+  .image-100 {
+    width: 100%;
+    height: auto;
+  }
+  .image-50 {
+    width: 50%;
+    height: auto;
+  }
+  .image-42 {
+    width: 42%;
+    height: auto;
+  }
+  .image-58 {
+    width: 58%;
+    height: auto;
+  }
+  .image-47 {
+    width: 47%;
+    height: auto;
+  }
+  .social-background {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-image: url("../assets/ComicsKingdom/RedBG.png");
+    padding: 100px 0;
+  }
+
+  .image-container-half {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .image-22 {
+    width: 22%;
+    height: auto;
+    margin-left: 60px;
+    padding-bottom: 100px;
+  }
+
+  .textbox {
+    text-align: center;
+  }
+  .hidden {
+    display: none;
+  }
+  .dark-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../assets/ComicsKingdom/CharcoalBG.png");
+    background-repeat: repeat;
+    background-size: auto;
+  }
+  h1 {
+    font-family: "Filson Pro";
+    font-weight: bold;
+    font-size: 72px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+  #video-container {
+    width: 100%;
+    position: relative;
+    height: max-content;
+  }
+  #play-button {
+    position: absolute;
+    display: none;
+    left: calc(50% - 50px);
+    top: calc(50% - 27px);
+    width: 100px;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff97fd;
+    transform: rotate(1.75deg);
+    border: 1px solid black;
+    font-size: 21px;
+    font-family: "Karla";
+    letter-spacing: 2px;
+    pointer-events:;
+  }
+  #custom-video {
+    width: 100%;
+  }
+  @media screen and (max-width: 767px) {
+    h1 {
+      margin-top: 45px;
+      margin-bottom: 45px;
+    }
+  }
+</style>
+<InternalLayout>
+  <div id="comics-main">
+    <ScrollImage theme="light" />
+    <TextGrid title="COMICS KINGDOM">
+      <li>Brand Identity + Positioning</li>
+      <li>Logo Design</li>
+      <li>Video + Photography</li>
+      <li>Writing + Editing</li>
+      <li>Surprise + Delight</li>
+      <li>Art + Illustration</li>
+      <li>Product Design (UX/UI)</li>
+      <li>Social Content + Advertising</li>
+      <li>Interviews</li>
+      <li>Qualitative Research</li>
+    </TextGrid>
+    <div class="image-flex">
+      <div id="video-container">
+        <video class="image-92" id="custom-video" loop>
+          <source src={CKAnimation} type="video/mp4" />
+        </video>
+        <div id="play-button">PLAY</div>
+      </div>
+      <Image
+        class="image-100"
+        src={LogoIllustrationDesktop}
+        alt="Comics Kingdom"
+      />
+      <Image
+        class="image-92 hidden"
+        src={LogoIllustrationMobile}
+        alt="Comics Kingdom"
+      />
+      <Image class="image-100" src={AppDesktop} alt="Comics Kingdom" />
+      <Image class="image-92 hidden" src={AppMobile} alt="Comics Kingdom" />
+      <div class="dark-container">
+        <Image class="image-50" src={IconsDesktop} alt="Comics Kingdom" />
+        <Image class="hidden" src={IconsMobile} alt="Comics Kingdom" />
+        <Image class="image-58" src={Creator} alt="Comics Kingdom" />
+        <Image class="image-66" src={Home} alt="Comics Kingdom" />
+      </div>
+      <video loop style={{ marginBottom: "120px", width: "40%" }}>
+        <source src={Cat} type="video/mp4" />
+      </video>
+      <div style={{ backgroundColor: "white", width: "100%" }}>
+        <video loop style={{ marginBottom: "120px", width: "100vw" }}>
+          <source src={Friends} type="video/mp4" />
+        </video>
+      </div>
+      <div class="social-background">
+        <Image class="image-47" src={Social} alt="Comics Kingdom" />
+      </div>
+      <Image
+        class="image-58"
+        style={{ margin: "180px 0" }}
+        src={Email}
+        alt="Comics Kingdom"
+      />
+      <div class="image-container-half">
+        <Image class="image-22" src={Mark} alt="Comics Kingdom" />
+        <Image class="image-50" src={Book} alt="Comics Kingdom" />
+      </div>
+    </div>
+  </div>
+</InternalLayout>
+<script>
+  const videoContainer = document.getElementById("video-container");
+  const video = document.getElementById("custom-video") as HTMLVideoElement;
+  const playButton = document.getElementById("play-button");
+  // Event listener for the play/pause button
+  videoContainer.addEventListener("mouseenter", (event) => {
+    playButton.style.display = "flex";
+  });
+  videoContainer.addEventListener("mouseleave", (event) => {
+    playButton.style.display = "none";
+  });
+  playButton.addEventListener("click", (event) => {
+    if (video.paused == true) {
+      // Play the video
+      video.play();
+
+      // Update the button text to 'Pause'
+      playButton.innerHTML = "PAUSE";
+    } else {
+      // Pause the video
+      video.pause();
+
+      // Update the button text to 'Play'
+      playButton.innerHTML = "PLAY";
+    }
+  });
+</script>

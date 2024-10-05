@@ -20,3 +20,10 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Filson Pro";
+  src: url("/fonts/FilsonProBold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
