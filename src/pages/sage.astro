@@ -19,6 +19,8 @@ import SageSocial1 from "../assets/Sage/Sage_Social_1.png";
 import SageSocial2 from "../assets/Sage/Sage_Social_2.png";
 import SageGraphic1 from "../assets/Sage/Sage_Graphic_1.png";
 import SageGraphic2 from "../assets/Sage/Sage_Graphic_2.png";
+import SageIcon1 from "../assets/Sage/Sage_Graphic_Icon1.png";
+import SageIcon2 from "../assets/Sage/Sage_Graphic_Icon2.png";
 import SageQuote from "../assets/Sage/Sage_Quote.png";
 import SageBrochure1 from "../assets/Sage/Sage_Brochure_1.png";
 import SageBrochure2 from "../assets/Sage/Sage_Brochure_2.png";
@@ -53,6 +55,8 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
   }
   .image-container {
     text-align: center;
+    z-index: 100;
+    position: relative;
   }
   #main-video {
     display: block;
@@ -64,6 +68,9 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+  }
+  .image-container--half-mobile {
+    padding: 0 60px 100px 60px;
   }
   .image-container--third {
     display: flex;
@@ -96,6 +103,10 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin: 0;
+    /* background-color: #242121; */
+    padding-left: 60px;
+    padding-right: 60px;
   }
   .image--grid {
     width: 50%;
@@ -103,8 +114,12 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
     box-sizing: border-box;
     padding: 10px;
   }
+  .story-social {
+    padding: 0 60px;
+    margin-bottom: 120px;
+  }
 
-  .text-two-column-centered { 
+  .text-two-column-centered {
     width: 60%;
     margin: 100px auto;
     font-family: "Karla";
@@ -119,17 +134,62 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
     margin: 0 auto;
     display: block;
   }
+  .image--sage-mobile {
+    width: 24%;
+    height: auto;
+    margin: 120px auto;
+    display: block;
+    border-radius: 20px;
+  }
+  .breathe-video {
+    margin-bottom: 120px;
+    width: 100%;
+  }
+  .grid-text-container {
+    color: white;
+    font-family: "Karla";
+    margin-left: 30px;
+    font-size: 16px;
+  }
+  .grid-brand {
+    font-weight: bold;
+    display: inline-block;
+    letter-spacing: 3px;
+  }
+  .grid-brand-follow {
+    display: inline-block;
+    margin-left: 20px;
+    letter-spacing: 1px;
+  }
   @media screen and (max-width: 767px) {
     .text-two-column-centered {
       column-count: 1;
-      margin: 100px auto;
+      margin: 45px auto;
       width: 85%;
     }
     .collage-image {
-      margin: 200px auto 0 auto;
+      margin: 45px auto 0 auto;
     }
     .image--sage-mobile {
-      width: 60% !important;
+      width: 60%;
+      margin: 45px auto;
+    }
+    .image-container--half-mobile {
+      padding: 0 20px 45px 20px;
+    }
+    .breathe-video {
+      margin-bottom: 45px;
+    }
+    .story-social {
+      margin-bottom: 45px;
+      padding: 0 20px;
+    }
+    .image-container--three-quarter {
+      padding: 45px 0;
+    }
+    .image-container--grid {
+      padding-left: 20px;
+      padding-right: 20px;
     }
   }
 </style>
@@ -138,7 +198,7 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
     <div class="scroll-container">
       <div class="sticky-container">
         <Navigation theme="light" />
-        <div style={{ marginTop: "100px" }} class="image-container">
+        <div style={{ marginTop: "200px" }} class="image-container">
           <video id="main-video" autoplay loop muted>
             <source src={SageHeroVideo} type="video/mp4" />
           </video>
@@ -158,7 +218,14 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
     </TextGrid>
     <Image class="collage-image" src={SagePhoto} alt="Sage Collage" />
     <div class="text-two-column-centered">
-      <p style={{ fontWeight: "bold", fontSize: "26px", lineHeight: "38px", margin: "0" }}>
+      <p
+        style={{
+          fontWeight: "bold",
+          fontSize: "26px",
+          lineHeight: "38px",
+          margin: "0",
+        }}
+      >
         Sage Integrative Health is a haven for people to dig, discover, and
         reveal.
       </p>
@@ -209,51 +276,48 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
         height: "auto",
         margin: "0 auto",
         display: "block",
-        borderRadius: "5px"
+        borderRadius: "5px",
       }}
       src={SageSiteDesktop}
       alt="Sage Site Desktop"
     />
-    <Image class="image--sage-mobile"
-      style={{
-        width: "24%",
-        height: "auto",
-        margin: "120px auto",
-        display: "block",
-        borderRadius: "20px",
-      }}
+    <Image
+      class="image--sage-mobile"
       src={SageSiteMobile}
       alt="Sage Site Mobile"
     />
-    <div style={{ padding: "0 60px 100px 60px" }} class="image-container--half">
+    <div class="image-container--half image-container--half-mobile">
       <Image
-        style={{ paddingRight: "20px" }}
+        style={{ paddingRight: "1%" }}
         class="image--half"
         src={SageSocial1}
         alt="Sage Social 1"
       />
       <Image
-        style={{ paddingLeft: "20px" }}
+        style={{ paddingLeft: "1%" }}
         class="image--half"
         src={SageSocial2}
         alt="Sage Social 2"
       />
     </div>
-    <video
-      autoplay
-      loop
-      muted
-      style={{ marginBottom: "120px", width: "100vw" }}
-    >
+    <video autoplay loop muted class="breathe-video">
       <source src={BreatheVideo} type="video/mp4" />
     </video>
-    <div
-      class="image-container--third"
-      style={{
-        padding: "0 60px",
-        marginBottom: "120px",
-      }}
-    >
+    <div class="image-container--half image-container--half-mobile">
+      <Image
+        style={{ paddingRight: "1%" }}
+        class="image--half"
+        src={SageIcon1}
+        alt="Sage Icon 1"
+      />
+      <Image
+        style={{ paddingLeft: "1%" }}
+        class="image--half"
+        src={SageIcon2}
+        alt="Sage Icon 2"
+      />
+    </div>
+    <div class="image-container--third story-social">
       <Image
         src={SageStorySocial1}
         class="image-third"
@@ -274,21 +338,10 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
         alt="Sage Story Social 3"
       />
     </div>
-    <video
-      autoplay
-      loop
-      muted
-      style={{ marginBottom: "120px", width: "100vw" }}
-    >
+    <video autoplay loop muted class="breathe-video">
       <source src={WeAreVideo} type="video/mp4" />
     </video>
-    <div
-      style={{
-        padding: "0 60px",
-        marginBottom: "140px",
-      }}
-      class="image-container--half"
-    >
+    <div class="image-container--half image-container--half-mobile">
       <Image
         style={{ paddingRight: "10px" }}
         class="image--half"
@@ -302,7 +355,7 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
         alt="Sage Graphic 2"
       />
     </div>
-    <div style={{ marginBottom: "24px" }} class="image-container--half">
+    <div class="image-container--half">
       <Image class="image--half" src={SageQuote} alt="Sage Quote" />
       <video autoplay loop muted class="image--half">
         <source src={SocialVideo} type="video/mp4" />
@@ -320,88 +373,86 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
         alt="Sage Brochure 2"
       />
     </div>
-    <video autoplay loop muted style={{ margin: "24px 0", width: "100vw" }}>
+    <video autoplay loop muted style={{ width: "100%", height: "auto" }}>
       <source src={CompVideo} type="video/mp4" />
     </video>
-    <div
-      class="image-container--grid"
-      style={{
-        backgroundColor: "#242121",
-        paddingTop: "60px",
-        paddingLeft: "60px",
-        paddingRight: "60px",
-      }}
-    >
-      <Image
-        class="image--grid"
-        src={SageBrandGuideGrid1}
-        alt="Sage Brand Guide Grid 1"
-      />
-      <Image
-        class="image--grid"
-        src={SageBrandGuideGrid4}
-        alt="Sage Brand Guide Grid 4"
-      />
-      <Image
-        class="image--grid"
-        src={SageBrandGuideGrid3}
-        alt="Sage Brand Guide Grid 3"
-      />
-      <Image
-        class="image--grid"
-        src={SageBrandGuideGrid5}
-        alt="Sage Brand Guide Grid 5"
-      />
-      <Image
-        class="image--grid"
-        src={SageBrandGuideGrid6}
-        alt="Sage Brand Guide Grid 6"
-      />
-      <Image
-        class="image--grid"
-        src={SageBrandGuideGrid7}
-        alt="Sage Brand Guide Grid 7"
-      />
-      <Image
-        class="image--grid"
-        src={SageBrandGuideGrid2}
-        alt="Sage Brand Guide Grid 2"
-      />
-      <Image
-        class="image--grid"
-        src={SageBrandGuideGrid8}
-        alt="Sage Brand Guide Grid 8"
-      />
-      <Image
-        class="image--grid"
-        src={SageBrandGuideGrid9}
-        alt="Sage Brand Guide Grid 9"
-      />
-      <Image
-        class="image--grid"
-        src={SageBrandGuideGrid10}
-        alt="Sage Brand Guide Grid 10"
-      />
-      <Image
-        class="image--grid"
-        src={SageBrandGuideGrid11}
-        alt="Sage Brand Guide Grid 11"
-      />
-      <Image
-        class="image--grid"
-        src={SageBrandGuideGrid12}
-        alt="Sage Brand Guide Grid 12"
-      />
-      <Image
-        class="image--grid"
-        src={SageBrandGuideGrid13}
-        alt="Sage Brand Guide Grid 13"
-      />
-      <Image
-        class="image--grid"
-        src={SageBrandGuideGrid14}
-        alt="Sage Brand Guide Grid 14"
-      />
+    <div style={{ backgroundColor: "#242121" }}>
+      <div class="grid-text-container">
+        <p class="grid-brand">SAGE</p>
+        <p class="grid-brand-follow">A glimpse at the brand guide</p>
+      </div>
+      <div class="image-container--grid">
+        <Image
+          class="image--grid"
+          src={SageBrandGuideGrid1}
+          alt="Sage Brand Guide Grid 1"
+        />
+        <Image
+          class="image--grid"
+          src={SageBrandGuideGrid4}
+          alt="Sage Brand Guide Grid 4"
+        />
+        <Image
+          class="image--grid"
+          src={SageBrandGuideGrid3}
+          alt="Sage Brand Guide Grid 3"
+        />
+        <Image
+          class="image--grid"
+          src={SageBrandGuideGrid5}
+          alt="Sage Brand Guide Grid 5"
+        />
+        <Image
+          class="image--grid"
+          src={SageBrandGuideGrid6}
+          alt="Sage Brand Guide Grid 6"
+        />
+        <Image
+          class="image--grid"
+          src={SageBrandGuideGrid7}
+          alt="Sage Brand Guide Grid 7"
+        />
+        <Image
+          class="image--grid"
+          src={SageBrandGuideGrid2}
+          alt="Sage Brand Guide Grid 2"
+        />
+        <Image
+          class="image--grid"
+          src={SageBrandGuideGrid8}
+          alt="Sage Brand Guide Grid 8"
+        />
+        <Image
+          class="image--grid"
+          src={SageBrandGuideGrid9}
+          alt="Sage Brand Guide Grid 9"
+        />
+        <Image
+          class="image--grid"
+          src={SageBrandGuideGrid10}
+          alt="Sage Brand Guide Grid 10"
+        />
+        <Image
+          class="image--grid"
+          src={SageBrandGuideGrid11}
+          alt="Sage Brand Guide Grid 11"
+        />
+        <Image
+          class="image--grid"
+          src={SageBrandGuideGrid12}
+          alt="Sage Brand Guide Grid 12"
+        />
+        <Image
+          class="image--grid"
+          src={SageBrandGuideGrid13}
+          alt="Sage Brand Guide Grid 13"
+        />
+        <Image
+          class="image--grid"
+          src={SageBrandGuideGrid14}
+          alt="Sage Brand Guide Grid 14"
+        />
+      </div>
     </div>
   </div>
 </InternalLayout>
@@ -439,11 +490,13 @@ import SageBrandGuideGrid14 from "../assets/Sage/Sage_Brand_Guide_Grid_14.png";
 
   let widthScale = getScrollScale();
   image.style.width = `${widthScale}vw`;
+  image.style.marginTop = `-${widthScale * 3}px`;
 
   document.addEventListener("scroll", (event) => {
     //slow down scrolling so image doesn't grow as fast
     let widthScale = getScrollScale();
     // imageScale = 0.5 + currentScroll / totalWidth;
     image.style.width = `${widthScale}vw`;
+    image.style.marginTop = `-${widthScale * 3}px`;
   });
 </script>

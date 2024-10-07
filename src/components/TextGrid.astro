@@ -16,7 +16,7 @@ import "../styles/utils.css";
     align-items: start;
     font-family: "Karla";
     font-weight: "normal";
-    margin-left: 50px;  
+    margin-left: 50px;
   }
   .item1 {
     grid-area: a;
@@ -50,6 +50,12 @@ import "../styles/utils.css";
     padding: 10px 0;
     font-family: "Karla";
   }
+  .brand-name {
+    font-weight: bold;
+  }
+  .sub-header {
+    font-weight: bold;
+  }
   @media screen and (max-width: 767px) {
     p.brand-name {
       display: none;
@@ -71,7 +77,10 @@ import "../styles/utils.css";
     }
   }
 </style>
-<div class="text-grid" style={{color: `${theme == "light" ? "black" : "#F7F4ED"}`  }}>
+<div
+  class="text-grid"
+  style={{ color: `${theme == "light" ? "black" : "#F7F4ED"}` }}
+>
   <p class="brand-name item1">{title}</p>
   <p class="sub-header item2">WHAT WE DID</p>
   <ul class="text-grid--flex item4">
