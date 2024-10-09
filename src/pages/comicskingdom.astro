@@ -109,7 +109,7 @@ import Book from "../assets/ComicsKingdom/CK_Book.png";
   }
 
   .text-two-column-centered {
-    width: 50%;
+    width: 64%;
     margin: 100px auto;
     font-family: "Karla";
     font-size: 16px;
@@ -130,7 +130,7 @@ import Book from "../assets/ComicsKingdom/CK_Book.png";
     position: absolute;
     display: none;
     left: calc(50% - 50px);
-    top: calc(50% - 27px);
+    top: calc(50% - 50px);
     width: 100px;
     height: 55px;
     justify-content: center;
@@ -141,7 +141,6 @@ import Book from "../assets/ComicsKingdom/CK_Book.png";
     font-size: 21px;
     font-family: "Karla";
     letter-spacing: 2px;
-    pointer-events:;
   }
   @media screen and (max-width: 768px) {
     h1 {
@@ -155,7 +154,7 @@ import Book from "../assets/ComicsKingdom/CK_Book.png";
 </style>
 <InternalLayout>
   <div id="comics-main">
-    <div style={{backgroundColor: "black"}}>
+    <div style={{ backgroundColor: "black" }}>
       <ScrollImage theme="dark" />
       <TextGrid title="COMICS KINGDOM" theme="dark">
         <li>Brand Identity + Positioning</li>
@@ -170,7 +169,7 @@ import Book from "../assets/ComicsKingdom/CK_Book.png";
         <li>Qualitative Research</li>
       </TextGrid>
     </div>
-    <div class="image-flex" >
+    <div class="image-flex">
       <div id="video-container">
         <video id="custom-video" class="image-92" loop>
           <source src={CKAnimation} type="video/mp4" />
@@ -188,16 +187,47 @@ import Book from "../assets/ComicsKingdom/CK_Book.png";
         alt="Comics Kingdom"
       />
       <div class="text-two-column-centered">
-        <p>Every strip starts with a sketch. A gag. A storyboard. An inkling of an idea, brought to life by a pencil, some paper (okay, occasionally a tablet and stylus), and an altogether personal point of view. It's the first step in a hero’s winding journey—both the character’s and the creator’s—soon to meet the fans who will cheer them along. <br><br>Comics Kingdom is for those who believe in limitless creativity, barely contained in a bite of delight. The ones who must make, against any obstacles, whether pioneers or next generation, in service of an art form that nudges us all forward, eliciting chuckles, catharsis, and connection. We're a haven for those who absolutely worship cartoon history and are eager to preserve and transform. A community for the people who open to the funnies every week or get the digital scoop any day. A place for enthusiasts to support others and recognize the wonderfully human lessons and observations depicted through a beloved and all too rare craft. A platform for artists to breathe new life, share new experiences, and reach new friends. A way to come together through a niche that unifies—one of the lightest ways to deal with heavy stuff. <br><br>
-<span style={{color: "#DD4C42"}}>For those, for us, and all, our mission is to keep the comics coming.</span>
+        <p style={{ margin: "0" }}>
+          Every strip starts with a sketch. A gag. A storyboard. An inkling of
+          an idea, brought to life by a pencil, some paper (okay, occasionally a
+          tablet and stylus), and an altogether personal point of view. It's the
+          first step in a hero’s winding journey—both the character’s and the
+          creator’s—soon to meet the fans who will cheer them along. <br /><br
+          />Comics Kingdom is for those who believe in limitless creativity,
+          barely contained in a bite of delight. The ones who must make, against
+          any obstacles, whether pioneers or next generation, in service of an
+          art form that nudges us all forward, eliciting chuckles, catharsis,
+          and connection. We're a haven for those who absolutely worship cartoon
+          history and are eager to preserve and transform. A community for the
+          people who open to the funnies every week or get the digital scoop any
+          day. A place for enthusiasts to support others and recognize the
+          wonderfully human lessons and observations depicted through a beloved
+          and all too rare craft. A platform for artists to breathe new life,
+          share new experiences, and reach new friends. A way to come together
+          through a niche that unifies—one of the lightest ways to deal with
+          heavy stuff. <br /><br />
+          <span style={{ color: "#DD4C42" }}
+            >For those, for us, and all, our mission is to keep the comics
+            coming.</span
+          >
         </p>
       </div>
       <Image class="image-100" src={AppDesktop} alt="Comics Kingdom" />
       <Image class="image-92 hidden" src={AppMobile} alt="Comics Kingdom" />
       <div class="dark-container">
-        <Image class="image-50" src={IconsDesktop} alt="Comics Kingdom" />
+        <Image
+          class="image-50"
+          style={{ marginTop: "100px" }}
+          src={IconsDesktop}
+          alt="Comics Kingdom"
+        />
         <Image class="hidden" src={IconsMobile} alt="Comics Kingdom" />
-        <Image class="image-58" src={Creator} alt="Comics Kingdom" />
+        <Image
+          class="image-58"
+          style={{ margin: "200px 0" }}
+          src={Creator}
+          alt="Comics Kingdom"
+        />
         <Image class="image-66" src={Home} alt="Comics Kingdom" />
       </div>
       <video loop style={{ marginBottom: "120px", width: "40%" }}>

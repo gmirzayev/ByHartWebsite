@@ -62,7 +62,9 @@
     border: none;
     background: none;
     margin: 0 5px;
-    cursor: url("../assets/HeartCursor.png"), auto;
+    cursor:
+      url("../assets/HeartCursor.png") 16 16,
+      auto;
   }
   .hidden {
     display: none;
@@ -72,94 +74,101 @@
   }
   @media (max-width: 768px) {
     .testimonial--container {
-      padding: 0;
+      padding: 25px 0 50px 25px;
     }
     .testimonial--container h2 {
       font-size: 12px;
       line-height: 11px;
       letter-spacing: 0.2em;
-      padding-bottom: 50px;
+      padding-bottom: 25px;
     }
     .testimonial--quote {
       font-size: 24px;
       line-height: 10px;
+      margin-right: 20px;
     }
     .testimonial--quote span {
       font-size: 20px;
       line-height: 51px;
     }
+    .testimonial--container-height {
+      height: 400px;
+    }
     .testimonial--quote-source {
-      padding-top: 45px;
+      padding-top: 0;
       font-size: 12px;
       line-height: 21px;
       letter-spacing: 0.04em;
+      padding-bottom: 40px;
     }
   }
 </style>
 <div class="testimonial--container">
-  <h2>WHAT OUR CLIENTS ARE SAYING</h2>
-  <div class="testimonial">
-    <div class="testimonial--quote">
-      I turn to By Hart for <span>all of my branding needs.</span><br />
-      What amazes me most about Sarah + <br />her dream team is <span
-        >all of my branding needs.</span
-      ><br />
-      I would recommend By Hart to <span
-        >anyone<br /> looking for all of my branding needs.</span
-      ><br />
+  <div class="testimonial--container-height">
+    <h2>WHAT OUR CLIENTS ARE SAYING</h2>
+    <div class="testimonial">
+      <div class="testimonial--quote">
+        I turn to By Hart for <span>all of my branding needs.</span><br />
+        What amazes me most about Sarah + <br />her dream team is <span
+          >all of my branding needs.</span
+        ><br />
+        I would recommend By Hart to <span
+          >anyone<br /> looking for all of my branding needs.</span
+        ><br />
+      </div>
+      <p class="testimonial--quote-source">
+        -Carmen Bryant, Head of Marketing, Wizehire
+      </p>
     </div>
-    <p class="testimonial--quote-source">
-      -Carmen Bryant, Head of Marketing, Wizehire
-    </p>
-  </div>
-  <div class="testimonial hidden">
-    <div class="testimonial--quote">
-      I turn to By Hart for <span>all of my design needs.</span><br />
-      What amazes me most about Sarah + <br />her team is <span
-        >their creativity and attention to detail.</span
-      ><br />
-      I would recommend By Hart to <span
-        >anyone<br /> looking for exceptional design services.</span
-      ><br />
+    <div class="testimonial hidden">
+      <div class="testimonial--quote">
+        I turn to By Hart for <span>all of my design needs.</span><br />
+        What amazes me most about Sarah + <br />her team is <span
+          >their creativity and attention to detail.</span
+        ><br />
+        I would recommend By Hart to <span
+          >anyone<br /> looking for exceptional design services.</span
+        ><br />
+      </div>
+      <p class="testimonial--quote-source">-Gleb Mirzayev</p>
     </div>
-    <p class="testimonial--quote-source">-Gleb Mirzayev</p>
-  </div>
-  <div class="testimonial hidden">
-    <div class="testimonial--quote">
-      By Hart has <span>transformed our brand image.</span><br />
-      Sarah and her team <br />consistently deliver <span
-        >innovative and stunning designs.</span
-      ><br />
-      We are thrilled with <span
-        >the results<br /> and highly recommend them!</span
-      ><br />
+    <div class="testimonial hidden">
+      <div class="testimonial--quote">
+        By Hart has <span>transformed our brand image.</span><br />
+        Sarah and her team <br />consistently deliver <span
+          >innovative and stunning designs.</span
+        ><br />
+        We are thrilled with <span
+          >the results<br /> and highly recommend them!</span
+        ><br />
+      </div>
+      <p class="testimonial--quote-source">-Random Person</p>
     </div>
-    <p class="testimonial--quote-source">-Random Person</p>
-  </div>
-  <div class="testimonial hidden">
-    <div class="testimonial--quote">
-      Our experience with By Hart <span>has been phenomenal.</span><br />
-      The team's ability to <br />capture our vision and <span
-        >bring it to life is unmatched.</span
-      ><br />
-      For anyone <span
-        >seeking top-tier<br /> design expertise, By Hart is the answer.</span
-      ><br />
+    <div class="testimonial hidden">
+      <div class="testimonial--quote">
+        Our experience with By Hart <span>has been phenomenal.</span><br />
+        The team's ability to <br />capture our vision and <span
+          >bring it to life is unmatched.</span
+        ><br />
+        For anyone <span
+          >seeking top-tier<br /> design expertise, By Hart is the answer.</span
+        ><br />
+      </div>
+      <p class="testimonial--quote-source">-Anna Wintour</p>
     </div>
-    <p class="testimonial--quote-source">-Anna Wintour</p>
-  </div>
-  <div class="testimonial hidden">
-    <div class="testimonial--quote">
-      Choosing By Hart was <span>the best decision for our rebranding.</span><br
-      />
-      Sarah's team went above and beyond <br />to deliver <span
-        >exceptional and unique designs.</span
-      ><br />
-      I would confidently recommend By Hart to <span
-        >anyone<br /> seeking creative and professional design services.</span
-      ><br />
+    <div class="testimonial hidden">
+      <div class="testimonial--quote">
+        Choosing By Hart was <span>the best decision for our rebranding.</span
+        ><br />
+        Sarah's team went above and beyond <br />to deliver <span
+          >exceptional and unique designs.</span
+        ><br />
+        I would confidently recommend By Hart to <span
+          >anyone<br /> seeking creative and professional design services.</span
+        ><br />
+      </div>
+      <p class="testimonial--quote-source">-Audrey Hepburn</p>
     </div>
-    <p class="testimonial--quote-source">-Audrey Hepburn</p>
   </div>
   <div class="testimonial--selector-container">
     <button class="testimonial--selector"
