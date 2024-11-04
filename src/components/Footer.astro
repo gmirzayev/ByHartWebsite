@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import FooterGlasses from "../assets/FooterGlasses.png";
+import SarahGlasses from "../assets/SarahGlasses.mp4";
 ---
 
 <style>
@@ -19,7 +19,7 @@ import FooterGlasses from "../assets/FooterGlasses.png";
     font-family: "utile-display", sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 105px;
+    font-size: 20px;
     /* line-height: 120px; */
     /* identical to box height */
     letter-spacing: 0.03em;
@@ -27,12 +27,13 @@ import FooterGlasses from "../assets/FooterGlasses.png";
   }
   .email-header {
     width: 100%;
+    margin-top: 65px;
     /* text-align: center; */
   }
   .pink-background {
     position: absolute;
-    width: 1259px;
-    height: 111px;
+    width: 300px;
+    height: 40px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -40,9 +41,48 @@ import FooterGlasses from "../assets/FooterGlasses.png";
     background: #ff97fd;
     transform: rotate(0.88deg);
   }
+  .video-container {
+    /* background-color: paleturquoise; */
+  }
+
+  .svg-text {
+    fill: black;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+  .video-link {
+    z-index: 2;
+  }
+  #instagram {
+    position: absolute;
+    top: 40%;
+    left: 7%;
+    rotate: 260deg;
+  }
+  #substack {
+    position: absolute;
+    left: 21%;
+    top: 12%;
+    rotate: 5deg;
+  }
+  #vimeo {
+    position: absolute;
+    top: 21%;
+    left: 38%;
+    rotate: 25deg;
+  }
+  #linkedin {
+    position: absolute;
+    top: 30%;
+    left: 49%;
+    rotate: 31deg;
+  }
   .glasses {
-    /* width: 100%;
-    height: auto; */
+    margin-left: 50px;
+    width: 100%;
+    height: auto;
+    overflow-y: hidden;
+    z-index: 1;
   }
   .footer--text-container {
     position: absolute;
@@ -50,16 +90,36 @@ import FooterGlasses from "../assets/FooterGlasses.png";
     display: flex;
     justify-content: space-between;
     text-align: left;
-    margin-left: 50px;
+
+    flex-direction: column;
+    margin-left: 25px;
+    margin-right: 40px;
+    margin-bottom: 45px;
+  }
+
+  .footer--text-container h1::before {
+    position: absolute;
+    background-color: #363131;
+    content: "";
+    width: 180px;
+    height: 30px;
+    z-index: -1;
+    transform: rotate(-2deg);
+  }
+  .footer--text-container h1 {
+    font-size: 21px;
+    margin-bottom: 10px;
+    color: white;
   }
   .footer--text-left {
-    width: 60%;
+    width: 100%;
     font-family: "Karla";
     font-style: normal;
     font-weight: 400;
-    font-size: 11px;
+    font-size: 10px;
     line-height: 17px;
     color: #363131;
+    margin-bottom: 10px;
   }
   .footer--text-right {
     font-family: "Karla";
@@ -69,42 +129,100 @@ import FooterGlasses from "../assets/FooterGlasses.png";
     line-height: 17px;
     color: #363131;
   }
-  @media (max-width: 768px) {
-    footer {
-      /* overflow: hidden; */
-    }
-    .glasses {
-      margin-left: 50px;
-      width: 125%;
-      height: auto;
-      overflow-y: hidden;
+  .footer--text-right span {
+    margin-left: 10px;
+  }
+  @media (min-width: 768px) {
+    svg {
+      transform: scale(2);
     }
     .footer--text-container {
-      flex-direction: column;
-      margin-left: 20px;
-      margin-right: 40px;
+      margin-left: 50px;
     }
     .footer--text-left {
-      width: 100%;
-      font-size: 10px;
+      width: 60%;
+      font-size: 11px;
     }
     .email-header h1 {
-      font-size: 20px;
+      font-size: 105px;
+    }
+    .pink-background {
+      width: 1259px;
+      height: 111px;
+    }
+    .glasses {
+      width: 100%;
     }
   }
 </style>
 <footer>
   <div class="email-header">
-    <!-- <div class="pink-background"></div> -->
-    <h1>LET'S TALK YOUR PROJECT</h1>
-    <h1>JOIN THE COLLECTIVE</h1>
+    <div class="pink-background"></div>
+    <h1>getcreative@byhart.studio</h1>
   </div>
-  <Image
-    class="glasses"
-    src={FooterGlasses}
-    alt="Cutout of eyes wearing glasses."
-  />
+  <div class="video-container">
+    <a
+      id="instagram"
+      class="video-link"
+      href="www.instagram.com"
+      target="_blank"
+    >
+      <svg width="100" height="20">
+        <defs>
+          <path id="curve1" d="M 0 20 Q 50 13 100 20" fill="transparent"></path>
+        </defs>
+        <text class="svg-text">
+          <textPath href="#curve1">INSTAGRAM</textPath>
+        </text>
+      </svg>
+    </a>
+    <a
+      id="substack"
+      class="video-link"
+      href="www.instagram.com"
+      target="_blank"
+    >
+      <svg width="100" height="20">
+        <defs>
+          <path id="curve2" d="M 0 20 Q 50 13 100 20" fill="transparent"></path>
+        </defs>
+        <text class="svg-text">
+          <textPath href="#curve2">SUBSTACK</textPath>
+        </text>
+      </svg>
+    </a>
+    <a id="vimeo" class="video-link" href="www.instagram.com" target="_blank">
+      <svg width="100" height="20">
+        <defs>
+          <path id="curve3" d="M 0 20 Q 50 13 100 20" fill="transparent"></path>
+        </defs>
+        <text class="svg-text">
+          <textPath href="#curve3">VIMEO</textPath>
+        </text>
+      </svg>
+    </a>
+    <a
+      id="linkedin"
+      class="video-link"
+      href="www.instagram.com"
+      target="_blank"
+    >
+      <svg width="100" height="20">
+        <defs>
+          <path id="curve4" d="M 0 20 L 38 20 Q 70 20 72 -4" fill="transparent"
+          ></path>
+        </defs>
+        <text class="svg-text">
+          <textPath href="#curve4">LINKEDIN</textPath>
+        </text>
+      </svg>
+    </a>
+    <video class="glasses" src={SarahGlasses} autoplay="true" loop="true"
+    ></video>
+  </div>
   <div class="footer--text-container">
+    <div class="gray-background"></div>
+    <h1>This print is so fine</h1>
     <p class="footer--text-left">
       ADDITIONAL CREDITS: It takes a village. The vast majority of this
       portfolio is original work created by a dream team under Sarah Hartley's
@@ -117,7 +235,7 @@ import FooterGlasses from "../assets/FooterGlasses.png";
       the source of our inspiration.
     </p>
     <p class="footer--text-right">
-      © Sarah Hartley See Sarah Work LLC d/b/a By Hart
+      © Sarah Hartley <span>See Sarah Work LLC d/b/a By Hart</span>
     </p>
   </div>
 </footer>

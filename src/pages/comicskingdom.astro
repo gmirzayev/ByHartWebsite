@@ -3,6 +3,7 @@ import "../styles/utils.css";
 import InternalLayout from "../layouts/InternalLayout.astro";
 import TextGrid from "../components/TextGrid.astro";
 import ScrollImage from "../components/ScrollImage.astro";
+import Header from "../assets/ComicsKingdom/CK_Cover.png";
 import Image from "astro/components/Image.astro";
 import CKAnimation from "../assets/ComicsKingdom/CK_Animation.mp4";
 import LogoIllustrationDesktop from "../assets/ComicsKingdom/CK_Logo_Illustration_Desktop.png";
@@ -19,12 +20,32 @@ import Social from "../assets/ComicsKingdom/CK_Social.png";
 import Email from "../assets/ComicsKingdom/CK_Email.png";
 import Mark from "../assets/ComicsKingdom/CK_Mark.png";
 import Book from "../assets/ComicsKingdom/CK_Book.png";
+import Navigation from "../components/Navigation.astro";
 ---
 
 <style>
   #comics-main {
     width: 100%;
     background-color: #f7f4ed;
+  }
+  .scroll-container {
+    height: 200vh;
+  }
+  .sticky-container {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  .image-container {
+    text-align: center;
+    position: relative;
+  }
+  #main-header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    /* width: 50%; */
   }
   .image-flex {
     display: flex;
@@ -122,7 +143,7 @@ import Book from "../assets/ComicsKingdom/CK_Book.png";
     position: relative;
     display: flex;
     justify-content: center;
-    background-color: black;
+    background-color: #17100b;
     padding-top: 50px;
     padding-bottom: 100px;
   }
@@ -154,8 +175,16 @@ import Book from "../assets/ComicsKingdom/CK_Book.png";
 </style>
 <InternalLayout>
   <div id="comics-main">
-    <div style={{ backgroundColor: "black" }}>
-      <ScrollImage theme="dark" />
+    <div class="scroll-container">
+      <div class="sticky-container">
+        <Navigation theme="dark" />
+        <div style={{ marginTop: "200px" }} class="image-container">
+          <Image id="main-header" src={Header} alt="Pearly Bites" />
+        </div>
+      </div>
+    </div>
+    <div style={{ backgroundColor: "#17100B" }}>
+      <!-- <ScrollImage theme="dark" /> -->
       <TextGrid title="COMICS KINGDOM" theme="dark">
         <li>Brand Identity + Positioning</li>
         <li>Logo Design</li>
@@ -171,23 +200,23 @@ import Book from "../assets/ComicsKingdom/CK_Book.png";
     </div>
     <div class="image-flex">
       <div id="video-container">
-        <video id="custom-video" class="image-92" loop>
+        <video id="custom-video" class="h-auto w-[92%]" loop>
           <source src={CKAnimation} type="video/mp4" />
         </video>
         <div id="play-button">PLAY</div>
       </div>
       <Image
-        class="image-100"
+        class="h-auto w-full"
         src={LogoIllustrationDesktop}
         alt="Comics Kingdom"
       />
       <Image
-        class="image-92 hidden"
+        class="h-auto w-[92%] hidden"
         src={LogoIllustrationMobile}
         alt="Comics Kingdom"
       />
       <div class="text-two-column-centered">
-        <p style={{ margin: "0" }}>
+        <p class="m-0">
           Every strip starts with a sketch. A gag. A storyboard. An inkling of
           an idea, brought to life by a pencil, some paper (okay, occasionally a
           tablet and stylus), and an altogether personal point of view. It's the
@@ -206,55 +235,98 @@ import Book from "../assets/ComicsKingdom/CK_Book.png";
           share new experiences, and reach new friends. A way to come together
           through a niche that unifies—one of the lightest ways to deal with
           heavy stuff. <br /><br />
-          <span style={{ color: "#DD4C42" }}
-            >For those, for us, and all, our mission is to keep the comics
-            coming.</span
+          <span class="text-[#DD4C42] text-xl font-bold"
+            >For <em>those</em>, for <em>us</em>, and <em>all</em>, our mission
+            is to keep the comics coming.</span
           >
         </p>
       </div>
-      <Image class="image-100" src={AppDesktop} alt="Comics Kingdom" />
-      <Image class="image-92 hidden" src={AppMobile} alt="Comics Kingdom" />
+      <Image class="h-auto w-full" src={AppDesktop} alt="Comics Kingdom" />
+      <Image
+        class="h-auto w-[92%] hidden"
+        src={AppMobile}
+        alt="Comics Kingdom"
+      />
       <div class="dark-container">
         <Image
-          class="image-50"
-          style={{ marginTop: "100px" }}
+          class="h-auto mt-[100px] w-1/2"
           src={IconsDesktop}
           alt="Comics Kingdom"
         />
         <Image class="hidden" src={IconsMobile} alt="Comics Kingdom" />
         <Image
-          class="image-58"
-          style={{ margin: "200px 0" }}
+          class="h-auto w-[58%] my-[200px] mx-0"
           src={Creator}
           alt="Comics Kingdom"
         />
-        <Image class="image-66" src={Home} alt="Comics Kingdom" />
+        <Image class="h-auto w-[66%]" src={Home} alt="Comics Kingdom" />
       </div>
-      <video loop style={{ marginBottom: "120px", width: "40%" }}>
+      <video loop class="mb-[120px] w-[40%]">
         <source src={Cat} type="video/mp4" />
       </video>
-      <div style={{ backgroundColor: "white", width: "100%" }}>
-        <video loop style={{ marginBottom: "120px", width: "100vw" }}>
+      <div class="w-full bg-white">
+        <video loop class="mb-[120px] w-screen">
           <source src={Friends} type="video/mp4" />
         </video>
       </div>
       <div class="social-background">
-        <Image class="image-47" src={Social} alt="Comics Kingdom" />
+        <Image class="h-auto w-[47%]" src={Social} alt="Comics Kingdom" />
       </div>
       <Image
-        class="image-58"
-        style={{ margin: "180px 0" }}
+        class="h-auto w-[58%] my-[180px] mx-0"
         src={Email}
         alt="Comics Kingdom"
       />
       <div class="image-container-half">
-        <Image class="image-22" src={Mark} alt="Comics Kingdom" />
-        <Image class="image-50" src={Book} alt="Comics Kingdom" />
+        <Image class="h-auto w-[22%]" src={Mark} alt="Comics Kingdom" />
+        <Image class="h-auto w-1/2" src={Book} alt="Comics Kingdom" />
       </div>
     </div>
   </div>
 </InternalLayout>
 <script>
+  const image = document.getElementById("main-header");
+
+  const minScroll = 0; // minimum scroll value
+  const maxScroll = 800;
+  const minWidth = 20; // minimum range value
+  const maxWidth = 100;
+
+  // const range =
+  //   ((currentScroll - minScroll) / (maxWidth - minScroll)) *
+  //     (maxRange - minRange) +
+  //   minRange;
+  // console.log(range);
+
+  // let imageWidth = 0.5 + currentScroll / maxWidth;
+  //   image.style.transform = `scale(${imageScale})`;
+  //   image.style.width = "20vw";
+
+  const getScrollScale = () => {
+    let currentScroll = window.scrollY;
+    if (currentScroll > 800) {
+      currentScroll = 800;
+    }
+    const rangeValue =
+      ((currentScroll - minScroll) / (maxScroll - minScroll)) *
+        (maxWidth - minWidth) +
+      minWidth;
+    // console.log(rangeValue);
+    return rangeValue;
+  };
+
+  let widthScale = getScrollScale();
+  image.style.width = `${widthScale}vw`;
+  image.style.marginTop = `-${widthScale * 3}px`;
+
+  document.addEventListener("scroll", (event) => {
+    //slow down scrolling so image doesn't grow as fast
+    let widthScale = getScrollScale();
+    // imageScale = 0.5 + currentScroll / totalWidth;
+    image.style.width = `${widthScale}vw`;
+    image.style.marginTop = `-${widthScale * 3}px`;
+  });
+
   const videoContainer = document.getElementById("video-container");
   const video = document.getElementById("custom-video") as HTMLVideoElement;
   const playButton = document.getElementById("play-button");

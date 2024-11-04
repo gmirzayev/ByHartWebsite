@@ -17,6 +17,8 @@ import "../styles/utils.css";
     font-family: "Karla";
     font-weight: "normal";
     margin-left: 50px;
+    padding-top: 30px;
+    /* margin-bottom: 100px; */
   }
   .item1 {
     grid-area: a;
@@ -46,21 +48,24 @@ import "../styles/utils.css";
   }
   .text-grid--flex li {
     list-style: none;
-    width: 300px;
-    padding: 10px 0;
+    width: 250px;
+    padding: 6px 0;
     font-family: "Karla";
   }
   .brand-name {
     font-weight: bold;
+    letter-spacing: 0.2em;
   }
   .sub-header {
     font-weight: bold;
+    letter-spacing: 0.2em;
   }
   @media screen and (max-width: 767px) {
     p.brand-name {
       display: none;
     }
     .sub-header {
+      margin-bottom: 15px;
     }
     .text-grid--flex {
       flex-wrap: nowrap;
@@ -77,6 +82,13 @@ import "../styles/utils.css";
     }
     .text-grid--flex {
       height: 200px;
+    }
+    .sub-header {
+      margin-left: 100px;
+      margin-bottom: 10px;
+    }
+    .text-grid--flex {
+      margin-left: 100px;
     }
   }
 </style>
