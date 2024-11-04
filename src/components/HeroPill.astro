@@ -79,7 +79,8 @@ import "../styles/heropill.css";
     </div>
   </div>
 </div>
-<script is:inline>
+<script>
+  import Player from "@vimeo/player";
   let highlightedElement = 0;
   let animatedPosition = 0;
   let offset = 50;
@@ -128,6 +129,9 @@ import "../styles/heropill.css";
   }
 
   /*     -------------------     */
+  const video0 = document.getElementById("video-0");
+
+  let player = new Player(video0);
 
   function showVideo() {
     const nextVideo = document.getElementById(`video-${animatedPosition % 4}`);
@@ -136,6 +140,9 @@ import "../styles/heropill.css";
     );
     if (animatedPosition !== previousPosition) {
       if (nextVideo) {
+        player = new Player(nextVideo);
+        player.setCurrentTime(0);
+        player.play();
         nextVideo.classList.add("fade");
         // nextVideo.classList.add("shown");
       }
@@ -214,6 +221,7 @@ import "../styles/heropill.css";
     element.classList.add("highlighted");
     previouslyHighlighted = element;
   }
+
   function rotatePill() {
     const pillContainer = document.getElementById("pillRotate");
     const svg = document.getElementById("svgPath-path");

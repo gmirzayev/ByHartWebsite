@@ -93,7 +93,7 @@ import Navigation from "../components/Navigation.astro";
     text-align: center;
   }
   h1 {
-    font-family: "Filson Pro";
+    font-family: "Karla";
     font-weight: bold;
     font-size: 25px;
     color: #182241;
@@ -101,6 +101,7 @@ import Navigation from "../components/Navigation.astro";
   h2 {
     font-family: "Karla";
     font-size: 26px;
+    font-weight: 700;
   }
   @media screen and (min-width: 768px) {
     h1 {
@@ -139,7 +140,7 @@ import Navigation from "../components/Navigation.astro";
     <div class="scroll-container">
       <div class="sticky-container">
         <Navigation theme="light" />
-        <div style={{ marginTop: "200px" }} class="image-container">
+        <div class="image-container mt-[200px]">
           <Image id="main-header" src={Header} alt="Pearly Bites" />
         </div>
       </div>
@@ -163,12 +164,16 @@ import Navigation from "../components/Navigation.astro";
       </div>
       <div class="image-two-flex-container">
         <Image class="image-two-flex" src={BetterDental} alt="Pearly Bites" />
-        <Image class="image-two-flex" src={Bag} alt="Pearly Bites" />
+        <Image
+          class="image-two-flex mt-12 sm:mt-0"
+          src={Bag}
+          alt="Pearly Bites"
+        />
       </div>
       <Image class="image-9073" src={Site} alt="Pearly Bites" />
 
       <div class="textbox">
-        <h1>A Human Approach to<br /> Your Pet's Dental Care</h1>
+        <h1>A Human Approach to Your <br />Pet's Dental Care</h1>
       </div>
       <Image class="image-100" src={ExamRoom} alt="Pearly Bites" />
       <h2>Interior renderings:</h2>
@@ -178,7 +183,9 @@ import Navigation from "../components/Navigation.astro";
       <Image class="image-9058" src={Tote} alt="Pearly Bites" />
       <Image class="image-100" src={Cards} alt="Pearly Bites" />
       <Image class="image-9058" src={SocialGrid} alt="Pearly Bites" />
-      <h1>Teeth Cleanings without the Bite</h1>
+      <div class="textbox">
+        <h1>Teeth Cleanings without<br /> the Bite</h1>
+      </div>
       <Image class="image-100" src={Stationary} alt="Pearly Bites" />
       <Image class="image-9073" src={Carousel} alt="Pearly Bites" />
     </div>

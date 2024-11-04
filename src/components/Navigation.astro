@@ -103,6 +103,9 @@ const { theme } = Astro.props;
   }
 
   @media (max-width: 768px) {
+    .overflow-hidden {
+      overflow: hidden;
+    }
     #mobile-nav {
       display: flex;
     }
@@ -125,7 +128,6 @@ const { theme } = Astro.props;
             this means our links will line up with the rightward hamburger button */
       justify-content: center;
       align-items: center;
-
       /* add margins and padding to taste */
       margin: 0;
       padding-left: 7vw;
@@ -140,10 +142,10 @@ const { theme } = Astro.props;
         transform 0.2s,
         opacity 0.2s; /* transition these smoothly */
     }
-    .logo,
+    /* .logo,
     .mobile-dropdown-toggle {
       z-index: 9;
-    }
+    } */
     .mobile-dropdown-toggle {
       display: initial;
     }
@@ -152,6 +154,14 @@ const { theme } = Astro.props;
       transform: translateY(0); /* move into view */
       z-index: 8;
     }
+    #mobile-nav:not(.dropdown-opened) > .mobile-dropdown-toggle {
+      z-index: 0;
+    }
+    #mobile-nav.dropdown-opened > .logo-link,
+    .mobile-dropdown-toggle {
+      z-index: 9;
+    }
+
     #dropdown-open {
       display: block;
     }
@@ -196,7 +206,7 @@ const { theme } = Astro.props;
 <header>
   <nav id="main-nav">
     <div id="mobile-nav" class="mobile-nav-flex">
-      <a href="/"
+      <a href="/" class="logo-link"
         >{
           theme == "light" ? (
             <Image class="logo" src={DarkLogo} alt="The letter H." />
@@ -252,6 +262,7 @@ const { theme } = Astro.props;
 
     navButton.addEventListener("click", (event) => {
       nav.classList.toggle("dropdown-opened");
+      document.body.classList.toggle("overflow-hidden");
     });
   </script>
 </header>
