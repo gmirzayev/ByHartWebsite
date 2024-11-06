@@ -1,42 +1,66 @@
 ---
 import "../styles/heropill.css";
+import Ample from "../assets/Home/BH_Ample.mp4";
+import Kindra from "../assets/Home/BH_Kindra.mp4";
+import LockwoodTee from "../assets/Home/BH_Lockwood_Tee.mp4";
+import Lockwood from "../assets/Home/BH_Lockwood.mp4";
 ---
 
 <style></style>
 <div id="pill--element">
   <div class="pill--container" id="pillRotate">
     <div class="iframe-container">
-      <script is:inline src="https://player.vimeo.com/api/player.js"></script>
-      <iframe
+      <video
+        id="video-0"
+        class="video-frame fade"
+        autoplay="true"
+        loop="true"
+        src={Lockwood}></video>
+      <!-- <iframe
         id="video-0"
         class="video-frame fade"
         style={{ transform: `rotate(0deg)` }}
         src="https://player.vimeo.com/video/985333909?badge=0&autoplay=1&loop=1&autopause=0&controls=0&player_id=0&app_id=58479"
-        allow="autoplay"></iframe>
+        allow="autoplay"></iframe> -->
     </div>
     <div class="iframe-container">
-      <iframe
+      <video
+        id="video-1"
+        class="transform -rotate-90 video-frame"
+        loop="true"
+        src={Kindra}></video>
+      <!-- <iframe
         id="video-1"
         class="video-frame"
         src="https://player.vimeo.com/video/987307124?badge=0&autoplay=1&loop=1&autopause=0&controls=0&player_id=0&player_id=0&app_id=58479"
         style={{ transform: `rotate(270deg)` }}
-        allow="autoplay"></iframe>
+        allow="autoplay"></iframe> -->
     </div>
     <div class="iframe-container">
-      <iframe
+      <video
+        id="video-2"
+        class="transform rotate-180 video-frame"
+        loop="true"
+        src={Ample}></video>
+      <!-- <iframe
         id="video-2"
         class="video-frame"
         src="https://player.vimeo.com/video/987307095?badge=0&autoplay=1&loop=1&autopause=0&controls=0&player_id=0&app_id=58479"
         style={{ transform: `rotate(180deg)` }}
-        allow="autoplay"></iframe>
+        allow="autoplay"></iframe> -->
     </div>
     <div class="iframe-container">
-      <iframe
+      <video
+        id="video-3"
+        class="transform rotate-90 video-frame"
+        loop="true"
+        src={LockwoodTee}></video>
+      <!-- <iframe
         id="video-3"
         class="video-frame"
         src="https://player.vimeo.com/video/987307108?badge=0&autoplay=1&loop=1&autopause=0&controls=0&player_id=0&app_id=58479"
         style={{ transform: `rotate(90deg)` }}
-        allow="autoplay"></iframe>
+        allow="autoplay"></iframe> -->
     </div>
     <svg xmlns="http://www.w3.org/2000/svg">
       <clipPath id="svgPath" clipPathUnits="objectBoundingBox">
@@ -80,7 +104,6 @@ import "../styles/heropill.css";
   </div>
 </div>
 <script>
-  import Player from "@vimeo/player";
   let highlightedElement = 0;
   let animatedPosition = 0;
   let offset = 50;
@@ -129,20 +152,21 @@ import "../styles/heropill.css";
   }
 
   /*     -------------------     */
-  const video0 = document.getElementById("video-0");
+  // const video0 = document.getElementById("video-0");
 
-  let player = new Player(video0);
+  // let player = new Player(video0);
 
   function showVideo() {
-    const nextVideo = document.getElementById(`video-${animatedPosition % 4}`);
+    const nextVideo: HTMLVideoElement = document.getElementById(
+      `video-${animatedPosition % 4}`
+    ) as HTMLVideoElement;
     const previousVideo = document.getElementById(
       `video-${previousPosition % 4}`
     );
     if (animatedPosition !== previousPosition) {
       if (nextVideo) {
-        player = new Player(nextVideo);
-        player.setCurrentTime(0);
-        player.play();
+        nextVideo.currentTime = 0;
+        nextVideo.play();
         nextVideo.classList.add("fade");
         // nextVideo.classList.add("shown");
       }

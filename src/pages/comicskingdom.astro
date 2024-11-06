@@ -138,7 +138,7 @@ import Navigation from "../components/Navigation.astro";
     column-count: 2;
     column-gap: 90px;
   }
-  #video-container {
+  #video-wrapper {
     width: 100%;
     position: relative;
     display: flex;
@@ -146,6 +146,13 @@ import Navigation from "../components/Navigation.astro";
     background-color: #17100b;
     padding-top: 50px;
     padding-bottom: 100px;
+  }
+  #video-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #17100b;
+    box-sizing: border-box;
   }
   #play-button {
     position: absolute;
@@ -177,7 +184,7 @@ import Navigation from "../components/Navigation.astro";
   <div id="comics-main">
     <div class="scroll-container">
       <div class="sticky-container">
-        <Navigation theme="dark" />
+        <Navigation theme="light" />
         <div style={{ marginTop: "200px" }} class="image-container">
           <Image id="main-header" src={Header} alt="Pearly Bites" />
         </div>
@@ -199,17 +206,26 @@ import Navigation from "../components/Navigation.astro";
       </TextGrid>
     </div>
     <div class="image-flex">
-      <div id="video-container">
-        <video id="custom-video" class="h-auto w-[92%]" loop>
+      <div id="video-wrapper">
+        <div id="video-container">
+          <iframe
+            id="ck_video"
+            class="h-[600px] w-[1000px]"
+            src="https://player.vimeo.com/video/1026680777?title=0&badge=0&autopause=0&controls=0&player_id=0&app_id=58479"
+            allow="autoplay"
+            title="Comics Kingdom"></iframe>
+          <!-- <video id="custom-video" class="h-auto w-[92%]" loop>
           <source src={CKAnimation} type="video/mp4" />
-        </video>
-        <div id="play-button">PLAY</div>
+        </video> -->
+          <div id="play-button">PLAY</div>
+        </div>
       </div>
       <Image
         class="h-auto w-full"
         src={LogoIllustrationDesktop}
         alt="Comics Kingdom"
       />
+      <div></div>
       <Image
         class="h-auto w-[92%] hidden"
         src={LogoIllustrationMobile}
@@ -261,11 +277,13 @@ import Navigation from "../components/Navigation.astro";
         />
         <Image class="h-auto w-[66%]" src={Home} alt="Comics Kingdom" />
       </div>
-      <video loop class="mb-[120px] w-[40%]">
-        <source src={Cat} type="video/mp4" />
-      </video>
+      <div class="w-[100%] bg-white">
+        <video loop class="mb-[120px] w-[40%]">
+          <source src={Cat} type="video/mp4" />
+        </video>
+      </div>
       <div class="w-full bg-white">
-        <video loop class="mb-[120px] w-screen">
+        <video loop class="mb-[120px] w-screen bg-white">
           <source src={Friends} type="video/mp4" />
         </video>
       </div>
@@ -285,6 +303,7 @@ import Navigation from "../components/Navigation.astro";
   </div>
 </InternalLayout>
 <script>
+  import Player from "@vimeo/player";
   const image = document.getElementById("main-header");
 
   const minScroll = 0; // minimum scroll value
@@ -328,28 +347,36 @@ import Navigation from "../components/Navigation.astro";
   });
 
   const videoContainer = document.getElementById("video-container");
-  const video = document.getElementById("custom-video") as HTMLVideoElement;
+  const video = document.getElementById("ck_video");
+  const player = new Player(video);
   const playButton = document.getElementById("play-button");
   // Event listener for the play/pause button
   videoContainer.addEventListener("mouseenter", (event) => {
-    playButton.style.display = "flex";
+    player.getPaused().then((paused) => {
+      if (paused) {
+        playButton.style.display = "flex";
+      }
+    });
   });
   videoContainer.addEventListener("mouseleave", (event) => {
     playButton.style.display = "none";
   });
+  video.addEventListener("click", (event) => {
+    console.log("hello");
+    player.getPaused().then((paused) => {
+      console.log("hello");
+      if (!paused) {
+        player.pause();
+        playButton.style.display = "flex";
+      }
+    });
+  });
   playButton.addEventListener("click", (event) => {
-    if (video.paused == true) {
-      // Play the video
-      video.play();
-
-      // Update the button text to 'Pause'
-      playButton.innerHTML = "PAUSE";
-    } else {
-      // Pause the video
-      video.pause();
-
-      // Update the button text to 'Play'
-      playButton.innerHTML = "PLAY";
-    }
+    player.getPaused().then((paused) => {
+      if (paused) {
+        player.play();
+        playButton.style.display = "none";
+      }
+    });
   });
 </script>
