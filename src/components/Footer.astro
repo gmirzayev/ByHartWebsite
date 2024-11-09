@@ -6,6 +6,8 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
 <style>
   footer {
     text-align: center;
+    display: flex;
+    flex-direction: column;
     max-height: 100%;
     z-index: 0;
     background-color: #f7f4ed;
@@ -43,6 +45,9 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
   }
   .video-container {
     /* background-color: paleturquoise; */
+    display: flex;
+    width: 100%;
+    align-items: end;
   }
 
   .svg-text {
@@ -55,8 +60,8 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
   }
   #instagram {
     position: absolute;
-    top: 40%;
-    left: 7%;
+    top: 200px;
+    left: 40px;
     rotate: 260deg;
   }
   #substack {
@@ -78,11 +83,16 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
     rotate: 31deg;
   }
   .glasses {
-    margin-left: 50px;
-    width: 100%;
-    height: auto;
-    overflow-y: hidden;
-    z-index: 1;
+    position: relative;
+
+    /* position: absolute; */
+    /* right: 50; */
+    /* margin-left: 50px; */
+    width: 700px;
+    height: 400px;
+    max-width: none;
+    /* overflow-y: hidden; */
+    z-index: -1;
   }
   .footer--text-container {
     position: absolute;
@@ -133,9 +143,9 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
     margin-left: 10px;
   }
   @media (min-width: 768px) {
-    svg {
+    /* .video-container {
       transform: scale(2);
-    }
+    } */
     .footer--text-container {
       margin-left: 50px;
     }
@@ -150,8 +160,11 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
       width: 1259px;
       height: 111px;
     }
+    svg {
+      transform: scale(1.5);
+    }
     .glasses {
-      width: 100%;
+      transform: scale(1.5);
     }
   }
 </style>
@@ -217,8 +230,10 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
         </text>
       </svg>
     </a>
-    <video class="glasses" src={SarahGlasses} autoplay="true" loop="true"
-    ></video>
+    <div class="video-wrapper">
+      <video class="glasses" src={SarahGlasses} autoplay="true" loop="true"
+      ></video>
+    </div>
   </div>
   <div class="footer--text-container">
     <div class="gray-background"></div>
