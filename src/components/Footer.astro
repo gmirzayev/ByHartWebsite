@@ -21,7 +21,7 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
     font-family: "utile-display", sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 28px;
     /* line-height: 120px; */
     /* identical to box height */
     letter-spacing: 0.03em;
@@ -34,8 +34,9 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
   }
   .pink-background {
     position: absolute;
-    width: 300px;
-    height: 40px;
+    width: 350px;
+    height: 30px;
+    top: 72px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -45,51 +46,60 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
   }
   .video-container {
     /* background-color: paleturquoise; */
+    margin-top: -30px;
+    position: relative;
     display: flex;
+    /* align-items: center; */
     width: 100%;
-    align-items: end;
+    /* align-items: end; */
   }
 
   .svg-text {
     fill: black;
     font-size: 12px;
     letter-spacing: 2px;
+    font-weight: 500;
   }
   .video-link {
     z-index: 2;
   }
   #instagram {
     position: absolute;
-    top: 200px;
-    left: 40px;
+    top: 150px;
+    left: 5px;
     rotate: 260deg;
   }
   #substack {
     position: absolute;
-    left: 21%;
-    top: 12%;
+    top: 60px;
+    left: 80px;
     rotate: 5deg;
   }
   #vimeo {
     position: absolute;
-    top: 21%;
-    left: 38%;
+    top: 90px;
+    left: 200px;
     rotate: 25deg;
   }
   #linkedin {
     position: absolute;
-    top: 30%;
-    left: 49%;
+    top: 135px;
+    left: 290px;
     rotate: 31deg;
   }
+  .video-wrapper {
+    /* width: 700px;
+    height: 400px; */
+  }
   .glasses {
-    position: relative;
+    /* position: relative; */
+    width: 700px;
+    height: 400px;
 
     /* position: absolute; */
     /* right: 50; */
     /* margin-left: 50px; */
-    width: 700px;
-    height: 400px;
+
     max-width: none;
     /* overflow-y: hidden; */
     z-index: -1;
@@ -142,29 +152,145 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
   .footer--text-right span {
     margin-left: 10px;
   }
-  @media (min-width: 768px) {
-    /* .video-container {
-      transform: scale(2);
-    } */
-    .footer--text-container {
-      margin-left: 50px;
-    }
-    .footer--text-left {
-      width: 60%;
-      font-size: 11px;
+  @media (min-width: 678px) and (max-width: 1023px) {
+    .pink-background {
+      width: 590px;
+      top: 85px;
     }
     .email-header h1 {
-      font-size: 105px;
+      font-size: 46px;
+    }
+    .video-container {
+      justify-content: center;
+    }
+    #instagram {
+      /* top: 140px;
+      left: 300px; */
+      top: calc(50%);
+      left: calc(50%);
+      transform: translate(120px, -330px);
+    }
+    #substack {
+      top: calc(50%);
+      left: calc(50%);
+      transform: translate(-280px, -120px);
+    }
+    #vimeo {
+      top: calc(50%);
+      left: calc(50%);
+      transform: translate(-180px, -40px);
+    }
+    #linkedin {
+      top: calc(50%);
+      left: calc(50%);
+      transform: translate(-90px, -30px);
+    }
+  }
+  @media (min-width: 1024px) and (max-width: 1400px) {
+    .video-container {
+      justify-content: center;
+    }
+    .footer--text-container {
+      margin-left: 50px;
+      flex-direction: row;
+    }
+    .footer--text-left {
+      width: 80%;
+      font-size: 11px;
+    }
+    .footer--text-right {
+      white-space: nowrap;
+      align-self: flex-end;
+    }
+    .email-header h1 {
+      font-size: 76px;
+    }
+    .pink-background {
+      width: 950px;
+      height: 90px;
+      top: 85px;
+    }
+    svg {
+      transform: scale(1.2);
+    }
+    .glasses {
+      transform: scale(1.2);
+    }
+    #instagram {
+      /* top: 140px;
+      left: 300px; */
+      top: calc(50%);
+      left: calc(50%);
+      transform: translate(150px, -380px);
+    }
+    #substack {
+      top: calc(50%);
+      left: calc(50%);
+      transform: translate(-300px, -140px);
+    }
+    #vimeo {
+      top: calc(50%);
+      left: calc(50%);
+      transform: translate(-200px, -50px);
+    }
+    #linkedin {
+      top: calc(50%);
+      left: calc(50%);
+      transform: translate(-90px, -35px);
+    }
+  }
+  @media (min-width: 1401px) {
+    .video-container {
+      justify-content: center;
+    }
+    .footer--text-container {
+      margin-left: 50px;
+      flex-direction: row;
+    }
+    .footer--text-left {
+      width: 80%;
+      font-size: 11px;
+    }
+    .footer--text-right {
+      white-space: nowrap;
+      align-self: flex-end;
+    }
+    .email-header h1 {
+      font-size: 100px;
     }
     .pink-background {
       width: 1259px;
       height: 111px;
+      top: 80px;
     }
     svg {
-      transform: scale(1.5);
+      transform: scale(1.2);
     }
     .glasses {
-      transform: scale(1.5);
+      transform: scale(1.2);
+      margin-top: 20px;
+    }
+    #instagram {
+      /* top: 140px;
+      left: 300px; */
+      top: calc(50%);
+      left: calc(50%);
+      transform: translate(150px, -390px);
+    }
+    #substack {
+      top: calc(50%);
+      left: calc(50%);
+      transform: translate(-310px, -130px);
+    }
+    #vimeo {
+      top: calc(50%);
+      left: calc(50%);
+      transform: translate(-200px, -40px);
+    }
+    #linkedin {
+      top: calc(50%);
+      left: calc(50%);
+      transform: translate(-90px, -30px);
     }
   }
 </style>
@@ -230,25 +356,27 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
         </text>
       </svg>
     </a>
-    <div class="video-wrapper">
-      <video class="glasses" src={SarahGlasses} autoplay="true" loop="true"
-      ></video>
-    </div>
+    <!-- <div class="video-wrapper"> -->
+    <video class="glasses" src={SarahGlasses} autoplay="true" loop="true" muted
+    ></video>
+    <!-- </div> -->
   </div>
   <div class="footer--text-container">
-    <div class="gray-background"></div>
-    <h1>This print is so fine</h1>
-    <p class="footer--text-left">
-      ADDITIONAL CREDITS: It takes a village. The vast majority of this
-      portfolio is original work created by a dream team under Sarah Hartley's
-      direction. There are also some reference materials and inspiration mood
-      boards, which are an industry standard aspect of the research, conception,
-      and pitch phases of the creative process. Please feel free to reach out if
-      you are curious about who may be credited with any aspect of the work you
-      see here. It's more than likely us! In the rare event it is not entirely
-      authored by Sarah and team, we will do our very best to connect you with
-      the source of our inspiration.
-    </p>
+    <div class="footer--left-container">
+      <div class="gray-background"></div>
+      <h1>This print is so fine</h1>
+      <p class="footer--text-left">
+        ADDITIONAL CREDITS: It takes a village. The vast majority of this
+        portfolio is original work created by a dream team under Sarah Hartley's
+        direction. There are also some reference materials and inspiration mood
+        boards, which are an industry standard aspect of the research,
+        conception, and pitch phases of the creative process. Please feel free
+        to reach out if you are curious about who may be credited with any
+        aspect of the work you see here. It's more than likely us! In the rare
+        event it is not entirely authored by Sarah and team, we will do our very
+        best to connect you with the source of our inspiration.
+      </p>
+    </div>
     <p class="footer--text-right">
       © Sarah Hartley <span>See Sarah Work LLC d/b/a By Hart</span>
     </p>

@@ -5,6 +5,7 @@ import Logo from "../assets/HomeLogo.png";
 import DarkLogo from "../assets/LogoDark.png";
 import HeartDropdown from "../assets/HeartDropdown.png";
 import CloseButton from "../assets/CloseButton.png";
+import SarahGlasses from "../assets/SarahGlasses.mp4";
 const { theme } = Astro.props;
 ---
 
@@ -83,6 +84,7 @@ const { theme } = Astro.props;
     font-size: 16px;
     letter-spacing: 0;
     font-weight: normal;
+    margin-top: 20px;
   }
 
   .mobile-nav-container {
@@ -231,6 +233,80 @@ const { theme } = Astro.props;
         <p class="mobile-nav-link mobile-nav-link--email">
           getcreative@byhart.studio
         </p>
+        <!-- <div class="video-container">
+          <a
+            id="instagram"
+            class="video-link"
+            href="www.instagram.com"
+            target="_blank"
+          >
+            <svg width="100" height="20">
+              <defs>
+                <path id="curve1" d="M 0 20 Q 50 13 100 20" fill="transparent"
+                ></path>
+              </defs>
+              <text class="svg-text">
+                <textPath href="#curve1">INSTAGRAM</textPath>
+              </text>
+            </svg>
+          </a>
+          <a
+            id="substack"
+            class="video-link"
+            href="www.instagram.com"
+            target="_blank"
+          >
+            <svg width="100" height="20">
+              <defs>
+                <path id="curve2" d="M 0 20 Q 50 13 100 20" fill="transparent"
+                ></path>
+              </defs>
+              <text class="svg-text">
+                <textPath href="#curve2">SUBSTACK</textPath>
+              </text>
+            </svg>
+          </a>
+          <a
+            id="vimeo"
+            class="video-link"
+            href="www.instagram.com"
+            target="_blank"
+          >
+            <svg width="100" height="20">
+              <defs>
+                <path id="curve3" d="M 0 20 Q 50 13 100 20" fill="transparent"
+                ></path>
+              </defs>
+              <text class="svg-text">
+                <textPath href="#curve3">VIMEO</textPath>
+              </text>
+            </svg>
+          </a>
+          <a
+            id="linkedin"
+            class="video-link"
+            href="www.instagram.com"
+            target="_blank"
+          >
+            <svg width="100" height="20">
+              <defs>
+                <path
+                  id="curve4"
+                  d="M 0 20 L 38 20 Q 70 20 72 -4"
+                  fill="transparent"></path>
+              </defs>
+              <text class="svg-text">
+                <textPath href="#curve4">LINKEDIN</textPath>
+              </text>
+            </svg>
+          </a>
+          <video
+            class="glasses"
+            src={SarahGlasses}
+            autoplay="true"
+            loop="true"
+            muted></video>
+        </div> -->
       </div>
     </div>
     <div

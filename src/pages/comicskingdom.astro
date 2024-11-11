@@ -12,15 +12,29 @@ import AppDesktop from "../assets/ComicsKingdom/CK_App_Desktop.png";
 import AppMobile from "../assets/ComicsKingdom/CK_App_Mobile.png";
 import IconsDesktop from "../assets/ComicsKingdom/CK_Icons_Desktop.png";
 import IconsMobile from "../assets/ComicsKingdom/CK_Icons_Mobile.png";
-import Creator from "../assets/ComicsKingdom/CK_Creator.mp4";
+import Creator from "../assets/ComicsKingdom/CK_Creator.webm";
 import Home from "../assets/ComicsKingdom/CK_App_Home.png";
-import Cat from "../assets/ComicsKingdom/CK_Cat.mp4";
-import Friends from "../assets/ComicsKingdom/CK_Friends.mp4";
+import Cat from "../assets/ComicsKingdom/CK_Cat.webm";
+import Friends from "../assets/ComicsKingdom/CK_Friends.webm";
 import Social from "../assets/ComicsKingdom/CK_Social.png";
 import Email from "../assets/ComicsKingdom/CK_Email.png";
 import Mark from "../assets/ComicsKingdom/CK_Mark.png";
 import Book from "../assets/ComicsKingdom/CK_Book.png";
 import Navigation from "../components/Navigation.astro";
+import BrandGrid1 from "../assets/ComicsKingdom/CK_Brand_Grid_01.png";
+import BrandGrid2 from "../assets/ComicsKingdom/CK_Brand_Grid_02.png";
+import BrandGrid3 from "../assets/ComicsKingdom/CK_Brand_Grid_03.png";
+import BrandGrid4 from "../assets/ComicsKingdom/CK_Brand_Grid_04.png";
+import BrandGrid5 from "../assets/ComicsKingdom/CK_Brand_Grid_05.png";
+import BrandGrid6 from "../assets/ComicsKingdom/CK_Brand_Grid_06.png";
+import BrandGrid7 from "../assets/ComicsKingdom/CK_Brand_Grid_07.png";
+import BrandGrid8 from "../assets/ComicsKingdom/CK_Brand_Grid_08.png";
+import BrandGrid9 from "../assets/ComicsKingdom/CK_Brand_Grid_09.png";
+import BrandGrid10 from "../assets/ComicsKingdom/CK_Brand_Grid_10.png";
+import BrandGrid11 from "../assets/ComicsKingdom/CK_Brand_Grid_11.png";
+import BrandGrid12 from "../assets/ComicsKingdom/CK_Brand_Grid_12.png";
+import BrandGrid13 from "../assets/ComicsKingdom/CK_Brand_Grid_13.png";
+import BrandGrid14 from "../assets/ComicsKingdom/CK_Brand_Grid_14.png";
 ---
 
 <style>
@@ -53,38 +67,6 @@ import Navigation from "../components/Navigation.astro";
     width: 100%;
     align-items: center;
   }
-  .image-92 {
-    width: 92%;
-    height: auto;
-  }
-  .image-73 {
-    width: 73%;
-    height: auto;
-  }
-  .image-66 {
-    width: 66%;
-    height: auto;
-  }
-  .image-100 {
-    width: 100%;
-    height: auto;
-  }
-  .image-50 {
-    width: 50%;
-    height: auto;
-  }
-  .image-42 {
-    width: 42%;
-    height: auto;
-  }
-  .image-58 {
-    width: 58%;
-    height: auto;
-  }
-  .image-47 {
-    width: 47%;
-    height: auto;
-  }
   .social-background {
     display: flex;
     width: 100%;
@@ -98,12 +80,6 @@ import Navigation from "../components/Navigation.astro";
     width: 100%;
     justify-content: space-between;
     align-items: baseline;
-  }
-  .image-22 {
-    width: 22%;
-    height: auto;
-    margin-left: 60px;
-    padding-bottom: 100px;
   }
 
   .textbox {
@@ -153,6 +129,20 @@ import Navigation from "../components/Navigation.astro";
     justify-content: center;
     background-color: #17100b;
     box-sizing: border-box;
+    padding-top: 56.25%;
+    width: 100%;
+  }
+  #ck_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    right: 0;
+    bottom: 0;
+    width: 90%;
+    height: 100%;
+    /* height: 500px; */
+    /* object-fit: cover; */
   }
   #play-button {
     position: absolute;
@@ -170,7 +160,37 @@ import Navigation from "../components/Navigation.astro";
     font-family: "Karla";
     letter-spacing: 2px;
   }
-  @media screen and (max-width: 768px) {
+  .grid-container {
+    background-color: #242121;
+  }
+  .grid-text-container {
+    color: white;
+    font-family: "Karla";
+    padding: 30px 0 30px 20px;
+    font-size: 16px;
+  }
+  .grid-brand {
+    font-weight: bold;
+    display: inline-block;
+    letter-spacing: 3px;
+  }
+  .grid-brand-follow {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  .image-container--grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    /* #ck_video {
+      height: 300px;
+      width: 90vw;
+    } */
     h1 {
       margin-top: 45px;
       margin-bottom: 45px;
@@ -210,7 +230,7 @@ import Navigation from "../components/Navigation.astro";
         <div id="video-container">
           <iframe
             id="ck_video"
-            class="h-[600px] w-[1000px]"
+            class="max-h-full w-[90%]"
             src="https://player.vimeo.com/video/1026680777?title=0&badge=0&autopause=0&controls=0&player_id=0&app_id=58479"
             allow="autoplay"
             title="Comics Kingdom"></iframe>
@@ -270,17 +290,28 @@ import Navigation from "../components/Navigation.astro";
           alt="Comics Kingdom"
         />
         <Image class="hidden" src={IconsMobile} alt="Comics Kingdom" />
-        <video class="h-auto w-[58%] my-[200px] mx-0" src={Creator}></video>
+        <video
+          class="max-h-full w-[100%] my-[40px] sm:my-[100px] mx-0"
+          autoplay
+          muted
+          loop
+        >
+          <source src={Creator} />
+        </video>
         <Image class="h-auto w-[66%]" src={Home} alt="Comics Kingdom" />
       </div>
-      <div class="w-[100%] bg-white">
-        <video loop class="mb-[120px] w-[40%]">
-          <source src={Cat} type="video/mp4" />
+      <div class="w-[100%] flex items-center -mr-[500px]">
+        <div class="whitespace-nowrap left-0 right-0 w-[200px]">
+          <p>We are</p>
+          <p>Making new friends while cherishing the old</p>
+        </div>
+        <video loop autoplay muted class="w-[100%]">
+          <source src={Cat} />
         </video>
       </div>
-      <div class="w-full bg-white">
-        <video loop class="mb-[120px] w-screen bg-white">
-          <source src={Friends} type="video/mp4" />
+      <div class="w-full">
+        <video loop autoplay muted class="mb-[120px] w-screen">
+          <source src={Friends} />
         </video>
       </div>
       <div class="social-background">
@@ -292,87 +323,170 @@ import Navigation from "../components/Navigation.astro";
         alt="Comics Kingdom"
       />
       <div class="image-container-half">
-        <Image class="h-auto w-[22%]" src={Mark} alt="Comics Kingdom" />
+        <Image
+          class="h-auto w-[22%] ml-[50px] mb-[50px]"
+          src={Mark}
+          alt="Comics Kingdom"
+        />
         <Image class="h-auto w-1/2" src={Book} alt="Comics Kingdom" />
       </div>
     </div>
+    <div class="grid-container">
+      <div class="grid-text-container">
+        <p class="grid-brand">COMICS KINGDOM</p>
+        <p class="grid-brand-follow">A glimpse at the brand guide</p>
+      </div>
+      <div class="image-container--grid">
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid1}
+          alt="Sage Brand Guide Grid 1"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid2}
+          alt="Sage Brand Guide Grid 4"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid3}
+          alt="Sage Brand Guide Grid 3"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid4}
+          alt="Sage Brand Guide Grid 5"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid5}
+          alt="Sage Brand Guide Grid 6"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid6}
+          alt="Sage Brand Guide Grid 7"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid7}
+          alt="Sage Brand Guide Grid 2"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid8}
+          alt="Sage Brand Guide Grid 8"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid9}
+          alt="Sage Brand Guide Grid 9"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid10}
+          alt="Sage Brand Guide Grid 10"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid11}
+          alt="Sage Brand Guide Grid 11"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid12}
+          alt="Sage Brand Guide Grid 12"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid13}
+          alt="Sage Brand Guide Grid 13"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid14}
+          alt="Sage Brand Guide Grid 14"
+        />
+      </div>
+    </div>
   </div>
-</InternalLayout>
-<script>
-  import Player from "@vimeo/player";
-  const image = document.getElementById("main-header");
 
-  const minScroll = 0; // minimum scroll value
-  const maxScroll = 800;
-  const minWidth = 20; // minimum range value
-  const maxWidth = 100;
+  <script>
+    import Player from "@vimeo/player";
+    const image = document.getElementById("main-header");
 
-  // const range =
-  //   ((currentScroll - minScroll) / (maxWidth - minScroll)) *
-  //     (maxRange - minRange) +
-  //   minRange;
-  // console.log(range);
+    const minScroll = 0; // minimum scroll value
+    const maxScroll = 800;
+    const minWidth = 20; // minimum range value
+    const maxWidth = 100;
 
-  // let imageWidth = 0.5 + currentScroll / maxWidth;
-  //   image.style.transform = `scale(${imageScale})`;
-  //   image.style.width = "20vw";
+    // const range =
+    //   ((currentScroll - minScroll) / (maxWidth - minScroll)) *
+    //     (maxRange - minRange) +
+    //   minRange;
+    // console.log(range);
 
-  const getScrollScale = () => {
-    let currentScroll = window.scrollY;
-    if (currentScroll > 800) {
-      currentScroll = 800;
-    }
-    const rangeValue =
-      ((currentScroll - minScroll) / (maxScroll - minScroll)) *
-        (maxWidth - minWidth) +
-      minWidth;
-    // console.log(rangeValue);
-    return rangeValue;
-  };
+    // let imageWidth = 0.5 + currentScroll / maxWidth;
+    //   image.style.transform = `scale(${imageScale})`;
+    //   image.style.width = "20vw";
 
-  let widthScale = getScrollScale();
-  image.style.width = `${widthScale}vw`;
-  image.style.marginTop = `-${widthScale * 3}px`;
+    const getScrollScale = () => {
+      let currentScroll = window.scrollY;
+      if (currentScroll > 800) {
+        currentScroll = 800;
+      }
+      const rangeValue =
+        ((currentScroll - minScroll) / (maxScroll - minScroll)) *
+          (maxWidth - minWidth) +
+        minWidth;
+      // console.log(rangeValue);
+      return rangeValue;
+    };
 
-  document.addEventListener("scroll", (event) => {
-    //slow down scrolling so image doesn't grow as fast
     let widthScale = getScrollScale();
-    // imageScale = 0.5 + currentScroll / totalWidth;
     image.style.width = `${widthScale}vw`;
     image.style.marginTop = `-${widthScale * 3}px`;
-  });
 
-  const videoContainer = document.getElementById("video-container");
-  const video = document.getElementById("ck_video");
-  const player = new Player(video);
-  const playButton = document.getElementById("play-button");
-  // Event listener for the play/pause button
-  videoContainer.addEventListener("mouseenter", (event) => {
-    player.getPaused().then((paused) => {
-      if (paused) {
-        playButton.style.display = "flex";
-      }
+    document.addEventListener("scroll", (event) => {
+      //slow down scrolling so image doesn't grow as fast
+      let widthScale = getScrollScale();
+      // imageScale = 0.5 + currentScroll / totalWidth;
+      image.style.width = `${widthScale}vw`;
+      image.style.marginTop = `-${widthScale * 3}px`;
     });
-  });
-  videoContainer.addEventListener("mouseleave", (event) => {
-    playButton.style.display = "none";
-  });
-  video.addEventListener("click", (event) => {
-    console.log("hello");
-    player.getPaused().then((paused) => {
+
+    const videoContainer = document.getElementById("video-container");
+    const video = document.getElementById("ck_video");
+    const player = new Player(video);
+    const playButton = document.getElementById("play-button");
+    // Event listener for the play/pause button
+    videoContainer.addEventListener("mouseenter", (event) => {
+      player.getPaused().then((paused) => {
+        if (paused) {
+          playButton.style.display = "flex";
+        }
+      });
+    });
+    videoContainer.addEventListener("mouseleave", (event) => {
+      playButton.style.display = "none";
+    });
+    video.addEventListener("click", (event) => {
       console.log("hello");
-      if (!paused) {
-        player.pause();
-        playButton.style.display = "flex";
-      }
+      player.getPaused().then((paused) => {
+        console.log("hello");
+        if (!paused) {
+          player.pause();
+          playButton.style.display = "flex";
+        }
+      });
     });
-  });
-  playButton.addEventListener("click", (event) => {
-    player.getPaused().then((paused) => {
-      if (paused) {
-        player.play();
-        playButton.style.display = "none";
-      }
+    playButton.addEventListener("click", (event) => {
+      player.getPaused().then((paused) => {
+        if (paused) {
+          player.play();
+          playButton.style.display = "none";
+        }
+      });
     });
-  });
-</script>
+  </script>
+</InternalLayout>
