@@ -1,0 +1,236 @@
+---
+import "../styles/utils.css";
+const { name } = Astro.props;
+import Image from "astro/components/Image.astro";
+import Wizehire from "../assets/Home/Wizehire.png";
+import Ample from "../assets/Home/Ample.png";
+import ComicsKingdom from "../assets/Home/Comics_Kingdom.png";
+import Week from "../assets/Home/Week.png";
+import DancePartyTime from "../assets/Home/Dance_Party_Time.png";
+import MetroVein from "../assets/Home/Metro_Vein.png";
+import Lockwood from "../assets/Home/Lockwood.png";
+import PuzzlePalace from "../assets/Home/Puzzle_Palace.png";
+import Sage from "../assets/Home/Sage.png";
+import SixFeet from "../assets/Home/6_Feet_Apart.png";
+import Blueprint from "../assets/Home/Blueprint.png";
+import Discovery from "../assets/Home/Discovery.png";
+import Fab from "../assets/Home/Fab.png";
+import GeniusKitchen from "../assets/Home/Genius_Kitchen.png";
+import Horowitz from "../assets/Home/Horowitz_Real_Estate.png";
+import Kindra from "../assets/Home/Kindra.png";
+import Magnolia from "../assets/Home/Magnolia.png";
+import Nightingale from "../assets/Home/Nightingale.png";
+import PearlyBites from "../assets/Home/Pearly_Bites.png";
+import TheCurve from "../assets/Home/The_Curve.png";
+import SayMore from "../assets/Home/Say_More.png";
+import Firefly from "../assets/Home/Firefly.png";
+import PetCenter from "../assets/Home/Pet_Center.png";
+
+const projects = [
+  { name: "Wizehire", image: Wizehire },
+  { name: "Ample", image: Ample },
+  { name: "Comics Kingdom", image: ComicsKingdom },
+  { name: "Lockwood", image: Lockwood },
+  { name: "Metro Vein Centers", image: MetroVein },
+  { name: "Sage", image: Sage },
+  { name: "Puzzle Palace", image: PuzzlePalace },
+  { name: "Dance Party Time", image: DancePartyTime },
+  { name: "Week&", image: Week },
+  { name: "Kindra", image: Kindra },
+  { name: "Nightingale Vets", image: Nightingale },
+  { name: "Pearly Bites", image: PearlyBites },
+  { name: "Fab", image: Fab },
+  { name: "The Curve Report", image: TheCurve },
+  { name: "Say More", image: SayMore },
+  { name: "Discovery Channel", image: Discovery },
+  { name: "Horowitz Real Estate", image: Horowitz },
+  { name: "Magnolia", image: Magnolia },
+  { name: "6 Feet Apart", image: SixFeet },
+  { name: "Pet Dermatology Center", image: PetCenter },
+  { name: "Genius Kitchen", image: GeniusKitchen },
+  { name: "Bluprint", image: Blueprint },
+  { name: "Firefly Vets", image: Firefly },
+];
+---
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 750px;
+    position: relative;
+    max-width: none;
+    /* top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    overflow: hidden;
+    background-color: #242121;
+    color: #f7f4ed;
+    /* font-family: "Karla"; */
+  }
+
+  .middle-row {
+    width: 100%;
+    height: 550px;
+    position: relative;
+  }
+
+  .inner-container {
+    display: flex;
+    /* flex-direction: row; */
+    gap: 50px;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .font-utile {
+    font-family: "utile-display", sans-serif;
+  }
+
+  .item {
+    height: 500px;
+    box-sizing: border-box;
+    /* width: 200px; */
+    /* width: 100%; */
+    border-radius: 5px;
+    /* background-color: pink; */
+  }
+
+  .background-slant {
+    content: "";
+    display: block;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    z-index: 1;
+    background-color: #ebd4c7;
+  }
+</style>
+<div class="container">
+  <h1 class="text-[66px]">Choose your next adventure...</h1>
+  <h3 class="mb-[20px]">DRAG TO EXPLORE</h3>
+  <div class="middle-row">
+    <div class="inner-container">
+      {
+        projects.map((project) => {
+          if (name !== project.name) {
+            return (
+              <div class="item">
+                <Image
+                  class="h-[500px] w-auto max-w-none"
+                  src={project.image}
+                  alt="test"
+                />
+                <h1 class="h-[50px] mt-[10px] invisible font-utile font-medium tracking-wider text-xl">
+                  {project.name}
+                </h1>
+              </div>
+            );
+          }
+        })
+      }
+    </div>
+  </div>
+  <div class="background-slant"></div>
+  <h1 class="h-[50px] text-xl background-slant">SEE ALL HART WORK</h1>
+</div>
+<script>
+  let middleRow = document.querySelector(".middle-row");
+  let innerContainer = document.querySelector(".inner-container");
+  let items = document.querySelectorAll(".item");
+  let midPoint = window.innerWidth / 2;
+  let previousItem;
+  for (let item of items) {
+    let itemRect = item.getBoundingClientRect();
+    let itemMidpoint = itemRect.x + itemRect.width / 2;
+    if (itemMidpoint > midPoint - 60 && itemMidpoint < midPoint + 60) {
+      if (
+        item.children[1].tagName == "H1" &&
+        item.children[1].classList.contains("invisible")
+      ) {
+        item.children[1].classList.add("visible");
+        item.children[1].classList.remove("invisible");
+        previousItem = item.children[1];
+      }
+    }
+  }
+
+  let pressed = false;
+  let startX;
+  let x;
+
+  middleRow.addEventListener("mousedown", (e) => {
+    pressed = true;
+    startX = e.offsetX - innerContainer.offsetLeft;
+    middleRow.style.cursor = "grabbing";
+  });
+
+  middleRow.addEventListener("mouseenter", () => {
+    middleRow.style.cursor = "grab";
+  });
+
+  middleRow.addEventListener("mouseup", () => {
+    middleRow.style.cursor = "grab";
+    pressed = false;
+  });
+
+  middleRow.addEventListener("mousemove", (e) => {
+    if (!pressed) return;
+    e.preventDefault();
+
+    // for (let i = 0; i < items.length; i++) {
+    // console.log(item.getBoundingClientRect());
+    midPoint = window.innerWidth / 2;
+
+    for (let item of items) {
+      let itemRect = item.getBoundingClientRect();
+      let itemMidpoint = itemRect.x + itemRect.width / 2;
+      if (itemMidpoint > midPoint - 60 && itemMidpoint < midPoint + 60) {
+        if (
+          item.children[1].tagName == "H1" &&
+          item.children[1].classList.contains("invisible")
+        ) {
+          item.children[1].classList.add("visible");
+          item.children[1].classList.remove("invisible");
+
+          previousItem.classList.remove("visible");
+          previousItem.classList.add("invisible");
+          previousItem = item.children[1];
+        }
+      }
+    }
+
+    x = e.offsetX;
+    innerContainer.style.left = `${x - startX}px`;
+  });
+
+  let boundItems = () => {
+    let outer = middleRow.getBoundingClientRect();
+    let inner = innerContainer.getBoundingClientRect();
+
+    if (parseInt(innerContainer.style.left) > 0) {
+      innerContainer.style.left = "0px";
+    }
+
+    if (inner.right < outer.right) {
+      innerContainer.style.left = `-${inner.width - outer.width}px`;
+    }
+  };
+
+  middleRow.addEventListener("mousemove", (e) => {
+    if (!pressed) return;
+    e.preventDefault();
+
+    x = e.offsetX;
+    innerContainer.style.left = `${x - startX}px`;
+    boundItems();
+  });
+</script>

@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import SarahGlasses from "../assets/SarahGlasses.mp4";
+import GlassesTest from "../assets/eye_test_cut.webm";
 ---
 
 <style>
@@ -46,6 +47,7 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
   }
   .video-container {
     /* background-color: paleturquoise; */
+
     margin-top: -30px;
     position: relative;
     display: flex;
@@ -66,24 +68,24 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
   #instagram {
     position: absolute;
     top: 150px;
-    left: 5px;
+    left: -5px;
     rotate: 260deg;
   }
   #substack {
     position: absolute;
-    top: 60px;
+    top: 55px;
     left: 80px;
     rotate: 5deg;
   }
   #vimeo {
     position: absolute;
-    top: 90px;
+    top: 85px;
     left: 200px;
     rotate: 25deg;
   }
   #linkedin {
     position: absolute;
-    top: 135px;
+    top: 130px;
     left: 290px;
     rotate: 31deg;
   }
@@ -92,8 +94,10 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
     height: 400px; */
   }
   .glasses {
+    transform: translateX(50px);
+    /* transform: scale(0.9); */
     /* position: relative; */
-    width: 700px;
+    width: 600px;
     height: 400px;
 
     /* position: absolute; */
@@ -152,6 +156,11 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
   .footer--text-right span {
     margin-left: 10px;
   }
+  @media (min-width: 678px) {
+    .glasses {
+      transform: translateX(0);
+    }
+  }
   @media (min-width: 678px) and (max-width: 1023px) {
     .pink-background {
       width: 590px;
@@ -168,7 +177,7 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
       left: 300px; */
       top: calc(50%);
       left: calc(50%);
-      transform: translate(120px, -330px);
+      transform: translate(120px, -340px);
     }
     #substack {
       top: calc(50%);
@@ -211,10 +220,10 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
       top: 85px;
     }
     svg {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
     .glasses {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
     #instagram {
       /* top: 140px;
@@ -264,10 +273,10 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
       top: 80px;
     }
     svg {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
     .glasses {
-      transform: scale(1.2);
+      transform: scale(1.1);
       margin-top: 20px;
     }
     #instagram {
@@ -275,7 +284,7 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
       left: 300px; */
       top: calc(50%);
       left: calc(50%);
-      transform: translate(150px, -390px);
+      transform: translate(150px, -380px);
     }
     #substack {
       top: calc(50%);
@@ -357,7 +366,7 @@ import SarahGlasses from "../assets/SarahGlasses.mp4";
       </svg>
     </a>
     <!-- <div class="video-wrapper"> -->
-    <video class="glasses" src={SarahGlasses} autoplay="true" loop="true" muted
+    <video class="glasses" src={GlassesTest} autoplay="true" loop="true" muted
     ></video>
     <!-- </div> -->
   </div>

@@ -5,7 +5,7 @@ import Logo from "../assets/HomeLogo.png";
 import DarkLogo from "../assets/LogoDark.png";
 import HeartDropdown from "../assets/HeartDropdown.png";
 import CloseButton from "../assets/CloseButton.png";
-import SarahGlasses from "../assets/SarahGlasses.mp4";
+import GlassesTest from "../assets/eye_test_cut.webm";
 const { theme } = Astro.props;
 ---
 
@@ -105,6 +105,49 @@ const { theme } = Astro.props;
   }
 
   @media (max-width: 768px) {
+    .svg-text {
+      fill: black;
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+    .video-container {
+      /* background-color: paleturquoise; */
+      /* margin-top: -30px; */
+      margin-top: 50px;
+      position: relative;
+      display: flex;
+      /* align-items: center; */
+      width: 100%;
+      /* align-items: end; */
+    }
+    #nav-instagram {
+      position: absolute;
+      /* top: 140px;
+      left: 300px; */
+      top: 50px;
+      left: 80px;
+      /* transform: translate(150px, -390px); */
+      rotate: 260deg;
+    }
+    #nav-substack {
+      position: absolute;
+      top: -20px;
+      left: 170px;
+      rotate: 5deg;
+    }
+    #nav-vimeo {
+      position: absolute;
+      top: 0px;
+      left: 240px;
+      rotate: 25deg;
+    }
+    #nav-linkedin {
+      position: absolute;
+      top: 30px;
+      left: 300px;
+      rotate: 31deg;
+    }
     .overflow-hidden {
       overflow: hidden;
     }
@@ -233,9 +276,9 @@ const { theme } = Astro.props;
         <p class="mobile-nav-link mobile-nav-link--email">
           getcreative@byhart.studio
         </p>
-        <!-- <div class="video-container">
+        <div class="video-container">
           <a
-            id="instagram"
+            id="nav-instagram"
             class="video-link"
             href="www.instagram.com"
             target="_blank"
@@ -251,7 +294,7 @@ const { theme } = Astro.props;
             </svg>
           </a>
           <a
-            id="substack"
+            id="nav-substack"
             class="video-link"
             href="www.instagram.com"
             target="_blank"
@@ -267,7 +310,7 @@ const { theme } = Astro.props;
             </svg>
           </a>
           <a
-            id="vimeo"
+            id="nav-vimeo"
             class="video-link"
             href="www.instagram.com"
             target="_blank"
@@ -283,7 +326,7 @@ const { theme } = Astro.props;
             </svg>
           </a>
           <a
-            id="linkedin"
+            id="nav-linkedin"
             class="video-link"
             href="www.instagram.com"
             target="_blank"
@@ -300,13 +343,15 @@ const { theme } = Astro.props;
               </text>
             </svg>
           </a>
+          <!-- <div class="video-wrapper"> -->
           <video
-            class="glasses"
-            src={SarahGlasses}
+            class="glasses ml-[150px]"
+            src={GlassesTest}
             autoplay="true"
             loop="true"
             muted></video>
-        </div> -->
+          <!-- </div> -->
+        </div>
       </div>
     </div>
     <div

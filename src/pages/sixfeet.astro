@@ -18,6 +18,17 @@ import Wedding from "../assets/SixFeet/6ft_Wedding.png";
 import Windows from "../assets/SixFeet/6ft_Windows.png";
 import FunFacts from "../assets/SixFeet/6ft_FunFacts.gif";
 import Backpack from "../assets/SixFeet/6ft_Backpack.png";
+import Slider1 from "../assets/SixFeet/Ticker/1.png";
+import Slider2 from "../assets/SixFeet/Ticker/2.png";
+import Slider3 from "../assets/SixFeet/Ticker/3.png";
+import Slider4 from "../assets/SixFeet/Ticker/4.png";
+import Slider5 from "../assets/SixFeet/Ticker/5.png";
+import Slider6 from "../assets/SixFeet/Ticker/6.png";
+import Slider7 from "../assets/SixFeet/Ticker/7.png";
+import Slider8 from "../assets/SixFeet/Ticker/8.png";
+import Slider9 from "../assets/SixFeet/Ticker/9.png";
+import Slider10 from "../assets/SixFeet/Ticker/10.png";
+import ProjectCarousel from "../components/ProjectCarousel.astro";
 ---
 
 <style>
@@ -54,21 +65,49 @@ import Backpack from "../assets/SixFeet/6ft_Backpack.png";
     margin-top: 22.5px;
     margin-bottom: 22.5px;
   }
-  .image-8992 {
-    width: 89%;
-    height: auto;
-  }
   h2 {
     font-family: "Karla";
     font-size: 26px;
+  }
+  .carousel-container {
+    align-items: center;
+    /* background: #e3e3e3; */
+    display: flex;
+    height: 200px;
+    width: 100%;
+    justify-content: center;
+  }
+  .slider {
+    /* background: white; */
+    /* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125); */
+    height: 200px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  .slide-track {
+    animation: scroll 30s linear infinite;
+    display: flex;
+    gap: 100px;
+    /* width: calc(250px * 8); */
+  }
+  .slide {
+    height: 100px;
+    width: 250px;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 14));
+    }
   }
   @media screen and (min-width: 768px) {
     .image-flex > * {
       margin-top: 60px;
       margin-bottom: 60px;
-    }
-    .image-8992 {
-      width: 92%;
     }
     h2 {
       font-size: 36px;
@@ -99,30 +138,167 @@ import Backpack from "../assets/SixFeet/6ft_Backpack.png";
       <li>Surprise + Delight</li>
     </TextGrid>
     <div class="image-flex">
-      <Image class="image-8992" src={MaskGang} alt="Six Feet" />
-      <h2>
+      <Image class="w-[89%] sm:w-[92%]" src={MaskGang} alt="Six Feet" />
+      <h2 class="w-[90%] sm:w-[60%]">
         Directing physical product concept and design + brand presentation for a
         new line of social distancing products.
       </h2>
-      <Image class="image-8992" src={HotMask} alt="Six Feet" />
-      <div>
-        <Image src={SixFeet} alt="Six Feet" />
-        <Image src={Together} alt="Six Feet" />
+      <Image class="w-[89%] sm:w-[92%]" src={HotMask} alt="Six Feet" />
+      <div class="carousel-container">
+        <div class="slider">
+          <div class="slide-track">
+            <div class="slide">
+              <Image
+                src={Slider1}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider2}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider3}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider4}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider5}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider6}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider7}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider8}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider9}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider10}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider1}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider2}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider3}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider4}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider5}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-      <Image src={RainbowSticker} alt="Six Feet" />
-      <div>
-        <Image src={Store} alt="Six Feet" />
-        <Image src={Pile} alt="Six Feet" />
-        <Image src={Floor} alt="Six Feet" />
+
+      <div class="flex justify-between w-[95%]">
+        <Image
+          class="w-1/2 p-[5px] h-auto sm:p-[20px]"
+          src={SixFeet}
+          alt="Six Feet"
+        />
+        <Image
+          class="w-1/2 p-[5px] h-auto sm:p-[20px]"
+          src={Together}
+          alt="Six Feet"
+        />
       </div>
-      <Image src={Wedding} alt="Six Feet" />
-      <Image src={Windows} alt="Six Feet" />
-      <div>
-        <Image src={FunFacts} alt="Six Feet" />
-        <Image src={Backpack} alt="Six Feet" />
+      <Image class="w-[60%]" src={RainbowSticker} alt="Six Feet" />
+      <div class="flex justify-between w-[95%]">
+        <Image
+          class="w-1/3 p-[5px] h-auto sm:p-[20px]"
+          src={Store}
+          alt="Six Feet"
+        />
+        <Image
+          class="w-1/3 p-[5px] h-auto sm:p-[20px]"
+          src={Pile}
+          alt="Six Feet"
+        />
+        <Image
+          class="w-1/3 p-[5px] h-auto sm:p-[20px]"
+          src={Floor}
+          alt="Six Feet"
+        />
+      </div>
+      <Image class="w-full h-auto" src={Wedding} alt="Six Feet" />
+      <Image class="w-[95%] h-auto" src={Windows} alt="Six Feet" />
+      <div class="flex w-[95%]">
+        <Image
+          class="w-1/2 h-auto p-[20px] sm:p-[100px]"
+          src={FunFacts}
+          alt="Six Feet"
+        />
+        <Image class="w-1/2 h-auto" src={Backpack} alt="Six Feet" />
       </div>
     </div>
   </div>
+  <ProjectCarousel name="6 Feet Apart" />
 </InternalLayout>
 <script>
   const image = document.getElementById("main-video");
