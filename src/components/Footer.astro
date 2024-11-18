@@ -58,7 +58,7 @@ import GlassesTest from "../assets/eye_test_cut.webm";
 
   .svg-text {
     fill: black;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 2px;
     font-weight: 500;
   }
@@ -67,9 +67,9 @@ import GlassesTest from "../assets/eye_test_cut.webm";
   }
   #instagram {
     position: absolute;
-    top: 150px;
-    left: -5px;
-    rotate: 260deg;
+    top: 130px;
+    left: -15px;
+    rotate: 265deg;
   }
   #substack {
     position: absolute;
@@ -79,15 +79,15 @@ import GlassesTest from "../assets/eye_test_cut.webm";
   }
   #vimeo {
     position: absolute;
-    top: 85px;
-    left: 200px;
-    rotate: 25deg;
+    top: 50px;
+    left: 70px;
+    rotate: 5deg;
   }
   #linkedin {
     position: absolute;
-    top: 130px;
-    left: 290px;
-    rotate: 31deg;
+    top: 62px;
+    left: 150px;
+    rotate: 15deg;
   }
   .video-wrapper {
     /* width: 700px;
@@ -177,7 +177,7 @@ import GlassesTest from "../assets/eye_test_cut.webm";
       left: 300px; */
       top: calc(50%);
       left: calc(50%);
-      transform: translate(120px, -340px);
+      transform: translate(100px, -360px);
     }
     #substack {
       top: calc(50%);
@@ -187,12 +187,12 @@ import GlassesTest from "../assets/eye_test_cut.webm";
     #vimeo {
       top: calc(50%);
       left: calc(50%);
-      transform: translate(-180px, -40px);
+      transform: translate(-295px, -130px);
     }
     #linkedin {
       top: calc(50%);
       left: calc(50%);
-      transform: translate(-90px, -30px);
+      transform: translate(-225px, -85px);
     }
   }
   @media (min-width: 1024px) and (max-width: 1400px) {
@@ -230,7 +230,7 @@ import GlassesTest from "../assets/eye_test_cut.webm";
       left: 300px; */
       top: calc(50%);
       left: calc(50%);
-      transform: translate(150px, -380px);
+      transform: translate(110px, -390px);
     }
     #substack {
       top: calc(50%);
@@ -240,12 +240,12 @@ import GlassesTest from "../assets/eye_test_cut.webm";
     #vimeo {
       top: calc(50%);
       left: calc(50%);
-      transform: translate(-200px, -50px);
+      transform: translate(-310px, -140px);
     }
     #linkedin {
       top: calc(50%);
       left: calc(50%);
-      transform: translate(-90px, -35px);
+      transform: translate(-230px, -95px);
     }
   }
   @media (min-width: 1401px) {
@@ -284,7 +284,7 @@ import GlassesTest from "../assets/eye_test_cut.webm";
       left: 300px; */
       top: calc(50%);
       left: calc(50%);
-      transform: translate(150px, -380px);
+      transform: translate(100px, -395px);
     }
     #substack {
       top: calc(50%);
@@ -294,12 +294,12 @@ import GlassesTest from "../assets/eye_test_cut.webm";
     #vimeo {
       top: calc(50%);
       left: calc(50%);
-      transform: translate(-200px, -40px);
+      transform: translate(-310px, -135px);
     }
     #linkedin {
       top: calc(50%);
       left: calc(50%);
-      transform: translate(-90px, -30px);
+      transform: translate(-225px, -90px);
     }
   }
 </style>
@@ -312,7 +312,7 @@ import GlassesTest from "../assets/eye_test_cut.webm";
     <a
       id="instagram"
       class="video-link"
-      href="www.instagram.com"
+      href="https://www.instagram.com/byhartstudio/"
       target="_blank"
     >
       <svg width="100" height="20">
@@ -324,7 +324,7 @@ import GlassesTest from "../assets/eye_test_cut.webm";
         </text>
       </svg>
     </a>
-    <a
+    <!-- <a
       id="substack"
       class="video-link"
       href="www.instagram.com"
@@ -338,8 +338,13 @@ import GlassesTest from "../assets/eye_test_cut.webm";
           <textPath href="#curve2">SUBSTACK</textPath>
         </text>
       </svg>
-    </a>
-    <a id="vimeo" class="video-link" href="www.instagram.com" target="_blank">
+    </a> -->
+    <a
+      id="vimeo"
+      class="video-link"
+      href="https://vimeo.com/byhartstudio"
+      target="_blank"
+    >
       <svg width="100" height="20">
         <defs>
           <path id="curve3" d="M 0 20 Q 50 13 100 20" fill="transparent"></path>
@@ -352,16 +357,12 @@ import GlassesTest from "../assets/eye_test_cut.webm";
     <a
       id="linkedin"
       class="video-link"
-      href="www.instagram.com"
+      href="https://www.linkedin.com/company/byhartstudio/posts/?feedView=all"
       target="_blank"
     >
       <svg width="100" height="20">
-        <defs>
-          <path id="curve4" d="M 0 20 L 38 20 Q 70 20 72 -4" fill="transparent"
-          ></path>
-        </defs>
         <text class="svg-text">
-          <textPath href="#curve4">LINKEDIN</textPath>
+          <textPath href="#curve3">LINKEDIN</textPath>
         </text>
       </svg>
     </a>
