@@ -1,9 +1,9 @@
-@font-face {
+/* @font-face {
   font-family: "Karla";
   src: url("/fonts/Karla-Regular.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
-  /* font-display: swap; */
+
 }
 
 @font-face {
@@ -11,8 +11,8 @@
   src: url("/fonts/Karla-Bold.ttf") format("ttf");
   font-weight: bold;
   font-style: normal;
-  /* font-display: swap; */
-}
+
+} */
 
 @font-face {
   font-family: "Covered By Your Grace";
