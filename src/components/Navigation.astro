@@ -77,6 +77,8 @@ const { theme } = Astro.props;
     background-color: #ff97fd;
     padding: 10px 20px;
     font-size: 16px;
+    width: 270px;
+    text-align: center;
   }
 
   .mobile-nav-link--email {
@@ -102,6 +104,9 @@ const { theme } = Astro.props;
   .desktop-nav {
     display: flex;
     align-items: center;
+  }
+  .glasses {
+    max-width: 400px;
   }
 
   @media (max-width: 768px) {
@@ -130,23 +135,23 @@ const { theme } = Astro.props;
       /* transform: translate(150px, -390px); */
       rotate: 260deg;
     }
-    #nav-substack {
+    /* #nav-substack {
       position: absolute;
       top: -20px;
       left: 170px;
       rotate: 5deg;
-    }
+    } */
     #nav-vimeo {
       position: absolute;
-      top: 5px;
-      left: 250px;
-      rotate: 25deg;
+      top: -25px;
+      left: 170px;
+      rotate: 5deg;
     }
     #nav-linkedin {
       position: absolute;
-      top: 30px;
-      left: 300px;
-      rotate: 31deg;
+      top: 2px;
+      left: 250px;
+      rotate: 27deg;
     }
     .overflow-hidden {
       overflow: hidden;
@@ -269,11 +274,13 @@ const { theme } = Astro.props;
         <Image id="dropdown-close" alt="X" src={CloseButton} />
       </button>
       <div class="dropdown-link-container">
-        <a class="mobile-nav-link nav-link--header">SEE OUR WORK</a>
+        <a href="/" class="mobile-nav-link nav-link--header">SEE OUR WORK</a>
         <a class="mobile-nav-link nav-link--header">GET TO KNOW US</a>
-        <a class="mobile-nav-link nav-link--email-button">COPY OUR EMAIL ADDY</a
+        <a
+          id="nav-link--email-button"
+          class="mobile-nav-link nav-link--email-button">COPY OUR EMAIL ADDY</a
         >
-        <p class="mobile-nav-link mobile-nav-link--email">
+        <p id="nav-email" class="mobile-nav-link mobile-nav-link--email">
           getcreative@byhart.studio
         </p>
         <div class="video-container">
@@ -293,7 +300,7 @@ const { theme } = Astro.props;
               </text>
             </svg>
           </a>
-          <a
+          <!-- <a
             id="nav-substack"
             class="video-link"
             href="www.instagram.com"
@@ -308,7 +315,7 @@ const { theme } = Astro.props;
                 <textPath href="#curve2">SUBSTACK</textPath>
               </text>
             </svg>
-          </a>
+          </a> -->
           <a
             id="nav-vimeo"
             class="video-link"
@@ -332,14 +339,8 @@ const { theme } = Astro.props;
             target="_blank"
           >
             <svg width="100" height="20">
-              <defs>
-                <path
-                  id="curve4"
-                  d="M 0 20 L 38 20 Q 70 20 72 -4"
-                  fill="transparent"></path>
-              </defs>
               <text class="svg-text">
-                <textPath href="#curve4">LINKEDIN</textPath>
+                <textPath href="#curve3">LINKEDIN</textPath>
               </text>
             </svg>
           </a>
@@ -384,6 +385,20 @@ const { theme } = Astro.props;
     navButton.addEventListener("click", (event) => {
       nav.classList.toggle("dropdown-opened");
       document.body.classList.toggle("overflow-hidden");
+    });
+
+    const navEmailButton = document.getElementById("nav-link--email-button");
+
+    navEmailButton.addEventListener("click", async (event) => {
+      try {
+        await navigator.clipboard.writeText("getcreative@byhart.studio");
+        setTimeout(() => (navEmailButton.textContent = "COPIED!"), 10);
+        setTimeout(() => {
+          navEmailButton.textContent = "COPY OUR EMAIL ADDY";
+        }, 2000);
+      } catch (err) {
+        console.error("Failed to copy: ", err);
+      }
     });
   </script>
 </header>

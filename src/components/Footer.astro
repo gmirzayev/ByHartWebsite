@@ -156,6 +156,22 @@ import GlassesTest from "../assets/eye_test_cut.webm";
   .footer--text-right span {
     margin-left: 10px;
   }
+  #tooltip-nav {
+    position: absolute;
+    background-color: #f7eee3;
+    color: black;
+    font-family: Karla;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    border-radius: 35px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+    rotate: -15deg;
+    z-index: 100;
+  }
   @media (min-width: 678px) {
     .glasses {
       transform: translateX(0);
@@ -391,4 +407,23 @@ import GlassesTest from "../assets/eye_test_cut.webm";
       © Sarah Hartley <span>See Sarah Work LLC d/b/a By Hart</span>
     </p>
   </div>
+  <div id="tooltip-footer"></div>
 </footer>
+<script>
+  // const navEmailButton = document.getElementById("nav-link--email-button");
+  // const tooltip = document.getElementById("tooltip-nav");
+
+  // navEmailButton.addEventListener("mouseenter", (event: MouseEvent) => {
+  //   tooltip.innerText = "COPY ME";
+  //   tooltip.style.opacity = "1";
+  // });
+
+  // navEmailButton.addEventListener("mousemove", (event: MouseEvent) => {
+  //   tooltip.style.top = `${event.pageY - 10}px`;
+  //   tooltip.style.left = `${event.pageX}px`;
+  // });
+
+  // navEmailButton.addEventListener("mouseleave", () => {
+  //   tooltip.style.opacity = "0";
+  // });
+</script>

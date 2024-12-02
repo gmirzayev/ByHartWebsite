@@ -51,14 +51,15 @@ import Illustration from "../assets/Home/Illustration.gif";
 
   .image-grid--column {
     width: calc(31%);
-    row-gap: 59px;
+    row-gap: 20px;
     display: none;
     flex-direction: column;
   }
 
   .image-grid--column-m {
-    width: 33%;
-    display: none;
+    width: 46%;
+    display: flex;
+    row-gap: 20px;
     flex-direction: column;
   }
 
@@ -67,10 +68,11 @@ import Illustration from "../assets/Home/Illustration.gif";
   }
   .grid-item-label {
     color: #faf7f4;
-  }
-
-  .active {
-    display: flex;
+    font-family: "utile-display", sans-serif;
+    margin-top: 5px;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+    font-weight: 500;
   }
 
   .active-item {
@@ -84,7 +86,21 @@ import Illustration from "../assets/Home/Illustration.gif";
     border-radius: 5.87px;
   }
 
+  .grid-image-m {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5.87px;
+  }
+
   @media screen and (min-width: 767px) {
+    .image-grid--column {
+      display: flex;
+      row-gap: 59px;
+    }
+    .image-grid--column-m {
+      display: none;
+    }
     .tooltip {
       position: absolute;
       background-color: #f7eee3;
@@ -104,12 +120,6 @@ import Illustration from "../assets/Home/Illustration.gif";
       display: none;
     }
   }
-
-  @media screen and (max-width: 767px) {
-    .image-grid--column {
-      width: 46%;
-    }
-  }
 </style>
 <div>
   <!-- <div class="filters">
@@ -122,20 +132,16 @@ import Illustration from "../assets/Home/Illustration.gif";
         <img
           src={Wizehire.src}
           class="grid-image"
-          data-tooltip="WIZEHIRE"
           alt="Pizza being made through a cutout in the shape of a face on a purple rectangle."
         />
-        <p class="grid-item-label">Wizehire</p>
       </a>
 
       <a class="grid-item brand active-item">
         <img
           src={Lockwood.src}
           class="grid-image"
-          data-tooltip="LOCKWOOD"
           alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
         />
-        <p class="grid-item-label">Lockwood</p>
       </a>
 
       <a class="grid-item interior active-item">
@@ -144,7 +150,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">Week&</p>
       </a>
 
       <a href="/pearlybites" class="grid-item interior active-item">
@@ -154,7 +159,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           data-tooltip="PEARLY BITES"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">Pearly Bites</p>
       </a>
 
       <a class="grid-item interior active-item">
@@ -163,7 +167,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">Discovery</p>
       </a>
 
       <a class="grid-item interior active-item">
@@ -172,7 +175,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">Magnolia</p>
       </a>
 
       <a class="grid-item interior active-item">
@@ -181,7 +183,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">Genius Kitchen</p>
       </a>
 
       <a class="grid-item interior active-item">
@@ -190,7 +191,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">Custom Illustrations</p>
       </a>
 
       <a class="grid-item interior active-item">
@@ -199,7 +199,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">Presentation Magic</p>
       </a>
     </div>
 
@@ -210,7 +209,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
         />
-        <p class="grid-item-label">Ample</p>
       </a>
 
       <a class="grid-item campaign active-item">
@@ -219,7 +217,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Pizza being made through a cutout in the shape of a face on a purple rectangle."
         />
-        <p class="grid-item-label">Metro Vein Centers</p>
       </a>
 
       <a class="grid-item interior active-item">
@@ -228,7 +225,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">Puzzle Palace</p>
       </a>
 
       <a class="grid-item interior active-item">
@@ -237,7 +233,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">Nightingale Vets</p>
       </a>
 
       <a class="grid-item interior active-item">
@@ -246,7 +241,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">Fab</p>
       </a>
 
       <a class="grid-item interior active-item">
@@ -255,7 +249,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">Say More</p>
       </a>
 
       <a href="/sixfeet" class="grid-item interior active-item">
@@ -265,7 +258,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">6 Feet Apart</p>
       </a>
 
       <a class="grid-item interior active-item">
@@ -274,7 +266,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">Bluprint</p>
       </a>
 
       <a class="grid-item interior active-item">
@@ -283,7 +274,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">Apartment Therapy</p>
       </a>
 
       <a class="grid-item interior active-item">
@@ -292,7 +282,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">Photography Direction</p>
       </a>
 
       <a class="grid-item interior active-item">
@@ -301,7 +290,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">Top Secret Archive</p>
       </a>
     </div>
 
@@ -313,7 +301,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           data-tooltip="COMICS KINGDOM"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
-        <p class="grid-item-label">Comics Kingdom</p>
       </a>
 
       <a href="/sage" class="grid-item campaign active-item">
@@ -323,7 +310,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           data-tooltip="SAGE"
           alt="Pizza being made through a cutout in the shape of a face on a purple rectangle."
         />
-        <p class="grid-item-label">Sage</p>
       </a>
 
       <a class="grid-item brand active-item">
@@ -332,7 +318,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
         />
-        <p class="grid-item-label">Dance Party Time</p>
       </a>
 
       <a class="grid-item brand active-item">
@@ -341,7 +326,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
         />
-        <p class="grid-item-label">Kindra</p>
       </a>
 
       <a class="grid-item brand active-item">
@@ -350,7 +334,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
         />
-        <p class="grid-item-label">The Curve Report</p>
       </a>
 
       <a class="grid-item brand active-item">
@@ -359,7 +342,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
         />
-        <p class="grid-item-label">Horowitz Real Estate</p>
       </a>
 
       <a class="grid-item brand active-item">
@@ -368,7 +350,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
         />
-        <p class="grid-item-label">Pet Dermatology Center</p>
       </a>
 
       <a class="grid-item brand active-item">
@@ -377,7 +358,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
         />
-        <p class="grid-item-label">Firefly Vets</p>
       </a>
 
       <a class="grid-item brand active-item">
@@ -386,7 +366,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
         />
-        <p class="grid-item-label">HGTV</p>
       </a>
 
       <a class="grid-item brand active-item">
@@ -395,7 +374,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
         />
-        <p class="grid-item-label">NBCUniversal Upfronts</p>
       </a>
 
       <a class="grid-item brand active-item">
@@ -404,7 +382,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
         />
-        <p class="grid-item-label">In Words Only</p>
       </a>
 
       <a class="grid-item brand active-item">
@@ -413,7 +390,6 @@ import Illustration from "../assets/Home/Illustration.gif";
           class="grid-image"
           alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
         />
-        <p class="grid-item-label">See Sarah Dance</p>
       </a>
     </div>
     <!-- ------------------------------------------------- -->
@@ -423,52 +399,268 @@ import Illustration from "../assets/Home/Illustration.gif";
     <div class="image-grid--column-m mobile">
       <a class="grid-item-m brand active-item">
         <img
-          src={Ample.src}
-          class="grid-image"
+          src={Wizehire.src}
+          class="grid-image-m"
+          data-tooltip="WIZEHIRE"
           alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
         />
+        <p class="grid-item-label">Wizehire</p>
       </a>
 
       <a class="grid-item-m campaign active-item">
         <img
-          src={MetroVein.src}
-          class="grid-image"
+          src={Lockwood.src}
+          class="grid-image-m"
+          data-tooltip="LOCKWOOD"
           alt="Pizza being made through a cutout in the shape of a face on a purple rectangle."
         />
+        <p class="grid-item-label">Lockwood</p>
       </a>
 
       <a class="grid-item-m interior active-item">
         <img
-          src={PuzzlePalace.src}
-          class="grid-image"
+          src={Sage.src}
+          class="grid-image-m"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
+        <p class="grid-item-label">Sage</p>
+      </a>
+      <a class="grid-item-m interior active-item">
+        <img
+          src={DancePartyTime.src}
+          class="grid-image-m"
+          alt="Two speech bubbles turned vertically and having eyes so they look like faces."
+        />
+        <p class="grid-item-label">Dance Party Time</p>
+      </a>
+      <a class="grid-item-m interior active-item">
+        <img
+          src={Kindra.src}
+          class="grid-image-m"
+          alt="Two speech bubbles turned vertically and having eyes so they look like faces."
+        />
+        <p class="grid-item-label">Kindra</p>
+      </a>
+      <a class="grid-item-m interior active-item">
+        <img
+          src={PearlyBites.src}
+          class="grid-image-m"
+          alt="Two speech bubbles turned vertically and having eyes so they look like faces."
+        />
+        <p class="grid-item-label">Pearly Bites</p>
+      </a>
+      <a class="grid-item-m interior active-item">
+        <img
+          src={SayMore.src}
+          class="grid-image-m"
+          alt="Two speech bubbles turned vertically and having eyes so they look like faces."
+        />
+        <p class="grid-item-label">Say More</p>
+      </a>
+      <a class="grid-item-m interior active-item">
+        <img
+          src={Horowitz.src}
+          class="grid-image-m"
+          alt="Two speech bubbles turned vertically and having eyes so they look like faces."
+        />
+        <p class="grid-item-label">Horowitz Real Estate</p>
+      </a>
+      <a class="grid-item-m interior active-item">
+        <img
+          src={SixFeet.src}
+          class="grid-image-m"
+          alt="Two speech bubbles turned vertically and having eyes so they look like faces."
+        />
+        <p class="grid-item-label">6 Feet Apart</p>
+      </a>
+      <a class="grid-item-m interior active-item">
+        <img
+          src={PetCenter.src}
+          class="grid-image-m"
+          alt="Two speech bubbles turned vertically and having eyes so they look like faces."
+        />
+        <p class="grid-item-label">Pet Dermatology Center</p>
+      </a>
+      <a class="grid-item-m interior active-item">
+        <img
+          src={Blueprint.src}
+          class="grid-image-m"
+          alt="Two speech bubbles turned vertically and having eyes so they look like faces."
+        />
+        <p class="grid-item-label">Bluprint</p>
+      </a>
+      <a class="grid-item-m interior active-item">
+        <img
+          src={ApartmentTherapy.src}
+          class="grid-image-m"
+          alt="Two speech bubbles turned vertically and having eyes so they look like faces."
+        />
+        <p class="grid-item-label">Apartment Therapy</p>
+      </a>
+      <a class="grid-item-m interior active-item">
+        <img
+          src={Illustration.src}
+          class="grid-image-m"
+          alt="Two speech bubbles turned vertically and having eyes so they look like faces."
+        />
+        <p class="grid-item-label">Custom Illustrations</p>
+      </a>
+      <a class="grid-item-m interior active-item">
+        <img
+          src={Reach.src}
+          class="grid-image-m"
+          alt="Two speech bubbles turned vertically and having eyes so they look like faces."
+        />
+        <p class="grid-item-label">NBCUniversal Upfronts</p>
+      </a>
+      <a class="grid-item-m interior active-item">
+        <img
+          src={Archive.src}
+          class="grid-image-m"
+          alt="Two speech bubbles turned vertically and having eyes so they look like faces."
+        />
+        <p class="grid-item-label">Top Secret Archive</p>
+      </a>
+      <a class="grid-item-m interior active-item">
+        <img
+          src={WordOnly.src}
+          class="grid-image-m"
+          alt="Two speech bubbles turned vertically and having eyes so they look like faces."
+        />
+        <p class="grid-item-label">In Words Only</p>
       </a>
     </div>
 
     <div class="image-grid--column-m mobile">
       <a class="grid-item-m interior active-item">
         <img
-          src={ComicsKingdom.src}
-          class="grid-image"
+          src={Ample.src}
+          class="grid-image-m"
           alt="Two speech bubbles turned vertically and having eyes so they look like faces."
         />
+        <p class="grid-item-label">Ample</p>
       </a>
 
       <a class="grid-item-m campaign active-item">
         <img
-          src={Sage.src}
-          class="grid-image"
+          src={ComicsKingdom.src}
+          class="grid-image-m"
           alt="Pizza being made through a cutout in the shape of a face on a purple rectangle."
         />
+        <p class="grid-item-label">Comics Kingdom</p>
       </a>
 
       <a class="grid-item-m brand active-item">
         <img
-          src={DancePartyTime.src}
-          class="grid-image"
+          src={MetroVein.src}
+          class="grid-image-m"
           alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
         />
+        <p class="grid-item-label">Metro Vein Centers</p>
+      </a>
+      <a class="grid-item-m brand active-item">
+        <img
+          src={PuzzlePalace.src}
+          class="grid-image-m"
+          alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
+        />
+        <p class="grid-item-label">Puzzle Palace</p>
+      </a>
+      <a class="grid-item-m brand active-item">
+        <img
+          src={Week.src}
+          class="grid-image-m"
+          alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
+        />
+        <p class="grid-item-label">Week&</p>
+      </a>
+      <a class="grid-item-m brand active-item">
+        <img
+          src={Nightingale.src}
+          class="grid-image-m"
+          alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
+        />
+        <p class="grid-item-label">Nightingale Vets</p>
+      </a>
+      <a class="grid-item-m brand active-item">
+        <img
+          src={Fab.src}
+          class="grid-image-m"
+          alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
+        />
+        <p class="grid-item-label">Fab</p>
+      </a>
+      <a class="grid-item-m brand active-item">
+        <img
+          src={TheCurve.src}
+          class="grid-image-m"
+          alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
+        />
+        <p class="grid-item-label">The Curve Report</p>
+      </a>
+      <a class="grid-item-m brand active-item">
+        <img
+          src={Discovery.src}
+          class="grid-image-m"
+          alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
+        />
+        <p class="grid-item-label">Discovery</p>
+      </a>
+      <a class="grid-item-m brand active-item">
+        <img
+          src={Magnolia.src}
+          class="grid-image-m"
+          alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
+        />
+        <p class="grid-item-label">Magnolia</p>
+      </a>
+      <a class="grid-item-m brand active-item">
+        <img
+          src={GeniusKitchen.src}
+          class="grid-image-m"
+          alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
+        />
+        <p class="grid-item-label">Genius Kitchen</p>
+      </a>
+      <a class="grid-item-m brand active-item">
+        <img
+          src={Firefly.src}
+          class="grid-image-m"
+          alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
+        />
+        <p class="grid-item-label">Firefly Vets</p>
+      </a>
+      <a class="grid-item-m brand active-item">
+        <img
+          src={HGTV2.src}
+          class="grid-image-m"
+          alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
+        />
+        <p class="grid-item-label">HGTV</p>
+      </a>
+      <a class="grid-item-m brand active-item">
+        <img
+          src={Photography.src}
+          class="grid-image-m"
+          alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
+        />
+        <p class="grid-item-label">Photography Direction</p>
+      </a>
+      <a class="grid-item-m brand active-item">
+        <img
+          src={PresentationsAlt.src}
+          class="grid-image-m"
+          alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
+        />
+        <p class="grid-item-label">Presentation Magic</p>
+      </a>
+      <a class="grid-item-m brand active-item">
+        <img
+          src={SarahVideo.src}
+          class="grid-image-m"
+          alt="Entrace to an office with a couch, front desk, and a man walking away from the camera."
+        />
+        <p class="grid-item-label">See Sarah Dance</p>
       </a>
     </div>
   </div>
@@ -476,7 +668,7 @@ import Illustration from "../assets/Home/Illustration.gif";
 </div>
 <script>
   const tooltip = document.getElementById("tooltip");
-  const imageContainers = document.querySelectorAll(".grid-image");
+  const imageContainers = document.querySelectorAll(".grid-image-m");
 
   imageContainers.forEach((container) => {
     container.addEventListener("mouseenter", (event: MouseEvent) => {
