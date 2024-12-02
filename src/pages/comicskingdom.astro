@@ -112,7 +112,7 @@ import ProjectCarousel from "../components/ProjectCarousel.astro";
     font-family: "Karla";
     font-size: 16px;
     line-height: 26px;
-    column-count: 2;
+    column-count: 1;
     column-gap: 90px;
   }
   #video-wrapper {
@@ -144,6 +144,9 @@ import ProjectCarousel from "../components/ProjectCarousel.astro";
     height: 100%;
     /* height: 500px; */
     /* object-fit: cover; */
+  }
+  .karla {
+    font-family: "Karla", sans-serif;
   }
   #play-button {
     position: absolute;
@@ -197,7 +200,7 @@ import ProjectCarousel from "../components/ProjectCarousel.astro";
       margin-bottom: 45px;
     }
     .text-two-column-centered {
-      column-count: 1;
+      column-count: 2;
     }
   }
 </style>
@@ -278,19 +281,27 @@ import ProjectCarousel from "../components/ProjectCarousel.astro";
           >
         </p>
       </div>
-      <Image class="h-auto w-full" src={AppDesktop} alt="Comics Kingdom" />
       <Image
-        class="h-auto w-[92%] hidden"
+        class="h-auto w-full hidden sm:!block"
+        src={AppDesktop}
+        alt="Comics Kingdom"
+      />
+      <Image
+        class="h-auto w-[92%] block sm:hidden"
         src={AppMobile}
         alt="Comics Kingdom"
       />
       <div class="dark-container">
         <Image
-          class="h-auto mt-[100px] w-1/2"
+          class="h-auto mt-[100px] w-1/2 hidden sm:!block"
           src={IconsDesktop}
           alt="Comics Kingdom"
         />
-        <Image class="hidden" src={IconsMobile} alt="Comics Kingdom" />
+        <Image
+          class="h-auto mt-[50px] w-1/2 block sm:hidden"
+          src={IconsMobile}
+          alt="Comics Kingdom"
+        />
         <video
           class="max-h-full w-[100%] my-[40px] sm:my-[100px] mx-0"
           autoplay
@@ -301,12 +312,19 @@ import ProjectCarousel from "../components/ProjectCarousel.astro";
         </video>
         <Image class="h-auto w-[66%]" src={Home} alt="Comics Kingdom" />
       </div>
-      <div class="w-[100%] flex items-center -mr-[500px]">
-        <div class="whitespace-nowrap left-0 right-0 w-[200px]">
-          <p>We are</p>
-          <p>Making new friends while cherishing the old</p>
+      <video loop autoplay muted class="w-[100%]">
+        <source src={CKAnimation} />
+      </video>
+      <div
+        class="w-[100%] flex items-center justify-between flex-col sm:flex-row sm:ml-[200px] overflow-x-hidden"
+      >
+        <div class="karla my-[20px] sm:pl-[200px]">
+          <p class="">We are</p>
+          <p class="w-[200px] font-bold">
+            Making New Friends While Cherishing the Old
+          </p>
         </div>
-        <video loop autoplay muted class="w-[100%]">
+        <video loop autoplay muted class="w-[100%] sm:-ml-[200px]">
           <source src={Cat} />
         </video>
       </div>
