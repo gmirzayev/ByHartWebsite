@@ -4,7 +4,7 @@ import InternalLayout from "../layouts/InternalLayout.astro";
 import TextGrid from "../components/TextGrid.astro";
 import ScrollImage from "../components/ScrollImage.astro";
 import FrontDesk from "../assets/PearlyBites/PearlyBites_FrontDesk.png";
-import Bag from "../assets/PearlyBites/PearlyBites_Bag.png";
+import Bag from "../assets/PearlyBites/PearlyBites_Bag.mp4";
 import BetterDental from "../assets/PearlyBites/PearlyBites_BetterDental.png";
 import Site from "../assets/PearlyBites/PearlyBites_Site.png";
 import ExamRoom from "../assets/PearlyBites/PearlyBites_ExamRoom.png";
@@ -165,11 +165,14 @@ import ProjectCarousel from "../components/ProjectCarousel.astro";
       </div>
       <div class="image-two-flex-container">
         <Image class="image-two-flex" src={BetterDental} alt="Pearly Bites" />
-        <Image
-          class="image-two-flex mt-12 sm:mt-0"
-          src={Bag}
-          alt="Pearly Bites"
-        />
+        <video
+          loop
+          autoplay
+          muted
+          class="w-[58%] mt-12 h-auto sm:mt-0 sm:w-[45%]"
+        >
+          <source src={Bag} />
+        </video>
       </div>
       <Image class="image-9073" src={Site} alt="Pearly Bites" />
 

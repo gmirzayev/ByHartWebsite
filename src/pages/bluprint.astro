@@ -1,0 +1,409 @@
+---
+import "../styles/utils.css";
+import InternalLayout from "../layouts/InternalLayout.astro";
+import TextGrid from "../components/TextGrid.astro";
+import ScrollImage from "../components/ScrollImage.astro";
+import Image from "astro/components/Image.astro";
+import Navigation from "../components/Navigation.astro";
+import Header from "../assets/Bluprint/Bluprint_Header.png";
+import CrochetBox from "../assets/Bluprint/Bluprint_CrochetBox.gif";
+import Quilt from "../assets/Bluprint/Bluprint_Quilt.jpg";
+import LifeStyle1 from "../assets/Bluprint/Bluprint_Lifestyle_1.jpg";
+import Paint from "../assets/Bluprint/Bluprint_Paint.jpg";
+import Colors from "../assets/Bluprint/Bluprint_BrandColors.jpg";
+import Ad1 from "../assets/Bluprint/Bluprint_Ad_1.jpg";
+import MultiCat from "../assets/Bluprint/Bluprint_MultiCat.jpg";
+import Cake from "../assets/Bluprint/Bluprint_Cake.mp4";
+import Fox1 from "../assets/Bluprint/Bluprint_Fox.jpg";
+import HomePage from "../assets/Bluprint/Bluprint_Homepage.png";
+import SocialGrid from "../assets/Bluprint/Bluprint_SocialGrid.mp4";
+import Ad2 from "../assets/Bluprint/Bluprint_Ad_2.png";
+import Jump1 from "../assets/Bluprint/Bluprint_Jump1.jpg";
+import Jump2 from "../assets/Bluprint/Bluprint_Jump2.jpg";
+import Disco from "../assets/Bluprint/Bluprint_Disco.mp4";
+import Fox2 from "../assets/Bluprint/Bluprint_Fox2.jpg";
+import MakeupBag from "../assets/Bluprint/Bluprint_MakeupBag.mp4";
+import Ad3 from "../assets/Bluprint/Bluprint_Ad_3.png";
+import LifeStyle2 from "../assets/Bluprint/Bluprint_Lifestyle_2.jpg";
+import Patches from "../assets/Bluprint/Bluprint_Patches.png";
+import Tree from "../assets/Bluprint/Bluprint_Tree.png";
+import Ad4 from "../assets/Bluprint/Bluprint_Ad_4.jpg";
+import Ad5 from "../assets/Bluprint/Bluprint_Ad_5.jpg";
+import Embroidery from "../assets/Bluprint/Bluprint_Box_Embroidery.jpg";
+import Boxes from "../assets/Bluprint/Bluprint_Boxes.png";
+import Collateral from "../assets/Bluprint/Bluprint_Box_Collateral.jpg";
+import Grid1 from "../assets/Bluprint/Bluprint_Grid_1.jpg";
+import Grid2 from "../assets/Bluprint/Bluprint_Grid_2.jpg";
+import Grid3 from "../assets/Bluprint/Bluprint_Grid_3.jpg";
+import Grid4 from "../assets/Bluprint/Bluprint_Grid_4.jpg";
+import Grid5 from "../assets/Bluprint/Bluprint_Grid_5.jpg";
+import Grid6 from "../assets/Bluprint/Bluprint_Grid_6.jpg";
+import Grid7 from "../assets/Bluprint/Bluprint_Grid_7.jpg";
+import Grid8 from "../assets/Bluprint/Bluprint_Grid_8.jpg";
+import Grid9 from "../assets/Bluprint/Bluprint_Grid_9.jpg";
+import Grid10 from "../assets/Bluprint/Bluprint_Grid_10.jpg";
+import ProjectCarousel from "../components/ProjectCarousel.astro";
+---
+
+<style>
+  #bluprint-main {
+    width: 100%;
+    background-color: #f7f4ed;
+    color: #363131;
+  }
+  .scroll-container {
+    height: 200vh;
+  }
+  .sticky-container {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  .image-container {
+    text-align: center;
+    position: relative;
+  }
+  #main-header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    /* width: 50%; */
+  }
+  .bluprint-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .karla {
+    font-family: "Karla", sans-serif;
+  }
+</style>
+<InternalLayout>
+  <div id="bluprint-main">
+    <div class="scroll-container">
+      <div class="sticky-container">
+        <Navigation theme="light" />
+        <div style={{ marginTop: "200px" }} class="image-container">
+          <Image id="main-header" src={Header} alt="Pearly Bites" />
+        </div>
+      </div>
+    </div>
+    <TextGrid title="BLUPRINT" theme="light">
+      <li>Brand Identity + Positioning</li>
+      <li>Logo Design</li>
+      <li>Video + Photography</li>
+      <li>Art + Illustration</li>
+      <li>Product Design (UX/UI)</li>
+      <li>CX</li>
+      <li>Interior Design</li>
+      <li>Original Naming</li>
+      <li>Physical Goods Development + Design</li>
+      <li>Packaging</li>
+      <li>Social Content + Advertising</li>
+      <li>Writing + Editing</li>
+      <li>Qualitative Research</li>
+      <li>Surprise + Delight</li>
+    </TextGrid>
+    <div class="bluprint-content">
+      <div class="flex items-center w-full flex-col sm:flex-row">
+        <Image
+          class="h-auto w-full p-[15%] sm:w-[50%] sm:p-[10%]"
+          alt="Bluprint"
+          src={CrochetBox}
+        />
+        <Image
+          class="h-auto w-full mb-[45px] px-[20px] sm:w-[50%] sm:p-0 sm:pr-[60px]"
+          alt="Bluprint"
+          src={Quilt}
+        />
+      </div>
+      <div class="w-full pt-[56.25%] relative mb-[45px] sm:mb-[120px]">
+        <iframe
+          class="h-full w-full absolute top-0 left-0"
+          src="https://player.vimeo.com/video/1035014266?title=0&badge=0&autopause=0&controls=1&player_id=0&app_id=58479"
+          allow="autoplay"
+          title="Bluprint NBCU"></iframe>
+        <!-- <video id="custom-video" class="h-auto w-[92%]" loop>
+          <source src={CKAnimation} type="video/mp4" />
+        </video> -->
+        <!-- <div id="play-button">PLAY</div> -->
+      </div>
+      <Image alt="Bluprint" src={LifeStyle1} />
+      <div
+        class="flex flex-col my-[45px] mx-[25px] md:flex-row md:justify-center md:my-[120px]"
+      >
+        <div class="md:flex md:flex-col md:w-[50%] md:items-end">
+          <div>
+            <h1
+              class="karla text-[26px] font-[700] sm:text-[24px] md:text-[36px]"
+            >
+              BRAND PROMISE
+            </h1>
+            <p
+              class="karla text-[68px] font-[700] sm:text-[58px] md:text-[72px] lg:text-[98px]"
+            >
+              "I did it!"
+            </p>
+          </div>
+        </div>
+        <p
+          class="karla text-[16px] md:w-[50%] md:pr-[5%] md:ml-[50px] lg:pr-[15%]"
+        >
+          In an always-on world, we help you unwind — and create something
+          meaningful. We build confidence by supporting you with inspiration,
+          giving you expert instruction, and inviting you into a passionate
+          community that gets you (no matter where you are in your journey).
+          Here, you can enjoy the space to do more of what you love.
+        </p>
+      </div>
+      <Image alt="Bluprint" src={Paint} />
+      <div
+        class="my-[45px] flex flex-col md:my-[120px] md:flex-row md:items-center"
+      >
+        <div class="md:w-[50%]">
+          <Image
+            class="px-[120px] h-auto mb-[45px] md:mb-0 md:float-right"
+            alt="Bluprint"
+            src={Colors}
+          />
+        </div>
+        <div class="md:w-[50%]">
+          <Image
+            class="px-[20px] h-auto md:px-[10%]"
+            alt="Bluprint"
+            src={Ad1}
+          />
+        </div>
+      </div>
+      <div class="flex flex-row px-[20px] items-center md:px-[60px]">
+        <Image
+          class="w-[33%] py-[1.5%] px-[1.5%]"
+          alt="Bluprint"
+          src={MultiCat}
+        />
+        <video
+          class="w-[33%] py-[1.1%] px-[1.1%]"
+          loop
+          autoplay
+          muted
+          class="h-auto"
+        >
+          <source src={Cake} />
+        </video>
+        <Image class="w-[33%] py-[1.5%] px-[1.5%]" alt="Bluprint" src={Fox1} />
+      </div>
+      <div
+        class="my-[45px] mx-[25px] karla md:my-[120px] md:columns-2 md:mx-[250px] md:gap-[80px]"
+      >
+        <h1 class="mb-[40px] font-[700] text-[24px]">Brand Pillars</h1>
+        <h2 class="text-[#CF3538] font-[700] tracking-widest">
+          WE RESPECT YOUR TIME
+        </h2>
+        <p class="mb-[40px] md:pr-[20px]">
+          We help you cut through the startup hassle by curating everything you
+          need in one place and meeting you on your favorite platform. From
+          project kits designed for your skill level to step-by-step guidance,
+          you can be assured that you’ll make something great here.
+        </p>
+        <h2 class="text-[#CF3538] font-[700] tracking-widest">
+          WE'VE BEEN THERE
+        </h2>
+        <p class="mb-[40px] md:pr-[20px]">
+          We anticipate all the hills and valleys because we’ve gone through
+          them too. At every turn, it feels like there’s a real person helping
+          you avoid common mistakes and setting you up for success.
+        </p>
+        <h2 class="text-[#CF3538] font-[700] tracking-widest">
+          WE'RE FOR EVERY MAKER
+        </h2>
+        <p class="mb-[40px]">
+          Whether you’re a never-crafted newbie or an accomplished maker with
+          decades of experience, we help you discover the best options for you
+          and grow your skills.
+        </p>
+        <h2 class="text-[#CF3538] font-[700] tracking-widest">
+          WE KEEP IT FRESH
+        </h2>
+        <p class="mb-[40px]">
+          We’re that endlessly creative friend who’s always in the know about
+          the next incredible thing, from trends and techniques to tools and
+          tips. There’s always something new to see and try.
+        </p>
+        <h2 class="text-[#CF3538] font-[700] tracking-widest">
+          WE BELIEVE IN THE JOY OF CREATIVITY
+        </h2>
+        <p class="mb-[40px]">
+          You love making. We get it because we feel the same way. We understand
+          one of the greatest sources of happiness is the creative world we
+          build.
+        </p>
+      </div>
+    </div>
+    <Image alt="Bluprint" src={HomePage} />
+    <div>
+      <video loop autoplay muted class="w-screen">
+        <source src={SocialGrid} />
+      </video>
+    </div>
+    <Image
+      class="my-[45px] px-[20px] md:my-[120px] md:px-[300px]"
+      alt="Bluprint"
+      src={Ad2}
+    />
+    <div class="flex flex-row bg-[#028282]">
+      <Image class="w-[50%] p-[6%]" alt="Bluprint" src={Jump1} />
+      <Image class="w-[50%] p-[10%]" alt="Bluprint" src={Jump2} />
+    </div>
+    <div class="w-full pt-[56.25%] relative flex justify-center">
+      <iframe
+        class="h-full w-[75%] absolute top-0 left-0 right-0 mx-auto"
+        src="https://player.vimeo.com/video/1035014250?title=0&badge=0&autopause=0&controls=1&player_id=0&app_id=58479"
+        allow="autoplay"
+        title="Bluprint DIY"></iframe>
+      <!-- <video id="custom-video" class="h-auto w-[92%]" loop>
+          <source src={CKAnimation} type="video/mp4" />
+        </video> -->
+      <!-- <div id="play-button">PLAY</div> -->
+    </div>
+    <div class="mx-[10px] flex flex-row md:mx-[40px]">
+      <video loop autoplay muted class="h-auto w-1/3 p-[1%]">
+        <source src={Disco} />
+      </video>
+      <Image class="w-1/3 p-[1.4%] h-auto" alt="Bluprint" src={Fox2} />
+      <video loop autoplay muted class="h-auto p-[1%] w-1/3">
+        <source src={MakeupBag} />
+      </video>
+    </div>
+    <Image
+      class="h-auto w-2/3 mx-auto my-[45px] md:my-[120px]"
+      alt="Bluprint"
+      src={Ad3}
+    />
+    <Image class="h-auto w-full" alt="Bluprint" src={LifeStyle2} />
+    <Image class="h-auto w-full" alt="Bluprint" src={Patches} />
+    <Image
+      class="h-auto w-[80%] mx-auto my-[45px] md:my-[120px]"
+      alt="Bluprint"
+      src={Tree}
+    />
+    <div class="flex flex-row mx-0 w-full md:px-[60px]">
+      <Image class="h-auto w-1/2 pr-[2%]" alt="Bluprint" src={Ad4} />
+      <Image class="h-auto w-1/2 pl-[2%]" alt="Bluprint" src={Ad5} />
+    </div>
+    <Image
+      class="h-auto w-full my-[45px] md:my-[120px]"
+      alt="Bluprint"
+      src={Embroidery}
+    />
+    <Image
+      class="h-auto w-full px-[20px] md:w-[50%] mx-auto mb-[45px] md:mb-[120px] md:px-0"
+      alt="Bluprint"
+      src={Boxes}
+    />
+    <Image class="h-auto w-full" alt="Bluprint" src={Collateral} />
+    <div class="bg-[#242121]">
+      <div class="text-white karla py-[30px] pl-[20px] font-[16px]">
+        <p class="font-[700] inline-block tracking-[3px]">BLUPRINT</p>
+        <p class="inline-block ml-[20px]">Introducing</p>
+      </div>
+      <div class="flex justify-between flex-wrap m-0 px-[20px]">
+        <Image
+          class="h-auto w-[49.5%] rounded my-1 md:my-1.5"
+          alt="Bluprint"
+          src={Grid1}
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1 md:my-1.5"
+          alt="Bluprint"
+          src={Grid2}
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1 md:my-1.5"
+          alt="Bluprint"
+          src={Grid3}
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1 md:my-1.5"
+          alt="Bluprint"
+          src={Grid4}
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1 md:my-1.5"
+          alt="Bluprint"
+          src={Grid5}
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1 md:my-1.5"
+          alt="Bluprint"
+          src={Grid6}
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1 md:my-1.5"
+          alt="Bluprint"
+          src={Grid7}
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1 md:my-1.5"
+          alt="Bluprint"
+          src={Grid8}
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1 md:my-1.5"
+          alt="Bluprint"
+          src={Grid9}
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1 md:my-1.5"
+          alt="Bluprint"
+          src={Grid10}
+        />
+      </div>
+    </div>
+  </div>
+</InternalLayout>
+<ProjectCarousel name="Bluprint" />
+
+<script>
+  const image = document.getElementById("main-header");
+  const minScroll = 0; // minimum scroll value
+  const maxScroll = 800;
+  const minWidth = 20; // minimum range value
+  const maxWidth = 100;
+
+  // const range =
+  //   ((currentScroll - minScroll) / (maxWidth - minScroll)) *
+  //     (maxRange - minRange) +
+  //   minRange;
+  // console.log(range);
+
+  // let imageWidth = 0.5 + currentScroll / maxWidth;
+  //   image.style.transform = `scale(${imageScale})`;
+  //   image.style.width = "20vw";
+
+  const getScrollScale = () => {
+    let currentScroll = window.scrollY;
+    if (currentScroll > 800) {
+      currentScroll = 800;
+    }
+    const rangeValue =
+      ((currentScroll - minScroll) / (maxScroll - minScroll)) *
+        (maxWidth - minWidth) +
+      minWidth;
+    // console.log(rangeValue);
+    return rangeValue;
+  };
+
+  let widthScale = getScrollScale();
+  image.style.width = `${widthScale}vw`;
+  image.style.marginTop = `-${widthScale * 3}px`;
+
+  document.addEventListener("scroll", (event) => {
+    //slow down scrolling so image doesn't grow as fast
+    let widthScale = getScrollScale();
+    // imageScale = 0.5 + currentScroll / totalWidth;
+    image.style.width = `${widthScale}vw`;
+    image.style.marginTop = `-${widthScale * 3}px`;
+  });
+</script>
