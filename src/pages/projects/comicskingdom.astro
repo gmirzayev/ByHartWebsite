@@ -72,8 +72,12 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
     display: flex;
     width: 100%;
     justify-content: center;
-    background-image: url("@assets/ComicsKingdom/RedBG.png");
+    background-image: url("../../assets/ComicsKingdom/RedBG.png");
     padding: 100px 0;
+  }
+
+  .friends-background {
+    background-image: url("../../assets/ComicsKingdom/PaperBG.png");
   }
 
   .image-container-half {
@@ -94,7 +98,7 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url("@assets/ComicsKingdom/CharcoalBG.png");
+    background-image: url("../../assets/ComicsKingdom/CharcoalBG.png");
     background-repeat: repeat;
     background-size: auto;
   }
@@ -328,7 +332,7 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
           <source src={Cat} />
         </video>
       </div>
-      <div class="w-full">
+      <div class="w-full friends-background">
         <video loop autoplay muted class="mb-[120px] w-screen">
           <source src={Friends} />
         </video>

@@ -59,7 +59,6 @@ const projects = [
     flex-direction: column;
     text-align: center;
     width: 100%;
-    height: 750px;
     position: relative;
     max-width: none;
     background-color: #242121;
@@ -91,6 +90,22 @@ const projects = [
     font-family: "utile-display", sans-serif;
   }
 
+  .karla {
+    font-family: "Karla", sans-serif;
+  }
+
+  .background-slant {
+    position: absolute;
+    height: 30px;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    background: #ebd4c7;
+    transform: rotate(-1deg);
+  }
+
   /* .background-slant {
     content: "";
     display: block;
@@ -105,9 +120,13 @@ const projects = [
     background-color: #ebd4c7;
   } */
 </style>
-<div class="container">
-  <h1 class="text-[66px]">Choose your next adventure...</h1>
-  <h3 class="mb-[20px]">DRAG TO EXPLORE</h3>
+<div class="container pt-[45px] md:pt-[120px] h-[800px] md:h-[900px]">
+  <h1
+    class="text-[38px] font-utile font-medium mb-[30px] md:text-[66px] md:mb-0"
+  >
+    Choose your next adventure...
+  </h1>
+  <h3 class="mb-[30px] karla text-[16px] hidden md:!block">DRAG TO EXPLORE</h3>
   <div id="carousel-container">
     <div id="carousel">
       {
@@ -120,7 +139,7 @@ const projects = [
                   src={project.image}
                   alt="test"
                 />
-                <h1 class="h-[50px] mt-[10px] invisible font-utile font-medium tracking-wider text-xl">
+                <h1 class="h-[50px] mt-[10px] invisible font-utile font-bold tracking-wider text-xl">
                   {project.name}
                 </h1>
               </div>
@@ -130,8 +149,14 @@ const projects = [
       }
     </div>
   </div>
-  <div class="background-slant"></div>
-  <h1 class="h-[50px] text-xl background-slant">SEE ALL HART WORK</h1>
+  <div class="w-full relative">
+    <div class="background-slant z-[5] w-[200px]"></div>
+    <h1
+      class="karla h-[50px] text-[16px] text-xl z-[6] text-[#363131] relative"
+    >
+      SEE ALL HART WORK
+    </h1>
+  </div>
 </div>
 <script>
   // const carouselContainer = document.getElementById("carousel-container");
