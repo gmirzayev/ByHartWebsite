@@ -1,15 +1,112 @@
 ---
-import "../styles/heropill.css";
 import Ample from "../assets/Home/BH_Ample.mp4";
 import Kindra from "../assets/Home/BH_Kindra.mp4";
 import LockwoodTee from "../assets/Home/BH_Lockwood_Tee.mp4";
 import Lockwood from "../assets/Home/BH_Lockwood.mp4";
 ---
 
-<style></style>
-<div id="pill--element">
-  <div class="pill--container" id="pillRotate">
-    <div class="iframe-container">
+<style>
+  .pill--container {
+    transition: transform 2s ease;
+    transform-origin: center;
+    transform: rotate(30deg);
+  }
+
+  .video-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    clip-path: url(#svgPath);
+  }
+
+  .video-frame {
+    position: relative;
+    border: 0;
+    height: 860px;
+    width: 860px;
+    opacity: 0;
+    max-width: none;
+  }
+
+  .image-container .image {
+    position: absolute;
+    top: -140px;
+    right: 10px;
+    display: block;
+    z-index: 5;
+  }
+
+  #path {
+    position: absolute;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  #text-path {
+    font-family: "utile-display", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    fill: #faf7f4;
+  }
+
+  #text-path:hover {
+    offset: 50%;
+  }
+
+  .pill-text {
+    letter-spacing: 1px;
+  }
+
+  .pill-text:hover {
+    cursor:
+      url("../assets/HeartCursor.png") 16 16,
+      auto;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    fill: #ff97fd;
+  }
+
+  .highlighted {
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    fill: #ff97fd;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fade {
+    position: relative;
+    animation-name: fade;
+    animation-duration: 2000ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    z-index: 10;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .shown {
+    display: block;
+  }
+</style>
+<div
+  class="scale-[.4] overflow-visible md:overflow-hidden md:mb-[50px] md:scale-100"
+>
+  <div
+    class="pill--container relative flex justify-center items-center w-full h-[500px] md:h-[900px]"
+    id="pillRotate"
+  >
+    <div class="video-container">
       <video
         id="video-0"
         muted
@@ -18,7 +115,7 @@ import Lockwood from "../assets/Home/BH_Lockwood.mp4";
         loop="true"
         src={Lockwood}></video>
     </div>
-    <div class="iframe-container">
+    <div class="video-container">
       <video
         id="video-1"
         muted
@@ -26,7 +123,7 @@ import Lockwood from "../assets/Home/BH_Lockwood.mp4";
         loop="true"
         src={Kindra}></video>
     </div>
-    <div class="iframe-container">
+    <div class="video-container">
       <video
         id="video-2"
         muted
@@ -34,7 +131,7 @@ import Lockwood from "../assets/Home/BH_Lockwood.mp4";
         loop="true"
         src={Ample}></video>
     </div>
-    <div class="iframe-container">
+    <div class="video-container">
       <video
         id="video-3"
         muted
@@ -52,8 +149,12 @@ import Lockwood from "../assets/Home/BH_Lockwood.mp4";
         ></path>
       </clipPath>
     </svg>
-    <div class="pill">
-      <svg viewBox="0 80 250 100" xmlns="http://www.w3.org/2000/svg">
+    <div class="pill absolute w-[500px] h-[500px] z-[7]">
+      <svg
+        class="block my-0 mx-auto overflow-visible"
+        viewBox="0 80 250 100"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           id="path"
           fill="none"
@@ -68,15 +169,15 @@ import Lockwood from "../assets/Home/BH_Lockwood.mp4";
         <text id="text-parent">
           <textPath href="#path" id="text-path" startOffset="50">
             By Hart is a
-            <tspan class="highlighted pill--span-text"> story </tspan> +
-            <tspan class="pill--span-text"> style </tspan> +
-            <tspan class="pill--span-text"> identity </tspan> +
-            <tspan class="pill--span-text"> art </tspan> +
-            <tspan class="pill--span-text"> experience </tspan> +
-            <tspan class="pill--span-text"> content </tspan> +
-            <tspan class="pill--span-text"> design </tspan> +
-            <tspan class="pill--span-text"> purpose </tspan> + actually creative
-            studio by Sarah Hartley.
+            <tspan class="highlighted pill-text"> story </tspan> +
+            <tspan class="pill-text"> style </tspan> +
+            <tspan class="pill-text"> identity </tspan> +
+            <tspan class="pill-text"> art </tspan> +
+            <tspan class="pill-text"> experience </tspan> +
+            <tspan class="pill-text"> content </tspan> +
+            <tspan class="pill-text"> design </tspan> +
+            <tspan class="pill-text"> purpose </tspan> + actually creative studio
+            by Sarah Hartley.
           </textPath>
         </text>
       </svg>
@@ -91,7 +192,7 @@ import Lockwood from "../assets/Home/BH_Lockwood.mp4";
   let previousRotation = 20;
   const rotations = [20, 110, 160, 290];
 
-  const pillSpans = document.getElementsByClassName("pill--span-text");
+  const pillSpans = document.getElementsByClassName("pill-text");
   let previouslyHighlighted = pillSpans[0];
 
   function handleTextMouseEnter(index) {

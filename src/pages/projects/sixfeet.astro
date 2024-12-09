@@ -1,0 +1,346 @@
+---
+import "../../styles/utils.css";
+import InternalLayout from "@layouts/InternalLayout.astro";
+import TextGrid from "@components/TextGrid.astro";
+import ScrollImage from "@components/ScrollImage.astro";
+import Image from "astro/components/Image.astro";
+import Navigation from "@components/Navigation.astro";
+import ProjectCarousel from "@components/ProjectCarousel.astro";
+import Header from "@assets/SixFeet/6ft_Header.mp4";
+import MaskGang from "@assets/SixFeet/6ft_MaskGang.png";
+import HotMask from "@assets/SixFeet/6ft_YourMaskisHot.png";
+import SixFeet from "@assets/SixFeet/6ft_SixFeetApart.png";
+import Together from "@assets/SixFeet/6ft_TogetherAtHeart.png";
+import RainbowSticker from "@assets/SixFeet/6ft_RainbowStickers.gif";
+import Store from "@assets/SixFeet/6ft_Store.png";
+import Pile from "@assets/SixFeet/6ft_SocialDistancingPile.png";
+import Floor from "@assets/SixFeet/6ft_SocialDistancingClubFloor.png";
+import Wedding from "@assets/SixFeet/6ft_Wedding.png";
+import Windows from "@assets/SixFeet/6ft_Windows.png";
+import FunFacts from "@assets/SixFeet/6ft_FunFacts.gif";
+import Backpack from "@assets/SixFeet/6ft_Backpack.png";
+import Slider1 from "@assets/SixFeet/Ticker/1.png";
+import Slider2 from "@assets/SixFeet/Ticker/2.png";
+import Slider3 from "@assets/SixFeet/Ticker/3.png";
+import Slider4 from "@assets/SixFeet/Ticker/4.png";
+import Slider5 from "@assets/SixFeet/Ticker/5.png";
+import Slider6 from "@assets/SixFeet/Ticker/6.png";
+import Slider7 from "@assets/SixFeet/Ticker/7.png";
+import Slider8 from "@assets/SixFeet/Ticker/8.png";
+import Slider9 from "@assets/SixFeet/Ticker/9.png";
+import Slider10 from "@assets/SixFeet/Ticker/10.png";
+---
+
+<style>
+  #sixfeet-main {
+    width: 100%;
+    position: relative;
+    background-color: #f7f4ed;
+  }
+  .scroll-container {
+    height: 200vh;
+  }
+  .sticky-container {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  .image-container {
+    text-align: center;
+    position: relative;
+  }
+  #main-video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 50%; */
+  }
+  .image-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .image-flex > * {
+    margin-top: 22.5px;
+    margin-bottom: 22.5px;
+  }
+  h2 {
+    font-family: "Karla";
+    font-size: 26px;
+  }
+  .carousel-container {
+    align-items: center;
+    /* background: #e3e3e3; */
+    display: flex;
+    height: 200px;
+    width: 100%;
+    justify-content: center;
+  }
+  .slider {
+    /* background: white; */
+    /* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125); */
+    height: 200px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  .slide-track {
+    animation: scroll 30s linear infinite;
+    display: flex;
+    gap: 100px;
+    /* width: calc(250px * 8); */
+  }
+  .slide {
+    height: 100px;
+    width: 250px;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 14));
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .image-flex > * {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+    h2 {
+      font-size: 36px;
+    }
+  }
+</style>
+<InternalLayout>
+  <div id="sixfeet-main">
+    <div class="scroll-container">
+      <div class="sticky-container">
+        <Navigation theme="light" />
+        <div style={{ marginTop: "200px" }} class="image-container">
+          <video id="main-video" autoplay loop muted>
+            <source src={Header} type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <TextGrid title="6 FEET FROM YOU" theme="light">
+      <li>Brand Identity + Positioning</li>
+      <li>Logo Design</li>
+      <li>Video + Photography</li>
+      <li>Art + Illustration</li>
+      <li>Original Naming</li>
+      <li>Physical Goods Development + Design</li>
+      <li>Writing + Editing</li>
+      <li>Signage + Display</li>
+      <li>Surprise + Delight</li>
+    </TextGrid>
+    <div class="image-flex">
+      <Image class="w-[89%] sm:w-[92%]" src={MaskGang} alt="Six Feet" />
+      <h2 class="w-[90%] sm:w-[60%]">
+        Directing physical product concept and design + brand presentation for a
+        new line of social distancing products.
+      </h2>
+      <Image class="w-[89%] sm:w-[92%]" src={HotMask} alt="Six Feet" />
+      <div class="carousel-container">
+        <div class="slider">
+          <div class="slide-track">
+            <div class="slide">
+              <Image
+                src={Slider1}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider2}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider3}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider4}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider5}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider6}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider7}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider8}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider9}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider10}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider1}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider2}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider3}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider4}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+            <div class="slide">
+              <Image
+                src={Slider5}
+                alt="Six Feet"
+                class="h-auto w-[250px] max-w-none"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-between w-[95%]">
+        <Image
+          class="w-1/2 p-[5px] h-auto sm:p-[20px]"
+          src={SixFeet}
+          alt="Six Feet"
+        />
+        <Image
+          class="w-1/2 p-[5px] h-auto sm:p-[20px]"
+          src={Together}
+          alt="Six Feet"
+        />
+      </div>
+      <Image class="w-[60%]" src={RainbowSticker} alt="Six Feet" />
+      <div class="flex justify-between w-[95%]">
+        <Image
+          class="w-1/3 p-[5px] h-auto sm:p-[20px]"
+          src={Store}
+          alt="Six Feet"
+        />
+        <Image
+          class="w-1/3 p-[5px] h-auto sm:p-[20px]"
+          src={Pile}
+          alt="Six Feet"
+        />
+        <Image
+          class="w-1/3 p-[5px] h-auto sm:p-[20px]"
+          src={Floor}
+          alt="Six Feet"
+        />
+      </div>
+      <Image class="w-full h-auto" src={Wedding} alt="Six Feet" />
+      <Image class="w-[95%] h-auto" src={Windows} alt="Six Feet" />
+      <div class="flex w-[95%]">
+        <Image
+          class="w-1/2 h-auto p-[20px] sm:p-[100px]"
+          src={FunFacts}
+          alt="Six Feet"
+        />
+        <Image class="w-1/2 h-auto" src={Backpack} alt="Six Feet" />
+      </div>
+    </div>
+  </div>
+  <ProjectCarousel name="6 Feet Apart" />
+</InternalLayout>
+<script>
+  const image = document.getElementById("main-video");
+  let currentScroll = window.scrollY;
+
+  const minScroll = 0; // minimum scroll value
+  const maxScroll = 800;
+  const minWidth = 20; // minimum range value
+  const maxWidth = 100;
+
+  // const range =
+  //   ((currentScroll - minScroll) / (maxWidth - minScroll)) *
+  //     (maxRange - minRange) +
+  //   minRange;
+  // console.log(range);
+
+  // let imageWidth = 0.5 + currentScroll / maxWidth;
+  //   image.style.transform = `scale(${imageScale})`;
+  //   image.style.width = "20vw";
+
+  const getScrollScale = () => {
+    let currentScroll = window.scrollY;
+    if (currentScroll > 800) {
+      currentScroll = 800;
+    }
+    const rangeValue =
+      ((currentScroll - minScroll) / (maxScroll - minScroll)) *
+        (maxWidth - minWidth) +
+      minWidth;
+    // console.log(rangeValue);
+    return rangeValue;
+  };
+
+  let widthScale = getScrollScale();
+  image.style.width = `${widthScale}vw`;
+  image.style.marginTop = `-${widthScale * 3}px`;
+
+  document.addEventListener("scroll", (event) => {
+    //slow down scrolling so image doesn't grow as fast
+    let widthScale = getScrollScale();
+    // imageScale = 0.5 + currentScroll / totalWidth;
+    image.style.width = `${widthScale}vw`;
+    image.style.marginTop = `-${widthScale * 3}px`;
+  });
+</script>

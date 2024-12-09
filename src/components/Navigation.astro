@@ -1,11 +1,11 @@
 ---
 import "../styles/utils.css";
-import { Image } from "astro:assets";
-import Logo from "../assets/HomeLogo.png";
-import DarkLogo from "../assets/LogoDark.png";
-import HeartDropdown from "../assets/HeartDropdown.png";
-import CloseButton from "../assets/CloseButton.png";
-import GlassesTest from "../assets/eye_test_cut.webm";
+import Image from "astro/components/Image.astro";
+import Logo from "@assets/HomeLogo.png";
+import DarkLogo from "@assets/LogoDark.png";
+import HeartDropdown from "@assets/HeartDropdown.png";
+import CloseButton from "@assets/CloseButton.png";
+import GlassesTest from "@assets/eye_test_cut.webm";
 const { theme } = Astro.props;
 ---
 
@@ -28,7 +28,6 @@ const { theme } = Astro.props;
   .light {
     color: black;
   }
-
   .nav-link {
     position: relative;
     box-sizing: border-box;
@@ -43,7 +42,6 @@ const { theme } = Astro.props;
     white-space: nowrap;
     transition: max-width 1s ease-in-out;
   }
-
   .logo {
     width: 80px;
     height: auto;
@@ -54,18 +52,7 @@ const { theme } = Astro.props;
     background: none;
     padding: 0;
     border: none;
-    /* position: absolute;
-    right: 20px;
-    top: 20px; */
-    /* right: 0; */
   }
-
-  .mobile-nav-flex {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-
   .nav-link--header {
     font-size: 34px;
     letter-spacing: 0;
@@ -100,138 +87,93 @@ const { theme } = Astro.props;
     top: 20px;
     right: 20px;
   }
-
-  .desktop-nav {
-    display: flex;
-    align-items: center;
+  .svg-text {
+    fill: black;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 500;
   }
-  .glasses {
-    max-width: 400px;
+  #nav-instagram {
+    position: absolute;
+    top: 50px;
+    left: 80px;
+    rotate: 260deg;
   }
-
-  @media (max-width: 768px) {
-    .svg-text {
-      fill: black;
-      font-size: 12px;
-      letter-spacing: 2px;
-      font-weight: 500;
-    }
-    .video-container {
-      /* background-color: paleturquoise; */
-      /* margin-top: -30px; */
-      margin-top: 50px;
-      position: relative;
-      display: flex;
-      /* align-items: center; */
-      width: 100%;
-      /* align-items: end; */
-    }
-    #nav-instagram {
-      position: absolute;
-      /* top: 140px;
-      left: 300px; */
-      top: 50px;
-      left: 80px;
-      /* transform: translate(150px, -390px); */
-      rotate: 260deg;
-    }
-    /* #nav-substack {
+  /* #nav-substack {
       position: absolute;
       top: -20px;
       left: 170px;
       rotate: 5deg;
     } */
-    #nav-vimeo {
-      position: absolute;
-      top: -25px;
-      left: 170px;
-      rotate: 5deg;
-    }
-    #nav-linkedin {
-      position: absolute;
-      top: 2px;
-      left: 250px;
-      rotate: 27deg;
-    }
-    .overflow-hidden {
-      overflow: hidden;
-    }
-    #mobile-nav {
-      display: flex;
-    }
-    .desktop-nav {
-      display: none;
-    }
-    .dropdown-link-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 100vh;
-      /* fix nav height on mobile safari, where 100vh is a little off */
-      height: -webkit-fill-available;
-
-      /* then, arrange our links top to bottom */
-      display: flex;
-      flex-direction: column;
-      /* center links vertically, push to the right horizontally.
-            this means our links will line up with the rightward hamburger button */
-      justify-content: center;
-      align-items: center;
-      /* add margins and padding to taste */
-      margin: 0;
-      padding-left: 7vw;
-      padding-right: 7vw;
-
-      background: #a92325;
-      z-index: 0;
-
-      opacity: 0; /* fade out */
-      transform: translateY(-100%); /* move out of view */
-      transition:
-        transform 0.2s,
-        opacity 0.2s; /* transition these smoothly */
-    }
-    /* .logo,
-    .mobile-dropdown-toggle {
-      z-index: 9;
-    } */
-    .mobile-dropdown-toggle {
-      display: initial;
-    }
-    #mobile-nav.dropdown-opened > .dropdown-link-container {
-      opacity: 1; /* fade in */
-      transform: translateY(0); /* move into view */
-      z-index: 8;
-    }
-    #mobile-nav:not(.dropdown-opened) > .mobile-dropdown-toggle {
-      z-index: 0;
-    }
-    #mobile-nav.dropdown-opened > .logo-link,
-    .mobile-dropdown-toggle {
-      z-index: 9;
-    }
-
-    #dropdown-open {
-      display: block;
-    }
-    #dropdown-close {
-      display: none;
-    }
-    #mobile-nav.dropdown-opened #dropdown-open {
-      display: none;
-    }
-    #mobile-nav.dropdown-opened #dropdown-close {
-      display: block;
-    }
+  #nav-vimeo {
+    position: absolute;
+    top: -25px;
+    left: 170px;
+    rotate: 5deg;
   }
+  #nav-linkedin {
+    position: absolute;
+    top: 2px;
+    left: 250px;
+    rotate: 27deg;
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .dropdown-link-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    height: -webkit-fill-available;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding-left: 7vw;
+    padding-right: 7vw;
+
+    background: #a92325;
+    z-index: 0;
+
+    opacity: 0;
+    transform: translateY(-100%);
+    transition:
+      transform 0.2s,
+      opacity 0.2s;
+  }
+  .mobile-dropdown-toggle {
+    display: initial;
+  }
+  #mobile-nav.dropdown-opened > .dropdown-link-container {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 8;
+  }
+  #mobile-nav:not(.dropdown-opened) > .mobile-dropdown-toggle {
+    z-index: 0;
+  }
+  #mobile-nav.dropdown-opened > .logo-link,
+  .mobile-dropdown-toggle {
+    z-index: 9;
+  }
+  #dropdown-open {
+    display: block;
+  }
+  #dropdown-close {
+    display: none;
+  }
+  #mobile-nav.dropdown-opened #dropdown-open {
+    display: none;
+  }
+  #mobile-nav.dropdown-opened #dropdown-close {
+    display: block;
+  }
+
   @media (min-width: 768px) {
-    #mobile-nav {
-      display: none;
-    }
-    .desktop-nav {
-      display: flex;
-    }
     .nav-link:hover::after {
       content: attr(data-hover);
       position: absolute;
@@ -255,7 +197,7 @@ const { theme } = Astro.props;
 </style>
 <header>
   <nav id="main-nav">
-    <div id="mobile-nav" class="mobile-nav-flex">
+    <div id="mobile-nav" class="flex justify-between w-full md:hidden">
       <a href="/" class="logo-link"
         >{
           theme == "light" ? (
@@ -283,7 +225,7 @@ const { theme } = Astro.props;
         <p id="nav-email" class="mobile-nav-link mobile-nav-link--email">
           getcreative@byhart.studio
         </p>
-        <div class="video-container">
+        <div class="mt-[50px] relative flex w-full">
           <a
             id="nav-instagram"
             class="video-link"
@@ -344,19 +286,18 @@ const { theme } = Astro.props;
               </text>
             </svg>
           </a>
-          <!-- <div class="video-wrapper"> -->
           <video
-            class="glasses ml-[150px]"
+            class="max-w-[400px] ml-[150px]"
             src={GlassesTest}
             autoplay="true"
             loop="true"
             muted></video>
-          <!-- </div> -->
         </div>
       </div>
     </div>
+    <!-- DESKTOP NAV -->
     <div
-      class="desktop-nav"
+      class="hidden md:!flex md:items-center"
       style={{ color: `${theme == "light" ? "black" : "#F7F4ED"}` }}
     >
       <a href="/" class="mr-[80px]">

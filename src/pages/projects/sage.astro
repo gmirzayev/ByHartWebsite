@@ -1,0 +1,511 @@
+---
+import "../../styles/utils.css";
+import ProjectCarousel from "@components/ProjectCarousel.astro";
+import TextGrid from "@components/TextGrid.astro";
+import Image from "astro/components/Image.astro";
+import Navigation from "@components/Navigation.astro";
+import InternalLayout from "@layouts/InternalLayout.astro";
+import SageHeroVideo from "@assets/Sage/Sage_Hero_Desktop.mp4";
+import BreatheVideo from "@assets/Sage/Breathe_Desktop.mp4";
+import WeAreVideo from "@assets/Sage/We_Are_Desktop.mp4";
+import WeAreMobile from "@assets/Sage/We_Are_Mobile.mp4";
+import SocialVideo from "@assets/Sage/Social_Carousel.mp4";
+import CompVideo from "@assets/Sage/Comp_1.mp4";
+import StoryVideo from "@assets/Sage/Story_Social_2.mp4";
+import SageStorySocial1 from "@assets/Sage/Story_Social_1.png";
+import SageStorySocial3 from "@assets/Sage/Story_Social_3.png";
+import SagePhoto from "@assets/Sage/Sage_Photo.png";
+import SageSiteDesktop from "@assets/Sage/Sage_Site_Desktop.png";
+import SageSiteMobile from "@assets/Sage/Sage_Site_Mobile.png";
+import SageSocial1 from "@assets/Sage/Sage_Social_1.png";
+import SageSocial2 from "@assets/Sage/Sage_Social_2.png";
+import SageGraphic1 from "@assets/Sage/Sage_Graphic_1.png";
+import SageGraphic2 from "@assets/Sage/Sage_Graphic_2.png";
+import SageIcon1 from "@assets/Sage/Sage_Graphic_Icon1.png";
+import SageIcon2 from "@assets/Sage/Sage_Graphic_Icon2.png";
+import SageQuote from "@assets/Sage/Sage_Quote.png";
+import SageBrochure1 from "@assets/Sage/Sage_Brochure_1.png";
+import SageBrochure2 from "@assets/Sage/Sage_Brochure_2.png";
+import SageBusiness from "@assets/Sage/Sage_Business.png";
+import SageBrandGuideGrid1 from "@assets/Sage/Sage_Brand_Guide_Grid_01.png";
+import SageBrandGuideGrid2 from "@assets/Sage/Sage_Brand_Guide_Grid_02.png";
+import SageBrandGuideGrid3 from "@assets/Sage/Sage_Brand_Guide_Grid_03.png";
+import SageBrandGuideGrid4 from "@assets/Sage/Sage_Brand_Guide_Grid_04.png";
+import SageBrandGuideGrid5 from "@assets/Sage/Sage_Brand_Guide_Grid_05.png";
+import SageBrandGuideGrid6 from "@assets/Sage/Sage_Brand_Guide_Grid_06.png";
+import SageBrandGuideGrid7 from "@assets/Sage/Sage_Brand_Guide_Grid_07.png";
+import SageBrandGuideGrid8 from "@assets/Sage/Sage_Brand_Guide_Grid_08.png";
+import SageBrandGuideGrid9 from "@assets/Sage/Sage_Brand_Guide_Grid_09.png";
+import SageBrandGuideGrid10 from "@assets/Sage/Sage_Brand_Guide_Grid_10.png";
+import SageBrandGuideGrid11 from "@assets/Sage/Sage_Brand_Guide_Grid_11.png";
+import SageBrandGuideGrid12 from "@assets/Sage/Sage_Brand_Guide_Grid_12.png";
+import SageBrandGuideGrid13 from "@assets/Sage/Sage_Brand_Guide_Grid_13.png";
+import SageBrandGuideGrid14 from "@assets/Sage/Sage_Brand_Guide_Grid_14.png";
+---
+
+<style is:global>
+  #sage-main {
+    position: relative;
+    background-color: #f7f4ed;
+  }
+  .scroll-container {
+    height: 200vh;
+  }
+  .sticky-container {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  .video-container {
+    text-align: center;
+    position: relative;
+  }
+  #main-video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 50%; */
+  }
+  .collage-image {
+    margin: 50px auto 0 auto;
+  }
+  .text-two-column-centered {
+    column-count: 1;
+    margin: 45px auto;
+    font-size: 16px;
+    line-height: 26px;
+    font-family: "Karla";
+    column-gap: 40px;
+    color: #363131;
+  }
+  .text-two-column-centered h1 {
+    font-size: 26px;
+    line-height: 38px;
+    letter-spacing: -0.01em;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+  .text-two-column-centered p {
+    margin-bottom: 10px;
+  }
+  .image-container--half {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .image-container--half-mobile {
+    padding: 0 20px 45px 20px;
+  }
+  .image-container--third {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .image-container--three-quarter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #1f3333;
+    padding: 45px 0;
+  }
+  .story-social {
+    margin-bottom: 45px;
+    padding: 0 20px;
+  }
+  .grid-container {
+    background-color: #242121;
+  }
+  .grid-text-container {
+    color: white;
+    font-family: "Karla";
+    padding: 30px 0 30px 20px;
+    font-size: 16px;
+  }
+  .grid-brand {
+    font-weight: bold;
+    display: inline-block;
+    letter-spacing: 3px;
+  }
+  .grid-brand-follow {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  .image-container--grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @media screen and (min-width: 767px) {
+    .collage-image {
+      margin: 100px auto 0 auto;
+    }
+    .text-two-column-centered {
+      column-count: 2;
+      margin: 100px auto;
+    }
+    .text-two-column-centered h1 {
+      font-size: 36px;
+      line-height: 43px;
+    }
+    .image-container--half-mobile {
+      padding: 0 60px 100px 60px;
+    }
+    .story-social {
+      padding: 0 60px;
+      margin-bottom: 120px;
+    }
+    .grid-text-container {
+      padding-left: 30px;
+    }
+    .image-container--three-quarter {
+      padding: 120px 0;
+    }
+    .image-container--grid {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+  }
+</style>
+<InternalLayout>
+  <div id="sage-main" class="w-full">
+    <div class="scroll-container">
+      <div class="sticky-container">
+        <Navigation theme="light" />
+        <div style={{ marginTop: "200px" }} class="video-container">
+          <video id="main-video" autoplay loop muted>
+            <source src={SageHeroVideo} type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <TextGrid title="SAGE" theme="light">
+      <li>Brand Identity + Positioning</li>
+      <li>Logo Design</li>
+      <li>Art + Illustration</li>
+      <li>Product Design (UX/UI)</li>
+      <li>Social Content + Advertising</li>
+      <li>Interviews</li>
+      <li>Writing + Editing</li>
+      <li>Qualitative Research</li>
+      <li>Surprise + Delight</li>
+    </TextGrid>
+    <Image
+      class="collage-image h-auto w-[90%]"
+      src={SagePhoto}
+      alt="Sage Collage"
+    />
+    <div class="text-two-column-centered w-[85%] sm:w-[800px]">
+      <h1>
+        Sage Integrative Health is a haven for people to dig, discover, and
+        reveal.
+      </h1>
+      <p>
+        We believe healing is a deeply personal journey that requires a
+        multifaceted and highly individualized approach. We do hard work with
+        people who have lived through hard things. We respect clients, earn
+        their trust, and let them lead their own way to mental, physical, and
+        emotional wellness via our comprehensive mind-body approach.
+      </p>
+      <p>
+        Our practice is built on clinically proven therapies—both traditional
+        and emerging, Western and Eastern, innovative and of the Earth—multiple
+        therapies working in concert, all in service of our clients’ safety,
+        comfort and well-being.
+      </p>
+      <p>
+        As a team and as individuals, we are passionately curious, always eager
+        to expand our understandings of the human spirit. We guide, grow and
+        learn together.
+      </p>
+      <p>
+        Our mission is facilitating self-actualization: Leading a life of
+        courage, confidence, and compassion. But first, we meet everyone exactly
+        where they are and let them breathe and be.
+      </p>
+      <p>
+        We are trauma-informed and sensitive, living in the real world, and
+        recognizing that individual struggle doesn't exist in a vacuum. We are
+        not afraid to address and confront complex inequities. We are
+        sympathetic and empathic to how mental health and identity intersect, as
+        many of us are trauma survivors or carry marginalized identities. Like
+        our clients, we also have needed to cultivate resilience, learning to
+        live fully and flourish through anything that may come in present or
+        future times.
+      </p>
+      <p>
+        Ultimately, we wholeheartedly believe in the power of
+        interconnectedness: with each other, the world, and the universe at
+        large. Like our namesake herb, we aspire to bloom—in sunlight or in
+        shade—while staying grounded and then, just by existing, enrich the soil
+        around us so more growth can sprout.
+      </p>
+    </div>
+    <Image
+      class="h-auto w-[60%] my-0 mx-auto rounded sm:rounded-md"
+      src={SageSiteDesktop}
+      alt="Sage Site Desktop"
+      loading="lazy"
+    />
+    <Image
+      class="h-auto w-[60%] sm:w-[24%] mx-auto my-11 sm:my-32 rounded-[20px]"
+      src={SageSiteMobile}
+      alt="Sage Site Mobile"
+      loading="lazy"
+    />
+    <div class="image-container--half image-container--half-mobile">
+      <Image
+        style={{ paddingRight: "1%" }}
+        class="w-1/2 h-auto"
+        src={SageSocial1}
+        alt="Sage Social 1"
+        loading="lazy"
+      />
+      <Image
+        style={{ paddingLeft: "1%" }}
+        class="w-1/2 h-auto"
+        src={SageSocial2}
+        alt="Sage Social 2"
+        loading="lazy"
+      />
+    </div>
+    <video autoplay loop muted class="w-full mb-[45px] sm:mb-[120px]">
+      <source src={BreatheVideo} type="video/mp4" />
+    </video>
+    <div class="image-container--half image-container--half-mobile">
+      <Image
+        class="w-[49.5%] h-auto rounded"
+        src={SageIcon1}
+        alt="Sage Icon 1"
+        loading="lazy"
+      />
+      <Image
+        class="w-[49.5%] h-auto rounded"
+        src={SageIcon2}
+        alt="Sage Icon 2"
+        loading="lazy"
+      />
+    </div>
+    <div class="image-container--third story-social">
+      <Image
+        src={SageStorySocial1}
+        class="h-auto w-[32.5%] rounded-lg"
+        alt="Sage Story Social 1"
+        loading="lazy"
+      />
+      <video class="h-auto w-[32.5%] rounded-lg" autoplay loop muted>
+        <source src={StoryVideo} type="video/mp4" />
+      </video>
+      <Image
+        src={SageStorySocial3}
+        class="h-auto w-[32.5%] rounded-lg"
+        alt="Sage Story Social 3"
+        loading="lazy"
+      />
+    </div>
+    <video
+      autoplay
+      loop
+      muted
+      class="w-full mb-[45px] sm:mb-[120px] hidden sm:block"
+    >
+      <source src={WeAreVideo} type="video/mp4" />
+    </video>
+    <video
+      autoplay
+      loop
+      muted
+      class="w-full mb-[45px] sm:mb-[120px] block sm:hidden"
+    >
+      <source src={WeAreMobile} type="video/mp4" />
+    </video>
+    <div class="image-container--half image-container--half-mobile">
+      <Image
+        class="w-[49.5%] h-auto rounded"
+        src={SageGraphic1}
+        alt="Sage Graphic 1"
+        loading="lazy"
+      />
+      <Image
+        class="w-[49.5%] h-auto rounded"
+        src={SageGraphic2}
+        alt="Sage Graphic 2"
+        loading="lazy"
+      />
+    </div>
+    <div class="image-container--half">
+      <Image
+        class="h-auto w-1/2"
+        src={SageQuote}
+        alt="Sage Quote"
+        loading="lazy"
+      />
+      <video autoplay loop muted class="h-full w-1/2">
+        <source src={SocialVideo} type="video/mp4" />
+      </video>
+    </div>
+    <div class="image-container--three-quarter">
+      <Image
+        class="h-auto w-3/4 mb-4 sm:mb-32"
+        src={SageBrochure1}
+        alt="Sage Brochure 1"
+        loading="lazy"
+      />
+      <Image
+        class="h-auto w-3/4"
+        src={SageBrochure2}
+        alt="Sage Brochure 2"
+        loading="lazy"
+      />
+    </div>
+    <video autoplay loop muted style={{ width: "100%", height: "auto" }}>
+      <source src={CompVideo} type="video/mp4" />
+    </video>
+    <Image
+      class="h-auto w-full"
+      src={SageBusiness}
+      alt="Sage Quote"
+      loading="lazy"
+    />
+    <div class="grid-container">
+      <div class="grid-text-container">
+        <p class="grid-brand">SAGE</p>
+        <p class="grid-brand-follow">A glimpse at the brand guide</p>
+      </div>
+      <div class="image-container--grid">
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={SageBrandGuideGrid1}
+          alt="Sage Brand Guide Grid 1"
+          loading="lazy"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={SageBrandGuideGrid4}
+          alt="Sage Brand Guide Grid 4"
+          loading="lazy"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={SageBrandGuideGrid3}
+          alt="Sage Brand Guide Grid 3"
+          loading="lazy"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={SageBrandGuideGrid5}
+          alt="Sage Brand Guide Grid 5"
+          loading="lazy"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={SageBrandGuideGrid6}
+          alt="Sage Brand Guide Grid 6"
+          loading="lazy"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={SageBrandGuideGrid7}
+          alt="Sage Brand Guide Grid 7"
+          loading="lazy"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={SageBrandGuideGrid2}
+          alt="Sage Brand Guide Grid 2"
+          loading="lazy"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={SageBrandGuideGrid8}
+          alt="Sage Brand Guide Grid 8"
+          loading="lazy"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={SageBrandGuideGrid9}
+          alt="Sage Brand Guide Grid 9"
+          loading="lazy"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={SageBrandGuideGrid10}
+          alt="Sage Brand Guide Grid 10"
+          loading="lazy"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={SageBrandGuideGrid11}
+          alt="Sage Brand Guide Grid 11"
+          loading="lazy"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={SageBrandGuideGrid12}
+          alt="Sage Brand Guide Grid 12"
+          loading="lazy"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={SageBrandGuideGrid13}
+          alt="Sage Brand Guide Grid 13"
+          loading="lazy"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={SageBrandGuideGrid14}
+          alt="Sage Brand Guide Grid 14"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+  <ProjectCarousel name="Sage" />
+</InternalLayout>
+<script>
+  const image = document.getElementById("main-video");
+  let currentScroll = window.scrollY;
+
+  const minScroll = 0; // minimum scroll value
+  const maxScroll = 800;
+  const minWidth = 20; // minimum range value
+  const maxWidth = 100;
+
+  // const range =
+  //   ((currentScroll - minScroll) / (maxWidth - minScroll)) *
+  //     (maxRange - minRange) +
+  //   minRange;
+  // console.log(range);
+
+  // let imageWidth = 0.5 + currentScroll / maxWidth;
+  //   image.style.transform = `scale(${imageScale})`;
+  //   image.style.width = "20vw";
+
+  const getScrollScale = () => {
+    let currentScroll = window.scrollY;
+    if (currentScroll > 800) {
+      currentScroll = 800;
+    }
+    const rangeValue =
+      ((currentScroll - minScroll) / (maxScroll - minScroll)) *
+        (maxWidth - minWidth) +
+      minWidth;
+    // console.log(rangeValue);
+    return rangeValue;
+  };
+
+  let widthScale = getScrollScale();
+  image.style.width = `${widthScale}vw`;
+  image.style.marginTop = `-${widthScale * 3}px`;
+
+  document.addEventListener("scroll", (event) => {
+    //slow down scrolling so image doesn't grow as fast
+    let widthScale = getScrollScale();
+    // imageScale = 0.5 + currentScroll / totalWidth;
+    image.style.width = `${widthScale}vw`;
+    image.style.marginTop = `-${widthScale * 3}px`;
+  });
+</script>

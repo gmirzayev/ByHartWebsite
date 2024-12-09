@@ -1,0 +1,241 @@
+---
+import "../../styles/utils.css";
+import InternalLayout from "@layouts/InternalLayout.astro";
+import TextGrid from "@components/TextGrid.astro";
+import ScrollImage from "@components/ScrollImage.astro";
+import Image from "astro/components/Image.astro";
+import Navigation from "@components/Navigation.astro";
+import ProjectCarousel from "@components/ProjectCarousel.astro";
+import FrontDesk from "@assets/PearlyBites/PearlyBites_FrontDesk.png";
+import Bag from "@assets/PearlyBites/PearlyBites_Bag.mp4";
+import BetterDental from "@assets/PearlyBites/PearlyBites_BetterDental.png";
+import Site from "@assets/PearlyBites/PearlyBites_Site.png";
+import ExamRoom from "@assets/PearlyBites/PearlyBites_ExamRoom.png";
+import Interiors from "@assets/PearlyBites/PearlyBites_Interiors.png";
+import SocialPages from "@assets/PearlyBites/PearlyBites_SocialPages.png";
+import Tote from "@assets/PearlyBites/PearlyBites_Tote.png";
+import Cards from "@assets/PearlyBites/PearlyBites_BusinessCards.png";
+import SocialGrid from "@assets/PearlyBites/PearlyBites_SocialGrid.png";
+import Stationary from "@assets/PearlyBites/PearlyBites_Stationary.png";
+import Carousel from "@assets/PearlyBites/PearlyBites_SocialCarousel.png";
+import Header from "@assets/PearlyBites/PearlyBites_Header.png";
+---
+
+<style>
+  #pearly-main {
+    width: 100%;
+    background-color: #f7f4ed;
+  }
+  .scroll-container {
+    height: 200vh;
+  }
+  .sticky-container {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  .image-container {
+    text-align: center;
+    position: relative;
+  }
+  #main-header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    /* width: 50%; */
+  }
+  .image-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .image-flex > * {
+    margin-top: 22.5px;
+    margin-bottom: 22.5px;
+  }
+  .image-two-flex-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-two-flex {
+    width: 58%;
+    height: auto;
+  }
+  .image5842 {
+    width: 58%;
+    height: auto;
+  }
+  .image-92 {
+    width: 92%;
+    height: auto;
+  }
+  .image-9073 {
+    width: 90%;
+    height: auto;
+  }
+  .image-100 {
+    width: 100%;
+    height: auto;
+  }
+  .image-42 {
+    width: 42%;
+    height: auto;
+  }
+  .image-9058 {
+    width: 90%;
+    height: auto;
+  }
+
+  .textbox {
+    text-align: center;
+  }
+  h1 {
+    font-family: "Karla";
+    font-weight: bold;
+    font-size: 25px;
+    color: #182241;
+  }
+  h2 {
+    font-family: "Karla";
+    font-size: 26px;
+    font-weight: 700;
+  }
+  @media screen and (min-width: 768px) {
+    h1 {
+      font-size: 72px;
+    }
+    h2 {
+      font-size: 36px;
+    }
+    .image-two-flex-container {
+      flex-direction: row;
+      width: 100%;
+      justify-content: center;
+    }
+    .image-flex > * {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+    .image-two-flex {
+      width: 45%;
+    }
+    .image-9073 {
+      width: 73%;
+    }
+    .image-9058 {
+      width: 58%;
+    }
+    .image5842 {
+      width: 42%;
+    }
+  }
+</style>
+<InternalLayout>
+  <div id="pearly-main">
+    <!-- <ScrollImage theme="light" image={Header} />
+      -->
+    <div class="scroll-container">
+      <div class="sticky-container">
+        <Navigation theme="light" />
+        <div class="image-container mt-[200px]">
+          <Image id="main-header" src={Header} alt="Pearly Bites" />
+        </div>
+      </div>
+    </div>
+    <TextGrid title="PEARLY BITES" theme="light">
+      <li>Brand Identity + Positioning</li>
+      <li>Logo Design</li>
+      <li>Art + Illustration</li>
+      <li>Product Design (UX/UI)</li>
+      <li>CX</li>
+      <li>Interior Design</li>
+      <li>Social Content + Advertising</li>
+      <li>Writing + Editing</li>
+      <li>Signage + Display</li>
+      <li>Surprise + Delight</li>
+    </TextGrid>
+    <div class="image-flex">
+      <Image class="image-92" src={FrontDesk} alt="Pearly Bites" />
+      <div class="textbox">
+        <h1>Your Pet's Teeth Cleaning<br /> Just Graduated</h1>
+      </div>
+      <div class="image-two-flex-container">
+        <Image class="image-two-flex" src={BetterDental} alt="Pearly Bites" />
+        <video
+          loop
+          autoplay
+          muted
+          class="w-[58%] mt-12 h-auto sm:mt-0 sm:w-[45%]"
+        >
+          <source src={Bag} />
+        </video>
+      </div>
+      <Image class="image-9073" src={Site} alt="Pearly Bites" />
+
+      <div class="textbox">
+        <h1>A Human Approach to Your <br />Pet's Dental Care</h1>
+      </div>
+      <Image class="image-100" src={ExamRoom} alt="Pearly Bites" />
+      <h2>Interior renderings:</h2>
+      <Image class="image-9073" src={Interiors} alt="Pearly Bites" />
+      <h1>Turning Growls into Grins</h1>
+      <Image class="image5842" src={SocialPages} alt="Pearly Bites" />
+      <Image class="image-9058" src={Tote} alt="Pearly Bites" />
+      <Image class="image-100" src={Cards} alt="Pearly Bites" />
+      <Image class="image-9058" src={SocialGrid} alt="Pearly Bites" />
+      <div class="textbox">
+        <h1>Teeth Cleanings without<br /> the Bite</h1>
+      </div>
+      <Image class="image-100" src={Stationary} alt="Pearly Bites" />
+      <Image class="image-9073" src={Carousel} alt="Pearly Bites" />
+    </div>
+  </div>
+  <ProjectCarousel name="Pearly Bites" />
+</InternalLayout>
+<script>
+  const image = document.getElementById("main-header");
+
+  const minScroll = 0; // minimum scroll value
+  const maxScroll = 800;
+  const minWidth = 20; // minimum range value
+  const maxWidth = 100;
+
+  // const range =
+  //   ((currentScroll - minScroll) / (maxWidth - minScroll)) *
+  //     (maxRange - minRange) +
+  //   minRange;
+  // console.log(range);
+
+  // let imageWidth = 0.5 + currentScroll / maxWidth;
+  //   image.style.transform = `scale(${imageScale})`;
+  //   image.style.width = "20vw";
+
+  const getScrollScale = () => {
+    let currentScroll = window.scrollY;
+    if (currentScroll > 800) {
+      currentScroll = 800;
+    }
+    const rangeValue =
+      ((currentScroll - minScroll) / (maxScroll - minScroll)) *
+        (maxWidth - minWidth) +
+      minWidth;
+    // console.log(rangeValue);
+    return rangeValue;
+  };
+
+  let widthScale = getScrollScale();
+  image.style.width = `${widthScale}vw`;
+  image.style.marginTop = `-${widthScale * 3}px`;
+
+  document.addEventListener("scroll", (event) => {
+    //slow down scrolling so image doesn't grow as fast
+    let widthScale = getScrollScale();
+    // imageScale = 0.5 + currentScroll / totalWidth;
+    image.style.width = `${widthScale}vw`;
+    image.style.marginTop = `-${widthScale * 3}px`;
+  });
+</script>

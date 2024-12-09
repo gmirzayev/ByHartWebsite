@@ -51,12 +51,12 @@ import Illustration from "../assets/Home/Illustration.gif";
 
   .image-grid--column {
     width: calc(31%);
-    row-gap: 20px;
+    row-gap: 59px;
     display: none;
     flex-direction: column;
   }
 
-  .image-grid--column-m {
+  .image-grid--column-mobile {
     width: 46%;
     display: flex;
     row-gap: 20px;
@@ -96,9 +96,8 @@ import Illustration from "../assets/Home/Illustration.gif";
   @media screen and (min-width: 767px) {
     .image-grid--column {
       display: flex;
-      row-gap: 59px;
     }
-    .image-grid--column-m {
+    .image-grid--column-mobile {
       display: none;
     }
     .tooltip {
@@ -396,7 +395,7 @@ import Illustration from "../assets/Home/Illustration.gif";
     <!-- MOBILE -->
     <!-- ------------------------------------------------- -->
 
-    <div class="image-grid--column-m mobile">
+    <div class="image-grid--column-mobile mobile">
       <a class="grid-item-m brand active-item">
         <img
           src={Wizehire.src}
@@ -531,7 +530,7 @@ import Illustration from "../assets/Home/Illustration.gif";
       </a>
     </div>
 
-    <div class="image-grid--column-m mobile">
+    <div class="image-grid--column-mobile mobile">
       <a class="grid-item-m interior active-item">
         <img
           src={Ample.src}
@@ -687,112 +686,3 @@ import Illustration from "../assets/Home/Illustration.gif";
     });
   });
 </script>
-<!-- <script is:inline>
-  // Create a condition that targets viewports at least 768px wide
-  const mediaQuery = window.matchMedia('(min-width: 768px)')
-  const mobileGrid = document.getElementsByClassName("mobile");
-  const notMobileGrid = document.getElementsByClassName("not-mobile");
-  const allItems = document.getElementsByClassName("grid-item");
-  const brandItems = document.getElementsByClassName("brand");
-  const allButton = document.getElementById("all-button");
-  const brandButton = document.getElementById("brand-button");
-
-  function handleMobileChange(e) {
-    if (e.matches) {
-      for(let item of mobileGrid) {
-        item.classList.remove("active");
-      }
-      for(let item of notMobileGrid) {
-        item.classList.add("active");
-      }
-    } else {
-      for(let item of mobileGrid) {
-        item.classList.add("active");
-      }
-      for(let item of notMobileGrid) {
-        item.classList.remove("active");
-      }
-    }
-  }
-
-  allButton.addEventListener('click', () => {
-    for(let item of allItems) {
-      if(!item.classList.contains('active-item')) {
-        item.classList.add('active-item');
-      }
-    }
-  });
-
-  brandButton.addEventListener('click', () => {
-    for(let item of allItems) {
-      if(item.classList.contains('active-item')) {
-        item.classList.remove('active-item');
-      }
-    }
-    for(let item of brandItems) {
-      item.classList.add('active-item');
-    }
-  });
-    
-  // Register event listener
-  mediaQuery.addEventListener("change", handleMobileChange)
-
-  // // Initial check
-  handleMobileChange(mediaQuery)
-</script> -->
-
-<!-- <script is:inline>
-  const notMobileColumns = document.getElementsByClassName("image-grid--column");
-  const not = document.getElementsByClassName("grid-item");
-  let notMobileItems = [];
-  for(item of not) {
-    console.log(item);
-    notMobileItems.push(item.cloneNode(true));
-  }
-  const allButton = document.getElementById("all-button");
-  const brandButton = document.getElementById("brand-button");
-  let lastClicked = 'all';
-
-  allButton.addEventListener('click', () => {
-    console.log(notMobileColumns);
-    if(lastClicked !== 'all') {
-      let notMobileColumn = 0;
-      for(let column of notMobileColumns) {
-        column.replaceChildren();
-      }
-      for(let item of notMobileItems) {
-        // if(!item.classList.contains('active-item')) {
-        //   item.classList.add('active-item');
-        // }
-        notMobileColumns[notMobileColumn].appendChild(item);
-        notMobileColumn++;
-        if(notMobileColumn >= 3) {
-          notMobileColumn = 0;
-        }
-      }
-      lastClicked = 'all';
-    }
-  });
-
-  brandButton.addEventListener('click', () => {
-    if(lastClicked !== 'brand') {
-      let notMobileColumn = 0;
-      for(let column of notMobileColumns) {
-        column.replaceChildren();
-      }
-      for(let item of notMobileItems) {
-        if(item.classList.contains('brand')) {
-          notMobileColumns[notMobileColumn].appendChild(item);
-          
-          notMobileColumn++;
-          if(notMobileColumn >= 3) {
-            notMobileColumn = 0;
-          }
-        }
-      }
-      lastClicked = 'brand';
-    }
-    
-  });
-
-</script> -->

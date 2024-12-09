@@ -1,0 +1,512 @@
+---
+import "../../styles/utils.css";
+import InternalLayout from "@layouts/InternalLayout.astro";
+import TextGrid from "@components/TextGrid.astro";
+import ScrollImage from "@components/ScrollImage.astro";
+import Header from "@assets/ComicsKingdom/CK_Cover.png";
+import Image from "astro/components/Image.astro";
+import CKAnimation from "@assets/ComicsKingdom/CK_Animation.mp4";
+import LogoIllustrationDesktop from "@assets/ComicsKingdom/CK_Logo_Illustration_Desktop.png";
+import LogoIllustrationMobile from "@assets/ComicsKingdom/CK_Logo_Illustration_Mobile.png";
+import AppDesktop from "@assets/ComicsKingdom/CK_App_Desktop.png";
+import AppMobile from "@assets/ComicsKingdom/CK_App_Mobile.png";
+import IconsDesktop from "@assets/ComicsKingdom/CK_Icons_Desktop.png";
+import IconsMobile from "@assets/ComicsKingdom/CK_Icons_Mobile.png";
+import Creator from "@assets/ComicsKingdom/CK_Creator.webm";
+import Home from "@assets/ComicsKingdom/CK_App_Home.png";
+import Cat from "@assets/ComicsKingdom/CK_Cat.webm";
+import Friends from "@assets/ComicsKingdom/CK_Friends.webm";
+import Social from "@assets/ComicsKingdom/CK_Social.png";
+import Email from "@assets/ComicsKingdom/CK_Email.png";
+import Mark from "@assets/ComicsKingdom/CK_Mark.png";
+import Book from "@assets/ComicsKingdom/CK_Book.png";
+import Navigation from "@components/Navigation.astro";
+import BrandGrid1 from "@assets/ComicsKingdom/CK_Brand_Grid_01.png";
+import BrandGrid2 from "@assets/ComicsKingdom/CK_Brand_Grid_02.png";
+import BrandGrid3 from "@assets/ComicsKingdom/CK_Brand_Grid_03.png";
+import BrandGrid4 from "@assets/ComicsKingdom/CK_Brand_Grid_04.png";
+import BrandGrid5 from "@assets/ComicsKingdom/CK_Brand_Grid_05.png";
+import BrandGrid6 from "@assets/ComicsKingdom/CK_Brand_Grid_06.png";
+import BrandGrid7 from "@assets/ComicsKingdom/CK_Brand_Grid_07.png";
+import BrandGrid8 from "@assets/ComicsKingdom/CK_Brand_Grid_08.png";
+import BrandGrid9 from "@assets/ComicsKingdom/CK_Brand_Grid_09.png";
+import BrandGrid10 from "@assets/ComicsKingdom/CK_Brand_Grid_10.png";
+import BrandGrid11 from "@assets/ComicsKingdom/CK_Brand_Grid_11.png";
+import BrandGrid12 from "@assets/ComicsKingdom/CK_Brand_Grid_12.png";
+import BrandGrid13 from "@assets/ComicsKingdom/CK_Brand_Grid_13.png";
+import BrandGrid14 from "@assets/ComicsKingdom/CK_Brand_Grid_14.png";
+import ProjectCarousel from "@components/ProjectCarousel.astro";
+---
+
+<style>
+  #comics-main {
+    width: 100%;
+    background-color: #f7f4ed;
+  }
+  .scroll-container {
+    height: 200vh;
+  }
+  .sticky-container {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  .image-container {
+    text-align: center;
+    position: relative;
+  }
+  #main-header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    /* width: 50%; */
+  }
+  .image-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .social-background {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-image: url("@assets/ComicsKingdom/RedBG.png");
+    padding: 100px 0;
+  }
+
+  .image-container-half {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .textbox {
+    text-align: center;
+  }
+  .hidden {
+    display: none;
+  }
+  .dark-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("@assets/ComicsKingdom/CharcoalBG.png");
+    background-repeat: repeat;
+    background-size: auto;
+  }
+  h1 {
+    font-family: "Filson Pro";
+    font-weight: bold;
+    font-size: 72px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+
+  .text-two-column-centered {
+    width: 64%;
+    margin: 100px auto;
+    font-family: "Karla";
+    font-size: 16px;
+    line-height: 26px;
+    column-count: 1;
+    column-gap: 90px;
+  }
+  #video-wrapper {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #17100b;
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+  #video-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #17100b;
+    box-sizing: border-box;
+    padding-top: 56.25%;
+    width: 100%;
+  }
+  #ck_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    right: 0;
+    bottom: 0;
+    width: 90%;
+    height: 100%;
+    /* height: 500px; */
+    /* object-fit: cover; */
+  }
+  .karla {
+    font-family: "Karla", sans-serif;
+  }
+  #play-button {
+    position: absolute;
+    display: none;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    width: 100px;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff97fd;
+    transform: rotate(1.75deg);
+    border: 1px solid black;
+    font-size: 21px;
+    font-family: "Karla";
+    letter-spacing: 2px;
+  }
+  .grid-container {
+    background-color: #242121;
+  }
+  .grid-text-container {
+    color: white;
+    font-family: "Karla";
+    padding: 30px 0 30px 20px;
+    font-size: 16px;
+  }
+  .grid-brand {
+    font-weight: bold;
+    display: inline-block;
+    letter-spacing: 3px;
+  }
+  .grid-brand-follow {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  .image-container--grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    /* #ck_video {
+      height: 300px;
+      width: 90vw;
+    } */
+    h1 {
+      margin-top: 45px;
+      margin-bottom: 45px;
+    }
+    .text-two-column-centered {
+      column-count: 2;
+    }
+  }
+</style>
+<InternalLayout>
+  <div id="comics-main">
+    <div class="scroll-container">
+      <div class="sticky-container">
+        <Navigation theme="light" />
+        <div style={{ marginTop: "200px" }} class="image-container">
+          <Image id="main-header" src={Header} alt="Pearly Bites" />
+        </div>
+      </div>
+    </div>
+    <div style={{ backgroundColor: "#17100B" }}>
+      <!-- <ScrollImage theme="dark" /> -->
+      <TextGrid title="COMICS KINGDOM" theme="dark">
+        <li>Brand Identity + Positioning</li>
+        <li>Logo Design</li>
+        <li>Video + Photography</li>
+        <li>Writing + Editing</li>
+        <li>Surprise + Delight</li>
+        <li>Art + Illustration</li>
+        <li>Product Design (UX/UI)</li>
+        <li>Social Content + Advertising</li>
+        <li>Interviews</li>
+        <li>Qualitative Research</li>
+      </TextGrid>
+    </div>
+    <div class="image-flex">
+      <div id="video-wrapper">
+        <div id="video-container">
+          <iframe
+            id="ck_video"
+            class="max-h-full w-[90%]"
+            src="https://player.vimeo.com/video/1026680777?title=0&badge=0&autopause=0&controls=0&player_id=0&app_id=58479"
+            allow="autoplay"
+            title="Comics Kingdom"></iframe>
+          <!-- <video id="custom-video" class="h-auto w-[92%]" loop>
+          <source src={CKAnimation} type="video/mp4" />
+        </video> -->
+          <div id="play-button">PLAY</div>
+        </div>
+      </div>
+      <Image
+        class="h-auto w-full"
+        src={LogoIllustrationDesktop}
+        alt="Comics Kingdom"
+      />
+      <div></div>
+      <Image
+        class="h-auto w-[92%] hidden"
+        src={LogoIllustrationMobile}
+        alt="Comics Kingdom"
+      />
+      <div class="text-two-column-centered">
+        <p class="m-0">
+          Every strip starts with a sketch. A gag. A storyboard. An inkling of
+          an idea, brought to life by a pencil, some paper (okay, occasionally a
+          tablet and stylus), and an altogether personal point of view. It's the
+          first step in a hero’s winding journey—both the character’s and the
+          creator’s—soon to meet the fans who will cheer them along. <br /><br
+          />Comics Kingdom is for those who believe in limitless creativity,
+          barely contained in a bite of delight. The ones who must make, against
+          any obstacles, whether pioneers or next generation, in service of an
+          art form that nudges us all forward, eliciting chuckles, catharsis,
+          and connection. We're a haven for those who absolutely worship cartoon
+          history and are eager to preserve and transform. A community for the
+          people who open to the funnies every week or get the digital scoop any
+          day. A place for enthusiasts to support others and recognize the
+          wonderfully human lessons and observations depicted through a beloved
+          and all too rare craft. A platform for artists to breathe new life,
+          share new experiences, and reach new friends. A way to come together
+          through a niche that unifies—one of the lightest ways to deal with
+          heavy stuff. <br /><br />
+          <span class="text-[#DD4C42] text-xl font-bold"
+            >For <em>those</em>, for <em>us</em>, and <em>all</em>, our mission
+            is to keep the comics coming.</span
+          >
+        </p>
+      </div>
+      <Image
+        class="h-auto w-full hidden sm:!block"
+        src={AppDesktop}
+        alt="Comics Kingdom"
+      />
+      <Image
+        class="h-auto w-[92%] block sm:hidden"
+        src={AppMobile}
+        alt="Comics Kingdom"
+      />
+      <div class="dark-container">
+        <Image
+          class="h-auto mt-[100px] w-1/2 hidden sm:!block"
+          src={IconsDesktop}
+          alt="Comics Kingdom"
+        />
+        <Image
+          class="h-auto mt-[50px] w-1/2 block sm:hidden"
+          src={IconsMobile}
+          alt="Comics Kingdom"
+        />
+        <video
+          class="max-h-full w-[100%] my-[40px] sm:my-[100px] mx-0"
+          autoplay
+          muted
+          loop
+        >
+          <source src={Creator} />
+        </video>
+        <Image class="h-auto w-[66%]" src={Home} alt="Comics Kingdom" />
+      </div>
+      <video loop autoplay muted class="w-[100%]">
+        <source src={CKAnimation} />
+      </video>
+      <div
+        class="w-[100%] flex items-center justify-between flex-col sm:flex-row sm:ml-[200px] overflow-x-hidden"
+      >
+        <div class="karla my-[20px] sm:pl-[200px]">
+          <p class="">We are</p>
+          <p class="w-[200px] font-bold">
+            Making New Friends While Cherishing the Old
+          </p>
+        </div>
+        <video loop autoplay muted class="w-[100%] sm:-ml-[200px]">
+          <source src={Cat} />
+        </video>
+      </div>
+      <div class="w-full">
+        <video loop autoplay muted class="mb-[120px] w-screen">
+          <source src={Friends} />
+        </video>
+      </div>
+      <div class="social-background">
+        <Image class="h-auto w-[47%]" src={Social} alt="Comics Kingdom" />
+      </div>
+      <Image
+        class="h-auto w-[58%] my-[180px] mx-0"
+        src={Email}
+        alt="Comics Kingdom"
+      />
+      <div class="image-container-half">
+        <Image
+          class="h-auto w-[22%] ml-[50px] mb-[50px]"
+          src={Mark}
+          alt="Comics Kingdom"
+        />
+        <Image class="h-auto w-1/2" src={Book} alt="Comics Kingdom" />
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-text-container">
+        <p class="grid-brand">COMICS KINGDOM</p>
+        <p class="grid-brand-follow">A glimpse at the brand guide</p>
+      </div>
+      <div class="image-container--grid">
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid1}
+          alt="Sage Brand Guide Grid 1"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid2}
+          alt="Sage Brand Guide Grid 4"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid3}
+          alt="Sage Brand Guide Grid 3"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid4}
+          alt="Sage Brand Guide Grid 5"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid5}
+          alt="Sage Brand Guide Grid 6"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid6}
+          alt="Sage Brand Guide Grid 7"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid7}
+          alt="Sage Brand Guide Grid 2"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid8}
+          alt="Sage Brand Guide Grid 8"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid9}
+          alt="Sage Brand Guide Grid 9"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid10}
+          alt="Sage Brand Guide Grid 10"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid11}
+          alt="Sage Brand Guide Grid 11"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid12}
+          alt="Sage Brand Guide Grid 12"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid13}
+          alt="Sage Brand Guide Grid 13"
+        />
+        <Image
+          class="h-auto w-[49.5%] rounded my-1.5"
+          src={BrandGrid14}
+          alt="Sage Brand Guide Grid 14"
+        />
+      </div>
+    </div>
+  </div>
+  <ProjectCarousel name="Comics Kingdom" />
+</InternalLayout>
+
+<script>
+  import Player from "@vimeo/player";
+  const image = document.getElementById("main-header");
+
+  const minScroll = 0; // minimum scroll value
+  const maxScroll = 800;
+  const minWidth = 20; // minimum range value
+  const maxWidth = 100;
+
+  // const range =
+  //   ((currentScroll - minScroll) / (maxWidth - minScroll)) *
+  //     (maxRange - minRange) +
+  //   minRange;
+  // console.log(range);
+
+  // let imageWidth = 0.5 + currentScroll / maxWidth;
+  //   image.style.transform = `scale(${imageScale})`;
+  //   image.style.width = "20vw";
+
+  const getScrollScale = () => {
+    let currentScroll = window.scrollY;
+    if (currentScroll > 800) {
+      currentScroll = 800;
+    }
+    const rangeValue =
+      ((currentScroll - minScroll) / (maxScroll - minScroll)) *
+        (maxWidth - minWidth) +
+      minWidth;
+    // console.log(rangeValue);
+    return rangeValue;
+  };
+
+  let widthScale = getScrollScale();
+  image.style.width = `${widthScale}vw`;
+  image.style.marginTop = `-${widthScale * 3}px`;
+
+  document.addEventListener("scroll", (event) => {
+    //slow down scrolling so image doesn't grow as fast
+    let widthScale = getScrollScale();
+    // imageScale = 0.5 + currentScroll / totalWidth;
+    image.style.width = `${widthScale}vw`;
+    image.style.marginTop = `-${widthScale * 3}px`;
+  });
+
+  const videoContainer = document.getElementById("video-container");
+  const video = document.getElementById("ck_video");
+  const player = new Player(video);
+  const playButton = document.getElementById("play-button");
+  // Event listener for the play/pause button
+  videoContainer.addEventListener("mouseenter", (event) => {
+    player.getPaused().then((paused) => {
+      if (paused) {
+        playButton.style.display = "flex";
+      }
+    });
+  });
+  videoContainer.addEventListener("mouseleave", (event) => {
+    playButton.style.display = "none";
+  });
+  video.addEventListener("click", (event) => {
+    console.log("hello");
+    player.getPaused().then((paused) => {
+      console.log("hello");
+      if (!paused) {
+        player.pause();
+        playButton.style.display = "flex";
+      }
+    });
+  });
+  playButton.addEventListener("click", (event) => {
+    player.getPaused().then((paused) => {
+      if (paused) {
+        player.play();
+        playButton.style.display = "none";
+      }
+    });
+  });
+</script>
