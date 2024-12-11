@@ -1,8 +1,10 @@
 ---
-import Ample from "../assets/Home/BH_Ample.mp4";
-import Kindra from "../assets/Home/BH_Kindra.mp4";
-import LockwoodTee from "../assets/Home/BH_Lockwood_Tee.mp4";
-import Lockwood from "../assets/Home/BH_Lockwood.mp4";
+import Art from "@assets/Home/BH_Art.mp4";
+import Experience from "@assets/Home/BH_Experience.mp4";
+import Design from "@assets/Home/BH_Design.mp4";
+import Style from "@assets/Home/BH_Style.mp4";
+import Creative from "@assets/Home/BH_Creative.mp4";
+import Purpose from "@assets/Home/BH_Purpose.mp4";
 ---
 
 <style>
@@ -106,42 +108,61 @@ import Lockwood from "../assets/Home/BH_Lockwood.mp4";
     class="pill--container relative flex justify-center items-center w-full h-[500px] md:h-[900px]"
     id="pillRotate"
   >
-    <div class="video-container">
-      <video
-        id="video-0"
-        muted
-        playsinline
-        class="video-frame fade"
-        autoplay="true"
-        loop="true"
-        src={Lockwood}></video>
-    </div>
+    <!-- Story, style, identity, art, experience, content, design, purpose, actually creative -->
     <div class="video-container">
       <video
         id="video-1"
         muted
         playsinline
-        class="transform -rotate-90 video-frame"
+        class="video-frame fade rotate-180"
+        autoplay="true"
         loop="true"
-        src={Kindra}></video>
+        src={Style}></video>
     </div>
     <div class="video-container">
       <video
-        id="video-2"
+        id="video-4"
         muted
         playsinline
-        class="transform rotate-180 video-frame"
+        class="transform -rotate-90 video-frame"
         loop="true"
-        src={Ample}></video>
+        src={Experience}></video>
     </div>
     <div class="video-container">
       <video
         id="video-3"
         muted
         playsinline
+        class="transform video-frame"
+        loop="true"
+        src={Art}></video>
+    </div>
+    <div class="video-container">
+      <video
+        id="video-6"
+        muted
+        playsinline
         class="transform rotate-90 video-frame"
         loop="true"
-        src={LockwoodTee}></video>
+        src={Design}></video>
+    </div>
+    <div class="video-container">
+      <video
+        id="video-8"
+        muted
+        playsinline
+        class="transform -rotate-90 video-frame"
+        loop="true"
+        src={Creative}></video>
+    </div>
+    <div class="video-container">
+      <video
+        id="video-7"
+        muted
+        playsinline
+        class="transform video-frame"
+        loop="true"
+        src={Purpose}></video>
     </div>
     <svg xmlns="http://www.w3.org/2000/svg">
       <clipPath id="svgPath" clipPathUnits="objectBoundingBox">
@@ -180,8 +201,9 @@ import Lockwood from "../assets/Home/BH_Lockwood.mp4";
             <tspan class="pill-text"> experience </tspan> +
             <tspan class="pill-text"> content </tspan> +
             <tspan class="pill-text"> design </tspan> +
-            <tspan class="pill-text"> purpose </tspan> + actually creative studio
-            by Sarah Hartley.
+            <tspan class="pill-text"> purpose </tspan> +
+            <tspan class="pill-text">actually creative</tspan>
+            studio by Sarah Hartley.
           </textPath>
         </text>
       </svg>
@@ -194,7 +216,7 @@ import Lockwood from "../assets/Home/BH_Lockwood.mp4";
   let offset = 50;
   let previousPosition = 0;
   let previousRotation = 20;
-  const rotations = [20, 110, 160, 290];
+  const rotations = [110, 160, 290, 20];
 
   const pillSpans = document.getElementsByClassName("pill-text");
   let previouslyHighlighted = pillSpans[0];
@@ -242,19 +264,17 @@ import Lockwood from "../assets/Home/BH_Lockwood.mp4";
   // let player = new Player(video0);
 
   function showVideo() {
-    const nextVideo: HTMLVideoElement = document.getElementById(
-      `video-${animatedPosition % 4}`
+    let nextVideo: HTMLVideoElement = document.getElementById(
+      `video-${animatedPosition}`
     ) as HTMLVideoElement;
-    const previousVideo = document.getElementById(
-      `video-${previousPosition % 4}`
-    );
+    const previousVideo = document.getElementById(`video-${previousPosition}`);
     if (animatedPosition !== previousPosition) {
-      if (nextVideo) {
-        nextVideo.currentTime = 0;
-        nextVideo.play();
-        nextVideo.classList.add("fade");
-        // nextVideo.classList.add("shown");
+      if (!nextVideo) {
+        nextVideo = document.getElementById(`video-1`) as HTMLVideoElement;
       }
+      nextVideo.currentTime = 0;
+      nextVideo.play();
+      nextVideo.classList.add("fade");
       if (previousVideo) {
         // previousVideo.classList.remove("shown");
         previousVideo.classList.remove("fade");

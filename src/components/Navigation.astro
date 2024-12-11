@@ -334,7 +334,10 @@ const { theme } = Astro.props;
     navEmailButton.addEventListener("click", async (event) => {
       try {
         await navigator.clipboard.writeText("getcreative@byhart.studio");
-        setTimeout(() => (navEmailButton.textContent = "COPIED!"), 10);
+        setTimeout(
+          () => (navEmailButton.textContent = "READY FOR PASTING!"),
+          10
+        );
         setTimeout(() => {
           navEmailButton.textContent = "COPY OUR EMAIL ADDY";
         }, 2000);
