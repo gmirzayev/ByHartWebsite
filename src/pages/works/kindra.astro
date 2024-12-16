@@ -1,0 +1,577 @@
+---
+import "../../styles/utils.css";
+import InternalLayout from "@layouts/InternalLayout.astro";
+import TextGrid from "@components/TextGrid.astro";
+import ScrollImage from "@components/ScrollImage.astro";
+import Image from "astro/components/Image.astro";
+import Navigation from "@components/Navigation.astro";
+import Header from "@assets/Kindra/Kindra_Header.jpg";
+import Body from "@assets/Kindra/Kindra_Body.png";
+import Lotion from "@assets/Kindra/Kindra_Lotion.png";
+import ColorDesktop from "@assets/Kindra/Kindra_Color_Desktop.png";
+import ColorMobile from "@assets/Kindra/Kindra_Color_Mobile.png";
+import CollageDesktop from "@assets/Kindra/Kindra_Collage_Desktop.png";
+import CollageMobile from "@assets/Kindra/Kindra_Collage_Mobile.png";
+import Humectant from "@assets/Kindra/Kindra_Humectant.png";
+import MiddleDesktop from "@assets/Kindra/Kindra_Middle_Desktop.jpg";
+import MiddleMobile from "@assets/Kindra/Kindra_Middle_Mobile.jpg";
+import Pamper from "@assets/Kindra/Kindra_Pamper.png";
+import Photography1 from "@assets/Kindra/Kindra_Photography1.png";
+import QuizBackgroundDesktop from "@assets/Kindra/Kindra_Quiz_Desktop.png";
+import QuizBackgroundMobile from "@assets/Kindra/Kindra_Quiz_Mobile.png";
+//import quiz video
+//import dish video
+import Mist from "@assets/Kindra/Kindra_Mist.png";
+import LotionFlowers from "@assets/Kindra/Kindra_Lotion_Flowers.png";
+import Review1 from "@assets/Kindra/Kindra_Review1.png";
+import Review2 from "@assets/Kindra/Kindra_Review2.png";
+import Thanks from "@assets/Kindra/Kindra_Thankyou.png";
+import ThanksCard from "@assets/Kindra/Kindra_ThanksCard.png";
+import Focus from "@assets/Kindra/Kindra_Focus.mp4";
+import Photography2 from "@assets/Kindra/Kindra_Photography2.png";
+import Photography3 from "@assets/Kindra/Kindra_Photography3.png";
+import PhotographyVideo from "@assets/Kindra/Kindra_Photography_Video.mp4";
+import SerumVideo from "@assets/Kindra/Kindra_Serum_Video.mp4";
+import Serum from "@assets/Kindra/Kindra_Serum.png";
+import Conditions from "@assets/Kindra/Kindra_Conditions.mp4";
+import ConditionsThumbnail from "@assets/Kindra/Kindra_Conditions_Thumbnail.jpg";
+import ConditionsLotion from "@assets/Kindra/Kindra_ConditionsLotion.mp4";
+import ConditionsLotionThumbnail from "@assets/Kindra/Kindra_ConditionsLotion_Thumbnail.jpg";
+import Bed from "@assets/Kindra/Kindra_Bed_Desktop.mp4";
+import Site from "@assets/Kindra/Kindra_Site.png";
+import SiteBackgroundDesktop from "@assets/Kindra/Kindra_Site_Background_Desktop.png";
+import SiteBackgroundMobile from "@assets/Kindra/Kindra_Site_Background_Mobile.png";
+import ApplicatorGuide1 from "@assets/Kindra/Kindra_Applicator_Guide1.png";
+import ApplicatorGuide2 from "@assets/Kindra/Kindra_Applicator_Guide2.png";
+import PinkLotion from "@assets/Kindra/Kindra_PinkLotion.png";
+import Peach from "@assets/Kindra/Kindra_Peach.png";
+import CoreGrid1 from "@assets/Kindra/Kindra_CoreGrid1.png";
+import CoreGrid2 from "@assets/Kindra/Kindra_CoreGrid2.png";
+import CoreGrid3 from "@assets/Kindra/Kindra_CoreGrid3.png";
+import CoreGrid4 from "@assets/Kindra/Kindra_CoreGrid4.png";
+import CoreGrid5 from "@assets/Kindra/Kindra_CoreGrid5.png";
+import CoreGrid6 from "@assets/Kindra/Kindra_CoreGrid6.png";
+import SocialBackgroundDesktop from "@assets/Kindra/Kindra_Social_Background_Desktop.png";
+import SocialBackgroundMobile from "@assets/Kindra/Kindra_Social_Background_Mobile.png";
+import SocialGrid from "@assets/Kindra/Kindra_Social_Grid.png";
+import Menopause from "@assets/Kindra/Kindra_Menopause_Work.mp4";
+import Applicator from "@assets/Kindra/Kindra_Lotion_And_Applicator.mp4";
+import QuizResultsEmail from "@assets/Kindra/Kindra_Quiz_Results_Email.png";
+import VideoTest from "@assets/Kindra/Kindra_Crop_Test.mp4";
+import QuizFlow from "@assets/Kindra/Kindra_Quiz_Flow.mp4";
+import QuizFlowFull from "@assets/Kindra/Kindra_Quiz_Flow_Full.mp4";
+import ToolBox1 from "@assets/Kindra/Kindra_ToolBox1.png";
+import ToolBox2 from "@assets/Kindra/Kindra_ToolBox2.png";
+import ToolBoxOpen from "@assets/Kindra/Kindra_ToolBox_Open.png";
+import Social1 from "@assets/Kindra/Kindra_Social_1.mp4";
+import Social2 from "@assets/Kindra/Kindra_Social_2.mp4";
+import Social3 from "@assets/Kindra/Kindra_Social_3.mp4";
+import Social4 from "@assets/Kindra/Kindra_Social_4.mp4";
+import BTSDesktop from "@assets/Kindra/Kindra_BTS_Desktop.mp4";
+import BTSMobile from "@assets/Kindra/Kindra_BTS_Mobile.mp4";
+import GloriaDesktop from "@assets/Kindra/Kindra_Gloria_Desktop.png";
+import GloriaMobile from "@assets/Kindra/Kindra_Gloria_Mobile.png";
+import KindraCCDesktop from "@assets/Kindra/Kindra_CC_Desktop.png";
+import KindraCCMobile from "@assets/Kindra/Kindra_CC_Mobile.png";
+import KindraWords from "@assets/Kindra/Kindra_Drawing_Words.png";
+import ProjectCarousel from "@components/ProjectCarousel.astro";
+---
+
+<style>
+  #kindra-main {
+    width: 100%;
+    background-color: #f7f4ed;
+    color: #363131;
+  }
+  .kindra-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .karla {
+    font-family: "Karla", sans-serif;
+  }
+  .utile {
+    font-family: "utile-display", sans-serif;
+  }
+</style>
+<InternalLayout>
+  <div id="kindra-main">
+    <ScrollImage type="image" brandName="Kindra" headerImage={Header} />
+    <TextGrid title="KINDRA" theme="light">
+      <li>Brand Identity + Positioning</li>
+      <li>Video + Photography</li>
+      <li>Art + Illustration</li>
+      <li>Product Design (UX/UI)</li>
+      <li>CX</li>
+      <li>Physical Goods Development + Design</li>
+      <li>Packaging</li>
+      <li>Editorial Content</li>
+      <li>Social Content + Advertising</li>
+      <li>Writing + Editing</li>
+      <li>Quiz Development</li>
+      <li>Surprise + Delight</li>
+    </TextGrid>
+    <div id="kindra-content">
+      <div class="flex flex-col md:flex-row md:mx-[60px]">
+        <Image
+          class="h-auto w-full md:w-[50%] md:order-2"
+          alt="Kindra"
+          src={Body}
+        />
+        <Image
+          class="h-auto w-full md:w-[50%] md:pr-[60px] md:py-[80px]"
+          alt="Kindra"
+          src={Lotion}
+        />
+      </div>
+      <div class="hidden items-center md:block my-[120px]">
+        <div class="mx-[250px] karla">
+          <h1 class="utile text-[66px]">Kindra &mdash; the new era of you.</h1>
+          <p class="mb-[10px]">
+            Isn’t it about time for a change? A shift in priorities, a chance to
+            try something new? Maybe what would change is how you see the world
+            — and how you see yourself. Maybe how you approach self-care would
+            change. Maybe you’d prioritize you a little more, choose products
+            with ingredients you trust.
+          </p>
+          <span class="font-[700]"
+            >Embracing change isn’t easy.  It’s essential.</span
+          >
+          <p class="mt-[10px]">
+            Listen — every significant moment in your life was tough before it
+            was terrific, right? Because you’re always learning, always growing,
+            always becoming. And who you are right now, as you navigate
+            menopause, will set the stage for years to come.
+          </p>
+          <p class="mt-[10px]">What’s next, you ask?  Everything.</p>
+        </div>
+      </div>
+      <div
+        class="flex flex-col md:flex-row mb-[45px] md:mb-[120px] md:mx-[250px]"
+      >
+        <Image
+          class="hidden md:block md:w-1/2 md:pr-[70px]"
+          alt="Kindra"
+          src={ColorDesktop}
+        />
+        <Image class="block md:hidden" alt="Kindra" src={ColorMobile} />
+        <div
+          class="karla mx-[25px] my-[45px] md:w-1/2 md:self-end md:pl-[50px]"
+        >
+          <h1 class="mb-[15px] font-[700]">COLOR PALETTE</h1>
+          <p>
+            Each has its own song to sing. Magic Hour and Good Vintage are the
+            heart of the brand. They are warm, mature, evolved, rich, nostalgic,
+            yet modern. Pottery wheel is the anchor, the clay, how life shapes
+            us. Refreshing and Deep are the water in our photography. Wise Woman
+            is the color of sage, to reflect the wisdom that comes from age and
+            experience, communicates peace and growth through knowledge.
+          </p>
+        </div>
+      </div>
+      <Image class="w-full hidden md:block" alt="Kindra" src={CollageDesktop} />
+      <Image class="w-full block md:hidden" alt="Kindra" src={CollageMobile} />
+      <Image class="w-full" alt="Kindra" src={Humectant} />
+      <Image class="w-full hidden md:block" alt="Kindra" src={MiddleDesktop} />
+      <Image class="w-full block md:hidden" alt="Kindra" src={MiddleMobile} />
+      <div
+        class="flex flex-col md:flex-row my-[45px] mx-[20px] gap-[45px] md:my-[120px] md:mx-[60px] md:gap-[60px] md:justify-center"
+      >
+        <Image
+          class="w-full rounded md:w-[60%] md:rounded-md"
+          alt="Kindra"
+          src={Pamper}
+        />
+        <Image
+          class="w-full rounded md:w-[40%] md:py-[95px] md:rounded-md"
+          alt="Kindra"
+          src={Photography1}
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <!-- insert shell video. div is flexed to change order on breakpoints -->
+        <div class="md:order-2">
+          <!-- insert overlay video -->
+          <Image
+            class="w-full hidden md:block"
+            src={QuizBackgroundDesktop}
+            alt="Kindra"
+          />
+          <Image
+            class="w-full block md:hidden"
+            src={QuizBackgroundMobile}
+            alt="Kindra"
+          />
+        </div>
+      </div>
+
+      <div class="flex flex-row w-full">
+        <Image class="w-1/2 h-auto" src={Mist} alt="Kindra" />
+        <Image class="w-1/2 h-auto" src={LotionFlowers} alt="Kindra" />
+      </div>
+      <div
+        class="flex flex-col md:flex-row gap-[5px] my-[45px] mx-[20px] md:gap-[15px] md:my-[120px] md:mx-[215px] md:justify-center"
+      >
+        <Image
+          class="w-full rounded-md h-auto md:w-1/2 md:order-2"
+          src={Review2}
+          alt="Kindra"
+        />
+        <Image
+          class="w-full rounded-md h-auto md:w-1/2"
+          src={Review1}
+          alt="Kindra"
+        />
+      </div>
+      <div
+        class="flex flex-col md:flex-row gap-[5px] my-[45px] mx-[20px] md:gap-[15px] md:my-[120px] md:mx-[215px] md:justify-center"
+      >
+        <Image
+          class="w-full rounded-md h-auto md:w-1/2"
+          src={Thanks}
+          alt="Kindra"
+        />
+        <Image
+          class="w-full rounded-md h-auto md:w-1/2"
+          src={ThanksCard}
+          alt="Kindra"
+        />
+      </div>
+      <div class="flex flex-col gap-[5px] md:gap-[15px]">
+        <div
+          class="flex flex-col md:flex-row justify-center mx-[20px] gap-[5px] md:mx-[60px] md:gap-[15px]"
+        >
+          <video
+            loop
+            playsinline
+            autoplay
+            muted
+            class="w-full rounded-md md:w-[41%]"
+          >
+            <source src={Focus} />
+          </video>
+          <Image
+            class="w-full rounded-md md:w-[59%] h-auto"
+            src={Photography2}
+            alt="Kindra"
+          />
+        </div>
+        <div
+          class="flex flex-row justify-center mx-[20px] md:mx-[60px] md:gap-[15px]"
+        >
+          <Image
+            class="w-2/3 h-auto rounded-md pr-[5px]"
+            src={Photography3}
+            alt="Kindra"
+          />
+          <video loop playsinline autoplay muted class="w-1/3 rounded-md">
+            <source src={PhotographyVideo} />
+          </video>
+        </div>
+        <div
+          class="flex flex-col justify-center md:flex-row mx-[20px] gap-[5px] md:mx-[60px] md:gap-[15px]"
+        >
+          <video
+            loop
+            playsinline
+            autoplay
+            muted
+            class="w-full md:w-1/3 rounded-md"
+          >
+            <source src={SerumVideo} />
+          </video>
+          <Image
+            class="w-full md:w-2/3 h-auto rounded-md"
+            src={Serum}
+            alt="Kindra"
+          />
+        </div>
+      </div>
+      <div
+        class="flex flex-col md:flex-row gap-[45px] mx-[20px] my-[45px] md:mx-[200px] md:my-[120px] md:gap-[20px]"
+      >
+        <!-- do not autoplay, use custom video player -->
+        <video
+          loop
+          playsinline
+          autoplay
+          muted
+          class="w-full rounded-md md:w-1/2"
+        >
+          <source src={Conditions} />
+        </video>
+        <video
+          loop
+          playsinline
+          autoplay
+          muted
+          class="w-full rounded-md md:w-1/2"
+        >
+          <source src={ConditionsLotion} />
+        </video>
+      </div>
+      <video
+        loop
+        playsinline
+        autoplay
+        muted
+        class="w-full my-[45px] md:my-[120px]"
+      >
+        <source src={Bed} />
+      </video>
+      <div class="mx-[20px] md:mx-[300px] md:mb-[400px]">
+        <Image class="w-full h-auto rounded" src={Site} alt="Kindra" />
+      </div>
+      <div class="w-full relative">
+        <Image
+          class="w-full h-auto absolute -top-[200px] hidden z-10 md:block"
+          src={SiteBackgroundDesktop}
+          alt="Kindra"
+        />
+        <Image
+          class="w-full h-auto absolute block z-10 md:hidden"
+          src={SiteBackgroundMobile}
+          alt="Kindra"
+        />
+        <div
+          class="flex flex-col pt-[200px] mx-[20px] md:mx-[60px] md:flex-row gap-[10px] md:gap-[15px]"
+        >
+          <Image
+            class="w-full md:w-1/2 h-auto z-20"
+            src={ApplicatorGuide1}
+            alt="Kindra"
+          />
+          <Image
+            class="w-full md:w-1/2 h-auto z-20"
+            src={ApplicatorGuide2}
+            alt="Kindra"
+          />
+        </div>
+      </div>
+      <div
+        class="mt-[120px] mx-[20px] mb-[45px] md:mx-[300px] md:mb-[120px] md:mt-[180px]"
+      >
+        <h1 class="font-[700] text-[30px]">
+          WE HEARD YOU
+          <br /><span class="italic">(AND YOUR OB/GYN)</span>
+        </h1>
+        <br />
+        <div class="columns-1 md:columns-2">
+          <p>
+            At The Kindra Innovation Lab, we’re always learning.<br /><br />
+            Something vital we learned early on is that traditional vaginal applicators
+            you find at your local drug store are unnecessarily invasive and wasteful.
+            When we created our revolutionary vaginal lotion formula, we knew we
+            had to find a better way for you to get meaningful relief where you actually
+            need it. So we invented an entirely new applicator, designed to provide
+            hydration directly to your most sensitive area—just inside and around
+            your vaginal opening (AKA: your introitus, if we’re being scientific).
+            We continue to be proud of this groundbreaking accomplishment, created
+            by women with your comfort as our highest priority.
+          </p>
+          <br />
+          <p>
+            But the thing about learning is it never stops. In our ongoing work
+            with renowned, field-proven OB/GYNs and leading women’s health
+            experts, as well as our steadfast commitment to listening to you,
+            our Kindra community, we have learned something even more vital. <br
+            /><br />The very best applicator for The Daily Vaginal Lotion is
+            simply you.
+          </p>
+          <br />
+          <p>
+            That’s right. Since you only apply lotion about an inch or less
+            inside your vagina, a finger is all you need. In fact, what we’ve
+            learned through listening to you and the experts is that finger
+            application allows for better precision and results in even less
+            product waste. As an added convenience, there’s nothing to sanitize
+            between uses beyond simply washing your hands. And while
+            medical-grade silicone is more sustainable than plastic, it’s not
+            biodegradable, so putting less of it into the world is even better
+            for our planet.
+            <br /><br />
+            Now that we know all of this, it’s time to do something about it.
+          </p>
+          <br />
+          <p>
+            Listen, we’re not going to sell you something that you just don’t
+            need. It’s time to say goodbye to our little applicator that could.
+            It was an innovative leap in the right direction, because it helped
+            us get right here—to an even more empowering and straightforward
+            solution. You are all the applicator you need to get the relief you
+            need, which is actually pretty awesome.
+          </p>
+          <br />
+          <p>
+            We realize some of you may miss the applicator, and we feel you.
+            It’s been our baby! But the overwhelming customer feedback and
+            clinical counsel is that finger application is not only a good
+            option, but—in fact—the best option. And we want nothing but the
+            best for you. Always. <br /><br />Thanks for going on this journey
+            with us. Here’s to learning, improving, and growing together.
+          </p>
+        </div>
+      </div>
+      <div class="flex w-full flex-col md:flex-row">
+        <Image
+          class="w-full md:w-1/2 h-auto z-20"
+          src={PinkLotion}
+          alt="Kindra"
+        />
+        <Image class="w-full md:w-1/2 h-auto z-20" src={Peach} alt="Kindra" />
+      </div>
+      <div
+        class="grid grid-cols-2 gap-4 mx-[20px] md:grid-cols-3 my-[45px] md:my-[120px] md:mx-[60px]"
+      >
+        <Image class="w-full h-auto md:order-2" src={CoreGrid2} alt="Kindra" />
+        <Image class="w-full h-auto md:order-1" src={CoreGrid1} alt="Kindra" />
+        <Image class="w-full h-auto md:order-3" src={CoreGrid3} alt="Kindra" />
+        <Image class="w-full h-auto md:order-4" src={CoreGrid4} alt="Kindra" />
+        <Image class="w-full h-auto md:order-5" src={CoreGrid5} alt="Kindra" />
+        <Image class="w-full h-auto md:order-6" src={CoreGrid6} alt="Kindra" />
+      </div>
+      <div class="w-full">
+        <Image
+          class="hidden absolute md:block"
+          src={SocialBackgroundDesktop}
+          alt="Kindra"
+        />
+        <Image
+          class="block absolute md:hidden"
+          src={SocialBackgroundMobile}
+          alt="Kindra"
+        />
+        <div
+          class="relative flex flex-col items-center justify-center gap-[35px] pt-[60px] md:flex-row md:mx-[300px] md:gap-[60px]"
+        >
+          <Image class="w-1/2" src={SocialGrid} alt="Kindra" />
+          <Image class="w-1/2" src={SocialGrid} alt="Kindra" />
+        </div>
+      </div>
+      <div
+        class="flex flex-col mx-[20px] md:mx-[200px] my-[45px] md:my-[120px] gap-[45px] md:gap-[60px] md:flex-row"
+      >
+        <video loop playsinline autoplay muted class="rounded-md md:w-1/2">
+          <source src={Menopause} />
+        </video>
+        <video loop playsinline autoplay muted class="rounded-md md:w-1/2">
+          <source src={Applicator} />
+        </video>
+      </div>
+      <div class="flex flex-col md:gap-[15px]">
+        <div class="flex flex-col md:flex-row md:gap-[15px]">
+          <Image class="w-full md:w-1/2" src={ToolBox1} alt="Kindra" />
+          <Image class="w-full md:w-1/2" src={ToolBox2} alt="Kindra" />
+        </div>
+        <Image class="w-full" src={ToolBoxOpen} alt="Kindra" />
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4">
+        <video loop playsinline autoplay muted class="w-full h-auto">
+          <source src={Social1} />
+        </video>
+        <video loop playsinline autoplay muted class="w-full h-auto">
+          <source src={Social2} />
+        </video>
+        <video loop playsinline autoplay muted class="w-full h-auto">
+          <source src={Social3} />
+        </video>
+        <video loop playsinline autoplay muted class="w-full h-auto">
+          <source src={Social4} />
+        </video>
+      </div>
+      <button id="openModalBtn">OPEN MODAL</button>
+      <div
+        class="fixed top-0 left-0 hidden bg-white w-full h-full z-50 overflow-scroll"
+        id="modal"
+      >
+        <div class="w-full h-full flex flex-col justify-center items-center">
+          <div class="overflow-y-auto w-[220px] aspect-[.5199]">
+            <!-- <Image alt="test" src={QuizResultsEmail} /> -->
+            <video loop playsinline autoplay muted class="w-full h-auto">
+              <source src={VideoTest} />
+            </video>
+          </div>
+          <p>This is a centered modal.</p>
+          <button class="close-btn" id="closeModalBtn">Close</button>
+        </div>
+      </div>
+    </div>
+    <ProjectCarousel name="Kindra" />
+  </div>
+</InternalLayout>
+<!-- import ToolBox1 from "@assets/Kindra/Kindra_ToolBox1.png";
+import ToolBox2 from "@assets/Kindra/Kindra_ToolBox2.png";
+import ToolBoxOpen from "@assets/Kindra/Kindra_ToolBox_Open.png";
+import Social1 from "@assets/Kindra/Kindra_Social_1.mp4";
+import Social2 from "@assets/Kindra/Kindra_Social_2.mp4";
+import Social3 from "@assets/Kindra/Kindra_Social_3.mp4";
+import Social4 from "@assets/Kindra/Kindra_Social_4.mp4";
+import BTSDesktop from "@assets/Kindra/Kindra_BTS_Desktop.mp4";
+import BTSMobile from "@assets/Kindra/Kindra_BTS_Mobile.mp4";
+import GloriaDesktop from "@assets/Kindra/Kindra_Gloria_Desktop.png";
+import GloriaMobile from "@assets/Kindra/Kindra_Gloria_Mobile.png";
+import KindraCCDesktop from "@assets/Kindra/Kindra_CC_Desktop.png";
+import KindraCCMobile from "@assets/Kindra/Kindra_CC_Mobile.png";
+import KindraWords from "@assets/Kindra/Kindra_Drawing_Words.png"; -->
+<!--  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Hidden by default */
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 1000;
+    width: 300px;
+    text-align: center;
+  }
+
+  /* Overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: none;
+    z-index: 999;
+  }
+
+  /* Close button */
+  .close-btn {
+    background-color: #ff5f5f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  } -->
+<script>
+  const modal = document.getElementById("modal");
+  const overlay = document.getElementById("overlay");
+  const openModalBtn = document.getElementById("openModalBtn");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+
+  // Open modal
+  openModalBtn.addEventListener("click", () => {
+    modal.style.display = "block";
+    overlay.style.display = "block";
+  });
+
+  // Close modal
+  closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    overlay.style.display = "none";
+  });
+
+  // Close modal when clicking on overlay
+  overlay.addEventListener("click", () => {
+    modal.style.display = "none";
+    overlay.style.display = "none";
+  });
+</script>

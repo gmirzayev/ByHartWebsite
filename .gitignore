@@ -22,4 +22,4 @@ pnpm-debug.log*
 
 .vscode
 
-kindra.astro
+VideoPlayer.astro

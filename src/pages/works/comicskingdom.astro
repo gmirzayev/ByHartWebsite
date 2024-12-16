@@ -101,15 +101,6 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
     column-count: 1;
     column-gap: 90px;
   }
-  #video-wrapper {
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    background-color: #17100b;
-    padding-top: 50px;
-    padding-bottom: 100px;
-  }
   #video-container {
     position: relative;
     display: flex;
@@ -119,7 +110,7 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
     padding-top: 56.25%;
     width: 100%;
   }
-  #ck_video {
+  #video-iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -133,6 +124,12 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
   }
   .karla {
     font-family: "Karla", sans-serif;
+  }
+  #pause-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
   }
   #play-button {
     position: absolute;
@@ -209,10 +206,12 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
       </TextGrid>
     </div>
     <div class="image-flex">
-      <div id="video-wrapper">
+      <div
+        class="w-full relative flex justify-center bg-[#17100b] pt-[50px] pb-[100px]"
+      >
         <div id="video-container">
           <iframe
-            id="ck_video"
+            id="video-iframe"
             class="max-h-full w-[90%]"
             src="https://player.vimeo.com/video/1026680777?title=0&badge=0&autopause=0&controls=0&player_id=0&app_id=58479"
             allow="autoplay"
@@ -220,6 +219,7 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
           <!-- <video id="custom-video" class="h-auto w-[92%]" loop>
           <source src={CKAnimation} type="video/mp4" />
         </video> -->
+          <div id="pause-cover"></div>
           <div id="play-button">PLAY</div>
         </div>
       </div>
@@ -421,8 +421,9 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
   import Player from "@vimeo/player";
 
   const videoContainer = document.getElementById("video-container");
-  const video = document.getElementById("ck_video");
+  const video = document.getElementById("video-iframe");
   const player = new Player(video);
+  const pauseButton = document.getElementById("pause-cover");
   const playButton = document.getElementById("play-button");
   // Event listener for the play/pause button
   videoContainer.addEventListener("mouseenter", (event) => {
@@ -435,10 +436,8 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
   videoContainer.addEventListener("mouseleave", (event) => {
     playButton.style.display = "none";
   });
-  video.addEventListener("click", (event) => {
-    console.log("hello");
+  pauseButton.addEventListener("click", (event) => {
     player.getPaused().then((paused) => {
-      console.log("hello");
       if (!paused) {
         player.pause();
         playButton.style.display = "flex";
