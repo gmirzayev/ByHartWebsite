@@ -41,30 +41,13 @@ import SageBrandGuideGrid11 from "@assets/Sage/Sage_Brand_Guide_Grid_11.png";
 import SageBrandGuideGrid12 from "@assets/Sage/Sage_Brand_Guide_Grid_12.png";
 import SageBrandGuideGrid13 from "@assets/Sage/Sage_Brand_Guide_Grid_13.png";
 import SageBrandGuideGrid14 from "@assets/Sage/Sage_Brand_Guide_Grid_14.png";
+import ScrollImage from "@components/ScrollImage.astro";
 ---
 
 <style is:global>
   #sage-main {
     position: relative;
     background-color: #f7f4ed;
-  }
-  .scroll-container {
-    height: 200vh;
-  }
-  .sticky-container {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-  }
-  .video-container {
-    text-align: center;
-    position: relative;
-  }
-  #main-video {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    /* width: 50%; */
   }
   .collage-image {
     margin: 50px auto 0 auto;
@@ -172,16 +155,7 @@ import SageBrandGuideGrid14 from "@assets/Sage/Sage_Brand_Guide_Grid_14.png";
 </style>
 <InternalLayout>
   <div id="sage-main" class="w-full">
-    <div class="scroll-container">
-      <div class="sticky-container">
-        <Navigation theme="light" />
-        <div style={{ marginTop: "200px" }} class="video-container">
-          <video id="main-video" autoplay playsinline loop muted>
-            <source src={SageHeroVideo} type="video/mp4" />
-          </video>
-        </div>
-      </div>
-    </div>
+    <ScrollImage type="video" brandName="Sage" headerVideo={SageHeroVideo} />
     <TextGrid title="SAGE" theme="light">
       <li>Brand Identity + Positioning</li>
       <li>Logo Design</li>
@@ -485,47 +459,3 @@ import SageBrandGuideGrid14 from "@assets/Sage/Sage_Brand_Guide_Grid_14.png";
   </div>
   <ProjectCarousel name="Sage" />
 </InternalLayout>
-<script>
-  const image = document.getElementById("main-video");
-  let currentScroll = window.scrollY;
-
-  const minScroll = 0; // minimum scroll value
-  const maxScroll = 800;
-  const minWidth = 20; // minimum range value
-  const maxWidth = 100;
-
-  // const range =
-  //   ((currentScroll - minScroll) / (maxWidth - minScroll)) *
-  //     (maxRange - minRange) +
-  //   minRange;
-  // console.log(range);
-
-  // let imageWidth = 0.5 + currentScroll / maxWidth;
-  //   image.style.transform = `scale(${imageScale})`;
-  //   image.style.width = "20vw";
-
-  const getScrollScale = () => {
-    let currentScroll = window.scrollY;
-    if (currentScroll > 800) {
-      currentScroll = 800;
-    }
-    const rangeValue =
-      ((currentScroll - minScroll) / (maxScroll - minScroll)) *
-        (maxWidth - minWidth) +
-      minWidth;
-    // console.log(rangeValue);
-    return rangeValue;
-  };
-
-  let widthScale = getScrollScale();
-  image.style.width = `${widthScale}vw`;
-  image.style.marginTop = `-${widthScale * 3}px`;
-
-  document.addEventListener("scroll", (event) => {
-    //slow down scrolling so image doesn't grow as fast
-    let widthScale = getScrollScale();
-    // imageScale = 0.5 + currentScroll / totalWidth;
-    image.style.width = `${widthScale}vw`;
-    image.style.marginTop = `-${widthScale * 3}px`;
-  });
-</script>

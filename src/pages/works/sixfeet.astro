@@ -37,24 +37,6 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
     position: relative;
     background-color: #f7f4ed;
   }
-  .scroll-container {
-    height: 200vh;
-  }
-  .sticky-container {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-  }
-  .image-container {
-    text-align: center;
-    position: relative;
-  }
-  #main-video {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    /* width: 50%; */
-  }
   .image-flex {
     display: flex;
     flex-direction: column;
@@ -116,16 +98,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
 </style>
 <InternalLayout>
   <div id="sixfeet-main">
-    <div class="scroll-container">
-      <div class="sticky-container">
-        <Navigation theme="light" />
-        <div style={{ marginTop: "200px" }} class="image-container">
-          <video id="main-video" autoplay playsinline loop muted>
-            <source src={Header} type="video/mp4" />
-          </video>
-        </div>
-      </div>
-    </div>
+    <ScrollImage type="video" brandName="Six Feet" headerVideo={Header} />
     <TextGrid title="6 FEET FROM YOU" theme="light">
       <li>Brand Identity + Positioning</li>
       <li>Logo Design</li>
@@ -300,47 +273,3 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
   </div>
   <ProjectCarousel name="6 Feet Apart" />
 </InternalLayout>
-<script>
-  const image = document.getElementById("main-video");
-  let currentScroll = window.scrollY;
-
-  const minScroll = 0; // minimum scroll value
-  const maxScroll = 800;
-  const minWidth = 20; // minimum range value
-  const maxWidth = 100;
-
-  // const range =
-  //   ((currentScroll - minScroll) / (maxWidth - minScroll)) *
-  //     (maxRange - minRange) +
-  //   minRange;
-  // console.log(range);
-
-  // let imageWidth = 0.5 + currentScroll / maxWidth;
-  //   image.style.transform = `scale(${imageScale})`;
-  //   image.style.width = "20vw";
-
-  const getScrollScale = () => {
-    let currentScroll = window.scrollY;
-    if (currentScroll > 800) {
-      currentScroll = 800;
-    }
-    const rangeValue =
-      ((currentScroll - minScroll) / (maxScroll - minScroll)) *
-        (maxWidth - minWidth) +
-      minWidth;
-    // console.log(rangeValue);
-    return rangeValue;
-  };
-
-  let widthScale = getScrollScale();
-  image.style.width = `${widthScale}vw`;
-  image.style.marginTop = `-${widthScale * 3}px`;
-
-  document.addEventListener("scroll", (event) => {
-    //slow down scrolling so image doesn't grow as fast
-    let widthScale = getScrollScale();
-    // imageScale = 0.5 + currentScroll / totalWidth;
-    image.style.width = `${widthScale}vw`;
-    image.style.marginTop = `-${widthScale * 3}px`;
-  });
-</script>

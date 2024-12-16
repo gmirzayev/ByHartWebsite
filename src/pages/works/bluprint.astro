@@ -51,25 +51,6 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
     background-color: #f7f4ed;
     color: #363131;
   }
-  .scroll-container {
-    height: 200vh;
-  }
-  .sticky-container {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-  }
-  .image-container {
-    text-align: center;
-    position: relative;
-  }
-  #main-header {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-    /* width: 50%; */
-  }
   .bluprint-content {
     display: flex;
     flex-direction: column;
@@ -82,14 +63,7 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
 </style>
 <InternalLayout>
   <div id="bluprint-main">
-    <div class="scroll-container">
-      <div class="sticky-container">
-        <Navigation theme="light" />
-        <div style={{ marginTop: "200px" }} class="image-container">
-          <Image id="main-header" src={Header} alt="Bluprint" />
-        </div>
-      </div>
-    </div>
+    <ScrollImage type="image" brandName="Bluprint" headerImage={Header} />
     <TextGrid title="BLUPRINT" theme="light">
       <li>Brand Identity + Positioning</li>
       <li>Logo Design</li>
@@ -365,46 +339,3 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
   </div>
 </InternalLayout>
 <ProjectCarousel name="Bluprint" />
-
-<script>
-  const image = document.getElementById("main-header");
-  const minScroll = 0; // minimum scroll value
-  const maxScroll = 800;
-  const minWidth = 20; // minimum range value
-  const maxWidth = 100;
-
-  // const range =
-  //   ((currentScroll - minScroll) / (maxWidth - minScroll)) *
-  //     (maxRange - minRange) +
-  //   minRange;
-  // console.log(range);
-
-  // let imageWidth = 0.5 + currentScroll / maxWidth;
-  //   image.style.transform = `scale(${imageScale})`;
-  //   image.style.width = "20vw";
-
-  const getScrollScale = () => {
-    let currentScroll = window.scrollY;
-    if (currentScroll > 800) {
-      currentScroll = 800;
-    }
-    const rangeValue =
-      ((currentScroll - minScroll) / (maxScroll - minScroll)) *
-        (maxWidth - minWidth) +
-      minWidth;
-    // console.log(rangeValue);
-    return rangeValue;
-  };
-
-  let widthScale = getScrollScale();
-  image.style.width = `${widthScale}vw`;
-  image.style.marginTop = `-${widthScale * 3}px`;
-
-  document.addEventListener("scroll", (event) => {
-    //slow down scrolling so image doesn't grow as fast
-    let widthScale = getScrollScale();
-    // imageScale = 0.5 + currentScroll / totalWidth;
-    image.style.width = `${widthScale}vw`;
-    image.style.marginTop = `-${widthScale * 3}px`;
-  });
-</script>

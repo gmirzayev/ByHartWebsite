@@ -44,25 +44,6 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
     width: 100%;
     background-color: #f7f4ed;
   }
-  .scroll-container {
-    height: 200vh;
-  }
-  .sticky-container {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-  }
-  .image-container {
-    text-align: center;
-    position: relative;
-  }
-  #main-header {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-    /* width: 50%; */
-  }
   .image-flex {
     display: flex;
     flex-direction: column;
@@ -211,14 +192,7 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
 </style>
 <InternalLayout>
   <div id="comics-main">
-    <div class="scroll-container">
-      <div class="sticky-container">
-        <Navigation theme="light" />
-        <div style={{ marginTop: "200px" }} class="image-container">
-          <Image id="main-header" src={Header} alt="Pearly Bites" />
-        </div>
-      </div>
-    </div>
+    <ScrollImage type="image" brandName="Comics Kingdom" headerImage={Header} />
     <div style={{ backgroundColor: "#17100B" }}>
       <!-- <ScrollImage theme="dark" /> -->
       <TextGrid title="COMICS KINGDOM" theme="dark">
@@ -445,47 +419,6 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
 
 <script>
   import Player from "@vimeo/player";
-  const image = document.getElementById("main-header");
-
-  const minScroll = 0; // minimum scroll value
-  const maxScroll = 800;
-  const minWidth = 20; // minimum range value
-  const maxWidth = 100;
-
-  // const range =
-  //   ((currentScroll - minScroll) / (maxWidth - minScroll)) *
-  //     (maxRange - minRange) +
-  //   minRange;
-  // console.log(range);
-
-  // let imageWidth = 0.5 + currentScroll / maxWidth;
-  //   image.style.transform = `scale(${imageScale})`;
-  //   image.style.width = "20vw";
-
-  const getScrollScale = () => {
-    let currentScroll = window.scrollY;
-    if (currentScroll > 800) {
-      currentScroll = 800;
-    }
-    const rangeValue =
-      ((currentScroll - minScroll) / (maxScroll - minScroll)) *
-        (maxWidth - minWidth) +
-      minWidth;
-    // console.log(rangeValue);
-    return rangeValue;
-  };
-
-  let widthScale = getScrollScale();
-  image.style.width = `${widthScale}vw`;
-  image.style.marginTop = `-${widthScale * 3}px`;
-
-  document.addEventListener("scroll", (event) => {
-    //slow down scrolling so image doesn't grow as fast
-    let widthScale = getScrollScale();
-    // imageScale = 0.5 + currentScroll / totalWidth;
-    image.style.width = `${widthScale}vw`;
-    image.style.marginTop = `-${widthScale * 3}px`;
-  });
 
   const videoContainer = document.getElementById("video-container");
   const video = document.getElementById("ck_video");
