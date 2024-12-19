@@ -1,0 +1,8 @@
+---
+const { webm, mov, class:className } = Astro.props;
+---
+
+<video loop playsinline autoplay muted class:list={['transparent-video', className]}>
+    <source src={mov} type='video/mp4; codecs="hvc1"'>
+    <source src={webm} type="video/webm">
+</video>

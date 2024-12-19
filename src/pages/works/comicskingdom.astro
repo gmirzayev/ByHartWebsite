@@ -13,10 +13,12 @@ import AppMobile from "@assets/ComicsKingdom/CK_App_Mobile.png";
 import IconsDesktop from "@assets/ComicsKingdom/CK_Icons_Desktop.png";
 import IconsMobile from "@assets/ComicsKingdom/CK_Icons_Mobile.png";
 import Creator from "@assets/ComicsKingdom/CK_Creator.webm";
+import CreatorSafari from "@assets/ComicsKingdom/CK_Creator_Safari.mov";
 import Home from "@assets/ComicsKingdom/CK_App_Home.png";
 import Cat from "@assets/ComicsKingdom/CK_Cat.webm";
 import CatSafari from "@assets/ComicsKingdom/CK_Cat_Safari.mov";
 import Friends from "@assets/ComicsKingdom/CK_Friends.webm";
+import FriendsSafari from "@assets/ComicsKingdom/CK_Friends_Safari.mov";
 import Social from "@assets/ComicsKingdom/CK_Social.png";
 import Email from "@assets/ComicsKingdom/CK_Email.png";
 import Mark from "@assets/ComicsKingdom/CK_Mark.png";
@@ -37,8 +39,8 @@ import BrandGrid12 from "@assets/ComicsKingdom/CK_Brand_Grid_12.png";
 import BrandGrid13 from "@assets/ComicsKingdom/CK_Brand_Grid_13.png";
 import BrandGrid14 from "@assets/ComicsKingdom/CK_Brand_Grid_14.png";
 import ProjectCarousel from "@components/ProjectCarousel.astro";
+import TransparentVideo from "@components/TransparentVideo.astro";
 ---
-
 <style>
   #comics-main {
     width: 100%;
@@ -281,15 +283,7 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
           src={IconsMobile}
           alt="Comics Kingdom"
         />
-        <video
-          class="max-h-full w-[100%] my-[40px] md:my-[100px] mx-0"
-          playsinline
-          autoplay
-          muted
-          loop
-        >
-          <source src={Creator} />
-        </video>
+        <TransparentVideo mov={CreatorSafari} webm={Creator} class="max-h-full w-[100%] my-[40px] md:my-[100px] mx-0" />
         <Image class="h-auto w-[66%]" src={Home} alt="Comics Kingdom" />
       </div>
       <video loop playsinline autoplay muted class="w-[100%]">
@@ -304,19 +298,10 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
             Making New Friends While Cherishing the Old
           </p>
         </div>
-        <video loop playsinline autoplay muted class="w-[100%] md:-ml-[200px]">
-          <source src={Cat} />
-        </video>
-      </div>
-      <div class="bg-white">
-        <video loop playsinline autoplay muted class="w-[100%] md:-ml-[200px]">
-          <source src={CatSafari} />
-        </video>
+        <TransparentVideo webm={Cat} mov={CatSafari} class="w-[100%] md:-ml-[200px]" />
       </div>
       <div class="w-full friends-background">
-        <video loop playsinline autoplay muted class="mb-[120px] w-screen">
-          <source src={Friends} />
-        </video>
+        <TransparentVideo webm={Friends} mov={FriendsSafari} class="mb-[120px] w-screen" />
       </div>
       <div class="social-background">
         <Image class="h-auto w-[47%]" src={Social} alt="Comics Kingdom" />
