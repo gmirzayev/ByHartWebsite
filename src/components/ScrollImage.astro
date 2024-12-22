@@ -6,7 +6,8 @@ const { type, brandName, headerImage, headerVideo } = Astro.props;
 
 <style>
   .scroll-container {
-    height: 200vh;
+    position: relative;
+    height: 100vh;
   }
   .sticky-container {
     position: sticky;
@@ -14,100 +15,99 @@ const { type, brandName, headerImage, headerVideo } = Astro.props;
     z-index: 2;
   }
   .image-container {
+    margin-top:200px;
     text-align: center;
     position: relative;
   }
+
+  .image-container img{
+    box-shadow: 7px 7px 15px rgba(32, 32, 32, .45);
+  }
+
   #main-header {
     display: block;
     margin-left: auto;
     margin-right: auto;
     height: auto;
-    transition: transform 0.2s;
-    /* width: 50%; */
   }
-  .karla {
-    font-family: "Karla", sans-serif;
+
+  #project-title{
+    position:absolute;
+    bottom:10vh;
+    width: 100%;
+    text-align: center;
+  }
+
+  #project-title h1 {
+    font: 122px/1.0 "Karla", sans-serif;
+  }
+
+  #project-title h2{
+    font: 500 18px/1.2 "Karla", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top:2em;
   }
 </style>
 <div class="scroll-container">
   <div class="sticky-container">
     <Navigation theme="light" />
-    <div
-      class="absolute w-full top-[300px] md:top-[500px] left-1/2 -translate-x-1/2 text-center"
-    >
-      <p class="karla text-[122px]">{brandName}</p>
-      <p class="karla text-[18px]">BY HART</p>
-    </div>
+    <div class="image-container">
     {
       type == "image" ? (
-        <div class="image-container mt-[200px]">
-          <Image id="main-header" src={headerImage} alt="Kindra" />
-        </div>
+        <Image id="main-header" src={headerImage} alt="Kindra" />
       ) : (
-        <div class="image-container mt-[200px]">
-          <video id="main-header" autoplay playsinline loop muted>
-            <source src={headerVideo} type="video/mp4" />
-          </video>
-        </div>
+        <video id="main-header" autoplay playsinline loop muted>
+          <source src={headerVideo} type="video/mp4" />
+        </video>
       )
     }
+    </div>
+  </div>
+  <div id="project-title">
+    <h1>{brandName}</h1>
+    <h2>By Hart</h2>
   </div>
 </div>
 <script>
+  import {scaleLinear} from "d3-scale";
+
   const image = document.getElementById("main-header");
-  const minScroll = 0; // minimum scroll value
-  const maxScroll = 800;
-  const minWidth = 20; // minimum range value
-  const maxWidth = 100;
 
-  // const range =
-  //   ((currentScroll - minScroll) / (maxWidth - minScroll)) *
-  //     (maxRange - minRange) +
-  //   minRange;
-  // console.log(range);
+  let sizeScale = scaleLinear().range([20, 100]).clamp(true),
+      turnScale = scaleLinear().range([-3, 0]).clamp(true),
+      shadowScale = scaleLinear().range([7, 0]).clamp(true),
+      scrollTimer = null;
 
-  // let imageWidth = 0.5 + currentScroll / maxWidth;
-  //   image.style.transform = `scale(${imageScale})`;
-  //   image.style.width = "20vw";
+  function updateScales(){
+    const h = window.innerHeight / 2
+    sizeScale = sizeScale.domain([0, .9*h])
+    turnScale = turnScale.domain([0, .5*h])
+    shadowScale = shadowScale.domain([0, .5*h])
+  }
 
-  const getScale = () => {
-    let currentScroll = window.scrollY;
-    if (currentScroll > 800) {
-      currentScroll = 800;
-    }
-    return currentScroll;
-  };
+  function updateImage(){
+    const y = window.scrollY,
+          angle = turnScale(y),
+          shadow = shadowScale(y),
+          size = sizeScale(y)
 
-  const getScrollScale = () => {
-    let currentScroll = getScale();
-    const rangeValue =
-      ((currentScroll - minScroll) / (maxScroll - minScroll)) *
-        (maxWidth - minWidth) +
-      minWidth;
-    // console.log(rangeValue);
-    return rangeValue;
-  };
+    image.style.width = `${size}vw`;
+    image.style.marginTop = `-${size * 3}px`;
+    image.style.transform = `rotate(${angle}deg)`
+    image.style.boxShadow = `${shadow}px ${shadow}px ${2*shadow}px rgba(32, 32, 32, .45)`
+  }
 
-  const checkRotation = () => {
-    let currentScroll = getScale();
-    if (currentScroll <= 400) {
-      image.style.transform = `rotate(-3deg)`;
-    } else {
-      image.style.transform = `rotate(0deg)`;
-    }
-  };
-
-  let widthScale = getScrollScale();
-  image.style.width = `${widthScale}vw`;
-  image.style.marginTop = `-${widthScale * 3}px`;
-  checkRotation();
+  window.addEventListener("resize", e => updateScales())
 
   document.addEventListener("scroll", (event) => {
-    //slow down scrolling so image doesn't grow as fast
-    checkRotation();
-    let widthScale = getScrollScale();
-    // imageScale = 0.5 + currentScroll / totalWidth;
-    image.style.width = `${widthScale}vw`;
-    image.style.marginTop = `-${widthScale * 3}px`;
+    cancelAnimationFrame(scrollTimer)
+    scrollTimer = requestAnimationFrame(() => updateImage())
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    updateScales()
+    updateImage()
+  })
+
 </script>
