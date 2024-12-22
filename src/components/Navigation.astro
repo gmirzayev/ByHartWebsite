@@ -174,22 +174,35 @@ const { theme } = Astro.props;
   }
 
   @media (min-width: 768px) {
-    .nav-link:hover::after {
+    .nav-link::after {
       content: attr(data-hover);
       position: absolute;
-      bottom: -50px;
-      left: -30px;
+      left:0;
+      top:1em;
       width: 185px;
       height: 38px;
       border-radius: 35px;
-      rotate: 8deg;
       color: black;
       font-size: 13px;
       font-family: "Karla";
       background-color: #ebd4c7;
       text-align: center;
       line-height: 38px;
+      opacity:0;
+      transform-origin: top left;
+      transform: translate(-1em, 1em) rotate(16deg);
+      transition: opacity 333ms, transform 333ms;
+      pointer-events: none;
     }
+
+    .nav-link:hover{
+      cursor:pointer;
+    }
+    .nav-link:hover::after {
+      opacity:1;
+      transform: rotate(8deg);
+    }
+
     .nav-link:hover span {
       max-width: 100%;
     }
