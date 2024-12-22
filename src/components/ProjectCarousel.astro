@@ -1,6 +1,5 @@
 ---
 import "../styles/utils.css";
-const { name } = Astro.props;
 import Image from "astro/components/Image.astro";
 import Wizehire from "../assets/Home/img/Wizehire.jpg";
 import Ample from "../assets/Home/img/Ample.jpg";
@@ -26,51 +25,71 @@ import SayMore from "../assets/Home/img/Say_More.jpg";
 import Firefly from "../assets/Home/img/Firefly.jpg";
 import PetCenter from "../assets/Home/img/Pet_Center.png";
 
+const { name } = Astro.props;
 const projects = [
-  { name: "Wizehire", image: Wizehire },
-  { name: "Ample", image: Ample },
-  { name: "Comics Kingdom", image: ComicsKingdom },
-  { name: "Lockwood", image: Lockwood },
-  { name: "Metro Vein Centers", image: MetroVein },
-  { name: "Sage", image: Sage },
-  { name: "Puzzle Palace", image: PuzzlePalace },
-  { name: "Dance Party Time", image: DancePartyTime },
-  { name: "Week&", image: Week },
-  { name: "Kindra", image: Kindra },
-  { name: "Nightingale Vets", image: Nightingale },
-  { name: "Pearly Bites", image: PearlyBites },
-  { name: "Fab", image: Fab },
-  { name: "The Curve Report", image: TheCurve },
-  { name: "Say More", image: SayMore },
-  { name: "Discovery Channel", image: Discovery },
-  { name: "Horowitz Real Estate", image: Horowitz },
-  { name: "Magnolia", image: Magnolia },
-  { name: "6 Feet Apart", image: SixFeet },
-  { name: "Pet Dermatology Center", image: PetCenter },
-  { name: "Genius Kitchen", image: GeniusKitchen },
-  { name: "Bluprint", image: Blueprint },
-  { name: "Firefly Vets", image: Firefly },
+  { slug: "wizehire", name: "Wizehire", image: Wizehire },
+  { slug: "ample", name: "Ample", image: Ample },
+  { slug: "comicskingdom", name: "Comics Kingdom", image: ComicsKingdom },
+  { slug: "lockwood", name: "Lockwood", image: Lockwood },
+  { slug: "metro-vein-centers", name: "Metro Vein Centers", image: MetroVein },
+  { slug: "sage", name: "Sage", image: Sage },
+  { slug: "puzzle-palace", name: "Puzzle Palace", image: PuzzlePalace },
+  { slug: "dance-party-time", name: "Dance Party Time", image: DancePartyTime },
+  { slug: "week-and", name: "Week&", image: Week },
+  { slug: "kindra", name: "Kindra", image: Kindra },
+  { slug: "nightingale-vets", name: "Nightingale Vets", image: Nightingale },
+  { slug: "pearly-bites", name: "Pearly Bites", image: PearlyBites },
+  { slug: "fab", name: "Fab", image: Fab },
+  { slug: "curve-report", name: "The Curve Report", image: TheCurve },
+  { slug: "say-more", name: "Say More", image: SayMore },
+  { slug: "discovery-channel", name: "Discovery Channel", image: Discovery },
+  { slug: "horowitz-real-estate", name: "Horowitz Real Estate", image: Horowitz },
+  { slug: "magnolia", name: "Magnolia", image: Magnolia },
+  { slug: "6-feet-apart", name: "6 Feet Apart", image: SixFeet },
+  { slug: "pet-dermatology-center", name: "Pet Dermatology Center", image: PetCenter },
+  { slug: "genius-kitchen", name: "Genius Kitchen", image: GeniusKitchen },
+  { slug: "bluprint", name: "Bluprint", image: Blueprint },
+  { slug: "firefly-vets", name: "Firefly Vets", image: Firefly },
 ];
+
+// pre-scroll to the project following the current page
+const nextProject = projects[1 + projects.findIndex(p => p.name==name)] ?? projects[0]
 ---
 
 <style>
-  .container {
+  .project-carousel {
+    --background: #242121;
+    --light-text: #f7f4ed;
+    --karla: "Karla", sans-serif;
+    --utile: "utile-display", sans-serif;
+
     display: flex;
     flex-direction: column;
     text-align: center;
     width: 100%;
     position: relative;
     max-width: none;
-    background-color: #242121;
-    color: #f7f4ed;
-    font-family: "Karla";
+    background-color: var(--background);
+    color: var(--light-text);
+    font-family: var(--karla);
+  }
+
+  .project-carousel > h1{
+    font-family: var(--utile);
+    font-weight: 500;
   }
 
   #carousel-container {
     width: 100%;
-    height: 550px;
+    height: 555px;
     position: relative;
-    overflow: hidden;
+
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
   }
 
   #carousel {
@@ -78,291 +97,108 @@ const projects = [
     flex-direction: row;
     gap: 50px;
     position: absolute;
-    /* pointer-events: none; */
-    /* position: absolute; */
-    /* top: 0;
-    left: 0; */
-    overflow: hidden;
     transition: transform 2s;
+    padding-left:100vw;
+    padding-right:100vw;
   }
 
-  .font-utile {
-    font-family: "utile-display", sans-serif;
+  #carousel .item{
+    scroll-snap-align: center;
+
+    h1{
+      margin-top:5px;
+      height: 50px;
+      font: 700 20px var(--utile);
+      letter-spacing:0.05em;
+      color: var(--background);
+      transition: color 1s;
+    }
+    &.labeled h1{
+      color:var(--light-text);
+    }
   }
 
-  .karla {
-    font-family: "Karla", sans-serif;
-  }
+  a.all-projects{
+    --text-color: #363131;
+    --stripe-color: #ebd4c7;
+    --hover-text-color: #f7f4ed;
+    --hover-stripe-color: #DA1B31;
 
-  .background-slant {
-    position: absolute;
-    height: 30px;
-    top: 0;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    background: #ebd4c7;
-    transform: rotate(-1deg);
-  }
-
-  /* .background-slant {
-    content: "";
-    display: block;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    width: 200px;
-    height: 100px;
+    position:relative;
+    color: var(--text-color);
+    font: 16px/1.75 var(--karla);
+    text-transform: uppercase;
+    letter-spacing:0.025em;
     z-index: 1;
-    background-color: #ebd4c7;
-  } */
+
+    &:hover{
+      color:var(--hover-text-color);
+    }
+
+    &::before {
+      content: " ";
+      background: var(--stripe-color);
+      position:absolute;
+      top: -3px;
+      left: -3px;
+      width:calc(100% + 6px);
+      height:calc(100% + 6px);
+      z-index:-1;
+      transform: rotate(-2deg);
+      transition: transform 250ms, background-color 250ms;
+    }
+
+    &:hover::before{
+      transform: rotate(0);
+      background-color: var(--hover-stripe-color);
+    }
+  }
 </style>
-<div class="container pt-[45px] md:pt-[120px] h-[800px] md:h-[900px]">
-  <h1
-    class="text-[38px] font-utile font-medium mb-[30px] md:text-[66px] md:mb-0"
-  >
+
+<div class="project-carousel pt-[45px] md:pt-[90px] md:pb-[40px] h-[800px] md:h-[900px]">
+  <h1 class="text-[38px] mb-[30px] md:text-[66px]">
     Choose your next adventure...
   </h1>
-  <h3 class="mb-[30px] karla text-[16px] hidden md:!block">DRAG TO EXPLORE</h3>
   <div id="carousel-container">
     <div id="carousel">
-      {
-        projects.map((project) => {
-          if (name !== project.name) {
-            return (
-              <div class="item pointer-events-none">
-                <Image
-                  class="h-[500px] w-auto max-w-none rounded-md"
-                  src={project.image}
-                  alt="test"
-                />
-                <h1 class="h-[50px] mt-[10px] invisible font-utile font-bold tracking-wider text-xl">
-                  {project.name}
-                </h1>
-              </div>
-            );
-          }
-        })
-      }
+      {projects.filter(p => name !== p.name).map((project) =>
+        <div class="item" data-slug={project.slug}>
+          <a href={`/works/${project.slug}`}>
+            <Image
+              class="h-[500px] w-auto max-w-none rounded-md"
+              src={project.image}
+              alt="test"
+            />
+          </a>
+          <h1>{project.name}</h1>
+        </div>
+      )}
     </div>
   </div>
   <div class="w-full relative">
-    <div class="background-slant z-[5] w-[200px]"></div>
-    <h1
-      class="karla h-[50px] text-[16px] text-xl z-[6] text-[#363131] relative"
-    >
-      SEE ALL HART WORK
-    </h1>
+    <a class="all-projects" href="/">See all Hart work</a>
   </div>
 </div>
-<script>
-  // const carouselContainer = document.getElementById("carousel-container");
-  const carousel = document.getElementById("carousel");
-  let items = document.querySelectorAll(".item");
-  let focusedItem = 5;
-  let midPoint = window.innerWidth / 2;
 
-  const moveToCenter = () => {
-    let itemRect = items[focusedItem].getBoundingClientRect();
-    let itemOffset = items[focusedItem].offsetLeft + itemRect.width / 2;
-    carousel.style.cssText += `${"transform: translateX(" + -1 * (itemOffset - window.innerWidth / 2 + carousel.offsetLeft) + "px)"}`;
-  };
+<script define:vars={{ nextProject }}>
+  document.addEventListener("DOMContentLoaded", () => {
 
-  const switchLabel = (prevItem, newItem) => {
-    console.log(prevItem);
-    console.log(newItem);
-    let prevLabel = prevItem.children[1];
-    let newLabel = newItem.children[1];
-    console.log(prevLabel);
-    console.log(newLabel);
-    if (prevLabel.tagName == "H1" && prevLabel.classList.contains("visible")) {
-      prevLabel.classList.remove("visible");
-      prevLabel.classList.add("invisible");
-    }
-    if (newLabel.tagName == "H1" && newLabel.classList.contains("invisible")) {
-      newLabel.classList.remove("invisible");
-      newLabel.classList.add("visible");
-    }
-  };
-
-  switchLabel(items[0], items[5]);
-  moveToCenter();
-
-  carousel.addEventListener("mousemove", (event) => {
-    if (event.buttons == 1) {
-      // console.log(carousel.offsetLeft - event.movementX);
-      event.preventDefault();
-      // console.log(event.offsetX);
-      // console.log(carousel.offsetLeft);
-      carousel.style.left = `${carousel.offsetLeft - event.movementX * -1}px`;
-      if (event.movementX > 0) {
-        //going left
-        let leftItemRect = items[focusedItem - 1].getBoundingClientRect();
-        let leftItemMidpoint = leftItemRect.x + leftItemRect.width / 2;
-        let leftItemHalfWidth = leftItemRect.width / 2;
-        if (
-          leftItemMidpoint > midPoint - leftItemHalfWidth &&
-          leftItemMidpoint < midPoint + leftItemHalfWidth
-        ) {
-          switchLabel(items[focusedItem], items[focusedItem - 1]);
-          focusedItem = focusedItem - 1;
-        }
-      } else {
-        let rightItemRect = items[focusedItem + 1].getBoundingClientRect();
-        let rightItemMidpoint = rightItemRect.x + rightItemRect.width / 2;
-        let rightItemHalfWidth = rightItemRect.width / 2;
-        if (
-          rightItemMidpoint > midPoint - rightItemHalfWidth &&
-          rightItemMidpoint < midPoint + rightItemHalfWidth
-        ) {
-          switchLabel(items[focusedItem], items[focusedItem + 1]);
-          focusedItem = focusedItem + 1;
-        }
+    // hide the text labels for all but the currently centered project
+    const labelOnScroll = new IntersectionObserver((items, labelOnScroll) => {
+      for (const item of items){
+        item.target.classList.toggle("labeled", item.isIntersecting)
       }
+    },{
+      rootMargin: "0 -49%",
+      threshold: 0.0
+    })
+
+    for (const item of document.querySelectorAll('#carousel .item')){
+      labelOnScroll.observe(item)
     }
-  });
 
-  carousel.addEventListener("mouseleave", (event) => {
-    moveToCenter();
-  });
-
-  carousel.addEventListener("mouseup", (event) => {
-    event.preventDefault();
-    moveToCenter();
-    // carousel.style.left =
-  });
-
-  for (let i = 0; i < items.length; i++) {
-    items[i].addEventListener("mousedown", (event) => {
-      console.log("hello");
-      switchLabel(items[focusedItem], items[i]);
-      focusedItem = i;
-      moveToCenter();
-    });
-  }
-
-  // const showName = () => {
-  //   for (let item of items) {
-  //     console.log(item.getBoundingClientRect());
-  //     let itemRect = item.getBoundingClientRect();
-  //     let itemMidpoint = itemRect.x + itemRect.width / 2;
-  //     if (itemMidpoint > midPoint - 60 && itemMidpoint < midPoint + 60) {
-  //       if (
-  //         item.children[1].tagName == "H1" &&
-  //       ) {
-  //         item.children[1].classList.add("!visible");
-  //         previousItem = item.children[1];
-  //       }
-  //     }
-  //   }
-  // };
-
-  // showName();
-
-  // carouselContainer.addEventListener("mousedown", (event) => {
-  //   startX = event.offsetX - carousel.offsetLeft;
-  //   console.log(startX);
-  // });
-
-  // carouselContainer.addEventListener("mouseup", (event) => {
-  //   if (dragging) {
-  //     dragging = false;
-  //   }
-  // });
+    // set the initial position based on the current project's position in the `projects` array
+    let nextElt = document.querySelector(`.item[data-slug=${nextProject.slug}]`)
+    if (nextElt) nextElt.scrollIntoView({inline:"center"})
+  })
 </script>
-
-<!--
-//let carouselContainer = document.querySelector(".carousel-container");
-//let carousel = document.querySelector(".carousel");
-//let items = document.querySelectorAll(".item");
-//let midPoint = window.innerWidth / 2;
-//let previousItem;
-
-// for (let item of items) {
-//   let itemRect = item.getBoundingClientRect();
-//   let itemMidpoint = itemRect.x + itemRect.width / 2;
-//   if (itemMidpoint > midPoint - 60 && itemMidpoint < midPoint + 60) {
-//     if (
-//       item.children[1].tagName == "H1" &&
-//       item.children[1].classList.contains("invisible")
-//     ) {
-//       item.children[1].classList.add("visible");
-//       item.children[1].classList.remove("invisible");
-//       previousItem = item.children[1];
-//     }
-//   }
-// }
-
-// let pressed = false;
-// let startX;
-// let x;
-
-// middleRow.addEventListener("mousedown", (e) => {
-//   pressed = true;
-//   startX = e.offsetX - innerContainer.offsetLeft;
-//   middleRow.style.cursor = "grabbing";
-// });
-
-// middleRow.addEventListener("mouseenter", () => {
-//   middleRow.style.cursor = "grab";
-// });
-
-// middleRow.addEventListener("mouseup", () => {
-//   middleRow.style.cursor = "grab";
-//   pressed = false;
-// });
-
-// middleRow.addEventListener("mousemove", (e) => {
-//   if (!pressed) return;
-//   e.preventDefault();
-
-//   // for (let i = 0; i < items.length; i++) {
-//   // console.log(item.getBoundingClientRect());
-//   midPoint = window.innerWidth / 2;
-
-//   for (let item of items) {
-//     let itemRect = item.getBoundingClientRect();
-//     let itemMidpoint = itemRect.x + itemRect.width / 2;
-//     if (itemMidpoint > midPoint - 60 && itemMidpoint < midPoint + 60) {
-//       if (
-//         item.children[1].tagName == "H1" &&
-//         item.children[1].classList.contains("invisible")
-//       ) {
-//         item.children[1].classList.add("visible");
-//         item.children[1].classList.remove("invisible");
-
-//         previousItem.classList.remove("visible");
-//         previousItem.classList.add("invisible");
-//         previousItem = item.children[1];
-//       }
-//     }
-//   }
-
-//   x = e.offsetX;
-//   innerContainer.style.left = `${x - startX}px`;
-// });
-
-// let boundItems = () => {
-//   let outer = middleRow.getBoundingClientRect();
-//   let inner = innerContainer.getBoundingClientRect();
-
-//   if (parseInt(innerContainer.style.left) > 0) {
-//     innerContainer.style.left = "0px";
-//   }
-
-//   if (inner.right < outer.right) {
-//     innerContainer.style.left = `-${inner.width - outer.width}px`;
-//   }
-// };
-
-// middleRow.addEventListener("mousemove", (e) => {
-//   if (!pressed) return;
-//   e.preventDefault();
-
-//   x = e.offsetX;
-//   innerContainer.style.left = `${x - startX}px`;
-//   boundItems();
-// }); -->
