@@ -162,8 +162,8 @@ const nextProject = projects[1 + projects.findIndex(p => p.name==name)] ?? proje
   <div id="carousel-container">
     <div id="carousel">
       {projects.filter(p => name !== p.name).map((project) =>
-        <div class="item">
-          <a href={`/works/${project.slug}`} name={project.slug}>
+        <div class="item" data-slug={project.slug}>
+          <a href={`/works/${project.slug}`}>
             <Image
               class="h-[500px] w-auto max-w-none rounded-md"
               src={project.image}
@@ -198,8 +198,7 @@ const nextProject = projects[1 + projects.findIndex(p => p.name==name)] ?? proje
     }
 
     // set the initial position based on the current project's position in the `projects` array
-    let nextElt = document.querySelector(`a[name=${nextProject.slug}]`)
+    let nextElt = document.querySelector(`.item[data-slug=${nextProject.slug}]`)
     if (nextElt) nextElt.scrollIntoView({inline:"center"})
-
   })
 </script>
