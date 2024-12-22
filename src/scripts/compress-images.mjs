@@ -60,27 +60,23 @@ const TO_PNG = [
     "Pet_Center.png",
 ]
 
-for (let pth of await glob("src/assets/**/orig/*.@(png|jpg)")){
-    let dstDir = dirname(pth).replace(/orig$/, 'img')
+for (let srcPath of await glob("src/assets/**/orig/*.@(png|jpg)")){
+    let dstDir = dirname(srcPath).replace(/orig$/, 'img')
     if (!existsSync(dstDir)){
         await mkdir(dstDir)
     }
 
-    let fn = basename(pth)
-    let srcExt = '.' + fn.split('.').at(-1)
+    let fn = basename(srcPath)
     let dstFormat = TO_PNG.includes(fn) ? "png" : "jpeg"
     let dstExt = dstFormat == 'png' ? '.png' : '.jpg'
     let dstPath = `${dstDir}/${fn.replace(/\.(png|jpe?g)$/, dstExt)}`
 
-    if (srcExt == dstExt){
-        await copyFile(pth, dstPath)
-    }else{
-        await sharp(pth)
-            .toFormat(dstFormat)
-            .toFile(dstPath)
-    }
+    await sharp(srcPath)
+        .resize({width:2800, withoutEnlargement:true})
+        .toFormat(dstFormat)
+        .toFile(dstPath)
 
-    let oldSize = (await stat(pth)).size,
+    let oldSize = (await stat(srcPath)).size,
         newSize = (await stat(dstPath)).size
     console.log(`${dstPath}: ${Math.floor(newSize/oldSize * 100)}%`)
 }
