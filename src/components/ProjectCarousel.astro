@@ -198,7 +198,9 @@ const nextProject = projects[1 + projects.findIndex(p => p.name==name)] ?? proje
     }
 
     // set the initial position based on the current project's position in the `projects` array
-    let nextElt = document.querySelector(`.item[data-slug=${nextProject.slug}]`)
-    if (nextElt) nextElt.scrollIntoView({inline:"center"})
+    let nextElt = document.querySelector(`.item[data-slug=${nextProject.slug}]`),
+        offset = nextElt.offsetLeft,
+        halfWidth = window.innerWidth / 2;
+    document.querySelector('#carousel-container').scrollLeft = offset - halfWidth
   })
 </script>
