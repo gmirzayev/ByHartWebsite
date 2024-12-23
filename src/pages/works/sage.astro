@@ -42,6 +42,7 @@ import SageBrandGuideGrid12 from "@assets/Sage/img/Sage_Brand_Guide_Grid_12.jpg"
 import SageBrandGuideGrid13 from "@assets/Sage/img/Sage_Brand_Guide_Grid_13.jpg";
 import SageBrandGuideGrid14 from "@assets/Sage/img/Sage_Brand_Guide_Grid_14.jpg";
 import ScrollImage from "@components/ScrollImage.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
 ---
 
 <style is:global>
@@ -218,18 +219,14 @@ import ScrollImage from "@components/ScrollImage.astro";
         around us so more growth can sprout.
       </p>
     </div>
-    <Image
-      class="h-auto w-[60%] my-0 mx-auto rounded md:rounded-md"
-      src={SageSiteDesktop}
-      alt="Sage Site Desktop"
-      loading="lazy"
+    <ResponsiveImage
+      class="h-auto"
+      imgClass="w-[60%] mx-auto rounded-[20px] md:rounded-md my-11"
+      mobile={SageSiteMobile}
+      desktop={SageSiteDesktop}
+      alt="Sage Site"
     />
-    <Image
-      class="h-auto w-[60%] md:w-[24%] mx-auto my-11 md:my-32 rounded-[20px]"
-      src={SageSiteMobile}
-      alt="Sage Site Mobile"
-      loading="lazy"
-    />
+
     <div class="image-container--half image-container--half-mobile">
       <Image
         style={{ paddingRight: "1%" }}

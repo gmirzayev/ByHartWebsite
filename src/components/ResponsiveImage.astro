@@ -1,0 +1,9 @@
+---
+import "../styles/utils.css";
+const { desktop, mobile, class:classes, imgClass, alt=" " } = Astro.props;
+---
+<picture class={classes ?? "h-auto w-auto"}>
+    <source media="(max-width: 767px)" width={mobile.width} height={mobile.height} srcset={mobile.src} />
+    <source media="(min-width: 768px)" width={desktop.width} height={desktop.height} srcset={desktop.src} />
+    <img class={imgClass ?? 'h-auto w-auto'} src={desktop.src} width={desktop.width} height={desktop.height} alt={alt} />
+</picture>

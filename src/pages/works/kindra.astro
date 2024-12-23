@@ -75,6 +75,7 @@ import KindraCCDesktop from "@assets/Kindra/img/Kindra_CC_Desktop.png";
 import KindraCCMobile from "@assets/Kindra/img/Kindra_CC_Mobile.png";
 import KindraWords from "@assets/Kindra/img/Kindra_Drawing_Words.png";
 import ProjectCarousel from "@components/ProjectCarousel.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
 ---
 
 <style>
@@ -151,12 +152,7 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
       <div
         class="flex flex-col md:flex-row mb-[45px] md:mb-[120px] md:mx-[250px]"
       >
-        <Image
-          class="hidden md:block md:w-1/2 md:pr-[70px]"
-          alt="Kindra"
-          src={ColorDesktop}
-        />
-        <Image class="block md:hidden" alt="Kindra" src={ColorMobile} />
+        <ResponsiveImage mobile={ColorMobile} desktop={ColorDesktop} alt="Kindra" />
         <div
           class="karla mx-[25px] my-[45px] md:w-1/2 md:self-end md:pl-[50px]"
         >
@@ -171,11 +167,13 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
           </p>
         </div>
       </div>
-      <Image class="w-full hidden md:block" alt="Kindra" src={CollageDesktop} />
-      <Image class="w-full block md:hidden" alt="Kindra" src={CollageMobile} />
+
+      <ResponsiveImage mobile={CollageMobile} desktop={CollageDesktop} alt="Kindra" />
+
       <Image class="w-full" alt="Kindra" src={Humectant} />
-      <Image class="w-full hidden md:block" alt="Kindra" src={MiddleDesktop} />
-      <Image class="w-full block md:hidden" alt="Kindra" src={MiddleMobile} />
+
+      <ResponsiveImage mobile={MiddleMobile} desktop={MiddleDesktop} alt="Kindra" />
+
       <div
         class="flex flex-col md:flex-row my-[45px] mx-[20px] gap-[45px] md:my-[120px] md:mx-[60px] md:gap-[60px] md:justify-center"
       >
@@ -195,16 +193,7 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
         <!-- insert shell video. div is flexed to change order on breakpoints -->
         <div class="md:order-2">
           <!-- insert overlay video -->
-          <Image
-            class="w-full hidden md:block"
-            src={QuizBackgroundDesktop}
-            alt="Kindra"
-          />
-          <Image
-            class="w-full block md:hidden"
-            src={QuizBackgroundMobile}
-            alt="Kindra"
-          />
+          <ResponsiveImage mobile={QuizBackgroundMobile} desktop={QuizBackgroundDesktop} alt="Kindra" />
         </div>
       </div>
 
@@ -326,14 +315,10 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
         <Image class="w-full h-auto rounded" src={Site} alt="Kindra" />
       </div>
       <div class="w-full relative">
-        <Image
-          class="w-full h-auto absolute -top-[200px] hidden z-10 md:block"
-          src={SiteBackgroundDesktop}
-          alt="Kindra"
-        />
-        <Image
-          class="w-full h-auto absolute block z-10 md:hidden"
-          src={SiteBackgroundMobile}
+        <ResponsiveImage
+          class="w-full h-auto absolute md:-top-[200px] block z-10"
+          mobile={SiteBackgroundMobile}
+          desktop={SiteBackgroundDesktop}
           alt="Kindra"
         />
         <div
@@ -434,14 +419,10 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
         <Image class="w-full h-auto md:order-6" src={CoreGrid6} alt="Kindra" />
       </div>
       <div class="w-full">
-        <Image
-          class="hidden absolute md:block"
-          src={SocialBackgroundDesktop}
-          alt="Kindra"
-        />
-        <Image
-          class="block absolute md:hidden"
-          src={SocialBackgroundMobile}
+        <ResponsiveImage
+          class="absolute"
+          mobile={SocialBackgroundMobile}
+          desktop={SocialBackgroundDesktop}
           alt="Kindra"
         />
         <div

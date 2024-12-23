@@ -40,6 +40,7 @@ import BrandGrid13 from "@assets/ComicsKingdom/img/CK_Brand_Grid_13.jpg";
 import BrandGrid14 from "@assets/ComicsKingdom/img/CK_Brand_Grid_14.jpg";
 import ProjectCarousel from "@components/ProjectCarousel.astro";
 import TransparentVideo from "@components/TransparentVideo.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
 ---
 <style>
   #comics-main {
@@ -225,17 +226,9 @@ import TransparentVideo from "@components/TransparentVideo.astro";
           <div id="play-button">PLAY</div>
         </div>
       </div>
-      <Image
-        class="h-auto w-full"
-        src={LogoIllustrationDesktop}
-        alt="Comics Kingdom"
-      />
-      <div></div>
-      <Image
-        class="h-auto w-[92%] hidden"
-        src={LogoIllustrationMobile}
-        alt="Comics Kingdom"
-      />
+
+      <ResponsiveImage mobile={LogoIllustrationMobile} desktop={LogoIllustrationDesktop} alt="Comics Kingdom" />
+
       <div class="text-two-column-centered">
         <p class="m-0">
           Every strip starts with a sketch. A gag. A storyboard. An inkling of
@@ -262,25 +255,14 @@ import TransparentVideo from "@components/TransparentVideo.astro";
           >
         </p>
       </div>
-      <Image
-        class="h-auto w-full hidden md:!block"
-        src={AppDesktop}
-        alt="Comics Kingdom"
-      />
-      <Image
-        class="h-auto w-[92%] block md:hidden"
-        src={AppMobile}
-        alt="Comics Kingdom"
-      />
+
+      <ResponsiveImage mobile={AppMobile} desktop={AppDesktop} alt="Comics Kingdom" />
+
       <div class="dark-container">
-        <Image
-          class="h-auto mt-[100px] w-1/2 hidden md:!block"
-          src={IconsDesktop}
-          alt="Comics Kingdom"
-        />
-        <Image
-          class="h-auto mt-[50px] w-1/2 block md:hidden"
-          src={IconsMobile}
+        <ResponsiveImage
+          mobile={IconsMobile}
+          desktop={IconsDesktop}
+          class="w-1/2 mt-[100px] md:mt-[50px]"
           alt="Comics Kingdom"
         />
         <TransparentVideo mov={CreatorSafari} webm={Creator} class="max-h-full w-[100%] my-[40px] md:my-[100px] mx-0" />
