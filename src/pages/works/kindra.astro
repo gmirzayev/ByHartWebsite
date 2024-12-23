@@ -76,9 +76,18 @@ import KindraCCMobile from "@assets/Kindra/img/Kindra_CC_Mobile.png";
 import KindraWords from "@assets/Kindra/img/Kindra_Drawing_Words.png";
 import ProjectCarousel from "@components/ProjectCarousel.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
+
+
+const socialBgMobile = `url(${SocialBackgroundMobile.src})`,
+      socialBgDesktop = `url(${SocialBackgroundDesktop.src})`,
+      siteBgMobile = `url(${SiteBackgroundMobile.src})`,
+      siteBgDesktop = `url(${SiteBackgroundDesktop.src})`,
+      quizBgMobile = `url(${QuizBackgroundMobile.src})`,
+      quizBgDesktop = `url(${QuizBackgroundDesktop.src})`
+
 ---
 
-<style>
+<style define:vars={{socialBgMobile, socialBgDesktop, siteBgMobile, siteBgDesktop, quizBgMobile, quizBgDesktop}}>
   #kindra-main {
     width: 100%;
     background-color: #f7f4ed;
@@ -96,6 +105,30 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
   .utile {
     font-family: "utile-display", sans-serif;
   }
+
+
+  .social-background{
+    background-image: var(--socialBgDesktop);
+    background-size: cover;
+  }
+
+  .site-background{
+    background-image: var(--siteBgDesktop);
+    background-size: cover;
+  }
+
+  .quiz-background{
+    background-image: var(--quizBgDesktop);
+    background-size: cover;
+  }
+
+
+  @media (max-width: 768px) {
+    .social-background{ background-image: var(--socialBgMobile); }
+    .site-background{ background-image: var(--siteBgMobile); }
+    .quiz-background{ background-image: var(--quizBgMobile); }
+  }
+
 </style>
 <InternalLayout>
   <div id="kindra-main">
@@ -189,11 +222,11 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
         />
       </div>
 
-      <div class="flex flex-col">
+      <div class="flex flex-col quiz-background">
         <!-- insert shell video. div is flexed to change order on breakpoints -->
         <div class="md:order-2">
-          <!-- insert overlay video -->
-          <ResponsiveImage mobile={QuizBackgroundMobile} desktop={QuizBackgroundDesktop} alt="Kindra" />
+          <!-- TODO: insert overlay video -->
+          <div style="background:red; width:80px; height:60px; margin:20px auto; text-align:center;">×</div>
         </div>
       </div>
 
@@ -314,23 +347,17 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
       <div class="mx-[20px] md:mx-[300px] md:mb-[400px]">
         <Image class="w-full h-auto rounded" src={Site} alt="Kindra" />
       </div>
-      <div class="w-full relative">
-        <ResponsiveImage
-          class="w-full h-auto absolute md:-top-[200px] block z-10"
-          mobile={SiteBackgroundMobile}
-          desktop={SiteBackgroundDesktop}
-          alt="Kindra"
-        />
+      <div class="w-full relative site-background">
         <div
           class="flex flex-col pt-[200px] mx-[20px] md:mx-[60px] md:flex-row gap-[10px] md:gap-[15px]"
         >
           <Image
-            class="w-full md:w-1/2 h-auto z-20"
+            class="w-full md:w-1/2 h-auto"
             src={ApplicatorGuide1}
             alt="Kindra"
           />
           <Image
-            class="w-full md:w-1/2 h-auto z-20"
+            class="w-full md:w-1/2 h-auto"
             src={ApplicatorGuide2}
             alt="Kindra"
           />
@@ -418,18 +445,12 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
         <Image class="w-full h-auto md:order-5" src={CoreGrid5} alt="Kindra" />
         <Image class="w-full h-auto md:order-6" src={CoreGrid6} alt="Kindra" />
       </div>
-      <div class="w-full">
-        <ResponsiveImage
-          class="absolute"
-          mobile={SocialBackgroundMobile}
-          desktop={SocialBackgroundDesktop}
-          alt="Kindra"
-        />
+      <div class="w-full social-background">
         <div
-          class="relative flex flex-col items-center justify-center gap-[35px] pt-[60px] md:flex-row md:mx-[300px] md:gap-[60px]"
+          class="relative flex flex-col items-center justify-center gap-[35px] pt-[60px] mt-[30px] pb-[60px] md:flex-row md:mx-[300px] md:gap-[60px]"
         >
-          <Image class="w-1/2" src={SocialGrid} alt="Kindra" />
-          <Image class="w-1/2" src={SocialGrid} alt="Kindra" />
+          <Image class="w-1/2 rounded-[34px] md:rounded-[24px]" src={SocialGrid} alt="Kindra" />
+          <Image class="w-1/2 rounded-[34px] md:rounded-[24px]" src={SocialGrid} alt="Kindra" />
         </div>
       </div>
       <div
