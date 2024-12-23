@@ -49,6 +49,7 @@ const { type, brandName, headerImage, headerVideo } = Astro.props;
     margin-top:2em;
   }
 </style>
+
 <div class="scroll-container">
   <div class="sticky-container">
     <Navigation theme="light" />
@@ -69,19 +70,22 @@ const { type, brandName, headerImage, headerVideo } = Astro.props;
     <h2>By Hart</h2>
   </div>
 </div>
+
 <script>
   import {scaleLinear} from "d3-scale";
 
   const image = document.getElementById("main-header");
 
   let sizeScale = scaleLinear().range([20, 100]).clamp(true),
+      offsetScale = scaleLinear().range([0, -310]).clamp(true),
       turnScale = scaleLinear().range([-3, 0]).clamp(true),
-      shadowScale = scaleLinear().range([7, 0]).clamp(true),
+      shadowScale = scaleLinear().rangeRound([7, 0]).clamp(true),
       scrollTimer = null;
 
   function updateScales(){
     const h = window.innerHeight / 2
     sizeScale = sizeScale.domain([0, .9*h])
+    offsetScale = offsetScale.domain([0, .9*h])
     turnScale = turnScale.domain([0, .5*h])
     shadowScale = shadowScale.domain([0, .5*h])
   }
@@ -90,19 +94,20 @@ const { type, brandName, headerImage, headerVideo } = Astro.props;
     const y = window.scrollY,
           angle = turnScale(y),
           shadow = shadowScale(y),
-          size = sizeScale(y)
+          size = sizeScale(y),
+          offset = offsetScale(y)
 
     image.style.width = `${size}vw`;
-    image.style.marginTop = `-${size * 3.1}px`;
+    image.style.marginTop = `${offset}px`;
     image.style.transform = `rotate(${angle}deg)`
     image.style.boxShadow = `${shadow}px ${shadow}px ${2*shadow}px rgba(32, 32, 32, .45)`
   }
 
-  window.addEventListener("resize", e => updateScales())
+  window.addEventListener("resize", updateScales)
 
   document.addEventListener("scroll", (event) => {
     cancelAnimationFrame(scrollTimer)
-    scrollTimer = requestAnimationFrame(() => updateImage())
+    scrollTimer = requestAnimationFrame(updateImage)
   });
 
   document.addEventListener("DOMContentLoaded", () => {
