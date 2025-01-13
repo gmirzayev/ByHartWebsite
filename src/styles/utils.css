@@ -27,3 +27,7 @@
   font-weight: bold;
   font-style: normal;
 }
+
+a:hover{
+  cursor: url("../assets/HeartCursor.png") 16 16, auto !important;
+}
