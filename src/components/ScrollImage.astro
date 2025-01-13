@@ -61,7 +61,7 @@ const { type, brandName, headerImage, headerVideo } = Astro.props;
     <div class="image-container">
     {
       type == "image" ? (
-        <Image id="main-header" src={headerImage} alt="Kindra" />
+        <Image id="main-header" src={headerImage} widths={[1800]} alt=" " />
       ) : (
         <video id="main-header" autoplay playsinline loop muted>
           <source src={headerVideo} type="video/mp4" />
