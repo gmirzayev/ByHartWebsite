@@ -1,9 +1,13 @@
 ---
-import "../styles/utils.css";
+import { getImage } from "astro:assets";
 const { desktop, mobile, class:classes, imgClass, alt=" " } = Astro.props;
+
+let small = await getImage({src:mobile, widths:[1800]})
+let large = await getImage({src:desktop, widths:[2800]})
+
 ---
 <picture class={classes ?? "h-auto w-auto"}>
-    <source media="(max-width: 767px)" width={mobile.width} height={mobile.height} srcset={mobile.src} />
-    <source media="(min-width: 768px)" width={desktop.width} height={desktop.height} srcset={desktop.src} />
-    <img class={imgClass ?? 'h-auto w-auto'} src={desktop.src} width={desktop.width} height={desktop.height} alt={alt} />
+    <source media="(max-width: 767px)" width={small.width} height={small.height} srcset={small.src} />
+    <source media="(min-width: 768px)" width={large.width} height={large.height} srcset={large.src} />
+    <img class={imgClass ?? 'h-auto w-auto'} src={large.src} width={large.width} height={large.height} alt={alt} />
 </picture>
