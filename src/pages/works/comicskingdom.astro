@@ -12,6 +12,7 @@ import AppDesktop from "@assets/ComicsKingdom/img/CK_App_Desktop.png";
 import AppMobile from "@assets/ComicsKingdom/img/CK_App_Mobile.png";
 import IconsDesktop from "@assets/ComicsKingdom/img/CK_Icons_Desktop.png";
 import IconsMobile from "@assets/ComicsKingdom/img/CK_Icons_Mobile.png";
+import PhoneVibration from "@assets/ComicsKingdom/CK_Phone_Vibration.mp4";
 import Creator from "@assets/ComicsKingdom/CK_Creator.webm";
 import CreatorSafari from "@assets/ComicsKingdom/CK_Creator_Safari.mov";
 import Home from "@assets/ComicsKingdom/img/CK_App_Home.png";
@@ -272,15 +273,17 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
         <source src={CKAnimation} />
       </video>
       <div
-        class="w-[100%] flex items-center justify-between flex-col md:flex-row md:ml-[200px] overflow-x-hidden"
+        class="w-[100%] flex items-center justify-center gap-10 py-[75px] flex-col md:flex-row"
       >
-        <div class="karla my-[20px] md:pl-[200px]">
+        <div class="karla my-[20px]">
           <p class="">We are</p>
           <p class="w-[200px] font-bold">
             Making New Friends While Cherishing the Old
           </p>
         </div>
-        <TransparentVideo webm={Cat} mov={CatSafari} class="w-[100%] md:-ml-[200px]" />
+        <video loop playsinline autoplay muted style="max-width:300px;">
+            <source src={PhoneVibration} type='video/mp4'>
+        </video>
       </div>
       <div class="w-full friends-background">
         <TransparentVideo webm={Friends} mov={FriendsSafari} class="mb-[120px] w-screen" />
