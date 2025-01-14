@@ -322,7 +322,7 @@ import GlassesTest from "../assets/eye_test_cut.webm";
 <footer>
   <div class="email-header">
     <div class="pink-background"></div>
-    <h1>getcreative@byhart.studio</h1>
+    <h1 data-prompt="Copy Me">getcreative@byhart.studio</h1>
   </div>
   <div class="video-container">
     <a
@@ -414,21 +414,15 @@ import GlassesTest from "../assets/eye_test_cut.webm";
   </div>
   <div id="tooltip-footer"></div>
 </footer>
+
 <script>
-  // const navEmailButton = document.getElementById("nav-link--email-button");
-  // const tooltip = document.getElementById("tooltip-nav");
+  let emailLink = document.querySelector("footer .email-header h1")
 
-  // navEmailButton.addEventListener("mouseenter", (event: MouseEvent) => {
-  //   tooltip.innerText = "COPY ME";
-  //   tooltip.style.opacity = "1";
-  // });
+  emailLink.addEventListener("mouseenter", e => emailLink.dataset.prompt = "Copy me")
 
-  // navEmailButton.addEventListener("mousemove", (event: MouseEvent) => {
-  //   tooltip.style.top = `${event.pageY - 10}px`;
-  //   tooltip.style.left = `${event.pageX}px`;
-  // });
-
-  // navEmailButton.addEventListener("mouseleave", () => {
-  //   tooltip.style.opacity = "0";
-  // });
+  emailLink.addEventListener("click", e =>
+    navigator.clipboard
+      .writeText(e.target.innerText)
+      .then(() => emailLink.dataset.prompt = 'Copied!')
+  )
 </script>
