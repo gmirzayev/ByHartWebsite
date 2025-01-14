@@ -76,18 +76,11 @@ import KindraCCMobile from "@assets/Kindra/img/Kindra_CC_Mobile.png";
 import KindraWords from "@assets/Kindra/img/Kindra_Drawing_Words.png";
 import ProjectCarousel from "@components/ProjectCarousel.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
-
-
-const socialBgMobile = `url(${SocialBackgroundMobile.src})`,
-      socialBgDesktop = `url(${SocialBackgroundDesktop.src})`,
-      siteBgMobile = `url(${SiteBackgroundMobile.src})`,
-      siteBgDesktop = `url(${SiteBackgroundDesktop.src})`,
-      quizBgMobile = `url(${QuizBackgroundMobile.src})`,
-      quizBgDesktop = `url(${QuizBackgroundDesktop.src})`
+import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 
 ---
 
-<style define:vars={{socialBgMobile, socialBgDesktop, siteBgMobile, siteBgDesktop, quizBgMobile, quizBgDesktop}}>
+<style>
   #kindra-main {
     width: 100%;
     background-color: #f7f4ed;
@@ -105,30 +98,6 @@ const socialBgMobile = `url(${SocialBackgroundMobile.src})`,
   .utile {
     font-family: "utile-display", sans-serif;
   }
-
-
-  .social-background{
-    background-image: var(--socialBgDesktop);
-    background-size: cover;
-  }
-
-  .site-background{
-    background-image: var(--siteBgDesktop);
-    background-size: cover;
-  }
-
-  .quiz-background{
-    background-image: var(--quizBgDesktop);
-    background-size: cover;
-  }
-
-
-  @media (max-width: 768px) {
-    .social-background{ background-image: var(--socialBgMobile); }
-    .site-background{ background-image: var(--siteBgMobile); }
-    .quiz-background{ background-image: var(--quizBgMobile); }
-  }
-
 </style>
 <InternalLayout>
   <div id="kindra-main">
@@ -222,13 +191,13 @@ const socialBgMobile = `url(${SocialBackgroundMobile.src})`,
         />
       </div>
 
-      <div class="flex flex-col quiz-background">
+      <ResponsiveBackground class="flex flex-col" mobile={QuizBackgroundMobile} desktop={QuizBackgroundDesktop}>
         <!-- insert shell video. div is flexed to change order on breakpoints -->
         <div class="md:order-2">
           <!-- TODO: insert overlay video -->
           <div style="background:red; width:80px; height:60px; margin:20px auto; text-align:center;">×</div>
         </div>
-      </div>
+      </ResponsiveBackground>
 
       <div class="flex flex-row w-full">
         <Image class="w-1/2 h-auto" src={Mist} alt="Kindra" />
@@ -347,7 +316,7 @@ const socialBgMobile = `url(${SocialBackgroundMobile.src})`,
       <div class="mx-[20px] md:mx-[300px] md:mb-[400px]">
         <Image class="w-full h-auto rounded" src={Site} alt="Kindra" />
       </div>
-      <div class="w-full relative site-background">
+      <ResponsiveBackground class="w-full relative" mobile={SiteBackgroundMobile} desktop={SiteBackgroundDesktop}>
         <div
           class="flex flex-col pt-[200px] mx-[20px] md:mx-[60px] md:flex-row gap-[10px] md:gap-[15px]"
         >
@@ -362,7 +331,7 @@ const socialBgMobile = `url(${SocialBackgroundMobile.src})`,
             alt="Kindra"
           />
         </div>
-      </div>
+      </ResponseiveBackground>
       <div
         class="mt-[120px] mx-[20px] mb-[45px] md:mx-[300px] md:mb-[120px] md:mt-[180px]"
       >
@@ -445,14 +414,14 @@ const socialBgMobile = `url(${SocialBackgroundMobile.src})`,
         <Image class="w-full h-auto md:order-5" src={CoreGrid5} alt="Kindra" />
         <Image class="w-full h-auto md:order-6" src={CoreGrid6} alt="Kindra" />
       </div>
-      <div class="w-full social-background">
+      <ResponsiveBackground mobile={SocialBackgroundMobile} desktop={SocialBackgroundDesktop}>
         <div
           class="relative flex flex-col items-center justify-center gap-[35px] pt-[60px] mt-[30px] pb-[60px] md:flex-row md:mx-[300px] md:gap-[60px]"
         >
           <Image class="w-1/2 rounded-[34px] md:rounded-[24px]" src={SocialGrid} alt="Kindra" />
           <Image class="w-1/2 rounded-[34px] md:rounded-[24px]" src={SocialGrid} alt="Kindra" />
         </div>
-      </div>
+      </ResponsiveBackground>
       <div
         class="flex flex-col mx-[20px] md:mx-[200px] my-[45px] md:my-[120px] gap-[45px] md:gap-[60px] md:flex-row"
       >

@@ -1,0 +1,25 @@
+---
+import { getImage } from "astro:assets";
+const { desktop, mobile, class:classes, alt=" " } = Astro.props;
+
+let smallImg = await getImage({src:mobile, widths:[1800]}),
+    largeImg = await getImage({src:desktop, widths:[2800]}),
+    smallBG = `url(${smallImg.src})`,
+    largeBG = `url(${largeImg.src})`
+---
+
+<div class={classes ?? "h-auto w-full"}>
+    <slot />
+</div>
+
+<style define:vars={{smallBG, largeBG}}>
+    div{
+        background-image: var(--largeBG);
+        background-size: cover;
+    }
+
+  @media (max-width: 768px) {
+    div{ background-image: var(--smallBG); }
+  }
+</style>
+
