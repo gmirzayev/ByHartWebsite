@@ -36,7 +36,7 @@ import GlassesTest from "../assets/eye_test_cut.webm";
     cursor: url("../assets/HeartCursor.png") 16 16, auto;
   }
 
-  .email-header h1:active{
+  .email-header h1 a:active{
     text-decoration: underline;
     text-decoration-color: rgba(0,0,0,.25);
   }
@@ -370,7 +370,7 @@ import GlassesTest from "../assets/eye_test_cut.webm";
 </style>
 <footer>
   <div class="email-header">
-    <h1 data-prompt="Copy Me">getcreative@byhart.studio</h1>
+    <h1 data-prompt="Copy Me"><a href="mailto:getcreative@byhart.studio">getcreative@byhart.studio</a></h1>
   </div>
   <div class="video-container">
     <a
@@ -468,9 +468,10 @@ import GlassesTest from "../assets/eye_test_cut.webm";
 
   emailLink.addEventListener("mouseenter", e => emailLink.dataset.prompt = "Copy me")
 
-  emailLink.addEventListener("click", e =>
+  emailLink.addEventListener("click", e => {
+    e.preventDefault()
     navigator.clipboard
       .writeText(e.target.innerText)
       .then(() => emailLink.dataset.prompt = 'Copied!')
-  )
+  })
 </script>
