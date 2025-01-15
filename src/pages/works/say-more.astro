@@ -1,0 +1,137 @@
+---
+import "../../styles/utils.css";
+import "../../styles/say-more.css";
+import Image from "astro/components/Image.astro";
+import InternalLayout from "@layouts/InternalLayout.astro";
+import TextGrid from "@components/TextGrid.astro";
+import ScrollImage from "@components/ScrollImage.astro";
+import Navigation from "@components/Navigation.astro";
+import ProjectCarousel from "@components/ProjectCarousel.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
+import ResponsiveBackground from "@components/ResponsiveBackground.astro";
+
+import Hero from "@assets/SayMore/img/01_SM_Hero_16x9.png";
+import BoxBgDesktop from "@assets/SayMore/img/02_SM_BG_D.png";
+import BoxBgMobile from "@assets/SayMore/img/02_SM_BG_M_4x5.png";
+import BoxImage from "@assets/SayMore/img/02_SM_Layer_Box.png";
+import HoldingOne from "@assets/SayMore/img/03_SM_3x4.png";
+import HoldingDeck from "@assets/SayMore/img/04_SM_3x4.png";
+import WritingHand from "@assets/SayMore/img/05_SM_3x4.png";
+import WrittenMessage from "@assets/SayMore/img/06_SM_Writing.svg";
+import SelectBgDesktop from "@assets/SayMore/img/07_SM_BG_Image_D.png";
+import SelectBgMobile from "@assets/SayMore/img/07_SM_BG_Image_M.png";
+import SelectCard from "@assets/SayMore/img/07_SM_Layer_Card.png";
+
+import PairABack from "@assets/SayMore/img/08_SM_Card.png";
+import PairAFace from "@assets/SayMore/img/09_SM_Card.png";
+import PairBFace from "@assets/SayMore/img/10_SM_Card.png";
+import PairBBack from "@assets/SayMore/img/11_SM_Card.png";
+import PairCBack from "@assets/SayMore/img/12_SM_Card.png";
+import PairCFace from "@assets/SayMore/img/13_SM_Card.png";
+import PairDFace from "@assets/SayMore/img/14_SM_Card.png";
+import PairDBack from "@assets/SayMore/img/15_SM_Card.png";
+import PhoneSiteBgDesktop from "@assets/SayMore/img/16_SM_BG_Image_D.png";
+import PhoneSiteBgMobile from "@assets/SayMore/img/16_SM_BG_Image_M.png";
+import PhoneSite from "@assets/SayMore/img/16_SM_Layer_Phone.png";
+import BookSpreadBgDesktop from "@assets/SayMore/img/17_SM_BG_Image_D.png";
+import BookSpreadBgMobile from "@assets/SayMore/img/17_SM_BG_Image_M.png";
+import BookSpread from "@assets/SayMore/img/17_SM_Layer_Booklet.png";
+import BookletReading from "@assets/SayMore/img/18_SM_Image.png";
+import BookletPage from "@assets/SayMore/img/19_SM_Booklet.png";
+import PressClipBgDesktop from "@assets/SayMore/img/20_SM_BG_Image_D.png";
+import PressClipBgMobile from "@assets/SayMore/img/20_SM_BG_Image_M.png";
+import PressClipWindow from "@assets/SayMore/img/20_SM_Layer_web_D.png";
+import PressClipPhone from "@assets/SayMore/img/20_SM_Layer_web_M.png";
+import SocialBgDesktop from "@assets/SayMore/img/21_SM_BG_D.png";
+import SocialBgMobile from "@assets/SayMore/img/21_SM_BG_M.png";
+import SocialDeck from "@assets/SayMore/img/21_SM_Layer_social1.png";
+import SocialPodcast from "@assets/SayMore/img/21_SM_Layer_social2.png";
+---
+
+<InternalLayout>
+  <div id="say-more-main">
+    <ScrollImage type="image" brandName="Say More" headerImage={Hero} />
+    <TextGrid title="SAY MORE" theme="light">
+        <li>Brand Identity + Positioning</li>
+        <li>Logo Design</li>
+        <li>Video + Photography</li>
+        <li>Art + Illustration</li>
+        <li>CX</li>
+        <li>Original Naming</li>
+        <li>Physical Goods Development + Design</li>
+        <li>Packaging</li>
+        <li>Editorial Content</li>
+        <li>Organic + Paid Social Content</li>
+        <li>Interviews</li>
+        <li>Writing + Editing</li>
+        <li>Surprise + Delight</li>
+    </TextGrid>
+    <div id="say-more-content">
+        <ResponsiveBackground class="deck-packaging" mobile={BoxBgMobile} desktop={BoxBgDesktop}>
+            <Image src={BoxImage} alt=" "/>
+        </ResponsiveBackground>
+
+        <div class="text-block">
+            <p>Say More is an original collection of conversation cards and journaling prompts conceived of, written, and lovingly designed by Sarah's Hartley's story + design studio, By Hart, for Kindra in partnership with Omisade Burney-Scott (Black Girl’s Guide to Surviving Menopause). We created Say More together to empower us all to honor our intersecting and shape-shifting identities, learn from intergenerational wisdom, revitalize our perspectives on aging, and practice compassionate self-care in times of transformation.</p>
+        </div>
+
+        <div class="two-up">
+            <Image src={HoldingOne} widths={[2200]} alt=" " />
+            <Image src={HoldingDeck} widths={[2200]} alt=" " />
+        </div>
+        <div class="two-up inset">
+            <Image src={WritingHand} widths={[2200]} alt=" " />
+            <Image src={WrittenMessage} widths={[2200]} alt=" " />
+        </div>
+
+        <ResponsiveBackground class="pick-a-card" mobile={SelectBgMobile} desktop={SelectBgDesktop}>
+            <Image src={SelectCard} widths={[1200]} alt=" "/>
+        </ResponsiveBackground>
+
+        <div class="card-pair a">
+            <Image src={PairAFace} widths={[2200]} alt=" " />
+            <Image src={PairABack} widths={[2200]} alt=" " />
+        </div>
+        <div class="card-pair b">
+            <Image src={PairBBack} class="z-10" widths={[2200]} alt=" " />
+            <Image src={PairBFace} widths={[2200]} alt=" " />
+        </div>
+        <div class="card-pair c">
+            <Image src={PairCFace} widths={[2200]} alt=" " />
+            <Image src={PairCBack} widths={[2200]} alt=" " />
+        </div>
+        <div class="card-pair d">
+            <Image src={PairDBack} class="z-10" widths={[2200]} alt=" " />
+            <Image src={PairDFace} widths={[2200]} alt=" " />
+        </div>
+
+
+        <ResponsiveBackground class="phone-site" mobile={PhoneSiteBgMobile} desktop={PhoneSiteBgDesktop}>
+            <Image src={PhoneSite} widths={[1200]} alt=" "/>
+        </ResponsiveBackground>
+
+        <ResponsiveBackground class="book-spread" mobile={BookSpreadBgMobile} desktop={BookSpreadBgDesktop}>
+            <Image src={BookSpread} widths={[1200]} alt=" "/>
+        </ResponsiveBackground>
+
+        <div class="second-book-spread">
+            <Image src={BookletReading} widths={[2200]} alt=" " />
+            <Image src={BookletPage} widths={[2200]} alt=" " />
+        </div>
+
+        <ResponsiveBackground class="press-clips" mobile={PressClipBgMobile} desktop={PressClipBgDesktop}>
+            <Image src={PressClipWindow} widths={[1200]} alt=" "/>
+            <Image class="phone" src={PressClipPhone} widths={[1200]} alt=" "/>
+        </ResponsiveBackground>
+
+        <ResponsiveBackground class="social" mobile={SocialBgMobile} desktop={SocialBgDesktop}>
+            <Image src={SocialDeck} widths={[1200]} alt=" "/>
+            <Image class="podcast" src={SocialPodcast} widths={[1200]} alt=" "/>
+        </ResponsiveBackground>
+
+    </div>
+    <ProjectCarousel name="Say More" />
+</div>
+</InternalLayout>
+
+
