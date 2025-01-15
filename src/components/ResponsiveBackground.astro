@@ -1,4 +1,5 @@
 ---
+import "../styles/utils.css";
 import { getImage } from "astro:assets";
 const { desktop, mobile, class:classes, alt=" " } = Astro.props;
 
@@ -15,6 +16,7 @@ let smallImg = await getImage({src:mobile, widths:[1800]}),
 <style define:vars={{smallBG, largeBG}}>
     div{
         background-image: var(--largeBG);
+        background-position: center;
         background-size: cover;
     }
 
