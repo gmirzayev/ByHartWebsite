@@ -1,11 +1,13 @@
 ---
 import "../styles/utils.css";
 import Image from "astro/components/Image.astro";
+import TransparentVideo from "@components/TransparentVideo.astro";
 import Logo from "@assets/HomeLogo.png";
 import DarkLogo from "@assets/LogoDark.png";
 import HeartDropdown from "@assets/HeartDropdown.svg";
 import CloseButton from "@assets/CloseButton.png";
-import GlassesTest from "@assets/eye_test_cut.webm";
+import GlassesSafari from "@assets/eye.mov";
+import GlassesChrome from "@assets/eye.webm";
 const { theme } = Astro.props;
 ---
 
@@ -296,13 +298,7 @@ const { theme } = Astro.props;
               </text>
             </svg>
           </a>
-          <video
-            class="max-w-[400px] ml-[150px]"
-            playsinline
-            src={GlassesTest}
-            autoplay="true"
-            loop="true"
-            muted></video>
+          <TransparentVideo class="max-w-[400px] ml-[150px]" mov={GlassesSafari} webm={GlassesChrome} />
         </div>
       </div>
     </div>
