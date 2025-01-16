@@ -1,0 +1,48 @@
+---
+import "../styles/utils.css";
+
+const {class:className} = Astro.props
+---
+
+<style>
+    div{
+        font: 400 16px "Karla", sans-serif;
+
+        p{
+            line-height:1.5;
+            margin-bottom:1em;
+        }
+        h1{
+            line-height:1.2;
+            font-size:26px;
+            font-weight: 700;
+            margin:0;
+            margin-bottom:16px;
+        }
+
+        @media (min-width: 768px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: 880px;
+            margin:0 auto;
+            gap:40px;
+
+            h1{
+                line-height: 1.2;
+                font-size: 36px;
+            }
+            p{
+                line-height: 1.625em;
+            }
+            div{
+                width:calc(50%);
+            }
+        }
+    }
+</style>
+
+
+<div class={className ?? "project-text-block"}>
+    <slot />
+</div>
