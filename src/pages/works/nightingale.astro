@@ -1,0 +1,127 @@
+---
+import "../../styles/utils.css";
+import "../../styles/nightingale.css";
+import Image from "astro/components/Image.astro";
+import InternalLayout from "@layouts/InternalLayout.astro";
+import TextGrid from "@components/TextGrid.astro";
+import ScrollImage from "@components/ScrollImage.astro";
+import Navigation from "@components/Navigation.astro";
+import ProjectCarousel from "@components/ProjectCarousel.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
+import ResponsiveBackground from "@components/ResponsiveBackground.astro";
+
+
+
+
+import Hero from "@assets/Nightingale/img/Nightingale-Hero.png";
+import Logo from "@assets/Nightingale/img/Nightingale-Logo.png";
+import Diagonals from "@assets/Nightingale/img/Nightingale-1.png";
+import PortraitA from "@assets/Nightingale/img/Portrait-1.png";
+import PortraitB from "@assets/Nightingale/img/Portrait-2.png";
+import PortraitC from "@assets/Nightingale/img/Portrait-3.png";
+import PortraitD from "@assets/Nightingale/img/Portrait-4.png";
+import Palette from "@assets/Nightingale/img/color-palette.svg";
+import SiteA from "@assets/Nightingale/img/Site-1.png";
+import SiteB from "@assets/Nightingale/img/Site-2.png";
+import SiteC from "@assets/Nightingale/img/Site-3.png";
+import SiteD from "@assets/Nightingale/img/Site-4.png";
+import SiteE from "@assets/Nightingale/img/Site-Mobile-1.png";
+import SiteF from "@assets/Nightingale/img/Site-Mobile-2.png";
+import SistinePup from "@assets/Nightingale/img/Nightingale-3.png";
+import IconsA from "@assets/Nightingale/img/Nightingale-Icons-1.png";
+import IconsB from "@assets/Nightingale/img/Nightingale-Icons-2.png";
+import PitchDesktop from "@assets/Nightingale/img/Nightingale-4-desktop.png";
+import PitchMobile from "@assets/Nightingale/img/Nightingale-4-mobile.png";
+
+---
+
+<InternalLayout>
+  <div id="nightingale-main">
+    <ScrollImage type="image" brandName="Nightingale" headerImage={Hero} />
+    <TextGrid title="Nightingale" theme="light">
+        <li>Brand Identity + Positioning</li>
+        <li>CX</li>
+        <li>Logo Design</li>
+        <li>Writing + Editing</li>
+        <li>Video + Photography</li>
+        <li>Surprise + Delight</li>
+        <li>Product Design (UX/UI)</li>
+    </TextGrid>
+    <div id="nightingale-content">
+        <div class="nv-logo">
+            <Image src={Logo} widths={[2200]} alt=" " />
+        </div>
+
+        <div class="text-columns">
+            <div class="left">
+                <h1>Nightingale Vets is on a mission to transform the veterinary field’s culture of burnout. </h1>
+                <p>Just like Florence Nightingale envisioned a better hospital ward, Team Nightingale envisions a different kind of veterinary practice, one where each individual team member's happiness and wellbeing are just as important as their patients’.</p>
+                <p>The Nightingale Veterinary Partners logo celebrates the heart and soul of the work their veterinary teams do everyday.</p>
+            </div>
+            <div class="right">
+                <p>It wasn’t hard for Team By Hart—a creative collective of pet parents themselves—to recognize that the unifying premise of every veterinary practice is love—the love that connects care teams, beloved pets, and their human families. It’s a shared compassion that brings us all together. The Nightingale visual identity reminds us that caring for animals is about more than medicine—it’s about nurturing a bond with every living creature.</p>
+                <p>It was By Hart’s honor to support Nightingale Veterinary Partners in fostering a culture of care that extends to all beings—human and otherwise— and creating spaces where love leads, healing happens, and every life is cherished with professionalism and passion.</p>
+            </div>
+        </div>
+
+        <div class="diagonals">
+            <Image src={Diagonals} widths={[2200]} alt=" " />
+        </div>
+
+        <div class="portraits slideshow">
+            <Image class="active" src={PortraitA} widths={[2200]} alt=" " />
+            <Image src={PortraitB} widths={[2200]} alt=" " />
+            <Image src={PortraitC} widths={[2200]} alt=" " />
+            <Image src={PortraitD} widths={[2200]} alt=" " />
+        </div>
+
+        <div class="palette">
+            <Image src={Palette} alt=" " />
+        </div>
+
+        <div class="site slideshow">
+            <Image class="active" src={SiteA} alt=" " />
+            <Image src={SiteB} alt=" " />
+            <Image src={SiteC} alt=" " />
+            <Image src={SiteD} alt=" " />
+            <Image src={SiteE} alt=" " />
+            <Image src={SiteF} alt=" " />
+        </div>
+        <Image src={SistinePup} widths={[2200]} alt=" " />
+
+        <div class="icons">
+            <Image src={IconsA} alt=" " />
+            <Image src={IconsB} alt=" " />
+        </div>
+
+
+        <ResponsiveImage desktop={PitchDesktop} mobile={PitchMobile} />
+
+
+    </div>
+    <ProjectCarousel name="Nightingale Vets" />
+
+</div>
+</InternalLayout>
+
+
+<script>
+    let dt = 0
+    document.querySelectorAll('.slideshow').forEach(elt => {
+        let slides = elt.querySelectorAll("img"),
+            len = slides.length,
+            idx = 0
+
+        const advance = () => {
+            idx++
+            slides.forEach((img, i) => {
+                img.classList.toggle('active', i==idx%len)
+            })
+        }
+
+        setTimeout(() => setInterval(advance, 2000), dt)
+        dt += 666
+    })
+
+
+</script>
