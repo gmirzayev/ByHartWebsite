@@ -1,7 +1,11 @@
 ---
 import Navigation from "./Navigation.astro";
 import Image from "astro/components/Image.astro";
-const { type, brandName, tagLine, headerImage, headerVideo } = Astro.props;
+const { brand, tagline, hero } = Astro.props;
+
+// imported images get unpacked into objects with `format` attrs, videos are just a path string
+const type = !!hero.format ? 'image' : 'video'
+
 ---
 
 <style>
@@ -61,18 +65,18 @@ const { type, brandName, tagLine, headerImage, headerVideo } = Astro.props;
     <div class="image-container">
     {
       type == "image" ? (
-        <Image id="main-header" src={headerImage} widths={[1800]} alt=" " />
+        <Image id="main-header" src={hero} widths={[1800]} alt=" " />
       ) : (
         <video id="main-header" autoplay playsinline loop muted>
-          <source src={headerVideo} type="video/mp4" />
+          <source src={hero} type="video/mp4" />
         </video>
       )
     }
     </div>
   </div>
   <div id="project-title">
-    <h1>{brandName}</h1>
-    <h2>{tagLine ?? "By Hart"}</h2>
+    <h1>{brand}</h1>
+    <h2>{tagline ?? "By Hart"}</h2>
   </div>
 </div>
 
