@@ -1,7 +1,7 @@
 ---
 import "../../styles/utils.css";
 import InternalLayout from "@layouts/InternalLayout.astro";
-import TextGrid from "@components/TextGrid.astro";
+import ProjectTags from "@components/ProjectTags.astro";
 import ScrollImage from "@components/ScrollImage.astro";
 import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
@@ -66,18 +66,18 @@ import Header from "@assets/PearlyBites/img/PearlyBites_Header.png";
 <InternalLayout>
   <div id="pearly-main">
     <ScrollImage type="image" brandName="Pearly Bites" headerImage={Header} tagLine="Come. Sit. Smile." />
-    <TextGrid title="PEARLY BITES" theme="light">
-      <li>Brand Identity + Positioning</li>
-      <li>Logo Design</li>
-      <li>Art + Illustration</li>
-      <li>Product Design (UX/UI)</li>
-      <li>CX</li>
-      <li>Interior Design</li>
-      <li>Social Content + Advertising</li>
-      <li>Writing + Editing</li>
-      <li>Signage + Display</li>
-      <li>Surprise + Delight</li>
-    </TextGrid>
+    <ProjectTags title="PEARLY BITES" theme="light" tags={[
+      "Brand Identity + Positioning",
+      "Logo Design",
+      "Art + Illustration",
+      "Product Design (UX/UI)",
+      "CX",
+      "Interior Design",
+      "Social Content + Advertising",
+      "Writing + Editing",
+      "Signage + Display",
+      "Surprise + Delight",
+    ]} />
     <div class="image-flex">
       <Image class="h-auto w-[92%]" src={FrontDesk} alt="Pearly Bites" />
       <div class="textbox">

@@ -1,7 +1,7 @@
 ---
 import "../../styles/utils.css";
 import ProjectCarousel from "@components/ProjectCarousel.astro";
-import TextGrid from "@components/TextGrid.astro";
+import ProjectTags from "@components/ProjectTags.astro";
 import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
 import InternalLayout from "@layouts/InternalLayout.astro";
@@ -157,17 +157,17 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
 <InternalLayout>
   <div id="sage-main" class="w-full">
     <ScrollImage type="video" brandName="Sage" headerVideo={SageHeroVideo} tagLine="Healing is Always Possible" />
-    <TextGrid title="SAGE" theme="light">
-      <li>Brand Identity + Positioning</li>
-      <li>Logo Design</li>
-      <li>Art + Illustration</li>
-      <li>Product Design (UX/UI)</li>
-      <li>Social Content + Advertising</li>
-      <li>Interviews</li>
-      <li>Writing + Editing</li>
-      <li>Qualitative Research</li>
-      <li>Surprise + Delight</li>
-    </TextGrid>
+    <ProjectTags title="SAGE" theme="light" tags={[
+      "Brand Identity + Positioning",
+      "Logo Design",
+      "Art + Illustration",
+      "Product Design (UX/UI)",
+      "Social Content + Advertising",
+      "Interviews",
+      "Writing + Editing",
+      "Qualitative Research",
+      "Surprise + Delight",
+    ]} />
     <Image
       class="collage-image h-auto w-[90%]"
       src={SagePhoto}

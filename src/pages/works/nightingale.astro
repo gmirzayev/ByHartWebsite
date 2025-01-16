@@ -3,7 +3,7 @@ import "../../styles/utils.css";
 import "../../styles/nightingale.css";
 import Image from "astro/components/Image.astro";
 import InternalLayout from "@layouts/InternalLayout.astro";
-import TextGrid from "@components/TextGrid.astro";
+import ProjectTags from "@components/ProjectTags.astro";
 import ScrollImage from "@components/ScrollImage.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectCarousel from "@components/ProjectCarousel.astro";
@@ -38,15 +38,15 @@ import PitchMobile from "@assets/Nightingale/img/Nightingale-4-mobile.png";
 <InternalLayout>
   <div id="nightingale-main">
     <ScrollImage type="image" brandName="Nightingale" headerImage={Hero} tagLine="Happier People, Healthier Pets" />
-    <TextGrid title="Nightingale" theme="light">
-        <li>Brand Identity + Positioning</li>
-        <li>CX</li>
-        <li>Logo Design</li>
-        <li>Writing + Editing</li>
-        <li>Video + Photography</li>
-        <li>Surprise + Delight</li>
-        <li>Product Design (UX/UI)</li>
-    </TextGrid>
+    <ProjectTags title="Nightingale" theme="light" tags={[
+        "Brand Identity + Positioning",
+        "CX",
+        "Logo Design",
+        "Writing + Editing",
+        "Video + Photography",
+        "Surprise + Delight",
+        "Product Design (UX/UI)",
+    ]} />
     <div id="nightingale-content">
         <div class="nv-logo">
             <Image src={Logo} widths={[2200]} alt=" " />

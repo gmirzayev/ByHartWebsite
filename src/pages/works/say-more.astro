@@ -3,7 +3,7 @@ import "../../styles/utils.css";
 import "../../styles/say-more.css";
 import Image from "astro/components/Image.astro";
 import InternalLayout from "@layouts/InternalLayout.astro";
-import TextGrid from "@components/TextGrid.astro";
+import ProjectTags from "@components/ProjectTags.astro";
 import ScrollImage from "@components/ScrollImage.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectCarousel from "@components/ProjectCarousel.astro";
@@ -46,26 +46,27 @@ import SocialBgDesktop from "@assets/SayMore/img/21_SM_BG_D.png";
 import SocialBgMobile from "@assets/SayMore/img/21_SM_BG_M.png";
 import SocialDeck from "@assets/SayMore/img/21_SM_Layer_social1.png";
 import SocialPodcast from "@assets/SayMore/img/21_SM_Layer_social2.png";
+
 ---
 
 <InternalLayout>
   <div id="say-more-main">
     <ScrollImage type="image" brandName="Say More" headerImage={Hero} tagLine="Conversation Cards + Journaling Prompts" />
-    <TextGrid title="SAY MORE" theme="light">
-        <li>Brand Identity + Positioning</li>
-        <li>Logo Design</li>
-        <li>Video + Photography</li>
-        <li>Art + Illustration</li>
-        <li>CX</li>
-        <li>Original Naming</li>
-        <li>Physical Goods Development + Design</li>
-        <li>Packaging</li>
-        <li>Editorial Content</li>
-        <li>Organic + Paid Social Content</li>
-        <li>Interviews</li>
-        <li>Writing + Editing</li>
-        <li>Surprise + Delight</li>
-    </TextGrid>
+    <ProjectTags title="SAY MORE" theme="light" tags={[
+        "Brand Identity + Positioning",
+        "Logo Design",
+        "Video + Photography",
+        "Art + Illustration",
+        "CX",
+        "Original Naming",
+        "Physical Goods Development + Design",
+        "Packaging",
+        "Editorial Content",
+        "Organic + Paid Social Content",
+        "Interviews",
+        "Writing + Editing",
+        "Surprise + Delight",
+    ]} />
     <div id="say-more-content">
         <ResponsiveBackground class="deck-packaging" mobile={BoxBgMobile} desktop={BoxBgDesktop}>
             <Image src={BoxImage} alt=" "/>

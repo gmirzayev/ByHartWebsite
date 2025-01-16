@@ -1,7 +1,7 @@
 ---
 import "../../styles/utils.css";
 import InternalLayout from "@layouts/InternalLayout.astro";
-import TextGrid from "@components/TextGrid.astro";
+import ProjectTags from "@components/ProjectTags.astro";
 import ScrollImage from "@components/ScrollImage.astro";
 import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
@@ -99,17 +99,17 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
 <InternalLayout>
   <div id="sixfeet-main">
     <ScrollImage type="video" brandName="Six Feet" headerVideo={Header} tagLine="Stick with Us" />
-    <TextGrid title="6 FEET FROM YOU" theme="light">
-      <li>Brand Identity + Positioning</li>
-      <li>Logo Design</li>
-      <li>Video + Photography</li>
-      <li>Art + Illustration</li>
-      <li>Original Naming</li>
-      <li>Physical Goods Development + Design</li>
-      <li>Writing + Editing</li>
-      <li>Signage + Display</li>
-      <li>Surprise + Delight</li>
-    </TextGrid>
+    <ProjectTags title="6 FEET FROM YOU" theme="light" tags={[
+      "Brand Identity + Positioning",
+      "Logo Design",
+      "Video + Photography",
+      "Art + Illustration",
+      "Original Naming",
+      "Physical Goods Development + Design",
+      "Writing + Editing",
+      "Signage + Display",
+      "Surprise + Delight",
+    ]} />
     <div class="image-flex">
       <Image class="w-[89%] md:w-[92%]" src={MaskGang} alt="Six Feet" />
       <h2 class="w-[90%] md:w-[60%]">

@@ -1,7 +1,7 @@
 ---
 import "../../styles/utils.css";
 import InternalLayout from "@layouts/InternalLayout.astro";
-import TextGrid from "@components/TextGrid.astro";
+import ProjectTags from "@components/ProjectTags.astro";
 import ScrollImage from "@components/ScrollImage.astro";
 import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
@@ -97,22 +97,22 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
 <InternalLayout>
   <div id="bluprint-main">
     <ScrollImage type="image" brandName="Bluprint" headerImage={Header} tagLine="Watch + Learn" />
-    <TextGrid title="BLUPRINT" theme="light">
-      <li>Brand Identity + Positioning</li>
-      <li>Logo Design</li>
-      <li>Video + Photography</li>
-      <li>Art + Illustration</li>
-      <li>Product Design (UX/UI)</li>
-      <li>CX</li>
-      <li>Interior Design</li>
-      <li>Original Naming</li>
-      <li>Physical Goods Development + Design</li>
-      <li>Packaging</li>
-      <li>Social Content + Advertising</li>
-      <li>Writing + Editing</li>
-      <li>Qualitative Research</li>
-      <li>Surprise + Delight</li>
-    </TextGrid>
+    <ProjectTags title="BLUPRINT" theme="light" tags={[
+      "Brand Identity + Positioning",
+      "Logo Design",
+      "Video + Photography",
+      "Art + Illustration",
+      "Product Design (UX/UI)",
+      "CX",
+      "Interior Design",
+      "Original Naming",
+      "Physical Goods Development + Design",
+      "Packaging",
+      "Social Content + Advertising",
+      "Writing + Editing",
+      "Qualitative Research",
+      "Surprise + Delight",
+    ]}/>
     <div class="bluprint-content">
       <div class="flex items-center w-full flex-col md:flex-row">
         <Image

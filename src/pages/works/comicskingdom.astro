@@ -1,7 +1,7 @@
 ---
 import "../../styles/utils.css";
 import InternalLayout from "@layouts/InternalLayout.astro";
-import TextGrid from "@components/TextGrid.astro";
+import ProjectTags from "@components/ProjectTags.astro";
 import ScrollImage from "@components/ScrollImage.astro";
 import Header from "@assets/ComicsKingdom/img/CK_Cover.png";
 import Image from "astro/components/Image.astro";
@@ -196,18 +196,18 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
     <ScrollImage type="image" brandName="Comics Kingdom" headerImage={Header} tagLine="A Feast of Fandom" />
     <div style={{ backgroundColor: "#17100B" }}>
       <!-- <ScrollImage theme="dark" /> -->
-      <TextGrid title="COMICS KINGDOM" theme="dark">
-        <li>Brand Identity + Positioning</li>
-        <li>Logo Design</li>
-        <li>Video + Photography</li>
-        <li>Writing + Editing</li>
-        <li>Surprise + Delight</li>
-        <li>Art + Illustration</li>
-        <li>Product Design (UX/UI)</li>
-        <li>Social Content + Advertising</li>
-        <li>Interviews</li>
-        <li>Qualitative Research</li>
-      </TextGrid>
+      <ProjectTags title="COMICS KINGDOM" theme="dark" tags={[
+        "Brand Identity + Positioning",
+        "Logo Design",
+        "Video + Photography",
+        "Writing + Editing",
+        "Surprise + Delight",
+        "Art + Illustration",
+        "Product Design (UX/UI)",
+        "Social Content + Advertising",
+        "Interviews",
+        "Qualitative Research",
+      ]} />
     </div>
     <div class="image-flex">
       <div

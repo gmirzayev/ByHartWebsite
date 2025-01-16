@@ -1,0 +1,93 @@
+---
+const { title, theme="light", tags=[] } = Astro.props;
+import "../styles/utils.css";
+
+let categories = {
+    strategy:[
+        "Original Naming",
+        "Brand Identity + Positioning",
+        "Surprise + Delight",
+        "Qualitative Research",
+        "CX",
+    ],
+    story:[
+        "Interviews",
+        "Writing + Editing",
+        "Quiz Development",
+        "Editorial Content",
+        "Organic + Paid Social Content",
+    ],
+    stage:[
+        "Interior Design",
+        "Physical Goods Development + Design",
+        "Print + Packaging",
+        "Signage + Display",
+        "Theatrics",
+    ],
+    screen:[
+        "Logo Design",
+        "Visual Identity",
+        "Video + Photography",
+        "Art + Illustration",
+        "Product Design (UX/UI)",
+    ],
+}
+
+let groups = []
+for (let group in categories){
+    let items = categories[group].filter(t => tags.includes(t))
+    if (items.length>0) groups.push({ group, items })
+}
+
+---
+
+<style>
+    .text-grid{
+        display:flex;
+        flex-direction: row;
+        padding:30px;
+
+        font: 300 16px/1.3 "Karla", sans-serif;
+
+        h1{
+            flex-basis: 20%;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        ul{
+            list-style-type: none;
+            width:20%;
+            li:first-child{
+                font-weight: 700;
+                text-transform: uppercase;
+                opacity:.5;
+                letter-spacing: 0.1em;
+            }
+
+            li{
+                width:80%;
+                margin-bottom:.666em;
+            }
+
+        }
+
+        color: #F7F4ED;
+        &.light{
+            color: black;
+
+            ul li:first-child{
+                opacity: .333;
+            }
+        }
+    }
+</style>
+
+<div class:list={["text-grid", theme]}>
+    <h1>{title}</h1>
+    {groups.map(({group, items}) => <ul>
+        <li>{group}</li>
+        {items.map(item => <li>{item}</li>)}
+    </ul>)}
+</div>
