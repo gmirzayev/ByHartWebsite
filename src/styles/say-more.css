@@ -1,5 +1,7 @@
-#say-more-content {
-    background: #F7F4ED;
+#say-more-main {
+    --cream: #F7F4ED;
+
+    background: var(--cream);
 }
 
 .deck-packaging{
