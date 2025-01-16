@@ -1,8 +1,7 @@
 ---
-const { title, theme="light", tags=[] } = Astro.props;
 import "../styles/utils.css";
 
-let categories = {
+const CATEGORIES = {
     strategy:[
         "Original Naming",
         "Brand Identity + Positioning",
@@ -33,16 +32,25 @@ let categories = {
     ],
 }
 
+
+const { title, theme="light", tags=[] } = Astro.props;
+
+// check for typos in the tag list
+let knownTags = Object.entries(CATEGORIES).map(([_, group]) => group).flat()
+for (let t of tags){
+    if (!knownTags.includes(t)) throw new Error(`${title} tag "${t}" not defined in ProjectTags.astro`)
+}
+
 let groups = []
-for (let group in categories){
-    let items = categories[group].filter(t => tags.includes(t))
+for (let group in CATEGORIES){
+    let items = CATEGORIES[group].filter(t => tags.includes(t))
     if (items.length>0) groups.push({ group, items })
 }
 
 ---
 
 <style>
-    .text-grid{
+    .project-tags{
         position: relative;
         display:flex;
         flex-direction: row;
@@ -110,7 +118,7 @@ for (let group in categories){
     }
 </style>
 
-<div class:list={["text-grid", theme]}>
+<div class:list={["project-tags", theme]}>
     <h1>{title}</h1>
     {groups.map(({group, items}) => <ul>
         <li>{group}</li>
