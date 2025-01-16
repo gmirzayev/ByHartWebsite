@@ -59,7 +59,7 @@ const nextProject = projects[1 + projects.findIndex(p => p.name==name)] ?? proje
 <style>
   .project-carousel {
     --background: #242121;
-    --light-text: #f7f4ed;
+    --light-text: var(--cream);
     --karla: "Karla", sans-serif;
     --utile: "utile-display", sans-serif;
 
@@ -119,9 +119,9 @@ const nextProject = projects[1 + projects.findIndex(p => p.name==name)] ?? proje
   }
 
   a.all-projects{
-    --text-color: #363131;
-    --stripe-color: #ebd4c7;
-    --hover-text-color: #f7f4ed;
+    --text-color: var(--ink);
+    --stripe-color: var(--peach);
+    --hover-text-color: var(--cream);
     --hover-stripe-color: #DA1B31;
 
     position:relative;
