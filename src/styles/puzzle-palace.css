@@ -1,0 +1,270 @@
+#puzzle-palace-main {
+    background: var(--cream);
+}
+
+.app-askew{
+    padding:120px 20px;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+
+    .inner{
+        position:relative;
+        display:flex;
+        flex-direction: row;;
+        gap:20px;
+        width:80%;
+        max-width:700px;
+        transform:rotate(15deg);
+    }
+
+    img{
+        width:calc(50% - 10px);
+    }
+}
+
+.text-columns{
+    padding:40px 20px;
+}
+
+.app-cards{
+    padding:40px 0px;
+    background: url(/images/backgrounds/puzzle-palace_crossword.svg);
+    background-position: top center;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    overflow:hidden;
+
+    .tray{
+        position:relative;
+        display:flex;
+        flex-direction:row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2.5vw;
+    }
+
+    img{
+        width:22.5vw;
+        animation: infinite-slide 10s linear infinite;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+    }
+
+    @media (min-width: 768px) {
+        background-size: cover;
+        padding:100px 0px;
+    }
+}
+
+@keyframes infinite-slide {
+    0%{ transform: translateX(0);}
+    100%{ transform: translateX(calc(-125vw));}
+}
+
+.logo-motion{
+    margin:45px 20px;
+    display: flex;
+    justify-content: center;
+
+    video{
+        width: 100%;
+        max-width:840px;
+    }
+
+    @media (min-width: 768px) {
+        margin:120px 20px;
+    }
+}
+
+section{
+    margin:45px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1{
+        font: 700 16px "Karla", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin-bottom: 45px;
+    }
+
+    @media (min-width: 768px) {
+        margin: 120px 20px;
+    }
+}
+
+img.color-palette,
+img.type-kit{
+    margin:0 auto;
+}
+
+.landing-page{
+    margin: 45px auto;
+    border-radius:5px;
+    width: calc(100% - 40px);
+
+    @media (min-width: 768px) {
+        margin:120px auto;
+        max-width: 840px;
+    }
+}
+
+
+.palace-rules{
+    h1{
+        text-transform: none;
+        letter-spacing: 0;
+    }
+
+    @media (min-width: 768px) {
+        padding-top:75px;
+    }
+}
+
+
+.portraits{
+    padding: 60px 20px;
+    margin-bottom:45px;
+
+    background: url("/images/backgrounds/puzzle-palace_sudoku-grid.svg");
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+    @media (min-width: 768px) {
+        padding: 120px 20px;
+    }
+}
+
+.portraits .slideshow{
+    display: grid;
+    grid-template-areas: single;
+    align-items: end;
+    justify-content: center;
+
+    img{
+        grid-area: single;
+        opacity:0;
+        transition: opacity .5s linear;
+        border-radius: 5px;
+
+        &.active{
+            opacity:1;
+        }
+
+        &.app{
+            margin:0 auto 18% auto;
+            z-index:10;
+            opacity:1;
+            width: 40%;
+        }
+    }
+
+    @media (min-width: 768px) {
+        margin:0 auto;
+        img{
+            max-width: 650px;
+        }
+    }
+}
+
+.splash-screen{
+    /* switch b/t column on mobile and row on desktop */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:10px;
+    padding:0 20px;
+
+    > div{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        margin-top:70px;
+    }
+}
+
+.values .slideshow{
+    display: grid;
+    grid-template-areas: single;
+    justify-content: center;
+
+    > picture{
+        grid-area: single;
+        opacity:0;
+        transition: opacity .5s linear;
+        img{
+            margin:0 auto;
+        }
+
+        &.active{
+            opacity:1;
+        }
+    }
+
+    @media (min-width: 768px) {
+        margin:0 auto;
+    }
+}
+
+.cutting-room {
+    img{
+        border-radius: 5px;
+    }
+
+    .two-col{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+
+        @media (min-width: 768px) {
+        }
+    }
+
+    .square{
+        width:calc(100% - 40px);
+        max-width:220px;
+        margin:auto;
+        margin-top:45px;
+
+        @media (min-width: 768px) {
+            max-width:840px;
+            margin-top:120px;
+        }
+    }
+
+    .narrow{
+        width:calc(100% - 40px);
+        max-width:220px;
+        margin:auto;
+        margin-top:45px;
+
+        @media (min-width: 768px) {
+            max-width:335px;
+            margin-top:120px;
+        }
+
+    }
+
+    .three-col{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        margin-top:45px;
+
+        @media (min-width: 768px) {
+            margin-top:120px;
+        }
+
+    }
+}
+
+

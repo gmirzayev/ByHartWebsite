@@ -1,0 +1,261 @@
+---
+import "../../styles/utils.css";
+import "../../styles/puzzle-palace.css";
+import Image from "astro/components/Image.astro";
+import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectTags from "@components/ProjectTags.astro";
+import ScrollImage from "@components/ScrollImage.astro";
+import Navigation from "@components/Navigation.astro";
+import ProjectCarousel from "@components/ProjectCarousel.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
+import ResponsiveBackground from "@components/ResponsiveBackground.astro";
+import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
+
+import Hero from "@assets/PuzzlePalace/img/01_PP_Hero_16x9_D.png"
+import AppAskewLeft from "@assets/PuzzlePalace/img/02_PP_APP.png"
+import AppAskewRight from "@assets/PuzzlePalace/img/03_PP_APP.png"
+
+import AppCardA from "@assets/PuzzlePalace/img/04_PP_illustration 1.png"
+import AppCardB from "@assets/PuzzlePalace/img/04_PP_illustration 2.png"
+import AppCardC from "@assets/PuzzlePalace/img/04_PP_illustration 3.png"
+import AppCardD from "@assets/PuzzlePalace/img/04_PP_illustration 4.png"
+import AppCardE from "@assets/PuzzlePalace/img/04_PP_illustration 5.png"
+// moved to /public/images/backgrounds:
+// import AppCardsBg from "@assets/PuzzlePalace/img/04_PP_BG_crossword.svg"
+
+import LogoMotion from "@assets/PuzzlePalace/img/05_PP_Logo.mp4"
+import PaletteDesktop from "@assets/PuzzlePalace/img/06_PP_Color Palette_D.svg"
+import PaletteMobile from "@assets/PuzzlePalace/img/06_PP_Color Palette_M.svg"
+import TypographyDesktop from "@assets/PuzzlePalace/img/07_PP_Type_D.svg"
+import TypographyMobile from "@assets/PuzzlePalace/img/07_PP_Type_M.svg"
+import SubwayPoster from "@assets/PuzzlePalace/img/08_PP_Campaign.png"
+import LandingPage from "@assets/PuzzlePalace/img/09_PP_LP.png"
+
+import SplashScreenA from "@assets/PuzzlePalace/img/10_PP_App Splash Screen_1.png"
+import SplashScreenB from "@assets/PuzzlePalace/img/10_PP_App Splash Screen_2.png"
+import SplashScreenC from "@assets/PuzzlePalace/img/10_PP_App Splash Screen_3.png"
+import SplashScreenD from "@assets/PuzzlePalace/img/10_PP_App Splash Screen_4.png"
+import SplashScreenE from "@assets/PuzzlePalace/img/10_PP_App Splash Screen_5.png"
+import SplashScreenF from "@assets/PuzzlePalace/img/10_PP_App Splash Screen_6.png"
+
+import PortraitA from "@assets/PuzzlePalace/portraits/09_PP_BG_BW_1.png"
+import PortraitB from "@assets/PuzzlePalace/portraits/09_PP_BG_BW_2.png"
+import PortraitC from "@assets/PuzzlePalace/portraits/09_PP_BG_BW_3.png"
+import PortraitD from "@assets/PuzzlePalace/portraits/09_PP_BG_BW_4.png"
+import PortraitE from "@assets/PuzzlePalace/portraits/09_PP_BG_BW_5.png"
+import PortraitF from "@assets/PuzzlePalace/portraits/09_PP_BG_BW_6.png"
+import PortraitG from "@assets/PuzzlePalace/portraits/09_PP_BG_BW_7.png"
+import PortraitApp from "@assets/PuzzlePalace/portraits/09_PP_PHONE_SUDOKU.svg"
+// moved to /public/images/backgrounds:
+// import PortraitsBg from "@assets/PuzzlePalace/portraits/09_PP_BG_SUDOKU_GRID.svg"
+
+import ValueAMobile from "@assets/PuzzlePalace/values/value1-m.svg"
+import ValueADesktop from "@assets/PuzzlePalace/values/value1-d.svg"
+import ValueBMobile from "@assets/PuzzlePalace/values/value2-m.svg"
+import ValueBDesktop from "@assets/PuzzlePalace/values/value2-d.svg"
+import ValueCMobile from "@assets/PuzzlePalace/values/value3-m.svg"
+import ValueCDesktop from "@assets/PuzzlePalace/values/value3-d.svg"
+import ValueDMobile from "@assets/PuzzlePalace/values/value4-m.svg"
+import ValueDDesktop from "@assets/PuzzlePalace/values/value4-d.svg"
+import ValueEMobile from "@assets/PuzzlePalace/values/value5-m.svg"
+import ValueEDesktop from "@assets/PuzzlePalace/values/value5-d.svg"
+
+import EtcALeft from "@assets/PuzzlePalace/img/12_PP_cutting room floor_image_2.png"
+import EtcARight from "@assets/PuzzlePalace/img/13_PP_cutting room floor_image_1.png"
+import EtcB from "@assets/PuzzlePalace/img/14_PP_cutting room floor_image.png"
+import EtcC from "@assets/PuzzlePalace/img/15_PP_cutting room floor_image.png"
+import EtcD from "@assets/PuzzlePalace/img/16_PP_cutting room floor_image.png"
+import ImgELeft from "@assets/PuzzlePalace/img/17_PP_cutting room floor_image.png"
+import ImgECenter from "@assets/PuzzlePalace/img/18_PP_cutting room floor_image.png"
+import ImgERight from "@assets/PuzzlePalace/img/19_PP_cutting room floor_image.png"
+
+---
+
+<InternalLayout>
+  <div id="puzzle-palace-main">
+    <ScrollImage hero={Hero} brand="Puzzle Palace" tagline="Your State of Play" />
+    <ProjectTags title="Puzzle Palace" theme="light" tags={[
+      "Brand Identity + Positioning",
+      "Logo Design",
+      "Art + Illustration",
+      "Product Design (UX/UI)",
+      "Original Naming",
+      "Writing + Editing",
+      "Surprise + Delight",
+    ]} />
+    <div id="puzzle-palace-content">
+
+      <div class="app-askew">
+        <div class="inner">
+          <Image src={AppAskewLeft} alt=" " />
+          <Image src={AppAskewRight} alt=" " />
+        </div>
+      </div>
+
+      <ResponsiveTextBlock class="text-columns">
+        <div>
+          <h1>For us, it’s all fun & games—and so much more.</h1>
+          <p>It’s a way to connect with yourself. A mental check-in. A daily ritual. A me-time tradition. It’s a moment to pause. To escape the stressors of the day. A brain food snack to fuel you.</p>
+        </div>
+        <div>
+          <p>It’s how we stay sharp. Stay loose. Stay creative. Stay fresh. We keep reaching, thinking, trying, and learning—all while playing. It’s how we grow smarter while we stay forever young at heart.</p>
+          <p>It’s that incredible feeling of solving it—of tapping a honed skill, stumbling upon a hidden knack, or unlocking a personal best. Discovering clever and nimble new ways of cracking the code.</p>
+        </div>
+      </ResponsiveTextBlock>
+
+      <div class="app-cards">
+        <div class="tray">
+          <Image src={AppCardE} alt=" " />
+          <Image src={AppCardA} alt=" " />
+          <Image src={AppCardB} alt=" " />
+          <Image src={AppCardC} alt=" " />
+          <Image src={AppCardD} alt=" " />
+          <Image src={AppCardE} alt=" " />
+          <Image src={AppCardA} alt=" " />
+          <Image src={AppCardB} alt=" " />
+          <Image src={AppCardC} alt=" " />
+          <Image src={AppCardD} alt=" " />
+        </div>
+      </div>
+
+      <div class="logo-motion">
+        <video loop playsinline autoplay muted>
+          <source src={LogoMotion} />
+        </video>
+      </div>
+
+      <section>
+        <h1>Color Palette</h1>
+        <ResponsiveImage imgClass="color-palette" mobile={PaletteMobile} desktop={PaletteDesktop} />
+      </section>
+
+      <section>
+        <h1>Type Kit</h1>
+        <ResponsiveImage imgClass="type-kit" mobile={TypographyMobile} desktop={TypographyDesktop} />
+      </section>
+
+      <Image src={SubwayPoster} widths={[2200]} alt=" " />
+
+      <Image class="landing-page" src={LandingPage} widths={[2200]} alt=" " />
+
+      <section>
+        <h1>Palace Rules</h1>
+        <ResponsiveTextBlock class="palace-rules">
+          <div>
+            <h1>Dos</h1>
+            <p>Utilize smart, playful, and rewarding brand values here, for language that sets a scene and builds a unique world.</p>
+            <p>Lean into ‘Palace’ being a reference to a palace of the mind (personalization/personal challenge), synonymous with bounty (quality + quantity), or evocative of the sense of adventure (personal challenge/quest/goal oriented) reminiscent of stories in which a palace or kingdom is featured.</p>
+            <p>Lean into simple smiles and words that slightly elevate the tone; knowing while still being approachable.</p>
+            <p>Use unexpected-yet-fitting, modern, and descriptive words for the delight factor (i.e Bounty, Feast, Queen, Kingdom, Adventure, Festivities, Chamber, Joust)</p>
+          </div>
+          <div>
+            <h1>Don’ts</h1>
+            <p>Avoid the cheesiest of puns when possible, or overly jokey copy (as that could indicate “forced laughter” or infantilizing/talking down to our players)</p>
+            <p>Avoid leaning into any more than sparingly or as needed into ‘Palace’ language primarily focused on the royal treatment or royal court (where’s the challenge or adventure in getting handed everything or pampered due to privilege?).</p>
+            <p>Never default to ‘King’ alone — it’s gendered and we have reason to suspect the majority of our audience identifies as women (+ see guidance above).</p>
+            <p>Avoid words rarely used today ((i.e Good morrow, ye, hark)</p>
+            <p>Avoid leaning too hard into “Palace Language” of any kind. Try to limit to once per piece of copy (i.e email, ad)</p>
+          </div>
+        </ResponsiveTextBlock>
+      </section>
+
+
+      <div class="portraits">
+        <div class="slideshow">
+          <Image class="active" src={PortraitA} widths={[1200]} alt=" " />
+          <Image src={PortraitB} widths={[1200]} alt=" " />
+          <Image src={PortraitC} widths={[1200]} alt=" " />
+          <Image src={PortraitD} widths={[1200]} alt=" " />
+          <Image src={PortraitE} widths={[1200]} alt=" " />
+          <Image src={PortraitF} widths={[1200]} alt=" " />
+          <Image src={PortraitG} widths={[1200]} alt=" " />
+          <Image class="app" src={PortraitApp} widths={[1200]} alt=" " />
+        </div>
+      </div>
+
+      <section>
+        <h1>Storyboard: App load screen</h1>
+        <div class="splash-screen">
+          <div>
+            <Image src={SplashScreenA} widths={[1200]} alt=" " />
+            <Image src={SplashScreenB} widths={[1200]} alt=" " />
+            <Image src={SplashScreenC} widths={[1200]} alt=" " />
+          </div>
+          <div>
+            <Image src={SplashScreenD} widths={[1200]} alt=" " />
+            <Image src={SplashScreenE} widths={[1200]} alt=" " />
+            <Image src={SplashScreenF} widths={[1200]} alt=" " />
+          </div>
+        </div>
+      </section>
+
+      <section class="values">
+        <h1>Living Values</h1>
+        <div class="slideshow">
+          <ResponsiveImage class="active" mobile={ValueAMobile} desktop={ValueADesktop} />
+          <ResponsiveImage mobile={ValueBMobile} desktop={ValueBDesktop} />
+          <ResponsiveImage mobile={ValueCMobile} desktop={ValueCDesktop} />
+          <ResponsiveImage mobile={ValueDMobile} desktop={ValueDDesktop} />
+          <ResponsiveImage mobile={ValueEMobile} desktop={ValueEDesktop} />
+        </div>
+      </section>
+
+      <section class="cutting-room">
+        <h1>Cutting Room Floor</h1>
+        <div class="two-col">
+          <Image src={EtcALeft} widths={[1200]} alt=" " />
+          <Image src={EtcARight} widths={[1200]} alt=" " />
+        </div>
+        <Image class="square" src={EtcB} widths={[1200]} alt=" " />
+        <Image class="square" src={EtcC} widths={[1200]} alt=" " />
+        <Image class="narrow" src={EtcD} widths={[1200]} alt=" " />
+        <div class="three-col">
+          <Image src={ImgELeft} widths={[1200]} alt=" " />
+          <Image src={ImgECenter} widths={[1200]} alt=" " />
+          <Image src={ImgERight} widths={[1200]} alt=" " />
+        </div>
+
+      </section>
+
+    </div>
+    <ProjectCarousel name="Puzzle Palace" />
+
+</div>
+</InternalLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // work around the Safari bug that doesn't recalculate vw units when the window resizes
+    const {userAgent:ua} = navigator,
+          isSafari = ua.indexOf('Safari') >=  0 &&
+                     ua.indexOf('Chrome') == -1 &&
+                     ua.indexOf('CriOS/') == -1
+
+    if (isSafari) window.addEventListener("resize", () => {
+      document.querySelectorAll(".app-cards img").forEach((card:HTMLElement) => {
+        card.style.animationName = "none"
+        setTimeout(() => card.style.animationName = "infinite-slide" )
+      })
+    })
+
+    // crossfade portraits over the sudoku background & values text
+    let dt = 0
+    document.querySelectorAll('.slideshow').forEach(elt => {
+        let slides = elt.querySelectorAll(":scope>picture,:scope>img:not(.app"),
+            len = slides.length,
+            idx = 0
+
+        const advance = () => {
+            idx++
+            slides.forEach((img, i) => {
+                img.classList.toggle('active', i==idx%len)
+            })
+        }
+
+        setTimeout(() => setInterval(advance, 2000), dt)
+        dt += 666
+    })
+
+  })
+</script>
+
