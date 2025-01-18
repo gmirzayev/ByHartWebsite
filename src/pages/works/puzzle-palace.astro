@@ -4,7 +4,7 @@ import "../../styles/puzzle-palace.css";
 import Image from "astro/components/Image.astro";
 import InternalLayout from "@layouts/InternalLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
-import ScrollImage from "@components/ScrollImage.astro";
+import ProjectHead from "@components/ProjectHead.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectCarousel from "@components/ProjectCarousel.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
@@ -73,7 +73,7 @@ import ImgERight from "@assets/PuzzlePalace/img/19_PP_cutting room floor_image.p
 
 <InternalLayout>
   <div id="puzzle-palace-main">
-    <ScrollImage hero={Hero} brand="Puzzle Palace" tagline="Your State of Play" />
+    <ProjectHead hero={Hero} brand="Puzzle Palace" tagline="Your State of Play" />
     <ProjectTags title="Puzzle Palace" theme="light" tags={[
       "Brand Identity + Positioning",
       "Logo Design",

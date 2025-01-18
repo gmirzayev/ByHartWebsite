@@ -4,7 +4,7 @@ import "../../styles/say-more.css";
 import Image from "astro/components/Image.astro";
 import InternalLayout from "@layouts/InternalLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
-import ScrollImage from "@components/ScrollImage.astro";
+import ProjectHead from "@components/ProjectHead.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectCarousel from "@components/ProjectCarousel.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
@@ -51,7 +51,7 @@ import SocialPodcast from "@assets/SayMore/img/21_SM_Layer_social2.png";
 
 <InternalLayout>
   <div id="say-more-main">
-    <ScrollImage hero={Hero} brand="Say More" tagline="Conversation Cards + Journaling Prompts" />
+    <ProjectHead hero={Hero} brand="Say More" tagline="Conversation Cards + Journaling Prompts" />
     <ProjectTags title="Say More" theme="light" tags={[
         "Brand Identity + Positioning",
         "Logo Design",

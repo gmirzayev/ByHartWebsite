@@ -4,7 +4,7 @@ import "../../styles/pet-dermatology-center.css";
 import Image from "astro/components/Image.astro";
 import InternalLayout from "@layouts/InternalLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
-import ScrollImage from "@components/ScrollImage.astro";
+import ProjectHead from "@components/ProjectHead.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectCarousel from "@components/ProjectCarousel.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
@@ -30,7 +30,7 @@ const brand = "Pet Dermatology Center"
 
 <InternalLayout>
   <div id="pet-derm-main">
-    <ScrollImage hero={Hero} brand={brand} tagline="A Viz ID that Stretches the Imagination" />
+    <ProjectHead hero={Hero} brand={brand} tagline="A Viz ID that Stretches the Imagination" />
     <ProjectTags title={brand} theme="light" tags={[
         "Brand Identity + Positioning",
         "Logo Design",

@@ -4,7 +4,7 @@ import "../../styles/nightingale.css";
 import Image from "astro/components/Image.astro";
 import InternalLayout from "@layouts/InternalLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
-import ScrollImage from "@components/ScrollImage.astro";
+import ProjectHead from "@components/ProjectHead.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectCarousel from "@components/ProjectCarousel.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
@@ -37,7 +37,7 @@ import PitchMobile from "@assets/Nightingale/img/Nightingale-4-mobile.png";
 
 <InternalLayout>
   <div id="nightingale-main">
-    <ScrollImage hero={Hero} brand="Nightingale" tagline="Happier People, Healthier Pets" />
+    <ProjectHead hero={Hero} brand="Nightingale" tagline="Happier People, Healthier Pets" />
     <ProjectTags title="Nightingale" theme="light" tags={[
         "Brand Identity + Positioning",
         "CX",

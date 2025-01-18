@@ -2,7 +2,7 @@
 import "../../styles/utils.css";
 import InternalLayout from "@layouts/InternalLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
-import ScrollImage from "@components/ScrollImage.astro";
+import ProjectHead from "@components/ProjectHead.astro";
 import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
 import Header from "@assets/Kindra/img/Kindra_Header.jpg";
@@ -101,7 +101,7 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 </style>
 <InternalLayout>
   <div id="kindra-main">
-    <ScrollImage hero={Header} brand="Kindra" tagline="The New Era of You" />
+    <ProjectHead hero={Header} brand="Kindra" tagline="The New Era of You" />
     <ProjectTags title="Kindra" theme="light" tags={[
       "Brand Identity + Positioning",
       "Video + Photography",

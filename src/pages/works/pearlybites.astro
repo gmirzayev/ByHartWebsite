@@ -2,7 +2,7 @@
 import "../../styles/utils.css";
 import InternalLayout from "@layouts/InternalLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
-import ScrollImage from "@components/ScrollImage.astro";
+import ProjectHead from "@components/ProjectHead.astro";
 import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectCarousel from "@components/ProjectCarousel.astro";
@@ -65,7 +65,7 @@ import Header from "@assets/PearlyBites/img/PearlyBites_Header.png";
 </style>
 <InternalLayout>
   <div id="pearly-main">
-    <ScrollImage hero={Header} brand="Pearly Bites" tagline="Come. Sit. Smile." />
+    <ProjectHead hero={Header} brand="Pearly Bites" tagline="Come. Sit. Smile." />
     <ProjectTags title="Pearly Bites" theme="light" tags={[
       "Brand Identity + Positioning",
       "Logo Design",

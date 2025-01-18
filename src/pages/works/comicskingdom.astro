@@ -2,7 +2,7 @@
 import "../../styles/utils.css";
 import InternalLayout from "@layouts/InternalLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
-import ScrollImage from "@components/ScrollImage.astro";
+import ProjectHead from "@components/ProjectHead.astro";
 import Header from "@assets/ComicsKingdom/img/CK_Cover.png";
 import Image from "astro/components/Image.astro";
 import CKAnimation from "@assets/ComicsKingdom/CK_Animation.mp4";
@@ -193,9 +193,9 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
 </style>
 <InternalLayout>
   <div id="comics-main">
-    <ScrollImage hero={Header} brand="Comics Kingdom" tagline="A Feast of Fandom" />
+    <ProjectHead hero={Header} brand="Comics Kingdom" tagline="A Feast of Fandom" />
     <div style={{ backgroundColor: "#17100B" }}>
-      <!-- <ScrollImage theme="dark" /> -->
+      <!-- <ProjectHead theme="dark" /> -->
       <ProjectTags title="Comics Kingdom" theme="dark" tags={[
         "Brand Identity + Positioning",
         "Logo Design",

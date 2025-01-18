@@ -2,7 +2,7 @@
 import "../../styles/utils.css";
 import InternalLayout from "@layouts/InternalLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
-import ScrollImage from "@components/ScrollImage.astro";
+import ProjectHead from "@components/ProjectHead.astro";
 import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
 import Header from "@assets/Bluprint/img/Bluprint_Header.png";
@@ -96,7 +96,7 @@ import ProjectCarousel from "@components/ProjectCarousel.astro";
 </style>
 <InternalLayout>
   <div id="bluprint-main">
-    <ScrollImage hero={Header} brand="Bluprint" tagline="Watch + Learn" />
+    <ProjectHead hero={Header} brand="Bluprint" tagline="Watch + Learn" />
     <ProjectTags title="Bluprint" theme="light" tags={[
       "Brand Identity + Positioning",
       "Logo Design",
