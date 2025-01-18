@@ -1,0 +1,81 @@
+#pet-derm-main {
+    background: var(--cream);
+
+    --ginger: #C35E28;
+    --blue: #525c6d;
+}
+
+.mosaic{
+    padding:0 20px;
+}
+
+.pull-quote{
+    padding:40px 20px 0 20px;
+    font: 700 26px/1.2 "Karla", sans-serif;
+    letter-spacing: -0.02em;
+
+    p{
+        margin:0 auto;
+        max-width: 840px;
+    }
+
+    @media (min-width: 768px) {
+        padding-top:100px;
+    }
+
+}
+
+.narrative{
+    padding:40px 20px 0 20px;
+    @media (min-width: 768px) {
+        padding-top:100px;
+    }
+}
+
+.color-palette{
+    margin:40px 20px;
+    img{
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+        margin-top:100px;
+    }
+}
+
+.chimera{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+    gap:20px;
+
+    background: var(--blue);
+    padding:40px 20px;
+
+    .head, .tail{
+        width:50%;
+        max-width:375px;
+
+        display: grid;
+        grid-template-areas: single;
+        align-items: end;
+        justify-content: center;
+
+        img{
+            grid-area: single;
+            opacity:0;
+            transition: opacity .5s linear;
+
+            &.active{
+                opacity:1;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        padding:100px 20px;
+        gap:100px;
+    }
+}
