@@ -187,7 +187,6 @@ img.type-kit{
 
     @media (min-width: 768px) {
         flex-direction: row;
-        margin-top:70px;
     }
 }
 
