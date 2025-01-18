@@ -3,7 +3,7 @@ import Navigation from "./Navigation.astro";
 import Image from "astro/components/Image.astro";
 const { brand, tagline, hero } = Astro.props;
 
-// imported images get unpacked into objects with `format` attrs, videos are just a path string
+// imported images get unpacked into ImageMetadata objects with `format` attrs, videos are just a path string
 const type = !!hero.format ? 'image' : 'video'
 
 ---
