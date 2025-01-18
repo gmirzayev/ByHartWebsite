@@ -15,6 +15,7 @@ import LogoBlonde from "@assets/PetDerm/img/PetDerm_Logos_primary_blonde.svg"
 import LogoBlue from "@assets/PetDerm/img/PetDerm_Logos_primary_blue.svg"
 import LogoBrunette from "@assets/PetDerm/img/PetDerm_Logos_primary_brunette.svg"
 import Mosaic from "@assets/PetDerm/img/PetDerm-Mosaic.png"
+import LogoWalk from "@assets/PetDerm/PetDerm_Logo-Walk.mp4"
 import ColorPaletteDesktop from "@assets/PetDerm/img/PetDerm-palette-desktop.svg"
 import ColorPaletteMobile from "@assets/PetDerm/img/PetDerm-palette-mobile.svg"
 import WienerBack from "@assets/PetDerm/head-tail/PetDerm_Logos_dachshund_back_blonde.svg"
@@ -48,7 +49,9 @@ const brand = "Pet Dermatology Center"
         </div>
 
         <div class="logo-animation">
-            <p>Logo animation TKTKTKTKTKTKTK</p>
+            <video loop playsinline autoplay muted>
+                <source src={LogoWalk} />
+              </video>
         </div>
 
         <ResponsiveTextBlock class="narrative">
