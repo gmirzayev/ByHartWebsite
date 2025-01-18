@@ -461,13 +461,14 @@ import SarahGlasses from "../assets/Footer/SarahGlasses.mp4";
 
 <script>
   let emailLink = document.querySelector("footer .email-header h1")
+  if (emailLink instanceof HTMLElement){
+    emailLink.addEventListener("mouseenter", e => emailLink.dataset.prompt = "Copy our email addy")
 
-  emailLink.addEventListener("mouseenter", e => emailLink.dataset.prompt = "Copy our email addy")
-
-  emailLink.addEventListener("click", e => {
-    e.preventDefault()
-    navigator.clipboard
-      .writeText(e.target.innerText)
-      .then(() => emailLink.dataset.prompt = 'Copied!')
-  })
+    emailLink.addEventListener("click", e => {
+      e.preventDefault()
+      navigator.clipboard
+        .writeText(emailLink.textContent)
+        .then(() => emailLink.dataset.prompt = 'Copied!')
+    })
+  }
 </script>
