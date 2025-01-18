@@ -25,6 +25,15 @@
 
 }
 
+.logo-animation{
+    font-family: fantasy;
+    color:rebeccapurple;
+    padding:40px 20px 0 20px;
+    @media (min-width: 768px) {
+        padding-top:100px;
+    }
+}
+
 .narrative{
     padding:40px 20px 0 20px;
     @media (min-width: 768px) {
