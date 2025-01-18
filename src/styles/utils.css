@@ -4,25 +4,29 @@
   --ink: #363131;
 }
 
-/* @font-face {
-  font-family: "Karla";
-  src: url("/fonts/Karla-Regular.ttf") format("ttf");
-  font-weight: normal;
-  font-style: normal;
-
+a:hover{
+  cursor: url("../assets/HeartCursor.png") 16 16, auto;
 }
 
 @font-face {
-  font-family: "Karla";
-  src: url("/fonts/Karla-Bold.ttf") format("ttf");
-  font-weight: bold;
+  font-family: 'Karla';
   font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/fonts/Karla-VariableFont_wght.ttf") format('truetype');
+}
 
-} */
+@font-face {
+  font-family: 'Karla';
+  font-style: italic;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/fonts/Karla-Italic-VariableFont_wght.ttf") format('truetype');
+}
 
 @font-face {
   font-family: "Covered By Your Grace";
-  src: url("/fonts/CoveredByYourGrace-Regular.ttf") format("ttf");
+  src: url("/fonts/CoveredByYourGrace-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -32,8 +36,4 @@
   src: url("/fonts/FilsonProBold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
-}
-
-a:hover{
-  cursor: url("../assets/HeartCursor.png") 16 16, auto !important;
 }
