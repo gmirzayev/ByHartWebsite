@@ -1,0 +1,344 @@
+---
+import "../styles/utils.css"
+import Ample from "../assets/Home/img/Ample.png";
+import ComicsKingdom from "../assets/Home/Comics_Kingdom.gif";
+import Wizehire from "../assets/Home/img/Wizehire.png";
+import Week from "../assets/Home/Week.gif";
+import DancePartyTime from "../assets/Home/img/Dance_Party_Time.png";
+import MetroVein from "../assets/Home/Metro_Vein.gif";
+import Lockwood from "../assets/Home/img/Lockwood.png";
+import PuzzlePalace from "../assets/Home/img/Puzzle_Palace.png";
+import Sage from "../assets/Home/img/Sage.png";
+import SixFeet from "../assets/Home/img/6_Feet_Apart.png";
+import Bluprint from "../assets/Home/Blueprint.gif";
+import Discovery from "../assets/Home/Discovery.gif";
+import Fab from "../assets/Home/Fab.gif";
+import GeniusKitchen from "../assets/Home/img/Genius_Kitchen.png";
+import Horowitz from "../assets/Home/img/Horowitz_Real_Estate.png";
+import Kindra from "../assets/Home/Kindra.gif";
+import Magnolia from "../assets/Home/img/Magnolia.png";
+import Nightingale from "../assets/Home/img/Nightingale.png";
+import PearlyBites from "../assets/Home/img/Pearly_Bites.png";
+import TheCurve from "../assets/Home/img/The_Curve.png";
+import SayMore from "../assets/Home/img/Say_More.png";
+import Archive from "../assets/Home/img/Archive.png";
+import Firefly from "../assets/Home/img/Firefly.png";
+import PetCenter from "../assets/Home/img/Pet_Center.png";
+import HGTV2 from "../assets/Home/HGTV_2.gif";
+import Photography from "../assets/Home/img/Photography.png";
+import PresentationsAlt from "../assets/Home/img/Presentations_ALT.png";
+import SarahVideo from "../assets/Home/img/Sarah_Video.png";
+import WordOnly from "../assets/Home/img/Word_Only.png";
+import Reach from "../assets/Home/img/Reach.png";
+import ApartmentTherapy from "../assets/Home/img/Apartment_Therapy.png";
+import Illustration from "../assets/Home/Illustration.gif";
+
+const projects = [
+  {
+    slug:"wizehire", title:"Wizehire", img:Wizehire,
+    alt:"Pizza being made through a cutout in the shape of a face on a purple rectangle."
+  },{
+    slug:"lockwood", title:"Lockwood", img:Lockwood,
+    alt:"Entrace to an office with a couch, front desk, and a man walking away from the camera."
+  },{
+    slug:"week+", title:"Week&", img:Week,
+    alt:" "
+  },{
+    slug:"pearly-bites", title:"Pearly Bites", img:PearlyBites,
+    alt:" "
+  },{
+    slug:"discovery", title:"Discovery", img:Discovery,
+    alt:" "
+  },{
+    slug:"magnolia", title:"Magnolia", img:Magnolia,
+    alt:" "
+  },{
+    slug:"genius-kitchen", title:"Genius Kitchen", img:GeniusKitchen,
+    alt:" "
+  },{
+    slug:"illustration", title:"Custom Illustrations", img:Illustration,
+    alt:" "
+  },{
+    slug:"presentations", title:"Presentation Magic", img:PresentationsAlt,
+    alt:" "
+  },{
+    slug:"ample", title:"Ample", img:Ample,
+    alt:"Entrace to an office with a couch, front desk, and a man walking away from the camera."
+  },{
+    slug:"metro-vein-center", title:"Metro Vein Center", img:MetroVein,
+    alt:"Pizza being made through a cutout in the shape of a face on a purple rectangle."
+  },{
+    slug:"puzzle-palace", title:"Puzzle Palace", img:PuzzlePalace,
+    alt:" "
+  },{
+    slug:"nightingale", title:"Nightingale Vets", img:Nightingale,
+    alt:" "
+  },{
+    slug:"fab", title:"Fab", img:Fab,
+    alt:" "
+  },{
+    slug:"say-more", title:"Say More", img:SayMore,
+    alt:" "
+  },{
+    slug:"six-feet", title:"6 Feet Apart", img:SixFeet,
+    alt:" ",
+  },{
+    slug:"bluprint", title:"Bluprint", img:Bluprint,
+    alt:" "
+  },{
+    slug:"apartment-therapy", title:"Apartment Therapy", img:ApartmentTherapy,
+    alt:" "
+  },{
+    slug:"photography", title:"Photography Direction", img:Photography,
+    alt:" "
+  },{
+    slug:"top-secret-archive", title:"Top Secret Archive", img:Archive,
+    alt:" "
+  },{
+    slug:"comics-kingdom", title:"Comics Kingdom", img:ComicsKingdom,
+    alt:"Two speech bubbles turned vertically and having eyes so they look like faces.",
+  },{
+    slug:"sage", title:"Sage", img:Sage,
+    alt:" ",
+  },{
+    slug:"dance-party-time", title:"Dance Party Time", img:DancePartyTime,
+    alt:"",
+  },{
+    slug:"kindra", title:"Kindra", img:Kindra,
+    alt:"",
+  },{
+    slug:"curve-report", title:"The Curve Report", img:TheCurve,
+    alt:"",
+  },{
+    slug:"horowitz", title:"Horowitz", img:Horowitz,
+    alt:"",
+  },{
+    slug:"pet-dermatology-center", title:"Pet Dermatology Center", img:PetCenter,
+    alt:"",
+  },{
+    slug:"firefly", title:"Firefly Vets", img:Firefly,
+    alt:"",
+  },{
+    slug:"hgtv", title:"HGTV", img:HGTV2,
+    alt:"",
+  },{
+    slug:"nbc-universal", title:"NBC Universal Upfronts", img:Reach,
+    alt:"",
+  },{
+    slug:"in-words-only", title:"In Words Only", img:WordOnly,
+    alt:"",
+  },{
+    slug:"see-sarah-dance", title:"See Sarah Dance", img:SarahVideo,
+    alt:"",
+  },
+]
+
+// Ordering for two-column layout
+let narrow_layout = [
+  [
+    'wizehire',
+    'lockwood',
+    'sage',
+    'dance-party-time',
+    'kindra',
+    'pearly-bites',
+    'say-more',
+    'horowitz',
+    'six-feet',
+    'pet-dermatology-center',
+    'bluprint',
+    'apartment-therapy',
+    'illustration',
+    'nbc-universal',
+    'top-secret-archive',
+    'in-words-only',
+  ],
+  [
+    'ample',
+    'comics-kingdom',
+    'metro-vein-center',
+    'puzzle-palace',
+    'week+',
+    'nightingale',
+    'fab',
+    'curve-report',
+    'discovery',
+    'magnolia',
+    'genius-kitchen',
+    'firefly',
+    'hgtv',
+    'photography',
+    'presentations',
+    'see-sarah-dance',
+  ],
+]
+
+// Ordering for three-column layout
+let wide_layout = [
+  [
+    'wizehire',
+    'lockwood',
+    'week+',
+    'pearly-bites',
+    'discovery',
+    'magnolia',
+    'genius-kitchen',
+    'illustration',
+    'presentations',
+  ],
+  [
+    'ample',
+    'metro-vein-center',
+    'puzzle-palace',
+    'nightingale',
+    'fab',
+    'say-more',
+    'six-feet',
+    'bluprint',
+    'apartment-therapy',
+    'photography',
+    'top-secret-archive',
+  ],
+  [
+    'comics-kingdom',
+    'sage',
+    'dance-party-time',
+    'kindra',
+    'curve-report',
+    'horowitz',
+    'pet-dermatology-center',
+    'firefly',
+    'hgtv',
+    'nbc-universal',
+    'in-words-only',
+    'see-sarah-dance',
+  ],
+]
+
+function getProject(slug){
+  const project = projects.find(p => p.slug == slug)
+  if (!project) throw new Error(`Unknown project slug: ${slug}`)
+  return project
+}
+
+---
+
+<div class="works-grid">
+  <div class="wide">
+    {wide_layout.map(slugs =>
+      <div class="column">{
+        slugs.map(slug => {
+            const {title, img, alt} = getProject(slug)
+            return <div class="project">
+              <a href={`/works/${slug}`} data-title={title} >
+                <img src={img.src} alt={alt} />
+                <h2>{title}</h2>
+              </a>
+            </div>
+        })
+      }</div>
+    )}
+  </div>
+
+  <div class="narrow">
+    {narrow_layout.map(slugs =>
+      <div class="column">{
+        slugs.map(slug => {
+          const {title, img, alt} = getProject(slug)
+          return <div class="project">
+            <a href={`/works/${slug}`} data-title={title} >
+              <img src={img.src} alt={alt} />
+              <h2>{title}</h2>
+            </a>
+          </div>
+        })
+      }</div>
+    )}
+  </div>
+</div>
+
+<style>
+  .works-grid{
+    padding:0 25px;
+
+    @media (min-width: 768px) {
+      padding:0 40px;
+    }
+  }
+
+  .works-grid .project{
+    position: relative;
+    margin-bottom: 28px;
+
+    img{
+      border-radius: 6px;
+      margin-bottom:10px;
+    }
+
+    h2{
+      font:400 14px/1 "utile-display", sans-serif;
+      letter-spacing: 0.05em;
+      color: var(--cream);
+    }
+
+
+    a::after {
+      content: attr(data-title);
+      position: absolute;
+      left:50%;
+      top:50%;
+      padding:0 30px;
+      height: 38px;
+      border-radius: 35px;
+      color: black;
+      font: 14px/2.7 "Karla", sans-serif;
+      letter-spacing:0.1em;
+      text-transform: uppercase;
+      background-color: var(--peach);
+      text-align: center;
+      white-space: nowrap;
+      pointer-events: none;
+      box-shadow: 0 0 40px rgba(0,0,0,50%);
+
+      display:none;
+
+      opacity:0;
+      transform: translate(-50%, -50%) rotate(16deg);
+      transform-origin: top left;
+      transition: opacity 333ms, transform 333ms;
+    }
+
+    a:hover::after {
+      opacity:1;
+      transform: translate(-48%, -50%) rotate(8deg);
+    }
+
+    @media (min-width: 768px) {
+      margin-bottom: 40px;
+      h2{ display:none; }
+      a::after{ display:block; }
+    }
+  }
+
+  .works-grid .narrow{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  .works-grid .wide{
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      display: grid;
+    }
+  }
+</style>
