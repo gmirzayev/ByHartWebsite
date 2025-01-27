@@ -7,9 +7,13 @@ import Logo from "@assets/Navigation/HomeLogo.png";
 import DarkLogo from "@assets/Navigation/LogoDark.png";
 import HeartDropdown from "@assets/Navigation/HeartDropdown.svg";
 import CloseButton from "@assets/Navigation/CloseButton.png";
+import HeartDropdownDark from "@assets/Navigation/HeartDropdownDark.svg";
 import GlassesSafari from "@assets/Navigation/eye.mov";
 import GlassesChrome from "@assets/Navigation/eye.webm";
 const { theme } = Astro.props;
+
+
+const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
 ---
 
 <style>
@@ -145,8 +149,8 @@ const { theme } = Astro.props;
     opacity: 0;
     transform: translateY(-100%);
     transition:
-      transform 0.2s,
-      opacity 0.2s;
+      transform .666s ease-in-out,
+      opacity .666s ease-out;
   }
   .mobile-dropdown-toggle {
     display: initial;
@@ -225,8 +229,8 @@ const { theme } = Astro.props;
         class="mobile-dropdown-toggle"
         aria-hidden="true"
       >
-        <Image id="dropdown-open" src={HeartDropdown} alt="hearts" />
-        <Image id="dropdown-close" alt="X" src={CloseButton} />
+        <Image id="dropdown-open" src={HeartDropdownIcon} alt="hearts" />
+        <Image id="dropdown-close" alt="X" width="20" src={CloseButton} />
       </button>
       <div class="dropdown-link-container">
         <a href="/" class="mobile-nav-link nav-link--header">SEE OUR WORK</a>
