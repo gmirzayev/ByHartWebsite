@@ -18,12 +18,23 @@ import Mosaic from "@assets/PetDerm/img/PetDerm-Mosaic.svg"
 import LogoWalk from "@assets/PetDerm/PetDerm_Logo-Walk.mp4"
 import ColorPaletteDesktop from "@assets/PetDerm/img/PetDerm-palette-desktop.svg"
 import ColorPaletteMobile from "@assets/PetDerm/img/PetDerm-palette-mobile.svg"
-import WienerBack from "@assets/PetDerm/head-tail/PetDerm_Logos_dachshund_back_blonde.svg"
-import WienerFront from "@assets/PetDerm/head-tail/PetDerm_Logos_dachshund_front_blonde.svg"
-import CatBack from "@assets/PetDerm/head-tail/PetDerm_Logos_fluffycat_back_blonde.svg"
-import CatFront from "@assets/PetDerm/head-tail/PetDerm_Logos_fluffycat_front_blonde.svg"
-import FidoBack from "@assets/PetDerm/head-tail/PetDerm_Logos_retriever_back_blonde.svg"
-import FidoFront from "@assets/PetDerm/head-tail/PetDerm_Logos_retriever_front_blonde.svg"
+
+
+import HeadA from "@assets/PetDerm/head-tail/pet1-head.svg"
+import TailA from "@assets/PetDerm/head-tail/pet1-tail.svg"
+import HeadB from "@assets/PetDerm/head-tail/pet2-head.svg"
+import TailB from "@assets/PetDerm/head-tail/pet2-tail.svg"
+import HeadC from "@assets/PetDerm/head-tail/pet3-head.svg"
+import TailC from "@assets/PetDerm/head-tail/pet3-tail.svg"
+import HeadD from "@assets/PetDerm/head-tail/pet4-head.svg"
+import TailD from "@assets/PetDerm/head-tail/pet4-tail.svg"
+import HeadE from "@assets/PetDerm/head-tail/pet5-head.svg"
+import TailE from "@assets/PetDerm/head-tail/pet5-tail.svg"
+import HeadF from "@assets/PetDerm/head-tail/pet6-head.svg"
+import TailF from "@assets/PetDerm/head-tail/pet6-tail.svg"
+import HeadG from "@assets/PetDerm/head-tail/pet7-head.svg"
+import TailG from "@assets/PetDerm/head-tail/pet7-tail.svg"
+
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 
 const brand = "Pet Dermatology Center"
@@ -69,17 +80,24 @@ const brand = "Pet Dermatology Center"
             <ResponsiveImage mobile={ColorPaletteMobile} desktop={ColorPaletteDesktop} />
         </div>
 
-
         <div class="chimera">
             <div class="head">
-                <Image class="active" src={WienerFront} alt=" " />
-                <Image src={CatFront} alt=" " />
-                <Image src={FidoFront} alt=" " />
+                <Image class="active" src={HeadA} alt=" " />
+                <Image src={HeadB} alt=" " />
+                <Image src={HeadC} alt=" " />
+                <Image src={HeadD} alt=" " />
+                <Image src={HeadE} alt=" " />
+                <Image src={HeadF} alt=" " />
+                <Image src={HeadG} alt=" " />
             </div>
             <div class="tail">
-                <Image src={WienerBack} alt=" " />
-                <Image src={CatBack} alt=" " />
-                <Image class="active" src={FidoBack} alt=" " />
+                <Image src={TailA} alt=" " />
+                <Image src={TailB} alt=" " />
+                <Image src={TailC} alt=" " />
+                <Image src={TailD} alt=" " />
+                <Image src={TailE} alt=" " />
+                <Image src={TailF} alt=" " />
+                <Image class="active" src={TailG} alt=" " />
             </div>
         </div>
     </div>
@@ -113,6 +131,6 @@ const brand = "Pet Dermatology Center"
         }
     }
 
-    setInterval(update, 500)
+    setInterval(update, 666)
 
 </script>
