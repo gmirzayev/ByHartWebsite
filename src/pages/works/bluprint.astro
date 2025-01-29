@@ -17,7 +17,7 @@ import Cake from "@assets/Bluprint/Bluprint_Cake.mp4";
 import Fox1 from "@assets/Bluprint/img/Bluprint_Fox.jpg";
 import HomePage from "@assets/Bluprint/img/Bluprint_Homepage.png";
 import SocialGrid from "@assets/Bluprint/Bluprint_SocialGrid.mp4";
-import Ad2 from "@assets/Bluprint/img/Bluprint_Ad_2.png";
+import Ad2 from "@assets/Bluprint/Bluprint_Ad.mp4";
 import Jump1 from "@assets/Bluprint/img/Bluprint_Jump1.jpg";
 import Jump2 from "@assets/Bluprint/img/Bluprint_Jump2.jpg";
 import Disco from "@assets/Bluprint/Bluprint_Disco.mp4";
@@ -97,22 +97,26 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 <InternalLayout>
   <div id="bluprint-main">
     <ProjectHead hero={Header} brand="Bluprint" tagline="Watch + Learn" />
-    <ProjectTags title="Bluprint" theme="light" tags={[
-      "Brand Identity + Positioning",
-      "Logo Design",
-      "Video + Photography",
-      "Art + Illustration",
-      "Product Design (UX/UI)",
-      "CX",
-      "Interior Design",
-      "Original Naming",
-      "Physical Goods Development + Design",
-      "Print + Packaging",
-      "Organic + Paid Social Content",
-      "Writing + Editing",
-      "Qualitative Research",
-      "Surprise + Delight",
-    ]}/>
+    <ProjectTags
+      title="Bluprint"
+      theme="light"
+      tags={[
+        "Brand Identity + Positioning",
+        "Logo Design",
+        "Video + Photography",
+        "Art + Illustration",
+        "Product Design (UX/UI)",
+        "CX",
+        "Interior Design",
+        "Original Naming",
+        "Physical Goods Development + Design",
+        "Print + Packaging",
+        "Organic + Paid Social Content",
+        "Writing + Editing",
+        "Qualitative Research",
+        "Surprise + Delight",
+      ]}
+    />
     <div class="bluprint-content">
       <div class="flex items-center w-full flex-col md:flex-row">
         <Image
@@ -257,11 +261,12 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
         <source src={SocialGrid} />
       </video>
     </div>
-    <Image
-      class="my-[45px] px-[20px] md:my-[120px] md:px-[300px]"
-      alt="Bluprint"
-      src={Ad2}
-    />
+    <div class="flex flex-row my-[45px] md:my-[120px]">
+      <Image class="h-auto w-1/2 mx-auto p-[10%]" alt="Bluprint" src={Ad3} />
+      <video loop playsinline autoplay muted class="h-auto w-1/2 pr-[5%]">
+        <source src={Ad2} />
+      </video>
+    </div>
     <div class="flex flex-row bg-[#028282]">
       <Image class="w-[50%] p-[6%]" alt="Bluprint" src={Jump1} />
       <Image class="w-[50%] p-[10%]" alt="Bluprint" src={Jump2} />
@@ -292,11 +297,6 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
         <source src={MakeupBag} />
       </video>
     </div>
-    <Image
-      class="h-auto w-2/3 mx-auto my-[45px] md:my-[120px]"
-      alt="Bluprint"
-      src={Ad3}
-    />
     <Image class="h-auto w-full" alt="Bluprint" src={LifeStyle2} />
     <Image class="h-auto w-full" alt="Bluprint" src={Patches} />
     <Image

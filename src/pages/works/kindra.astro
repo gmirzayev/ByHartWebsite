@@ -77,7 +77,6 @@ import KindraWords from "@assets/Kindra/img/Kindra_Drawing_Words.png";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
 import ResponsiveBackground from "@components/ResponsiveBackground.astro";
-
 ---
 
 <style>
@@ -95,27 +94,45 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
   .karla {
     font-family: "Karla", sans-serif;
   }
+  #text-block * {
+    font-family: "Karla", sans-serif;
+  }
   .utile {
     font-family: "utile-display", sans-serif;
+  }
+  .line {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+    margin: 1em 0;
+    padding: 0;
+  }
+  .more-hide {
+    display: none;
   }
 </style>
 <InternalLayout>
   <div id="kindra-main">
     <ProjectHead hero={Header} brand="Kindra" tagline="The New Era of You" />
-    <ProjectTags title="Kindra" theme="light" tags={[
-      "Brand Identity + Positioning",
-      "Video + Photography",
-      "Art + Illustration",
-      "Product Design (UX/UI)",
-      "CX",
-      "Physical Goods Development + Design",
-      "Print + Packaging",
-      "Editorial Content",
-      "Organic + Paid Social Content",
-      "Writing + Editing",
-      "Quiz Development",
-      "Surprise + Delight",
-    ]} />
+    <ProjectTags
+      title="Kindra"
+      theme="light"
+      tags={[
+        "Brand Identity + Positioning",
+        "Video + Photography",
+        "Art + Illustration",
+        "Product Design (UX/UI)",
+        "CX",
+        "Physical Goods Development + Design",
+        "Print + Packaging",
+        "Editorial Content",
+        "Organic + Paid Social Content",
+        "Writing + Editing",
+        "Quiz Development",
+        "Surprise + Delight",
+      ]}
+    />
     <div id="kindra-content">
       <div class="flex flex-col md:flex-row md:mx-[60px]">
         <Image
@@ -154,7 +171,11 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
       <div
         class="flex flex-col md:flex-row mb-[45px] md:mb-[120px] md:mx-[250px]"
       >
-        <ResponsiveImage mobile={ColorMobile} desktop={ColorDesktop} alt="Kindra" />
+        <ResponsiveImage
+          mobile={ColorMobile}
+          desktop={ColorDesktop}
+          alt="Kindra"
+        />
         <div
           class="karla mx-[25px] my-[45px] md:w-1/2 md:self-end md:pl-[50px]"
         >
@@ -170,11 +191,19 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
         </div>
       </div>
 
-      <ResponsiveImage mobile={CollageMobile} desktop={CollageDesktop} alt="Kindra" />
+      <ResponsiveImage
+        mobile={CollageMobile}
+        desktop={CollageDesktop}
+        alt="Kindra"
+      />
 
       <Image class="w-full" alt="Kindra" src={Humectant} />
 
-      <ResponsiveImage mobile={MiddleMobile} desktop={MiddleDesktop} alt="Kindra" />
+      <ResponsiveImage
+        mobile={MiddleMobile}
+        desktop={MiddleDesktop}
+        alt="Kindra"
+      />
 
       <div
         class="flex flex-col md:flex-row my-[45px] mx-[20px] gap-[45px] md:my-[120px] md:mx-[60px] md:gap-[60px] md:justify-center"
@@ -191,11 +220,19 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
         />
       </div>
 
-      <ResponsiveBackground class="flex flex-col" mobile={QuizBackgroundMobile} desktop={QuizBackgroundDesktop}>
+      <ResponsiveBackground
+        class="flex flex-col"
+        mobile={QuizBackgroundMobile}
+        desktop={QuizBackgroundDesktop}
+      >
         <!-- insert shell video. div is flexed to change order on breakpoints -->
         <div class="md:order-2">
           <!-- TODO: insert overlay video -->
-          <div style="background:red; width:80px; height:60px; margin:20px auto; text-align:center;">×</div>
+          <div
+            style="background:red; width:80px; height:60px; margin:20px auto; text-align:center;"
+          >
+            ×
+          </div>
         </div>
       </ResponsiveBackground>
 
@@ -316,13 +353,17 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
       <div class="mx-[20px] md:mx-[300px] md:mb-[400px]">
         <Image class="w-full h-auto rounded" src={Site} alt="Kindra" />
       </div>
-      <ResponsiveBackground class="w-full relative" mobile={SiteBackgroundMobile} desktop={SiteBackgroundDesktop}>
+      <ResponsiveBackground
+        class="w-full relative"
+        mobile={SiteBackgroundMobile}
+        desktop={SiteBackgroundDesktop}
+      >
         <div
           class="flex flex-col pt-[200px] mx-[20px] md:mx-[60px] md:flex-row gap-[10px] md:gap-[15px]"
         >
           <Image
-          class="w-full md:w-1/2 h-auto rounded-[5px]"
-          src={ApplicatorGuide1}
+            class="w-full md:w-1/2 h-auto rounded-[5px]"
+            src={ApplicatorGuide1}
             alt="Kindra"
           />
           <Image
@@ -331,7 +372,7 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
             alt="Kindra"
           />
         </div>
-      </ResponseiveBackground>
+      </ResponsiveBackground>
       <div
         class="mt-[120px] mx-[20px] mb-[45px] md:mx-[300px] md:mb-[120px] md:mt-[180px]"
       >
@@ -414,12 +455,23 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
         <Image class="w-full h-auto md:order-5" src={CoreGrid5} alt="Kindra" />
         <Image class="w-full h-auto md:order-6" src={CoreGrid6} alt="Kindra" />
       </div>
-      <ResponsiveBackground mobile={SocialBackgroundMobile} desktop={SocialBackgroundDesktop}>
+      <ResponsiveBackground
+        mobile={SocialBackgroundMobile}
+        desktop={SocialBackgroundDesktop}
+      >
         <div
           class="relative flex flex-col items-center justify-center gap-[35px] pt-[60px] mt-[30px] pb-[60px] md:flex-row md:mx-[300px] md:gap-[60px]"
         >
-          <Image class="w-1/2 rounded-[34px] md:rounded-[24px]" src={SocialGrid} alt="Kindra" />
-          <Image class="w-1/2 rounded-[34px] md:rounded-[24px]" src={SocialGrid} alt="Kindra" />
+          <Image
+            class="w-1/2 rounded-[34px] md:rounded-[24px]"
+            src={SocialGrid}
+            alt="Kindra"
+          />
+          <Image
+            class="w-1/2 rounded-[34px] md:rounded-[24px]"
+            src={SocialGrid}
+            alt="Kindra"
+          />
         </div>
       </ResponsiveBackground>
       <div
@@ -439,110 +491,287 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
         </div>
         <Image class="w-full" src={ToolBoxOpen} alt="Kindra" />
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4">
-        <video loop playsinline autoplay muted class="w-full h-auto">
+      <div
+        class="grid grid-cols-2 md:grid-cols-4 gap-[5px] md:gap-[10px] mx-[20px] md:mx-[60px] mt-[45px] mb-[95px] md:my-[220px]"
+      >
+        <video
+          loop
+          playsinline
+          autoplay
+          muted
+          class="w-full h-auto relative top-[50px]"
+        >
           <source src={Social1} />
         </video>
         <video loop playsinline autoplay muted class="w-full h-auto">
           <source src={Social2} />
         </video>
-        <video loop playsinline autoplay muted class="w-full h-auto">
+
+        <video
+          loop
+          playsinline
+          autoplay
+          muted
+          class="w-full h-auto relative top-[50px]"
+        >
           <source src={Social3} />
         </video>
-        <video loop playsinline autoplay muted class="w-full h-auto">
+        <video
+          loop
+          playsinline
+          autoplay
+          muted
+          class="w-full h-auto relative md:top-[100px]"
+        >
           <source src={Social4} />
         </video>
       </div>
-      <button id="openModalBtn">OPEN MODAL</button>
+      <video loop playsinline autoplay muted class="w-full hidden md:block">
+        <source src={BTSDesktop} />
+      </video>
+      <video loop playsinline autoplay muted class="w-full block md:hidden">
+        <source src={BTSMobile} />
+      </video>
+      <Image class="w-full hidden md:block" src={GloriaDesktop} alt="Kindra" />
+      <Image class="w-full block md:hidden" src={GloriaMobile} alt="Kindra" />
+      <Image
+        class="w-full hidden md:block"
+        src={KindraCCDesktop}
+        alt="Kindra"
+      />
+      <Image class="w-full block md:hidden" src={KindraCCMobile} alt="Kindra" />
       <div
-        class="fixed top-0 left-0 hidden bg-white w-full h-full z-50 overflow-scroll"
-        id="modal"
+        class="[&>*]:font-[karla] mx-[25px] md:mx-[200px] mb-[45px] md:mb-[120px]"
       >
-        <div class="w-full h-full flex flex-col justify-center items-center">
-          <div class="overflow-y-auto w-[220px] aspect-[.5199]">
-            <!-- <Image alt="test" src={QuizResultsEmail} /> -->
-            <video loop playsinline autoplay muted class="w-full h-auto">
-              <source src={VideoTest} />
-            </video>
-          </div>
-          <p>This is a centered modal.</p>
-          <button class="close-btn" id="closeModalBtn">Close</button>
+        <Image class="w-full md:mb-[60px]" src={KindraWords} alt="Kindra" />
+        <div class="line"></div>
+        <h2 class="mb-[25px]">IN WORDS</h2>
+        <div class="md:columns-2 md:gap-[60px] md:mb-[80px]">
+          <h1 class="text-[36px] font-bold leading-[1]">
+            It Is the Radical Act of Rest That Brings Out True Resilience
+          </h1>
+          <br />
+          <p>
+            Today is International Women’s Day, and I can’t help thinking about
+            how women and children bear a unique burden in troubled times.<br
+            /><br />While the world is watching Ukrainian women fighting for
+            their families, fleeing their homes, making impossible choices, and
+            struggling to survive, I’m reminded of working in Northern Ireland
+            at the end of The Troubles when I was a teenager at what was called
+            a “reconciliation center.” The idea was to bring families together
+            from the embattled North and South of Ireland to essentially help
+            people—war-torn and exhausted from the ongoing guerrilla
+            violence—find common ground and greater compassion for one another.
+            As I eagerly awaited the arrival of these families, bussed in from
+            all over the country, I was not sure what to expect. When the doors
+            opened, it was also not what I had imagined.<span
+              class="read-more font-bold underline md:hidden">Read More</span
+            ><span class="more more-hide md:!block"
+              ><br /><br />I will forever be in awe of the women and children
+              who emerged from those buses. Whether from the North, South, East
+              or West, the scene was always the same—weary faces of mothers and
+              grandmothers with kids of every age in tow. The hardship and
+              courage on their faces was like cold water splashed onto mine.
+              It’s the same feeling I have now seeing those fleeing turmoil in
+              Eastern Europe, including people of color and non-Ukrainian
+              residents facing bias at the border as everyone tries to find a
+              safe haven or get home.<br /><br />Somewhere in the space between
+              Black History Month in February and Women’s History Month in
+              March, there sits a massive, intersecting community of wildly
+              underserved people struggling time and again to simply live in
+              peace. The past few years have been challenging for everyone in
+              the world, and—I’ll be honest—in many ways it feels like the
+              suffering is never ending. And what can we really do about it? How
+              can we continue to move forward as individuals, as families, as
+              nations, and as a global community when there is constant turmoil
+              and oppression everywhere you turn?
+              <br />
+              I don’t have all the answers, but I can tell you what I learned from
+              the women of Ireland coming together on the fault lines of their divided
+              homeland. Troubled times help us summon survival instincts and tremendous
+              courage, but it is the radical act of rest that brings out true resilience.
+              Once these women had settled into the reconciliation center and were
+              able to take precious time and space to rest with their families, I
+              saw those families from opposite sides of The Troubles sharing stories,
+              laughing, playing, and giving each other such grace.<br /><br />On
+              this International Women’s Day, let’s #breakthebias and honestly
+              ask ourselves:<br /><br />How can I look beyond my own fears and
+              entrenched biases to reach across to someone who might need
+              support? Is that person really so different from me? How can I
+              make sure I remain open minded to experiences, people, places, and
+              paths toward reconciliation, cooperation, and peace—even in my own
+              backyard?<br /><br />I learn so much from you all every day, but
+              one constant is that no one of us is having precisely the same
+              experience in this great shared experience of menopause. Empathy
+              and acceptance are a key part of journeying through challenging
+              times while supporting one another. Realizing that you can never
+              really know what’s happening with someone unless you listen with
+              an open mind is so important, but it’s resting your body and soul
+              that is essential to cultivating openness, understanding, and the
+              resilience we all need when times get tough.<br /><br />Please
+              give yourself grace. Take time to rest and recharge (and if rest
+              is hard-won, we’re here to help). Breathe deeply. Hug your loved
+              ones tightly. I know we are all doing what we can to help heal
+              this world of ours, but remember the healing starts within you.<br
+              /><br />I see you—brave, resilient, wonderful woman. You are not
+              alone. We are Kindra.<br /><br />Truly,<br /><br /> Catherine Balsam-Schwaber,
+              Kindra CEO
+            </span>
+          </p>
+        </div>
+
+        <div class="line"></div>
+        <div class="md:columns-2 md:gap-[60px] md:my-[80px]">
+          <h1 class="text-[36px] font-bold leading-[1]">
+            Reflections for the New Year: On Resilience in Free Fall
+          </h1>
+          <br />
+          <p class="text-[16px]">
+            I hate roller coasters. A slow buildup to a sudden drop into the
+            terrifying unknown. That feeling of falling from a great height. The
+            overwhelming sensation of total loss of control. It may seem cliché,
+            but as I usher my family into 2022, I feel like I am sitting on the
+            top of a rollercoaster teetering on the ride of my life.<br /><br
+            />From the tremendous growth of Kindra to my husband’s
+            entrepreneurial career taking off, from my parents gracefully aging
+            into a retirement community to my kids on the precipice of their
+            first kisses, this next year will be one for the books. Being a good
+            leader, partner, daughter, and mom is going to be a big role in
+            2022—one that I am grateful and privileged to fill for my loved
+            ones.<span class="read-more font-bold underline md:hidden"
+              >Read More</span
+            ><span class="more more-hide md:!block">
+              Then there’s the bigger picture. 2020 was going to be our year!
+              Remember? 2021 was to be the year we got back to normal. It was
+              going to be ok. New Year’s 2022 is… eerily quiet. Uncertain. With
+              each passing year, I feel the pull to try and make time stand
+              still. But really—with all this turmoil in the world, how could I
+              want that? The last few years have been particularly tumultuous
+              for the world, and I imagine we all may find ourselves wanting to
+              pause and fast-forward all at once. I wish I could skip ahead to
+              more certain times, but somehow stay like I am now—healthy,
+              working hard, loving strong.<br /><br />But we can’t bottle or
+              manipulate time. So what do we do instead?<br /><br />I speak to a
+              lot of experts on all things change by virtue of my role at
+              Kindra. They all talk about how finding yourself in new
+              circumstances—good or bad—is naturally overwhelming. The
+              uncertainty of facing and even walking toward something you’ve
+              never experienced before is a major source of stress. It is the
+              unknowing that makes it worse. I’ve come to the realization that
+              these days ahead at the dawn of this new year are much like the
+              journeys you all share with me as we navigate our changing bodies
+              and spirits. <br /><br />And just like that (😉), I knew how to
+              unknowingly move forward.<br /><br />I started by taking 3 days
+              off. As the CEO of a rapidly growing startup, that’s no small
+              feat. But I took real time just for me and mine, and I hope you
+              were able to carve some out, too. Because the key to closing the
+              books on 2021 and entering into the great unknown of 2022 is
+              taking care of ourselves. From catching up on reading (highly
+              recommend Untamed—I listened to the audiobook, then immediately
+              devoured her podcast) and entertainment (Succession, anyone?!) to
+              spending time sweating to my favorite music while working out
+              (it’s honestly been a life saver) and perfecting my homemade green
+              juice recipe (ginger and lime, friends), I’m intentionally taking
+              time to refill my well, so I have something to bring to you all in
+              2022. We have so many exciting things in store!<br /><br />We’re
+              partnering with an incredible nutritionist to share expert
+              guidance on how to bring your gut and hormonal health in sync. I
+              can’t wait to introduce you to her! And we’ll be soothing our
+              bodies inside and out with an all-new formula from the Kindra
+              Innovation Lab that has personally done wonders for my paper-thin,
+              dry skin everywhere! We’re honored to continue our mission to
+              support your menopause journey in these ways and more in the year
+              ahead.<br /><br />You don’t spontaneously summon resilience in the
+              face of unexpected or difficult circumstances; you have to
+              cultivate it. In this time of reflection and anticipation for us
+              all, I encourage you to truly prioritize your well-being, practice
+              gratitude, and simply love yourself a little bit more. That’s what
+              I’m resolved to do, and I hope you’ll join me. It will give us
+              something to hold onto and ground us when circumstances beyond our
+              control befall us. Together we can expect the unexpected
+              and—whenever possible—allow ourselves to enjoy the ride.<br /><br
+              />You are not alone. We are Kindra.Month in February and Women’s
+              History Month in March, there sits a massive, intersecting
+              community of wildly underserved people struggling time and again
+              to simply live in peace. The past few years have been challenging
+              for everyone in the world, and—I’ll be honest—in many ways it
+              feels like the suffering is never ending. And what can we really
+              do about it? How can we continue to move forward as individuals,
+              as families, as nations, and as a global community when there is
+              constant turmoil and oppression everywhere you turn?<br /><br /> You
+              are not alone. We are Kindra. <br /><br />
+              Catherine Balsam-Schwaber, Kindra CEO</span
+            >
+          </p>
+        </div>
+        <div class="line"></div>
+        <div class="md:columns-2 md:gap-[60px] md:my-[80px]">
+          <h1 class="text-[36px] font-bold leading-[1]">
+            August Reflections: Let’s get to work…
+          </h1>
+          <br />
+          <p class="text-[16px]">
+            For all the Wonder Women—then & now<br /><br /> Let’s get to work… <br
+            /><br />I’ve worked with a lot of ‘Wonder Women’ in my career, many
+            of whom were about my age now when I was lucky enough to learn from
+            them at the top of their game. But now that I’m standing where they
+            once stood—a working mom in menopause building a business in the
+            face of a global pandemic that just won’t quit—I wonder about their
+            silent struggles. I wonder how they hid a hot flash or worked
+            through brain fog while I marveled at their professional prowess and
+            seeming ability to handle everything life threw at them with dignity
+            and grace. <br /><br />Women have made so many advancements in the
+            workplace over the last century, and yet menopause lingers as this
+            shameful secret. A perfectly natural shared experience half the
+            population of the planet is somehow expected to hide from the other
+            half and, worst of all, each other.<br /><br /><span
+              class="read-more font-bold underline md:hidden">Read More</span
+            ><span class="more more-hide md:!block">
+              Imagine how freeing it would be if we all owned our experience
+              with menopause instead. Imagine how empowering it would be if we
+              got hit with a hot flash during a meeting and instead of
+              attempting to ignore the copious sweat and discomfort, we could
+              just pronounce it a "hot flash moment" and choose whether to plow
+              through or simply pause the meeting and excuse ourselves until it
+              passed. What if it was acceptable to be a woman working while in
+              menopause? I wonder…<br /><br />But it will take more than
+              wondering. We're not only imagining a long overdue future here at
+              Kindra, we're here to make it happen. There are so many women
+              working in industries and roles that did not allow them the
+              privilege of working from home during the pandemic. And now as
+              many that were able to work from home start to think about
+              returning to the workplace, whether that's in real life, a hybrid
+              arrangement, or simply the decision to stay firmly at home, it's
+              time to address an issue that's laid dormant for too long. Women
+              in their working prime are suffering in silence. It has to stop.<br
+              /><br /> Let's bring our struggles into the light, offer each other
+              support, celebrate our wins, and create a pathway for us all to feel
+              understood, represented, and honored. Let’s get to work helping each
+              other get to work.<br /><br /> Our first step towards doing just that
+              is introducing our new Menopause in the Workplace Toolkit, complete
+              with tips for navigating office culture as a menopausal woman or an
+              empathetic colleague/manager, products and life hacks to help overcome
+              your biggest productivity challenges, and restorative meditations for
+              those moments when the best thing is just to take a moment for yourself
+              before diving back in.<br /><br /> Wherever work may find you, whatever
+              work you do, know that we see your struggles, we believe in you wholeheartedly,
+              and we're working alongside you to make work better for us all.<br
+              /><br /> I see you, Wonder Woman. You are not alone. You are Kindra.<br
+              /><br /> Truly,<br />Catherine Balsam-Schwaber, Kindra CEO</span
+            >
+          </p>
         </div>
       </div>
     </div>
     <ProjectsCarousel name="Kindra" />
   </div>
 </InternalLayout>
-<!-- import ToolBox1 from "@assets/Kindra/img/Kindra_ToolBox1.png";
-import ToolBox2 from "@assets/Kindra/img/Kindra_ToolBox2.png";
-import ToolBoxOpen from "@assets/Kindra/img/Kindra_ToolBox_Open.png";
-import Social1 from "@assets/Kindra/Kindra_Social_1.mp4";
-import Social2 from "@assets/Kindra/Kindra_Social_2.mp4";
-import Social3 from "@assets/Kindra/Kindra_Social_3.mp4";
-import Social4 from "@assets/Kindra/Kindra_Social_4.mp4";
-import BTSDesktop from "@assets/Kindra/Kindra_BTS_Desktop.mp4";
-import BTSMobile from "@assets/Kindra/Kindra_BTS_Mobile.mp4";
-import GloriaDesktop from "@assets/Kindra/img/Kindra_Gloria_Desktop.png";
-import GloriaMobile from "@assets/Kindra/img/Kindra_Gloria_Mobile.png";
-import KindraCCDesktop from "@assets/Kindra/img/Kindra_CC_Desktop.png";
-import KindraCCMobile from "@assets/Kindra/img/Kindra_CC_Mobile.png";
-import KindraWords from "@assets/Kindra/img/Kindra_Drawing_Words.png"; -->
-<!--  .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none; /* Hidden by default */
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    z-index: 1000;
-    width: 300px;
-    text-align: center;
-  }
-
-  /* Overlay */
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    display: none;
-    z-index: 999;
-  }
-
-  /* Close button */
-  .close-btn {
-    background-color: #ff5f5f;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-  } -->
 <script>
-  const modal = document.getElementById("modal");
-  const overlay = document.getElementById("overlay");
-  const openModalBtn = document.getElementById("openModalBtn");
-  const closeModalBtn = document.getElementById("closeModalBtn");
-
-  // Open modal
-  openModalBtn.addEventListener("click", () => {
-    modal.style.display = "block";
-    overlay.style.display = "block";
-  });
-
-  // Close modal
-  closeModalBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-    overlay.style.display = "none";
-  });
-
-  // Close modal when clicking on overlay
-  overlay.addEventListener("click", () => {
-    modal.style.display = "none";
-    overlay.style.display = "none";
-  });
+  const readMoreButtons = document.getElementsByClassName("read-more");
+  const moreSpans = document.getElementsByClassName("more");
+  for (let i = 0; i < readMoreButtons.length; i++) {
+    readMoreButtons[i].addEventListener("click", () => {
+      moreSpans[i].classList.toggle("more-hide");
+    });
+  }
 </script>
