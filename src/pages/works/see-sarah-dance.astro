@@ -1,0 +1,78 @@
+---
+import "../../styles/utils.css";
+import Image from "astro/components/Image.astro";
+import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectTags from "@components/ProjectTags.astro";
+import ProjectHead from "@components/ProjectHead.astro";
+import Navigation from "@components/Navigation.astro";
+import ProjectsCarousel from "@components/ProjectsCarousel.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
+import ResponsiveBackground from "@components/ResponsiveBackground.astro";
+import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
+
+import Hero from "@assets/SeeSarahDance/Hero.png"
+// const vimeoUrl = "https://player.vimeo.com/video/133081327?dnt=1&amp;app_id=122963"
+const vimeoUrl = "https://player.vimeo.com/video/133081327?autoplay=1&loop=1&muted=1"
+const vimeoAllow = "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+
+const brand = "See Sarah Dance"
+---
+
+<InternalLayout>
+  <div id="see-sarah-dance-main">
+    <ProjectHead hero={Hero} brand={brand} tagline="TKTKTKTKTK" />
+    <ProjectTags title={brand} theme="light" tags={[
+        'Brand Identity + Positioning',
+        'Video + Photography',
+        'Writing + Editing',
+        'Surprise + Delight',
+        'Theatrics'
+    ]} />
+    <div id="see-sarah-dance-content">
+
+        <div class="video-player">
+            <iframe title="My Visual Resumé" src={vimeoUrl} frameborder="0" allow={vimeoAllow}></iframe>
+        </div>
+
+        <ResponsiveTextBlock class="blurb">
+            <div>
+                <h1>She’s got moxie</h1>
+                <p>I believe great creativity lives where courage meets imagination meets common sense. Where heart meets smart.</p>
+            </div>
+            <div>
+                <p>As a fun example of how I put this philosophy into action and utilize the curated resources within my network, I invite you to view (and dance along) to my visual résumé. A labor of love, it was created on a tight personal budget, including only one day of rehearsal and one day to shoot the entire thing!</p>
+            </div>
+        </ResponsiveTextBlock>
+
+    </div>
+    <ProjectsCarousel name={brand} />
+</div>
+</InternalLayout>
+
+
+<style>
+#see-sarah-dance-main {
+    background: var(--cream);
+}
+
+.video-player{
+    position: relative;
+    padding-top: 52.816901%;
+
+    iframe {
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.blurb{
+    padding:40px 20px;
+
+    @media (min-width: 768px) {
+        padding:120px 20px;
+    }
+}
+</style>
