@@ -1,0 +1,85 @@
+---
+import "../../styles/utils.css";
+import "../../styles/genius-kitchen.css";
+import Image from "astro/components/Image.astro";
+import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectTags from "@components/ProjectTags.astro";
+import ProjectHead from "@components/ProjectHead.astro";
+import Navigation from "@components/Navigation.astro";
+import ProjectsCarousel from "@components/ProjectsCarousel.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
+import ResponsiveBackground from "@components/ResponsiveBackground.astro";
+import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
+
+import Hero from "@assets/GeniusKitchen/Hero.png"
+import Spread from "@assets/GeniusKitchen/GK_spread.jpg"
+import Animation from "@assets/GeniusKitchen/gk-home.gif"
+import Icons from "@assets/GeniusKitchen/icons.jpg"
+
+const brand = "Genius Kitchen"
+---
+
+<InternalLayout>
+  <div id="genius-kitchen-main">
+    <ProjectHead hero={Hero} brand={brand} tagline="TKTKTKTKTK" />
+    <ProjectTags title={brand} theme="light" tags={[
+        'Brand Identity + Positioning',
+        'Art + Illustration',
+        'Product Design (UX/UI)',
+        'CX',
+        'Qualitative Research',
+        'Surprise + Delight',
+        'Visual Identity'
+    ]} />
+    <div id="genius-kitchen-content">
+
+        <div class="one-up">
+            <Image src={Spread} alt=" "/>
+        </div>
+
+        <div class="two-up">
+            <img class="anim" src={Animation.src} width={Animation.width} height={Animation.height} alt=" ">
+            <Image class="icons" src={Icons} alt=" "/>
+        </div>
+
+    </div>
+    <ProjectsCarousel name={brand} />
+</div>
+</InternalLayout>
+
+
+
+<style>
+#genius-kitchen-main {
+    background: var(--cream);
+
+}
+
+.one-up{
+    margin-top:40px;
+    padding:0 20px;
+    img{
+        margin:0 auto;
+    }
+}
+
+.two-up{
+    /* switch b/t column on mobile and row on desktop */
+    max-width:100%;
+    display:flex;
+    flex-direction: column;
+    gap:15px;
+    justify-content: center;
+    padding:15px 20px;
+
+    img{
+        max-width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        flex-flow: row nowrap;
+        img.anim{ width:calc(100% * 2/3 - 7.5px); }
+        img.icons{ width:calc(100% * 1/3 - 7.5px); }
+    }
+}
+</style>
