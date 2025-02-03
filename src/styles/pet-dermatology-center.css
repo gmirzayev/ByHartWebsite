@@ -7,6 +7,10 @@
 
 .mosaic{
     padding:0 20px;
+
+    img{
+        margin: 0 auto;
+    }
 }
 
 .pull-quote{
@@ -27,10 +31,11 @@
 
 .logo-animation{
     font-family: fantasy;
-    color:rebeccapurple;
     padding:40px 20px 0 20px;
     video{
+        width:100%;
         max-width:1040px;
+        max-height:100vh;
         margin: 0 auto;
     }
 
