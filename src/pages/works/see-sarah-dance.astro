@@ -1,5 +1,6 @@
 ---
-import "../../styles/utils.css";
+import "@styles/utils.css";
+import "@styles/see-sarah-dance.css";
 import Image from "astro/components/Image.astro";
 import InternalLayout from "@layouts/InternalLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
@@ -11,7 +12,6 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 
 import Hero from "@assets/SeeSarahDance/Hero.png"
-// const vimeoUrl = "https://player.vimeo.com/video/133081327?dnt=1&amp;app_id=122963"
 const vimeoUrl = "https://player.vimeo.com/video/133081327?autoplay=1&loop=1&muted=1"
 const vimeoAllow = "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
 
@@ -48,31 +48,3 @@ const brand = "See Sarah Dance"
     <ProjectsCarousel name={brand} />
 </div>
 </InternalLayout>
-
-
-<style>
-#see-sarah-dance-main {
-    background: var(--cream);
-}
-
-.video-player{
-    position: relative;
-    padding-top: 52.816901%;
-
-    iframe {
-        position:absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-.blurb{
-    padding:40px 20px;
-
-    @media (min-width: 768px) {
-        padding:120px 20px;
-    }
-}
-</style>
