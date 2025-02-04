@@ -1,0 +1,20 @@
+---
+import "@styles/utils.css";
+import Image from "astro/components/Image.astro";
+const {src, alt=" "} = Astro.props
+---
+
+<div class="one-up">
+    <Image src={src} alt={alt}/>
+</div>
+
+<style>
+    .one-up{
+        padding:0 20px;
+
+        img{
+            width:100%;
+            margin:0 auto;
+        }
+    }
+</style>

@@ -5,6 +5,8 @@ import Image from "astro/components/Image.astro";
 import InternalLayout from "@layouts/InternalLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
+import OneUp from "@components/OneUp.astro";
+import TwoUp from "@components/TwoUp.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
@@ -32,17 +34,13 @@ const brand = "Genius Kitchen"
         'Visual Identity'
     ]} />
     <div id="genius-kitchen-content">
-
-        <div class="one-up">
-            <Image src={Spread} alt=" "/>
-        </div>
-
-        <div class="two-up">
-            <img class="anim" src={Animation.src} width={Animation.width} height={Animation.height} alt=" ">
-            <Image class="icons" src={Icons} alt=" "/>
-        </div>
-
+        <OneUp src={Spread} />
+        <TwoUp bias="left">
+            <Image src={Animation} alt=" "/>
+            <Image src={Icons} alt=" "/>
+        </TwoUp>
     </div>
     <ProjectsCarousel name={brand} />
 </div>
 </InternalLayout>
+

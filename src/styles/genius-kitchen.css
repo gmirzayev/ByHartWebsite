@@ -1,32 +1,11 @@
 #genius-kitchen-main {
     background: var(--cream);
-
 }
 
 .one-up{
     margin-top:40px;
-    padding:0 20px;
-    img{
-        margin:0 auto;
-    }
 }
 
 .two-up{
-    /* switch b/t column on mobile and row on desktop */
-    max-width:100%;
-    display:flex;
-    flex-direction: column;
-    gap:15px;
-    justify-content: center;
-    padding:15px 20px;
-
-    img{
-        max-width: 100%;
-    }
-
-    @media (min-width: 768px) {
-        flex-flow: row nowrap;
-        img.anim{ width:calc(100% * 2/3 - 7.5px); }
-        img.icons{ width:calc(100% * 1/3 - 7.5px); }
-    }
+    margin:15px 0;
 }
