@@ -1,0 +1,75 @@
+#curve-report-main {
+    background: var(--cream);
+}
+
+.section-intro{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items:center;
+    justify-content: center;
+    padding:25px 0 45px 0;
+
+    h1{
+        font: 700 36px/1.2 "Karla", sans-serif;
+        letter-spacing: -0.72px;
+        max-width:400px;
+        margin:0;
+    }
+
+    p{
+        font: 400 14px/1.6 "Karla", sans-serif;
+        margin-top:1em;
+        max-width:400px;
+    }
+
+    @media (min-width: 768px) {
+        width: 50%;
+        padding: 0;
+    }
+}
+
+/* VIDEOS */
+.video-player{
+    position: relative;
+
+    iframe {
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#robinson-interview, #nord-interview{
+    padding-top: 56.272727%;
+
+    @media (min-width: 768px) {
+        padding-top: calc(56.272727% / 2);
+    }
+}
+
+#culture-report{
+    padding-top: calc(56.272727% - 20px);
+    margin: 0 20px;
+}
+
+
+/* SPACING */
+.two-up + .two-up, .two-up + .one-up{
+    margin-top:15px;
+}
+
+.welcome-intro{
+    padding: 45px 20px;
+    @media (min-width: 768px) {
+        padding: 120px 0;
+    }
+}
+
+#culture-report{
+    margin:15px 0 45px 0;
+    @media (min-width: 768px) {
+        margin-bottom:120px;
+    }
+}
