@@ -20,6 +20,13 @@ const {class:className} = Astro.props
             margin-bottom:16px;
         }
 
+        @media (max-width: 767px) {
+            div.no-break{
+                /* compensate for graf spacing if the columns break mid-sentence */
+                margin-top:-1em;
+            }
+        }
+
         @media (min-width: 768px) {
             display: flex;
             flex-direction: row;
