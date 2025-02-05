@@ -1,0 +1,72 @@
+---
+import "@styles/utils.css";
+import "@styles/discovery.css";
+import Image from "astro/components/Image.astro";
+import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectTags from "@components/ProjectTags.astro";
+import ProjectHead from "@components/ProjectHead.astro";
+import OneUp from "@components/OneUp.astro";
+import TwoUp from "@components/TwoUp.astro";
+import Navigation from "@components/Navigation.astro";
+import ProjectsCarousel from "@components/ProjectsCarousel.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
+import ResponsiveBackground from "@components/ResponsiveBackground.astro";
+import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
+
+import Hero from "@assets/Discovery/Hero.png"
+import Desktop from "@assets/Discovery/discovery_desktop.jpg";
+import Footer from "@assets/Discovery/discovery_footer.jpg";
+import MobileA from "@assets/Discovery/discovery_mobile1.jpg";
+import MobileB from "@assets/Discovery/discovery_mobile2.jpg";
+import MobileC from "@assets/Discovery/discovery_mobile3.jpg";
+import MobileD from "@assets/Discovery/discovery_mobile4.jpg";
+
+const vimeoUrl = "https://player.vimeo.com/video/363489186?byline=false&title=false&portrait=false"
+const vimeoAllow = "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+
+const brand = "Discovery"
+---
+
+<InternalLayout>
+  <div id="discovery-main">
+    <ProjectHead hero={Hero} brand={brand} tagline="TKTKTKTKTK" />
+    <ProjectTags title={brand} theme="light" tags={[
+        'Brand Identity + Positioning',
+        'Video + Photography',
+        'Product Design (UX/UI)',
+        'CX',
+        'Editorial Content',
+        'Qualitative Research',
+        'Surprise + Delight',
+        'Visual Identity',
+    ]} />
+    <div id="discovery-content">
+
+        <div class="video-player">
+            <iframe title="My Visual Resumé" src={vimeoUrl} frameborder="0" allow={vimeoAllow}></iframe>
+        </div>
+
+
+        <TwoUp class="mobile-site">
+            <div>
+                <Image src={MobileA} alt=" " />
+                <Image src={MobileB} alt=" " />
+            </div>
+            <div>
+                <Image src={MobileC} alt=" " />
+                <Image src={MobileD} alt=" " />
+            </div>
+
+        </TwoUp>
+
+        <TwoUp class="desktop-site" fit={false}>
+            <Image src={Desktop} alt=" " />
+            <Image src={Footer} alt=" " />
+        </TwoUp>
+
+
+    </div>
+    <ProjectsCarousel name={brand} />
+</div>
+</InternalLayout>
+
