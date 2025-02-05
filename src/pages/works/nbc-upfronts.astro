@@ -1,0 +1,101 @@
+---
+import "@styles/utils.css";
+import "@styles/nbc-upfronts.css";
+import Image from "astro/components/Image.astro";
+import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectTags from "@components/ProjectTags.astro";
+import ProjectHead from "@components/ProjectHead.astro";
+import OneUp from "@components/OneUp.astro";
+import TwoUp from "@components/TwoUp.astro";
+import Navigation from "@components/Navigation.astro";
+import ProjectsCarousel from "@components/ProjectsCarousel.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
+import ResponsiveBackground from "@components/ResponsiveBackground.astro";
+import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
+
+
+import Hero from "@assets/NbcUpfronts/img/hero.png"
+
+import LeftA from "@assets/NbcUpfronts/img/left-1.png"
+import LeftB from "@assets/NbcUpfronts/img/left-2.png"
+import RightA from "@assets/NbcUpfronts/img/right-1.png"
+import RightB from "@assets/NbcUpfronts/img/right-2.png"
+import RightC from "@assets/NbcUpfronts/img/right-3.png"
+import Campaign from "@assets/NbcUpfronts/img/campaign.jpeg"
+
+const vimeoAllow = "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+const vimeoOpts = "?byline=false&title=false&portrait=false"
+
+const vimeoRecapTitle = "2016 Upfront Recap"
+const vimeoRecap = "https://player.vimeo.com/video/177142298" + vimeoOpts
+
+const vimeoReachTitle = "Reach Redefined Reveal 2016"
+const vimeoReach = "https://player.vimeo.com/video/177130853" + vimeoOpts
+
+// 56.272727%
+
+// const vimeoRobinsonTitle = "The Curve + MSNBC interviews Evita Robinson"
+// const vimeoRobinson = "https://player.vimeo.com/video/177130878" + vimeoOpts
+// const vimeoNordTitle = "The Curve + MSNBC interviews James Nord"
+// const vimeoNord = "https://player.vimeo.com/video/177130879" + vimeoOpts
+
+const brand = "NBCUniversal Upfronts"
+const tagline = "TKTKTKTKTK"
+---
+
+<InternalLayout>
+  <div id="nbc-upfronts-main">
+    <ProjectHead hero={Hero} brand={brand} tagline={tagline} />
+    <ProjectTags title={brand} theme="light" tags={[
+        'Brand Identity + Positioning',
+        'Video + Photography',
+        'Product Design (UX/UI)',
+        'CX',
+        'Print + Packaging',
+        'Interviews',
+        'Signage + Display',
+        'Surprise + Delight',
+        'Visual Identity'
+    ]} />
+    <div id="nbc-upfronts-content">
+        <div id="upfronts-recap" class="video-player">
+            <iframe title={vimeoRecapTitle} src={vimeoRecap} frameborder="0" allow={vimeoAllow}></iframe>
+        </div>
+
+        <ResponsiveTextBlock class="reach-intro">
+            <div>
+                <h1>A Campaign That Transcends Boundaries</h1>
+                <p>As NBCUniversal’s lead art creative on the 2016 Reach Redefined campaign, I was primarily responsible for all the visual storytelling, with my hands in every aspect of creative work that went into the campaign. From concepting this year’s authentic portraiture approach to art directing 60 talent alongside photographer</p>
+            </div>
+            <div class="no-break">
+                <p>Peggy Sirota, the lead up to the launch of the campaign was months of meticulous hard work for me, my design team, and our specially selected agency partners. The campaign’s barrier-breaking visual language fueled our first ever united portfolio Upfront event at Radio City Music Hall. I oversaw every aspect of the event art from custom emoji keyboard to dynamic video projection that literally flew off the stage and into the audience.</p>
+            </div>
+        </ResponsiveTextBlock>
+
+        <TwoUp>
+            <div class="image-column">
+                <Image src={LeftA} alt=" "/>
+                <Image src={LeftB} alt=" "/>
+            </div>
+            <div class="image-column">
+                <Image src={RightA} alt=" "/>
+                <Image src={RightB} alt=" "/>
+                <Image src={RightC} alt=" "/>
+            </div>
+        </TwoUp>
+
+        <div id="reach-redefined" class="video-player">
+            <iframe title={vimeoReachTitle} src={vimeoReach} frameborder="0" allow={vimeoAllow}></iframe>
+        </div>
+
+        <div class="campaign-intro">
+            Follow-up campaign I crafted and pitched with my in-house team
+        </div>
+
+        <OneUp src={Campaign} alt=" "/>
+
+    </div>
+    <ProjectsCarousel name={brand} />
+</div>
+</InternalLayout>
+
