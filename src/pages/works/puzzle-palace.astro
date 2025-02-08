@@ -85,137 +85,137 @@ import ImgERight from "@assets/PuzzlePalace/img/19_PP_cutting room floor_image.p
 
 <ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
 
-      <div class="app-askew">
-        <div class="inner">
-          <Image src={AppAskewLeft} alt=" " />
-          <Image src={AppAskewRight} alt=" " />
-        </div>
+  <div class="app-askew">
+    <div class="inner">
+      <Image src={AppAskewLeft} alt=" " />
+      <Image src={AppAskewRight} alt=" " />
+    </div>
+  </div>
+
+  <ResponsiveTextBlock class="text-columns">
+    <div>
+      <h1>For us, it’s all fun & games—and so much more.</h1>
+      <p>It’s a way to connect with yourself. A mental check-in. A daily ritual. A me-time tradition. It’s a moment to pause. To escape the stressors of the day. A brain food snack to fuel you.</p>
+    </div>
+    <div>
+      <p>It’s how we stay sharp. Stay loose. Stay creative. Stay fresh. We keep reaching, thinking, trying, and learning—all while playing. It’s how we grow smarter while we stay forever young at heart.</p>
+      <p>It’s that incredible feeling of solving it—of tapping a honed skill, stumbling upon a hidden knack, or unlocking a personal best. Discovering clever and nimble new ways of cracking the code.</p>
+    </div>
+  </ResponsiveTextBlock>
+
+  <div class="app-cards">
+    <div class="tray">
+      <Image src={AppCardE} loading="eager" alt=" " />
+      <Image src={AppCardA} loading="eager" alt=" " />
+      <Image src={AppCardB} loading="eager" alt=" " />
+      <Image src={AppCardC} loading="eager" alt=" " />
+      <Image src={AppCardD} loading="eager" alt=" " />
+      <Image src={AppCardE} loading="eager" alt=" " />
+      <Image src={AppCardA} loading="eager" alt=" " />
+      <Image src={AppCardB} loading="eager" alt=" " />
+      <Image src={AppCardC} loading="eager" alt=" " />
+      <Image src={AppCardD} loading="eager" alt=" " />
+    </div>
+  </div>
+
+  <div class="logo-motion">
+    <video loop playsinline autoplay muted>
+      <source src={LogoMotion} />
+    </video>
+  </div>
+
+  <section>
+    <h1>Color Palette</h1>
+    <ResponsiveImage imgClass="color-palette" mobile={PaletteMobile} desktop={PaletteDesktop} />
+  </section>
+
+  <section>
+    <h1>Type Kit</h1>
+    <ResponsiveImage imgClass="type-kit" mobile={TypographyMobile} desktop={TypographyDesktop} />
+  </section>
+
+  <Image src={SubwayPoster} widths={[2200]} alt=" " />
+
+  <Image class="landing-page" src={LandingPage} widths={[2200]} alt=" " />
+
+  <section>
+    <h1>Palace Rules</h1>
+    <ResponsiveTextBlock class="palace-rules">
+      <div>
+        <h1>Dos</h1>
+        <p>Utilize smart, playful, and rewarding brand values here, for language that sets a scene and builds a unique world.</p>
+        <p>Lean into ‘Palace’ being a reference to a palace of the mind (personalization/personal challenge), synonymous with bounty (quality + quantity), or evocative of the sense of adventure (personal challenge/quest/goal oriented) reminiscent of stories in which a palace or kingdom is featured.</p>
+        <p>Lean into simple smiles and words that slightly elevate the tone; knowing while still being approachable.</p>
+        <p>Use unexpected-yet-fitting, modern, and descriptive words for the delight factor (i.e Bounty, Feast, Queen, Kingdom, Adventure, Festivities, Chamber, Joust)</p>
       </div>
-
-      <ResponsiveTextBlock class="text-columns">
-        <div>
-          <h1>For us, it’s all fun & games—and so much more.</h1>
-          <p>It’s a way to connect with yourself. A mental check-in. A daily ritual. A me-time tradition. It’s a moment to pause. To escape the stressors of the day. A brain food snack to fuel you.</p>
-        </div>
-        <div>
-          <p>It’s how we stay sharp. Stay loose. Stay creative. Stay fresh. We keep reaching, thinking, trying, and learning—all while playing. It’s how we grow smarter while we stay forever young at heart.</p>
-          <p>It’s that incredible feeling of solving it—of tapping a honed skill, stumbling upon a hidden knack, or unlocking a personal best. Discovering clever and nimble new ways of cracking the code.</p>
-        </div>
-      </ResponsiveTextBlock>
-
-      <div class="app-cards">
-        <div class="tray">
-          <Image src={AppCardE} loading="eager" alt=" " />
-          <Image src={AppCardA} loading="eager" alt=" " />
-          <Image src={AppCardB} loading="eager" alt=" " />
-          <Image src={AppCardC} loading="eager" alt=" " />
-          <Image src={AppCardD} loading="eager" alt=" " />
-          <Image src={AppCardE} loading="eager" alt=" " />
-          <Image src={AppCardA} loading="eager" alt=" " />
-          <Image src={AppCardB} loading="eager" alt=" " />
-          <Image src={AppCardC} loading="eager" alt=" " />
-          <Image src={AppCardD} loading="eager" alt=" " />
-        </div>
+      <div>
+        <h1>Don’ts</h1>
+        <p>Avoid the cheesiest of puns when possible, or overly jokey copy (as that could indicate “forced laughter” or infantilizing/talking down to our players)</p>
+        <p>Avoid leaning into any more than sparingly or as needed into ‘Palace’ language primarily focused on the royal treatment or royal court (where’s the challenge or adventure in getting handed everything or pampered due to privilege?).</p>
+        <p>Never default to ‘King’ alone — it’s gendered and we have reason to suspect the majority of our audience identifies as women (+ see guidance above).</p>
+        <p>Avoid words rarely used today ((i.e Good morrow, ye, hark)</p>
+        <p>Avoid leaning too hard into “Palace Language” of any kind. Try to limit to once per piece of copy (i.e email, ad)</p>
       </div>
+    </ResponsiveTextBlock>
+  </section>
 
-      <div class="logo-motion">
-        <video loop playsinline autoplay muted>
-          <source src={LogoMotion} />
-        </video>
+
+  <div class="portraits">
+    <div class="slideshow">
+      <Image class="active" src={PortraitA} widths={[1200]} alt=" " />
+      <Image src={PortraitB} widths={[1200]} alt=" " />
+      <Image src={PortraitC} widths={[1200]} alt=" " />
+      <Image src={PortraitD} widths={[1200]} alt=" " />
+      <Image src={PortraitE} widths={[1200]} alt=" " />
+      <Image src={PortraitF} widths={[1200]} alt=" " />
+      <Image src={PortraitG} widths={[1200]} alt=" " />
+      <Image class="app" src={PortraitApp} widths={[1200]} alt=" " />
+    </div>
+  </div>
+
+  <section>
+    <h1>App loading storyboard</h1>
+    <div class="splash-screen">
+      <div>
+        <Image src={SplashScreenA} widths={[1200]} alt=" " />
+        <Image src={SplashScreenB} widths={[1200]} alt=" " />
+        <Image src={SplashScreenC} widths={[1200]} alt=" " />
       </div>
-
-      <section>
-        <h1>Color Palette</h1>
-        <ResponsiveImage imgClass="color-palette" mobile={PaletteMobile} desktop={PaletteDesktop} />
-      </section>
-
-      <section>
-        <h1>Type Kit</h1>
-        <ResponsiveImage imgClass="type-kit" mobile={TypographyMobile} desktop={TypographyDesktop} />
-      </section>
-
-      <Image src={SubwayPoster} widths={[2200]} alt=" " />
-
-      <Image class="landing-page" src={LandingPage} widths={[2200]} alt=" " />
-
-      <section>
-        <h1>Palace Rules</h1>
-        <ResponsiveTextBlock class="palace-rules">
-          <div>
-            <h1>Dos</h1>
-            <p>Utilize smart, playful, and rewarding brand values here, for language that sets a scene and builds a unique world.</p>
-            <p>Lean into ‘Palace’ being a reference to a palace of the mind (personalization/personal challenge), synonymous with bounty (quality + quantity), or evocative of the sense of adventure (personal challenge/quest/goal oriented) reminiscent of stories in which a palace or kingdom is featured.</p>
-            <p>Lean into simple smiles and words that slightly elevate the tone; knowing while still being approachable.</p>
-            <p>Use unexpected-yet-fitting, modern, and descriptive words for the delight factor (i.e Bounty, Feast, Queen, Kingdom, Adventure, Festivities, Chamber, Joust)</p>
-          </div>
-          <div>
-            <h1>Don’ts</h1>
-            <p>Avoid the cheesiest of puns when possible, or overly jokey copy (as that could indicate “forced laughter” or infantilizing/talking down to our players)</p>
-            <p>Avoid leaning into any more than sparingly or as needed into ‘Palace’ language primarily focused on the royal treatment or royal court (where’s the challenge or adventure in getting handed everything or pampered due to privilege?).</p>
-            <p>Never default to ‘King’ alone — it’s gendered and we have reason to suspect the majority of our audience identifies as women (+ see guidance above).</p>
-            <p>Avoid words rarely used today ((i.e Good morrow, ye, hark)</p>
-            <p>Avoid leaning too hard into “Palace Language” of any kind. Try to limit to once per piece of copy (i.e email, ad)</p>
-          </div>
-        </ResponsiveTextBlock>
-      </section>
-
-
-      <div class="portraits">
-        <div class="slideshow">
-          <Image class="active" src={PortraitA} widths={[1200]} alt=" " />
-          <Image src={PortraitB} widths={[1200]} alt=" " />
-          <Image src={PortraitC} widths={[1200]} alt=" " />
-          <Image src={PortraitD} widths={[1200]} alt=" " />
-          <Image src={PortraitE} widths={[1200]} alt=" " />
-          <Image src={PortraitF} widths={[1200]} alt=" " />
-          <Image src={PortraitG} widths={[1200]} alt=" " />
-          <Image class="app" src={PortraitApp} widths={[1200]} alt=" " />
-        </div>
+      <div>
+        <Image src={SplashScreenD} widths={[1200]} alt=" " />
+        <Image src={SplashScreenE} widths={[1200]} alt=" " />
+        <Image src={SplashScreenF} widths={[1200]} alt=" " />
       </div>
+    </div>
+  </section>
 
-      <section>
-        <h1>App loading storyboard</h1>
-        <div class="splash-screen">
-          <div>
-            <Image src={SplashScreenA} widths={[1200]} alt=" " />
-            <Image src={SplashScreenB} widths={[1200]} alt=" " />
-            <Image src={SplashScreenC} widths={[1200]} alt=" " />
-          </div>
-          <div>
-            <Image src={SplashScreenD} widths={[1200]} alt=" " />
-            <Image src={SplashScreenE} widths={[1200]} alt=" " />
-            <Image src={SplashScreenF} widths={[1200]} alt=" " />
-          </div>
-        </div>
-      </section>
+  <section class="values">
+    <h1>Living Values</h1>
+    <div class="slideshow">
+      <ResponsiveImage class="active" mobile={ValueAMobile} desktop={ValueADesktop} />
+      <ResponsiveImage mobile={ValueBMobile} desktop={ValueBDesktop} />
+      <ResponsiveImage mobile={ValueCMobile} desktop={ValueCDesktop} />
+      <ResponsiveImage mobile={ValueDMobile} desktop={ValueDDesktop} />
+      <ResponsiveImage mobile={ValueEMobile} desktop={ValueEDesktop} />
+    </div>
+  </section>
 
-      <section class="values">
-        <h1>Living Values</h1>
-        <div class="slideshow">
-          <ResponsiveImage class="active" mobile={ValueAMobile} desktop={ValueADesktop} />
-          <ResponsiveImage mobile={ValueBMobile} desktop={ValueBDesktop} />
-          <ResponsiveImage mobile={ValueCMobile} desktop={ValueCDesktop} />
-          <ResponsiveImage mobile={ValueDMobile} desktop={ValueDDesktop} />
-          <ResponsiveImage mobile={ValueEMobile} desktop={ValueEDesktop} />
-        </div>
-      </section>
+  <section class="cutting-room">
+    <h1>Cutting Room Floor</h1>
+    <div class="two-col">
+      <Image src={EtcALeft} widths={[1200]} alt=" " />
+      <Image src={EtcARight} widths={[1200]} alt=" " />
+    </div>
+    <Image class="square" src={EtcB} widths={[1200]} alt=" " />
+    <Image class="square" src={EtcC} widths={[1200]} alt=" " />
+    <Image class="narrow" src={EtcD} widths={[1200]} alt=" " />
+    <div class="three-col">
+      <Image src={ImgELeft} widths={[1200]} alt=" " />
+      <Image src={ImgECenter} widths={[1200]} alt=" " />
+      <Image src={ImgERight} widths={[1200]} alt=" " />
+    </div>
 
-      <section class="cutting-room">
-        <h1>Cutting Room Floor</h1>
-        <div class="two-col">
-          <Image src={EtcALeft} widths={[1200]} alt=" " />
-          <Image src={EtcARight} widths={[1200]} alt=" " />
-        </div>
-        <Image class="square" src={EtcB} widths={[1200]} alt=" " />
-        <Image class="square" src={EtcC} widths={[1200]} alt=" " />
-        <Image class="narrow" src={EtcD} widths={[1200]} alt=" " />
-        <div class="three-col">
-          <Image src={ImgELeft} widths={[1200]} alt=" " />
-          <Image src={ImgECenter} widths={[1200]} alt=" " />
-          <Image src={ImgERight} widths={[1200]} alt=" " />
-        </div>
-
-      </section>
+  </section>
 
 </ProjectLayout>
 

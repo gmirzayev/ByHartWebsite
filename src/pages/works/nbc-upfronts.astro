@@ -47,41 +47,41 @@ const vimeoReach = "https://player.vimeo.com/video/177130853" + vimeoOpts
 
 <ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
 
-        <div id="upfronts-recap" class="video-player">
-            <iframe title={vimeoRecapTitle} src={vimeoRecap} frameborder="0" allow={vimeoAllow}></iframe>
+    <div id="upfronts-recap" class="video-player">
+        <iframe title={vimeoRecapTitle} src={vimeoRecap} frameborder="0" allow={vimeoAllow}></iframe>
+    </div>
+
+    <ResponsiveTextBlock class="reach-intro">
+        <div>
+            <h1>A Campaign That Transcends Boundaries</h1>
+            <p>As NBCUniversal’s lead art creative on the 2016 Reach Redefined campaign, I was primarily responsible for all the visual storytelling, with my hands in every aspect of creative work that went into the campaign. From concepting this year’s authentic portraiture approach to art directing 60 talent alongside photographer</p>
         </div>
-
-        <ResponsiveTextBlock class="reach-intro">
-            <div>
-                <h1>A Campaign That Transcends Boundaries</h1>
-                <p>As NBCUniversal’s lead art creative on the 2016 Reach Redefined campaign, I was primarily responsible for all the visual storytelling, with my hands in every aspect of creative work that went into the campaign. From concepting this year’s authentic portraiture approach to art directing 60 talent alongside photographer</p>
-            </div>
-            <div class="no-break">
-                <p>Peggy Sirota, the lead up to the launch of the campaign was months of meticulous hard work for me, my design team, and our specially selected agency partners. The campaign’s barrier-breaking visual language fueled our first ever united portfolio Upfront event at Radio City Music Hall. I oversaw every aspect of the event art from custom emoji keyboard to dynamic video projection that literally flew off the stage and into the audience.</p>
-            </div>
-        </ResponsiveTextBlock>
-
-        <TwoUp>
-            <div class="image-column">
-                <Image src={LeftA} alt=" "/>
-                <Image src={LeftB} alt=" "/>
-            </div>
-            <div class="image-column">
-                <Image src={RightA} alt=" "/>
-                <Image src={RightB} alt=" "/>
-                <Image src={RightC} alt=" "/>
-            </div>
-        </TwoUp>
-
-        <div id="reach-redefined" class="video-player">
-            <iframe title={vimeoReachTitle} src={vimeoReach} frameborder="0" allow={vimeoAllow}></iframe>
+        <div class="no-break">
+            <p>Peggy Sirota, the lead up to the launch of the campaign was months of meticulous hard work for me, my design team, and our specially selected agency partners. The campaign’s barrier-breaking visual language fueled our first ever united portfolio Upfront event at Radio City Music Hall. I oversaw every aspect of the event art from custom emoji keyboard to dynamic video projection that literally flew off the stage and into the audience.</p>
         </div>
+    </ResponsiveTextBlock>
 
-        <div class="campaign-intro">
-            Follow-up campaign I crafted and pitched with my in-house team
+    <TwoUp>
+        <div class="image-column">
+            <Image src={LeftA} alt=" "/>
+            <Image src={LeftB} alt=" "/>
         </div>
+        <div class="image-column">
+            <Image src={RightA} alt=" "/>
+            <Image src={RightB} alt=" "/>
+            <Image src={RightC} alt=" "/>
+        </div>
+    </TwoUp>
 
-        <OneUp src={Campaign} alt=" "/>
+    <div id="reach-redefined" class="video-player">
+        <iframe title={vimeoReachTitle} src={vimeoReach} frameborder="0" allow={vimeoAllow}></iframe>
+    </div>
+
+    <div class="campaign-intro">
+        Follow-up campaign I crafted and pitched with my in-house team
+    </div>
+
+    <OneUp src={Campaign} alt=" "/>
 
 </ProjectLayout>
 

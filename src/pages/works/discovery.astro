@@ -40,27 +40,27 @@ const vimeoAllow = "autoplay; fullscreen; picture-in-picture; clipboard-write; e
 
 <ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
 
-        <div class="video-player">
-            <iframe title="My Visual Resumé" src={vimeoUrl} frameborder="0" allow={vimeoAllow}></iframe>
+    <div class="video-player">
+        <iframe title="My Visual Resumé" src={vimeoUrl} frameborder="0" allow={vimeoAllow}></iframe>
+    </div>
+
+
+    <TwoUp class="mobile-site">
+        <div>
+            <Image src={MobileA} alt=" " />
+            <Image src={MobileB} alt=" " />
+        </div>
+        <div>
+            <Image src={MobileC} alt=" " />
+            <Image src={MobileD} alt=" " />
         </div>
 
+    </TwoUp>
 
-        <TwoUp class="mobile-site">
-            <div>
-                <Image src={MobileA} alt=" " />
-                <Image src={MobileB} alt=" " />
-            </div>
-            <div>
-                <Image src={MobileC} alt=" " />
-                <Image src={MobileD} alt=" " />
-            </div>
-
-        </TwoUp>
-
-        <TwoUp class="desktop-site" fit={false}>
-            <Image src={Desktop} alt=" " />
-            <Image src={Footer} alt=" " />
-        </TwoUp>
+    <TwoUp class="desktop-site" fit={false}>
+        <Image src={Desktop} alt=" " />
+        <Image src={Footer} alt=" " />
+    </TwoUp>
 
 </ProjectLayout>
 
