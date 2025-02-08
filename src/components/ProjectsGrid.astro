@@ -221,6 +221,10 @@ function getProject(slug){
   return project
 }
 
+// vary the tooltip angles for each grid cell
+let counter = 0
+let stepCount = 4
+
 ---
 
 <div class="works-grid">
@@ -229,7 +233,7 @@ function getProject(slug){
       <div class="column">{
         slugs.map(slug => {
             const {title, img, alt} = getProject(slug)
-            return <div class="project">
+            return <div class:list={["project", `step-${(counter++) % stepCount}`]}>
               <a href={`/works/${slug}`} data-title={title} >
                 <img src={img.src} alt={alt} />
                 <h2>{title}</h2>
@@ -245,7 +249,7 @@ function getProject(slug){
       <div class="column">{
         slugs.map(slug => {
           const {title, img, alt} = getProject(slug)
-          return <div class="project">
+          return <div class:list={["project", `step-${(counter++) % stepCount}`]}>
             <a href={`/works/${slug}`} data-title={title} >
               <img src={img.src} alt={alt} />
               <h2>{title}</h2>
@@ -312,6 +316,38 @@ function getProject(slug){
       opacity:1;
       transform: translate(-48%, -50%) rotate(8deg);
     }
+
+    &.step-1{
+      a::after {
+        transform-origin: bottom left;
+        transform: translate(-50%, -50%) rotate(-16deg);
+      }
+      a:hover::after {
+        transform: translate(-48%, -50%) rotate(-8deg);
+      }
+    }
+
+    &.step-2{
+      a::after {
+        transform-origin: bottom right;
+        transform: translate(-30%, -50%) rotate(-5deg);
+      }
+      a:hover::after {
+        transform: translate(-48%, -50%) rotate(17deg);
+      }
+    }
+
+
+    &.step-3{
+      a::after {
+        transform-origin: top left;
+        transform: translate(-30%, -50%) rotate(5deg);
+      }
+      a:hover::after {
+        transform: translate(-48%, -50%) rotate(-17deg);
+      }
+    }
+
 
     @media (min-width: 768px) {
       margin-bottom: 40px;
