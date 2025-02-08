@@ -1,0 +1,168 @@
+#firefly-vets-main {
+    background: var(--cream);
+}
+
+
+.wordmark img{
+    max-width: 840px;
+}
+
+.three-up{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 15px;
+    margin: 40px 20px;
+
+    @media (min-width: 768px) {
+        flex-flow: row nowrap;
+        justify-content: center;
+        img{
+            width:calc(33.33333% - 10px);
+            max-width:430px;
+        }
+    }
+}
+
+.slogan{
+    padding: 0 20px 25px 20px;
+    @media (min-width: 768px) {
+        padding: 70px 20px 100px 20px;
+    }
+}
+
+.style-guide{
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 15px;
+
+    background:#31384A;
+
+    img{
+        max-width: 1040px;
+    }
+
+    @media (min-width: 768px) {
+        padding: 120px 20px;
+    }
+}
+
+
+.hands{
+    margin: 40px 0;
+    @media (min-width: 768px) {
+        margin: 120px 0;
+    }
+}
+
+.four-up{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 40px 20px;
+
+    img{
+        width:100%;
+    }
+
+    @media (min-width: 768px) {
+        margin: 120px 20px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.image-column{
+    position:relative;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 15px;
+
+    img{
+        width:100% !important;
+    }
+}
+
+.video-player{
+    position: relative;
+    padding-top: calc(56.272727% - 20px);
+    margin: 0 20px;
+
+    iframe {
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.reach-intro{
+    padding: 45px 20px;
+    @media (min-width: 768px) {
+        padding: 120px 20px;
+    }
+}
+
+.campaign-intro{
+    font: 700 26px/1.2 "Karla", sans-serif;
+    letter-spacing: -0.72px;
+
+    padding:0 20px;
+    max-width:600px;
+
+    @media (min-width: 768px) {
+        font-size: 36px;
+        text-align:center;
+        max-width:840px;
+        margin:0 auto;
+    }
+}
+
+.one-up, #reach-redefined{
+    margin:25px 0 45px 0;
+
+    @media (min-width: 768px) {
+        margin: 60px 0 120px 0;
+    }
+}
+
+#brand-guidelines{
+    margin:45px 0 0 0;
+    padding:20px 0;
+    @media (min-width: 768px) {
+        margin: 60px 0 0 0 ;
+    }
+}
+
+.presentation{
+    position:relative;
+    height:calc(56.3vw + 13px); /* aspect ratio of slides */
+    margin:0 20px;
+}
