@@ -1,5 +1,12 @@
-#firefly-vets-main {
-    background: var(--cream);
+.wordmark{
+    margin: 40px 0;
+    @media (min-width: 768px) {
+        margin: 120px 0;
+    }
+
+    img{
+        max-width: 840px;
+    }
 }
 
 

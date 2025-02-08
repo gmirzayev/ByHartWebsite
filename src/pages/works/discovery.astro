@@ -1,8 +1,21 @@
 ---
+const brand = "Discovery"
+const tagline="TKTKTKTKTK"
+const tags = [
+    'Brand Identity + Positioning',
+    'Video + Photography',
+    'Product Design (UX/UI)',
+    'CX',
+    'Editorial Content',
+    'Qualitative Research',
+    'Surprise + Delight',
+    'Visual Identity',
+]
+
 import "@styles/utils.css";
 import "@styles/discovery.css";
 import Image from "astro/components/Image.astro";
-import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import OneUp from "@components/OneUp.astro";
@@ -23,24 +36,9 @@ import MobileD from "@assets/Discovery/discovery_mobile4.jpg";
 
 const vimeoUrl = "https://player.vimeo.com/video/363489186?byline=false&title=false&portrait=false"
 const vimeoAllow = "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-
-const brand = "Discovery"
 ---
 
-<InternalLayout>
-  <div id="discovery-main">
-    <ProjectHead hero={Hero} brand={brand} tagline="TKTKTKTKTK" />
-    <ProjectTags title={brand} theme="light" tags={[
-        'Brand Identity + Positioning',
-        'Video + Photography',
-        'Product Design (UX/UI)',
-        'CX',
-        'Editorial Content',
-        'Qualitative Research',
-        'Surprise + Delight',
-        'Visual Identity',
-    ]} />
-    <div id="discovery-content">
+<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
 
         <div class="video-player">
             <iframe title="My Visual Resumé" src={vimeoUrl} frameborder="0" allow={vimeoAllow}></iframe>
@@ -64,9 +62,5 @@ const brand = "Discovery"
             <Image src={Footer} alt=" " />
         </TwoUp>
 
-
-    </div>
-    <ProjectsCarousel name={brand} />
-</div>
-</InternalLayout>
+</ProjectLayout>
 

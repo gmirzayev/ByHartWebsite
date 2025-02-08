@@ -1,6 +1,21 @@
 ---
-import "@styles/utils.css";
-import InternalLayout from "@layouts/InternalLayout.astro";
+const brand="Comics Kingdom"
+const tagline="A Feast of Fandom"
+const tags=[
+  "Brand Identity + Positioning",
+  "Logo Design",
+  "Video + Photography",
+  "Writing + Editing",
+  "Surprise + Delight",
+  "Art + Illustration",
+  "Product Design (UX/UI)",
+  "Organic + Paid Social Content",
+  "Interviews",
+  "Qualitative Research",
+]
+
+import "../../styles/utils.css";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import Header from "@assets/ComicsKingdom/img/CK_Cover.png";
@@ -191,24 +206,7 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
     }
   }
 </style>
-<InternalLayout>
-  <div id="comics-main">
-    <ProjectHead hero={Header} brand="Comics Kingdom" tagline="A Feast of Fandom" />
-    <div style={{ backgroundColor: "#17100B" }}>
-      <!-- <ProjectHead theme="dark" /> -->
-      <ProjectTags title="Comics Kingdom" theme="dark" tags={[
-        "Brand Identity + Positioning",
-        "Logo Design",
-        "Video + Photography",
-        "Writing + Editing",
-        "Surprise + Delight",
-        "Art + Illustration",
-        "Product Design (UX/UI)",
-        "Organic + Paid Social Content",
-        "Interviews",
-        "Qualitative Research",
-      ]} />
-    </div>
+<ProjectLayout hero={Header} brand={brand} tagline={tagline} tags={tags}>
     <div class="image-flex">
       <div
         class="w-full relative flex justify-center bg-[#17100b] pt-[50px] pb-[100px]"
@@ -383,9 +381,7 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
         />
       </div>
     </div>
-  </div>
-  <ProjectsCarousel name="Comics Kingdom" />
-</InternalLayout>
+</ProjectLayout>
 
 <script>
   import Player from "@vimeo/player";

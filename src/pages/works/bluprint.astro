@@ -1,6 +1,25 @@
 ---
+const brand = "Bluprint"
+const tagline = "Watch + Learn"
+const tags = [
+  "Brand Identity + Positioning",
+  "Logo Design",
+  "Video + Photography",
+  "Art + Illustration",
+  "Product Design (UX/UI)",
+  "CX",
+  "Interior Design",
+  "Original Naming",
+  "Physical Goods Development + Design",
+  "Print + Packaging",
+  "Organic + Paid Social Content",
+  "Writing + Editing",
+  "Qualitative Research",
+  "Surprise + Delight",
+]
+
 import "@styles/utils.css";
-import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import Image from "astro/components/Image.astro";
@@ -94,30 +113,7 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
     letter-spacing: 2px;
   }
 </style>
-<InternalLayout>
-  <div id="bluprint-main">
-    <ProjectHead hero={Header} brand="Bluprint" tagline="Watch + Learn" />
-    <ProjectTags
-      title="Bluprint"
-      theme="light"
-      tags={[
-        "Brand Identity + Positioning",
-        "Logo Design",
-        "Video + Photography",
-        "Art + Illustration",
-        "Product Design (UX/UI)",
-        "CX",
-        "Interior Design",
-        "Original Naming",
-        "Physical Goods Development + Design",
-        "Print + Packaging",
-        "Organic + Paid Social Content",
-        "Writing + Editing",
-        "Qualitative Research",
-        "Surprise + Delight",
-      ]}
-    />
-    <div class="bluprint-content">
+<ProjectLayout hero={Header} brand={brand} tagline={tagline} tags={tags}>
       <div class="flex items-center w-full flex-col md:flex-row">
         <Image
           class="h-auto w-full p-[15%] md:w-[50%] md:p-[10%]"
@@ -377,9 +373,8 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
         />
       </div>
     </div>
-  </div>
-</InternalLayout>
-<ProjectsCarousel name="Bluprint" />
+</ProjectLayout>
+
 <script>
   import Player from "@vimeo/player";
 

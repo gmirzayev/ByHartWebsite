@@ -1,7 +1,3 @@
-#curve-report-main {
-    background: var(--cream);
-}
-
 .section-intro{
     display: flex;
     flex-flow: column nowrap;

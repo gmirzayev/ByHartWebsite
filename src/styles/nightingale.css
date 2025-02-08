@@ -1,7 +1,5 @@
-#nightingale-main {
+:root {
     --violet: #c3c6fd;
-
-    background: var(--cream);
 }
 
 .nv-logo{

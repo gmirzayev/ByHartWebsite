@@ -1,8 +1,18 @@
 ---
+const brand = "See Sarah Dance"
+const tagline = "TKTKTKTKTK"
+const tags = [
+    'Brand Identity + Positioning',
+    'Video + Photography',
+    'Writing + Editing',
+    'Surprise + Delight',
+    'Theatrics'
+]
+
 import "@styles/utils.css";
 import "@styles/see-sarah-dance.css";
 import Image from "astro/components/Image.astro";
-import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import Navigation from "@components/Navigation.astro";
@@ -15,20 +25,9 @@ import Hero from "@assets/SeeSarahDance/Hero.png"
 const vimeoUrl = "https://player.vimeo.com/video/133081327?autoplay=1&loop=1&muted=1"
 const vimeoAllow = "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
 
-const brand = "See Sarah Dance"
 ---
 
-<InternalLayout>
-  <div id="see-sarah-dance-main">
-    <ProjectHead hero={Hero} brand={brand} tagline="TKTKTKTKTK" />
-    <ProjectTags title={brand} theme="light" tags={[
-        'Brand Identity + Positioning',
-        'Video + Photography',
-        'Writing + Editing',
-        'Surprise + Delight',
-        'Theatrics'
-    ]} />
-    <div id="see-sarah-dance-content">
+<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
 
         <div class="video-player">
             <iframe title="My Visual Resumé" src={vimeoUrl} frameborder="0" allow={vimeoAllow}></iframe>
@@ -44,7 +43,4 @@ const brand = "See Sarah Dance"
             </div>
         </ResponsiveTextBlock>
 
-    </div>
-    <ProjectsCarousel name={brand} />
-</div>
-</InternalLayout>
+</ProjectLayout>

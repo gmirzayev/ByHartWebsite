@@ -1,6 +1,22 @@
 ---
+const brand = "Pearly Bites"
+const tagline="Come. Sit. Smile."
+const tags = [
+  "Brand Identity + Positioning",
+  "Logo Design",
+  "Art + Illustration",
+  "Product Design (UX/UI)",
+  "CX",
+  "Interior Design",
+  "Organic + Paid Social Content",
+  "Writing + Editing",
+  "Signage + Display",
+  "Surprise + Delight",
+]
+
+
 import "@styles/utils.css";
-import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import Image from "astro/components/Image.astro";
@@ -63,21 +79,7 @@ import Header from "@assets/PearlyBites/img/PearlyBites_Header.png";
     }
   }
 </style>
-<InternalLayout>
-  <div id="pearly-main">
-    <ProjectHead hero={Header} brand="Pearly Bites" tagline="Come. Sit. Smile." />
-    <ProjectTags title="Pearly Bites" theme="light" tags={[
-      "Brand Identity + Positioning",
-      "Logo Design",
-      "Art + Illustration",
-      "Product Design (UX/UI)",
-      "CX",
-      "Interior Design",
-      "Organic + Paid Social Content",
-      "Writing + Editing",
-      "Signage + Display",
-      "Surprise + Delight",
-    ]} />
+<ProjectLayout hero={Header} brand={brand} tagline={tagline} tags={tags}>
     <div class="image-flex">
       <Image class="h-auto w-[92%]" src={FrontDesk} alt="Pearly Bites" />
       <div class="textbox">
@@ -134,6 +136,4 @@ import Header from "@assets/PearlyBites/img/PearlyBites_Header.png";
         alt="Pearly Bites"
       />
     </div>
-  </div>
-  <ProjectsCarousel name="Pearly Bites" />
-</InternalLayout>
+</ProjectLayout>

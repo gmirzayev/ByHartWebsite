@@ -1,8 +1,20 @@
 ---
+const brand = "Genius Kitchen"
+const tagline = "A Recipe for Brilliance"
+const tags = [
+    'Brand Identity + Positioning',
+    'Art + Illustration',
+    'Product Design (UX/UI)',
+    'CX',
+    'Qualitative Research',
+    'Surprise + Delight',
+    'Visual Identity'
+]
+
 import "@styles/utils.css";
 import "@styles/genius-kitchen.css";
 import Image from "astro/components/Image.astro";
-import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import OneUp from "@components/OneUp.astro";
@@ -17,30 +29,13 @@ import Hero from "@assets/GeniusKitchen/Hero.png"
 import Spread from "@assets/GeniusKitchen/GK_spread.jpg"
 import Animation from "@assets/GeniusKitchen/gk-home.gif"
 import Icons from "@assets/GeniusKitchen/icons.jpg"
-
-const brand = "Genius Kitchen"
 ---
 
-<InternalLayout>
-  <div id="genius-kitchen-main">
-    <ProjectHead hero={Hero} brand={brand} tagline="A Recipe for Brilliance" />
-    <ProjectTags title={brand} theme="light" tags={[
-        'Brand Identity + Positioning',
-        'Art + Illustration',
-        'Product Design (UX/UI)',
-        'CX',
-        'Qualitative Research',
-        'Surprise + Delight',
-        'Visual Identity'
-    ]} />
-    <div id="genius-kitchen-content">
+<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
         <OneUp src={Spread} />
         <TwoUp bias="left">
             <Image src={Animation} alt=" "/>
             <Image src={Icons} alt=" "/>
         </TwoUp>
-    </div>
-    <ProjectsCarousel name={brand} />
-</div>
-</InternalLayout>
+</ProjectLayout>
 

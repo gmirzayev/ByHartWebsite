@@ -1,6 +1,23 @@
 ---
+const brand="Kindra"
+const tagline = "The New Era of You"
+const tags= [
+  "Brand Identity + Positioning",
+  "Video + Photography",
+  "Art + Illustration",
+  "Product Design (UX/UI)",
+  "CX",
+  "Physical Goods Development + Design",
+  "Print + Packaging",
+  "Editorial Content",
+  "Organic + Paid Social Content",
+  "Writing + Editing",
+  "Quiz Development",
+  "Surprise + Delight",
+]
+
 import "@styles/utils.css";
-import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import Image from "astro/components/Image.astro";
@@ -112,28 +129,7 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
     display: none;
   }
 </style>
-<InternalLayout>
-  <div id="kindra-main">
-    <ProjectHead hero={Header} brand="Kindra" tagline="The New Era of You" />
-    <ProjectTags
-      title="Kindra"
-      theme="light"
-      tags={[
-        "Brand Identity + Positioning",
-        "Video + Photography",
-        "Art + Illustration",
-        "Product Design (UX/UI)",
-        "CX",
-        "Physical Goods Development + Design",
-        "Print + Packaging",
-        "Editorial Content",
-        "Organic + Paid Social Content",
-        "Writing + Editing",
-        "Quiz Development",
-        "Surprise + Delight",
-      ]}
-    />
-    <div id="kindra-content">
+<ProjectLayout hero={Header} brand={brand} tagline={tagline} tags={tags}>
       <div class="flex flex-col md:flex-row md:mx-[60px]">
         <Image
           class="h-auto w-full md:w-[50%] md:order-2"
@@ -762,10 +758,8 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
           </p>
         </div>
       </div>
-    </div>
-    <ProjectsCarousel name="Kindra" />
-  </div>
-</InternalLayout>
+
+</ProjectLayout>
 <script>
   const readMoreButtons = document.getElementsByClassName("read-more");
   const moreSpans = document.getElementsByClassName("more");

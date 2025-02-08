@@ -1,10 +1,24 @@
 ---
+const brand = "Sage"
+const tagline = "Healing is Always Possible"
+const tags = [
+  "Brand Identity + Positioning",
+  "Logo Design",
+  "Art + Illustration",
+  "Product Design (UX/UI)",
+  "Organic + Paid Social Content",
+  "Interviews",
+  "Writing + Editing",
+  "Qualitative Research",
+  "Surprise + Delight",
+]
+
 import "@styles/utils.css";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
-import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
 import SageHeroVideo from "@assets/Sage/Sage_Hero_Desktop.mp4";
 import BreatheVideo from "@assets/Sage/Breathe_Desktop.mp4";
 import WeAreVideo from "@assets/Sage/We_Are_Desktop.mp4";
@@ -154,20 +168,7 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
     }
   }
 </style>
-<InternalLayout>
-  <div id="sage-main" class="w-full">
-    <ProjectHead hero={SageHeroVideo} brand="Sage" tagline="Healing is Always Possible" />
-    <ProjectTags title="Sage" theme="light" tags={[
-      "Brand Identity + Positioning",
-      "Logo Design",
-      "Art + Illustration",
-      "Product Design (UX/UI)",
-      "Organic + Paid Social Content",
-      "Interviews",
-      "Writing + Editing",
-      "Qualitative Research",
-      "Surprise + Delight",
-    ]} />
+<ProjectLayout hero={SageHeroVideo} brand={brand} tagline={tagline} tags={tags}>
     <Image
       class="collage-image h-auto w-[90%]"
       src={SagePhoto}
@@ -453,6 +454,4 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
         />
       </div>
     </div>
-  </div>
-  <ProjectsCarousel name="Sage" />
-</InternalLayout>
+</ProjectLayout>

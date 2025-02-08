@@ -1,15 +1,30 @@
 ---
+const brand = "Six Feet"
+const tagline = "Stick with Us"
+const tags = [
+  "Brand Identity + Positioning",
+  "Logo Design",
+  "Video + Photography",
+  "Art + Illustration",
+  "Original Naming",
+  "Physical Goods Development + Design",
+  "Writing + Editing",
+  "Signage + Display",
+  "Surprise + Delight",
+]
+
 import "@styles/utils.css";
-import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
+
 import Header from "@assets/SixFeet/6ft_Header.mp4";
 import MaskGang from "@assets/SixFeet/img/6ft_MaskGang.png";
 import HotMask from "@assets/SixFeet/img/6ft_YourMaskisHot.png";
-import SixFeet from "@assets/SixFeet/img/6ft_SixFeetApart.png";
+import SixFeetApart from "@assets/SixFeet/img/6ft_SixFeetApart.png";
 import Together from "@assets/SixFeet/img/6ft_TogetherAtHeart.png";
 import RainbowSticker from "@assets/SixFeet/6ft_RainbowStickers.gif";
 import Store from "@assets/SixFeet/img/6ft_Store.png";
@@ -96,20 +111,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
     }
   }
 </style>
-<InternalLayout>
-  <div id="sixfeet-main">
-    <ProjectHead hero={Header} brand="Six Feet" tagline="Stick with Us" />
-    <ProjectTags title="6 Feet From You" theme="light" tags={[
-      "Brand Identity + Positioning",
-      "Logo Design",
-      "Video + Photography",
-      "Art + Illustration",
-      "Original Naming",
-      "Physical Goods Development + Design",
-      "Writing + Editing",
-      "Signage + Display",
-      "Surprise + Delight",
-    ]} />
+<ProjectLayout hero={Header} brand={brand} tagline={tagline} tags={tags}>
     <div class="image-flex">
       <Image class="w-[89%] md:w-[92%]" src={MaskGang} alt="Six Feet" />
       <h2 class="w-[90%] md:w-[60%]">
@@ -232,7 +234,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
       <div class="flex justify-between w-[95%]">
         <Image
           class="w-1/2 p-[5px] h-auto md:p-[20px]"
-          src={SixFeet}
+          src={SixFeetApart}
           alt="Six Feet"
         />
         <Image
@@ -271,5 +273,4 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
       </div>
     </div>
   </div>
-  <ProjectsCarousel name="6 Feet Apart" />
-</InternalLayout>
+</ProjectLayout>

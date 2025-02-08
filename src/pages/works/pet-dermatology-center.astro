@@ -1,14 +1,25 @@
 ---
+const brand = "Pet Dermatology Center"
+const tagline = "A Viz ID that Stretches the Imagination"
+const tags=[
+    "Brand Identity + Positioning",
+    "Logo Design",
+    "Art + Illustration",
+    "Interior Design",
+    "Surprise + Delight",
+]
+
 import "@styles/utils.css";
 import "@styles/pet-dermatology-center.css";
 import Image from "astro/components/Image.astro";
-import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
 import ResponsiveBackground from "@components/ResponsiveBackground.astro";
+import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 
 import Hero from "@assets/PetDerm/img/PetDerm_hero.svg"
 import LogoBlonde from "@assets/PetDerm/img/PetDerm_Logos_primary_blonde.svg"
@@ -34,23 +45,10 @@ import HeadF from "@assets/PetDerm/head-tail/pet6-head.svg"
 import TailF from "@assets/PetDerm/head-tail/pet6-tail.svg"
 import HeadG from "@assets/PetDerm/head-tail/pet7-head.svg"
 import TailG from "@assets/PetDerm/head-tail/pet7-tail.svg"
-
-import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
-
-const brand = "Pet Dermatology Center"
 ---
 
-<InternalLayout>
-  <div id="pet-derm-main">
-    <ProjectHead hero={Hero} brand={brand} tagline="A Viz ID that Stretches the Imagination" />
-    <ProjectTags title={brand} theme="light" tags={[
-        "Brand Identity + Positioning",
-        "Logo Design",
-        "Art + Illustration",
-        "Interior Design",
-        "Surprise + Delight",
-    ]} />
-    <div id="pet-derm-content">
+<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
+
         <div class="mosaic">
             <Image src={Mosaic} alt=" " />
         </div>
@@ -100,10 +98,8 @@ const brand = "Pet Dermatology Center"
                 <Image class="active" src={TailG} alt=" " />
             </div>
         </div>
-    </div>
-    <ProjectsCarousel name={brand} />
-</div>
-</InternalLayout>
+
+</ProjectLayout>
 
 
 <script>

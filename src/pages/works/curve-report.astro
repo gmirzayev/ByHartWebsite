@@ -1,8 +1,24 @@
 ---
+const brand = "The Curve Report"
+const tagline = "TKTKTKTKTK"
+const tags = [
+    'Brand Identity + Positioning',
+    'Video + Photography',
+    'Art + Illustration',
+    'Physical Goods Development + Design',
+    'Print + Packaging',
+    'Editorial Content',
+    'Interviews',
+    'Writing + Editing',
+    'Qualitative Research',
+    'Surprise + Delight',
+    'Visual Identity',
+]
+
 import "@styles/utils.css";
 import "@styles/curve-report.css";
 import Image from "astro/components/Image.astro";
-import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import OneUp from "@components/OneUp.astro";
@@ -49,28 +65,9 @@ const vimeoNord = "https://player.vimeo.com/video/177130879" + vimeoOpts
 
 const vimeoCultureTitle = "The Curve Report: CultureFirst - Teaser Trailer"
 const vimeoCulture = "https://player.vimeo.com/video/177130787" + vimeoOpts
-
-const brand = "The Curve Report"
 ---
 
-<InternalLayout>
-  <div id="curve-report-main">
-    <ProjectHead hero={Hero} brand={brand} tagline="TKTKTKTKTK" />
-    <ProjectTags title={brand} theme="light" tags={[
-        'Brand Identity + Positioning',
-        'Video + Photography',
-        'Art + Illustration',
-        'Physical Goods Development + Design',
-        'Print + Packaging',
-        'Editorial Content',
-        'Interviews',
-        'Writing + Editing',
-        'Qualitative Research',
-        'Surprise + Delight',
-        'Visual Identity',
-    ]} />
-    <div id="curve-report-content">
-
+<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
         <TwoUp>
             <Image src={StoryTop} alt=" "/>
             <div class="section-intro">
@@ -146,9 +143,5 @@ const brand = "The Curve Report"
         <div id="culture-report" class="video-player">
             <iframe title={vimeoCultureTitle} src={vimeoCulture} frameborder="0" allow={vimeoAllow}></iframe>
         </div>
-
-    </div>
-    <ProjectsCarousel name={brand} />
-</div>
-</InternalLayout>
+</ProjectLayout>
 

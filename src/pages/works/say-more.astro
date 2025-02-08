@@ -1,8 +1,26 @@
 ---
+const brand = "Say More"
+const tagline = "Conversation Cards + Journaling Prompts"
+const tags = [
+    "Brand Identity + Positioning",
+    "Logo Design",
+    "Video + Photography",
+    "Art + Illustration",
+    "CX",
+    "Original Naming",
+    "Physical Goods Development + Design",
+    "Print + Packaging",
+    "Editorial Content",
+    "Organic + Paid Social Content",
+    "Interviews",
+    "Writing + Editing",
+    "Surprise + Delight",
+]
+
 import "@styles/utils.css";
 import "@styles/say-more.css";
 import Image from "astro/components/Image.astro";
-import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import Navigation from "@components/Navigation.astro";
@@ -49,25 +67,8 @@ import SocialPodcast from "@assets/SayMore/img/21_SM_Layer_social2.png";
 
 ---
 
-<InternalLayout>
-  <div id="say-more-main">
-    <ProjectHead hero={Hero} brand="Say More" tagline="Conversation Cards + Journaling Prompts" />
-    <ProjectTags title="Say More" theme="light" tags={[
-        "Brand Identity + Positioning",
-        "Logo Design",
-        "Video + Photography",
-        "Art + Illustration",
-        "CX",
-        "Original Naming",
-        "Physical Goods Development + Design",
-        "Print + Packaging",
-        "Editorial Content",
-        "Organic + Paid Social Content",
-        "Interviews",
-        "Writing + Editing",
-        "Surprise + Delight",
-    ]} />
-    <div id="say-more-content">
+<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
+
         <ResponsiveBackground class="deck-packaging" mobile={BoxBgMobile} desktop={BoxBgDesktop}>
             <Image src={BoxImage} alt=" "/>
         </ResponsiveBackground>
@@ -130,9 +131,6 @@ import SocialPodcast from "@assets/SayMore/img/21_SM_Layer_social2.png";
             <Image class="podcast" src={SocialPodcast} widths={[1200]} alt=" "/>
         </ResponsiveBackground>
 
-    </div>
-    <ProjectsCarousel name="Say More" />
-</div>
-</InternalLayout>
+</ProjectLayout>
 
 

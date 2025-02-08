@@ -1,8 +1,22 @@
 ---
+const brand = "NBCUniversal Upfronts"
+const tagline = "TKTKTKTKTK"
+const tags=[
+    'Brand Identity + Positioning',
+    'Video + Photography',
+    'Product Design (UX/UI)',
+    'CX',
+    'Print + Packaging',
+    'Interviews',
+    'Signage + Display',
+    'Surprise + Delight',
+    'Visual Identity'
+]
+
 import "@styles/utils.css";
 import "@styles/nbc-upfronts.css";
 import Image from "astro/components/Image.astro";
-import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import OneUp from "@components/OneUp.astro";
@@ -29,26 +43,10 @@ const vimeoRecapTitle = "2016 Upfront Recap"
 const vimeoRecap = "https://player.vimeo.com/video/177142298" + vimeoOpts
 const vimeoReachTitle = "Reach Redefined Reveal 2016"
 const vimeoReach = "https://player.vimeo.com/video/177130853" + vimeoOpts
-
-const brand = "NBCUniversal Upfronts"
-const tagline = "TKTKTKTKTK"
 ---
 
-<InternalLayout>
-  <div id="nbc-upfronts-main">
-    <ProjectHead hero={Hero} brand={brand} tagline={tagline} />
-    <ProjectTags title={brand} theme="light" tags={[
-        'Brand Identity + Positioning',
-        'Video + Photography',
-        'Product Design (UX/UI)',
-        'CX',
-        'Print + Packaging',
-        'Interviews',
-        'Signage + Display',
-        'Surprise + Delight',
-        'Visual Identity'
-    ]} />
-    <div id="nbc-upfronts-content">
+<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
+
         <div id="upfronts-recap" class="video-player">
             <iframe title={vimeoRecapTitle} src={vimeoRecap} frameborder="0" allow={vimeoAllow}></iframe>
         </div>
@@ -85,8 +83,5 @@ const tagline = "TKTKTKTKTK"
 
         <OneUp src={Campaign} alt=" "/>
 
-    </div>
-    <ProjectsCarousel name={brand} />
-</div>
-</InternalLayout>
+</ProjectLayout>
 

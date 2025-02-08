@@ -1,8 +1,20 @@
 ---
+const brand = "Nightingale"
+const tagline = "Happier People, Healthier Pets"
+const tags=[
+    "Brand Identity + Positioning",
+    "CX",
+    "Logo Design",
+    "Writing + Editing",
+    "Video + Photography",
+    "Surprise + Delight",
+    "Product Design (UX/UI)",
+]
+
 import "@styles/utils.css";
 import "@styles/nightingale.css";
 import Image from "astro/components/Image.astro";
-import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import Navigation from "@components/Navigation.astro";
@@ -10,8 +22,6 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
 import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
-
-
 
 import Hero from "@assets/Nightingale/img/Nightingale-Hero.png";
 import Logo from "@assets/Nightingale/img/Nightingale-Logo.png";
@@ -35,19 +45,7 @@ import PitchMobile from "@assets/Nightingale/img/Nightingale-4-mobile.png";
 
 ---
 
-<InternalLayout>
-  <div id="nightingale-main">
-    <ProjectHead hero={Hero} brand="Nightingale" tagline="Happier People, Healthier Pets" />
-    <ProjectTags title="Nightingale" theme="light" tags={[
-        "Brand Identity + Positioning",
-        "CX",
-        "Logo Design",
-        "Writing + Editing",
-        "Video + Photography",
-        "Surprise + Delight",
-        "Product Design (UX/UI)",
-    ]} />
-    <div id="nightingale-content">
+<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
         <div class="nv-logo">
             <Image src={Logo} widths={[2200]} alt=" " />
         </div>
@@ -97,12 +95,7 @@ import PitchMobile from "@assets/Nightingale/img/Nightingale-4-mobile.png";
 
         <ResponsiveImage desktop={PitchDesktop} mobile={PitchMobile} />
 
-
-    </div>
-    <ProjectsCarousel name="Nightingale Vets" />
-
-</div>
-</InternalLayout>
+</ProjectLayout>
 
 
 <script>

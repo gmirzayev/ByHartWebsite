@@ -1,8 +1,18 @@
 ---
+const brand = "Firefly Vets"
+const tagline = "TKTKTKTKTK"
+const tags = [
+    'Brand Identity + Positioning',
+    'Logo Design',
+    'Interior Design',
+    'Surprise + Delight',
+    'Visual Identity'
+]
+
 import "@styles/utils.css";
 import "@styles/firefly-vets.css";
 import Image from "astro/components/Image.astro";
-import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import OneUp from "@components/OneUp.astro";
@@ -12,7 +22,6 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
 import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
-
 
 import Hero from "@assets/FireflyVets/img/hero.png"
 import LogoWordmark from "@assets/FireflyVets/img/logo-wordmark.png"
@@ -31,76 +40,55 @@ import HandsA from "@assets/FireflyVets/img/hands-1.png"
 import HandsB from "@assets/FireflyVets/img/hands-2.png"
 import Palette from "@assets/FireflyVets/img/palette.jpeg"
 import Marks from "@assets/FireflyVets/img/mark-variations.png"
-
-// const vimeoAllow = "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-// const vimeoOpts = "?byline=false&title=false&portrait=false"
-// const vimeoRecapTitle = "2016 Upfront Recap"
-// const vimeoRecap = "https://player.vimeo.com/video/177142298" + vimeoOpts
-// const vimeoReachTitle = "Reach Redefined Reveal 2016"
-// const vimeoReach = "https://player.vimeo.com/video/177130853" + vimeoOpts
-
-const brand = "Firefly Vets"
-const tagline = "TKTKTKTKTK"
 ---
 
-<InternalLayout title={brand} subtitle={tagline} image={Hero}>
-  <div id="firefly-vets-main">
-    <ProjectHead hero={Hero} brand={brand} tagline={tagline} />
-    <ProjectTags title={brand} theme="light" tags={[
-        'Brand Identity + Positioning',
-        'Logo Design',
-        'Interior Design',
-        'Surprise + Delight',
-        'Visual Identity'
-    ]} />
-    <div id="firefly-vets-content">
-        <OneUp class="wordmark" src={LogoWordmark} alt=" "/>
-        <div class="three-up">
-            <Image src={LogoOverlayA} alt=" " />
-            <Image src={LogoOverlayB} alt=" " />
-            <Image src={LogoOverlayC} alt=" " />
+<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
+
+    <OneUp class="wordmark" src={LogoWordmark} alt=" "/>
+
+    <div class="three-up">
+        <Image src={LogoOverlayA} alt=" " />
+        <Image src={LogoOverlayB} alt=" " />
+        <Image src={LogoOverlayC} alt=" " />
+    </div>
+
+    <ResponsiveTextBlock class="slogan">
+        <div>
+            <h1>A vet that gets both you and your pet?</h1>
+            <h1>That’s like lightning in a bottle!</h1>
         </div>
-
-        <ResponsiveTextBlock class="slogan">
-            <div>
-                <h1>A vet that gets both you and your pet?</h1>
-                <h1>That’s like lightning in a bottle!</h1>
-            </div>
-            <div>
-                <p>Finding the right vet for you and your pet family is simply life-changing. Like fireflies, we intuitively know when we’ve met our match—and the connection makes us light right up.</p>
-                <p>Meet Firefly, a vet practice for pet parents, too.</p>
-            </div>
-        </ResponsiveTextBlock>
-
-
-        <div class="style-guide">
-            <Image src={Palette} alt=" " />
-            <Image src={Marks} alt=" " />
+        <div>
+            <p>Finding the right vet for you and your pet family is simply life-changing. Like fireflies, we intuitively know when we’ve met our match—and the connection makes us light right up.</p>
+            <p>Meet Firefly, a vet practice for pet parents, too.</p>
         </div>
+    </ResponsiveTextBlock>
 
-        <TwoUp class="hands">
-            <Image src={HandsA} alt=" " />
-            <Image src={HandsB} alt=" " />
-        </TwoUp>
 
-        <div class="four-up">
-            <Image src={GridA} alt=" " />
-            <Image src={GridB} alt=" " />
-            <Image src={GridC} alt=" " />
-            <Image src={GridD} alt=" " />
-            <Image src={GridE} alt=" " />
-            <Image src={GridF} alt=" " />
-            <Image src={GridG} alt=" " />
-            <Image src={GridH} alt=" " />
-        </div>
+    <div class="style-guide">
+        <Image src={Palette} alt=" " />
+        <Image src={Marks} alt=" " />
+    </div>
 
-        <div id="brand-guidelines">
-            <div class="presentation">
-                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSlnSuKXYMpIDy2vwHoJ8mcFodw06DiQuCBjDC6f1tYEFRQf3x0XKRcznulWRNAncCgsaJkQD0h03P5/embed?start=false&frameborder=0" width="100%" height="100%" allowfullscreen="true"></iframe>
-            </div>
+    <TwoUp class="hands">
+        <Image src={HandsA} alt=" " />
+        <Image src={HandsB} alt=" " />
+    </TwoUp>
+
+    <div class="four-up">
+        <Image src={GridA} alt=" " />
+        <Image src={GridB} alt=" " />
+        <Image src={GridC} alt=" " />
+        <Image src={GridD} alt=" " />
+        <Image src={GridE} alt=" " />
+        <Image src={GridF} alt=" " />
+        <Image src={GridG} alt=" " />
+        <Image src={GridH} alt=" " />
+    </div>
+
+    <div id="brand-guidelines">
+        <div class="presentation">
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSlnSuKXYMpIDy2vwHoJ8mcFodw06DiQuCBjDC6f1tYEFRQf3x0XKRcznulWRNAncCgsaJkQD0h03P5/embed?start=false&frameborder=0" width="100%" height="100%" allowfullscreen="true"></iframe>
         </div>
     </div>
-    <ProjectsCarousel name={brand} />
-</div>
-</InternalLayout>
+</ProjectLayout>
 

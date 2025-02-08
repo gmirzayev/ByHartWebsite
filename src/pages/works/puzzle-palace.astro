@@ -1,8 +1,20 @@
 ---
+const brand = "Puzzle Palace"
+const tagline = "Your State of Play"
+const tags = [
+  "Brand Identity + Positioning",
+  "Logo Design",
+  "Art + Illustration",
+  "Product Design (UX/UI)",
+  "Original Naming",
+  "Writing + Editing",
+  "Surprise + Delight",
+]
+
 import "@styles/utils.css";
 import "@styles/puzzle-palace.css";
 import Image from "astro/components/Image.astro";
-import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import Navigation from "@components/Navigation.astro";
@@ -71,19 +83,7 @@ import ImgERight from "@assets/PuzzlePalace/img/19_PP_cutting room floor_image.p
 
 ---
 
-<InternalLayout>
-  <div id="puzzle-palace-main">
-    <ProjectHead hero={Hero} brand="Puzzle Palace" tagline="Your State of Play" />
-    <ProjectTags title="Puzzle Palace" theme="light" tags={[
-      "Brand Identity + Positioning",
-      "Logo Design",
-      "Art + Illustration",
-      "Product Design (UX/UI)",
-      "Original Naming",
-      "Writing + Editing",
-      "Surprise + Delight",
-    ]} />
-    <div id="puzzle-palace-content">
+<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
 
       <div class="app-askew">
         <div class="inner">
@@ -217,11 +217,7 @@ import ImgERight from "@assets/PuzzlePalace/img/19_PP_cutting room floor_image.p
 
       </section>
 
-    </div>
-    <ProjectsCarousel name="Puzzle Palace" />
-
-</div>
-</InternalLayout>
+</ProjectLayout>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {

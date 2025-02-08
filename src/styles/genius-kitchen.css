@@ -1,11 +1,10 @@
-#genius-kitchen-main {
-    background: var(--cream);
-}
-
 .one-up{
     margin-top:40px;
 }
 
 .two-up{
-    margin:15px 0;
+    margin:15px 0 45px 0;
+    @media (min-width: 768px) {
+        margin: 15px 0 120px 0;
+    }
 }
