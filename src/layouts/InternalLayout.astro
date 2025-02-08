@@ -3,7 +3,8 @@ import "../styles/utils.css";
 import Footer from "@components/Footer.astro";
 
 // optional OpenGraph data
-const {title, subtitle, image} = Astro.props
+let {title, subtitle, image} = Astro.props
+title = title ? `${title} (By Hart)` : "By Hart"
 
 ---
 
@@ -11,6 +12,8 @@ const {title, subtitle, image} = Astro.props
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+
     <link rel="icon" href="/favicon.svg">
     <link rel=”mask-icon” href=/favicon.svg” color=”#000000">
     <link rel="apple-touch-icon" href="/favicon.png">
@@ -24,8 +27,13 @@ const {title, subtitle, image} = Astro.props
       <meta property="og:image:height" content={image.height} />
     </>}
 
-    {title && <meta property="twitter:title" content={title} /> }
-    {subtitle && <meta property="twitter:card" content={subtitle} />}
+    <meta property="twitter:title" content={title} />
+    <meta property="og:title" content={title} />
+    {subtitle && <>
+      <meta property="twitter:card" content={subtitle} />
+      <meta property="og:description" content={subtitle} />
+      <meta name="description" content={subtitle}>
+    </>}
 
     <style>
       html {
