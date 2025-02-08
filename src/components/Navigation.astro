@@ -3,16 +3,14 @@ import "../styles/utils.css";
 import Image from "astro/components/Image.astro";
 import TransparentVideo from "@components/TransparentVideo.astro";
 
-import Logo from "@assets/Navigation/HomeLogo.png";
-import DarkLogo from "@assets/Navigation/LogoDark.png";
+import HomeLogo from "@assets/Navigation/home-logo.svg?raw"
 import HeartDropdown from "@assets/Navigation/HeartDropdown.svg";
 import HeartDropdownDark from "@assets/Navigation/HeartDropdownDark.svg";
 import CloseButton from "@assets/Navigation/CloseButton.svg";
 import GlassesSafari from "@assets/Navigation/eye.mov";
 import GlassesChrome from "@assets/Navigation/eye.webm";
+
 const { theme } = Astro.props;
-
-
 const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
 ---
 
@@ -163,7 +161,21 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
   #mobile-nav:not(.dropdown-opened) > .mobile-dropdown-toggle {
     z-index: 0;
   }
-  #mobile-nav.dropdown-opened > .logo-link,
+
+  #mobile-nav,
+  #desktop-nav{
+    .light &{ color: black; }
+    .dark &{ color: var(--cream); }
+    transition: color .5s;
+
+    .home-logo{ width:80px; }
+  }
+
+  #mobile-nav.dropdown-opened{
+      color: var(--cream);
+  }
+
+  #mobile-nav.dropdown-opened > .home-logo,
   .mobile-dropdown-toggle {
     z-index: 9;
   }
@@ -213,17 +225,9 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
   }
 </style>
 <header>
-  <nav id="main-nav">
+  <nav id="main-nav" class={theme}>
     <div id="mobile-nav" class="flex justify-between w-full md:hidden">
-      <a href="/" class="logo-link"
-        >{
-          theme == "light" ? (
-            <Image class="logo" src={DarkLogo} alt="The letter H." />
-          ) : (
-            <Image class="logo" src={Logo} alt="The letter H." />
-          )
-        }</a
-      >
+      <a href="/" class="home-logo"><Fragment set:html={HomeLogo} /></a>
       <button
         id="dropdown-toggle"
         class="mobile-dropdown-toggle"
@@ -309,18 +313,10 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
     </div>
     <!-- DESKTOP NAV -->
     <div
+      id="desktop-nav"
       class="hidden md:!flex md:items-center"
-      style={{ color: `${theme == "light" ? "black" : "#F7F4ED"}` }}
     >
-      <a href="/" class="mr-[80px]">
-        {
-          theme == "light" ? (
-            <Image class="logo" src={DarkLogo} alt="The letter H." />
-          ) : (
-            <Image class="logo" src={Logo} alt="The letter H." />
-          )
-        }</a
-      >
+      <a href="/" class="mr-[80px] home-logo"><Fragment set:html={HomeLogo} /></a>
       <a class="nav-link" data-hover="PORTFOLIO">SEE <span>BY HART</span></a>
       <a class="nav-link" data-hover="SARAH + SERVICES"
         >KNOW <span>BY HART</span></a
