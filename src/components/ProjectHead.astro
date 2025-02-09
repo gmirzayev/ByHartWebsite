@@ -1,10 +1,13 @@
 ---
+import { getImage } from "astro:assets";
 import Navigation from "./Navigation.astro";
-import Image from "astro/components/Image.astro";
-const { brand, tagline, hero } = Astro.props;
 
-// imported images get unpacked into ImageMetadata objects with `format` attrs, videos are just a path string
-const type = !!hero.format ? 'image' : 'video'
+
+
+const { brand, tagline, hero, mobile } = Astro.props;
+const type = !!hero.format ? 'image' : 'video' // imported images get unpacked into ImageMetadata objects with `format` attrs, videos are just a path string
+const small = type=='image' && await getImage({src:mobile ?? hero, widths:[1800]})
+const large = type=='image' && await getImage({src:hero, widths:[2800]})
 
 ---
 
@@ -22,10 +25,6 @@ const type = !!hero.format ? 'image' : 'video'
     margin-top:200px;
     text-align: center;
     position: relative;
-  }
-
-  .image-container img{
-    box-shadow: 7px 7px 15px rgba(32, 32, 32, .45);
   }
 
   #main-header {
@@ -53,6 +52,14 @@ const type = !!hero.format ? 'image' : 'video'
     margin-top:2em;
   }
 
+  #main-header{
+    /* initialize to default `updateImage` values */
+    width: 20vw;
+    margin-top: 0px;
+    transform: rotate(-3deg);
+    box-shadow: rgba(32, 32, 32, 0.45) 7px 7px 14px;
+  }
+
   @media (max-width: 768px) {
     #project-title h1 { font-size:72px; }
     #project-title h2 { font-size: 14px; }
@@ -64,7 +71,11 @@ const type = !!hero.format ? 'image' : 'video'
     <div class="image-container">
     {
       type == "image" ? (
-        <Image id="main-header" src={hero} widths={[1800]} alt=" " />
+        <picture>
+          <source media="(max-width: 767px)" width={small.options.width} height={small.options.height} srcset={small.src} />
+          <source media="(min-width: 768px)" width={large.options.width} height={large.options.height} srcset={large.src} />
+          <img id="main-header" src={large.src} width={large.options.width} height={large.options.height} alt=" " />
+        </picture>
       ) : (
         <video id="main-header" autoplay playsinline loop muted>
           <source src={hero} type="video/mp4" />
@@ -96,6 +107,12 @@ const type = !!hero.format ? 'image' : 'video'
     offsetScale = offsetScale.domain([0, .9*h])
     turnScale = turnScale.domain([0, .5*h])
     shadowScale = shadowScale.domain([0, .5*h])
+    scheduleRender()
+  }
+
+  function scheduleRender(){
+    cancelAnimationFrame(scrollTimer)
+    scrollTimer = requestAnimationFrame(updateImage)
   }
 
   function updateImage(){
@@ -112,15 +129,7 @@ const type = !!hero.format ? 'image' : 'video'
   }
 
   window.addEventListener("resize", updateScales)
-
-  document.addEventListener("scroll", (event) => {
-    cancelAnimationFrame(scrollTimer)
-    scrollTimer = requestAnimationFrame(updateImage)
-  });
-
-  document.addEventListener("DOMContentLoaded", () => {
-    updateScales()
-    updateImage()
-  })
+  document.addEventListener("scroll", scheduleRender);
+  document.addEventListener("DOMContentLoaded", updateScales)
 
 </script>
