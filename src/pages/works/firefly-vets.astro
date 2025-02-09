@@ -40,6 +40,18 @@ import HandsA from "@assets/FireflyVets/img/hands-1.png"
 import HandsB from "@assets/FireflyVets/img/hands-2.png"
 import Palette from "@assets/FireflyVets/img/palette.jpeg"
 import Marks from "@assets/FireflyVets/img/mark-variations.png"
+
+import ValueAMobile from "@assets/FireflyVets/values/value1-m.svg"
+import ValueADesktop from "@assets/FireflyVets/values/value1-d.svg"
+import ValueBMobile from "@assets/FireflyVets/values/value2-m.svg"
+import ValueBDesktop from "@assets/FireflyVets/values/value2-d.svg"
+import ValueCMobile from "@assets/FireflyVets/values/value3-m.svg"
+import ValueCDesktop from "@assets/FireflyVets/values/value3-d.svg"
+import ValueDMobile from "@assets/FireflyVets/values/value4-m.svg"
+import ValueDDesktop from "@assets/FireflyVets/values/value4-d.svg"
+import ValueEMobile from "@assets/FireflyVets/values/value5-m.svg"
+import ValueEDesktop from "@assets/FireflyVets/values/value5-d.svg"
+
 ---
 
 <ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
@@ -74,6 +86,17 @@ import Marks from "@assets/FireflyVets/img/mark-variations.png"
         <Image src={HandsB} alt=" " />
     </TwoUp>
 
+    <section class="values">
+        <h1>Values</h1>
+        <div class="slideshow">
+            <ResponsiveImage class="active" mobile={ValueAMobile} desktop={ValueADesktop} />
+            <ResponsiveImage mobile={ValueBMobile} desktop={ValueBDesktop} />
+            <ResponsiveImage mobile={ValueCMobile} desktop={ValueCDesktop} />
+            <ResponsiveImage mobile={ValueDMobile} desktop={ValueDDesktop} />
+            <ResponsiveImage mobile={ValueEMobile} desktop={ValueEDesktop} />
+        </div>
+    </section>
+
     <div class="four-up">
         <Image src={GridA} alt=" " />
         <Image src={GridB} alt=" " />
@@ -92,4 +115,27 @@ import Marks from "@assets/FireflyVets/img/mark-variations.png"
     </div>
 
 </ProjectLayout>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // crossfade portraits over the sudoku background & values text
+        let dt = 0
+        document.querySelectorAll('.slideshow').forEach(elt => {
+            let slides = elt.querySelectorAll(":scope>picture,:scope>img:not(.app"),
+                len = slides.length,
+                idx = 0
+
+            const advance = () => {
+                idx++
+                slides.forEach((img, i) => {
+                    img.classList.toggle('active', i==idx%len)
+                })
+            }
+
+            setTimeout(() => setInterval(advance, 2000), dt)
+            dt += 666
+        })
+
+    })
+</script>
 
