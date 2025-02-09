@@ -21,7 +21,8 @@ import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 
-import Header from "@assets/SixFeet/6ft_Header.mp4";
+import Header from "@assets/SixFeet/6ft_Header.gif";
+import HeaderMobile from "@assets/SixFeet/6ft_Header_Mobile.gif";
 import MaskGang from "@assets/SixFeet/img/6ft_MaskGang.png";
 import HotMask from "@assets/SixFeet/img/6ft_YourMaskisHot.png";
 import SixFeetApart from "@assets/SixFeet/img/6ft_SixFeetApart.png";
@@ -111,7 +112,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
     }
   }
 </style>
-<ProjectLayout hero={Header} brand={brand} tagline={tagline} tags={tags}>
+<ProjectLayout hero={Header} mobile={HeaderMobile} brand={brand} tagline={tagline} tags={tags}>
   <div class="image-flex">
     <Image class="w-[89%] md:w-[92%]" src={MaskGang} alt="Six Feet" />
     <h2 class="w-[90%] md:w-[60%]">

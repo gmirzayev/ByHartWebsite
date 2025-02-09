@@ -26,12 +26,13 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 
 import Hero from "@assets/GeniusKitchen/Hero.png"
+import HeroMobile from "@assets/GeniusKitchen/Hero-mobile.png"
 import Spread from "@assets/GeniusKitchen/GK_spread.jpg"
 import Animation from "@assets/GeniusKitchen/gk-home.gif"
 import Icons from "@assets/GeniusKitchen/icons.jpg"
 ---
 
-<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
+<ProjectLayout hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
     <OneUp src={Spread} />
     <TwoUp bias="left">
         <Image src={Animation} alt=" "/>

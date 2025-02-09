@@ -31,6 +31,7 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 
 
 import Hero from "@assets/CurveReport/img/hero.jpg"
+import HeroMobile from "@assets/CurveReport/img/hero-mobile.jpg"
 
 import StoryTop from "@assets/CurveReport/img/story-header.jpg"
 import StoryA from "@assets/CurveReport/img/story-1.jpg"
@@ -67,7 +68,7 @@ const vimeoCultureTitle = "The Curve Report: CultureFirst - Teaser Trailer"
 const vimeoCulture = "https://player.vimeo.com/video/177130787" + vimeoOpts
 ---
 
-<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
+<ProjectLayout hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
     <TwoUp>
         <Image src={StoryTop} alt=" "/>
         <div class="section-intro">
