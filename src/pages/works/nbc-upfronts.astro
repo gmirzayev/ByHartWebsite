@@ -29,6 +29,7 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 
 
 import Hero from "@assets/NbcUpfronts/img/hero.png"
+import HeroMobile from "@assets/NbcUpfronts/img/hero-mobile.png"
 
 import LeftA from "@assets/NbcUpfronts/img/left-1.png"
 import LeftB from "@assets/NbcUpfronts/img/left-2.png"
@@ -45,7 +46,7 @@ const vimeoReachTitle = "Reach Redefined Reveal 2016"
 const vimeoReach = "https://player.vimeo.com/video/177130853" + vimeoOpts
 ---
 
-<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
+<ProjectLayout hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
 
     <div id="upfronts-recap" class="video-player">
         <iframe title={vimeoRecapTitle} src={vimeoRecap} frameborder="0" allow={vimeoAllow}></iframe>

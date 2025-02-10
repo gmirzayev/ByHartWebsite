@@ -24,6 +24,7 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 
 import Hero from "@assets/PuzzlePalace/img/01_PP_Hero_16x9_D.png"
+import HeroMobile from "@assets/PuzzlePalace/img/01_PP_Hero_Mobile.png"
 import AppAskewLeft from "@assets/PuzzlePalace/img/02_PP_APP.png"
 import AppAskewRight from "@assets/PuzzlePalace/img/03_PP_APP.png"
 
@@ -83,7 +84,7 @@ import ImgERight from "@assets/PuzzlePalace/img/19_PP_cutting room floor_image.p
 
 ---
 
-<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
+<ProjectLayout hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
 
   <div class="app-askew">
     <div class="inner">

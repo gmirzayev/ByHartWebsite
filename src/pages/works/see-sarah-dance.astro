@@ -22,12 +22,13 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 
 import Hero from "@assets/SeeSarahDance/Hero.png"
+import HeroMobile from "@assets/SeeSarahDance/HeroMobile.png"
 const vimeoUrl = "https://player.vimeo.com/video/133081327?autoplay=1&loop=1&muted=1"
 const vimeoAllow = "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
 
 ---
 
-<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
+<ProjectLayout hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
 
     <div class="video-player">
         <iframe title="My Visual Resumé" src={vimeoUrl} frameborder="0" allow={vimeoAllow}></iframe>

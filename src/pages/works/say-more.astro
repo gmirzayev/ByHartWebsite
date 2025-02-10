@@ -29,6 +29,7 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
 import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 
 import Hero from "@assets/SayMore/img/01_SM_Hero_16x9.png";
+import HeroMobile from "@assets/SayMore/img/01_SM_Hero_Mobile.png";
 import BoxBgDesktop from "@assets/SayMore/img/02_SM_BG_D.png";
 import BoxBgMobile from "@assets/SayMore/img/02_SM_BG_M_4x5.png";
 import BoxImage from "@assets/SayMore/img/02_SM_Layer_Box.png";
@@ -67,7 +68,7 @@ import SocialPodcast from "@assets/SayMore/img/21_SM_Layer_social2.png";
 
 ---
 
-<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
+<ProjectLayout hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
 
     <ResponsiveBackground class="deck-packaging" mobile={BoxBgMobile} desktop={BoxBgDesktop}>
         <Image src={BoxImage} alt=" "/>

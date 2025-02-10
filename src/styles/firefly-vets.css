@@ -64,6 +64,51 @@
     }
 }
 
+section{
+    margin:45px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1{
+        font: 700 16px "Karla", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin-bottom: 45px;
+    }
+
+    @media (min-width: 768px) {
+        margin: 120px 20px;
+        h1{
+            margin-bottom:120px;
+        }
+    }
+}
+
+.values .slideshow{
+    display: grid;
+    grid-template-areas: single;
+    justify-content: center;
+
+    > picture{
+        grid-area: single;
+        opacity:0;
+        transition: opacity .5s linear;
+        img{
+            margin:0 auto;
+        }
+
+        &.active{
+            opacity:1;
+        }
+    }
+
+    @media (min-width: 768px) {
+        margin:0 auto;
+    }
+}
+
+
 .four-up{
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -14,7 +14,6 @@ const tags = [
   "Surprise + Delight",
 ]
 
-
 import "@styles/utils.css";
 import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
@@ -22,6 +21,9 @@ import ProjectHead from "@components/ProjectHead.astro";
 import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
+
+import Header from "@assets/PearlyBites/img/PearlyBites_Header.png";
+import HeaderMobile from "@assets/PearlyBites/img/PearlyBites_Header_Mobile.png";
 import FrontDesk from "@assets/PearlyBites/img/PearlyBites_FrontDesk.png";
 import Bag from "@assets/PearlyBites/PearlyBites_Bag.mp4";
 import BetterDental from "@assets/PearlyBites/img/PearlyBites_BetterDental.png";
@@ -34,7 +36,6 @@ import Cards from "@assets/PearlyBites/img/PearlyBites_BusinessCards.jpg";
 import SocialGrid from "@assets/PearlyBites/img/PearlyBites_SocialGrid.png";
 import Stationary from "@assets/PearlyBites/img/PearlyBites_Stationary.png";
 import Carousel from "@assets/PearlyBites/img/PearlyBites_SocialCarousel.png";
-import Header from "@assets/PearlyBites/img/PearlyBites_Header.png";
 ---
 
 <style>
@@ -79,7 +80,7 @@ import Header from "@assets/PearlyBites/img/PearlyBites_Header.png";
     }
   }
 </style>
-<ProjectLayout hero={Header} brand={brand} tagline={tagline} tags={tags}>
+<ProjectLayout hero={Header} mobile={HeaderMobile} brand={brand} tagline={tagline} tags={tags}>
   <div class="image-flex">
     <Image class="h-auto w-[92%]" src={FrontDesk} alt="Pearly Bites" />
     <div class="textbox">

@@ -24,6 +24,7 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 
 import Hero from "@assets/Nightingale/img/Nightingale-Hero.png";
+import HeroMobile from "@assets/Nightingale/img/Nightingale-Hero-Mobile.png";
 import Logo from "@assets/Nightingale/img/Nightingale-Logo.png";
 import Diagonals from "@assets/Nightingale/img/Nightingale-1.png";
 import PortraitA from "@assets/Nightingale/img/portrait-1.png";
@@ -45,7 +46,7 @@ import PitchMobile from "@assets/Nightingale/img/Nightingale-4-mobile.png";
 
 ---
 
-<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
+<ProjectLayout hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
     <div class="nv-logo">
         <Image src={Logo} widths={[2200]} alt=" " />
     </div>

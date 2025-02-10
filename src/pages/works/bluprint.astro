@@ -25,6 +25,7 @@ import ProjectHead from "@components/ProjectHead.astro";
 import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
 import Header from "@assets/Bluprint/img/Bluprint_Header.png";
+import HeaderMobile from "@assets/Bluprint/img/Bluprint_Header_Mobile.png";
 import CrochetBox from "@assets/Bluprint/img/Bluprint_CrochetBox.png";
 import Quilt from "@assets/Bluprint/img/Bluprint_Quilt.jpg";
 import LifeStyle1 from "@assets/Bluprint/img/Bluprint_Lifestyle_1.jpg";
@@ -113,7 +114,7 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
     letter-spacing: 2px;
   }
 </style>
-<ProjectLayout hero={Header} brand={brand} tagline={tagline} tags={tags}>
+<ProjectLayout hero={Header} mobile={HeaderMobile} brand={brand} tagline={tagline} tags={tags}>
     <div class="flex items-center w-full flex-col md:flex-row">
       <Image
         class="h-auto w-full p-[15%] md:w-[50%] md:p-[10%]"

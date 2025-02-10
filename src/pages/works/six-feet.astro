@@ -1,5 +1,5 @@
 ---
-const brand = "Six Feet"
+const brand = "6 Feet From You"
 const tagline = "Stick with Us"
 const tags = [
   "Brand Identity + Positioning",
@@ -21,7 +21,8 @@ import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 
-import Header from "@assets/SixFeet/6ft_Header.mp4";
+import Header from "@assets/SixFeet/6ft_header.gif";
+import HeaderMobile from "@assets/SixFeet/6ft_header_mobile.gif";
 import MaskGang from "@assets/SixFeet/img/6ft_MaskGang.png";
 import HotMask from "@assets/SixFeet/img/6ft_YourMaskisHot.png";
 import SixFeetApart from "@assets/SixFeet/img/6ft_SixFeetApart.png";
@@ -111,7 +112,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
     }
   }
 </style>
-<ProjectLayout hero={Header} brand={brand} tagline={tagline} tags={tags}>
+<ProjectLayout hero={Header} mobile={HeaderMobile} brand={brand} tagline={tagline} tags={tags}>
   <div class="image-flex">
     <Image class="w-[89%] md:w-[92%]" src={MaskGang} alt="Six Feet" />
     <h2 class="w-[90%] md:w-[60%]">
@@ -124,6 +125,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
         <div class="slide-track">
           <div class="slide">
             <Image
+              loading="eager"
               src={Slider1}
               alt="Six Feet"
               class="h-auto w-[250px] max-w-none"
@@ -131,6 +133,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
           </div>
           <div class="slide">
             <Image
+              loading="eager"
               src={Slider2}
               alt="Six Feet"
               class="h-auto w-[250px] max-w-none"
@@ -138,6 +141,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
           </div>
           <div class="slide">
             <Image
+              loading="eager"
               src={Slider3}
               alt="Six Feet"
               class="h-auto w-[250px] max-w-none"
@@ -145,6 +149,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
           </div>
           <div class="slide">
             <Image
+              loading="eager"
               src={Slider4}
               alt="Six Feet"
               class="h-auto w-[250px] max-w-none"
@@ -152,6 +157,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
           </div>
           <div class="slide">
             <Image
+              loading="eager"
               src={Slider5}
               alt="Six Feet"
               class="h-auto w-[250px] max-w-none"
@@ -159,6 +165,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
           </div>
           <div class="slide">
             <Image
+              loading="eager"
               src={Slider6}
               alt="Six Feet"
               class="h-auto w-[250px] max-w-none"
@@ -166,6 +173,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
           </div>
           <div class="slide">
             <Image
+              loading="eager"
               src={Slider7}
               alt="Six Feet"
               class="h-auto w-[250px] max-w-none"
@@ -173,6 +181,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
           </div>
           <div class="slide">
             <Image
+              loading="eager"
               src={Slider8}
               alt="Six Feet"
               class="h-auto w-[250px] max-w-none"
@@ -180,6 +189,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
           </div>
           <div class="slide">
             <Image
+              loading="eager"
               src={Slider9}
               alt="Six Feet"
               class="h-auto w-[250px] max-w-none"
@@ -187,6 +197,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
           </div>
           <div class="slide">
             <Image
+              loading="eager"
               src={Slider10}
               alt="Six Feet"
               class="h-auto w-[250px] max-w-none"
@@ -194,6 +205,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
           </div>
           <div class="slide">
             <Image
+              loading="eager"
               src={Slider1}
               alt="Six Feet"
               class="h-auto w-[250px] max-w-none"
@@ -201,6 +213,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
           </div>
           <div class="slide">
             <Image
+              loading="eager"
               src={Slider2}
               alt="Six Feet"
               class="h-auto w-[250px] max-w-none"
@@ -208,6 +221,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
           </div>
           <div class="slide">
             <Image
+              loading="eager"
               src={Slider3}
               alt="Six Feet"
               class="h-auto w-[250px] max-w-none"
@@ -215,6 +229,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
           </div>
           <div class="slide">
             <Image
+              loading="eager"
               src={Slider4}
               alt="Six Feet"
               class="h-auto w-[250px] max-w-none"
@@ -222,6 +237,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
           </div>
           <div class="slide">
             <Image
+              loading="eager"
               src={Slider5}
               alt="Six Feet"
               class="h-auto w-[250px] max-w-none"
@@ -243,7 +259,7 @@ import Slider10 from "@assets/SixFeet/Ticker/10.png";
         alt="Six Feet"
       />
     </div>
-    <Image class="w-[60%]" src={RainbowSticker} alt="Six Feet" />
+    <Image class="w-[60%]" src={RainbowSticker} format="gif" alt="Six Feet" />
     <div class="flex justify-between w-[95%]">
       <Image
         class="w-1/3 p-[5px] h-auto md:p-[20px]"

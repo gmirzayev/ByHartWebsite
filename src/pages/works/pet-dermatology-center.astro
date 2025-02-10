@@ -22,6 +22,7 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 
 import Hero from "@assets/PetDerm/img/PetDerm_hero.svg"
+import HeroMobile from "@assets/PetDerm/img/PetDerm_hero_mobile.svg"
 import LogoBlonde from "@assets/PetDerm/img/PetDerm_Logos_primary_blonde.svg"
 import LogoBlue from "@assets/PetDerm/img/PetDerm_Logos_primary_blue.svg"
 import LogoBrunette from "@assets/PetDerm/img/PetDerm_Logos_primary_brunette.svg"
@@ -47,7 +48,7 @@ import HeadG from "@assets/PetDerm/head-tail/pet7-head.svg"
 import TailG from "@assets/PetDerm/head-tail/pet7-tail.svg"
 ---
 
-<ProjectLayout hero={Hero} brand={brand} tagline={tagline} tags={tags}>
+<ProjectLayout hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
 
     <div class="mosaic">
         <Image src={Mosaic} alt=" " />
