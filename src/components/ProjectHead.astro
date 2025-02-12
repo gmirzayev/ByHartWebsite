@@ -4,7 +4,7 @@ import Navigation from "./Navigation.astro";
 
 
 
-const { brand, tagline, hero, mobile } = Astro.props;
+const { brand, tagline, hero, mobile, theme } = Astro.props;
 const type = !!hero.format ? 'image' : 'video' // imported images get unpacked into ImageMetadata objects with `format` attrs, videos are just a path string
 const small = type=='image' && await getImage({src:mobile ?? hero, widths:[1800]})
 const large = type=='image' && await getImage({src:hero, widths:[2800]})
@@ -15,6 +15,11 @@ const large = type=='image' && await getImage({src:hero, widths:[2800]})
   .scroll-container {
     position: relative;
     height: 130vh;
+
+    &.dark{
+      color:var(--cream);
+      background:var(--near-black);
+    }
   }
   .sticky-container {
     position: sticky;
@@ -58,6 +63,10 @@ const large = type=='image' && await getImage({src:hero, widths:[2800]})
     margin-top: 0px;
     transform: rotate(-3deg);
     box-shadow: rgba(32, 32, 32, 0.45) 7px 7px 14px;
+
+    .dark &{
+      box-shadow: rgba(255, 255, 255, 0.45) 7px 7px 14px;
+    }
   }
 
   @media (max-width: 768px) {
@@ -65,9 +74,9 @@ const large = type=='image' && await getImage({src:hero, widths:[2800]})
     #project-title h2 { font-size: 14px; }
   }
 </style>
-<div class="scroll-container">
+<div class:list={["scroll-container", theme]}>
   <div class="sticky-container">
-    <Navigation theme="light" />
+    <Navigation theme={theme} />
     <div class="image-container">
     {
       type == "image" ? (
@@ -94,11 +103,13 @@ const large = type=='image' && await getImage({src:hero, widths:[2800]})
   import {scaleLinear} from "d3-scale";
 
   const image = document.getElementById("main-header");
+  const darkTheme = !!document.querySelector(".scroll-container.dark")
 
   let sizeScale = scaleLinear().range([20, 100]).clamp(true),
       offsetScale = scaleLinear().range([0, -310]).clamp(true),
       turnScale = scaleLinear().range([-3, 0]).clamp(true),
       shadowScale = scaleLinear().rangeRound([7, 0]).clamp(true),
+      shadowColor = `rgba(${darkTheme ? "190, 190, 190, 0.3": "32, 32, 32, 0.45"})`,
       scrollTimer = null;
 
   function updateScales(){
@@ -125,7 +136,7 @@ const large = type=='image' && await getImage({src:hero, widths:[2800]})
     image.style.width = `${size}vw`;
     image.style.marginTop = `${offset}px`;
     image.style.transform = `rotate(${angle}deg)`
-    image.style.boxShadow = `${shadow}px ${shadow}px ${2*shadow}px rgba(32, 32, 32, .45)`
+    image.style.boxShadow = `${shadow}px ${shadow}px ${2*shadow}px ${shadowColor}`
   }
 
   window.addEventListener("resize", updateScales)
