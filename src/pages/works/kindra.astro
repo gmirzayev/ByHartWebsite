@@ -1,7 +1,7 @@
 ---
-const brand="Kindra"
-const tagline = "The New Era of You"
-const tags= [
+const brand = "Kindra";
+const tagline = "The New Era of You";
+const tags = [
   "Brand Identity + Positioning",
   "Video + Photography",
   "Art + Illustration",
@@ -14,7 +14,7 @@ const tags= [
   "Writing + Editing",
   "Quiz Development",
   "Surprise + Delight",
-]
+];
 
 import "@styles/utils.css";
 import ProjectLayout from "@layouts/ProjectLayout.astro";
@@ -95,6 +95,7 @@ import KindraWords from "@assets/Kindra/img/Kindra_Drawing_Words.png";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
 import ResponsiveBackground from "@components/ResponsiveBackground.astro";
+import Lightbox from "@components/Lightbox.astro";
 ---
 
 <style>
@@ -147,43 +148,35 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
     <div class="mx-[250px] karla">
       <h1 class="utile text-[66px]">Kindra &mdash; the new era of you.</h1>
       <p class="mb-[10px]">
-        Isn’t it about time for a change? A shift in priorities, a chance to
-        try something new? Maybe what would change is how you see the world
-        — and how you see yourself. Maybe how you approach self-care would
-        change. Maybe you’d prioritize you a little more, choose products
-        with ingredients you trust.
+        Isn’t it about time for a change? A shift in priorities, a chance to try
+        something new? Maybe what would change is how you see the world — and
+        how you see yourself. Maybe how you approach self-care would change.
+        Maybe you’d prioritize you a little more, choose products with
+        ingredients you trust.
       </p>
       <span class="font-[700]"
         >Embracing change isn’t easy.  It’s essential.</span
       >
       <p class="mt-[10px]">
-        Listen — every significant moment in your life was tough before it
-        was terrific, right? Because you’re always learning, always growing,
-        always becoming. And who you are right now, as you navigate
-        menopause, will set the stage for years to come.
+        Listen — every significant moment in your life was tough before it was
+        terrific, right? Because you’re always learning, always growing, always
+        becoming. And who you are right now, as you navigate menopause, will set
+        the stage for years to come.
       </p>
       <p class="mt-[10px]">What’s next, you ask?  Everything.</p>
     </div>
   </div>
-  <div
-    class="flex flex-col md:flex-row mb-[45px] md:mb-[120px] md:mx-[250px]"
-  >
-    <ResponsiveImage
-      mobile={ColorMobile}
-      desktop={ColorDesktop}
-      alt="Kindra"
-    />
-    <div
-      class="karla mx-[25px] my-[45px] md:w-1/2 md:self-end md:pl-[50px]"
-    >
+  <div class="flex flex-col md:flex-row mb-[45px] md:mb-[120px] md:mx-[250px]">
+    <ResponsiveImage mobile={ColorMobile} desktop={ColorDesktop} alt="Kindra" />
+    <div class="karla mx-[25px] my-[45px] md:w-1/2 md:self-end md:pl-[50px]">
       <h1 class="mb-[15px] font-[700]">COLOR PALETTE</h1>
       <p>
-        Each has its own song to sing. Magic Hour and Good Vintage are the
-        heart of the brand. They are warm, mature, evolved, rich, nostalgic,
-        yet modern. Pottery wheel is the anchor, the clay, how life shapes
-        us. Refreshing and Deep are the water in our photography. Wise Woman
-        is the color of sage, to reflect the wisdom that comes from age and
-        experience, communicates peace and growth through knowledge.
+        Each has its own song to sing. Magic Hour and Good Vintage are the heart
+        of the brand. They are warm, mature, evolved, rich, nostalgic, yet
+        modern. Pottery wheel is the anchor, the clay, how life shapes us.
+        Refreshing and Deep are the water in our photography. Wise Woman is the
+        color of sage, to reflect the wisdom that comes from age and experience,
+        communicates peace and growth through knowledge.
       </p>
     </div>
   </div>
@@ -196,11 +189,7 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 
   <Image class="w-full" alt="Kindra" src={Humectant} />
 
-  <ResponsiveImage
-    mobile={MiddleMobile}
-    desktop={MiddleDesktop}
-    alt="Kindra"
-  />
+  <ResponsiveImage mobile={MiddleMobile} desktop={MiddleDesktop} alt="Kindra" />
 
   <div
     class="flex flex-col md:flex-row my-[45px] mx-[20px] gap-[45px] md:my-[120px] md:mx-[60px] md:gap-[60px] md:justify-center"
@@ -299,13 +288,7 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
     <div
       class="flex flex-col justify-center md:flex-row mx-[20px] gap-[5px] md:mx-[60px] md:gap-[15px]"
     >
-      <video
-        loop
-        playsinline
-        autoplay
-        muted
-        class="w-full md:w-1/3 rounded-md"
-      >
+      <video loop playsinline autoplay muted class="w-full md:w-1/3 rounded-md">
         <source src={SerumVideo} />
       </video>
       <Image
@@ -319,37 +302,40 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
     class="flex flex-col md:flex-row gap-[45px] mx-[20px] my-[45px] md:mx-[200px] md:my-[120px] md:gap-[20px]"
   >
     <!-- do not autoplay, use custom video player -->
-    <video
-      loop
-      playsinline
-      autoplay
-      muted
-      class="w-full rounded-md md:w-1/2"
-    >
+    <video loop playsinline autoplay muted class="w-full rounded-md md:w-1/2">
       <source src={Conditions} />
     </video>
-    <video
-      loop
-      playsinline
-      autoplay
-      muted
-      class="w-full rounded-md md:w-1/2"
-    >
+    <video loop playsinline autoplay muted class="w-full rounded-md md:w-1/2">
       <source src={ConditionsLotion} />
     </video>
   </div>
-  <video
-    loop
-    playsinline
-    autoplay
-    muted
-    class="w-full my-[45px] md:my-[120px]"
-  >
+  <video loop playsinline autoplay muted class="w-full my-[45px] md:my-[120px]">
     <source src={Bed} />
   </video>
-  <div class="mx-[20px] md:mx-[300px] md:mb-[400px]">
-    <Image class="w-full h-auto rounded" src={Site} alt="Kindra" />
-  </div>
+  <Lightbox
+    baseimage={Site}
+    lightboximage={QuizResultsEmail}
+    basewidth={80}
+    id={1}
+  />
+  <!-- <div class="mx-[20px] md:mx-[300px] md:mb-[400px]">
+    <div class="relative gradient-box">
+      <Image class="w-full h-auto rounded" src={Site} alt="Kindra" />
+    </div>
+    <button
+      id="modal-button"
+      class="float-right border-2 border-[#363131] mt-[10px]"
+      ><Image alt="Kindra" class="w-[20px] m-[5px]" src={ExpandCross} /></button
+    >
+    <div id="modal">
+      <div id="modal-content">
+        <div class="modal-image w-[20%] h-[500px] overflow-y-auto mx-auto">
+          <Image alt="Kindra" src={QuizResultsEmail} />
+        </div>
+      </div>
+    </div>
+  </div> -->
+
   <ResponsiveBackground
     class="w-full relative"
     mobile={SiteBackgroundMobile}
@@ -383,63 +369,57 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
         At The Kindra Innovation Lab, we’re always learning.<br /><br />
         Something vital we learned early on is that traditional vaginal applicators
         you find at your local drug store are unnecessarily invasive and wasteful.
-        When we created our revolutionary vaginal lotion formula, we knew we
-        had to find a better way for you to get meaningful relief where you actually
-        need it. So we invented an entirely new applicator, designed to provide
-        hydration directly to your most sensitive area—just inside and around
-        your vaginal opening (AKA: your introitus, if we’re being scientific).
-        We continue to be proud of this groundbreaking accomplishment, created
-        by women with your comfort as our highest priority.
+        When we created our revolutionary vaginal lotion formula, we knew we had
+        to find a better way for you to get meaningful relief where you actually
+        need it. So we invented an entirely new applicator, designed to provide hydration
+        directly to your most sensitive area—just inside and around your vaginal
+        opening (AKA: your introitus, if we’re being scientific). We continue to
+        be proud of this groundbreaking accomplishment, created by women with your
+        comfort as our highest priority.
       </p>
       <br />
       <p>
-        But the thing about learning is it never stops. In our ongoing work
-        with renowned, field-proven OB/GYNs and leading women’s health
-        experts, as well as our steadfast commitment to listening to you,
-        our Kindra community, we have learned something even more vital. <br
-        /><br />The very best applicator for The Daily Vaginal Lotion is
-        simply you.
+        But the thing about learning is it never stops. In our ongoing work with
+        renowned, field-proven OB/GYNs and leading women’s health experts, as
+        well as our steadfast commitment to listening to you, our Kindra
+        community, we have learned something even more vital. <br /><br />The
+        very best applicator for The Daily Vaginal Lotion is simply you.
       </p>
       <br />
       <p>
-        That’s right. Since you only apply lotion about an inch or less
-        inside your vagina, a finger is all you need. In fact, what we’ve
-        learned through listening to you and the experts is that finger
-        application allows for better precision and results in even less
-        product waste. As an added convenience, there’s nothing to sanitize
-        between uses beyond simply washing your hands. And while
-        medical-grade silicone is more sustainable than plastic, it’s not
-        biodegradable, so putting less of it into the world is even better
-        for our planet.
+        That’s right. Since you only apply lotion about an inch or less inside
+        your vagina, a finger is all you need. In fact, what we’ve learned
+        through listening to you and the experts is that finger application
+        allows for better precision and results in even less product waste. As
+        an added convenience, there’s nothing to sanitize between uses beyond
+        simply washing your hands. And while medical-grade silicone is more
+        sustainable than plastic, it’s not biodegradable, so putting less of it
+        into the world is even better for our planet.
         <br /><br />
         Now that we know all of this, it’s time to do something about it.
       </p>
       <br />
       <p>
-        Listen, we’re not going to sell you something that you just don’t
-        need. It’s time to say goodbye to our little applicator that could.
-        It was an innovative leap in the right direction, because it helped
-        us get right here—to an even more empowering and straightforward
-        solution. You are all the applicator you need to get the relief you
-        need, which is actually pretty awesome.
+        Listen, we’re not going to sell you something that you just don’t need.
+        It’s time to say goodbye to our little applicator that could. It was an
+        innovative leap in the right direction, because it helped us get right
+        here—to an even more empowering and straightforward solution. You are
+        all the applicator you need to get the relief you need, which is
+        actually pretty awesome.
       </p>
       <br />
       <p>
-        We realize some of you may miss the applicator, and we feel you.
-        It’s been our baby! But the overwhelming customer feedback and
-        clinical counsel is that finger application is not only a good
-        option, but—in fact—the best option. And we want nothing but the
-        best for you. Always. <br /><br />Thanks for going on this journey
-        with us. Here’s to learning, improving, and growing together.
+        We realize some of you may miss the applicator, and we feel you. It’s
+        been our baby! But the overwhelming customer feedback and clinical
+        counsel is that finger application is not only a good option, but—in
+        fact—the best option. And we want nothing but the best for you. Always. <br
+        /><br />Thanks for going on this journey with us. Here’s to learning,
+        improving, and growing together.
       </p>
     </div>
   </div>
   <div class="flex w-full flex-col md:flex-row">
-    <Image
-      class="w-full md:w-1/2 h-auto z-20"
-      src={PinkLotion}
-      alt="Kindra"
-    />
+    <Image class="w-full md:w-1/2 h-auto z-20" src={PinkLotion} alt="Kindra" />
     <Image class="w-full md:w-1/2 h-auto z-20" src={Peach} alt="Kindra" />
   </div>
   <div
@@ -531,11 +511,7 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
   </video>
   <Image class="w-full hidden md:block" src={GloriaDesktop} alt="Kindra" />
   <Image class="w-full block md:hidden" src={GloriaMobile} alt="Kindra" />
-  <Image
-    class="w-full hidden md:block"
-    src={KindraCCDesktop}
-    alt="Kindra"
-  />
+  <Image class="w-full hidden md:block" src={KindraCCDesktop} alt="Kindra" />
   <Image class="w-full block md:hidden" src={KindraCCMobile} alt="Kindra" />
   <div
     class="[&>*]:font-[karla] mx-[25px] md:mx-[200px] mb-[45px] md:mb-[120px]"
@@ -549,70 +525,67 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
       </h1>
       <br />
       <p>
-        Today is International Women’s Day, and I can’t help thinking about
-        how women and children bear a unique burden in troubled times.<br
-        /><br />While the world is watching Ukrainian women fighting for
-        their families, fleeing their homes, making impossible choices, and
-        struggling to survive, I’m reminded of working in Northern Ireland
-        at the end of The Troubles when I was a teenager at what was called
-        a “reconciliation center.” The idea was to bring families together
-        from the embattled North and South of Ireland to essentially help
-        people—war-torn and exhausted from the ongoing guerrilla
-        violence—find common ground and greater compassion for one another.
-        As I eagerly awaited the arrival of these families, bussed in from
-        all over the country, I was not sure what to expect. When the doors
-        opened, it was also not what I had imagined.<span
+        Today is International Women’s Day, and I can’t help thinking about how
+        women and children bear a unique burden in troubled times.<br /><br
+        />While the world is watching Ukrainian women fighting for their
+        families, fleeing their homes, making impossible choices, and struggling
+        to survive, I’m reminded of working in Northern Ireland at the end of
+        The Troubles when I was a teenager at what was called a “reconciliation
+        center.” The idea was to bring families together from the embattled
+        North and South of Ireland to essentially help people—war-torn and
+        exhausted from the ongoing guerrilla violence—find common ground and
+        greater compassion for one another. As I eagerly awaited the arrival of
+        these families, bussed in from all over the country, I was not sure what
+        to expect. When the doors opened, it was also not what I had imagined.<span
           class="read-more font-bold underline md:hidden">Read More</span
         ><span class="more more-hide md:!block"
-          ><br /><br />I will forever be in awe of the women and children
-          who emerged from those buses. Whether from the North, South, East
-          or West, the scene was always the same—weary faces of mothers and
-          grandmothers with kids of every age in tow. The hardship and
-          courage on their faces was like cold water splashed onto mine.
-          It’s the same feeling I have now seeing those fleeing turmoil in
-          Eastern Europe, including people of color and non-Ukrainian
-          residents facing bias at the border as everyone tries to find a
-          safe haven or get home.<br /><br />Somewhere in the space between
-          Black History Month in February and Women’s History Month in
-          March, there sits a massive, intersecting community of wildly
-          underserved people struggling time and again to simply live in
-          peace. The past few years have been challenging for everyone in
-          the world, and—I’ll be honest—in many ways it feels like the
-          suffering is never ending. And what can we really do about it? How
-          can we continue to move forward as individuals, as families, as
-          nations, and as a global community when there is constant turmoil
-          and oppression everywhere you turn?
+          ><br /><br />I will forever be in awe of the women and children who
+          emerged from those buses. Whether from the North, South, East or West,
+          the scene was always the same—weary faces of mothers and grandmothers
+          with kids of every age in tow. The hardship and courage on their faces
+          was like cold water splashed onto mine. It’s the same feeling I have
+          now seeing those fleeing turmoil in Eastern Europe, including people
+          of color and non-Ukrainian residents facing bias at the border as
+          everyone tries to find a safe haven or get home.<br /><br />Somewhere
+          in the space between Black History Month in February and Women’s
+          History Month in March, there sits a massive, intersecting community
+          of wildly underserved people struggling time and again to simply live
+          in peace. The past few years have been challenging for everyone in the
+          world, and—I’ll be honest—in many ways it feels like the suffering is
+          never ending. And what can we really do about it? How can we continue
+          to move forward as individuals, as families, as nations, and as a
+          global community when there is constant turmoil and oppression
+          everywhere you turn?
           <br />
-          I don’t have all the answers, but I can tell you what I learned from
-          the women of Ireland coming together on the fault lines of their divided
-          homeland. Troubled times help us summon survival instincts and tremendous
-          courage, but it is the radical act of rest that brings out true resilience.
-          Once these women had settled into the reconciliation center and were
-          able to take precious time and space to rest with their families, I
-          saw those families from opposite sides of The Troubles sharing stories,
-          laughing, playing, and giving each other such grace.<br /><br />On
-          this International Women’s Day, let’s #breakthebias and honestly
-          ask ourselves:<br /><br />How can I look beyond my own fears and
-          entrenched biases to reach across to someone who might need
-          support? Is that person really so different from me? How can I
-          make sure I remain open minded to experiences, people, places, and
-          paths toward reconciliation, cooperation, and peace—even in my own
-          backyard?<br /><br />I learn so much from you all every day, but
-          one constant is that no one of us is having precisely the same
-          experience in this great shared experience of menopause. Empathy
-          and acceptance are a key part of journeying through challenging
-          times while supporting one another. Realizing that you can never
-          really know what’s happening with someone unless you listen with
-          an open mind is so important, but it’s resting your body and soul
-          that is essential to cultivating openness, understanding, and the
-          resilience we all need when times get tough.<br /><br />Please
-          give yourself grace. Take time to rest and recharge (and if rest
-          is hard-won, we’re here to help). Breathe deeply. Hug your loved
-          ones tightly. I know we are all doing what we can to help heal
-          this world of ours, but remember the healing starts within you.<br
-          /><br />I see you—brave, resilient, wonderful woman. You are not
-          alone. We are Kindra.<br /><br />Truly,<br /><br /> Catherine Balsam-Schwaber,
-          Kindra CEO
+          I don’t have all the answers, but I can tell you what I learned from the
+          women of Ireland coming together on the fault lines of their divided homeland.
+          Troubled times help us summon survival instincts and tremendous courage,
+          but it is the radical act of rest that brings out true resilience. Once
+          these women had settled into the reconciliation center and were able to
+          take precious time and space to rest with their families, I saw those families
+          from opposite sides of The Troubles sharing stories, laughing, playing,
+          and giving each other such grace.<br /><br />On this International
+          Women’s Day, let’s #breakthebias and honestly ask ourselves:<br /><br
+          />How can I look beyond my own fears and entrenched biases to reach
+          across to someone who might need support? Is that person really so
+          different from me? How can I make sure I remain open minded to
+          experiences, people, places, and paths toward reconciliation,
+          cooperation, and peace—even in my own backyard?<br /><br />I learn so
+          much from you all every day, but one constant is that no one of us is
+          having precisely the same experience in this great shared experience
+          of menopause. Empathy and acceptance are a key part of journeying
+          through challenging times while supporting one another. Realizing that
+          you can never really know what’s happening with someone unless you
+          listen with an open mind is so important, but it’s resting your body
+          and soul that is essential to cultivating openness, understanding, and
+          the resilience we all need when times get tough.<br /><br />Please
+          give yourself grace. Take time to rest and recharge (and if rest is
+          hard-won, we’re here to help). Breathe deeply. Hug your loved ones
+          tightly. I know we are all doing what we can to help heal this world
+          of ours, but remember the healing starts within you.<br /><br />I see
+          you—brave, resilient, wonderful woman. You are not alone. We are
+          Kindra.<br /><br />Truly,<br /><br /> Catherine Balsam-Schwaber, Kindra
+          CEO
         </span>
       </p>
     </div>
@@ -626,77 +599,72 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
       <p class="text-[16px]">
         I hate roller coasters. A slow buildup to a sudden drop into the
         terrifying unknown. That feeling of falling from a great height. The
-        overwhelming sensation of total loss of control. It may seem cliché,
-        but as I usher my family into 2022, I feel like I am sitting on the
-        top of a rollercoaster teetering on the ride of my life.<br /><br
-        />From the tremendous growth of Kindra to my husband’s
-        entrepreneurial career taking off, from my parents gracefully aging
-        into a retirement community to my kids on the precipice of their
-        first kisses, this next year will be one for the books. Being a good
-        leader, partner, daughter, and mom is going to be a big role in
-        2022—one that I am grateful and privileged to fill for my loved
-        ones.<span class="read-more font-bold underline md:hidden"
-          >Read More</span
+        overwhelming sensation of total loss of control. It may seem cliché, but
+        as I usher my family into 2022, I feel like I am sitting on the top of a
+        rollercoaster teetering on the ride of my life.<br /><br />From the
+        tremendous growth of Kindra to my husband’s entrepreneurial career
+        taking off, from my parents gracefully aging into a retirement community
+        to my kids on the precipice of their first kisses, this next year will
+        be one for the books. Being a good leader, partner, daughter, and mom is
+        going to be a big role in 2022—one that I am grateful and privileged to
+        fill for my loved ones.<span
+          class="read-more font-bold underline md:hidden">Read More</span
         ><span class="more more-hide md:!block">
           Then there’s the bigger picture. 2020 was going to be our year!
-          Remember? 2021 was to be the year we got back to normal. It was
-          going to be ok. New Year’s 2022 is… eerily quiet. Uncertain. With
-          each passing year, I feel the pull to try and make time stand
-          still. But really—with all this turmoil in the world, how could I
-          want that? The last few years have been particularly tumultuous
-          for the world, and I imagine we all may find ourselves wanting to
-          pause and fast-forward all at once. I wish I could skip ahead to
-          more certain times, but somehow stay like I am now—healthy,
-          working hard, loving strong.<br /><br />But we can’t bottle or
-          manipulate time. So what do we do instead?<br /><br />I speak to a
-          lot of experts on all things change by virtue of my role at
-          Kindra. They all talk about how finding yourself in new
-          circumstances—good or bad—is naturally overwhelming. The
-          uncertainty of facing and even walking toward something you’ve
+          Remember? 2021 was to be the year we got back to normal. It was going
+          to be ok. New Year’s 2022 is… eerily quiet. Uncertain. With each
+          passing year, I feel the pull to try and make time stand still. But
+          really—with all this turmoil in the world, how could I want that? The
+          last few years have been particularly tumultuous for the world, and I
+          imagine we all may find ourselves wanting to pause and fast-forward
+          all at once. I wish I could skip ahead to more certain times, but
+          somehow stay like I am now—healthy, working hard, loving strong.<br
+          /><br />But we can’t bottle or manipulate time. So what do we do
+          instead?<br /><br />I speak to a lot of experts on all things change
+          by virtue of my role at Kindra. They all talk about how finding
+          yourself in new circumstances—good or bad—is naturally overwhelming.
+          The uncertainty of facing and even walking toward something you’ve
           never experienced before is a major source of stress. It is the
-          unknowing that makes it worse. I’ve come to the realization that
-          these days ahead at the dawn of this new year are much like the
-          journeys you all share with me as we navigate our changing bodies
-          and spirits. <br /><br />And just like that (😉), I knew how to
-          unknowingly move forward.<br /><br />I started by taking 3 days
-          off. As the CEO of a rapidly growing startup, that’s no small
-          feat. But I took real time just for me and mine, and I hope you
-          were able to carve some out, too. Because the key to closing the
-          books on 2021 and entering into the great unknown of 2022 is
-          taking care of ourselves. From catching up on reading (highly
-          recommend Untamed—I listened to the audiobook, then immediately
-          devoured her podcast) and entertainment (Succession, anyone?!) to
-          spending time sweating to my favorite music while working out
-          (it’s honestly been a life saver) and perfecting my homemade green
-          juice recipe (ginger and lime, friends), I’m intentionally taking
-          time to refill my well, so I have something to bring to you all in
-          2022. We have so many exciting things in store!<br /><br />We’re
-          partnering with an incredible nutritionist to share expert
-          guidance on how to bring your gut and hormonal health in sync. I
-          can’t wait to introduce you to her! And we’ll be soothing our
-          bodies inside and out with an all-new formula from the Kindra
-          Innovation Lab that has personally done wonders for my paper-thin,
-          dry skin everywhere! We’re honored to continue our mission to
-          support your menopause journey in these ways and more in the year
-          ahead.<br /><br />You don’t spontaneously summon resilience in the
-          face of unexpected or difficult circumstances; you have to
-          cultivate it. In this time of reflection and anticipation for us
-          all, I encourage you to truly prioritize your well-being, practice
-          gratitude, and simply love yourself a little bit more. That’s what
-          I’m resolved to do, and I hope you’ll join me. It will give us
-          something to hold onto and ground us when circumstances beyond our
-          control befall us. Together we can expect the unexpected
-          and—whenever possible—allow ourselves to enjoy the ride.<br /><br
-          />You are not alone. We are Kindra.Month in February and Women’s
-          History Month in March, there sits a massive, intersecting
-          community of wildly underserved people struggling time and again
-          to simply live in peace. The past few years have been challenging
-          for everyone in the world, and—I’ll be honest—in many ways it
-          feels like the suffering is never ending. And what can we really
-          do about it? How can we continue to move forward as individuals,
-          as families, as nations, and as a global community when there is
-          constant turmoil and oppression everywhere you turn?<br /><br /> You
-          are not alone. We are Kindra. <br /><br />
+          unknowing that makes it worse. I’ve come to the realization that these
+          days ahead at the dawn of this new year are much like the journeys you
+          all share with me as we navigate our changing bodies and spirits. <br
+          /><br />And just like that (😉), I knew how to unknowingly move
+          forward.<br /><br />I started by taking 3 days off. As the CEO of a
+          rapidly growing startup, that’s no small feat. But I took real time
+          just for me and mine, and I hope you were able to carve some out, too.
+          Because the key to closing the books on 2021 and entering into the
+          great unknown of 2022 is taking care of ourselves. From catching up on
+          reading (highly recommend Untamed—I listened to the audiobook, then
+          immediately devoured her podcast) and entertainment (Succession,
+          anyone?!) to spending time sweating to my favorite music while working
+          out (it’s honestly been a life saver) and perfecting my homemade green
+          juice recipe (ginger and lime, friends), I’m intentionally taking time
+          to refill my well, so I have something to bring to you all in 2022. We
+          have so many exciting things in store!<br /><br />We’re partnering
+          with an incredible nutritionist to share expert guidance on how to
+          bring your gut and hormonal health in sync. I can’t wait to introduce
+          you to her! And we’ll be soothing our bodies inside and out with an
+          all-new formula from the Kindra Innovation Lab that has personally
+          done wonders for my paper-thin, dry skin everywhere! We’re honored to
+          continue our mission to support your menopause journey in these ways
+          and more in the year ahead.<br /><br />You don’t spontaneously summon
+          resilience in the face of unexpected or difficult circumstances; you
+          have to cultivate it. In this time of reflection and anticipation for
+          us all, I encourage you to truly prioritize your well-being, practice
+          gratitude, and simply love yourself a little bit more. That’s what I’m
+          resolved to do, and I hope you’ll join me. It will give us something
+          to hold onto and ground us when circumstances beyond our control
+          befall us. Together we can expect the unexpected and—whenever
+          possible—allow ourselves to enjoy the ride.<br /><br />You are not
+          alone. We are Kindra.Month in February and Women’s History Month in
+          March, there sits a massive, intersecting community of wildly
+          underserved people struggling time and again to simply live in peace.
+          The past few years have been challenging for everyone in the world,
+          and—I’ll be honest—in many ways it feels like the suffering is never
+          ending. And what can we really do about it? How can we continue to
+          move forward as individuals, as families, as nations, and as a global
+          community when there is constant turmoil and oppression everywhere you
+          turn?<br /><br /> You are not alone. We are Kindra. <br /><br />
           Catherine Balsam-Schwaber, Kindra CEO</span
         >
       </p>
@@ -709,57 +677,54 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
       <br />
       <p class="text-[16px]">
         For all the Wonder Women—then & now<br /><br /> Let’s get to work… <br
-        /><br />I’ve worked with a lot of ‘Wonder Women’ in my career, many
-        of whom were about my age now when I was lucky enough to learn from
-        them at the top of their game. But now that I’m standing where they
-        once stood—a working mom in menopause building a business in the
-        face of a global pandemic that just won’t quit—I wonder about their
-        silent struggles. I wonder how they hid a hot flash or worked
-        through brain fog while I marveled at their professional prowess and
-        seeming ability to handle everything life threw at them with dignity
-        and grace. <br /><br />Women have made so many advancements in the
-        workplace over the last century, and yet menopause lingers as this
-        shameful secret. A perfectly natural shared experience half the
-        population of the planet is somehow expected to hide from the other
-        half and, worst of all, each other.<br /><br /><span
-          class="read-more font-bold underline md:hidden">Read More</span
+        /><br />I’ve worked with a lot of ‘Wonder Women’ in my career, many of
+        whom were about my age now when I was lucky enough to learn from them at
+        the top of their game. But now that I’m standing where they once stood—a
+        working mom in menopause building a business in the face of a global
+        pandemic that just won’t quit—I wonder about their silent struggles. I
+        wonder how they hid a hot flash or worked through brain fog while I
+        marveled at their professional prowess and seeming ability to handle
+        everything life threw at them with dignity and grace. <br /><br />Women
+        have made so many advancements in the workplace over the last century,
+        and yet menopause lingers as this shameful secret. A perfectly natural
+        shared experience half the population of the planet is somehow expected
+        to hide from the other half and, worst of all, each other.<br /><br
+        /><span class="read-more font-bold underline md:hidden">Read More</span
         ><span class="more more-hide md:!block">
-          Imagine how freeing it would be if we all owned our experience
-          with menopause instead. Imagine how empowering it would be if we
-          got hit with a hot flash during a meeting and instead of
-          attempting to ignore the copious sweat and discomfort, we could
-          just pronounce it a "hot flash moment" and choose whether to plow
-          through or simply pause the meeting and excuse ourselves until it
-          passed. What if it was acceptable to be a woman working while in
-          menopause? I wonder…<br /><br />But it will take more than
-          wondering. We're not only imagining a long overdue future here at
-          Kindra, we're here to make it happen. There are so many women
-          working in industries and roles that did not allow them the
-          privilege of working from home during the pandemic. And now as
-          many that were able to work from home start to think about
+          Imagine how freeing it would be if we all owned our experience with
+          menopause instead. Imagine how empowering it would be if we got hit
+          with a hot flash during a meeting and instead of attempting to ignore
+          the copious sweat and discomfort, we could just pronounce it a "hot
+          flash moment" and choose whether to plow through or simply pause the
+          meeting and excuse ourselves until it passed. What if it was
+          acceptable to be a woman working while in menopause? I wonder…<br
+          /><br />But it will take more than wondering. We're not only imagining
+          a long overdue future here at Kindra, we're here to make it happen.
+          There are so many women working in industries and roles that did not
+          allow them the privilege of working from home during the pandemic. And
+          now as many that were able to work from home start to think about
           returning to the workplace, whether that's in real life, a hybrid
-          arrangement, or simply the decision to stay firmly at home, it's
-          time to address an issue that's laid dormant for too long. Women
-          in their working prime are suffering in silence. It has to stop.<br
-          /><br /> Let's bring our struggles into the light, offer each other
-          support, celebrate our wins, and create a pathway for us all to feel
-          understood, represented, and honored. Let’s get to work helping each
-          other get to work.<br /><br /> Our first step towards doing just that
-          is introducing our new Menopause in the Workplace Toolkit, complete
-          with tips for navigating office culture as a menopausal woman or an
-          empathetic colleague/manager, products and life hacks to help overcome
-          your biggest productivity challenges, and restorative meditations for
-          those moments when the best thing is just to take a moment for yourself
-          before diving back in.<br /><br /> Wherever work may find you, whatever
-          work you do, know that we see your struggles, we believe in you wholeheartedly,
-          and we're working alongside you to make work better for us all.<br
-          /><br /> I see you, Wonder Woman. You are not alone. You are Kindra.<br
-          /><br /> Truly,<br />Catherine Balsam-Schwaber, Kindra CEO</span
+          arrangement, or simply the decision to stay firmly at home, it's time
+          to address an issue that's laid dormant for too long. Women in their
+          working prime are suffering in silence. It has to stop.<br /><br /> Let's
+          bring our struggles into the light, offer each other support, celebrate
+          our wins, and create a pathway for us all to feel understood, represented,
+          and honored. Let’s get to work helping each other get to work.<br
+          /><br /> Our first step towards doing just that is introducing our new Menopause
+          in the Workplace Toolkit, complete with tips for navigating office culture
+          as a menopausal woman or an empathetic colleague/manager, products and
+          life hacks to help overcome your biggest productivity challenges, and restorative
+          meditations for those moments when the best thing is just to take a moment
+          for yourself before diving back in.<br /><br /> Wherever work may find
+          you, whatever work you do, know that we see your struggles, we believe
+          in you wholeheartedly, and we're working alongside you to make work better
+          for us all.<br /><br /> I see you, Wonder Woman. You are not alone. You
+          are Kindra.<br /><br /> Truly,<br />Catherine Balsam-Schwaber, Kindra
+          CEO</span
         >
       </p>
     </div>
   </div>
-
 </ProjectLayout>
 <script>
   const readMoreButtons = document.getElementsByClassName("read-more");
