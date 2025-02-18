@@ -18,7 +18,7 @@ const large = type=='image' && await getImage({src:hero, widths:[2800]})
 
     &.dark{
       color:var(--cream);
-      background:var(--near-black);
+      background:var(--charcoal);
     }
   }
   .sticky-container {
@@ -62,11 +62,7 @@ const large = type=='image' && await getImage({src:hero, widths:[2800]})
     width: 20vw;
     margin-top: 0px;
     transform: rotate(-3deg);
-    box-shadow: rgba(32, 32, 32, 0.45) 7px 7px 14px;
-
-    .dark &{
-      box-shadow: rgba(255, 255, 255, 0.45) 7px 7px 14px;
-    }
+    box-shadow: rgba(30, 30, 30, 0.5) -5px 5px 5px;
   }
 
   @media (max-width: 768px) {
@@ -103,13 +99,11 @@ const large = type=='image' && await getImage({src:hero, widths:[2800]})
   import {scaleLinear} from "d3-scale";
 
   const image = document.getElementById("main-header");
-  const darkTheme = !!document.querySelector(".scroll-container.dark")
 
   let sizeScale = scaleLinear().range([20, 100]).clamp(true),
       offsetScale = scaleLinear().range([0, -310]).clamp(true),
       turnScale = scaleLinear().range([-3, 0]).clamp(true),
-      shadowScale = scaleLinear().rangeRound([7, 0]).clamp(true),
-      shadowColor = `rgba(${darkTheme ? "190, 190, 190, 0.3": "32, 32, 32, 0.45"})`,
+      shadowScale = scaleLinear().rangeRound([5, 0]).clamp(true),
       scrollTimer = null;
 
   function updateScales(){
@@ -136,7 +130,7 @@ const large = type=='image' && await getImage({src:hero, widths:[2800]})
     image.style.width = `${size}vw`;
     image.style.marginTop = `${offset}px`;
     image.style.transform = `rotate(${angle}deg)`
-    image.style.boxShadow = `${shadow}px ${shadow}px ${2*shadow}px ${shadowColor}`
+    image.style.boxShadow = `${-shadow}px ${shadow}px ${2*shadow}px rgba(30,30,30, 0.5)`
   }
 
   window.addEventListener("resize", updateScales)
