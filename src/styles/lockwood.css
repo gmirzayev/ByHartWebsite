@@ -1,0 +1,492 @@
+.rc{
+    border-radius: 3px;
+
+    @media (min-width: 768px) {
+        border-radius: 5px;
+    }
+}
+
+.spaced{
+    margin:40px 20px;
+    @media (min-width: 768px) {
+        margin:120px 20px;
+    }
+
+    &.flush{
+        margin-left:0;
+        margin-right:0;
+    }
+}
+
+.padded{
+    padding:40px 20px;
+    @media (min-width: 768px) {
+        padding:120px 20px;
+    }
+
+    &.flush{
+        margin-left:0;
+        margin-right:0;
+    }
+}
+
+.full-bleed{
+    margin: 40px 0;
+    @media (min-width: 768px) {
+        margin:120px 0;
+    }
+}
+
+.two-col{
+    margin:40px 0;
+    padding:0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 15px;
+
+    > *{ width:100%; }
+    &.flush{ padding:0; }
+    @media (min-width: 768px) {
+        margin:120px 0;
+    }
+}
+
+.three-col{
+    margin:40px 0;
+    padding:0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    gap: 15px;
+
+    > *{ width:100%; }
+    &.flush{ padding:0; }
+    @media (min-width: 768px) {
+        margin:120px 0;
+    }
+}
+
+
+#pizza-animation{
+    video{
+        width:100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+
+#manifesto{
+    background: url(/images/Lockwood/manifesto-bg.jpg) no-repeat;
+    background-size: cover;
+
+    picture img{
+        margin: 0 auto;
+        width: 100%;
+        max-width: 840px;
+    }
+}
+
+
+#logos .backdrop{
+    background: url(/images/Lockwood/logos-bg.png) no-repeat;
+    background-size: cover;
+    padding: 200px 0;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+        max-width: 1040px;
+    }
+}
+
+#logos .slideshow{
+    display: grid;
+    grid-template-areas: single;
+    align-self:center;
+    justify-content: center;
+
+    > img{
+        grid-area: single;
+        opacity:0;
+        transition: opacity .5s linear;
+        width:calc(100% - 40px);
+        margin: 0 auto;
+
+        &.active{
+            opacity:1;
+        }
+
+    }
+
+    @media (min-width: 768px) {
+        margin:0 auto;
+
+        > img{
+            max-width: 450px;
+        }
+    }
+}
+
+
+
+#storefronts{
+    /* padding:40px 0px; */
+    overflow:hidden;
+
+    .tray{
+        position:relative;
+        display:flex;
+        flex-direction:row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2.5vw;
+    }
+
+    img{
+        width:22.5vw;
+        animation: infinite-slide-150 12s linear infinite;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+    }
+
+    @media (min-width: 768px) {
+        /* background-size: cover; */
+        /* padding:100px 0px; */
+    }
+}
+
+@keyframes infinite-slide-150 {
+    0%{ transform: translateX(0);}
+    100%{ transform: translateX(calc(-150vw));}
+}
+
+#shopping-cart, #bags{
+    padding:0 !important;
+}
+#shopping-cart img{ max-width: 840px; }
+#bags img{ max-width: 1040px; }
+
+
+#gift-animation{
+    background: url(/images/Lockwood/giftbox-bg.jpg) no-repeat;
+    background-size: cover;
+
+    video{
+        width:100%;
+        max-width: 840px;
+        margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+        padding:240px 20px;
+    }
+}
+
+
+#sticker-box{
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    max-width:100%;
+    padding:0 20px;
+    gap:15px;
+
+    > video, > div{
+        width:40%;
+    }
+
+
+    .slideshow{
+        display: grid;
+        grid-template-areas: single;
+        align-self:center;
+        justify-content: center;
+
+        > img{
+            grid-area: single;
+            opacity:0;
+            width:calc(100% - 40px);
+            margin: 0 auto;
+
+            &.active{
+                opacity:1;
+            }
+
+        }
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+#site{
+    background: url(/images/Lockwood/site-bg.jpg) no-repeat;
+    background-size: cover;
+    padding:40px 20px;
+
+    .frame{
+        position: relative;
+        border: 2px solid white;
+        border-radius: 15px;
+        padding:33px 8px 8px 8px;
+        max-width:840px;
+        margin:0 auto;
+
+        &:after{
+            content: " ";
+            background: url(/images/Lockwood/site-buttons.png) no-repeat;
+            background-size: cover;
+            position: absolute;
+            top:9px;
+            left:12px;
+            width: 50px;
+            height: 15px;
+        }
+    }
+
+    video{
+        border-radius: 5px;
+    }
+
+    @media (min-width: 768px) {
+        padding:120px 20px;
+    }
+}
+
+#custom-box{
+    grid-template-columns: fit-content(640px) fit-content(640px);
+}
+
+#social{
+    grid-template-columns: fit-content(336px) fit-content(336px) fit-content(336px);
+}
+
+#grid{
+    grid-template-columns: fit-content(655px) fit-content(655px);
+}
+
+#neighborhoods .slideshow{
+    display: grid;
+    grid-template-areas: single;
+    align-self:center;
+    justify-content: center;
+
+    > img{
+        grid-area: single;
+        opacity:0;
+        transition: opacity .5s linear;
+        width:100%;
+        margin: 0 auto;
+
+        &.active{
+            opacity:1;
+        }
+
+    }
+
+    @media (min-width: 768px) {
+        margin:0 auto;
+    }
+}
+
+#spark{
+    position:relative;
+    display: grid;
+    grid-template-areas: single;
+    align-self:center;
+    justify-content: center;
+
+
+    video{
+        max-width: none !important;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        grid-area: single;
+    }
+
+    .cards{
+        grid-area: single;
+        display:flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        padding:40px;
+        z-index:1;
+
+        /* img:first-child{ max-width: 220px; } */
+        /* img:last-child{ max-width: 300px; } */
+
+        @media (min-width: 768px) {
+            gap: 200px;
+            img{ max-width: 940px;}
+            /* img:first-child{ max-width: 540px; } */
+            /* img:last-child{ max-width: 940px; } */
+
+        }
+    }
+
+}
+
+
+
+#newsletters{
+    overflow:hidden;
+
+    .tray{
+        position:relative;
+        display:flex;
+        flex-direction:row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2.5vw;
+    }
+
+    img{
+        width:22.5vw;
+        animation: infinite-slide-300 22s linear infinite;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+    }
+
+    @media (min-width: 768px) {
+        /* background-size: cover; */
+        /* padding:100px 0px; */
+    }
+}
+
+
+@keyframes infinite-slide-300 {
+    0%{ transform: translateX(0);}
+    100%{ transform: translateX(calc(-300vw));}
+}
+
+
+#candle-warmer{
+    background: url(/images/Lockwood/candle-bg.jpg) no-repeat;
+    background-size: cover;
+    padding: 75px;
+
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap:60px;
+
+    > * {
+        width: calc(100% - 150px);
+    }
+
+    video{ max-width: 390px; }
+    img{ max-width: 460px; }
+
+    @media (min-width: 768px) {
+        flex-flow: row nowrap;
+        padding: 120px 20px;
+    }
+}
+
+
+#flower .slideshow{
+    display: grid;
+    grid-template-areas: single;
+    align-self:center;
+    justify-content: center;
+
+    > img{
+        grid-area: single;
+        opacity:0;
+        /* transition: opacity .5s linear; */
+        width:100%;
+        margin: 0 auto;
+        max-width:800px;
+
+        &.active{
+            opacity:1;
+        }
+
+    }
+
+    @media (min-width: 768px) {
+        margin:0 auto;
+    }
+}
+
+#candle-tok{
+    background: url(/images/Lockwood/candletok-bg.jpg) no-repeat;
+    background-size: cover;
+    video{
+        margin:0 auto;
+        max-width:330px;
+    }
+}
+
+
+#tea{
+    align-items: center;
+
+    .slideshow{
+        display: grid;
+        grid-template-areas: single;
+        align-self:center;
+        justify-content: center;
+
+        > img{
+            grid-area: single;
+            opacity:0;
+            transition: opacity 1s linear;
+            width:100%;
+            margin: 0 auto;
+            max-width:800px;
+
+            &.active{
+                opacity:1;
+            }
+
+        }
+
+        @media (min-width: 768px) {
+            margin:0 auto;
+        }
+    }
+
+    @media (max-width: 767px) {
+        gap: 45px;
+        grid-template-columns: 1fr;
+    }
+}
+
+#values{
+
+    .slideshow{
+        display: grid;
+        grid-template-areas: single;
+        align-self:center;
+        justify-content: center;
+
+        > picture{
+            grid-area: single;
+            opacity:0;
+            transition: opacity .5s linear;
+            width:calc(100% - 40px);
+            margin: 0 auto;
+
+            &.active{
+                opacity:1;
+            }
+
+        }
+
+        @media (min-width: 768px) {
+            margin:0 auto;
+
+            > img{
+                max-width: 450px;
+            }
+        }
+    }
+}
