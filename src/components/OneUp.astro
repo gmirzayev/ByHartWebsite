@@ -1,11 +1,12 @@
 ---
 import "@styles/utils.css";
 import Image from "astro/components/Image.astro";
-const {src, alt=" ", class:classes} = Astro.props
+const {src, alt=" ", width, class:classes, id} = Astro.props
+const widths = width ? [width] : [2200]
 ---
 
-<div class:list={["one-up", classes]}>
-    <Image src={src} alt={alt}/>
+<div id={id} class:list={["one-up", classes]}>
+    <Image src={src} widths={widths} alt={alt}/>
 </div>
 
 <style>
