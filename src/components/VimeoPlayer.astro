@@ -135,7 +135,7 @@ let actionLabel = action == 'unmute' ? "Sound On" :
                           this.button?.classList.contains("unpause") ? "unpause" :
                           null
 
-            this.button.addEventListener("click", e => this.handleClick(e))
+            this.button?.addEventListener("click", e => this.handleClick(e))
             Vimeo.videos.push(this)
         }
 
