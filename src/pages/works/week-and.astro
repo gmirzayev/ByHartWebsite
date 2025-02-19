@@ -1,0 +1,246 @@
+---
+const brand = "Week&"
+const tagline = "Your Weekend is Just the Beginning…"
+const tags = [
+    'Brand Identity + Positioning',
+    'Logo Design',
+    'Video + Photography',
+    'Art + Illustration',
+    'Product Design (UX/UI)',
+    'Original Naming',
+    'Organic + Paid Social Content',
+    'Writing + Editing',
+    'Qualitative Research',
+    'Surprise + Delight',
+    'Visual Identity'
+]
+
+import "@styles/utils.css";
+import "@styles/week-and.css";
+import Image from "astro/components/Image.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
+import ProjectTags from "@components/ProjectTags.astro";
+import ProjectHead from "@components/ProjectHead.astro";
+import OneUp from "@components/OneUp.astro";
+import TwoUp from "@components/TwoUp.astro";
+import Navigation from "@components/Navigation.astro";
+import ProjectsCarousel from "@components/ProjectsCarousel.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
+import ResponsiveBackground from "@components/ResponsiveBackground.astro";
+import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
+import VimeoPlayer from "@components/VimeoPlayer.astro";
+
+import Hero from "@assets/Week+/img/Hero_Week+_D.png"
+import HeroMobile from "@assets/Week+/img/Hero_Week+_M.png"
+
+import LogoA from "@assets/Week+/img/02_Week+.png"
+import LogoB from "@assets/Week+/img/04_week+.png"
+import Palette from "@assets/Week+/img/05_week+.png"
+import Typography from "@assets/Week+/img/07_PP_Type_D.png"
+import TypographyMobile from "@assets/Week+/img/07_PP_Type_M.png"
+
+import LogoAnim from "@assets/Week+/07_animation.mp4"
+import LogoActivities from "@assets/Week+/img/08_active-ampersands.png"
+import TextureSwatches from "@assets/Week+/img/09_week+.png"
+import TextureA from "@assets/Week+/img/10_Week+.png"
+import TextureB from "@assets/Week+/img/11_week+.png"
+import WeAre from "@assets/Week+/img/12_we-are.png"
+import PairA1 from "@assets/Week+/img/13_Week+.png"
+import PairA2 from "@assets/Week+/img/14_week+.png"
+import PairB1 from "@assets/Week+/img/15_week+.png"
+import PairB2 from "@assets/Week+/img/16_week+.png"
+import PairC1 from "@assets/Week+/img/17.png"
+import PairC2 from "@assets/Week+/img/18.png"
+
+import TrioA1 from "@assets/Week+/img/19a.png"
+import TrioA2 from "@assets/Week+/img/19b.png"
+import TrioA3 from "@assets/Week+/img/19c.png"
+
+import FeedYourFreeTime from "@assets/Week+/img/20_feed-your-free-time.png"
+
+import TrioB1 from "@assets/Week+/img/21a.png"
+import TrioB2 from "@assets/Week+/img/21b.png"
+import TrioB3 from "@assets/Week+/img/21c.png"
+
+import TrioC1 from "@assets/Week+/img/22a.png"
+import TrioC2 from "@assets/Week+/img/22b.png"
+import TrioC3 from "@assets/Week+/img/22c.png"
+
+import BlueA from "@assets/Week+/img/23a.png"
+import BlueB from "@assets/Week+/img/23b.png"
+import BlueC from "@assets/Week+/img/23c.png"
+
+import Newsletter from "@assets/Week+/img/36_Week+.png"
+
+import CuttingRoomA from "@assets/Week+/img/37a.mp4"
+import CuttingRoomB from "@assets/Week+/img/37b.png"
+import CuttingRoomC from "@assets/Week+/img/37c.png"
+
+import CuttingRoomD from "@assets/Week+/img/39.mp4"
+import CuttingRoomE from "@assets/Week+/img/40_Week+.png"
+import CuttingRoomF from "@assets/Week+/img/41_Week+.png"
+
+
+import TrioD1 from "@assets/Week+/img/42_Week+.png"
+import TrioD2 from "@assets/Week+/img/43_Week+.png"
+import TrioD3 from "@assets/Week+/img/44_Week+.png"
+
+import PairD1 from "@assets/Week+/img/45_Week+.png"
+import PairD2 from "@assets/Week+/img/46_Week+.png"
+
+import NamingA from "@assets/Week+/img/naming/46_Week+_1.png"
+import NamingB from "@assets/Week+/img/naming/46_Week+_2.png"
+import NamingC from "@assets/Week+/img/naming/46_Week+_3.png"
+import NamingD from "@assets/Week+/img/naming/46_Week+_4.png"
+import NamingE from "@assets/Week+/img/naming/46_Week+_5.png"
+
+---
+
+<ProjectLayout hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
+    <VimeoPlayer id="campaign-a" class="spaced" video="1057938610" height="125%" action="unmute"/>
+
+    <Image src={LogoA} widths={[2200]} alt=" "/>
+    <OneUp class="spaced flush" src={LogoB} alt=" " />
+    <OneUp class="spaced flush" src={Palette} alt=" " />
+    <div class="spaced">
+        <ResponsiveImage mobile={TypographyMobile} desktop={Typography} alt=" " />
+    </div>
+    <video loop playsinline autoplay muted style="width:100%;">
+        <source src={LogoAnim} />
+    </video>
+    <Image src={LogoActivities} widths={[2200]} alt=" "/>
+
+    <section>
+        <h1>Textures</h1>
+        <Image src={TextureSwatches} widths={[2200]} alt=" "/>
+    </section>
+
+    <div class="two-col">
+        <Image src={TextureA} widths={[2200]} alt=" "/>
+        <Image src={TextureB} widths={[2200]} alt=" "/>
+    </div>
+
+    <Image src={WeAre} widths={[2200]} alt=" "/>
+
+    <ResponsiveTextBlock class="padded">
+        <div>
+            <h1>What’s Week&?</h1>
+            <p>With the word “end” literally embedded in the word "weekend," it’s no surprise the weekend often feels like a finish line in life. Week&, on the other hand, is a place to spark something new anytime your wish.</p>
+            <p>Week& is your go-to guide to making the most of your free time, me time, and we time.</p>
+            <p>Week& helps you add that special shine to your next trip, pet project, or night out and presents you with the opportunity to spice up your life. Week& sees your</p>
+        </div>
+        <div class="no-break">
+            <p>plans and raises you fun side trips and delightful diversions. Week& is that foot kick under the table urging you to take what’s familiar and branch out to try something new and you. The “psst” that pricks your ears and inspires you to pick your bliss.</p>
+            <p>It’s harder to find pockets of joy when we’re all out there looking for it on our own. We believe if we share what we know and empower each other, we’ll find ours, too.</p>
+            <p>This is Week&</p>
+            <p>And your weekend is just the beginning...</p>
+        </div>
+    </ResponsiveTextBlock>
+
+    <div class="two-col">
+        <Image src={PairA1} widths={[2200]} alt=" "/>
+        <Image src={PairA2} widths={[2200]} alt=" "/>
+    </div>
+
+    <div class="two-col">
+        <Image src={PairB1} widths={[2200]} alt=" "/>
+        <Image src={PairB2} widths={[2200]} alt=" "/>
+    </div>
+
+    <div class="two-col">
+        <Image src={PairC1} widths={[2200]} alt=" "/>
+        <Image src={PairC2} widths={[2200]} alt=" "/>
+    </div>
+
+    <div class="three-col">
+        <Image src={TrioA1} widths={[2200]} alt=" "/>
+        <Image src={TrioA2} widths={[2200]} alt=" "/>
+        <Image src={TrioA3} widths={[2200]} alt=" "/>
+    </div>
+
+    <VimeoPlayer id="campaign-b" class="spaced" video="1057960681" height="125%" action="unmute"/>
+
+    <OneUp id="feed-your-free-time" src={FeedYourFreeTime} />
+
+    <div class="three-col">
+        <Image class="rc-big" src={TrioB1} widths={[2200]} alt=" "/>
+        <Image class="rc-big" src={TrioB2} widths={[2200]} alt=" "/>
+        <Image class="rc-big" src={TrioB3} widths={[2200]} alt=" "/>
+    </div>
+
+    <div class="three-col">
+        <Image class="rc-big" src={TrioC1} widths={[2200]} alt=" "/>
+        <Image class="rc-big" src={TrioC2} widths={[2200]} alt=" "/>
+        <Image class="rc-big" src={TrioC3} widths={[2200]} alt=" "/>
+    </div>
+
+    <div id="blue" class="padded">
+        <Image src={BlueA} widths={[2200]} alt=" "/>
+        <Image src={BlueB} widths={[2200]} alt=" "/>
+        <Image src={BlueC} widths={[2200]} alt=" "/>
+    </div>
+
+    <OneUp class="spaced flush" src={Newsletter} alt=" " />
+
+    <section id="cutting-room-floor" class="spaced">
+        <h1>Cutting room floor</h1>
+        <video loop playsinline autoplay muted>
+            <source src={CuttingRoomA} />
+        </video>
+        <Image src={CuttingRoomB} widths={[2200]} alt=" "/>
+        <Image src={CuttingRoomC} widths={[2200]} alt=" "/>
+    </section>
+
+    <video loop playsinline autoplay muted>
+        <source src={CuttingRoomD} />
+    </video>
+
+    <Image src={CuttingRoomE} widths={[2200]} alt=" "/>
+    <Image src={CuttingRoomF} widths={[2200]} alt=" "/>
+
+    <div class="three-col">
+        <Image src={TrioD1} widths={[2200]} alt=" "/>
+        <Image src={TrioD2} widths={[2200]} alt=" "/>
+        <Image src={TrioD3} widths={[2200]} alt=" "/>
+    </div>
+
+    <div class="two-col">
+        <Image src={PairD1} widths={[2200]} alt=" "/>
+        <Image src={PairD2} widths={[2200]} alt=" "/>
+    </div>
+
+    <section id="naming-journey" class="spaced">
+        <h1>Scenes from the naming journey</h1>
+        <div class="slideshow">
+            <Image class="active" src={NamingA} widths={[2200]} loading="eager" alt=" " />
+            <Image src={NamingB} widths={[2200]} loading="eager" alt=" " />
+            <Image src={NamingC} widths={[2200]} loading="eager" alt=" " />
+            <Image src={NamingD} widths={[2200]} loading="eager" alt=" " />
+            <Image src={NamingE} widths={[2200]} loading="eager" alt=" " />
+        </div>
+    </section>
+
+</ProjectLayout>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let dt = 0
+        document.querySelectorAll('.slideshow').forEach(elt => {
+            let slides = elt.querySelectorAll(":scope>picture,:scope>img:not(.app"),
+                interval = elt instanceof HTMLElement && elt.dataset.interval || 2000,
+                len = slides.length,
+                idx = 0
+
+            const advance = () => {
+                idx++
+                slides.forEach((img, i) => {
+                    img.classList.toggle('active', i==idx%len)
+                })
+            }
+
+            setTimeout(() => setInterval(advance, +interval), dt)
+            dt += 666
+        })
+    })
+</script>
+
