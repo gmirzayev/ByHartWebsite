@@ -3,7 +3,7 @@ import {readFile} from 'fs/promises'
 
 
 async function main(){
-    let csv = new URL('./project-tags.csv', import.meta.url)
+    let csv = new URL(`./project-tags.csv`, import.meta.url)
     let rows = Papa.parse(await readFile(csv, 'utf-8'), {header:true})
 
     let tags = {}
@@ -13,7 +13,10 @@ async function main(){
         delete row['']
         tags[project] = Object.entries(row).filter(([tag, active]) => active.trim()=='X').map(kv => kv[0])
     }
-    console.log(tags)
+
+    for (const project of Object.keys(tags).sort()){
+        console.log(project, tags[project])
+    }
 }
 
 
