@@ -2,13 +2,10 @@
 import { getImage } from "astro:assets";
 import Navigation from "./Navigation.astro";
 
-
-
 const { brand, tagline, hero, mobile, theme } = Astro.props;
 const type = !!hero.format ? 'image' : 'video' // imported images get unpacked into ImageMetadata objects with `format` attrs, videos are just a path string
 const small = type=='image' && await getImage({src:mobile ?? hero, widths:[1800]})
 const large = type=='image' && await getImage({src:hero, widths:[2800]})
-
 ---
 
 <style>
@@ -70,6 +67,7 @@ const large = type=='image' && await getImage({src:hero, widths:[2800]})
     #project-title h2 { font-size: 14px; }
   }
 </style>
+
 <div class:list={["scroll-container", theme]}>
   <div class="sticky-container">
     <Navigation theme={theme} />
@@ -83,6 +81,7 @@ const large = type=='image' && await getImage({src:hero, widths:[2800]})
         </picture>
       ) : (
         <video id="main-header" autoplay playsinline loop muted>
+          {mobile && <source src={mobile} type="video/mp4" media="(max-width: 767px)" /> }
           <source src={hero} type="video/mp4" />
         </video>
       )

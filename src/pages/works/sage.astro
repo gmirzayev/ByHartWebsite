@@ -20,6 +20,7 @@ import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectLayout from "@layouts/ProjectLayout.astro";
 import SageHeroVideo from "@assets/Sage/Sage_Hero_Desktop.mp4";
+import SageHeroVideoMobile from "@assets/Sage/Hero_Sage_M_Full-Bleed.mp4"
 import BreatheVideo from "@assets/Sage/Breathe_Desktop.mp4";
 import WeAreVideo from "@assets/Sage/We_Are_Desktop.mp4";
 import WeAreMobile from "@assets/Sage/We_Are_Mobile.mp4";
@@ -168,7 +169,7 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
     }
   }
 </style>
-<ProjectLayout hero={SageHeroVideo} brand={brand} tagline={tagline} tags={tags}>
+<ProjectLayout hero={SageHeroVideo} mobile={SageHeroVideoMobile} brand={brand} tagline={tagline} tags={tags}>
   <Image
     class="collage-image h-auto w-[90%]"
     src={SagePhoto}
