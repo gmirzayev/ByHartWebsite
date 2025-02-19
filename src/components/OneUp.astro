@@ -1,12 +1,13 @@
 ---
 import "@styles/utils.css";
 import Image from "astro/components/Image.astro";
-const {src, alt=" ", width, class:classes, id} = Astro.props
+const {src, alt=" ", width, max, class:classes, id} = Astro.props
 const widths = width ? [width] : [2200]
+const style = max ? {maxWidth:max} : {}
 ---
 
 <div id={id} class:list={["one-up", classes]}>
-    <Image src={src} widths={widths} alt={alt}/>
+    <Image src={src} widths={widths} alt={alt} style={style}/>
 </div>
 
 <style>
@@ -17,5 +18,31 @@ const widths = width ? [width] : [2200]
             width:100%;
             margin:0 auto;
         }
+
+        &.spaced{
+            padding:0;
+            margin:40px 20px;
+            @media (min-width: 768px) {
+                margin:120px 20px;
+            }
+
+            &.flush{
+                margin-left:0;
+                margin-right:0;
+            }
+        }
+
+        &.padded{
+            padding:40px 20px;
+            @media (min-width: 768px) {
+                padding:120px 20px;
+            }
+
+            &.flush{
+                margin-left:0;
+                margin-right:0;
+            }
+        }
+
     }
 </style>
