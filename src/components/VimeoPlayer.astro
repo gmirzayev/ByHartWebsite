@@ -1,0 +1,205 @@
+---
+let {video, id, class:classNames, height, action=undefined,
+    autoplay="1", loop="1", muted="1", badge="1", // default to enabled
+    title="0", byline="0", controls="0", portrait="0", autopause="0" // default to disabled
+} = Astro.props
+
+if (action=="unpause"){
+    autoplay="0"
+    loop="0"
+}
+
+let params = new URLSearchParams({
+    autoplay, loop, muted, title, byline, controls, portrait, autopause
+}).toString()
+
+const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+let actionLabel = action == 'unmute' ? "Sound On" :
+                  action == 'unpause' ? "Play" :
+                  null
+---
+
+<div id={id} class:list={["vimeo-player", classNames]}>
+    <div class="frame">
+        <div class="embed" style={{paddingTop:height}}>
+            <iframe src={`https://player.vimeo.com/video/${video}?${params}`} allow={ALLOW} />
+        </div>
+        {actionLabel && <button class={action}>{actionLabel}</button>}
+    </div>
+</div>
+
+<style>
+    .vimeo-player{
+        display:flex;
+        justify-content: space-around;
+    }
+
+    .frame{
+        position:relative;
+        width:100%;
+    }
+
+    .frame button{
+        position:absolute;
+        color: var(--charcoal);
+        padding:12px;
+
+        font: 500 21px Karla, sans-serif;
+        letter-spacing: 4.2px;
+        text-transform: uppercase;
+        z-index:2;
+
+        &::after{
+            position:absolute;
+            content: " ";
+            background: #FF97FD;
+            border:1px solid var(--charcoal);
+            width:100%;
+            height:100%;
+            top:0;
+            left:0;
+            z-index:-1;
+            transform: rotate(-1.25deg);
+            transition: transform .25s;
+        }
+
+        &:hover::after{
+            transform: rotate(0);
+        }
+    }
+
+    .frame button{
+        transition: opacity 500ms;
+    }
+
+    .frame button.unmute{
+        bottom: 20px;
+        right:20px;
+
+        &.fired{
+            opacity:0;
+        }
+    }
+
+    .frame:hover button.unmute.fired{
+        opacity: 1;
+    }
+
+
+    .frame button.unpause{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &.fired{
+            opacity:0;
+        }
+    }
+
+    .frame:hover button.unpause.fired{
+        opacity: 1;
+    }
+
+
+
+
+    .embed{
+        position:relative;
+
+        iframe {
+            position:absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+</style>
+
+<script>
+    import Player from '@vimeo/player';
+
+    class Vimeo{
+        static videos = []
+        elt
+        button
+        player
+        action
+
+        constructor(elt){
+            this.elt = elt
+            this.button = elt.querySelector(":scope button")
+            this.player = new Player(elt.querySelector(":scope iframe"))
+            this.action = this.button?.classList.contains("unmute") ? "unmute" :
+                          this.button?.classList.contains("unpause") ? "unpause" :
+                          null
+
+            this.button.addEventListener("click", e => this.handleClick(e))
+            Vimeo.videos.push(this)
+        }
+
+        get active(){
+            return this.button?.classList.contains("fired")
+        }
+
+        handleClick(e){
+            if (this.action=="unmute") this.toggleAudio()
+            else if (this.action=="unpause") this.togglePlayback()
+
+            e.preventDefault()
+            e.stopPropagation()
+        }
+
+        toggleAudio(){
+            const {button, player, active} = this
+
+            if (active){
+                // re-mute
+                player.setMuted(true)
+                button.textContent = "Sound On"
+            }else{
+                // mute/pause any other video with active audio
+                for (const vid of Vimeo.videos){
+                    if (vid.active && vid!==this){
+                        if (vid.action=="unpause"){
+                            vid.togglePlayback()
+                        }else if (vid.action=="unmute"){
+                            vid.toggleAudio()
+                        }
+                    }
+                }
+
+                // un-mute
+                player.setMuted(false)
+                button.textContent = "Sound Off"
+            }
+
+            button.classList.toggle("fired")
+        }
+
+        togglePlayback(){
+            const {button, player, active} = this
+
+            if (active){
+                // pause
+                player.pause()
+                button.textContent = "Play"
+            }else{
+                // play
+                player.setMuted(false)
+                player.play()
+                button.textContent = "Pause"
+            }
+
+            button.classList.toggle("fired")
+        }
+    }
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        for (let elt of document.querySelectorAll('.vimeo-player')){
+            new Vimeo(elt)
+        }
+    })
+</script>
