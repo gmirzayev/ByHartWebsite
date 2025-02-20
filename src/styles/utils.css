@@ -99,6 +99,12 @@ a:hover{
   @media (min-width: 768px) {
       margin:120px 0;
   }
+
+  @media (max-width: 767px) {
+    &.rx{
+      grid-template-columns: 1fr;
+    }
+  }
 }
 
 .three-col{
@@ -113,6 +119,12 @@ a:hover{
   &.flush{ padding:0; }
   @media (min-width: 768px) {
       margin:120px 0;
+  }
+
+  @media (max-width: 767px) {
+    &.rx{
+      grid-template-columns: 1fr;
+    }
   }
 }
 
