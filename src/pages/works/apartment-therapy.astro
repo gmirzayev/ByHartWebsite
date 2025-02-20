@@ -1,0 +1,142 @@
+---
+const brand = "Apartment Therapy"
+const tagline = "Home is where By Hart is"
+const tags = [
+    'Interior Design',
+    'Editorial Content',
+    'Interviews',
+    'Writing + Editing',
+    'Surprise + Delight',
+    'Theatrics'
+]
+
+const PHOTO_CREDIT = {
+    name:"Darragh Dandurand",
+    url:"https://www.apartmenttherapy.com/authors/darragh-dandurand",
+}
+
+import "@styles/utils.css";
+import "@styles/apartment-therapy.css";
+import Image from "astro/components/Image.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
+import ProjectTags from "@components/ProjectTags.astro";
+import ProjectHead from "@components/ProjectHead.astro";
+import OneUp from "@components/OneUp.astro";
+import TwoUp from "@components/TwoUp.astro";
+import Navigation from "@components/Navigation.astro";
+import ProjectsCarousel from "@components/ProjectsCarousel.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
+import ResponsiveBackground from "@components/ResponsiveBackground.astro";
+import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
+import VimeoPlayer from "@components/VimeoPlayer.astro";
+
+
+
+import HeroMobile from "@assets/AptTherapy/01_AP_Hero_M.png"
+import HeroDesktop from "@assets/AptTherapy/01_AT_Hero.png"
+import Trix from "@assets/AptTherapy/02_AT_Trix_1.png"
+import Fireplace from "@assets/AptTherapy/02_AT_Fireplace_2.png"
+import Couch from "@assets/AptTherapy/02_AT_Couch_3.png"
+import Light from "@assets/AptTherapy/03_AT_Light_1.png"
+import Poster from "@assets/AptTherapy/03_AT_Poster_2.png"
+import Glasses from "@assets/AptTherapy/04_AT_Dresser_1.png"
+import Chaise from "@assets/AptTherapy/04_AT_Chaise_2.png"
+import Desk from "@assets/AptTherapy/05_AT_Desk_1.png"
+import Dresser from "@assets/AptTherapy/05_AT_Dresser_2.png"
+import Chandelier from "@assets/AptTherapy/06_AT_Chandelier_2.png"
+import KitchenA from "@assets/AptTherapy/06_AT_Kitchen_1.png"
+import KitchenB from "@assets/AptTherapy/06_AT_Kitchen_3.png"
+import Cabinet from "@assets/AptTherapy/07_AT_Cabinet_1.png"
+import Bathroom from "@assets/AptTherapy/07_AT_Bathroom_2.png"
+import Bed from "@assets/AptTherapy/07_AT_Bed_3.png"
+import Gallery from "@assets/AptTherapy/08_AT_Gallery_1.png"
+import KitchenC from "@assets/AptTherapy/08_AT_Kitchen_2.png"
+import Portrait from "@assets/AptTherapy/09_AT_Portrait.png"
+
+
+
+---
+
+<ProjectLayout hero={HeroDesktop} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
+    <div class="three-col rx">
+        <Image src={Trix} widths={[2200]} alt=" " />
+        <Image src={Fireplace} widths={[2200]} alt=" " />
+        <Image src={Couch} widths={[2200]} alt=" " />
+    </div>
+
+    <ResponsiveTextBlock class="spaced">
+        <div>
+            <h1>“Don’t be afraid to take up space in a small space.”</h1>
+        </div>
+        <div>
+            <p>
+                Home is and should always be personal. I moved to my dream apartment in a Brooklyn brownstone in the midst of a global pandemic, and Apartment Therapy documented the story of my new home, largely told in my own words.<br/>
+                All Photos By: <a href={PHOTO_CREDIT.url}>{PHOTO_CREDIT.name}</a>
+            </p>
+        </div>
+    </ResponsiveTextBlock>
+
+    <TwoUp bias="right" class="group-start">
+        <Image src={Light} widths={[2200]} alt=" " />
+        <Image src={Poster} widths={[2200]} alt=" " />
+    </TwoUp>
+
+    <TwoUp bias="left" class="group-end">
+        <Image src={Glasses} widths={[2200]} alt=" " />
+        <Image src={Chaise} widths={[2200]} alt=" " />
+    </TwoUp>
+
+    <div class="quip">
+        <p>“I always say your story is my business, and that philosophy extends to my interior design approach too.”</p>
+    </div>
+
+    <TwoUp bias="right">
+        <Image src={Desk} widths={[2200]} alt=" " />
+        <Image src={Dresser} widths={[2200]} alt=" " />
+    </TwoUp>
+
+    <div class="quip">
+        <p>“There are remarkable women living life to the max all around you. There’s nothing more inspiring than that.”</p>
+    </div>
+
+    <div class="three-col rx">
+        <Image src={KitchenA} widths={[2200]} alt=" " />
+        <Image src={Chandelier} widths={[2200]} alt=" " />
+        <Image src={KitchenB} widths={[2200]} alt=" " />
+    </div>
+
+    <div class="quip">
+        <p>“I’m the daughter of highly-skilled tradespeople, and I think that’s where this appreciation for professional craft comes from.”</p>
+    </div>
+
+    <div class="three-col rx">
+        <Image src={Cabinet} widths={[2200]} alt=" " />
+        <Image src={Bathroom} widths={[2200]} alt=" " />
+        <Image src={Bed} widths={[2200]} alt=" " />
+    </div>
+
+    <div class="quip">
+        <p>“I’m a collector and my home is a little like my own private museum of personal treasures.”</p>
+    </div>
+
+    <TwoUp bias="right">
+        <Image src={Desk} widths={[2200]} alt=" " />
+        <Image src={Dresser} widths={[2200]} alt=" " />
+    </TwoUp>
+
+    <div class="quip">
+        <p>“Everywhere you look, there is art. Everywhere you turn, there is joy.”</p>
+    </div>
+
+    <TwoUp>
+        <Image src={Gallery} widths={[2200]} alt=" " />
+        <Image src={KitchenC} widths={[2200]} alt=" " />
+    </TwoUp>
+
+    <div class="quip">
+        <p>“I believe the role of a designer is not to treat your home as their canvas; it’s to help you make it yours.”</p>
+    </div>
+
+    <OneUp id="portrait" src={Portrait} alt=" " />
+
+</ProjectLayout>

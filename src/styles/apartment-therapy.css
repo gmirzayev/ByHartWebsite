@@ -1,0 +1,54 @@
+div:not(.flush) img{
+    border-radius: 3px;
+
+    @media (min-width: 768px) {
+        border-radius: 5px;
+    }
+}
+
+/* fix double-spacing b/t tags and first images */
+article.project div:first-child{
+    margin-top:20px;
+    @media (min-width: 768px) {
+        margin-top:80px;
+    }
+}
+
+.group-start{
+    margin: 40px 0 15px 0;
+    @media (min-width: 768px) {
+        margin-top:120px;
+    }
+}
+
+.group-end{
+    margin: 15px 0 40px 0;
+    @media (min-width: 768px) {
+        margin-bottom:120px;
+    }
+}
+
+.quip{
+    margin: 40px 20px;
+    font: 700 26px/1.2 Karla, sans-serif;
+    letter-spacing: -0.52px;
+
+    @media (min-width: 768px) {
+        margin: 120px 20px;
+        font-size:36px;
+        letter-spacing: -0.72px;
+        text-align:center;
+
+        p{
+            max-width:840px;
+            margin:0 auto;
+        }
+    }
+}
+
+#portrait{
+    padding-bottom:40px;
+    @media (min-width: 768px) {
+        padding-bottom:120px;
+    }
+}
