@@ -7,7 +7,7 @@ div:not(.flush) img{
 }
 
 /* fix double-spacing b/t tags and first images */
-article.project div:first-child{
+article.project > div:first-child{
     margin-top:20px;
     @media (min-width: 768px) {
         margin-top:80px;
