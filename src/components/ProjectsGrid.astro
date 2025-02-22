@@ -51,16 +51,19 @@ const projects = [
     alt:" "
   },{
     slug:"magnolia", title:"Magnolia", img:Magnolia,
-    alt:" "
+    alt:" ",
+    underConstruction: true,
   },{
     slug:"genius-kitchen", title:"Genius Kitchen", img:GeniusKitchen,
     alt:" "
   },{
     slug:"illustration", title:"Custom Illustrations", img:Illustration,
-    alt:" "
+    alt:" ",
+    underConstruction: true,
   },{
     slug:"presentations", title:"Presentation Magic", img:PresentationsAlt,
-    alt:" "
+    alt:" ",
+    underConstruction: true,
   },{
     slug:"ample", title:"Ample", img:Ample,
     alt:"Entrace to an office with a couch, front desk, and a man walking away from the camera."
@@ -75,7 +78,8 @@ const projects = [
     alt:" "
   },{
     slug:"fab", title:"Fab", img:Fab,
-    alt:" "
+    alt:" ",
+    underConstruction: true,
   },{
     slug:"say-more", title:"Say More", img:SayMore,
     alt:" "
@@ -90,10 +94,12 @@ const projects = [
     alt:" "
   },{
     slug:"photography", title:"Photography Direction", img:Photography,
-    alt:" "
+    alt:" ",
+    underConstruction: true,
   },{
     slug:"top-secret-archive", title:"Top Secret Archive", img:Archive,
-    alt:" "
+    alt:" ",
+    underConstruction: true,
   },{
     slug:"comics-kingdom", title:"Comics Kingdom", img:ComicsKingdom,
     alt:"Two speech bubbles turned vertically and having eyes so they look like faces.",
@@ -103,6 +109,7 @@ const projects = [
   },{
     slug:"dance-party-time", title:"Dance Party Time", img:DancePartyTime,
     alt:"",
+    underConstruction: true,
   },{
     slug:"kindra", title:"Kindra", img:Kindra,
     alt:"",
@@ -112,6 +119,7 @@ const projects = [
   },{
     slug:"horowitz-real-estate", title:"Horowitz", img:Horowitz,
     alt:"",
+    underConstruction: true,
   },{
     slug:"pet-dermatology-center", title:"Pet Dermatology Center", img:PetCenter,
     alt:"",
@@ -121,12 +129,14 @@ const projects = [
   },{
     slug:"hgtv", title:"HGTV", img:HGTV2,
     alt:"",
+    underConstruction: true,
   },{
     slug:"nbc-upfronts", title:"NBC Universal Upfronts", img:Reach,
     alt:"",
   },{
     slug:"in-words-only", title:"In Words Only", img:WordOnly,
     alt:"",
+    underConstruction: true,
   },{
     slug:"see-sarah-dance", title:"See Sarah Dance", img:SarahVideo,
     alt:"",
@@ -232,9 +242,11 @@ let stepCount = 4
     {wide_layout.map(slugs =>
       <div class="column">{
         slugs.map(slug => {
-            const {title, img, alt} = getProject(slug)
+            let {title, img, alt, underConstruction} = getProject(slug)
+            if (underConstruction) title += " — Under Construction"
+            let page = underConstruction ? null : `/works/${slug}`
             return <div class:list={["project", `step-${(counter++) % stepCount}`]}>
-              <a href={`/works/${slug}`} data-title={title} >
+              <a href={page} data-title={title} >
                 <img src={img.src} alt={alt} />
                 <h2>{title}</h2>
               </a>

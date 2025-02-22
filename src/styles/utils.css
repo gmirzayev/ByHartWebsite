@@ -5,7 +5,7 @@
   --charcoal: #363131;
 }
 
-a:hover{
+a[href]:hover{
   cursor: url("../assets/HeartCursor.png") 16 16, auto;
 }
 
