@@ -21,6 +21,37 @@
     margin:0 auto;
 }
 
+#barbie-production{
+    /* padding:40px 0px; */
+    overflow:hidden;
+
+    .tray{
+        position:relative;
+        display:flex;
+        flex-direction:row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2.5vw;
+    }
+
+    img{
+        width:22.5vw;
+        animation: infinite-slide-175 12s linear infinite;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+    }
+
+    @media (min-width: 768px) {
+        /* background-size: cover; */
+        /* padding:100px 0px; */
+    }
+}
+
+@keyframes infinite-slide-175 {
+    0%{ transform: translateX(0);}
+    100%{ transform: translateX(calc(-175vw));}
+}
+
 #centered-ad-pair{
     display:flex;
     flex-flow: column nowrap;
