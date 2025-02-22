@@ -234,25 +234,9 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   }
 </style>
 <ProjectLayout hero={Header} mobile={HeaderMobile} brand={brand} tagline={tagline} tags={tags} theme="dark">
-  <div class="image-flex">
-    <div
-      class="w-full relative flex justify-center bg-[#17100b] pt-[50px] pb-[100px]"
-    >
-      <div id="video-container">
-        <iframe
-          id="video-iframe"
-          class="max-h-full w-[90%]"
-          src="https://player.vimeo.com/video/1026680777?title=0&badge=0&autopause=0&controls=0&player_id=0&app_id=58479"
-          allow="autoplay"
-          title="Comics Kingdom"></iframe>
-        <!-- <video id="custom-video" class="h-auto w-[92%]" loop>
-        <source src={CKAnimation} type="video/mp4" />
-      </video> -->
-        <div id="pause-cover"></div>
-        <div id="play-button">PLAY</div>
-      </div>
-    </div>
+  <VimeoPlayer class="padded bg-[#17100b]" video="1026680777" height="56.25%" action="unpause"/>
 
+  <div class="image-flex">
     <ResponsiveImage mobile={LogoIllustrationMobile} desktop={LogoIllustrationDesktop} alt="Comics Kingdom" />
 
     <div class="text-two-column-centered">
@@ -411,41 +395,6 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
 </ProjectLayout>
 
 <script>
-  import Player from "@vimeo/player";
-
-  const videoContainer = document.getElementById("video-container");
-  const video = document.getElementById("video-iframe");
-  const player = new Player(video);
-  const pauseButton = document.getElementById("pause-cover");
-  const playButton = document.getElementById("play-button");
-  // Event listener for the play/pause button
-  videoContainer.addEventListener("mouseenter", (event) => {
-    player.getPaused().then((paused) => {
-      if (paused) {
-        playButton.style.display = "flex";
-      }
-    });
-  });
-  videoContainer.addEventListener("mouseleave", (event) => {
-    playButton.style.display = "none";
-  });
-  pauseButton.addEventListener("click", (event) => {
-    player.getPaused().then((paused) => {
-      if (!paused) {
-        player.pause();
-        playButton.style.display = "flex";
-      }
-    });
-  });
-  playButton.addEventListener("click", (event) => {
-    player.getPaused().then((paused) => {
-      if (paused) {
-        player.play();
-        playButton.style.display = "none";
-      }
-    });
-  });
-
   document.addEventListener("DOMContentLoaded", () => {
     let mottos = document.querySelectorAll("#we-are li"),
         idx = 0
