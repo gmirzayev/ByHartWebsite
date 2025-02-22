@@ -1,0 +1,260 @@
+---
+const brand = "Metro Vein Center"
+const tagline = "Healthy Legs Feel Better"
+const tags = [
+    'Brand Identity + Positioning',
+    'Logo Design',
+    'Video + Photography',
+    'Art + Illustration',
+    'Product Design (UX/UI)',
+    'CX',
+    'Interior Design',
+    'Print + Packaging',
+    'Editorial Content',
+    'Organic + Paid Social Content',
+    'Interviews',
+    'Writing + Editing',
+    'Quiz Development',
+    'Signage + Display',
+    'Qualitative Research',
+    'Surprise + Delight',
+    'Visual Identity',
+    'Theatrics'
+]
+
+import "@styles/utils.css";
+import "@styles/metro-vein-center.css";
+import Image from "astro/components/Image.astro";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
+import ProjectTags from "@components/ProjectTags.astro";
+import ProjectHead from "@components/ProjectHead.astro";
+import OneUp from "@components/OneUp.astro";
+import TwoUp from "@components/TwoUp.astro";
+import Navigation from "@components/Navigation.astro";
+import ProjectsCarousel from "@components/ProjectsCarousel.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
+import ResponsiveBackground from "@components/ResponsiveBackground.astro";
+import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
+import VimeoPlayer from "@components/VimeoPlayer.astro";
+
+import Hero from "@assets/MVC/img/01_MVC_Hero.png"
+import HeroMobile from "@assets/MVC/img/01_MVC_Hero_M.png"
+import Colors from "@assets/MVC/img/03_MVC_Colors.svg"
+import LogoOverlay from "@assets/MVC/img/04_MVC_LogoImage.png"
+
+import LogoVariantA from "@assets/MVC/img/05_MVC_LogoVariation_1.png"
+import LogoVariantB from "@assets/MVC/img/05_MVC_LogoVariation_2.png"
+import Office from "@assets/MVC/img/06_MVC_Office.png"
+import BrandValues from "@assets/MVC/img/07_MVC_BrandValues.png"
+import ExamDoctor from "@assets/MVC/img/08_MVC_ExamDoctor.png"
+import Floatie from "@assets/MVC/img/09_MVC_Floatie.png"
+import ExamTech from "@assets/MVC/img/10_MVC_ExamTech.png"
+import Couch from "@assets/MVC/img/11_MVC_Couch.png"
+import WarrenBarbie from "@assets/MVC/img/12_MVC_WarrenBarbie.png"
+import BarbieBeach from "@assets/MVC/img/13_MVC_BarbieBeach.png"
+import BarbieA from "@assets/MVC/img/15_MVC_BarbieBTS/15_MVC_BarbieBTS_1.png"
+import BarbieB from "@assets/MVC/img/15_MVC_BarbieBTS/15_MVC_BarbieBTS_2.png"
+import BarbieC from "@assets/MVC/img/15_MVC_BarbieBTS/15_MVC_BarbieBTS_3.png"
+import BarbieD from "@assets/MVC/img/15_MVC_BarbieBTS/15_MVC_BarbieBTS_4.png"
+import BarbieE from "@assets/MVC/img/15_MVC_BarbieBTS/15_MVC_BarbieBTS_5.png"
+import BarbieF from "@assets/MVC/img/15_MVC_BarbieBTS/15_MVC_BarbieBTS_6.png"
+import BarbieG from "@assets/MVC/img/15_MVC_BarbieBTS/15_MVC_BarbieBTS_6-1.png"
+import Legs from "@assets/MVC/img/16_MVC_Legs.png"
+import ToteBag from "@assets/MVC/img/18_MVC_ToteBag.png"
+import VeinIllo from "@assets/MVC/img/18_MVC_VeinIllustration.png"
+import KickingLegs from "@assets/MVC/img/21_MVC_KickingLegs.png"
+import QuizBG from "@assets/MVC/img/22_MVC_QuizBG.png"
+import QuizFrame from "@assets/MVC/img/22_MVC_QuizFrame.png"
+import WelcomeEmailA from "@assets/MVC/img/22_MVC_WelcomeEmail_1.png"
+import WelcomeEmailB from "@assets/MVC/img/22_MVC_WelcomeEmail_2.png"
+import Illustrations from "@assets/MVC/img/23_MVC_Illustrations.jpg"
+import ApptEmail from "@assets/MVC/img/25_MVC_ApptEmail.png"
+import QuizEmail from "@assets/MVC/img/25_MVC_QuizEmail.png"
+import NewYear from "@assets/MVC/img/27_MVC_NewYear.png"
+import Present from "@assets/MVC/img/27_MVC_Present.png"
+import FallA from "@assets/MVC/img/28_MVC_Fall_1.png"
+import FallB from "@assets/MVC/img/28_MVC_Fall_2.png"
+import FallPostcards from "@assets/MVC/img/29_MVC_FallPostcards.png"
+
+// import Vid from "@assets/MVC/11_MVC_Vogue.mp4"
+// import Vid from "@assets/MVC/17_MVC_Wow.mp4"
+// import Vid from "@assets/MVC/19_MVC_site.mp4"
+// import Vid from "@assets/MVC/21_MVC_Ew_Ad.mp4"
+// import Vid from "@assets/MVC/22_MVC_Quiz.mp4"
+
+---
+
+<ProjectLayout hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
+    <VimeoPlayer id="intro-video" class="spaced flush rc" video="1056052871" height="56.25%" action="unpause"/>
+
+    <OneUp src={Colors} class="spaced" max="840px" alt=" " />
+    <OneUp src={LogoOverlay} class="spaced flush" max="1280px" alt=" " />
+
+    <div id="logo-variants" class="two-col">
+        <Image src={LogoVariantA} widths={[1200]} class="rc" alt=" " />
+        <Image src={LogoVariantB} widths={[1200]} class="rc" alt=" " />
+    </div>
+
+    <div class="two-col flush">
+        <VimeoPlayer video="1055797041" height="100%" />
+        <Image src={Office} widths={[1200]} class="rc" alt=" " />
+    </div>
+
+    <OneUp src={BrandValues} class="spaced rc" max="1040px" alt=" " />
+
+    <div id="ads-gallery">
+        <div class="two-col bias-right flush">
+            <VimeoPlayer class="rc" video="1055799101" height="125%" action="unmute" />
+            <Image src={ExamDoctor} widths={[2200]} class="rc" alt=" " />
+        </div>
+
+        <div class="two-col bias-left flush">
+            <Image src={Floatie} widths={[2200]} class="rc" alt=" " />
+            <VimeoPlayer class="rc" video="1055799201" height="125%" action="unmute" />
+        </div>
+
+        <div class="two-col bias-right flush">
+            <VimeoPlayer class="rc" video="1055800102" height="125%" action="unmute" />
+            <Image src={ExamTech} widths={[2200]} class="rc" alt=" " />
+        </div>
+
+        <div class="two-col bias-left flush">
+            <Image src={Couch} widths={[2200]} class="rc" alt=" " />
+            <VimeoPlayer class="rc" video="1055800134" height="125%" action="unmute" />
+        </div>
+
+        <div class="two-col bias-right flush">
+            <VimeoPlayer class="rc" video="1055800150" height="125%" action="unmute" />
+            <Image src={WarrenBarbie} widths={[2200]} class="rc" alt=" " />
+        </div>
+    </div>
+
+    <OneUp src={BarbieBeach} class="spaced flush" alt=" " />
+
+    <div id="barbie-videos">
+        <div class="three-col">
+            <VimeoPlayer class="rc" video="999366209" height="177.78%" action="unpause" />
+            <VimeoPlayer class="rc" video="999367296" height="177.78%" action="unpause" />
+            <VimeoPlayer class="rc" video="999601933" height="177.78%" action="unpause" />
+        </div>
+    </div>
+
+    <!-- TODO: ticker with production shots -->
+
+    <OneUp src={Legs} class="spaced flush" alt=" " />
+
+    <!-- TODO: it's vein treatment season | welcome to our clinic -->
+    <!-- <div id="centered-ad-pair" class="two-col"> -->
+        <!-- <VimeoPlayer class="rc" video="" height="100%" action="unpause" /> -->
+        <!-- <VimeoPlayer class="rc" video="" height="100%" action="unpause" /> -->
+    <!-- </div> -->
+
+    <div class="two-col">
+        <Image src={ToteBag} widths={[1200]} class="rc" alt=" " />
+        <Image src={VeinIllo} widths={[1200]} class="rc" alt=" " />
+    </div>
+
+    <VimeoPlayer class="flush" video="1055809740" height="56.25%" action="unpause" />
+
+    <div id="kicking-legs" class="padded">
+        <VimeoPlayer video="1055811632" height="177.78%" action="unmute" />
+    </div>
+
+    <div id="mobile-site" class="two-col">
+        <div class="periscope">
+            <div class="frame">
+                <Image src={WelcomeEmailA} widths={[1800]} class="rc" alt=" " />
+            </div>
+            <button class="toggle" />
+        </div>
+        <div class="periscope">
+            <div class="frame">
+                <Image src={WelcomeEmailB} widths={[1800]} class="rc" alt=" " />
+            </div>
+            <button class="toggle" />
+        </div>
+    </div>
+
+    <div id="quiz-video" class="padded flush">
+        <VimeoPlayer video="1056060474" height="203.7%" />
+    </div>
+
+    <OneUp src={Illustrations} class="flush" alt=" " />
+    <VimeoPlayer video="1056052791" height="56.25%" />
+
+    <div id="mobile-email" class="two-col">
+        <Image src={ApptEmail} widths={[1800]} class="rc" alt=" " />
+        <div class="periscope">
+            <div class="frame">
+                <Image src={QuizEmail} widths={[1800]} class="rc" alt=" " />
+            </div>
+            <button class="toggle" />
+        </div>
+    </div>
+
+    <VimeoPlayer id="vein-anim" class="spaced" video="1055825325" height="125%" />
+
+    <div class="two-col spaced flush">
+        <Image src={NewYear} widths={[2200]} class="rc" alt=" " />
+        <Image src={Present} widths={[2200]} class="rc" alt=" " />
+    </div>
+
+    <div id="fall-ads" class="two-col spaced">
+        <Image src={FallA} widths={[2200]} class="rc" alt=" " />
+        <Image src={FallB} widths={[2200]} class="rc" alt=" " />
+    </div>
+
+    <OneUp src={FallPostcards} class="spaced" max="1040px" alt=" " />
+
+    <div id="patients" class="two-col spaced">
+        <VimeoPlayer video="1055826476" height="100%" action="unpause" />
+        <VimeoPlayer video="1055826636" height="100%" action="unpause" />
+    </div>
+
+    <section>
+        <h1>Brand Tone Overview</h1>
+        <ResponsiveTextBlock>
+            <div>
+                <p>The Metro Vein Centers brand tone should embody integrity and clinical expertise while maintaining an empowering, modern, and personably refreshing feel. The practice’s persona is part progressive industry disruptor, part seasoned, compassionate caregiver, with a focus on personalized, state-of-the-art care made accessible to patients through an extensive insurance coverage and ever-expanding clinical  locations offering. The tone must reflect a</p>
+            </div>
+            <div class="no-break">
+                <p>commitment to science-based education and best-in-class care accessibility, delivered with simplicity, warmth, and cleverness.</p>
+                <p>We aim to empower patients with the knowledge and care they need to address their vein health, mobility, and confidence while positioning ourselves as a leader in the field. Tone nuances will adapt to different channels to maintain relevance and effectiveness in communication.</p>
+            </div>
+        </ResponsiveTextBlock>
+    </section>
+
+
+    <VimeoPlayer id="broadcast-spot" class="spaced" video="1056054959" height="56.25%" action="unpause" />
+    <VimeoPlayer id="broadcast-one-min" class="flush" video="1056054178" height="56.25%" action="unpause" />
+
+    <section id="brand-language">
+        <h1>On-brand Language</h1>
+        <ResponsiveTextBlock>
+            <div class="instead">
+                <h1>Instead of:</h1>
+                <p>Procedure(s), surgery, pre- or post-op</p>
+                <p>Consultation, first appointment</p>
+                <p>Surgeon(s)</p>
+                <p>Insurance(s)</p>
+            </div>
+            <div>
+                <h1>Please use:</h1>
+                <p>Treatment, vein treatment, state-of-the-art vein care, personalized treatment plan, aftercare</p>
+                <p>Evaluation, vein evaluation, your evaluation, free evaluation</p>
+                <p>Vein specialist, board-certified doctors, physician, your care team, clinical care team</p>
+                <p>Insurance (singular and plural), insurance plans, your insurance, most insurance</p>
+            </div>
+        </ResponsiveTextBlock>
+    </section>
+
+</ProjectLayout>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".periscope").forEach(elt => {
+            elt.addEventListener("click", () => elt.classList.toggle("toggled"))
+        })
+    })
+</script>

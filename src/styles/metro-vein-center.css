@@ -1,0 +1,165 @@
+#intro-video .frame{
+    max-width: 1040px;
+}
+
+#logo-variants{
+    grid-template-columns: fit-content(412px) fit-content(412px);
+}
+
+#ads-gallery{
+    .two-col{ margin:0; }
+    .two-col ~ .two-col{ margin-top:15px; }
+
+    margin:40px 20px;
+    @media (min-width: 768px) {
+        margin:120px 20px;
+    }
+}
+
+#barbie-videos .three-col{
+    max-width:1040px;
+    margin:0 auto;
+}
+
+#site-video .frame{
+    max-width: 840px;
+}
+
+
+#kicking-legs{
+    background-color: #f3c041;
+    background-image: url("/images/MVC/kicking-bg-left.jpg"), url("/images/MVC/kicking-bg-right.jpg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: left, right;
+    background-size: contain, contain;
+
+    .vimeo-player .frame{
+        max-width: 335px;
+    }
+}
+
+.periscope{
+    text-align:right;
+    .frame{
+        position:relative;
+        aspect-ratio: .29999;
+        overflow:hidden;
+
+        &::before, &::after{
+            content:" ";
+            width:100%;
+            height: 42px;
+            position:absolute;
+            left:0;
+            transition: opacity 1s;
+            z-index:1;
+        }
+
+        &::before{
+            top:0;
+            background:linear-gradient(0deg, transparent, var(--cream));
+            opacity: 0;
+        }
+
+        &::after{
+            bottom:0;
+            background:linear-gradient(180deg, transparent, var(--cream));
+            opacity:1;
+        }
+
+
+        img{
+            transition: transform 1s;
+            &:hover{ cursor:s-resize; }
+            .toggled &:hover{ cursor:n-resize; }
+        }
+
+        .toggled &{
+            &::after{ opacity:0; }
+            &::before{ opacity:1; }
+            img{
+                transform:translate(0, -52%);
+            }
+        }
+    }
+
+
+    button.toggle{
+        background:url("/images/MVC/periscope-plus.svg") no-repeat;
+        background-size:contain;
+        width:20px;
+        height:20px;
+        margin-top:10px;
+
+        .toggled &{
+            background-image:url("/images/MVC/periscope-minus.svg");
+        }
+    }
+}
+
+#mobile-site{
+    grid-template-columns: fit-content(320px) fit-content(320px);
+    gap: 10px;
+
+    @media (min-width: 768px) {
+        gap: 50px;
+    }
+}
+
+
+#quiz-video{
+    background:url("/images/MVC/quiz-bg.jpg") no-repeat;
+    background-size: cover;
+    aspect-ratio:1.66666;
+
+    .vimeo-player .frame{
+        max-width:335px;
+        border: 1.5px solid var(--charcoal);
+        border-radius: 35px;
+        padding:8px;
+
+        iframe{
+            border-radius: 30px;
+        }
+    }
+}
+
+
+#mobile-email{
+    grid-template-columns: fit-content(320px) fit-content(320px);
+    gap: 10px;
+
+    .periscope .frame{
+        aspect-ratio: .292;
+    }
+    .periscope.toggled .frame img{
+        transform:translate(0, -56%);
+    }
+
+    @media (min-width: 768px) {
+        gap: 50px;
+    }
+}
+
+
+#vein-anim .frame{
+    max-width: 1040px;
+}
+
+#fall-ads{
+    grid-template-columns: fit-content(412px) fit-content(412px);
+}
+
+#broadcast-spot .frame{
+    max-width: 1040px;
+}
+
+#brand-language div{
+    h1{
+        letter-spacing: 0;
+        text-transform: none;
+    }
+    @media (min-width: 768px) {
+        .instead p{ min-height:3.2em; }
+    }
+}
