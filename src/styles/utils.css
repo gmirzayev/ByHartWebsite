@@ -90,12 +90,17 @@ a[href]:hover{
   margin:40px 0;
   padding:0 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
   justify-content: center;
   gap: 15px;
 
   > *{ width:100%; }
+
   &.flush{ padding:0; }
+
+  grid-template-columns: 1fr 1fr;
+  &.bias-left{ grid-template-columns: 2fr 1fr; }
+  &.bias-right{ grid-template-columns: 1fr 2fr; }
+
   @media (min-width: 768px) {
       margin:120px 0;
   }
