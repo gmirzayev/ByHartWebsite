@@ -14,6 +14,14 @@ const tags=[
   "Qualitative Research",
 ]
 
+const WE_ARE = [
+  "A Bite of Delight",
+  "Trustees of the Artform",
+  "A Nest for Storytellers and Fans Alike",
+  "Making New Friends While Cherishing the Old",
+  "Keen Observers and Active Participant",
+]
+
 import "../../styles/utils.css";
 import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
@@ -58,6 +66,7 @@ import BrandGrid14 from "@assets/ComicsKingdom/img/CK_Brand_Grid_14.png";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 import TransparentVideo from "@components/TransparentVideo.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
+import VimeoPlayer from "@components/VimeoPlayer.astro";
 ---
 <style>
   #comics-main {
@@ -206,6 +215,23 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
       column-count: 2;
     }
   }
+
+  #we-are{
+    width: 200px;
+    height:55px;
+    font-weight: bold;
+
+    li{
+      position:absolute;
+      width: 200px;
+      opacity:0;
+      transition: opacity .666s;
+
+      &.active{
+        opacity:1;
+      }
+    }
+  }
 </style>
 <ProjectLayout hero={Header} mobile={HeaderMobile} brand={brand} tagline={tagline} tags={tags} theme="dark">
   <div class="image-flex">
@@ -276,9 +302,9 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
     >
       <div class="karla my-[20px]">
         <p class="">We are</p>
-        <p class="w-[200px] font-bold">
-          Making New Friends While Cherishing the Old
-        </p>
+        <ul id="we-are">{WE_ARE.map(motto =>
+          <li>{motto}</li>
+        )}</ul>
       </div>
       <video loop playsinline autoplay muted style="max-width:300px;">
           <source src={PhoneVibration} type='video/mp4'>
@@ -419,4 +445,15 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
       }
     });
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    let mottos = document.querySelectorAll("#we-are li"),
+        idx = 0
+    mottos[idx].classList.add("active")
+
+    setInterval(()=>{
+      idx = (idx+1) % mottos.length
+      mottos.forEach((motto, i) => motto.classList.toggle("active", i==idx))
+    }, 2000)
+  })
 </script>
