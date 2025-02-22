@@ -19,6 +19,10 @@ const style = max ? {maxWidth:max} : {}
             margin:0 auto;
         }
 
+        &:not(.spaced, .padded).flush{
+            padding:0;
+        }
+
         &.spaced{
             padding:0;
             margin:40px 20px;
@@ -41,6 +45,14 @@ const style = max ? {maxWidth:max} : {}
             &.flush{
                 margin-left:0;
                 margin-right:0;
+            }
+        }
+
+        &.rc{
+            border-radius: 3px;
+
+            @media (min-width: 768px) {
+                border-radius: 5px;
             }
         }
 

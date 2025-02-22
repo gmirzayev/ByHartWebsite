@@ -32,6 +32,23 @@ let actionLabel = action == 'unmute' ? "Sound On" :
     .vimeo-player{
         display:flex;
         justify-content: space-around;
+
+        &.rc iframe{
+            border-radius: 3px;
+
+            @media (min-width: 768px) {
+                border-radius: 5px;
+            }
+        }
+
+        &.rc-big iframe{
+            border-radius: 3px;
+
+            @media (min-width: 768px) {
+                border-radius: 25px;
+            }
+        }
+
     }
 
     .frame{
@@ -90,7 +107,6 @@ let actionLabel = action == 'unmute' ? "Sound On" :
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
         &.fired{
             opacity:0;
         }
