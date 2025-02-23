@@ -191,6 +191,9 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
   #mobile-nav.dropdown-opened #dropdown-close {
     display: block;
   }
+  #nav-link--email-button:hover{
+    cursor: url("../assets/HeartCursor.png") 16 16, auto;
+  }
 
   @media (min-width: 768px) {
     .nav-link::after {
@@ -237,8 +240,8 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
         <Image id="dropdown-close" alt="X" width="20" src={CloseButton} />
       </button>
       <div class="dropdown-link-container">
-        <a href="/" class="mobile-nav-link nav-link--header">SEE OUR WORK</a>
-        <a class="mobile-nav-link nav-link--header">GET TO KNOW US</a>
+        <a href="/#portfolio" class="mobile-nav-link nav-link--header">SEE OUR WORK</a>
+        <a href="/about" class="mobile-nav-link nav-link--header">GET TO KNOW US</a>
         <a
           id="nav-link--email-button"
           class="mobile-nav-link nav-link--email-button">COPY OUR EMAIL ADDY</a
@@ -317,16 +320,17 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
       class="hidden md:!flex md:items-center"
     >
       <a href="/" class="mr-[80px] home-logo"><Fragment set:html={HomeLogo} /></a>
-      <a class="nav-link" data-hover="PORTFOLIO">SEE <span>BY HART</span></a>
-      <a class="nav-link" data-hover="SARAH + SERVICES"
+      <a href="/#portfolio" class="nav-link" data-hover="PORTFOLIO">SEE <span>BY HART</span></a>
+      <a href="/about" class="nav-link" data-hover="SARAH + SERVICES"
         >KNOW <span>BY HART</span></a
       >
-      <a class="nav-link" data-hover="CONTACT">SPEAK <span>BY HART</span></a>
+      <a href="/#contact" class="nav-link" data-hover="CONTACT">SPEAK <span>BY HART</span></a>
       <!-- <div class="mobile-nav-container"> -->
 
       <!-- </div> -->
     </div>
   </nav>
+
   <script>
     const nav = document.getElementById("mobile-nav");
     const navButton = document.getElementById("dropdown-toggle");
@@ -352,5 +356,15 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
         console.error("Failed to copy: ", err);
       }
     });
+
+
+    // hide dropdown if user navigates
+    document.querySelectorAll("#mobile-nav a[href^='/']").forEach(elt => {
+      elt.addEventListener("click", e => {
+        nav.classList.remove("dropdown-opened");
+        document.body.classList.remove("overflow-hidden");
+      })
+    })
+
   </script>
 </header>
