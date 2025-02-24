@@ -3,6 +3,11 @@
   --peach: #ebd4c7;
   --ink: #363131;
   --charcoal: #363131;
+
+  --hspace-d: 20px;
+  --vspace-d: 120px;
+  --hspace-m: 20px;
+  --vspace-m: 40px;
 }
 
 a[href]:hover{
