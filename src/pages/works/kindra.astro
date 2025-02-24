@@ -132,6 +132,25 @@ import Lightbox from "@components/Lightbox.astro";
   .more-hide {
     display: none;
   }
+  .mute-button {
+    position: absolute;
+    color: var(--charcoal);
+    padding: 12px;
+    font-family: "Karla", sans-serif;
+    letter-spacing: 4.2px;
+    text-transform: uppercase;
+    z-index: 2;
+    position: absolute;
+    background: #ff97fd;
+    border: 1px solid black;
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(-1.25deg);
+    transition: transform 0.25s;
+  }
+  .mute-button:hover {
+    transform: rotate(0);
+  }
 </style>
 <ProjectLayout hero={Header} brand={brand} tagline={tagline} tags={tags}>
   <div class="flex flex-col lg:flex-row lg:mx-[60px]">
@@ -317,12 +336,32 @@ import Lightbox from "@components/Lightbox.astro";
     class="flex flex-col lg:flex-row gap-[45px] mx-[20px] my-[45px] lg:mx-[200px] lg:my-[120px] lg:gap-[20px]"
   >
     <!-- do not autoplay, use custom video player -->
-    <video loop playsinline autoplay muted class="w-full rounded-lg lg:w-1/2">
-      <source src={Conditions} />
-    </video>
-    <video loop playsinline autoplay muted class="w-full rounded-lg lg:w-1/2">
-      <source src={ConditionsLotion} />
-    </video>
+    <div class="lg:w-1/2 relative">
+      <video
+        loop
+        playsinline
+        autoplay
+        muted
+        id="video-1"
+        class="w-full rounded-lg"
+      >
+        <source src={Conditions} />
+      </video>
+      <button id="button-1" class="mute-button">Sound On</button>
+    </div>
+    <div class="lg:w-1/2 relative">
+      <video
+        loop
+        playsinline
+        autoplay
+        muted
+        id="video-2"
+        class="w-full rounded-lg"
+      >
+        <source src={ConditionsLotion} />
+      </video>
+      <button id="button-2" class="mute-button">Sound On</button>
+    </div>
   </div>
   <video loop playsinline autoplay muted class="w-full my-[45px] lg:my-[120px]">
     <source src={Bed} />
@@ -749,4 +788,29 @@ import Lightbox from "@components/Lightbox.astro";
       moreSpans[i].classList.toggle("more-hide");
     });
   }
+
+  const video1 = document.getElementById("video-1") as HTMLVideoElement;
+  const video2 = document.getElementById("video-2") as HTMLVideoElement;
+  const button1 = document.getElementById("button-1");
+  const button2 = document.getElementById("button-2");
+
+  button1.addEventListener("click", () => {
+    if (video1.muted) {
+      video1.muted = false;
+      button1.textContent = "Sound Off";
+    } else {
+      video1.muted = true;
+      button1.textContent = "Sound On";
+    }
+  });
+
+  button2.addEventListener("click", () => {
+    if (video2.muted) {
+      video2.muted = false;
+      button2.textContent = "Sound Off";
+    } else {
+      video2.muted = true;
+      button2.textContent = "Sound On";
+    }
+  });
 </script>
