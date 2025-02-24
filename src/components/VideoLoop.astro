@@ -1,0 +1,14 @@
+---
+const {src, class:classNames, max} = Astro.props
+const style = max ? {maxWidth:max} : {}
+---
+<video class={classNames} style={style} loop playsinline autoplay muted>
+    <source src={src} />
+</video>
+
+
+<style>
+    video{
+        width:100%;
+    }
+</style>
