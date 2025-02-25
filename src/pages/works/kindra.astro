@@ -76,9 +76,8 @@ import Menopause from "@assets/Kindra/Kindra_Menopause_Work.mp4";
 import Applicator from "@assets/Kindra/Kindra_Lotion_And_Applicator.mp4";
 import QuizResultsShort from "@assets/Kindra/img/Kindra_Quiz_Results_Email_Short.png";
 import QuizResultsEmail from "@assets/Kindra/img/Kindra_Quiz_Results_Email.png";
-import VideoTest from "@assets/Kindra/Kindra_Crop_Test.mp4";
-import QuizFlow from "@assets/Kindra/Kindra_Quiz_Flow.mp4";
-import QuizFlowFull from "@assets/Kindra/Kindra_Quiz_Flow_Full.mp4";
+import QuizFlowFull from "@assets/Kindra/img/Kindra_Quiz_Email.png";
+import QuizFlowShort from "@assets/Kindra/img/Kindra_Quiz_Email_Short.png";
 import SocialVideo from "@assets/Kindra/Kindra_Social.mp4";
 import ToolBox1 from "@assets/Kindra/img/Kindra_ToolBox1.png";
 import ToolBox2 from "@assets/Kindra/img/Kindra_ToolBox2.png";
@@ -237,19 +236,20 @@ import Lightbox from "@components/Lightbox.astro";
       <ResponsiveBackground
         mobile={QuizBackgroundMobile}
         desktop={QuizBackgroundDesktop}
+        class="py-[60px] lg:py-[120px]"
       >
         <video
           loop
           playsinline
           autoplay
           muted
-          class="w-full rounded-lg lg:w-[41%] mx-auto"
+          class="w-1/2 rounded-lg lg:w-[20%] mx-auto"
         >
           <source src={Quiz} />
         </video>
       </ResponsiveBackground>
     </div>
-    <div class="w-full bg-[#9fb7ca]">
+    <div class="w-full bg-[#99b2c8]">
       <video loop playsinline autoplay muted class="w-1/2 rounded-lg mx-auto">
         <source src={Dish} />
       </video>
@@ -367,12 +367,7 @@ import Lightbox from "@components/Lightbox.astro";
     <source src={Bed} />
   </video>
   <div class="mb-[50px] lg:mb-[100px] mx-[20px] lg:mx-[300px]">
-    <Lightbox
-      baseimage={Site}
-      lightboximage={QuizResultsEmail}
-      basewidth={80}
-      id={1}
-    />
+    <Lightbox baseimage={Site} lightboximage={QuizResultsEmail} id={1} />
   </div>
   <ResponsiveBackground
     class="w-full relative"
@@ -501,19 +496,11 @@ import Lightbox from "@components/Lightbox.astro";
     class="flex flex-row w-full lg:w-1/2 px-[20px] lg:mx-auto justify-center gap-[10px] lg:gap-[50px] mb-[45px] lg:mb-[120px]"
   >
     <Lightbox
-      class="w-1/2"
       baseimage={QuizResultsShort}
       lightboximage={QuizResultsEmail}
-      basewidth={80}
       id={2}
     />
-    <Lightbox
-      class="w-1/2"
-      baseimage={QuizResultsShort}
-      lightboximage={QuizResultsEmail}
-      basewidth={80}
-      id={3}
-    />
+    <Lightbox baseimage={QuizFlowShort} lightboximage={QuizFlowFull} id={3} />
   </div>
   <div class="flex flex-col lg:gap-[15px]">
     <div class="flex flex-col lg:flex-row lg:gap-[15px]">

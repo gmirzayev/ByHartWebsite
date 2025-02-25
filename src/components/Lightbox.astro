@@ -1,7 +1,7 @@
 ---
 import Image from "astro/components/Image.astro";
 import ExpandCross from "@assets/Kindra/img/Expand_Cross.png";
-const { baseimage, lightboximage, basewidth, id } = Astro.props;
+const { baseimage, lightboximage, basewidth = 100, id } = Astro.props;
 ---
 
 <style>
@@ -40,7 +40,7 @@ const { baseimage, lightboximage, basewidth, id } = Astro.props;
   }
 </style>
 <>
-  <div>
+  <div class="w-full">
     <div class="relative gradient-box">
       <Image class="w-full h-auto rounded" src={baseimage} alt="Kindra" />
     </div>
