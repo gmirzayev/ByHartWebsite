@@ -1,7 +1,7 @@
 page,asset,path,alt
 src/pages/index.astro,HeartCursor,HeartCursor.png,
-src/pages/works/puzzle-palace.astro,Hero,PuzzlePalace/img/01_PP_Hero_16x9_D.png,"A person with their clothes, eyebrows, and cup they're holding drawn on. The words ""Empress of word search"". They are celebrating their success in the game."
-src/pages/works/puzzle-palace.astro,HeroMobile,PuzzlePalace/img/01_PP_Hero_Mobile.png,"A person with their clothes, eyebrows, and cup they're holding drawn on. The words ""Empress of word search"". They are celebrating their success in the game."
+src/pages/works/puzzle-palace.astro,Hero,PuzzlePalace/img/01_PP_Hero_16x9_D.png,A person with their clothes, eyebrows, and cup they're holding drawn on. The words Empress of word search. They are celebrating their success in the game.
+src/pages/works/puzzle-palace.astro,HeroMobile,PuzzlePalace/img/01_PP_Hero_Mobile.png,A person with their clothes, eyebrows, and cup they're holding drawn on. The words Empress of word search. They are celebrating their success in the game.
 src/pages/works/puzzle-palace.astro,AppAskewLeft,PuzzlePalace/img/02_PP_APP.png,A screenshot from Puzzle Palace's app store page.
 src/pages/works/puzzle-palace.astro,AppAskewRight,PuzzlePalace/img/03_PP_APP.png,A screenshot from the home page of Puzzle Palace's mobile app.
 src/pages/works/puzzle-palace.astro,AppCardA,PuzzlePalace/img/04_PP_illustration 1.png,The icon design for the Thomas Joseph Crossword game.
@@ -12,8 +12,8 @@ src/pages/works/puzzle-palace.astro,AppCardE,PuzzlePalace/img/04_PP_illustration
 src/pages/works/puzzle-palace.astro,AppCardsBg,PuzzlePalace/img/04_PP_BG_crossword.svg,
 src/pages/works/puzzle-palace.astro,PaletteDesktop,PuzzlePalace/img/06_PP_Color Palette_D.svg,The color palette for the brand's design.
 src/pages/works/puzzle-palace.astro,PaletteMobile,PuzzlePalace/img/06_PP_Color Palette_M.svg,The color palette for the brand's design.
-src/pages/works/puzzle-palace.astro,TypographyDesktop,PuzzlePalace/img/07_PP_Type_D.svg,"An analysis of the brand's fonts, font sizes, and font stylings."
-src/pages/works/puzzle-palace.astro,TypographyMobile,PuzzlePalace/img/07_PP_Type_M.svg,"An analysis of the brand's fonts, font sizes, and font stylings."
+src/pages/works/puzzle-palace.astro,TypographyDesktop,PuzzlePalace/img/07_PP_Type_D.svg,An analysis of the brand's fonts, font sizes, and font stylings.
+src/pages/works/puzzle-palace.astro,TypographyMobile,PuzzlePalace/img/07_PP_Type_M.svg,An analysis of the brand's fonts, font sizes, and font stylings.
 src/pages/works/puzzle-palace.astro,SubwayPoster,PuzzlePalace/img/08_PP_Campaign.png,A person walking past subway posters promoting Puzzle Palace.
 src/pages/works/puzzle-palace.astro,LandingPage,PuzzlePalace/img/09_PP_LP.png,A screenshot of the Puzzle Palace website.
 src/pages/works/puzzle-palace.astro,SplashScreenA,PuzzlePalace/img/10_PP_App Splash Screen_1.png,A person using the app while in bed.
@@ -51,18 +51,18 @@ src/pages/works/puzzle-palace.astro,ImgECenter,PuzzlePalace/img/18_PP_cutting ro
 src/pages/works/puzzle-palace.astro,ImgERight,PuzzlePalace/img/19_PP_cutting room floor_image.png,A variation of the Puzzle Palace logo with brand colors.
 src/pages/works/genius-kitchen.astro,Hero,GeniusKitchen/Hero.png,The logo for Genius Kitchen.
 src/pages/works/genius-kitchen.astro,HeroMobile,GeniusKitchen/Hero-mobile.png,The logo for Genius Kitchen.
-src/pages/works/genius-kitchen.astro,Spread,GeniusKitchen/GK_spread.jpg,"Mockups for the Genius Kitchen website on a desktop monitor, laptop, and phone."
+src/pages/works/genius-kitchen.astro,Spread,GeniusKitchen/GK_spread.jpg,Mockups for the Genius Kitchen website on a desktop monitor, laptop, and phone.
 src/pages/works/genius-kitchen.astro,Animation,GeniusKitchen/gk-home.gif,Multiple screenshots of different pages on the Genius Kitchen website.
 src/pages/works/genius-kitchen.astro,Icons,GeniusKitchen/icons.jpg,Genius Kitchen branded icons for digital products.
 src/pages/works/pearly-bites.astro,Header,PearlyBites/img/PearlyBites_Header.png,A collage of school portrait pictures of dog and cat heads on human bodies.
 src/pages/works/pearly-bites.astro,HeaderMobile,PearlyBites/img/PearlyBites_Header_Mobile.png,A collage of school portrait pictures of dog and cat heads on human bodies.
 src/pages/works/pearly-bites.astro,FrontDesk,PearlyBites/img/PearlyBites_FrontDesk.png,A nurse with a clipboard standing in front of the Pearly Bites Veterinary logo at an office location.
-src/pages/works/pearly-bites.astro,BetterDental,PearlyBites/img/PearlyBites_BetterDental.png,"The words ""Better Dental Care for Your Best Friend"" with a toothbrush illustration below."
+src/pages/works/pearly-bites.astro,BetterDental,PearlyBites/img/PearlyBites_BetterDental.png,The words Better Dental Care for Your Best Friend with a toothbrush illustration below.
 src/pages/works/pearly-bites.astro,Site,PearlyBites/img/PearlyBites_Site.png,A screenshot of the Pearly Bites Veterinary website home page.
 src/pages/works/pearly-bites.astro,ExamRoom,PearlyBites/img/PearlyBites_ExamRoom.png,A veterinarian and nurse examine a cat in an exam room.
 src/pages/works/pearly-bites.astro,Interiors,PearlyBites/img/PearlyBites_Interiors.png,Interior shots of the waiting room area and exam room area of a Pearly Bites Veterinary office. The school portrait pictures of cats and dogs on human bodies decorate the walls.
 src/pages/works/pearly-bites.astro,SocialPages,PearlyBites/img/PearlyBites_SocialPages.png,A screenshot of the Pearly Bites Veterinary facebook page and a screenshot of their instagram page.
-src/pages/works/pearly-bites.astro,Tote,PearlyBites/img/PearlyBites_Tote.png,"A cat next to a woman holding a tote bag with the words ""Where New York pets get best-in-class smiles. Pearly Bites Veterinary"" on it."
+src/pages/works/pearly-bites.astro,Tote,PearlyBites/img/PearlyBites_Tote.png,A cat next to a woman holding a tote bag with the words Where New York pets get best-in-class smiles. Pearly Bites Veterinary on it.
 src/pages/works/pearly-bites.astro,Cards,PearlyBites/img/PearlyBites_BusinessCards.jpg,A scattered pile of business cards for Pearly Bites veterinary with their contact info.
 src/pages/works/pearly-bites.astro,SocialGrid,PearlyBites/img/PearlyBites_SocialGrid.png,A grid of alternating pictures of animal school portraits and quotes about animals.
 src/pages/works/pearly-bites.astro,Stationary,PearlyBites/img/PearlyBites_Stationary.png,Stationary designs for the brand.
@@ -76,7 +76,7 @@ src/pages/works/metro-vein-centers.astro,LogoOverlay,MVC/img/04_MVC_LogoImage.pn
 src/pages/works/metro-vein-centers.astro,LogoVariantA,MVC/img/05_MVC_LogoVariation_1.png,Logo variation.
 src/pages/works/metro-vein-centers.astro,LogoVariantB,MVC/img/05_MVC_LogoVariation_2.png,Logo variation.
 src/pages/works/metro-vein-centers.astro,Office,MVC/img/06_MVC_Office.png,Metro Vein Centers office.
-src/pages/works/metro-vein-centers.astro,BrandValues,MVC/img/07_MVC_BrandValues.png,"Brand values. ""We treat people not symptoms."""
+src/pages/works/metro-vein-centers.astro,BrandValues,MVC/img/07_MVC_BrandValues.png,Brand values. We treat people not symptoms.
 src/pages/works/metro-vein-centers.astro,ExamDoctor,MVC/img/08_MVC_ExamDoctor.png,A person on exam table talking to a doctor.
 src/pages/works/metro-vein-centers.astro,Floatie,MVC/img/09_MVC_Floatie.png,A person in a bathing suit on a pool floatie.
 src/pages/works/metro-vein-centers.astro,ExamTech,MVC/img/10_MVC_ExamTech.png,A nurse using a medical device on a person's leg.
@@ -101,13 +101,13 @@ src/pages/works/metro-vein-centers.astro,WelcomeEmailB,MVC/img/22_MVC_WelcomeEma
 src/pages/works/metro-vein-centers.astro,Illustrations,MVC/img/23_MVC_Illustrations.jpg,Illustrations created for Metro Vein Center feauring different symptoms.
 src/pages/works/metro-vein-centers.astro,ApptEmail,MVC/img/25_MVC_ApptEmail.png,Design for an appointment info email.
 src/pages/works/metro-vein-centers.astro,QuizEmail,MVC/img/25_MVC_QuizEmail.png,Design for an informational email.
-src/pages/works/metro-vein-centers.astro,NewYear,MVC/img/27_MVC_NewYear.png,"Pair of legs with one foot on a disco ball. ""new year new legs"""
+src/pages/works/metro-vein-centers.astro,NewYear,MVC/img/27_MVC_NewYear.png,Pair of legs with one foot on a disco ball. new year new legs
 src/pages/works/metro-vein-centers.astro,Present,MVC/img/27_MVC_Present.png,One leg holding up a gift box.
 src/pages/works/metro-vein-centers.astro,FallA,MVC/img/28_MVC_Fall_1.png,Advertisement. Two pictures of a pair of legs made to look like it's one pair. One picture is the upper part of legs in water on beach and the other is lower part of legs being treated.
 src/pages/works/metro-vein-centers.astro,FallB,MVC/img/28_MVC_Fall_2.png,Advertisement. One leg with shoe on and autum leaves and one leg barefoot on grass.
 src/pages/works/metro-vein-centers.astro,FallPostcards,MVC/img/29_MVC_FallPostcards.png,Advertisement. Image of healthy veins and another image with a person laying sideways.
-src/pages/works/nbc-upfronts.astro,Hero,NbcUpfronts/img/hero.png,"The actor, Rami Malek, in front of a garage door for a promotional ad."
-src/pages/works/nbc-upfronts.astro,HeroMobile,NbcUpfronts/img/hero-mobile.png,"The actor, Rami Malek, in front of a garage door for a promotional ad."
+src/pages/works/nbc-upfronts.astro,Hero,NbcUpfronts/img/hero.png,The actor, Rami Malek, in front of a garage door for a promotional ad.
+src/pages/works/nbc-upfronts.astro,HeroMobile,NbcUpfronts/img/hero-mobile.png,The actor, Rami Malek, in front of a garage door for a promotional ad.
 src/pages/works/nbc-upfronts.astro,LeftA,NbcUpfronts/img/left-1.png,Pages from the NBCUniversal Reach Redefined magazine.
 src/pages/works/nbc-upfronts.astro,LeftB,NbcUpfronts/img/left-2.png,Promotional subway ads for the campaign.
 src/pages/works/nbc-upfronts.astro,RightA,NbcUpfronts/img/right-1.png,Pages from the NBCUniversal Reach Redefined magazine.
@@ -116,30 +116,30 @@ src/pages/works/nbc-upfronts.astro,RightC,NbcUpfronts/img/right-3.png,Large subw
 src/pages/works/nbc-upfronts.astro,Campaign,NbcUpfronts/img/campaign.jpeg,An advertisement for the campaign featuring Kim Kardashian.
 src/pages/works/sage.astro,SageStorySocial1,Sage/img/Story_Social_1.png,Practicing Mindfulness through Breathwork can begin in the comfort of your home or workspace. Take a moment with yourslef as you brace for the week ahead.
 src/pages/works/sage.astro,SageStorySocial3,Sage/img/Story_Social_3.png,Call attention to your lungs as they fill and empty. Scan your body from the crown of your head down to your toes.
-src/pages/works/sage.astro,SagePhoto,Sage/img/Sage_Photo.png,"A collage of photos. A mother holding her child, a sage plant, the full moon seen through flowering tree branches, a white bed sheet, leaves of a purple plant, and a person sitting holding their legs to their chest."
+src/pages/works/sage.astro,SagePhoto,Sage/img/Sage_Photo.png,A collage of photos. A mother holding her child, a sage plant, the full moon seen through flowering tree branches, a white bed sheet, leaves of a purple plant, and a person sitting holding their legs to their chest.
 src/pages/works/sage.astro,SageSiteDesktop,Sage/img/Sage_Site_Desktop.png,A screenshot of the Sage desktop website.
 src/pages/works/sage.astro,SageSiteMobile,Sage/img/Sage_Site_Mobile.png,A screenshot of the Sage mobile website.
 src/pages/works/sage.astro,SageSocial1,Sage/img/Sage_Social_1.png,A mother holding her child with the words I am resilient.
 src/pages/works/sage.astro,SageSocial2,Sage/img/Sage_Social_2.png,Text on a purple background showcasing the brand's colors and font stylings.
-src/pages/works/sage.astro,SageGraphic1,Sage/img/Sage_Graphic_1.png,"A purple plant. The words Nutrition and Herbalism, highlighting one of Sage's services."
-src/pages/works/sage.astro,SageGraphic2,Sage/img/Sage_Graphic_2.png,"A person resting their hands on their navel. The words Psychiatry and Psychotherapy, highlighting one of Sage's services."
+src/pages/works/sage.astro,SageGraphic1,Sage/img/Sage_Graphic_1.png,A purple plant. The words Nutrition and Herbalism, highlighting one of Sage's services.
+src/pages/works/sage.astro,SageGraphic2,Sage/img/Sage_Graphic_2.png,A person resting their hands on their navel. The words Psychiatry and Psychotherapy, highlighting one of Sage's services.
 src/pages/works/sage.astro,SageIcon1,Sage/img/Sage_Graphic_Icon1.png,A person sitting holding their legs to their chest. The words Today is a new beginning.
 src/pages/works/sage.astro,SageIcon2,Sage/img/Sage_Graphic_Icon2.png,A white bedsheet suspended in air. The words Don't stress.
 src/pages/works/sage.astro,SageQuote,Sage/img/Sage_Quote.png,It takes enormous trust and courage to allow yourself to remember. Dorothy Pitman Hughes
-src/pages/works/sage.astro,SageBrochure1,Sage/img/Sage_Brochure_1.png,"Two pages of Sage's brochure. On one, the words ""A haven for people to dig, discover, reveal, and heal."" along with contact information. On the other page, the words ""Healing is always possible."""
+src/pages/works/sage.astro,SageBrochure1,Sage/img/Sage_Brochure_1.png,Two pages of Sage's brochure. On one, the words A haven for people to dig, discover, reveal, and heal. along with contact information. On the other page, the words Healing is always possible.
 src/pages/works/sage.astro,SageBrochure2,Sage/img/Sage_Brochure_2.png,Two pages of Sage's brochure. Both pages feature images of plants and discuss the services Sage offers.
 src/pages/works/sage.astro,SageBusiness,Sage/img/Sage_Business.png,The backs and fronts of three business cards designed for Sage.
 src/pages/works/sage.astro,SageBrandGuideGrid1,Sage/img/Sage_Brand_Guide_Grid_01.png,The core values of Sage. We are: informed and open-minded. Holistic and integrative. Respectful and responsive. Conscious and conscientious. A relational community.
 src/pages/works/sage.astro,SageBrandGuideGrid2,Sage/img/Sage_Brand_Guide_Grid_02.png,Logo designs for Sage.
-src/pages/works/sage.astro,SageBrandGuideGrid3,Sage/img/Sage_Brand_Guide_Grid_03.png,"A list of key words, attributes, and overall tone of the Sage brand."
+src/pages/works/sage.astro,SageBrandGuideGrid3,Sage/img/Sage_Brand_Guide_Grid_03.png,A list of key words, attributes, and overall tone of the Sage brand.
 src/pages/works/sage.astro,SageBrandGuideGrid4,Sage/img/Sage_Brand_Guide_Grid_04.png,A display of the color palette for the Sage design.
 src/pages/works/sage.astro,SageBrandGuideGrid5,Sage/img/Sage_Brand_Guide_Grid_05.png,A display of a background gradient and background texture designed for the Sage brand.
 src/pages/works/sage.astro,SageBrandGuideGrid6,Sage/img/Sage_Brand_Guide_Grid_06.png,The fonts and font colors for the Sage brand focusing on meeting WCAG accessibility.
 src/pages/works/sage.astro,SageBrandGuideGrid7,Sage/img/Sage_Brand_Guide_Grid_07.png,An examination of the values of the brand.
-src/pages/works/sage.astro,SageBrandGuideGrid8,Sage/img/Sage_Brand_Guide_Grid_08.png,"A display of one of the fonts for the brand, Gazpacho."
+src/pages/works/sage.astro,SageBrandGuideGrid8,Sage/img/Sage_Brand_Guide_Grid_08.png,A display of one of the fonts for the brand, Gazpacho.
 src/pages/works/sage.astro,SageBrandGuideGrid9,Sage/img/Sage_Brand_Guide_Grid_09.png,An analysis of the type hierarchy for Sage's typography
 src/pages/works/sage.astro,SageBrandGuideGrid10,Sage/img/Sage_Brand_Guide_Grid_10.png,A display of the icons that represent each service offered by Sage.
-src/pages/works/sage.astro,SageBrandGuideGrid11,Sage/img/Sage_Brand_Guide_Grid_11.png,"A study of how the colors for the brand were picked, illustrated by a collage of images featuring plants and nature."
+src/pages/works/sage.astro,SageBrandGuideGrid11,Sage/img/Sage_Brand_Guide_Grid_11.png,A study of how the colors for the brand were picked, illustrated by a collage of images featuring plants and nature.
 src/pages/works/sage.astro,SageBrandGuideGrid12,Sage/img/Sage_Brand_Guide_Grid_12.png,Sage staff portraits and art direction.
 src/pages/works/sage.astro,SageBrandGuideGrid13,Sage/img/Sage_Brand_Guide_Grid_13.png,A mockup of the Sage website on a laptop computer.
 src/pages/works/sage.astro,SageBrandGuideGrid14,Sage/img/Sage_Brand_Guide_Grid_14.png,A mockup of the Sage instagram page on a mobile phone.
@@ -172,7 +172,7 @@ src/pages/works/apartment-therapy.astro,Light,AptTherapy/03_AT_Light_1.png,Ceili
 src/pages/works/apartment-therapy.astro,Poster,AptTherapy/03_AT_Poster_2.png,Framed wall poster.
 src/pages/works/apartment-therapy.astro,Glasses,AptTherapy/04_AT_Dresser_1.png,Dresser with drawer pulled open to show multiple pairs of glasses.
 src/pages/works/apartment-therapy.astro,Chaise,AptTherapy/04_AT_Chaise_2.png,Picture frames on wall over a chaise.
-src/pages/works/apartment-therapy.astro,Desk,AptTherapy/05_AT_Desk_1.png,"Different angle of picture frames, chaise, and desk."
+src/pages/works/apartment-therapy.astro,Desk,AptTherapy/05_AT_Desk_1.png,Different angle of picture frames, chaise, and desk.
 src/pages/works/apartment-therapy.astro,Dresser,AptTherapy/05_AT_Dresser_2.png,Picture frames on wall over a wooden dresser.
 src/pages/works/apartment-therapy.astro,Chandelier,AptTherapy/06_AT_Chandelier_2.png,Ceiling light fixture with flower designs.
 src/pages/works/apartment-therapy.astro,KitchenA,AptTherapy/06_AT_Kitchen_1.png,Kitchen
@@ -192,7 +192,7 @@ src/pages/works/firefly-vets.astro,LogoOverlayC,FireflyVets/img/logo-overlay-3.p
 src/pages/works/firefly-vets.astro,GridA,FireflyVets/img/grid-1.png,A back paw and tail of a dog on a bed sheet.
 src/pages/works/firefly-vets.astro,GridB,FireflyVets/img/grid-2.png,A cat being held in a person's arms.
 src/pages/works/firefly-vets.astro,GridC,FireflyVets/img/grid-3.png,A cat's nose and mouth.
-src/pages/works/firefly-vets.astro,GridD,FireflyVets/img/grid-4.png,"The ear, neck, and corner of mouth of a dog."
+src/pages/works/firefly-vets.astro,GridD,FireflyVets/img/grid-4.png,The ear, neck, and corner of mouth of a dog.
 src/pages/works/firefly-vets.astro,GridE,FireflyVets/img/grid-5.png,The butt and tail of a dog.
 src/pages/works/firefly-vets.astro,GridF,FireflyVets/img/grid-6.png,The nose and mouth of a dog.
 src/pages/works/firefly-vets.astro,GridG,FireflyVets/img/grid-7.png,A cat licking their nose.
@@ -214,16 +214,16 @@ src/pages/works/firefly-vets.astro,ValueEDesktop,FireflyVets/values/value5-d.svg
 src/pages/works/six-feet.astro,Header,SixFeet/6ft_header.gif,Stickers and designs promoting social distancing popping in and out.
 src/pages/works/six-feet.astro,HeaderMobile,SixFeet/6ft_header_mobile.gif,Stickers and designs promoting social distancing popping in and out.
 src/pages/works/six-feet.astro,MaskGang,SixFeet/img/6ft_MaskGang.png,Animal heads on human bodies wearing face masks and walking in a line.
-src/pages/works/six-feet.astro,HotMask,SixFeet/img/6ft_YourMaskisHot.png,"A person in a store reaches down to get something. On the floor under them is a sticker that says ""Your mask is hot. Thank you for keeping us safe."""
+src/pages/works/six-feet.astro,HotMask,SixFeet/img/6ft_YourMaskisHot.png,A person in a store reaches down to get something. On the floor under them is a sticker that says Your mask is hot. Thank you for keeping us safe.
 src/pages/works/six-feet.astro,SixFeetApart,SixFeet/img/6ft_SixFeetApart.png,A person standing in front of a floor sticker on the floor that says Six Feet Apart.
-src/pages/works/six-feet.astro,Together,SixFeet/img/6ft_TogetherAtHeart.png,"A person standing in front of a floor sticker that says ""Together at heart. 6 feet apart, Thank you"""
-src/pages/works/six-feet.astro,RainbowSticker,SixFeet/6ft_RainbowStickers.gif,"A circle of stickers that are all different colors. They all say ""Wait here. Stay six feet apart. Repeat"""
-src/pages/works/six-feet.astro,Store,SixFeet/img/6ft_Store.png,"The interior of a cafe. Stickers on the floor are visible, distanced out to represent where customers should stand to respect social distancing."
+src/pages/works/six-feet.astro,Together,SixFeet/img/6ft_TogetherAtHeart.png,A person standing in front of a floor sticker that says Together at heart. 6 feet apart, Thank you
+src/pages/works/six-feet.astro,RainbowSticker,SixFeet/6ft_RainbowStickers.gif,A circle of stickers that are all different colors. They all say Wait here. Stay six feet apart. Repeat
+src/pages/works/six-feet.astro,Store,SixFeet/img/6ft_Store.png,The interior of a cafe. Stickers on the floor are visible, distanced out to represent where customers should stand to respect social distancing.
 src/pages/works/six-feet.astro,Pile,SixFeet/img/6ft_SocialDistancingPile.png,A pile of stickers that all promote social distancing and wearing masks.
-src/pages/works/six-feet.astro,Floor,SixFeet/img/6ft_SocialDistancingClubFloor.png,"Only the shoes are visible of a person in front of a sticker that says ""Social distancing club. 2020-202X?"""
-src/pages/works/six-feet.astro,Wedding,SixFeet/img/6ft_Wedding.png,"The shoes and legs of a couple at their wedding in front of a floor sticker that says ""Together at heart. 6 feet apart Thank you"""
+src/pages/works/six-feet.astro,Floor,SixFeet/img/6ft_SocialDistancingClubFloor.png,Only the shoes are visible of a person in front of a sticker that says Social distancing club. 2020-202X?
+src/pages/works/six-feet.astro,Wedding,SixFeet/img/6ft_Wedding.png,The shoes and legs of a couple at their wedding in front of a floor sticker that says Together at heart. 6 feet apart Thank you
 src/pages/works/six-feet.astro,Windows,SixFeet/img/6ft_Windows.png,A storefront. Stickers on the ground outside promote social distancing and a sticker on the window of the store promotes mask wearing.
-src/pages/works/six-feet.astro,FunFacts,SixFeet/6ft_FunFacts.gif,"A looped animation of floor sticker designs. This series of stickers all include a fun fact, intended to give the person viewing them something to think about as they stand in line, six feet apart."
+src/pages/works/six-feet.astro,FunFacts,SixFeet/6ft_FunFacts.gif,A looped animation of floor sticker designs. This series of stickers all include a fun fact, intended to give the person viewing them something to think about as they stand in line, six feet apart.
 src/pages/works/six-feet.astro,Backpack,SixFeet/img/6ft_Backpack.png,A person holding a backpack next to a floor sticker with a fun fact on it.
 src/pages/works/six-feet.astro,Slider1,SixFeet/Ticker/1.png,Way to wait. Thank you for social distancing.
 src/pages/works/six-feet.astro,Slider2,SixFeet/Ticker/2.png,So close. Thank you for wearing a mask.
@@ -237,36 +237,36 @@ src/pages/works/six-feet.astro,Slider9,SixFeet/Ticker/9.png,You're gonna make it
 src/pages/works/six-feet.astro,Slider10,SixFeet/Ticker/10.png,Never give up. Thank you for keeping us safe.
 src/pages/works/say-more.astro,Hero,SayMore/img/01_SM_Hero_16x9.png,A group of women around a table. One of them is picking a card from Say More's collection of conversation cards.
 src/pages/works/say-more.astro,HeroMobile,SayMore/img/01_SM_Hero_Mobile.png,A group of women around a table. One of them is picking a card from Say More's collection of conversation cards.
-src/pages/works/say-more.astro,BoxBgDesktop,SayMore/img/02_SM_BG_D.png,"Closeup of a woman in brightly colored, flower covered clothing. She is from the same group of people as before, conversing over the deck of cards."
-src/pages/works/say-more.astro,BoxBgMobile,SayMore/img/02_SM_BG_M_4x5.png,"Closeup of a woman in brightly colored, flower covered clothing. She is from the same group of people as before, conversing over the deck of cards."
-src/pages/works/say-more.astro,BoxImage,SayMore/img/02_SM_Layer_Box.png,"The box design for Say More's deck of cards. The front of the box says ""Say More. Conversation cards and journaling prompts for your midlife awakening and beyond"""
-src/pages/works/say-more.astro,HoldingOne,SayMore/img/03_SM_3x4.png,"A woman holding one of the cards to her chest. The card asks, ""What brings you peace?"""
+src/pages/works/say-more.astro,BoxBgDesktop,SayMore/img/02_SM_BG_D.png,Closeup of a woman in brightly colored, flower covered clothing. She is from the same group of people as before, conversing over the deck of cards.
+src/pages/works/say-more.astro,BoxBgMobile,SayMore/img/02_SM_BG_M_4x5.png,Closeup of a woman in brightly colored, flower covered clothing. She is from the same group of people as before, conversing over the deck of cards.
+src/pages/works/say-more.astro,BoxImage,SayMore/img/02_SM_Layer_Box.png,The box design for Say More's deck of cards. The front of the box says Say More. Conversation cards and journaling prompts for your midlife awakening and beyond
+src/pages/works/say-more.astro,HoldingOne,SayMore/img/03_SM_3x4.png,A woman holding one of the cards to her chest. The card asks, What brings you peace?
 src/pages/works/say-more.astro,HoldingDeck,SayMore/img/04_SM_3x4.png,A woman taking out a deck of cards from a box.
 src/pages/works/say-more.astro,WritingHand,SayMore/img/05_SM_3x4.png,A woman writing down her answer to the question prompted by one of the cards from the collection.
 src/pages/works/say-more.astro,WrittenMessage,SayMore/img/06_SM_Writing.svg,The response to a conversation card. The past 24 hours has been really dense mentally and emotionally. My work - consulting and Black Girl's Guide to Surviving Menopause required a lot of my brain (Problem-solving and creatively)
 src/pages/works/say-more.astro,SelectBgDesktop,SayMore/img/07_SM_BG_Image_D.png,A hand reaching out to take a card from the deck.
 src/pages/works/say-more.astro,SelectBgMobile,SayMore/img/07_SM_BG_Image_M.png,A deck of cards being held.
-src/pages/works/say-more.astro,SelectCard,SayMore/img/07_SM_Layer_Card.png,"A conversation card. It asks, ""What is a song that makes you feel good the instant you hear it?"""
+src/pages/works/say-more.astro,SelectCard,SayMore/img/07_SM_Layer_Card.png,A conversation card. It asks, What is a song that makes you feel good the instant you hear it?
 src/pages/works/say-more.astro,PairABack,SayMore/img/08_SM_Card.png,The back of a conversation card. It has a brightly colored design and features the illustration of a woman sitting cross legged.
-src/pages/works/say-more.astro,PairAFace,SayMore/img/09_SM_Card.png,"The front of a conversation card. It prompts, ""Describe the best sexual experience you've ever had in only one word. Give no further context or explanation. Let people wonder."""
-src/pages/works/say-more.astro,PairBFace,SayMore/img/10_SM_Card.png,"The front of a conversation card. It prompts, ""Close your eyes and imagine yourself as a young child. What qualities do you see in your younger self? How does this compare to how you see yourself today?"""
+src/pages/works/say-more.astro,PairAFace,SayMore/img/09_SM_Card.png,The front of a conversation card. It prompts, Describe the best sexual experience you've ever had in only one word. Give no further context or explanation. Let people wonder.
+src/pages/works/say-more.astro,PairBFace,SayMore/img/10_SM_Card.png,The front of a conversation card. It prompts, Close your eyes and imagine yourself as a young child. What qualities do you see in your younger self? How does this compare to how you see yourself today?
 src/pages/works/say-more.astro,PairBBack,SayMore/img/11_SM_Card.png,The back of a conversation card. It is an illustration of clouds in the sky with a woman in a brightly colored dress sitting on one of them.
 src/pages/works/say-more.astro,PairCBack,SayMore/img/12_SM_Card.png,The back of a conversation card. It is an illustration a woman laying on a crescent moon with her hair flowing down and expanding.
-src/pages/works/say-more.astro,PairCFace,SayMore/img/13_SM_Card.png,"The front of a conversation card. It prompts, ""Who has mothered you in your life? How do you mother yourself and others?"""
-src/pages/works/say-more.astro,PairDFace,SayMore/img/14_SM_Card.png,"The front of a conversation card. It prompts, ""Name someone older than you that you aspire to be like. Why do you admire them?"""
-src/pages/works/say-more.astro,PairDBack,SayMore/img/15_SM_Card.png,"The back of a conversation card. It is an illustration of a woman in a yoga tree pose, covered in vines as if at peace with the nature around her."
+src/pages/works/say-more.astro,PairCFace,SayMore/img/13_SM_Card.png,The front of a conversation card. It prompts, Who has mothered you in your life? How do you mother yourself and others?
+src/pages/works/say-more.astro,PairDFace,SayMore/img/14_SM_Card.png,The front of a conversation card. It prompts, Name someone older than you that you aspire to be like. Why do you admire them?
+src/pages/works/say-more.astro,PairDBack,SayMore/img/15_SM_Card.png,The back of a conversation card. It is an illustration of a woman in a yoga tree pose, covered in vines as if at peace with the nature around her.
 src/pages/works/say-more.astro,PhoneSiteBgDesktop,SayMore/img/16_SM_BG_Image_D.png,A woman holding up her journal that she wrote in response to Say More's journaling prompts.
 src/pages/works/say-more.astro,PhoneSiteBgMobile,SayMore/img/16_SM_BG_Image_M.png,A woman holding up her journal that she wrote in response to Say More's journaling prompts.
-src/pages/works/say-more.astro,PhoneSite,SayMore/img/16_SM_Layer_Phone.png,"A screenshot of the Kindra mobile app. The focus is on an article titled ""Why it's important to say more about menopause"""
-src/pages/works/say-more.astro,BookSpreadBgDesktop,SayMore/img/17_SM_BG_Image_D.png,"A woman holding up the journaling prompt booklet. It says ""How to say more"" on the cover."
-src/pages/works/say-more.astro,BookSpreadBgMobile,SayMore/img/17_SM_BG_Image_M.png,"A woman holding up the journaling prompt booklet. It says ""How to say more"" on the cover."
+src/pages/works/say-more.astro,PhoneSite,SayMore/img/16_SM_Layer_Phone.png,A screenshot of the Kindra mobile app. The focus is on an article titled Why it's important to say more about menopause
+src/pages/works/say-more.astro,BookSpreadBgDesktop,SayMore/img/17_SM_BG_Image_D.png,A woman holding up the journaling prompt booklet. It says How to say more on the cover.
+src/pages/works/say-more.astro,BookSpreadBgMobile,SayMore/img/17_SM_BG_Image_M.png,A woman holding up the journaling prompt booklet. It says How to say more on the cover.
 src/pages/works/say-more.astro,BookSpread,SayMore/img/17_SM_Layer_Booklet.png,The booklet that comes with the Say More conversation cards. It offers guidelines for how to best interact with the cards.
 src/pages/works/say-more.astro,BookletReading,SayMore/img/18_SM_Image.png,A woman reading the Say More conversation card booklet.
 src/pages/works/say-more.astro,BookletPage,SayMore/img/19_SM_Booklet.png,A page from the booklet. It offers advice on how to use the cards in both 1 on 1 and group settings.
-src/pages/works/say-more.astro,PressClipBgDesktop,SayMore/img/20_SM_BG_Image_D.png,"A woman holding up the box of conversation cards. One of the cards is shown. It says ""What are 3 ideas you would share with someone who's curious about how to have more fun in their sex life - with or without a partner?"""
-src/pages/works/say-more.astro,PressClipBgMobile,SayMore/img/20_SM_BG_Image_M.png,"A woman holding up the box of conversation cards. One of the cards is shown. It says ""What are 3 ideas you would share with someone who's curious about how to have more fun in their sex life - with or without a partner?"""
-src/pages/works/say-more.astro,PressClipWindow,SayMore/img/20_SM_Layer_web_D.png,"A screenshot of an article written about the Say More conversation cards. It is titled ""This unique card game was designed to spark deep conversations between women."""
-src/pages/works/say-more.astro,PressClipPhone,SayMore/img/20_SM_Layer_web_M.png,"A screenshot of an article written about the Say More conversation cards. It is titled ""A gorgeous card game designed to get people talking more openly about menopause? Deal me in."""
+src/pages/works/say-more.astro,PressClipBgDesktop,SayMore/img/20_SM_BG_Image_D.png,A woman holding up the box of conversation cards. One of the cards is shown. It says What are 3 ideas you would share with someone who's curious about how to have more fun in their sex life - with or without a partner?
+src/pages/works/say-more.astro,PressClipBgMobile,SayMore/img/20_SM_BG_Image_M.png,A woman holding up the box of conversation cards. One of the cards is shown. It says What are 3 ideas you would share with someone who's curious about how to have more fun in their sex life - with or without a partner?
+src/pages/works/say-more.astro,PressClipWindow,SayMore/img/20_SM_Layer_web_D.png,A screenshot of an article written about the Say More conversation cards. It is titled This unique card game was designed to spark deep conversations between women.
+src/pages/works/say-more.astro,PressClipPhone,SayMore/img/20_SM_Layer_web_M.png,A screenshot of an article written about the Say More conversation cards. It is titled A gorgeous card game designed to get people talking more openly about menopause? Deal me in.
 src/pages/works/say-more.astro,SocialBgDesktop,SayMore/img/21_SM_BG_D.png,One of the card back designs previously mentioned. It is an illustration of clouds in the sky with a woman in a brightly colored dress sitting on one of them.
 src/pages/works/say-more.astro,SocialBgMobile,SayMore/img/21_SM_BG_M.png,One of the card back designs previously mentioned. It is an illustration of clouds in the sky with a woman in a brightly colored dress sitting on one of them.
 src/pages/works/say-more.astro,SocialDeck,SayMore/img/21_SM_Layer_social1.png,A screenshot of the Kindra instagram page promoting the Say More Conversation cards.
@@ -283,10 +283,10 @@ src/pages/works/week-and.astro,TextureSwatches,Week+/img/09_week+.png,Texture ch
 src/pages/works/week-and.astro,TextureA,Week+/img/10_Week+.png,Week and logo on top of a textured illustration of fork and plate.
 src/pages/works/week-and.astro,TextureB,Week+/img/11_week+.png,Week and instagram post for a week and and target collaboration
 src/pages/works/week-and.astro,WeAre,Week+/img/12_we-are.png,Week and company values
-src/pages/works/week-and.astro,PairA1,Week+/img/13_Week+.png,"""Tell me, what is it you plan to do with your one wild and precious life?"" -Mary Oliver"
-src/pages/works/week-and.astro,PairA2,Week+/img/14_week+.png,"Week and instagram post ""... and yes I said yes I will yes."" -James Joyce"
-src/pages/works/week-and.astro,PairB1,Week+/img/15_week+.png,"""... and yes I said yes I will yes."" -James Joyce"
-src/pages/works/week-and.astro,PairB2,Week+/img/16_week+.png,"""Tell me, what is it you plan to do with your one wild and precious life?"" -Mary Oliver"
+src/pages/works/week-and.astro,PairA1,Week+/img/13_Week+.png,Tell me, what is it you plan to do with your one wild and precious life? -Mary Oliver
+src/pages/works/week-and.astro,PairA2,Week+/img/14_week+.png,Week and instagram post ... and yes I said yes I will yes. -James Joyce
+src/pages/works/week-and.astro,PairB1,Week+/img/15_week+.png,... and yes I said yes I will yes. -James Joyce
+src/pages/works/week-and.astro,PairB2,Week+/img/16_week+.png,Tell me, what is it you plan to do with your one wild and precious life? -Mary Oliver
 src/pages/works/week-and.astro,PairC1,Week+/img/17.png,Person at a picnic table holding a baguette to their ear with a speech bubble saying Hello?
 src/pages/works/week-and.astro,PairC2,Week+/img/18.png,Person and their dog. Meet Carol and Hank!
 src/pages/works/week-and.astro,TrioA1,Week+/img/19a.png,Food being pulled apart.
@@ -300,7 +300,7 @@ src/pages/works/week-and.astro,TrioC1,Week+/img/22a.png,A person showing off the
 src/pages/works/week-and.astro,TrioC2,Week+/img/22b.png,A screenshot of what spices to add from a recipe.
 src/pages/works/week-and.astro,TrioC3,Week+/img/22c.png,A screenshot from a cooking recipe video.
 src/pages/works/week-and.astro,BlueA,Week+/img/23a.png,Two screenshots from the week and product.
-src/pages/works/week-and.astro,BlueB,Week+/img/23b.png,"Three screenshots from the week and product featuring a curator, food recipe, and hiking."
+src/pages/works/week-and.astro,BlueB,Week+/img/23b.png,Three screenshots from the week and product featuring a curator, food recipe, and hiking.
 src/pages/works/week-and.astro,BlueC,Week+/img/23c.png,Screenshots from the week and product featuring air b and b listings and a bar recommendation for the area.
 src/pages/works/week-and.astro,Newsletter,Week+/img/36_Week+.png,Mockups for the week and mobile application.
 src/pages/works/week-and.astro,CuttingRoomB,Week+/img/37b.png,Newsletter mockup.
@@ -324,34 +324,34 @@ src/pages/works/bluprint.astro,Quilt,Bluprint/img/Bluprint_Quilt.jpg,A person ho
 src/pages/works/bluprint.astro,LifeStyle1,Bluprint/img/Bluprint_Lifestyle_1.jpg,A person sitting on a couch knitting.
 src/pages/works/bluprint.astro,Paint,Bluprint/img/Bluprint_Paint.jpg,Paint splattered onto brushes and small canvases featuring various shades of pink.
 src/pages/works/bluprint.astro,Colors,Bluprint/img/Bluprint_BrandColors.jpg,The brand's color palette.
-src/pages/works/bluprint.astro,Ad1,Bluprint/img/Bluprint_Ad_1.jpg,"An ad featuring a person holding a quilt around them. The text reads ""My style is Fresh.Bright.Fun. And made by me."""
+src/pages/works/bluprint.astro,Ad1,Bluprint/img/Bluprint_Ad_1.jpg,An ad featuring a person holding a quilt around them. The text reads My style is Fresh.Bright.Fun. And made by me.
 src/pages/works/bluprint.astro,MultiCat,Bluprint/img/Bluprint_MultiCat.jpg,An assortment of arts and crafts tools and supplies laid out around a framed painting.
 src/pages/works/bluprint.astro,Fox1,Bluprint/img/Bluprint_Fox.jpg,Two children wearing knitted fox hats.
 src/pages/works/bluprint.astro,HomePage,Bluprint/img/Bluprint_Homepage.png,Screenshot of the Bluprint website home page.
 src/pages/works/bluprint.astro,Jump1,Bluprint/img/Bluprint_Jump1.jpg,A smiling woman holding a bolt of fabric mid jump.
 src/pages/works/bluprint.astro,Jump2,Bluprint/img/Bluprint_Jump2.jpg,A smiling woman holding multiple bolts of fabric.
 src/pages/works/bluprint.astro,Fox2,Bluprint/img/Bluprint_Fox2.jpg,A child wearing a knitted fox hat.
-src/pages/works/bluprint.astro,Ad3,Bluprint/img/Bluprint_Ad_3.png,"An ad featuring a knitted hat and yarn with the words ""Your next project is waiting. Bluprint.com"""
+src/pages/works/bluprint.astro,Ad3,Bluprint/img/Bluprint_Ad_3.png,An ad featuring a knitted hat and yarn with the words Your next project is waiting. Bluprint.com
 src/pages/works/bluprint.astro,LifeStyle2,Bluprint/img/Bluprint_Lifestyle_2.jpg,A person decorating a cake with icing in the shape of leaves.
 src/pages/works/bluprint.astro,Patches,Bluprint/img/Bluprint_Patches.png,Various icon patches for the bluprint brand.
 src/pages/works/bluprint.astro,Tree,Bluprint/img/Bluprint_Tree.png,A pink christmas tree with colorful ornaments.
 src/pages/works/bluprint.astro,Ad4,Bluprint/img/Bluprint_Ad_4.jpg,An ad featuring a person following along with a DIY video from the Bluprint mobile app.
-src/pages/works/bluprint.astro,Ad5,Bluprint/img/Bluprint_Ad_5.jpg,"An ad featuring a woman putting a quilt onto a couch with the words ""There's a maker in you. Online classes and supplies to feed your inner maker."""
+src/pages/works/bluprint.astro,Ad5,Bluprint/img/Bluprint_Ad_5.jpg,An ad featuring a woman putting a quilt onto a couch with the words There's a maker in you. Online classes and supplies to feed your inner maker.
 src/pages/works/bluprint.astro,Embroidery,Bluprint/img/Bluprint_Box_Embroidery.jpg,A starter emroidery kit and bluprint tote bag.
 src/pages/works/bluprint.astro,Boxes,Bluprint/img/Bluprint_Boxes.png,Rows of Bluprint branded shipping boxes.
 src/pages/works/bluprint.astro,Collateral,Bluprint/img/Bluprint_Box_Collateral.jpg,A blueprint tote bag and a beginner's drawing guide.
 src/pages/works/bluprint.astro,Grid1,Bluprint/img/Bluprint_Grid_1.jpg,Cultural Context. People are seeking out opportunities to immerse themselves in the activities that make them feel most alive.
 src/pages/works/bluprint.astro,Grid2,Bluprint/img/Bluprint_Grid_2.jpg,Bluprint brand introduction.
 src/pages/works/bluprint.astro,Grid3,Bluprint/img/Bluprint_Grid_3.jpg,Bluprint brand description.
-src/pages/works/bluprint.astro,Grid4,Bluprint/img/Bluprint_Grid_4.jpg,"Bluprint ad with paintbrushes, yarn, and dumplings. ""What do you want to do today?"""
-src/pages/works/bluprint.astro,Grid5,Bluprint/img/Bluprint_Grid_5.jpg,"Bluprint ad with a woman painting on a canvas. ""What do you want to paint today?"""
-src/pages/works/bluprint.astro,Grid6,Bluprint/img/Bluprint_Grid_6.jpg,"Bluprint ad with something in the process of being knitted. ""What do you want to knit today?"""
-src/pages/works/bluprint.astro,Grid7,Bluprint/img/Bluprint_Grid_7.jpg,"Bluprint ad. ""Do anything"""
-src/pages/works/bluprint.astro,Grid8,Bluprint/img/Bluprint_Grid_8.jpg,"Bluprint ad. ""Learn anything"""
-src/pages/works/bluprint.astro,Grid9,Bluprint/img/Bluprint_Grid_9.jpg,"Bluprint ad. ""Do anything"""
+src/pages/works/bluprint.astro,Grid4,Bluprint/img/Bluprint_Grid_4.jpg,Bluprint ad with paintbrushes, yarn, and dumplings. What do you want to do today?
+src/pages/works/bluprint.astro,Grid5,Bluprint/img/Bluprint_Grid_5.jpg,Bluprint ad with a woman painting on a canvas. What do you want to paint today?
+src/pages/works/bluprint.astro,Grid6,Bluprint/img/Bluprint_Grid_6.jpg,Bluprint ad with something in the process of being knitted. What do you want to knit today?
+src/pages/works/bluprint.astro,Grid7,Bluprint/img/Bluprint_Grid_7.jpg,Bluprint ad. Do anything
+src/pages/works/bluprint.astro,Grid8,Bluprint/img/Bluprint_Grid_8.jpg,Bluprint ad. Learn anything
+src/pages/works/bluprint.astro,Grid9,Bluprint/img/Bluprint_Grid_9.jpg,Bluprint ad. Do anything
 src/pages/works/bluprint.astro,Grid10,Bluprint/img/Bluprint_Grid_10.jpg,Screenshots of the Bluprint mobile app and desktop website.
-src/pages/works/curve-report.astro,Hero,CurveReport/img/hero.jpg,"The three Curve Report magazine covers: American Man, American Woman, and Young Americans."
-src/pages/works/curve-report.astro,HeroMobile,CurveReport/img/hero-mobile.png,"The three Curve Report magazine covers: American Man, American Woman, and Young Americans."
+src/pages/works/curve-report.astro,Hero,CurveReport/img/hero.jpg,The three Curve Report magazine covers: American Man, American Woman, and Young Americans.
+src/pages/works/curve-report.astro,HeroMobile,CurveReport/img/hero-mobile.png,The three Curve Report magazine covers: American Man, American Woman, and Young Americans.
 src/pages/works/curve-report.astro,StoryTop,CurveReport/img/story-header.jpg,The cover for the American Woman edition. A woman sitting on a desk with a laptop on her lap. She is looking down at a child on the floor pulling at her dress.
 src/pages/works/curve-report.astro,StoryA,CurveReport/img/story-1.jpg,The American Man edition opened with various pages shown.
 src/pages/works/curve-report.astro,StoryB,CurveReport/img/story-2.jpg,A mom and dad lay in bed as a child jumps onto the dad.
@@ -378,17 +378,17 @@ src/pages/works/wizehire.astro,TypeKitMobile,Wizehire/img/02_Wizehire_type_mobil
 src/pages/works/wizehire.astro,Img,Wizehire/img/03_Wizehire_color-palette.png,
 src/pages/works/wizehire.astro,ColorPalette,Wizehire/img/03_Wizehire_color-palette.svg,The brand's color palette.
 src/pages/works/wizehire.astro,Img,Wizehire/img/04_Wizehire_layered color.png,
-src/pages/works/wizehire.astro,PalettesLayer,Wizehire/img/04_Wizehire_layered color.svg,"Primary: Periwize, Accent: Periwize Pop + Lively 400"
+src/pages/works/wizehire.astro,PalettesLayer,Wizehire/img/04_Wizehire_layered color.svg,Primary: Periwize, Accent: Periwize Pop + Lively 400
 src/pages/works/wizehire.astro,Img,Wizehire/img/06_Wizehire_graphic.png,
-src/pages/works/wizehire.astro,WeAre,Wizehire/img/08_wizehire_we are.png,"A Wizehire graphic using the three colors mentioned in the previous image: Primary: Periwize, Accent: Periwize Pop + Lively 400"
+src/pages/works/wizehire.astro,WeAre,Wizehire/img/08_wizehire_we are.png,A Wizehire graphic using the three colors mentioned in the previous image: Primary: Periwize, Accent: Periwize Pop + Lively 400
 src/pages/works/wizehire.astro,Img,Wizehire/img/15_Wizehire_ad_1080x1080.png,
-src/pages/works/wizehire.astro,AdGridFooter,Wizehire/img/17_Wizehire_ad_1920x1080.png,"The shape of a person sitting at a desk with the words ""Someone better at math than you belongs here."""
+src/pages/works/wizehire.astro,AdGridFooter,Wizehire/img/17_Wizehire_ad_1920x1080.png,The shape of a person sitting at a desk with the words Someone better at math than you belongs here.
 src/pages/works/wizehire.astro,SitePhoneScreenA,Wizehire/img/20_Wizehire_Site-Screen.png,Wizehire form for requesting your personal data as part of GDPR/CCPA compliance.
 src/pages/works/wizehire.astro,SitePhoneScreenC,Wizehire/img/22_Wizehire_Site-Screen-M.png,Tap into Wizehire's people-first team building system.
 src/pages/works/wizehire.astro,NotFound,Wizehire/img/23_Wizehire_404.png,Custom 404 page designed for Wizehire.
 src/pages/works/wizehire.astro,IconsA,Wizehire/img/24_Wizehire_iconagraphy-graphics.png,Different icons and graphics designed for Wizehire's platform.
 src/pages/works/wizehire.astro,Img,Wizehire/img/25_Wizehire_iconagraphy-icons.png,
-src/pages/works/wizehire.astro,IconsB,Wizehire/img/25_Wizehire_iconagraphy-icons.svg,"Icons designed for Wizehire's platform: Most Popular, Podcasts, Streamline, Economic, Job Post, Disc+, Goals"
+src/pages/works/wizehire.astro,IconsB,Wizehire/img/25_Wizehire_iconagraphy-icons.svg,Icons designed for Wizehire's platform: Most Popular, Podcasts, Streamline, Economic, Job Post, Disc+, Goals
 src/pages/works/wizehire.astro,Img,Wizehire/img/29_Wizehire_DISC-graphics-cards.png,
 src/pages/works/wizehire.astro,DiscCards,Wizehire/img/29_Wizehire_DISC-graphics-cards.svg,Graphics designed for Wizehire's DISC+ profiles and applicant insights.
 src/pages/works/wizehire.astro,Img,Wizehire/img/30_Wizehire_DISC-graphics-piechart.png,
@@ -400,18 +400,18 @@ src/pages/works/wizehire.astro,DiscColorsB,Wizehire/img/32_Wizehire_DISC-colors-
 src/pages/works/wizehire.astro,TestimonialPhoto,Wizehire/img/33_Wizehire_social-testimonial (1).png,Screenshot of Wizehire's instagram featuring a person in an apron.
 src/pages/works/wizehire.astro,TestimonialBackground,Wizehire/img/33_Wizehire_social-testimonial-bg-desktop.png,
 src/pages/works/wizehire.astro,TestimonialBackgroundMobile,Wizehire/img/33_Wizehire_social-testimonial-bg-m.png,
-src/pages/works/wizehire.astro,TestimonialText,Wizehire/img/34_Wizehire_social-testimonial_2.png,"I am so glad I found Wizehire! With Wizehire, I reduced my workload by 50%. The platform allowed us to easily create adn update a job ad, and organize all the resumes in one place."
+src/pages/works/wizehire.astro,TestimonialText,Wizehire/img/34_Wizehire_social-testimonial_2.png,I am so glad I found Wizehire! With Wizehire, I reduced my workload by 50%. The platform allowed us to easily create adn update a job ad, and organize all the resumes in one place.
 src/pages/works/wizehire.astro,SocialA,Wizehire/img/35_Wizehire_social-1.png,Wizehire instagram post featuring a bar graph showing 40% of employers offer learning opportunities and 82% of employees desire life-long learning.
 src/pages/works/wizehire.astro,SocialB,Wizehire/img/36_Wizehire_social-2.png,Wizehire instagram post: 82% of employees consider leaving for more empathetic companies.
 src/pages/works/wizehire.astro,SocialC,Wizehire/img/37_Wizehire_social-3.png,Mockup design for an Instagram post for a Live QA chat. Placeholder text. Two side profile cutouts of people facing each other
 src/pages/works/wizehire.astro,SocialD,Wizehire/img/38_Wizehire_social-4.png,Implementation of the QA chat mockup with details filled in.
-src/pages/works/wizehire.astro,SocialE,Wizehire/img/39_Wizehire_social-5.png,"Instagram post. Meet Brice Dillman, Fire Ecologists."
+src/pages/works/wizehire.astro,SocialE,Wizehire/img/39_Wizehire_social-5.png,Instagram post. Meet Brice Dillman, Fire Ecologists.
 src/pages/works/wizehire.astro,SocialF,Wizehire/img/40_Wizehire_social-6.png,Wizehire instagram post: 82% of employees consider leaving for more empathetic companies.
 src/pages/works/wizehire.astro,SpeechBubbles,Wizehire/img/41_Wizehire_graphic-extra.png,Two speech bubbles facing each other. In each bubble can be the subject of discussion or the person talking.
 src/pages/works/wizehire.astro,Email,Wizehire/img/42_Wizehire_email.png,Mockup of an email layout designed for Wizehire.
 src/pages/works/wizehire.astro,Interior,Wizehire/img/46_Wizehire_event (1).png,Wizehire event design.
 src/pages/works/wizehire.astro,Event,Wizehire/img/43_Wizehire_event.png,Portraits of 4 people.
-src/pages/works/wizehire.astro,BrandGuideA,Wizehire/img/brand-guide/01_Wizehire_Brand-guide-glimpse.png,"Living values manifesto, ""Wizehire knows that entrepreneurship is not an easy path, after all, it's our path too."""
+src/pages/works/wizehire.astro,BrandGuideA,Wizehire/img/brand-guide/01_Wizehire_Brand-guide-glimpse.png,Living values manifesto, Wizehire knows that entrepreneurship is not an easy path, after all, it's our path too.
 src/pages/works/wizehire.astro,BrandGuideB,Wizehire/img/brand-guide/02_Wizehire_Brand-guide-glimpse.png,A study on changing wording on the Wizehire platform to affect tone.
 src/pages/works/wizehire.astro,BrandGuideC,Wizehire/img/brand-guide/03_Wizehire_Brand-guide-glimpse.png,Logo color combinations.
 src/pages/works/wizehire.astro,BrandGuideD,Wizehire/img/brand-guide/04_Wizehire_Brand-guide-glimpse.png,Logo safe zones.
@@ -432,7 +432,7 @@ src/pages/works/wizehire.astro,BrandGuideR,Wizehire/img/brand-guide/18_Wizehire_
 src/pages/works/wizehire.astro,PositioningA,Wizehire/img/slide-deck/1.6.png,Living values manifesto
 src/pages/works/wizehire.astro,PositioningB,Wizehire/img/slide-deck/1.7.png,Living values manifesto
 src/pages/works/wizehire.astro,PositioningC,Wizehire/img/slide-deck/1.8.png,Living values manifesto
-src/pages/works/wizehire.astro,PositioningD,Wizehire/img/slide-deck/2.1.png,"Meet your coach, the Wizehire brand voice."
+src/pages/works/wizehire.astro,PositioningD,Wizehire/img/slide-deck/2.1.png,Meet your coach, the Wizehire brand voice.
 src/pages/works/wizehire.astro,PositioningE,Wizehire/img/slide-deck/2.2.png,We're really good at helping you be great.
 src/pages/works/wizehire.astro,PositioningF,Wizehire/img/slide-deck/2.5.png,Wizehire voice and tone
 src/pages/works/wizehire.astro,PositioningG,Wizehire/img/slide-deck/2.6.png,Credibility overpun-iness
@@ -443,8 +443,8 @@ src/pages/works/wizehire.astro,PositioningK,Wizehire/img/slide-deck/2.10.png,Our
 src/pages/works/wizehire.astro,PositioningL,Wizehire/img/slide-deck/2.11.png,Our words before. How we speak now
 src/pages/works/lockwood.astro,Hero,Lockwood/img/0_LW_Lockwood-Hero.png,Various small ornaments sold by Lockwood.
 src/pages/works/lockwood.astro,HeroMobile,Lockwood/img/0_LW_Lockwood-Hero-Mobile.png,Various small ornaments sold by Lockwood.
-src/pages/works/lockwood.astro,ManifestoDesktop,Lockwood/img/02_LW_Manifesto_Desktop.png,"Let's make every moment glimmer with personality and possibility. Turn each one into a celebration, knowing that the day is a gift."
-src/pages/works/lockwood.astro,ManifestoMobile,Lockwood/img/02_LW_Manifesto_Mobile.png,"Let's make every moment glimmer with personality and possibility. Turn each one into a celebration, knowing that the day is a gift."
+src/pages/works/lockwood.astro,ManifestoDesktop,Lockwood/img/02_LW_Manifesto_Desktop.png,Let's make every moment glimmer with personality and possibility. Turn each one into a celebration, knowing that the day is a gift.
+src/pages/works/lockwood.astro,ManifestoMobile,Lockwood/img/02_LW_Manifesto_Mobile.png,Let's make every moment glimmer with personality and possibility. Turn each one into a celebration, knowing that the day is a gift.
 src/pages/works/lockwood.astro,LogoA,Lockwood/img/03_LW_Logo/Lockwood_home-style-paper-charcoal.svg,Lockwood home style and paper logo
 src/pages/works/lockwood.astro,LogoB,Lockwood/img/03_LW_Logo/Lockwood_lockup_qns_bklyn-charcoal.svg,Lockwood Queens and Brooklyn logo
 src/pages/works/lockwood.astro,LogoC,Lockwood/img/03_LW_Logo/Lockwood_paper-charcoal.svg,Lockwood paper logo
@@ -472,7 +472,7 @@ src/pages/works/lockwood.astro,SocialA,Lockwood/img/16_LW_Social_1.png,Pop the c
 src/pages/works/lockwood.astro,SocialB,Lockwood/img/16_LW_Social_2.png,Pour the OJ
 src/pages/works/lockwood.astro,SocialC,Lockwood/img/16_LW_Social_3.png,Sip and scroll the new site!
 src/pages/works/lockwood.astro,Hats,Lockwood/img/17_LW_Hats_v2.png,A person trying on a hat.
-src/pages/works/lockwood.astro,GridA,Lockwood/img/18_LW_Grid_1.png,"Food, playing cards on a picnic blanket"
+src/pages/works/lockwood.astro,GridA,Lockwood/img/18_LW_Grid_1.png,Food, playing cards on a picnic blanket
 src/pages/works/lockwood.astro,GridB,Lockwood/img/18_LW_Grid_2.png,A person putting together a puzzle on a table.
 src/pages/works/lockwood.astro,GridC,Lockwood/img/18_LW_Grid_3.png,Two people playing cards on a picnic blanket in a park.
 src/pages/works/lockwood.astro,GridD,Lockwood/img/18_LW_Grid_4.png,A wax sealed envelope and pen.
@@ -500,11 +500,11 @@ src/pages/works/lockwood.astro,NewsletterH,Lockwood/img/23_LW_Newsletters/8.png,
 src/pages/works/lockwood.astro,NewsletterI,Lockwood/img/23_LW_Newsletters/9.png,The big sale event.
 src/pages/works/lockwood.astro,NewsletterJ,Lockwood/img/23_LW_Newsletters/10.png,Secret garden party event.
 src/pages/works/lockwood.astro,NewsletterK,Lockwood/img/23_LW_Newsletters/11.png,Lockwood loves you event.
-src/pages/works/lockwood.astro,NewsletterL,Lockwood/img/23_LW_Newsletters/12.png,"Buy in july, save in august event."
+src/pages/works/lockwood.astro,NewsletterL,Lockwood/img/23_LW_Newsletters/12.png,Buy in july, save in august event.
 src/pages/works/lockwood.astro,CandlePhoto,Lockwood/img/24_LW_CandleWarmer_2.png,Candle warmer.
-src/pages/works/lockwood.astro,FlowerA,Lockwood/img/25_LW_FlowerGif/LW_Flower_1.png,"Illustration of a flower with words ""Plantable flower paper. Wet it, put it in soil, and watch it grow."""
-src/pages/works/lockwood.astro,FlowerB,Lockwood/img/25_LW_FlowerGif/LW_Flower_2.png,"Illustration of a flower with words ""Plantable flower paper. Wet it, put it in soil, and watch it grow."""
-src/pages/works/lockwood.astro,FlowerC,Lockwood/img/25_LW_FlowerGif/LW_Flower_3.png,"Illustration of a flower with words ""Plantable flower paper. Wet it, put it in soil, and watch it grow."""
+src/pages/works/lockwood.astro,FlowerA,Lockwood/img/25_LW_FlowerGif/LW_Flower_1.png,Illustration of a flower with words Plantable flower paper. Wet it, put it in soil, and watch it grow.
+src/pages/works/lockwood.astro,FlowerB,Lockwood/img/25_LW_FlowerGif/LW_Flower_2.png,Illustration of a flower with words Plantable flower paper. Wet it, put it in soil, and watch it grow.
+src/pages/works/lockwood.astro,FlowerC,Lockwood/img/25_LW_FlowerGif/LW_Flower_3.png,Illustration of a flower with words Plantable flower paper. Wet it, put it in soil, and watch it grow.
 src/pages/works/lockwood.astro,TeaBuzzfeed,Lockwood/img/27_LW_Buzzfeed.png,Buzzfeed logo
 src/pages/works/lockwood.astro,TeaA,Lockwood/img/27_LW_TeaGif/LW_Tea_1.png,Lockwood Big Brooklyn Energy tea label.
 src/pages/works/lockwood.astro,TeaB,Lockwood/img/27_LW_TeaGif/LW_Tea_2.png,Lockwood City that never sleeps tea label.
@@ -556,7 +556,7 @@ src/pages/works/comics-kingdom.astro,AppDesktop,ComicsKingdom/img/CK_App_Desktop
 src/pages/works/comics-kingdom.astro,AppMobile,ComicsKingdom/img/CK_App_Mobile.png,The apple store page for Comics Kingdom and a screenshot of the loading splash page for the mobile app featuring the company's logo.
 src/pages/works/comics-kingdom.astro,IconsDesktop,ComicsKingdom/img/CK_Icons_Desktop.png,Icons for the mobile app.
 src/pages/works/comics-kingdom.astro,IconsMobile,ComicsKingdom/img/CK_Icons_Mobile.png,Icons for the mobile app.
-src/pages/works/comics-kingdom.astro,Home,ComicsKingdom/img/CK_App_Home.png,"Screenshots from the home page of the mobile app featuring things like Trending comics, Today's daily comics, and New Creators."
+src/pages/works/comics-kingdom.astro,Home,ComicsKingdom/img/CK_App_Home.png,Screenshots from the home page of the mobile app featuring things like Trending comics, Today's daily comics, and New Creators.
 src/pages/works/comics-kingdom.astro,Social,ComicsKingdom/img/CK_Social.png,An instagram story from the comicskingdom instagram account displaying the company's branding.
 src/pages/works/comics-kingdom.astro,Email,ComicsKingdom/img/CK_Email.png,A daily comics featured newsletter page.
 src/pages/works/comics-kingdom.astro,Mark,ComicsKingdom/img/CK_Mark.png,A variation of the Comics Kingdom logo.
@@ -583,17 +583,17 @@ src/pages/works/discovery.astro,MobileA,Discovery/discovery_mobile1.jpg,A screen
 src/pages/works/discovery.astro,MobileB,Discovery/discovery_mobile2.jpg,A screenshot of the Discovery mobile app.
 src/pages/works/discovery.astro,MobileC,Discovery/discovery_mobile3.jpg,A screenshot of the Discovery mobile app.
 src/pages/works/discovery.astro,MobileD,Discovery/discovery_mobile4.jpg,A screenshot of the Discovery mobile app.
-src/pages/works/kindra.astro,Header,Kindra/img/Kindra_Header.jpg,"A hand reaches up, offering the Kindra Daily Vaginal Lotion to a hand reaching down for it."
-src/pages/works/kindra.astro,HeaderMobile,Kindra/img/Kindra_Header_Mobile.png,"A hand reaches up, offering the Kindra Daily Vaginal Lotion to a hand reaching down for it."
+src/pages/works/kindra.astro,Header,Kindra/img/Kindra_Header.jpg,A hand reaches up, offering the Kindra Daily Vaginal Lotion to a hand reaching down for it.
+src/pages/works/kindra.astro,HeaderMobile,Kindra/img/Kindra_Header_Mobile.png,A hand reaches up, offering the Kindra Daily Vaginal Lotion to a hand reaching down for it.
 src/pages/works/kindra.astro,Body,Kindra/img/Kindra_Body.png,The body of a woman sitting on a bed.
 src/pages/works/kindra.astro,Lotion,Kindra/img/Kindra_Lotion.png,Bottle of Kindra V Relief Serum on pink fabric.
 src/pages/works/kindra.astro,ColorDesktop,Kindra/img/Kindra_Color_Desktop.png,The brand's color palette.
 src/pages/works/kindra.astro,ColorMobile,Kindra/img/Kindra_Color_Mobile.png,The brand's color palette.
-src/pages/works/kindra.astro,CollageDesktop,Kindra/img/Kindra_Collage_Desktop.png,"A collage of images that represent the brand. Soft flower petals, pink fabric, a bath, two women sitting next to each other, the brand's lotion."
-src/pages/works/kindra.astro,CollageMobile,Kindra/img/Kindra_Collage_Mobile.png,"A collage of images that represent the brand. Soft flower petals, pink fabric, a bath, two women sitting next to each other, the brand's lotion."
-src/pages/works/kindra.astro,Humectant,Kindra/img/Kindra_Humectant.png,"Two pill capsules. ""Key ingredients. Humectants."""
-src/pages/works/kindra.astro,MiddleDesktop,Kindra/img/Kindra_Middle_Desktop.jpg,"Brushes of color with the quote ""The middle is messy, but it's also where the magic happens"" -brene brown"
-src/pages/works/kindra.astro,MiddleMobile,Kindra/img/Kindra_Middle_Mobile.jpg,"Brushes of color with the quote ""The middle is messy, but it's also where the magic happens"" -brene brown"
+src/pages/works/kindra.astro,CollageDesktop,Kindra/img/Kindra_Collage_Desktop.png,A collage of images that represent the brand. Soft flower petals, pink fabric, a bath, two women sitting next to each other, the brand's lotion.
+src/pages/works/kindra.astro,CollageMobile,Kindra/img/Kindra_Collage_Mobile.png,A collage of images that represent the brand. Soft flower petals, pink fabric, a bath, two women sitting next to each other, the brand's lotion.
+src/pages/works/kindra.astro,Humectant,Kindra/img/Kindra_Humectant.png,Two pill capsules. Key ingredients. Humectants.
+src/pages/works/kindra.astro,MiddleDesktop,Kindra/img/Kindra_Middle_Desktop.jpg,Brushes of color with the quote The middle is messy, but it's also where the magic happens -brene brown
+src/pages/works/kindra.astro,MiddleMobile,Kindra/img/Kindra_Middle_Mobile.jpg,Brushes of color with the quote The middle is messy, but it's also where the magic happens -brene brown
 src/pages/works/kindra.astro,Pamper,Kindra/img/Kindra_Pamper.png,Pamper your peach.
 src/pages/works/kindra.astro,Photography1,Kindra/img/Kindra_Photography1.png,A woman reaches down to a flower in front of her.
 src/pages/works/kindra.astro,QuizBackgroundDesktop,Kindra/img/Kindra_Quiz_Desktop.png,A person holding a phone in their hands looking at the Kindra mobile app.
@@ -629,8 +629,8 @@ src/pages/works/kindra.astro,QuizResultsEmail,Kindra/img/Kindra_Quiz_Results_Ema
 src/pages/works/kindra.astro,ToolBox1,Kindra/img/Kindra_ToolBox1.png,Kindra toolbox shipping package box.
 src/pages/works/kindra.astro,ToolBox2,Kindra/img/Kindra_ToolBox2.png,Kindra branded package tissue paper.
 src/pages/works/kindra.astro,ToolBoxOpen,Kindra/img/Kindra_ToolBox_Open.png,An opened Kindra toolbox package featuring various products.
-src/pages/works/kindra.astro,GloriaDesktop,Kindra/img/Kindra_Gloria_Desktop.png,"Portrait of Gloria Steinem. ""Every social justice movement i nthe world started with a conversation"" Gloria Steinem"
-src/pages/works/kindra.astro,GloriaMobile,Kindra/img/Kindra_Gloria_Mobile.png,"Portrait of Gloria Steinem. ""Every social justice movement i nthe world started with a conversation"" Gloria Steinem"
+src/pages/works/kindra.astro,GloriaDesktop,Kindra/img/Kindra_Gloria_Desktop.png,Portrait of Gloria Steinem. Every social justice movement i nthe world started with a conversation Gloria Steinem
+src/pages/works/kindra.astro,GloriaMobile,Kindra/img/Kindra_Gloria_Mobile.png,Portrait of Gloria Steinem. Every social justice movement i nthe world started with a conversation Gloria Steinem
 src/pages/works/kindra.astro,KindraCCDesktop,Kindra/img/Kindra_CC_Desktop.png,A screenshot of the couch conversations page from the Kindra website along with pictures of the conversation cards. A woman reading a couch conversation card. Two women hugging.
 src/pages/works/kindra.astro,KindraCCMobile,Kindra/img/Kindra_CC_Mobile.png,A screenshot of the couch conversations page from the Kindra website along with pictures of the conversation cards. A woman reading a couch conversation card. Two women hugging.
 src/pages/works/kindra.astro,KindraWords,Kindra/img/Kindra_Drawing_Words.png,An illustration.
@@ -641,7 +641,7 @@ src/components/ProjectsGrid.astro,Week,Home/Week.gif,Set it to away. Let's go pl
 src/components/ProjectsGrid.astro,DancePartyTime,Home/img/Dance_Party_Time.png,A clock with eyes and a mouth on stripes of different colors.
 src/components/ProjectsGrid.astro,MetroVein,Home/Metro_Vein.gif,A person's legs in a pool. Flowers float in the water around them and they place more flowers.
 src/components/ProjectsGrid.astro,Lockwood,Home/img/Lockwood.png,A hand holding up a glass with liquid as sunlight beams in through a window.
-src/components/ProjectsGrid.astro,PuzzlePalace,Home/img/Puzzle_Palace.png,"A man lays on a bed holding his phone. The wall, his shirt, the pillow and bed covers are all drawn on."
+src/components/ProjectsGrid.astro,PuzzlePalace,Home/img/Puzzle_Palace.png,A man lays on a bed holding his phone. The wall, his shirt, the pillow and bed covers are all drawn on.
 src/components/ProjectsGrid.astro,Sage,Home/img/Sage.png,A person rests their hands on their navel.
 src/components/ProjectsGrid.astro,SixFeet,Home/img/6_Feet_Apart.png,A person reaches for something on a lower shelf in a store. A sticker on the floor promotes social distancing.
 src/components/ProjectsGrid.astro,Bluprint,Home/Blueprint.gif,A box of yarns and knitting needles.
@@ -659,10 +659,10 @@ src/components/ProjectsGrid.astro,Archive,Home/img/Archive.png,Jimmy fallon and 
 src/components/ProjectsGrid.astro,Firefly,Home/img/Firefly.png,The hind leg and tail of a dog laying on a bed.
 src/components/ProjectsGrid.astro,PetCenter,Home/img/Pet_Center.png,Illustration of a dachshund dog.
 src/components/ProjectsGrid.astro,HGTV2,Home/HGTV_2.gif,Sit back and relax. Kick off your shoes. Put your feet up. Let's rock.
-src/components/ProjectsGrid.astro,Photography,Home/img/Photography.png,"Two women, one sitting and one standing, in front of a wall of art."
+src/components/ProjectsGrid.astro,Photography,Home/img/Photography.png,Two women, one sitting and one standing, in front of a wall of art.
 src/components/ProjectsGrid.astro,PresentationsAlt,Home/img/Presentations_ALT.png,A collage of photos from NBC Universal.
 src/components/ProjectsGrid.astro,SarahVideo,Home/img/Sarah_Video.png,A behind the scenes photo of a rehearsal.
-src/components/ProjectsGrid.astro,WordOnly,Home/img/Word_Only.png,"""Everyone deserves a healthy head of hair"" on a wall in an office."
+src/components/ProjectsGrid.astro,WordOnly,Home/img/Word_Only.png,Everyone deserves a healthy head of hair on a wall in an office.
 src/components/ProjectsGrid.astro,Reach,Home/img/Reach.png,Shots of a camera's monitor as a show is filmed.
 src/components/ProjectsGrid.astro,ApartmentTherapy,Home/img/Apartment_Therapy.png,A woman sitting on a couch.
 src/components/ProjectsGrid.astro,Illustration,Home/Illustration.gif,In zizmor we trust. Illustration of a man's face with a 3 color rainbow. behind him.
