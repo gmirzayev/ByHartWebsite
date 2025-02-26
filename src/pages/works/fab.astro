@@ -1,0 +1,254 @@
+---
+const brand = "Fab";
+const tagline = "Watch + Learn";
+const tags = [
+  "Brand Identity + Positioning",
+  "Logo Design",
+  "Video + Photography",
+  "Art + Illustration",
+  "Product Design (UX/UI)",
+  "CX",
+  "Interior Design",
+  "Original Naming",
+  "Physical Goods Development + Design",
+  "Print + Packaging",
+  "Organic + Paid Social Content",
+  "Writing + Editing",
+  "Qualitative Research",
+  "Surprise + Delight",
+];
+
+import "@styles/utils.css";
+import "@styles/fab.css";
+import ProjectLayout from "@layouts/ProjectLayout.astro";
+import Image from "astro/components/Image.astro";
+
+import Header from "@assets/Fab/img/Fab_Header.jpg";
+import HeaderMobile from "@assets/Fab/img/Fab_Header_Mobile.png";
+import PinkDress from "@assets/Fab/img/Fab_Pink_Dress.png";
+import Hat from "@assets/Fab/img/Fab_Hat.png";
+import Wheel from "@assets/Fab/img/Fab_Wheel.png";
+import Wall from "@assets/Fab/img/Fab_Wall.png";
+import Stretch from "@assets/Fab/img/Fab_Stretch.png";
+import Cabinet from "@assets/Fab/img/Fab_Cabinet.png";
+import Stairs from "@assets/Fab/img/Fab_Stairs.png";
+import Glass from "@assets/Fab/img/Fab_Glass.png";
+import MeetCute from "@assets/Fab/img/Fab_Meet_Cute.png";
+import NaraPicks from "@assets/Fab/img/Fab_Nara_Picks.png";
+import Oliver from "@assets/Fab/img/Fab_Oliver.gif";
+import Olivia from "@assets/Fab/img/Fab_Olivia.gif";
+import Devices from "@assets/Fab/img/Fab_Devices.gif";
+import Emails from "@assets/Fab/img/Fab_Emails.png";
+import Blogs from "@assets/Fab/img/Fab_Blogs.gif";
+import Social from "@assets/Fab/Fab_Social.mp4";
+import Adult1 from "@assets/Fab/img/Fab_Adult_1.png";
+import Adult2 from "@assets/Fab/img/Fab_Adult_2.png";
+import Adult3 from "@assets/Fab/img/Fab_Adult_3.png";
+import Adult4 from "@assets/Fab/img/Fab_Adult_4.gif";
+import Adult5 from "@assets/Fab/img/Fab_Adult_5.gif";
+import Home from "@assets/Fab/img/Fab_Home.gif";
+import Tablets from "@assets/Fab/img/Fab_Tablets.png";
+import Product from "@assets/Fab/img/Fab_Product.gif";
+import Moodboard1 from "@assets/Fab/img/Fab_Moodboard_1.png";
+import Moodboard2 from "@assets/Fab/img/Fab_Moodboard_2.png";
+import Moodboard3 from "@assets/Fab/img/Fab_Moodboard_3.png";
+import Moodboard4 from "@assets/Fab/img/Fab_Moodboard_4.png";
+import VimeoPlayer from "@components/VimeoPlayer.astro";
+---
+
+<ProjectLayout
+  hero={Header}
+  mobile={HeaderMobile}
+  brand={brand}
+  tagline={tagline}
+  tags={tags}
+  theme={"dark"}
+>
+  <div class="bg-[#363131]">
+    <div class="grid-container">
+      <Image src={PinkDress} class="grid-item" alt="" />
+      <Image src={Hat} class="grid-item" alt="" />
+      <Image src={Wheel} class="grid-item" alt="" />
+      <Image src={Wall} class="grid-item" alt="" />
+      <Image src={Stretch} class="grid-item" alt="" />
+      <Image src={Cabinet} class="grid-item" alt="" />
+      <Image src={Stairs} class="grid-item" alt="" />
+      <Image src={Glass} class="grid-item" alt="" />
+    </div>
+    <div class="my-[45px] lg:my-[120px] px-[20px] lg:px-[300px]">
+      <h1 class="karla font-bold text-4xl text-[#F7F4ED]">This is Fab</h1>
+      <br />
+      <p class="karla text-[#F7F4ED]">
+        Fab is a vibrant e-commerce community where you can discover
+        thoughtfully designed products that bring personality to all aspects of
+        your life. Beyond the fresh finds we highlight, Fab is a platform for
+        ideas, passions, and collaborations, especially curated to allow
+        individual creativity to shine.<br /><br /> Here is just a taste of the plethora
+        of original creative my small but mighty team and I craft together, breathing
+        life into the evolving Fab brand.
+      </p>
+    </div>
+    <div
+      class="my-[45px] lg:my-[120px] flex flex-col lg:flex-row px-[20px] lg:px-[300px] gap-[15px] justify-center"
+    >
+      <Image src={MeetCute} class="w-full h-auto lg:w-1/2" alt="" />
+      <Image src={NaraPicks} class="w-full h-auto lg:w-1/2" alt="" />
+    </div>
+    <div class="flex flex-col lg:flex-row my-[45px] lg:my-[120px]">
+      <Image src={Oliver} class="w-full lg:w-1/2" alt="" />
+      <Image src={Olivia} class="w-full lg:w-1/2" alt="" />
+    </div>
+  </div>
+  <Image
+    src={Devices}
+    class="mx-auto px-[20px] lg:px-[200px] my-[45px] lg:my-[120px] w-full h-auto"
+    alt=""
+  />
+  <Image
+    src={Emails}
+    class="mx-auto px-[20px] lg:px-[300px] my-[45px] lg:my-[120px] w-full h-auto"
+    alt=""
+  />
+  <!-- insert vimeo videos -->
+  <VimeoPlayer
+    class="px-[20px] lg:px-[60px]"
+    video="239898733"
+    height="56.25%"
+    action="unpause"
+  />
+  <div class="two-col rx !my-[15px] lg:!px-[60px]">
+    <VimeoPlayer video="239880486" height="56.25%" action="unpause" />
+    <VimeoPlayer video="239880443" height="56.25%" action="unpause" />
+  </div>
+  <div class="two-col rx !my-[15px] lg:!px-[60px]">
+    <VimeoPlayer video="239898612" height="56.25%" action="unpause" />
+    <VimeoPlayer video="239880548" height="56.25%" action="unpause" />
+  </div>
+  <VimeoPlayer
+    class="my-[45px] lg:my-[120px] px-[20px] lg:px-[60px]"
+    video="241444534"
+    height="56.25%"
+    action="unpause"
+  />
+  <VimeoPlayer
+    class="my-[45px] lg:my-[120px] px-[20px] lg:px-[60px]"
+    video="240215757"
+    height="56.25%"
+    action="unpause"
+  />
+  <Image
+    src={Blogs}
+    class="my-[45px] lg:my-[120px] w-full px-[75px] lg:px-[300px]"
+    alt=""
+  />
+  <video
+    loop
+    playsinline
+    autoplay
+    muted
+    class="my-[45px] lg:my-[120px] w-full px-[50px] lg:px-[200px]"
+  >
+    <source src={Social} />
+  </video>
+  <div class="my-[45px] lg:my-[120px] grid-container-2">
+    <Image src={Adult1} class="grid-item-2" alt="" />
+    <Image src={Adult2} class="grid-item-2" alt="" />
+    <Image src={Adult3} class="grid-item-2" alt="" />
+    <Image src={Adult5} class="grid-item-2" alt="" />
+    <Image src={Adult4} class="grid-item-2" alt="" />
+  </div>
+  <div
+    class="my-[45px] lg:my-[120px] px-[25px] lg:px-[300px] grid grid-cols-1 lg:grid-cols-2 gap-4"
+  >
+    <div class="karla">
+      <h1 class="font-bold text-4xl">Rebranding & Replatforming Fab.com</h1>
+      <br />
+      <p>
+        I was hired by Fab to build a creative dream team, evolve the Fab brand,
+        and lead the design of an entirely new Shopify site and app refresh. I’m
+        proud of the work we put into dreaming up a whole new Fab, in which
+        product and content are seamlessly intertwined.
+        <br />
+      </p>
+    </div>
+    <p>
+      In approaching how to help the brand pivot on a very tight budget, I went
+      beyond the realm of traditional creative direction and into the world of
+      trends and insights research. Through in-house focus groups I spearheaded
+      and sat in on, I developed a working hypothesis of who our ideal Fab
+      consumer is and how they approach their lifestyle aspirations. This
+      research empowered my team to craft a platform around exclusive access and
+      unexpected discoveries from a wide variety of inspiring sources.
+      <br />
+    </p>
+  </div>
+  <Image
+    src={Home}
+    class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
+    alt=""
+  />
+  <div class="px-[25px] lg:px-[300px] columns-1 lg:columns-2 karla">
+    <p>
+      “The Fab community is comprised of discerning people like you. They crave
+      authenticity, quality, and personalization. They are hands on in the
+      development of their lifestyles and place a strong emphasis on: Home,
+      Work, Play, Passion Projects, and Relationships.
+    </p>
+    <br />
+    <p>
+      Fab lovers are both nostalgic and forward thinking—creating special
+      moments for themselves and their loved ones is of the utmost importance.
+      They appreciate and respond to sincere recommendations, inspiring
+      individuality, and engaging storytelling. Their greatest aspiration is a
+      life lived on their terms, a life well-designed.”
+    </p>
+  </div>
+  <Image
+    src={Tablets}
+    class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
+    alt=""
+  />
+  <div class="px-[25px] lg:px-[300px] columns-1 lg:columns-2 karla">
+    <p>
+      Far beyond a facelift, my charge included crafting a new culture-building
+      mission for the company, taking the creative, marketing, and business
+      strategy goals of the brand into consideration.
+    </p>
+    <br />
+    <p class="font-bold">
+      “Fab sparks the creation and curation of beautiful moments in our lives.
+      We’re driven by self-expression. Through our work, we are able to craft
+      experiences that uniquely speak to us, and that allow you to speak for
+      yourself. Fab is yours, truly.”
+    </p>
+  </div>
+  <Image
+    src={Product}
+    class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
+    alt=""
+  />
+
+  <h1 class="karla font-bold text-center">MOODBOARDS</h1>
+
+  <Image
+    src={Moodboard1}
+    class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
+    alt=""
+  />
+  <Image
+    src={Moodboard2}
+    class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
+    alt=""
+  />
+  <Image
+    src={Moodboard3}
+    class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
+    alt=""
+  />
+  <Image
+    src={Moodboard4}
+    class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
+    alt=""
+  />
+</ProjectLayout>
+<script></script>
