@@ -1,0 +1,480 @@
+---
+const title = "Know By Hart"
+const subtitle = "About TKTKTK"
+
+import "@styles/utils.css";
+import "@styles/about.css";
+import Image from "astro/components/Image.astro";
+import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectTags from "@components/ProjectTags.astro";
+import ProjectHead from "@components/ProjectHead.astro";
+import OneUp from "@components/OneUp.astro";
+import TwoUp from "@components/TwoUp.astro";
+import Navigation from "@components/Navigation.astro";
+import ProjectsCarousel from "@components/ProjectsCarousel.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
+import ResponsiveBackground from "@components/ResponsiveBackground.astro";
+import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
+import VimeoPlayer from "@components/VimeoPlayer.astro";
+import VideoLoop from "@components/VideoLoop.astro";
+
+import HeartCursor from "@assets/heart-cursor.svg"
+
+import Preview from "@assets/About/preview.png"
+import HeroA from "@assets/About/about/Hero_01_D.png"
+import HeroAMobile from "@assets/About/about/Hero_01_M.png"
+import HeroB from "@assets/About/about/Hero_02_D.png"
+import HeroBMobile from "@assets/About/about/Hero_02_M.png"
+import HeroC from "@assets/About/about/Hero_03_D.png"
+import HeroCMobile from "@assets/About/about/Hero_03_M.png"
+import HeroD from "@assets/About/about/Hero_04_D.png"
+import HeroDMobile from "@assets/About/about/Hero_04_M.png"
+import HeroE from "@assets/About/about/Hero_05_D.png"
+import HeroEMobile from "@assets/About/about/Hero_05_M.png"
+
+const HERO_IMAGES = [
+    {desktop:HeroA, mobile:HeroAMobile},
+    {desktop:HeroB, mobile:HeroBMobile},
+    {desktop:HeroC, mobile:HeroCMobile},
+    {desktop:HeroD, mobile:HeroDMobile},
+    {desktop:HeroE, mobile:HeroEMobile},
+]
+
+import TickerQt from "@assets/About/ticker.mov"
+import TickerWebm from "@assets/About/ticker.webm"
+
+import CardA from "@assets/About/hype/Cards-0.png"
+import CardB from "@assets/About/hype/Cards-1.png"
+import CardC from "@assets/About/hype/Cards-2.png"
+import CardD from "@assets/About/hype/Cards-3.png"
+import CardE from "@assets/About/hype/Cards-4.png"
+import CardF from "@assets/About/hype/Cards-5.png"
+import CardG from "@assets/About/hype/Cards-6.png"
+import CardH from "@assets/About/hype/Cards-7.png"
+
+import Arrow from "@assets/About/award-arrow.svg?raw"
+
+const AWARDS = [
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Video: Art & Design",
+    "url": "https://museaward.com/winner-info.php?id=231433",
+    "client": "[ Comics Kingdom Anthem ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Video: Branding",
+    "url": "https://museaward.com/winner-info.php?id=231434",
+    "client": "[ Comics Kingdom Anthem ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Logo Design",
+    "url": "https://museaward.com/winner-info.php?id=231456",
+    "client": "[ Sage Integrative Health ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Brand Identity",
+    "url": "https://museaward.com/winner-info.php?id=231449",
+    "client": "[ Wizehire Rebrand ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Logo Design",
+    "url": "https://museaward.com/winner-info.php?id=231663",
+    "client": "[ Wizehire Rebrand ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Style Guide",
+    "url": "https://museaward.com/winner-info.php?id=231451",
+    "client": "[ Wizehire Rebrand ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Mobile App: Themes",
+    "url": "https://museaward.com/winner-info.php?id=231484",
+    "client": "[ Puzzle Palace ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Social: Diversity / Equity / Inclusion",
+    "url": "https://museaward.com/winner-info.php?id=231443",
+    "client": "[ Metro Vein: Doll Edition ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Social: Ad Campaign",
+    "url": "https://museaward.com/winner-info.php?id=231442",
+    "client": "[ Metro Vein: Doll Edition ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Interactive Brand Experience",
+    "url": "https://museaward.com/winner-info.php?id=231664",
+    "client": "[ Kindra Peri/Menopause Quiz ]"
+  },
+  {
+    "medal": "SILVER",
+    "award": "Muse Awards",
+    "category": "Interior Design",
+    "url": "https://design.museaward.com/winner-info.php?id=25797",
+    "client": "[ Ample Flagship Studio ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Brand Identity",
+    "url": "https://museaward.com/winner-info.php?id=231457",
+    "client": "[ Comics Kingdom Rebrand ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Style Guide",
+    "url": "https://museaward.com/winner-info.php?id=231445",
+    "client": "[ Week& Bespoke Brand Identity Birth ]"
+  },
+  {
+    "medal": "OUTSTANDING ACHIEVEMENT",
+    "award": "HOW Awards",
+    "category": "Magazine Design",
+    "url": "[LINK TO CURVE REPORT INTERIOR PAGE]",
+    "client": "[ The Curve Report: American Woman ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Branded Content: Cause / Awareness",
+    "url": "https://museaward.com/winner-info.php?id=231462",
+    "client": "[ Say More Conversation & Journaling Cards ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Branded Content: Diversity / Equity / Inclusion",
+    "url": "https://museaward.com/winner-info.php?id=231463",
+    "client": "[ Say More Conversation & Journaling Cards ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Branded Content: Influencer Marketing",
+    "url": "https://museaward.com/winner-info.php?id=231464",
+    "client": "[ Say More Conversation & Journaling Cards ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Branded Content: Other_",
+    "url": "https://museaward.com/winner-info.php?id=231461",
+    "client": "[ Say More Conversation & Journaling Cards ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Video: Publishing",
+    "url": "https://museaward.com/winner-info.php?id=231438",
+    "client": "[ Comics Kingdom Anthem ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Video: Other_",
+    "url": "https://museaward.com/winner-info.php?id=231437",
+    "client": "[ Comics Kingdom Anthem ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Corporate Identity Redesign",
+    "url": "https://museaward.com/winner-info.php?id=231450",
+    "client": "[ Wizehire Rebrand ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Mobile App: Games",
+    "url": "https://museaward.com/winner-info.php?id=231483",
+    "client": "[ Puzzle Palace ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Social: Healthcare",
+    "url": "https://museaward.com/winner-info.php?id=231444",
+    "client": "[ Metro Vein: Doll Edition ]"
+  },
+  {
+    "medal": "GOLD",
+    "award": "Muse Awards",
+    "category": "Corporate Identity Redesign",
+    "url": "https://museaward.com/winner-info.php?id=231458",
+    "client": "[ Comics Kingdom Rebrand ]"
+  },
+  {
+    "medal": "SILVER",
+    "award": "Muse Awards",
+    "category": "Brand Identity",
+    "url": "https://museaward.com/winner-info.php?id=231446",
+    "client": "[ Week& Bespoke Brand Identity Birth ]"
+  },
+  {
+    "medal": "SILVER",
+    "award": "Muse Awards",
+    "category": "Logo Design",
+    "url": "https://museaward.com/winner-info.php?id=231448",
+    "client": "[ Week& Bespoke Brand Identity Birth ]"
+  },
+  {
+    "medal": "SILVER",
+    "award": "Muse Awards",
+    "category": "Logo Design",
+    "url": "https://museaward.com/winner-info.php?id=231460",
+    "client": "[ Comics Kingdom Rebrand ]"
+  },
+  {
+    "medal": "SILVER",
+    "award": "Muse Awards",
+    "category": "Style Guide",
+    "url": "https://museaward.com/winner-info.php?id=231459",
+    "client": "[ Comics Kingdom Rebrand ]"
+  },
+  {
+    "medal": "SILVER",
+    "award": "Muse Awards",
+    "category": "Logo Design",
+    "url": "https://museaward.com/winner-info.php?id=231651",
+    "client": "[ Nightingale Veterinary Partners ]"
+  },
+  {
+    "medal": "SILVER",
+    "award": "Muse Awards",
+    "category": "Interactive Brand Experience",
+    "url": "https://museaward.com/winner-info.php?id=231665",
+    "client": "[ The Vein Quiz ]"
+  },
+  {
+    "medal": "SILVER",
+    "award": "Muse Awards",
+    "category": "Logo Design",
+    "url": "https://museaward.com/winner-info.php?id=231652",
+    "client": "[ Pet Dermatology Center ]"
+  }
+]
+
+const FAQS = [
+    {
+        q:"Who’s who in By Hart’s creative collective?",
+        a:[
+            "Kristin, Nichelle, Nara,"
+        ]
+    },
+    {
+        q:"What can I expect to invest in working with By Hart?",
+        a:[
+            "Our boutique studio services are tailored to each client's unique needs. Investment varies based on the scope, scale, timeline, team, and level of customization required.",
+            "Our monthly retainer and/or video + photo shoot investment begins at $15k, while more sophisticated multi-set shoot days—designed to provide a comprehensive library of ownable content assets—currently averages $50k client investment, not including post-production editing and content creation.",
+            "Our bespoke brand identity + customer experience partnerships, spanning 5 to 9 months, usually begin at $100k with the more robust multidisciplinary packages reaching $250k.",
+            "We’d love to discuss your opportunity, so we may best provide insight on what an investment in our work looks like for your team.",
+        ]
+    },
+    {
+        q:"Who’s who in By Hart’s creative collective?",
+        a:[
+            "Boring. Factory. Spreadsheets (okay, sometimes)."
+        ]
+    },
+]
+
+---
+
+<InternalLayout title={title} subtitle={subtitle} image={Preview}>
+    <article id="about">
+        <Navigation theme="dark" />
+        <div id="hero">
+            <h1>Know<br />By Hart</h1>
+            <div class="slideshow">{ HERO_IMAGES.map(({mobile, desktop}, i) =>
+                <picture class={i==0 ? "active" : null}>
+                    <source media="(max-width: 767px)" width={mobile.width} height={mobile.height} srcset={mobile.src} />
+                    <source media="(min-width: 768px)" width={desktop.width} height={desktop.height} srcset={desktop.src} />
+                    <img src={desktop.src} width={desktop.width} height={desktop.height} alt=" " />
+                </picture>
+            )}</div>
+        </div>
+
+
+        <div id="intro">
+            <div id="about-us">
+                <div id="founder">
+                    <h2>Meet Our Founder</h2>
+                    <p>Sarah Hartley is an award-winning executive creative director, multidisciplinary design principal, storyteller, wordsmith, curator, culture builder, and wholehearted people person. Blending deep empathy, curiosity, strategy, and craft, Sarah brings her team of dreamers and doers together to shape stories that move, experiences that inspire, brands that breathe, and art that speaks to the heart—and to Hartley, too. 😉</p>
+                </div>
+                <div id="services">
+                    <h2>What We Do</h2>
+                    <p>Brand Identity + Positioning<span> • </span>Video + Photography Direction<span> • </span>End-to-End CX Strategy<span> • </span>Original Naming<span> • </span>Writing + Editing + Ghostwriting<span> • </span>Editorial + Social Content<span> • </span>Concept R&D<span> • </span>Art Direction + Design<span> • </span>Logo Design<span> • </span>Fine Art + Illustration<span> • </span>Product Design (UX/UI)<span> • </span>Quiz Development<span> • </span>Interior Design<span> • </span>Set + Wardrobe Styling<span> • </span>Retail Design<span> • </span>Print + Packaging<span> • </span>Signage + Display<span> • </span>Publication Design<span> • </span>Animation + VFX<span> • </span>Video Editing<span> • </span>Physical Goods Development + Design<span> • </span>Apparel + Accessory Design<span> • </span>Retouching + Post-Production Artistry<span> • </span>VO + Performance + Hosting<span> • </span>Interviews + Discussion Moderation<span> • </span>PR Storytelling + Pitch Work<span> • </span>Casting<span> • </span>Advertising Campaigns<span> • </span>Workshop + Qualitative Research Design<span> • </span>Event Activations<span> • </span>Surprise + Delight<span> • </span>Inclusive Team + Culture Building</p>
+                </div>
+            </div>
+
+            <div id="motto">
+                <video loop playsinline autoplay muted>
+                    <source src={TickerQt} type='video/mp4; codecs="hvc1"'>
+                    <source src={TickerWebm} type="video/webm">
+                </video>
+            </div>
+
+            <div id="services-mobile">
+                <h2>What We Do</h2>
+                <p>Brand Identity + Positioning<span> • </span>Video + Photography Direction<span> • </span>End-to-End CX Strategy<span> • </span>Original Naming<span> • </span>Writing + Editing + Ghostwriting<span> • </span>Editorial + Social Content<span> • </span>Concept R&D<span> • </span>Art Direction + Design<span> • </span>Logo Design<span> • </span>Fine Art + Illustration<span> • </span>Product Design (UX/UI)<span> • </span>Quiz Development<span> • </span>Interior Design<span> • </span>Set + Wardrobe Styling<span> • </span>Retail Design<span> • </span>Print + Packaging<span> • </span>Signage + Display<span> • </span>Publication Design<span> • </span>Animation + VFX<span> • </span>Video Editing<span> • </span>Physical Goods Development + Design<span> • </span>Apparel + Accessory Design<span> • </span>Retouching + Post-Production Artistry<span> • </span>VO + Performance + Hosting<span> • </span>Interviews + Discussion Moderation<span> • </span>PR Storytelling + Pitch Work<span> • </span>Casting<span> • </span>Advertising Campaigns<span> • </span>Workshop + Qualitative Research Design<span> • </span>Event Activations<span> • </span>Surprise + Delight<span> • </span>Inclusive Team + Culture Building</p>
+            </div>
+
+            <div id="hype">
+                <h2>The Hype</h2>
+                <div class="tray">
+                    <Image src={CardA} loading="eager" alt=" " />
+                    <Image src={CardB} loading="eager" alt=" " />
+                    <Image src={CardC} loading="eager" alt=" " />
+                    <Image src={CardD} loading="eager" alt=" " />
+                    <Image src={CardE} loading="eager" alt=" " />
+                    <Image src={CardF} loading="eager" alt=" " />
+                    <Image src={CardG} loading="eager" alt=" " />
+                    <Image src={CardH} loading="eager" alt=" " />
+                    <Image src={CardA} loading="eager" alt=" " />
+                    <Image src={CardB} loading="eager" alt=" " />
+                    <Image src={CardC} loading="eager" alt=" " />
+                    <Image src={CardD} loading="eager" alt=" " />
+                </div>
+            </div>
+
+            <div id="clients">
+                <h2>Clients + Colleagues</h2>
+
+                <div class="cols">
+                    <div>
+                        <p>NBCUniversal<span> • </span>Condé Nast<span> • </span>Discovery Inc<span> • </span>Fab <span> • </span>Hearst<span> • </span>Magnolia Network<span> • </span>Food.com<span> • </span>Kindra<span> • </span>NYC Pride<span> • </span>King Features<span> • </span>Ample<span> • </span>Apartment Therapy<span> • </span>Axis Group<span> • </span>Barnes & Noble College<span> • </span>Catalpa House<span> • </span>Center for Survivor Agency & Justice<span> • </span>Craftsy / Bluprint<span> • </span>Creative Circle<span> • </span> Current TV<span> • </span>Dance Party Time<span> • </span>Discovery Channel<span> • </span>Dos Eqis<span> • </span>HGTV<span> • </span>Indeed<span> • </span>Lockwood<span> • </span>Metro Vein Centers<span> • </span>Nightingale Veterinary Partners<span> • </span>OWN<span> • </span>Peter Horowitz Real Estate<span> • </span>Sage Integrative Wellness<span> • </span>The Orchestra Now<span> • </span>Wizehire</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="awards">
+            <h2>Awards</h2>
+            <div id="awards-list" class="two-col flush rx">
+                <ul>{AWARDS.slice(0, 16).map(({medal, award, category, url, client}) =>
+                    <li class="award">
+                        <a href={url}>
+                            <span class="medal">{medal}</span> • {award} <span class="category">{category}&nbsp;<Fragment set:html={Arrow} /></span>
+                        </a>
+                        <span class="client">{client}</span>
+                    </li>
+                )}</ul>
+                <ul id="extra-awards" aria-labelledby="expand-awards">{AWARDS.slice(16).map(({medal, award, category, url, client}) =>
+                    <li class="award">
+                        <a href={url}>
+                            <span class="medal">{medal}</span> • {award} <span class="category">{category}&nbsp;<Fragment set:html={Arrow} /></span>
+                        </a>
+                        <span class="client">{client}</span>
+                    </li>
+                )}</ul>
+            </div>
+            <button id="expand-awards" aria-expanded="false" aria-controls="extra-awards">Load more awards</button>
+        </div>
+
+        <div id="faqs" >
+            <h2>FAQs</h2>
+            <ul class="questions">
+                {FAQS.map(({q, a}, i) =>
+                    <li>
+                        <div class="q" id={`question-${i+1}`} aria-expanded="false" aria-controls={`answer-${i+1}`}>
+                            <p>{q}</p>
+                        </div>
+                        <div class="a" id={`answer-${i+1}`} aria-labelledby={`question-${i+1}`}>
+                            {a.map(graf =>
+                                <p>{graf}</p>
+                            )}
+                        </div>
+                    </li>
+                )}
+            </ul>
+        </div>
+
+
+    </article>
+</InternalLayout>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let dt = 0
+        document.querySelectorAll('.slideshow').forEach(elt => {
+            let slides = elt.querySelectorAll(":scope>picture,:scope>img:not(.app"),
+                interval = elt instanceof HTMLElement && elt.dataset.interval || 2000,
+                len = slides.length,
+                idx = 0
+
+            const advance = () => {
+                idx++
+                slides.forEach((img, i) => {
+                    img.classList.toggle('active', i==idx%len)
+                })
+            }
+
+            setTimeout(() => setInterval(advance, +interval), dt)
+            dt += 666
+        })
+
+        document.querySelector("#awards button").addEventListener("click", e => {
+            let awards = document.querySelector("#awards")
+            let extraAwards = document.querySelector("#extra-awards")
+            if (awards instanceof HTMLElement){
+                awards.classList.add("expanded")
+            }
+            if (extraAwards instanceof HTMLElement){
+                extraAwards.style.maxHeight = extraAwards.scrollHeight+"px"
+            }
+        })
+
+        document.querySelectorAll("#faqs .q").forEach(elt =>
+            elt.addEventListener("click", e => {
+                document.querySelectorAll("#faqs .q").forEach(item => {
+                    if (item==elt) return
+                    item.classList.remove("open")
+                    item.ariaExpanded = "false"
+                })
+                elt.classList.toggle("open")
+                let isOpen = elt.classList.contains("open")
+                elt.ariaExpanded = isOpen ? "true" : "false"
+                updateAccordionHeights()
+            })
+        )
+
+        function updateAccordionHeights(){
+            document.querySelectorAll("#faqs .q.open + .a").forEach(elt => {
+                if (elt instanceof HTMLElement)
+                    elt.style.maxHeight = elt.scrollHeight+"px"
+            })
+            document.querySelectorAll("#faqs .q:not(.open) + .a").forEach(elt => {
+                if (elt instanceof HTMLElement)
+                    elt.style.maxHeight = "0"
+            })
+        }
+
+        let timer
+        window.addEventListener("resize", e => {
+            clearTimeout(timer)
+            timer = setTimeout(updateAccordionHeights, 20)
+        })
+
+    })
+</script>
