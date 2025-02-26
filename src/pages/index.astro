@@ -9,12 +9,38 @@ import HeartCursor from "@assets/HeartCursor.png";
 import ProjectsGrid from "@components/ProjectsGrid.astro";
 import Testimonial from "@components/Testimonial.astro";
 import Footer from "@components/Footer.astro";
+
+import Preview from "@assets/Home/preview.png"
+import CardA from "@assets/About/hype/Cards-0.png"
+import CardB from "@assets/About/hype/Cards-1.png"
+import CardC from "@assets/About/hype/Cards-2.png"
+import CardD from "@assets/About/hype/Cards-3.png"
+import CardE from "@assets/About/hype/Cards-4.png"
+import CardF from "@assets/About/hype/Cards-5.png"
+import CardG from "@assets/About/hype/Cards-6.png"
+import CardH from "@assets/About/hype/Cards-7.png"
+
 ---
 
 <InternalLayout image={Preview}>
   <Navigation theme="dark" />
   <HeroPill />
   <ProjectsGrid />
+  <div id="hype">
+    <div class="tray">
+        <Image src={CardA} loading="eager" alt=" " />
+        <Image src={CardB} loading="eager" alt=" " />
+        <Image src={CardC} loading="eager" alt=" " />
+        <Image src={CardD} loading="eager" alt=" " />
+        <Image src={CardE} loading="eager" alt=" " />
+        <Image src={CardF} loading="eager" alt=" " />
+        <Image src={CardG} loading="eager" alt=" " />
+        <Image src={CardH} loading="eager" alt=" " />
+        <Image src={CardA} loading="eager" alt=" " />
+        <Image src={CardB} loading="eager" alt=" " />
+        <Image src={CardC} loading="eager" alt=" " />
+        <Image src={CardD} loading="eager" alt=" " />
+    </div>
 </div>
 
 </InternalLayout>

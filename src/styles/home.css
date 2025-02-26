@@ -4,3 +4,55 @@ main {
     overflow: hidden;
 }
 
+#hype{
+    padding:120px 0;
+    position: relative;
+    overflow: hidden;
+    grid-column: 1 / -1;
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    background: #A92325;
+
+    h2{
+        width:var(--col-width);
+    }
+
+    .tray{
+        position:relative;
+        display:flex;
+        flex-direction:row;
+        justify-content: space-between;
+        gap: 2.5vw;
+    }
+
+    img{
+        width:100%;
+        max-width:22.5vw;
+        height: auto;
+        animation: infinite-slide-200 20s linear infinite;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+    }
+
+    @media (max-width: 767px) {
+        padding:40px 0;
+        .tray{
+            gap: 5vw;
+        }
+        img{
+            max-width: 45vw;
+            animation: infinite-slide-400 25s linear infinite;
+        }
+    }
+}
+
+@keyframes infinite-slide-200 {
+    0%{ transform: translateX(0);}
+    100%{ transform: translateX(calc(-200vw));}
+}
+
+@keyframes infinite-slide-400 {
+    0%{ transform: translateX(0);}
+    100%{ transform: translateX(calc(-400vw));}
+}
