@@ -146,7 +146,7 @@ header{
             width:100%;
             max-width:22.5vw;
             height: auto;
-            animation: infinite-slide-200 20s linear infinite;
+            animation: infinite-slide-200 30s linear infinite;
             backface-visibility: hidden;
             transform-style: preserve-3d;
         }
@@ -157,7 +157,7 @@ header{
             }
             img{
                 max-width: 45vw;
-                animation: infinite-slide-400 25s linear infinite;
+                animation: infinite-slide-400 40s linear infinite;
             }
         }
     }
