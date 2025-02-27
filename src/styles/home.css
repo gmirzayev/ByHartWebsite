@@ -56,3 +56,13 @@ main {
     0%{ transform: translateX(0);}
     100%{ transform: translateX(calc(-400vw));}
 }
+
+#contact{
+    position: relative;
+    top: 50px;
+
+
+    @media (min-width: 768px) {
+        top: 120px;
+    }
+}
