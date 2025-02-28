@@ -1,7 +1,7 @@
 ---
-const brand="Comics Kingdom"
-const tagline="A Feast of Fandom"
-const tags=[
+const brand = "Comics Kingdom";
+const tagline = "A Feast of Fandom";
+const tags = [
   "Brand Identity + Positioning",
   "Logo Design",
   "Video + Photography",
@@ -12,7 +12,7 @@ const tags=[
   "Organic + Paid Social Content",
   "Interviews",
   "Qualitative Research",
-]
+];
 
 const WE_ARE = [
   "A Bite of Delight",
@@ -20,14 +20,14 @@ const WE_ARE = [
   "A Nest for Storytellers and Fans Alike",
   "Making New Friends While Cherishing the Old",
   "Keen Observers and Active Participant",
-]
+];
 
 import "../../styles/utils.css";
 import ProjectLayout from "@layouts/ProjectLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
-import Header from "@assets/ComicsKingdom/img/CK_Cover.png";
-import HeaderMobile from "@assets/ComicsKingdom/img/CK_Cover_Mobile.png";
+import HeaderVideo from "@assets/ComicsKingdom/CK_Header_Desktop.mp4";
+import HeaderVideoMobile from "@assets/ComicsKingdom/CK_Header_Mobile.mp4";
 import Image from "astro/components/Image.astro";
 import CKAnimation from "@assets/ComicsKingdom/CK_Animation.mp4";
 import LogoIllustrationDesktop from "@assets/ComicsKingdom/img/CK_Logo_Illustration_Desktop.png";
@@ -68,11 +68,8 @@ import TransparentVideo from "@components/TransparentVideo.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
 import VimeoPlayer from "@components/VimeoPlayer.astro";
 ---
+
 <style>
-  #comics-main {
-    width: 100%;
-    background-color: var(--cream);
-  }
   .image-flex {
     display: flex;
     flex-direction: column;
@@ -84,7 +81,6 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     width: 100%;
     justify-content: center;
     background-image: url("../../assets/ComicsKingdom/img/RedBG-tile.png");
-    padding: 100px 0;
   }
 
   .friends-background {
@@ -139,43 +135,11 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     padding-top: 56.25%;
     width: 100%;
   }
-  #video-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 0 auto;
-    right: 0;
-    bottom: 0;
-    width: 90%;
-    height: 100%;
-    /* height: 500px; */
-    /* object-fit: cover; */
-  }
+
   .karla {
     font-family: "Karla", sans-serif;
   }
-  #pause-cover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-  }
-  #play-button {
-    position: absolute;
-    display: none;
-    left: calc(50% - 50px);
-    top: calc(50% - 50px);
-    width: 100px;
-    height: 55px;
-    justify-content: center;
-    align-items: center;
-    background-color: #ff97fd;
-    transform: rotate(1.75deg);
-    border: 1px solid black;
-    font-size: 21px;
-    font-family: "Karla";
-    letter-spacing: 2px;
-  }
+
   .grid-container {
     background-color: #242121;
   }
@@ -216,193 +180,229 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     }
   }
 
-  #we-are{
+  #we-are {
     width: 200px;
-    height:55px;
+    height: 55px;
     font-weight: bold;
 
-    li{
-      position:absolute;
+    li {
+      position: absolute;
       width: 200px;
-      opacity:0;
-      transition: opacity .666s;
+      opacity: 0;
+      transition: opacity 0.666s;
 
-      &.active{
-        opacity:1;
+      &.active {
+        opacity: 1;
       }
     }
   }
 </style>
-<ProjectLayout hero={Header} mobile={HeaderMobile} brand={brand} tagline={tagline} tags={tags} theme="dark">
-  <VimeoPlayer class="padded bg-[#17100b]" video="1026680777" height="56.25%" action="unpause"/>
+<ProjectLayout
+  hero={HeaderVideo}
+  mobile={HeaderVideoMobile}
+  brand={brand}
+  tagline={tagline}
+  tags={tags}
+  theme="dark"
+>
+  <VimeoPlayer
+    class="padded bg-[#363131]"
+    video="1026680777"
+    height="56.25%"
+    action="unpause"
+  />
 
-  <div class="image-flex">
-    <ResponsiveImage mobile={LogoIllustrationMobile} desktop={LogoIllustrationDesktop} alt="Comics Kingdom" />
+  <ResponsiveImage
+    mobile={LogoIllustrationMobile}
+    desktop={LogoIllustrationDesktop}
+    alt="Comics Kingdom"
+  />
+  <div
+    class="w-full columns-1 md:columns-2 gap-[90px] my-[45px] md:my-[120px] px-[25px] md:px-[245px] karla text-[#363131] leading-[26px]"
+  >
+    <p class="m-0">
+      Every strip starts with a sketch. A gag. A storyboard. An inkling of an
+      idea, brought to life by a pencil, some paper (okay, occasionally a tablet
+      and stylus), and an altogether personal point of view. It's the first step
+      in a hero’s winding journey—both the character’s and the creator’s—soon to
+      meet the fans who will cheer them along. <br /><br />Comics Kingdom is for
+      those who believe in limitless creativity, barely contained in a bite of
+      delight. The ones who must make, against any obstacles, whether pioneers
+      or next generation, in service of an art form that nudges us all forward,
+      eliciting chuckles, catharsis, and connection. We're a haven for those who
+      absolutely worship cartoon history and are eager to preserve and
+      transform. A community for the people who open to the funnies every week
+      or get the digital scoop any day. A place for enthusiasts to support
+      others and recognize the wonderfully human lessons and observations
+      depicted through a beloved and all too rare craft. A platform for artists
+      to breathe new life, share new experiences, and reach new friends. A way
+      to come together through a niche that unifies—one of the lightest ways to
+      deal with heavy stuff. <br /><br />
+      <span class="text-[#DD4C42] text-lg md:text-xl font-bold"
+        >For <em>those</em>, for <em>us</em>, and <em>all</em>, our mission is
+        to keep the comics coming.</span
+      >
+    </p>
+  </div>
 
-    <div class="text-two-column-centered">
-      <p class="m-0">
-        Every strip starts with a sketch. A gag. A storyboard. An inkling of
-        an idea, brought to life by a pencil, some paper (okay, occasionally a
-        tablet and stylus), and an altogether personal point of view. It's the
-        first step in a hero’s winding journey—both the character’s and the
-        creator’s—soon to meet the fans who will cheer them along. <br /><br
-        />Comics Kingdom is for those who believe in limitless creativity,
-        barely contained in a bite of delight. The ones who must make, against
-        any obstacles, whether pioneers or next generation, in service of an
-        art form that nudges us all forward, eliciting chuckles, catharsis,
-        and connection. We're a haven for those who absolutely worship cartoon
-        history and are eager to preserve and transform. A community for the
-        people who open to the funnies every week or get the digital scoop any
-        day. A place for enthusiasts to support others and recognize the
-        wonderfully human lessons and observations depicted through a beloved
-        and all too rare craft. A platform for artists to breathe new life,
-        share new experiences, and reach new friends. A way to come together
-        through a niche that unifies—one of the lightest ways to deal with
-        heavy stuff. <br /><br />
-        <span class="text-[#DD4C42] text-xl font-bold"
-          >For <em>those</em>, for <em>us</em>, and <em>all</em>, our mission
-          is to keep the comics coming.</span
-        >
-      </p>
-    </div>
+  <ResponsiveImage
+    mobile={AppMobile}
+    desktop={AppDesktop}
+    alt="Comics Kingdom"
+  />
 
-    <ResponsiveImage mobile={AppMobile} desktop={AppDesktop} alt="Comics Kingdom" />
-
-    <div class="dark-container">
-      <ResponsiveImage
-        mobile={IconsMobile}
-        desktop={IconsDesktop}
-        class="w-1/2 mt-[100px] md:mt-[50px]"
-        alt="Comics Kingdom"
-      />
-      <TransparentVideo mov={CreatorSafari} webm={Creator} class="max-h-full w-[100%] my-[40px] md:my-[100px] mx-0" />
-      <Image class="h-auto w-[66%]" src={Home} alt="Comics Kingdom" />
-    </div>
-    <video loop playsinline autoplay muted class="w-[100%]">
-      <source src={CKAnimation} />
-    </video>
-    <div
-      class="w-[100%] flex items-center justify-center gap-10 py-[75px] flex-col md:flex-row"
-    >
-      <div class="karla my-[20px]">
-        <p class="">We are</p>
-        <ul id="we-are">{WE_ARE.map(motto =>
-          <li>{motto}</li>
-        )}</ul>
-      </div>
-      <video loop playsinline autoplay muted style="max-width:300px;">
-          <source src={PhoneVibration} type='video/mp4'>
-      </video>
-    </div>
-    <div class="w-full friends-background">
-      <TransparentVideo webm={Friends} mov={FriendsSafari} class="mb-[120px] w-screen" />
-    </div>
-    <div class="social-background">
-      <Image class="h-auto w-[47%]" src={Social} alt="Comics Kingdom" />
-    </div>
-    <Image
-      class="h-auto w-[58%] my-[180px] mx-0"
-      src={Email}
+  <div class="dark-container pt-[45px] md:pt-[120px]">
+    <ResponsiveImage
+      mobile={IconsMobile}
+      desktop={IconsDesktop}
+      class="w-1/2"
       alt="Comics Kingdom"
     />
-    <div class="image-container-half">
+    <TransparentVideo
+      mov={CreatorSafari}
+      webm={Creator}
+      class="max-h-full w-[100%] my-[40px] md:my-[100px] mx-0"
+    />
+    <Image
+      class="h-auto w-full px-[20px] md:px-[300px]"
+      src={Home}
+      alt="Comics Kingdom"
+    />
+  </div>
+  <video loop playsinline autoplay muted class="w-[100%]">
+    <source src={CKAnimation} />
+  </video>
+  <div
+    class="w-full flex flex-col md:flex-row md:items-center justify-center gap-[150px] my-[45px] md:my-[120px] px-[62px] md:px-[300px]"
+  >
+    <div class="karla justify-self-end">
+      <p class="text-[20px]">We are</p>
+      <ul id="we-are">
+        {WE_ARE.map((motto) => <li class="text-[24px]">{motto}</li>)}
+      </ul>
+    </div>
+    <video loop playsinline autoplay muted style="max-width:300px;">
+      <source src={PhoneVibration} type="video/mp4" />
+    </video>
+  </div>
+  <div class="w-full friends-background">
+    <TransparentVideo
+      webm={Friends}
+      mov={FriendsSafari}
+      class="md:mb-[120px] w-screen"
+    />
+  </div>
+  <div class="social-background">
+    <Image
+      class="h-auto w-full px-[20px] md:px-[300px] py-[45px] md:py-[120px]"
+      src={Social}
+      alt="Comics Kingdom"
+    />
+  </div>
+  <Image
+    class="h-auto w-full px-[20px] md:px-[300px] my-[45px] md:my-[120px]"
+    src={Email}
+    alt="Comics Kingdom"
+  />
+  <div class="flex flex-row w-full items-baseline mb-[45px] md:mb-0">
+    <div class="w-1/2">
       <Image
-        class="h-auto w-[22%] ml-[50px] mb-[50px]"
+        class="h-auto w-1/2 pl-[20px] pb-[10px] md:pl-[60px] md:pb-[50px]"
         src={Mark}
         alt="Comics Kingdom"
       />
-      <Image class="h-auto w-1/2" src={Book} alt="Comics Kingdom" />
     </div>
-  </div>
-  <div class="grid-container">
-    <div class="grid-text-container">
-      <p class="grid-brand">COMICS KINGDOM</p>
-      <p class="grid-brand-follow">A glimpse at the brand guide</p>
-    </div>
-    <div class="image-container--grid">
-      <Image
-        class="h-auto w-[49.5%] rounded my-1.5"
-        src={BrandGrid1}
-        alt="Sage Brand Guide Grid 1"
-      />
-      <Image
-        class="h-auto w-[49.5%] rounded my-1.5"
-        src={BrandGrid2}
-        alt="Sage Brand Guide Grid 4"
-      />
-      <Image
-        class="h-auto w-[49.5%] rounded my-1.5"
-        src={BrandGrid3}
-        alt="Sage Brand Guide Grid 3"
-      />
-      <Image
-        class="h-auto w-[49.5%] rounded my-1.5"
-        src={BrandGrid4}
-        alt="Sage Brand Guide Grid 5"
-      />
-      <Image
-        class="h-auto w-[49.5%] rounded my-1.5"
-        src={BrandGrid5}
-        alt="Sage Brand Guide Grid 6"
-      />
-      <Image
-        class="h-auto w-[49.5%] rounded my-1.5"
-        src={BrandGrid6}
-        alt="Sage Brand Guide Grid 7"
-      />
-      <Image
-        class="h-auto w-[49.5%] rounded my-1.5"
-        src={BrandGrid7}
-        alt="Sage Brand Guide Grid 2"
-      />
-      <Image
-        class="h-auto w-[49.5%] rounded my-1.5"
-        src={BrandGrid8}
-        alt="Sage Brand Guide Grid 8"
-      />
-      <Image
-        class="h-auto w-[49.5%] rounded my-1.5"
-        src={BrandGrid9}
-        alt="Sage Brand Guide Grid 9"
-      />
-      <Image
-        class="h-auto w-[49.5%] rounded my-1.5"
-        src={BrandGrid10}
-        alt="Sage Brand Guide Grid 10"
-      />
-      <Image
-        class="h-auto w-[49.5%] rounded my-1.5"
-        src={BrandGrid11}
-        alt="Sage Brand Guide Grid 11"
-      />
-      <Image
-        class="h-auto w-[49.5%] rounded my-1.5"
-        src={BrandGrid12}
-        alt="Sage Brand Guide Grid 12"
-      />
-      <Image
-        class="h-auto w-[49.5%] rounded my-1.5"
-        src={BrandGrid13}
-        alt="Sage Brand Guide Grid 13"
-      />
-      <Image
-        class="h-auto w-[49.5%] rounded my-1.5"
-        src={BrandGrid14}
-        alt="Sage Brand Guide Grid 14"
-      />
-    </div>
+    <Image class="h-auto w-1/2" src={Book} alt="Comics Kingdom" />
   </div>
 </ProjectLayout>
+<div class="bg-[#242121]">
+  <div class="karla text-[#F7F4ED] py-[30px] pl-[20px] md:pl-[30px]">
+    <p class="font-bold tracking-widest inline-block">COMICS KINGDOM</p>
+    <p class="inline-block ml-[20px]">A glimpse at the brand guide</p>
+  </div>
+  <div class="grid grid-cols-2 gap-[5px] md:gap-[15px] px-[20px] md:px-[45px]">
+    <Image
+      class="w-full h-auto rounded"
+      src={BrandGrid1}
+      alt="Sage Brand Guide Grid 1"
+    />
+    <Image
+      class="w-full h-auto rounded"
+      src={BrandGrid2}
+      alt="Sage Brand Guide Grid 4"
+    />
+    <Image
+      class="w-full h-auto rounded"
+      src={BrandGrid3}
+      alt="Sage Brand Guide Grid 3"
+    />
+    <Image
+      class="w-full h-auto rounded"
+      src={BrandGrid4}
+      alt="Sage Brand Guide Grid 5"
+    />
+    <Image
+      class="w-full h-auto rounded"
+      src={BrandGrid5}
+      alt="Sage Brand Guide Grid 6"
+    />
+    <Image
+      class="w-full h-auto rounded"
+      src={BrandGrid6}
+      alt="Sage Brand Guide Grid 7"
+    />
+    <Image
+      class="w-full h-auto rounded"
+      src={BrandGrid7}
+      alt="Sage Brand Guide Grid 2"
+    />
+    <Image
+      class="w-full h-auto rounded"
+      src={BrandGrid8}
+      alt="Sage Brand Guide Grid 8"
+    />
+    <Image
+      class="w-full h-auto rounded"
+      src={BrandGrid9}
+      alt="Sage Brand Guide Grid 9"
+    />
+    <Image
+      class="w-full h-auto rounded"
+      src={BrandGrid10}
+      alt="Sage Brand Guide Grid 10"
+    />
+    <Image
+      class="w-full h-auto rounded"
+      src={BrandGrid11}
+      alt="Sage Brand Guide Grid 11"
+    />
+    <Image
+      class="w-full h-auto rounded"
+      src={BrandGrid12}
+      alt="Sage Brand Guide Grid 12"
+    />
+    <Image
+      class="w-full h-auto rounded"
+      src={BrandGrid13}
+      alt="Sage Brand Guide Grid 13"
+    />
+    <Image
+      class="w-full h-auto rounded"
+      src={BrandGrid14}
+      alt="Sage Brand Guide Grid 14"
+    />
+  </div>
+</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     let mottos = document.querySelectorAll("#we-are li"),
-        idx = 0
-    mottos[idx].classList.add("active")
+      idx = 0;
+    mottos[idx].classList.add("active");
 
-    setInterval(()=>{
-      idx = (idx+1) % mottos.length
-      mottos.forEach((motto, i) => motto.classList.toggle("active", i==idx))
-    }, 2000)
-  })
+    setInterval(() => {
+      idx = (idx + 1) % mottos.length;
+      mottos.forEach((motto, i) => motto.classList.toggle("active", i == idx));
+    }, 2000);
+  });
 </script>
