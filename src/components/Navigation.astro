@@ -191,8 +191,9 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
   #mobile-nav.dropdown-opened #dropdown-close {
     display: block;
   }
+  button:hover,
   #nav-link--email-button:hover{
-    cursor: url("../assets/HeartCursor.png") 16 16, auto;
+    cursor: url("../assets/HeartCursor.png") 16 16, pointer;
   }
 
   @media (min-width: 768px) {
@@ -241,14 +242,8 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
       </button>
       <div class="dropdown-link-container">
         <a href="/#portfolio" class="mobile-nav-link nav-link--header">SEE OUR WORK</a>
-        <a href="/about" class="mobile-nav-link nav-link--header">GET TO KNOW US</a>
-        <a
-          id="nav-link--email-button"
-          class="mobile-nav-link nav-link--email-button">COPY OUR EMAIL ADDY</a
-        >
-        <p id="nav-email" class="mobile-nav-link mobile-nav-link--email">
-          getcreative@byhart.studio
-        </p>
+        <a href="/about" class="mobile-nav-link nav-link--header">KNOW BY HART</a>
+        <a href="/#contact" class="mobile-nav-link nav-link--header">TALK TO US</a>
         <div class="mt-[50px] relative flex w-full">
           <a
             id="nav-instagram"
@@ -340,27 +335,10 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
       document.body.classList.toggle("overflow-hidden");
     });
 
-    const navEmailButton = document.getElementById("nav-link--email-button");
-
-    navEmailButton.addEventListener("click", async (event) => {
-      try {
-        await navigator.clipboard.writeText("getcreative@byhart.studio");
-        setTimeout(
-          () => (navEmailButton.textContent = "READY FOR PASTING!"),
-          10
-        );
-        setTimeout(() => {
-          navEmailButton.textContent = "COPY OUR EMAIL ADDY";
-        }, 2000);
-      } catch (err) {
-        console.error("Failed to copy: ", err);
-      }
-    });
-
-
     // hide dropdown if user navigates
     document.querySelectorAll("#mobile-nav a[href^='/']").forEach(elt => {
       elt.addEventListener("click", e => {
+        console.log("click")
         nav.classList.remove("dropdown-opened");
         document.body.classList.remove("overflow-hidden");
       })

@@ -1,4 +1,7 @@
 ---
+import SoundIcon from "@assets/VimeoPlayer/sound-on-off.svg?raw"
+import RewindIcon from "@assets/VimeoPlayer/rewind.svg?raw"
+
 let {video, id, class:classNames, height, action=undefined,
     autoplay="1", loop="1", muted="1", badge="1", // default to enabled
     title="0", byline="0", controls="0", portrait="0", autopause="0" // default to disabled
@@ -14,9 +17,6 @@ let params = new URLSearchParams({
 }).toString()
 
 const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-let actionLabel = action == 'unmute' ? "Sound On" :
-                  action == 'unpause' ? "Play" :
-                  null
 ---
 
 <div id={id} class:list={["vimeo-player", classNames]}>
@@ -24,7 +24,15 @@ let actionLabel = action == 'unmute' ? "Sound On" :
         <div class="embed" style={{paddingTop:height}}>
             <iframe src={`https://player.vimeo.com/video/${video}?${params}`} allow={ALLOW} />
         </div>
-        {actionLabel && <button class={action}>{actionLabel}</button>}
+
+        {action && <div class:list={["buttons", action]} >
+            <button class:list={["action", action]} >
+                <Fragment set:html={SoundIcon} />
+            </button>
+            <button class="rewind">
+                <Fragment set:html={RewindIcon} />
+            </button>
+        </div>}
     </div>
 </div>
 
@@ -56,8 +64,32 @@ let actionLabel = action == 'unmute' ? "Sound On" :
         width:100%;
     }
 
+    .frame .buttons{
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+
+        display:flex;
+        flex-direction: row-reverse;
+        gap:10px;
+
+        &.unmute{
+            padding:20px;
+            align-items:end;
+            justify-content: end;
+
+        }
+        &.unpause{
+            align-items:center;
+            justify-content: center;
+        }
+    }
+
+
     .frame button{
-        position:absolute;
+        position:relative;
         color: var(--charcoal);
         padding:12px;
 
@@ -65,6 +97,8 @@ let actionLabel = action == 'unmute' ? "Sound On" :
         letter-spacing: 4.2px;
         text-transform: uppercase;
         z-index:2;
+
+        transition: opacity 500ms;
 
         &::after{
             position:absolute;
@@ -85,38 +119,68 @@ let actionLabel = action == 'unmute' ? "Sound On" :
         }
     }
 
-    .frame button{
-        transition: opacity 500ms;
-    }
-
-    .frame button.unmute{
-        bottom: 20px;
-        right:20px;
+    .frame button.action.unmute{
+        .sound-on{ display:none; }
 
         &.fired{
             opacity:0;
+            .sound-on{ display:inline; }
+            .sound-off{ display:none; }
         }
+
+        @media (min-width: 768px) {
+            svg{ display:none; }
+
+            &::before{
+                content:"Sound On";
+            }
+            &.fired::before{
+                content:"Sound Off"
+            }
+        }
+
     }
 
-    .frame:hover button.unmute.fired{
+    .frame:hover button.action.unmute.fired,
+    .frame:hover button.action.unpause.fired,
+    .frame:hover button.action.unmute.fired + button.rewind{
         opacity: 1;
+        pointer-events:auto;
     }
 
 
-    .frame button.unpause{
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    button.rewind{
+        opacity:0;
+        display:none;
+    }
+
+    .rewindable .frame button.rewind,
+    .frame button.action.unmute.fired + button.rewind{
+        display:inline;
+        pointer-events:none;
+    }
+
+    button.action.unpause:not(.fired) + button.rewind{
+        opacity:1;
+        pointer-events:auto;
+    }
+
+
+    .frame button.action.unpause{
+        svg{ display:none; }
+
+        &::before{ content:"Play"; }
+
         &.fired{
-            opacity:0;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            transform:none;
+            &::before{ content:" " }
+            &::after{opacity:0;}
         }
     }
-
-    .frame:hover button.unpause.fired{
-        opacity: 1;
-    }
-
-
 
 
     .embed{
@@ -140,18 +204,25 @@ let actionLabel = action == 'unmute' ? "Sound On" :
         static videos = []
         elt
         button
+        rewind
+        pause
         player
         action
 
         constructor(elt){
             this.elt = elt
-            this.button = elt.querySelector(":scope button")
+            this.button = elt.querySelector(":scope button.action")
+            this.rewind = elt.querySelector(":scope button.rewind")
+            this.pause = elt.querySelector(":scope .buttons")
             this.player = new Player(elt.querySelector(":scope iframe"))
             this.action = this.button?.classList.contains("unmute") ? "unmute" :
                           this.button?.classList.contains("unpause") ? "unpause" :
                           null
 
-            this.button?.addEventListener("click", e => this.handleClick(e))
+            this.button?.addEventListener("click", e => this.handleAction(e))
+            this.rewind?.addEventListener("click", e => this.handleRewind(e))
+            this.pause?.addEventListener("click", e => this.handlePause(e))
+            this.player.on("ended", () => this.requeue())
             Vimeo.videos.push(this)
         }
 
@@ -159,12 +230,38 @@ let actionLabel = action == 'unmute' ? "Sound On" :
             return this.button?.classList.contains("fired")
         }
 
-        handleClick(e){
+        handleRewind(e){
+            this.player.setCurrentTime(0)
+            if (this.action=="unpause"){
+                this.elt.classList.remove("rewindable")
+            }
+
+            e.preventDefault()
+            e.stopPropagation()
+        }
+
+        handlePause(e){
+            if (this.active){
+                if (this.action=="unpause") this.togglePlayback()
+                else if (this.action=="unmute") this.toggleAudio()
+            }
+
+            e.preventDefault()
+            e.stopPropagation()
+        }
+
+        handleAction(e){
             if (this.action=="unmute") this.toggleAudio()
             else if (this.action=="unpause") this.togglePlayback()
 
             e.preventDefault()
             e.stopPropagation()
+        }
+
+        requeue(){
+            this.player.setCurrentTime(0)
+            this.button.classList.remove("fired")
+            this.elt.classList.remove("rewindable")
         }
 
         toggleAudio(){
@@ -173,7 +270,6 @@ let actionLabel = action == 'unmute' ? "Sound On" :
             if (active){
                 // re-mute
                 player.setMuted(true)
-                button.textContent = "Sound On"
             }else{
                 // mute/pause any other video with active audio
                 for (const vid of Vimeo.videos){
@@ -188,26 +284,24 @@ let actionLabel = action == 'unmute' ? "Sound On" :
 
                 // un-mute
                 player.setMuted(false)
-                button.textContent = "Sound Off"
             }
 
             button.classList.toggle("fired")
         }
 
         togglePlayback(){
-            const {button, player, active} = this
+            const {elt, button, player, active} = this
 
             if (active){
                 // pause
                 player.pause()
-                button.textContent = "Play"
             }else{
                 // play
                 player.setMuted(false)
                 player.play()
-                button.textContent = "Pause"
             }
 
+            elt.classList.add("rewindable")
             button.classList.toggle("fired")
         }
     }

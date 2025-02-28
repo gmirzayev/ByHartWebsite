@@ -1,52 +1,48 @@
 ---
 import "../styles/utils.css";
+import "../styles/home.css"
+import Image from "astro/components/Image.astro";
+import InternalLayout from "@layouts/InternalLayout.astro";
 import HeroPill from "@components/HeroPill.astro";
 import Navigation from "@components/Navigation.astro";
 import HeartCursor from "@assets/HeartCursor.png";
 import ProjectsGrid from "@components/ProjectsGrid.astro";
 import Testimonial from "@components/Testimonial.astro";
 import Footer from "@components/Footer.astro";
+
+import Preview from "@assets/Home/preview.png"
+import CardA from "@assets/About/hype/Cards-0.png"
+import CardB from "@assets/About/hype/Cards-1.png"
+import CardC from "@assets/About/hype/Cards-2.png"
+import CardD from "@assets/About/hype/Cards-3.png"
+import CardE from "@assets/About/hype/Cards-4.png"
+import CardF from "@assets/About/hype/Cards-5.png"
+import CardG from "@assets/About/hype/Cards-6.png"
+import CardH from "@assets/About/hype/Cards-7.png"
+
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel=”mask-icon” href=/favicon.svg” color=”#000000">
-    <link rel="apple-touch-icon" href="/favicon.png">
-    <link rel="stylesheet" href="https://use.typekit.net/qmm6obl.css" />
-    <style>
-      html {
-        margin: 0;
-        padding: 0;
-      }
-      main {
-        background-color: #1d1a1a;
-        background-image: url("../assets/Home/img/grain-background.png");
-        background-repeat: repeat;
-        background-size: auto;
-        position: relative;
-        overflow: hidden;
-        z-index: 10;
-        padding: 0;
-        margin: 0;
-      }
-      body {
-        padding-bottom: 100vh;
-        width: 100%;
-        margin: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <Navigation theme="dark" />
-      <HeroPill />
-      <ProjectsGrid />
-      <!-- <Testimonial /> -->
-    </main>
-    <Footer />
-  </body>
-</html>
+<InternalLayout image={Preview}>
+  <Navigation theme="dark" />
+  <HeroPill />
+  <ProjectsGrid />
+  <div id="hype">
+    <div class="tray">
+        <Image src={CardA} loading="eager" alt=" " />
+        <Image src={CardB} loading="eager" alt=" " />
+        <Image src={CardC} loading="eager" alt=" " />
+        <Image src={CardD} loading="eager" alt=" " />
+        <Image src={CardE} loading="eager" alt=" " />
+        <Image src={CardF} loading="eager" alt=" " />
+        <Image src={CardG} loading="eager" alt=" " />
+        <Image src={CardH} loading="eager" alt=" " />
+        <Image src={CardA} loading="eager" alt=" " />
+        <Image src={CardB} loading="eager" alt=" " />
+        <Image src={CardC} loading="eager" alt=" " />
+        <Image src={CardD} loading="eager" alt=" " />
+    </div>
+
+  <div id="contact"></div>
+</div>
+
+</InternalLayout>

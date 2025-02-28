@@ -2,6 +2,7 @@
 import "../styles/utils.css";
 import { Image } from "astro:assets";
 import SarahGlasses from "../assets/Footer/SarahGlasses.mp4";
+import Logo from "../assets/Footer/Logo.svg";
 ---
 
 <style>
@@ -147,58 +148,6 @@ import SarahGlasses from "../assets/Footer/SarahGlasses.mp4";
     /* overflow-y: hidden; */
     z-index: -1;
   }
-  .footer--text-container {
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    text-align: left;
-
-    flex-direction: column;
-    margin-left: 25px;
-    margin-right: 40px;
-    margin-bottom: 45px;
-  }
-
-  .footer--text-container h1 {
-    position:relative;
-    display:inline-block;
-    margin-bottom: 16px;
-    color: white;
-    font: 500 38px "utile-display", sans-serif;
-  }
-  .footer--text-container h1::before {
-    position: absolute;
-    background-color: var(--ink);
-    content: " ";
-    left:-.2em;
-    top:.05em;
-    width: calc(100% + .4em);
-    height: calc(100%);
-    z-index: -1;
-    transform: rotate(-2deg);
-  }
-  .footer--text-left {
-    width: 100%;
-    font-family: "Karla";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 17px;
-    color: var(--ink);
-    margin-bottom: 10px;
-  }
-  .footer--text-right {
-    font-family: "Karla";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 17px;
-    color: var(--ink);
-  }
-  .footer--text-right span {
-    margin-left: 10px;
-  }
   #tooltip-nav {
     position: absolute;
     background-color: #f7eee3;
@@ -258,18 +207,6 @@ import SarahGlasses from "../assets/Footer/SarahGlasses.mp4";
     .video-container {
       justify-content: center;
     }
-    .footer--text-container {
-      margin-left: 50px;
-      flex-direction: row;
-    }
-    .footer--text-left {
-      width: 80%;
-      font-size: 12px;
-    }
-    .footer--text-right {
-      white-space: nowrap;
-      align-self: flex-end;
-    }
     .email-header h1 {
       font-size: 76px;
     }
@@ -311,18 +248,6 @@ import SarahGlasses from "../assets/Footer/SarahGlasses.mp4";
     .video-container {
       justify-content: center;
     }
-    .footer--text-container {
-      margin-left: 50px;
-      flex-direction: row;
-    }
-    .footer--text-left {
-      width: 80%;
-      font-size: 11px;
-    }
-    .footer--text-right {
-      white-space: nowrap;
-      align-self: flex-end;
-    }
     .email-header h1 {
       font-size: 100px;
     }
@@ -362,6 +287,87 @@ import SarahGlasses from "../assets/Footer/SarahGlasses.mp4";
     }
   }
 
+  #endmatter{
+    position:absolute;
+    width:100%;
+    bottom:25px;
+    padding:0 25px;
+    display:flex;
+    flex-flow: column nowrap;
+    text-align:left;
+    gap:20px;
+
+    img{
+      max-width:152px;
+    }
+
+    #fine-print{
+      .heading{
+        font: 500 21px/1 "utile-display", sans-serif;
+        letter-spacing: 0.63px;
+        color:var(--cream);
+        padding:2px 8px;
+        margin-bottom:20px;
+
+        position:relative;
+        display:inline-block;
+
+        &::after{
+            position:absolute;
+            content: " ";
+            background:var(--charcoal);
+            width:100%;
+            height:100%;
+            top:0;
+            left:0;
+            z-index:-1;
+            transform: rotate(-1.25deg);
+        }
+      }
+      p{
+        font: 400 9px/1.6 "Karla", sans-serif;
+      }
+    }
+
+
+    #copyright{
+      font: 400 9px/1.6 "Karla", sans-serif;
+    }
+
+    @media (min-width: 768px) {
+      bottom:50px;
+      padding:0 50px;
+      flex-flow: row nowrap;
+      align-items: end;
+
+      img{
+        max-width:220px;
+      }
+
+      #fine-print{
+        width:100%;
+        .heading{
+          margin-bottom:10px;
+        }
+
+        p{
+          font-size:11px;
+          max-width: 750px;
+        }
+      }
+
+      #copyright{
+        font-size:14px;
+        text-align: right;
+      }
+    }
+
+    @media (min-width: 1100px) {
+      #copyright{
+        min-width:330px;
+      }
+    }
+  }
 
 </style>
 <footer>
@@ -436,26 +442,19 @@ import SarahGlasses from "../assets/Footer/SarahGlasses.mp4";
       playsinline></video>
     <!-- </div> -->
   </div>
-  <div class="footer--text-container">
-    <div class="footer--left-container">
-      <div class="gray-background"></div>
-      <h1>This print is so fine</h1>
-      <p class="footer--text-left">
-        ADDITIONAL CREDITS: It takes a village. The vast majority of this
-        portfolio is original work created by a dream team under Sarah Hartley's
-        direction. There are also some reference materials and inspiration mood
-        boards, which are an industry standard aspect of the research,
-        conception, and pitch phases of the creative process. Please feel free
-        to reach out if you are curious about who may be credited with any
-        aspect of the work you see here. It's more than likely us! In the rare
-        event it is not entirely authored by Sarah and team, we will do our very
-        best to connect you with the source of our inspiration.
-      </p>
+
+  <div id="endmatter">
+    <Image src={Logo} alt="By Hart Logo" />
+    <div id="fine-print">
+        <div class="heading">This print is so fine</div>
+        <p>CREDITS: Creative work takes a village—and this portfolio is proudly built by one. Nearly everything here is original work created under Sarah Hartley's direction. A few industry-standard reference materials and inspiration mood boards are sprinkled in from our research and pitch-phase magic. Curious about credits? It’s probably us! If not, we’ll happily connect you to the source of our inspiration.</p>
     </div>
-    <p class="footer--text-right">
-      © Sarah Hartley <span>See Sarah Work LLC d/b/a By Hart</span>
-    </p>
+    <div id="copyright">
+      © Sarah Hartley See&nbsp;Sarah&nbsp;Work LLC d/b/a&nbsp;By&nbsp;Hart
+    </div>
+
   </div>
+
   <div id="tooltip-footer"></div>
 </footer>
 
