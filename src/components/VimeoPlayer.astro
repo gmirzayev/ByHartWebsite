@@ -57,6 +57,13 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
             }
         }
 
+        &.rc-md-only iframe{
+            border-radius: 0;
+            @media (min-width: 768px) {
+                border-radius: 5px;
+            }
+        }
+
     }
 
     .frame{
