@@ -1,6 +1,6 @@
 ---
-const brand = "Pearly Bites"
-const tagline="Come. Sit. Smile."
+const brand = "Pearly Bites";
+const tagline = "Come. Sit. Smile.";
 const tags = [
   "Brand Identity + Positioning",
   "Logo Design",
@@ -12,7 +12,7 @@ const tags = [
   "Writing + Editing",
   "Signage + Display",
   "Surprise + Delight",
-]
+];
 
 import "@styles/utils.css";
 import ProjectLayout from "@layouts/ProjectLayout.astro";
@@ -22,14 +22,15 @@ import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 
-import Header from "@assets/PearlyBites/img/PearlyBites_Header.png";
+import Header from "@assets/PearlyBites/img/PearlyBites_Header_Desktop.png";
 import HeaderMobile from "@assets/PearlyBites/img/PearlyBites_Header_Mobile.png";
 import FrontDesk from "@assets/PearlyBites/img/PearlyBites_FrontDesk.png";
 import Bag from "@assets/PearlyBites/PearlyBites_Bag.mp4";
 import BetterDental from "@assets/PearlyBites/img/PearlyBites_BetterDental.png";
 import Site from "@assets/PearlyBites/img/PearlyBites_Site.png";
 import ExamRoom from "@assets/PearlyBites/img/PearlyBites_ExamRoom.png";
-import Interiors from "@assets/PearlyBites/img/PearlyBites_Interiors.png";
+import InteriorLeft from "@assets/PearlyBites/img/PearlyBites_Interior_Left.png";
+import InteriorRight from "@assets/PearlyBites/img/PearlyBites_Interior_Right.png";
 import SocialPages from "@assets/PearlyBites/img/PearlyBites_SocialPages.png";
 import Tote from "@assets/PearlyBites/img/PearlyBites_Tote.png";
 import Cards from "@assets/PearlyBites/img/PearlyBites_BusinessCards.jpg";
@@ -39,102 +40,122 @@ import Carousel from "@assets/PearlyBites/img/PearlyBites_SocialCarousel.png";
 ---
 
 <style>
-  #pearly-main {
-    width: 100%;
-    background-color: var(--cream);
-  }
-  .image-flex {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-  }
-  .image-flex > * {
-    margin-top: 22.5px;
-    margin-bottom: 22.5px;
-  }
-  .textbox {
-    text-align: center;
-  }
-  h1 {
-    font-family: "Karla";
-    font-weight: bold;
-    font-size: 25px;
+  .karla {
+    font-family: "Karla", sans-serif;
     color: #182241;
   }
-  h2 {
-    font-family: "Karla";
-    font-size: 26px;
-    font-weight: 700;
-  }
-  @media screen and (min-width: 768px) {
-    h1 {
-      font-size: 72px;
-    }
-    h2 {
-      font-size: 36px;
-    }
-    .image-flex > * {
-      margin-top: 60px;
-      margin-bottom: 60px;
-    }
+  .utile {
+    font-family: "utile-display", sans-serif;
+    color: #182241;
   }
 </style>
-<ProjectLayout hero={Header} mobile={HeaderMobile} brand={brand} tagline={tagline} tags={tags}>
-  <div class="image-flex">
-    <Image class="h-auto w-[92%]" src={FrontDesk} alt="Pearly Bites" />
-    <div class="textbox">
-      <h1>Your Pet's Teeth Cleaning<br /> Just Graduated</h1>
-    </div>
-    <div class="flex w-full justify-center items-center flex-col md:flex-row">
-      <Image
-        class="h-auto w-[58%] md:w-[45%] rounded-md"
-        src={BetterDental}
-        alt="Pearly Bites"
-      />
-      <video
-        loop
-        playsinline
-        autoplay
-        muted
-        class="w-[58%] mt-[45px] h-auto md:mt-0 md:w-[45%]"
-      >
-        <source src={Bag} />
-      </video>
-    </div>
-    <Image class="w-[90%] md:w-[73%] h-auto" src={Site} alt="Pearly Bites" />
-
-    <div class="textbox">
-      <h1>A Human Approach to Your <br />Pet's Dental Care</h1>
-    </div>
-    <Image class="w-full h-auto" src={ExamRoom} alt="Pearly Bites" />
-    <h2>Interior renderings:</h2>
+<ProjectLayout
+  hero={Header}
+  mobile={HeaderMobile}
+  brand={brand}
+  tagline={tagline}
+  tags={tags}
+>
+  <Image
+    class="w-full h-auto px-[20px] md:px-[60px]"
+    src={FrontDesk}
+    alt="Pearly Bites"
+  />
+  <div class="my-[45px] md:my-[120px] text-center">
+    <h1
+      class="karla font-semibold text-[26px] leading-[30px] md:text-[100px] md:leading-[115px]"
+    >
+      Your Pet's Teeth Cleaning Just Graduated
+    </h1>
+  </div>
+  <div
+    class="flex w-full justify-center items-center flex-col gap-[45px] md:gap-0 md:flex-row my-[45px] md:my-[120px] px-[77px] md:px-[60px]"
+  >
     <Image
-      class="w-[90%] md:w-[73%] h-auto"
-      src={Interiors}
+      class="h-auto w-full md:w-[50%] rounded-md md:rounded-lg"
+      src={BetterDental}
       alt="Pearly Bites"
     />
-    <h1>Turning Growls into Grins</h1>
+    <video
+      loop
+      playsinline
+      autoplay
+      muted
+      class="w-full md:w-[50%] md:mt-0 md:w-[45%]"
+    >
+      <source src={Bag} />
+    </video>
+  </div>
+  <div class="w-full px-[20px] md:px-[200px]">
+    <Image class="w-full h-auto" src={Site} alt="Pearly Bites" />
+  </div>
+  <div class="my-[45px] md:my-[120px] text-center">
+    <h1
+      class="karla md:utile font-bold md:font-normal text-[26px] leading-[30px] md:text-[66px] md:leading-[75px]"
+    >
+      A Human Approach to Your Pet's Dental Care
+    </h1>
+  </div>
+  <Image
+    class="w-full h-auto my-[45px] md:my-[120px]"
+    src={ExamRoom}
+    alt="Pearly Bites"
+  />
+  <h2
+    class="karla font-bold text-[26px] leading-[30px] md:text-[18px] md:leading-[20px] my-[45px] md:my-[120px] text-center"
+  >
+    Interior renderings
+  </h2>
+  <div
+    class="w-full flex flex-col md:flex-row gap-[45px] md:gap-[15px] px-[20px] md:px-[60px] my-[45px] md:my-[120px]"
+  >
     <Image
-      class="h-auto w-[58%] md:w-[42%]"
-      src={SocialPages}
+      class="w-full md:w-2/3 h-auto rounded-md md:rounded-lg"
+      src={InteriorLeft}
       alt="Pearly Bites"
     />
-    <Image class="h-auto w-[90%] md:w-[58%]" src={Tote} alt="Pearly Bites" />
-    <Image class="h-auto w-full" src={Cards} alt="Pearly Bites" />
     <Image
-      class="h-auto w-[90%] md:w-[58%]"
+      class="w-full md:w-1/3 h-auto rounded-md md:rounded-lg"
+      src={InteriorRight}
+      alt="Pearly Bites"
+    />
+  </div>
+  <h1
+    class="karla font-bold md:font-semibold text-[26px] leading-[30px] md:text-[100px] md:leading-[115px] my-[45px] md:my-[120px] text-center"
+  >
+    Turning Growls into Grins
+  </h1>
+  <Image
+    class="h-auto w-full px-[77px] md:px-[420px] my-[45px] md:my-[120px]"
+    src={SocialPages}
+    alt="Pearly Bites"
+  />
+  <div class="px-[20px] md:px-[300px] w-full my-[45px] md:my-[120px]">
+    <Image
+      class="h-auto w-full rounded-md md:rounded-lg"
+      src={Tote}
+      alt="Pearly Bites"
+    />
+  </div>
+  <Image
+    class="h-auto w-full my-[45px] md:my-[120px]"
+    src={Cards}
+    alt="Pearly Bites"
+  />
+  <div class="px-[20px] md:px-[300px] w-full my-[45px] md:my-[120px]">
+    <Image
+      class="h-auto w-full rounded-md md:rounded-lg"
       src={SocialGrid}
       alt="Pearly Bites"
     />
-    <div class="textbox">
-      <h1>Teeth Cleanings without<br /> the Bite</h1>
-    </div>
-    <Image class="w-full h-auto" src={Stationary} alt="Pearly Bites" />
-    <Image
-      class="w-[90%] md:w-[73%] h-auto"
-      src={Carousel}
-      alt="Pearly Bites"
-    />
+  </div>
+  <div
+    class="karla font-bold md:font-semibold text-[26px] leading-[30px] md:text-[100px] md:leading-[115px] my-[45px] md:my-[120px] text-center"
+  >
+    <h1>Teeth Cleanings without the Bite</h1>
+  </div>
+  <Image class="w-full h-auto" src={Stationary} alt="Pearly Bites" />
+  <div class="px-[20px] md:px-[200px] w-full my-[45px] md:my-[120px]">
+    <Image class="w-full h-auto" src={Carousel} alt="Pearly Bites" />
   </div>
 </ProjectLayout>
