@@ -271,6 +271,19 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
             this.elt.classList.remove("rewindable")
         }
 
+        deactivateOthers(){
+            // mute/pause any other active videos
+            for (const vid of Vimeo.videos){
+                if (vid.active && vid!==this){
+                    if (vid.action=="unpause"){
+                        vid.togglePlayback()
+                    }else if (vid.action=="unmute"){
+                        vid.toggleAudio()
+                    }
+                }
+            }
+        }
+
         toggleAudio(){
             const {button, player, active} = this
 
@@ -278,18 +291,8 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
                 // re-mute
                 player.setMuted(true)
             }else{
-                // mute/pause any other video with active audio
-                for (const vid of Vimeo.videos){
-                    if (vid.active && vid!==this){
-                        if (vid.action=="unpause"){
-                            vid.togglePlayback()
-                        }else if (vid.action=="unmute"){
-                            vid.toggleAudio()
-                        }
-                    }
-                }
-
                 // un-mute
+                this.deactivateOthers()
                 player.setMuted(false)
             }
 
@@ -304,6 +307,7 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
                 player.pause()
             }else{
                 // play
+                this.deactivateOthers()
                 player.setMuted(false)
                 player.play()
             }
