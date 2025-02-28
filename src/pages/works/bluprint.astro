@@ -29,7 +29,7 @@ import HeaderMobile from "@assets/Bluprint/img/Bluprint_Header_Mobile.png";
 import CrochetBox from "@assets/Bluprint/Bluprint_CrochetBox.gif";
 import Quilt from "@assets/Bluprint/img/Bluprint_Quilt.jpg";
 import LifeStyle1 from "@assets/Bluprint/img/Bluprint_Lifestyle_1.jpg";
-import Paint from "@assets/Bluprint/img/Bluprint_Paint.jpg";
+import Paint from "@assets/Bluprint/img/Bluprint_Paint.png";
 import Colors from "@assets/Bluprint/img/Bluprint_BrandColors.jpg";
 import Ad1 from "@assets/Bluprint/img/Bluprint_Ad_1.jpg";
 import MultiCat from "@assets/Bluprint/img/Bluprint_MultiCat.jpg";
@@ -46,72 +46,28 @@ import MakeupBag from "@assets/Bluprint/Bluprint_MakeupBag.mp4";
 import Ad3 from "@assets/Bluprint/img/Bluprint_Ad_3.png";
 import LifeStyle2 from "@assets/Bluprint/img/Bluprint_Lifestyle_2.jpg";
 import Patches from "@assets/Bluprint/img/Bluprint_Patches.png";
-import Tree from "@assets/Bluprint/img/Bluprint_Tree.png";
 import Ad4 from "@assets/Bluprint/img/Bluprint_Ad_4.jpg";
 import Ad5 from "@assets/Bluprint/img/Bluprint_Ad_5.jpg";
 import Embroidery from "@assets/Bluprint/img/Bluprint_Box_Embroidery.jpg";
 import Boxes from "@assets/Bluprint/Bluprint_Boxes.mp4";
 import Collateral from "@assets/Bluprint/img/Bluprint_Box_Collateral.jpg";
-import Grid1 from "@assets/Bluprint/img/Bluprint_Grid_1.jpg";
-import Grid2 from "@assets/Bluprint/img/Bluprint_Grid_2.jpg";
-import Grid3 from "@assets/Bluprint/img/Bluprint_Grid_3.jpg";
-import Grid4 from "@assets/Bluprint/img/Bluprint_Grid_4.jpg";
-import Grid5 from "@assets/Bluprint/img/Bluprint_Grid_5.jpg";
-import Grid6 from "@assets/Bluprint/img/Bluprint_Grid_6.jpg";
-import Grid7 from "@assets/Bluprint/img/Bluprint_Grid_7.jpg";
-import Grid8 from "@assets/Bluprint/img/Bluprint_Grid_8.jpg";
-import Grid9 from "@assets/Bluprint/img/Bluprint_Grid_9.jpg";
-import Grid10 from "@assets/Bluprint/img/Bluprint_Grid_10.jpg";
+import Grid1 from "@assets/Bluprint/img/Bluprint_Grid_1.png";
+import Grid2 from "@assets/Bluprint/img/Bluprint_Grid_2.png";
+import Grid3 from "@assets/Bluprint/img/Bluprint_Grid_3.png";
+import Grid4 from "@assets/Bluprint/img/Bluprint_Grid_4.png";
+import Grid5 from "@assets/Bluprint/img/Bluprint_Grid_5.png";
+import Grid6 from "@assets/Bluprint/img/Bluprint_Grid_6.png";
+import Grid7 from "@assets/Bluprint/img/Bluprint_Grid_7.png";
+import Grid8 from "@assets/Bluprint/img/Bluprint_Grid_8.png";
+import Grid9 from "@assets/Bluprint/img/Bluprint_Grid_9.png";
+import Grid10 from "@assets/Bluprint/img/Bluprint_Grid_10.png";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
+import VimeoPlayer from "@components/VimeoPlayer.astro";
 ---
 
 <style>
-  #bluprint-main {
-    width: 100%;
-    background-color: var(--cream);
-    color: var(--ink);
-  }
-  .bluprint-content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-  }
   .karla {
     font-family: "Karla", sans-serif;
-  }
-  #video-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 0 auto;
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    /* height: 500px; */
-    /* object-fit: cover; */
-  }
-  .pause-cover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-  }
-  .play-button {
-    position: absolute;
-    display: none;
-    left: calc(50% - 50px);
-    top: calc(50% - 50px);
-    width: 100px;
-    height: 55px;
-    justify-content: center;
-    align-items: center;
-    background-color: #ff97fd;
-    transform: rotate(1.75deg);
-    border: 1px solid black;
-    font-size: 21px;
-    font-family: "Karla";
-    letter-spacing: 2px;
   }
 </style>
 <ProjectLayout
@@ -121,38 +77,37 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
   tagline={tagline}
   tags={tags}
 >
-  <div class="flex items-center w-full flex-col md:flex-row">
+  <div
+    class="flex items-center w-full flex-col md:flex-row mb-[45px] md:mb-[120px] md:px-[60px]"
+  >
+    <div class="w-full md:w-[50%] p-[15%] md:p-[10%]">
+      <Image
+        class="h-auto w-full rounded-sm md:rounded-md"
+        src={CrochetBox}
+        alt="Bluprint"
+      />
+    </div>
     <Image
-      class="h-auto w-full p-[15%] md:w-[50%] md:p-[10%]"
-      src={CrochetBox}
-      alt="Bluprint"
-    />
-    <Image
-      class="h-auto w-full mb-[45px] px-[20px] md:w-[50%] md:p-0 md:pr-[60px]"
+      class="h-auto w-full px-[30px] md:w-[50%]"
       src={Quilt}
       alt="Bluprint"
     />
   </div>
-  <div
-    id="video-container-1"
-    class="w-full pt-[56.25%] relative mb-[45px] md:mb-[120px]"
-  >
-    <iframe
-      id="video-iframe-1"
-      class="h-full w-full absolute top-0 left-0"
-      src="https://player.vimeo.com/video/1035014266?title=0&badge=0&autopause=0&controls=0&player_id=0&app_id=58479"
-      allow="autoplay"
-      title="Bluprint NBCU"></iframe>
-    <div id="pause-1" class="pause-cover"></div>
-    <div id="play-1" class="play-button">PLAY</div>
-  </div>
-  <Image
-    class="h-auto w-full px-[20px] md:px-[200px]"
-    src={LifeStyle1}
-    alt="Bluprint"
+  <VimeoPlayer
+    class="my-[45px] md:my-[120px]"
+    video="1035014266"
+    height="56.25%"
+    action="unpause"
   />
+  <div class="px-[20px] md:px-[200px] my-[45px] md:my-[120px]">
+    <Image
+      class="h-auto w-full rounded-sm md:rounded-md"
+      src={LifeStyle1}
+      alt="Bluprint"
+    />
+  </div>
   <div
-    class="flex flex-col my-[45px] mx-[25px] md:flex-row md:justify-center md:my-[120px]"
+    class="flex flex-col mx-[25px] md:flex-row md:justify-center my-[45px] md:my-[120px]"
   >
     <div class="md:flex md:flex-col md:w-[50%] md:items-end">
       <div>
@@ -174,34 +129,47 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
       the space to do more of what you love.
     </p>
   </div>
-  <Image src={Paint} alt="Bluprint" />
+  <Image class="my-[45px] md:my-[120px]" src={Paint} alt="Bluprint" />
   <div
-    class="my-[45px] flex flex-col md:my-[120px] md:flex-row md:items-center"
+    class="flex flex-col md:items-center md:flex-row my-[45px] md:my-[120px] md:px-[180px] gap-[45px] md:gap-0"
   >
-    <div class="md:w-[50%]">
+    <div class="md:w-[50%] px-[77px] md:px-[10%]">
       <Image
-        class="px-[120px] h-auto mb-[45px] md:mb-0 md:float-right"
+        class="w-full h-auto rounded-sm md:rounded-md"
         src={Colors}
         alt="Bluprint"
       />
     </div>
-    <div class="md:w-[50%]">
-      <Image class="px-[20px] h-auto md:px-[10%]" src={Ad1} alt="Bluprint" />
+    <div class="md:w-[50%] px-[20px] md:px-[5%]">
+      <Image
+        class="w-full h-auto rounded-sm md:rounded-md"
+        src={Ad1}
+        alt="Bluprint"
+      />
     </div>
   </div>
-  <div class="flex flex-row px-[20px] items-center md:px-[60px]">
-    <Image class="w-[33%] py-[1.5%] px-[1.5%]" src={MultiCat} alt="Bluprint" />
-    <video
-      class="w-[33%] py-[1.1%] px-[1.1%]"
-      playsinline
-      loop
-      autoplay
-      muted
-      class="h-auto"
-    >
-      <source src={Cake} />
-    </video>
-    <Image class="w-[33%] py-[1.5%] px-[1.5%]" src={Fox1} alt="Bluprint" />
+  <div
+    class="flex flex-row px-[20px] md:px-[60px] my-[45px] md:my-[120px] gap-[10px] md:gap-[40px] items-center"
+  >
+    <div class="w-[33%] p-[.5%]">
+      <Image
+        class="w-full rounded-sm md:rounded-md"
+        src={MultiCat}
+        alt="Bluprint"
+      />
+    </div>
+    <div class="w-[33%] rounded-sm md:rounded-md overflow-hidden">
+      <video class="w-full" playsinline loop autoplay muted>
+        <source src={Cake} />
+      </video>
+    </div>
+    <div class="w-[33%] p-[.5%]">
+      <Image
+        class="w-full rounded-sm md:rounded-md"
+        src={Fox1}
+        alt="Bluprint"
+      />
+    </div>
   </div>
   <div
     class="my-[45px] mx-[25px] karla md:my-[120px] md:columns-2 md:mx-[250px] md:gap-[80px]"
@@ -244,68 +212,118 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
       of the greatest sources of happiness is the creative world we build.
     </p>
   </div>
-  <Image src={HomePage} alt="Bluprint" />
+  <Image class="w-full h-auto" src={HomePage} alt="Bluprint" />
   <div>
-    <video playsinline loop autoplay muted class="w-screen">
+    <video playsinline loop autoplay muted class="w-full">
       <source src={SocialGrid} />
     </video>
   </div>
-  <div class="flex flex-col md:flex-row my-[45px] md:my-[120px]">
-    <Image
-      class="h-auto w-full md:w-1/2 mx-auto p-[10%]"
-      src={Ad3}
-      alt="Bluprint"
-    />
-    <video
-      loop
-      playsinline
-      autoplay
-      muted
-      class="h-auto w-full md:w-1/2 md:pr-[5%]"
-    >
-      <source src={Ad2} />
-    </video>
+  <div
+    class="flex flex-col md:flex-row mt-[45px] md:my-[100px] items-center md:px-[120px] gap-[45px] md:gap-0"
+  >
+    <div class="md:w-1/2 px-[20px] md:p-[10%]">
+      <Image
+        class="h-auto w-full rounded-sm md:rounded-md"
+        src={Ad3}
+        alt="Bluprint"
+      />
+    </div>
+    <div class="md:w-1/2">
+      <video
+        loop
+        playsinline
+        autoplay
+        muted
+        class="h-auto w-full rounded-0 md:rounded-sm md:rounded-md"
+      >
+        <source src={Ad2} />
+      </video>
+    </div>
   </div>
   <div class="flex flex-row bg-[#028282]">
-    <Image class="w-[50%] p-[6%]" src={Jump1} alt="Bluprint" />
-    <Image class="w-[50%] p-[10%]" src={Jump2} alt="Bluprint" />
+    <div class="w-[50%] p-[6%]">
+      <Image
+        class="w-full rounded-sm md:rounded-md"
+        src={Jump1}
+        alt="Bluprint"
+      />
+    </div>
+    <div class="w-[50%] p-[10%]">
+      <Image
+        class="w-full rounded-sm md:rounded-md"
+        src={Jump2}
+        alt="Bluprint"
+      />
+    </div>
   </div>
+  <VimeoPlayer
+    class="px-0 md:px-[200px] my-[45px] md:my-[120px] rc-md-only"
+    video="1035014250"
+    height="56.25%"
+    action="unpause"
+  />
   <div
-    id="video-container-2"
-    class="w-full pt-[56.25%] relative flex justify-center"
+    class="mx-[10px] flex flex-row md:mx-[40px] my-[45px] md:my-[120px] items-center"
   >
-    <iframe
-      id="video-iframe-2"
-      class="h-full w-[75%] absolute top-0 left-0 right-0 mx-auto"
-      src="https://player.vimeo.com/video/1035014250?title=0&badge=0&autopause=0&controls=0&player_id=0&app_id=58479"
-      allow="autoplay"
-      title="Bluprint DIY"></iframe>
-    <div id="pause-2" class="pause-cover"></div>
-    <div id="play-2" class="play-button">PLAY</div>
-    <!-- <video id="custom-video" class="h-auto w-[92%]" loop>
-        <source src={CKAnimation} type="video/mp4" />
-      </video> -->
-    <!-- <div id="play-button">PLAY</div> -->
+    <div class="w-1/3 p-[1%]">
+      <video
+        loop
+        playsinline
+        autoplay
+        muted
+        class="h-auto w-full rounded-sm md:rounded-md"
+      >
+        <source src={Disco} />
+      </video>
+    </div>
+    <div class="w-1/3 p-[1.4%]">
+      <Image
+        class="h-auto rounded-sm md:rounded-md"
+        src={Fox2}
+        alt="Bluprint"
+      />
+    </div>
+    <div class="p-[1%] w-1/3">
+      <video
+        loop
+        playsinline
+        autoplay
+        muted
+        class="h-auto rounded-sm md:rounded-md"
+      >
+        <source src={MakeupBag} />
+      </video>
+    </div>
   </div>
-  <div class="mx-[10px] flex flex-row md:mx-[40px] mb-[40px] md:mb-[120px]">
-    <video loop playsinline autoplay muted class="h-auto w-1/3 p-[1%]">
-      <source src={Disco} />
-    </video>
-    <Image class="w-1/3 p-[1.4%] h-auto" src={Fox2} alt="Bluprint" />
-    <video loop playsinline autoplay muted class="h-auto p-[1%] w-1/3">
-      <source src={MakeupBag} />
-    </video>
-  </div>
-  <Image class="h-auto w-full" src={LifeStyle2} alt="Bluprint" />
-  <Image class="h-auto w-full" src={Patches} alt="Bluprint" />
   <Image
-    class="h-auto w-[80%] mx-auto my-[45px] md:my-[120px]"
-    src={Tree}
+    class="h-auto w-full my-[45px] md:my-[120px]"
+    src={LifeStyle2}
     alt="Bluprint"
   />
-  <div class="flex flex-row mx-0 w-full md:px-[60px]">
-    <Image class="h-auto w-1/2 pr-[2%]" src={Ad4} alt="Bluprint" />
-    <Image class="h-auto w-1/2 pl-[2%]" src={Ad5} alt="Bluprint" />
+  <Image
+    class="h-auto w-full my-[45px] md:my-[120px]"
+    src={Patches}
+    alt="Bluprint"
+  />
+  <VimeoPlayer
+    class="md:px-[200px] my-[45px] md:my-[120px] rc-md-only"
+    video="1059965808"
+    height="56.5%"
+    action="unpause"
+  />
+  <div
+    class="flex flex-row w-full px-0 md:px-[60px] my-[45px] md:my-[120px] gap-[20px] md:gap-[75px]"
+  >
+    <Image
+      class="h-auto w-1/2 rounded-sm md:rounded-md"
+      src={Ad4}
+      alt="Bluprint"
+    />
+    <Image
+      class="h-auto w-1/2 rounded-sm md:rounded-md"
+      src={Ad5}
+      alt="Bluprint"
+    />
   </div>
   <Image
     class="h-auto w-full my-[45px] md:my-[120px]"
@@ -317,7 +335,7 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
     playsinline
     autoplay
     muted
-    class="h-auto w-full px-[20px] md:w-[50%] mx-auto mb-[45px] md:mb-[120px] md:px-0"
+    class="h-auto w-full px-[20px] md:w-[50%] mx-auto my-[45px] md:my-[120px] md:px-0 rounded-sm md:rounded-md"
   >
     <source src={Boxes} />
   </video>
@@ -325,7 +343,7 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
   <div class="bg-[#242121]">
     <div class="text-white karla py-[30px] pl-[20px] font-[16px]">
       <p class="font-[700] inline-block tracking-[3px]">BLUPRINT</p>
-      <p class="inline-block ml-[20px]">Introducing</p>
+      <p class="inline-block ml-[20px]">Introducing [New Co]</p>
     </div>
     <div class="flex justify-between flex-wrap m-0 px-[20px]">
       <Image
@@ -381,73 +399,3 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
     </div>
   </div>
 </ProjectLayout>
-
-<script>
-  import Player from "@vimeo/player";
-
-  const videoContainer1 = document.getElementById("video-container-1");
-  const videoContainer2 = document.getElementById("video-container-2");
-  const video1 = document.getElementById("video-iframe-1");
-  const video2 = document.getElementById("video-iframe-2");
-  const player1 = new Player(video1);
-  const player2 = new Player(video2);
-  const pauseButton1 = document.getElementById("pause-1");
-  const playButton1 = document.getElementById("play-1");
-  const pauseButton2 = document.getElementById("pause-2");
-  const playButton2 = document.getElementById("play-2");
-
-  // Event listener for the play/pause button
-  videoContainer1.addEventListener("mouseenter", (event) => {
-    player1.getPaused().then((paused) => {
-      if (paused) {
-        playButton1.style.display = "flex";
-      }
-    });
-  });
-  videoContainer1.addEventListener("mouseleave", (event) => {
-    playButton1.style.display = "none";
-  });
-  pauseButton1.addEventListener("click", (event) => {
-    player1.getPaused().then((paused) => {
-      if (!paused) {
-        player1.pause();
-        playButton1.style.display = "flex";
-      }
-    });
-  });
-  playButton1.addEventListener("click", (event) => {
-    player1.getPaused().then((paused) => {
-      if (paused) {
-        player1.play();
-        playButton1.style.display = "none";
-      }
-    });
-  });
-
-  videoContainer2.addEventListener("mouseenter", (event) => {
-    player2.getPaused().then((paused) => {
-      if (paused) {
-        playButton2.style.display = "flex";
-      }
-    });
-  });
-  videoContainer2.addEventListener("mouseleave", (event) => {
-    playButton2.style.display = "none";
-  });
-  pauseButton2.addEventListener("click", (event) => {
-    player2.getPaused().then((paused) => {
-      if (!paused) {
-        player2.pause();
-        playButton2.style.display = "flex";
-      }
-    });
-  });
-  playButton2.addEventListener("click", (event) => {
-    player2.getPaused().then((paused) => {
-      if (paused) {
-        player2.play();
-        playButton2.style.display = "none";
-      }
-    });
-  });
-</script>
