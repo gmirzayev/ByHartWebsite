@@ -28,6 +28,7 @@ import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import HeaderVideo from "@assets/ComicsKingdom/CK_Header_Desktop.mp4";
 import HeaderVideoMobile from "@assets/ComicsKingdom/CK_Header_Mobile.mp4";
+import HeaderImage from "@assets/ComicsKingdom/img/Hero.jpg";
 import Image from "astro/components/Image.astro";
 import CKAnimation from "@assets/ComicsKingdom/CK_Animation.mp4";
 import LogoIllustrationDesktop from "@assets/ComicsKingdom/img/CK_Logo_Illustration_Desktop.png";
@@ -114,6 +115,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
 <ProjectLayout
   hero={HeaderVideo}
   mobile={HeaderVideoMobile}
+  preview={HeaderImage}
   brand={brand}
   tagline={tagline}
   tags={tags}

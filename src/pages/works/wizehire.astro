@@ -34,6 +34,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
 
 import HeroDesktop from "@assets/Wizehire/hero_wizehire_16x9 (1080p).mp4"
 import HeroMobile from "@assets/Wizehire/hero_wizehire_5x4 (1080p).mp4"
+import HeroImage from "@assets/Wizehire/img/01_HeroPreview.jpg"
 import PalettesAdA from "@assets/Wizehire/05_Wizehire_sillhoutte-ad.mp4"
 import PalettesAdB from "@assets/Wizehire/06_Wizehire_sillhouttes-outro_1.mp4"
 import PalettesAdC from "@assets/Wizehire/07_wizehire_sillhouttes (1440p).mp4"
@@ -120,7 +121,7 @@ import PositioningL from "@assets/Wizehire/img/slide-deck/2.11.png"
 ---
 
 
-<ProjectLayout hero={HeroDesktop} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
+<ProjectLayout hero={HeroDesktop} mobile={HeroMobile} preview={HeroImage} brand={brand} tagline={tagline} tags={tags}>
     <VimeoPlayer class="spaced flush" video="1057148798" height="70.31%" action="unmute"/>
 
     <section>
