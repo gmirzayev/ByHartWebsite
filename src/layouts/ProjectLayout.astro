@@ -4,15 +4,12 @@ import ProjectTags from "@components/ProjectTags.astro";
 import ProjectHead from "@components/ProjectHead.astro";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 
-const {hero, mobile, brand, tagline, tags, theme="light"} = Astro.props
+const {hero, mobile, brand, tagline, tags, preview, theme="light"} = Astro.props
 const title = `${brand} (By Hart)`
-
-// TODO: handle mobile-vs-desktop hero images
-//       handle video hero images -> og:image
 
 ---
 
-<InternalLayout title={title} subtitle={tagline} image={hero}>
+<InternalLayout title={title} subtitle={tagline} image={preview ?? hero}>
     <ProjectHead hero={hero} mobile={mobile} brand={brand} tagline={tagline} theme={theme} />
     <ProjectTags title={brand} tags={tags} theme={theme} />
     <article class="project">
