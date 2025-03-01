@@ -16,7 +16,6 @@
 
 .text-block{
     font: 16px/1.5 "Karla", sans-serif;
-    padding:3em 1.5em;
 
     p {
         max-width:700px;
@@ -31,7 +30,6 @@
     flex-direction: column;
     gap:10px;
     justify-content: center;
-    padding:20px;
 
     img{
         max-width: 100%;
@@ -161,7 +159,7 @@
     flex-direction: row;
     justify-content: center;
     padding: 40px 20px;
-    gap: 5px;
+    gap: 15px;
 
     img{
         max-width:calc(50% - 2.5px);
