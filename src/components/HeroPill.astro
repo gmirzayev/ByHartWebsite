@@ -1,41 +1,56 @@
 ---
-import Art from "@assets/Home/BH_Art.mp4";
-import Experience from "@assets/Home/BH_Experience.mp4";
-import Design from "@assets/Home/BH_Design.mp4";
-import Style from "@assets/Home/BH_Style.mp4";
-import Creative from "@assets/Home/BH_Creative.mp4";
-import Purpose from "@assets/Home/BH_Purpose.mp4";
+import Story from "@assets/Home/pill/BY HART SITE_STORY_V03.mp4"
+import Style from "@assets/Home/pill/BY HART SITE_STYLE_VRT_03.mp4"
+import Identity from "@assets/Home/pill/BY HART SITE_ID_V03.mp4"
+import Art from "@assets/Home/pill/BY HART SITE_ART_V03.mp4"
+import Experience from "@assets/Home/pill/BY HART SITE_EXPERIENCE_V04.mp4"
+import Content from "@assets/Home/pill/BY HART SITE_CONTENT_V02.mp4"
+import Design from "@assets/Home/pill/BY HART SITE_DESIGN_V03.mp4"
+import Purpose from "@assets/Home/pill/BY HART SITE_PURPOSE_V04.mp4"
+import Creative from "@assets/Home/pill/BY HART SITE_CREATIVE_V04.mp4"
+import Sarah from "@assets/Home/pill/BY HART SITE_SARAH.mp4"
+
+const VIDEOS = [
+  {term:"story", video:Story, offset:-95, rotate:true},
+  {term:"style", video:Style, offset:15},
+  {term:"identity", video:Identity, offset:-110, rotate:true},
+  {term:"art", video:Art, offset:-5},
+  {term:"experience", video:Experience, offset:-80, rotate:true},
+  {term:"content", video:Content, offset:5},
+  {term:"design", video:Design, offset:-100, rotate:true},
+  {term:"purpose", video:Purpose, offset:-10},
+  {term:"creative", video:Creative, offset:-85, rotate:true},
+  {term:"sarah", video:Sarah, offset:10},
+]
 ---
 
 <style>
-  .pill--container {
+  #pill {
     transition: transform 2s ease;
     transform-origin: center;
-    transform: rotate(30deg);
+    transform: rotate(-95deg);
+    overflow:visible;
   }
 
   .video-container {
     position: absolute;
     display: flex;
     justify-content: center;
-    clip-path: url(#svgPath);
-  }
+    clip-path: url(#video-mask);
 
-  .video-frame {
-    position: relative;
-    border: 0;
-    height: 860px;
-    width: 860px;
-    opacity: 0;
-    max-width: none;
-  }
+    video{
+      position: relative;
+      border: 0;
+      height: 860px;
+      width: 860px;
+      opacity: 0;
+      max-width: none;
+      transition: opacity 1s;
 
-  .image-container .image {
-    position: absolute;
-    top: -140px;
-    right: 10px;
-    display: block;
-    z-index: 5;
+      &.active{
+        opacity:1;
+      }
+    }
   }
 
   #path {
@@ -48,131 +63,57 @@ import Purpose from "@assets/Home/BH_Purpose.mp4";
     font-family: "utile-display", sans-serif;
     font-style: normal;
     font-weight: 400;
-    fill: #faf7f4;
+    fill: var(--cream);
   }
 
-  #text-path:hover {
-    offset: 50%;
-  }
+  #text-path tspan{
+    transition: fill .25s;
 
-  .pill-text {
-    letter-spacing: 1px;
-  }
-
-  .pill-text:hover {
-    cursor: url("../assets/HeartCursor.png") 16 16, auto;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-    fill: #ff97fd;
-  }
-
-  .highlighted {
-    font-weight: 600;
-    letter-spacing: 0.8px;
-    fill: #ff97fd;
-  }
-
-  @keyframes fade {
-    from {
-      opacity: 0;
+    &.active,
+    &:hover {
+      fill: #ff97fd;
     }
-    to {
-      opacity: 1;
+
+    &:hover ~ tspan.active,
+    &.active:has(~ tspan:hover){
+      fill:var(--cream) !important;
     }
-  }
 
-  .fade {
-    position: relative;
-    animation-name: fade;
-    animation-duration: 2000ms;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-    z-index: 10;
-  }
-
-  .hidden {
-    display: none;
-  }
-
-  .shown {
-    display: block;
+    &:hover:not(.active){
+      cursor: url("/images/HeartCursor.png") 16 16, pointer;
+    }
   }
 </style>
 <div
   class="scale-[.4] overflow-visible md:overflow-hidden md:mb-[50px] md:scale-100"
 >
   <div
-    class="pill--container relative flex justify-center items-center w-full h-[500px] md:h-[900px]"
-    id="pillRotate"
+    id="pill"
+    class="relative flex justify-center items-center w-full h-[500px] md:h-[900px]"
   >
-    <!-- Story, style, identity, art, experience, content, design, purpose, actually creative -->
-    <div class="video-container">
-      <video
-        id="video-1"
-        muted
-        playsinline
-        class="video-frame fade rotate-180"
-        autoplay="true"
-        loop="true"
-        src={Style}></video>
-    </div>
-    <div class="video-container">
-      <video
-        id="video-4"
-        muted
-        playsinline
-        class="transform -rotate-90 video-frame"
-        loop="true"
-        src={Experience}></video>
-    </div>
-    <div class="video-container">
-      <video
-        id="video-3"
-        muted
-        playsinline
-        class="transform video-frame"
-        loop="true"
-        src={Art}></video>
-    </div>
-    <div class="video-container">
-      <video
-        id="video-6"
-        muted
-        playsinline
-        class="transform rotate-90 video-frame"
-        loop="true"
-        src={Design}></video>
-    </div>
-    <div class="video-container">
-      <video
-        id="video-8"
-        muted
-        playsinline
-        class="transform -rotate-90 video-frame"
-        loop="true"
-        src={Creative}></video>
-    </div>
-    <div class="video-container">
-      <video
-        id="video-7"
-        muted
-        playsinline
-        class="transform video-frame"
-        loop="true"
-        src={Purpose}></video>
-    </div>
+    {VIDEOS.map(({term, video, rotate, offset}, i) =>
+      <div class="video-container">
+        <video muted playsinline loop
+          src={video}
+          class:list={["transform",
+            term,
+            rotate ? "rotate-90" : null,
+            i==0 ? "active" : null,
+          ]}
+          data-offset={offset}
+        />
+      </div>
+    )}
     <svg xmlns="http://www.w3.org/2000/svg">
-      <clipPath id="svgPath" clipPathUnits="objectBoundingBox">
+      <clipPath id="video-mask" clipPathUnits="objectBoundingBox">
         <path
-          id="svgPath-path"
           fill="none"
           stroke="none"
           d="M 0.5 0.055 H 0.5 S 0.772 0.055 0.772 0.327 V 0.672 S 0.772 0.944 0.5 0.944 H 0.5 S 0.228 0.944 0.228 0.672 V 0.327 S 0.228 0.055 0.5 0.055 H 0.5"
         ></path>
       </clipPath>
     </svg>
-    <div class="pill absolute w-[500px] h-[500px] z-[7]">
+    <div class="halo absolute w-[500px] h-[500px] z-[7]">
       <svg
         class="block my-0 mx-auto overflow-visible"
         viewBox="0 80 250 100"
@@ -189,19 +130,20 @@ import Purpose from "@assets/Home/BH_Purpose.mp4";
       283.9355 S 250.6275 408.0739 126.4892 408.0739 H 126.4892 S 2.351 408.0739
       2.351 283.9354 V 126.3874 S 2.351 2.2489 126.4892 2.2489 "
         ></path>
-        <text id="text-parent">
-          <textPath href="#path" id="text-path" startOffset="50">
+        <text id="text-parent" style="user-select: none; -webkit-user-select: none;">
+          <textPath href="#path" id="text-path" startOffset="50" style="user-select: none; -webkit-user-select: none;">
             By Hart is a
-            <tspan class="highlighted pill-text"> story </tspan> +
-            <tspan class="pill-text"> style </tspan> +
-            <tspan class="pill-text"> identity </tspan> +
-            <tspan class="pill-text"> art </tspan> +
-            <tspan class="pill-text"> experience </tspan> +
-            <tspan class="pill-text"> content </tspan> +
-            <tspan class="pill-text"> design </tspan> +
-            <tspan class="pill-text"> purpose </tspan> +
-            <tspan class="pill-text"> actually creative </tspan>
-            studio by Sarah Hartley.
+            <tspan data-term="story" class="active"> story </tspan> +
+            <tspan data-term="style"> style </tspan> +
+            <tspan data-term="identity"> identity </tspan> +
+            <tspan data-term="art"> art </tspan> +
+            <tspan data-term="experience"> experience </tspan> +
+            <tspan data-term="content"> content </tspan> +
+            <tspan data-term="design"> design </tspan> +
+            <tspan data-term="purpose"> purpose </tspan> +
+            <tspan data-term="creative"> actually creative studio </tspan> by
+            <tspan data-term="sarah"> Sarah Hartley</tspan>.
+            <animate attributeName="startOffset" from="50%" to="0%" begin="0s" dur="45s" repeatCount="indefinite"/>
           </textPath>
         </text>
       </svg>
@@ -209,157 +151,86 @@ import Purpose from "@assets/Home/BH_Purpose.mp4";
   </div>
 </div>
 <script>
-  let highlightedElement = 0;
-  let animatedPosition = 0;
-  let offset = 50;
-  let previousPosition = 0;
-  let previousRotation = 20;
-  const rotations = [110, 160, 290, 20];
 
-  const pillSpans = document.getElementsByClassName("pill-text");
-  let previouslyHighlighted = pillSpans[0];
+  const ORDER = ["story", "style", "identity", "art", "experience", "content", "design", "purpose", "creative", "sarah"],
+        PILL = document.querySelector("#pill") as HTMLElement,
+        DELAY = 4000
 
-  function handleTextMouseEnter(index) {
-    highlightedElement = index;
-    if (highlightedElement != animatedPosition) {
-      previouslyHighlighted.classList.remove("highlighted");
+  let octave = 0,
+      activeIdx = 0,
+      selectionTimeout,
+      driftTimeout
+
+  function initialize(){
+    let video = document.querySelector("#pill video.active") as HTMLVideoElement,
+        to = parseFloat(video.dataset.offset),
+        drift = -15
+    video.play()
+    PILL.style.transition = "transform 4s linear";
+    PILL.style.transform = `rotate(${octave + to + drift}deg)`
+
+    selectionTimeout = setTimeout(selectNext, DELAY)
+  }
+
+  function selectNext(){
+    selectTerm(ORDER[(activeIdx + 1) % ORDER.length])
+  }
+
+  function selectTerm(term:string){
+    if (ORDER.includes(term)){
+      activeIdx = ORDER.indexOf(term)
+
+      // update text selection
+      document.querySelector("#pill tspan.active").classList.remove("active"),
+      document.querySelector(`#pill tspan[data-term=${term}]`).classList.add("active")
+
+      // hide and show videos
+      let prevVideo = document.querySelector("#pill video.active") as HTMLVideoElement
+      prevVideo.classList.remove("active")
+
+      let nextVideo = document.querySelector(`#pill video.${term}`) as HTMLVideoElement
+      nextVideo.classList.add("active")
+      nextVideo.currentTime = 0
+      nextVideo.play()
+
+      // rotate pill (followed by drift during interval)
+      let from = parseFloat(prevVideo.dataset.offset),
+          to = parseFloat(nextVideo.dataset.offset),
+          drift = -25
+
+      if (from < to) octave -= 360 // always rotate CCW
+
+      PILL.style.transition = "transform 1s ease-in-out";
+      PILL.style.transform = `rotate(${octave + to - drift/2}deg)`
+
+      clearTimeout(driftTimeout)
+      driftTimeout = setTimeout(() => {
+          PILL.style.transition = "transform 3s linear";
+          PILL.style.transform = `rotate(${octave + to + drift/2}deg)`
+      }, 1000)
+
+      clearTimeout(selectionTimeout)
+      selectionTimeout = setTimeout(selectNext, DELAY)
     }
   }
 
-  function handleTextMouseExit() {
-    if (highlightedElement != animatedPosition) {
-      highlightedElement = animatedPosition;
-      previouslyHighlighted.classList.add("highlighted");
-    }
-  }
-
-  function setAnimatedPosition(index) {
-    animatedPosition = index;
-    highlightedElement = index;
-    if (animatedPosition !== previousPosition) {
-      showVideo();
-      rotatePill();
-      highlightElement();
-    }
-  }
-
-  for (let i = 0; i < pillSpans.length; i++) {
-    let span = pillSpans[i];
-    span.addEventListener("mouseenter", () => {
-      handleTextMouseEnter(i);
-    });
-    span.addEventListener("mouseleave", () => {
-      handleTextMouseExit();
-    });
-    span.addEventListener("click", () => {
-      setAnimatedPosition(i);
-    });
-  }
-
-  /*     -------------------     */
-  // const video0 = document.getElementById("video-0");
-
-  // let player = new Player(video0);
-
-  function showVideo() {
-    let nextVideo: HTMLVideoElement = document.getElementById(
-      `video-${animatedPosition}`
-    ) as HTMLVideoElement;
-    const previousVideo = document.getElementById(`video-${previousPosition}`);
-    if (animatedPosition !== previousPosition) {
-      if (!nextVideo) {
-        nextVideo = document.getElementById(`video-1`) as HTMLVideoElement;
+  // clicking on a term selects the video
+  document.querySelectorAll("#pill tspan").forEach(tspan => {
+    tspan.addEventListener("click", e => {
+      if (e.target instanceof SVGTSpanElement){
+        if (!e.target.classList.contains("active"))
+          selectTerm(e.target.dataset.term)
       }
-      nextVideo.currentTime = 0;
-      nextVideo.play();
-      nextVideo.classList.add("fade");
-      if (previousVideo) {
-        // previousVideo.classList.remove("shown");
-        previousVideo.classList.remove("fade");
-      }
-    }
-  }
+    })
+  })
 
-  function getRotation(previousRot, previousPos, animatedPos) {
-    previousPos = previousPos % 4;
-    animatedPos = animatedPos % 4;
-    let newRotation = rotations[animatedPos];
-    if (animatedPos > previousPos || (animatedPos === 0 && previousPos === 3)) {
-      newRotation += Math.ceil((previousRot - newRotation) / 360) * 360;
+  // pause inactive videos once they finish fading out
+  document.querySelector("#pill").addEventListener("transitionend", e => {
+    if (e.target instanceof HTMLVideoElement && !e.target.classList.contains("active")){
+      e.target.pause()
+      e.target.currentTime = 0
     }
-    if (animatedPos < previousPos) {
-      newRotation +=
-        Math.floor(Math.abs((previousRot - newRotation) / 360)) * 360;
-    }
-    if (animatedPos === 3 && previousPos === 0) {
-      newRotation -= 360;
-    }
-    return newRotation;
-  }
+  })
 
-  const textPath = document.getElementById("text-path");
-  let offsetInterval;
-
-  const createOffsetInterval = () => {
-    offsetInterval = setInterval(() => {
-      textPath.setAttribute("startOffset", offset + "%");
-      offset -= 0.02;
-      if (offset <= 0) {
-        offset = 50;
-      }
-    }, 16);
-  };
-  createOffsetInterval();
-
-  const textParent = document.getElementById("text-parent");
-  textParent.addEventListener("mouseenter", () => {
-    if (offsetInterval) {
-      clearInterval(offsetInterval);
-    }
-    if (autoInterval) {
-      clearInterval(autoInterval);
-    }
-  });
-  textParent.addEventListener("mouseleave", () => {
-    createOffsetInterval();
-    createAutoInterval();
-  });
-
-  let autoInterval;
-  const createAutoInterval = () => {
-    autoInterval = setInterval(() => {
-      if (document.hidden) return;
-      highlightedElement = (highlightedElement + 1) % 8;
-      animatedPosition = (animatedPosition + 1) % 8;
-      if (animatedPosition !== previousPosition) {
-        showVideo();
-        rotatePill();
-        highlightElement();
-      }
-    }, 6000);
-  };
-  createAutoInterval();
-
-  function highlightElement() {
-    if (previouslyHighlighted) {
-      previouslyHighlighted.classList.remove("highlighted");
-    }
-    const element = pillSpans[highlightedElement];
-    element.classList.add("highlighted");
-    previouslyHighlighted = element;
-  }
-
-  function rotatePill() {
-    const pillContainer = document.getElementById("pillRotate");
-    const svg = document.getElementById("svgPath-path");
-    svg.style.transformOrigin = ".5px .4px";
-    let rotationAmount = getRotation(
-      previousRotation,
-      previousPosition,
-      animatedPosition
-    );
-    pillContainer.style.transform = `rotate(${rotationAmount}deg)`;
-    previousRotation = rotationAmount;
-    previousPosition = animatedPosition;
-  }
+  initialize()
 </script>
