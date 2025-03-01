@@ -142,16 +142,16 @@ import ImgERight from "@assets/PuzzlePalace/img/19_PP_cutting room floor_image.p
   <section>
     <h1>Palace Rules</h1>
     <ResponsiveTextBlock class="palace-rules">
-      <div>
+      <div class="collapsed">
         <h1>Dos</h1>
-        <p>Utilize smart, playful, and rewarding brand values here, for language that sets a scene and builds a unique world.</p>
+        <p>Utilize smart, playful, and rewarding brand values here, for language that sets a scene and builds a unique world. <button>…&nbsp;Read More</button></p>
         <p>Lean into ‘Palace’ being a reference to a palace of the mind (personalization/personal challenge), synonymous with bounty (quality + quantity), or evocative of the sense of adventure (personal challenge/quest/goal oriented) reminiscent of stories in which a palace or kingdom is featured.</p>
         <p>Lean into simple smiles and words that slightly elevate the tone; knowing while still being approachable.</p>
         <p>Use unexpected-yet-fitting, modern, and descriptive words for the delight factor (i.e Bounty, Feast, Queen, Kingdom, Adventure, Festivities, Chamber, Joust)</p>
       </div>
-      <div>
+      <div class="collapsed">
         <h1>Don’ts</h1>
-        <p>Avoid the cheesiest of puns when possible, or overly jokey copy (as that could indicate “forced laughter” or infantilizing/talking down to our players)</p>
+        <p>Avoid the cheesiest of puns when possible, or overly jokey copy (as that could indicate “forced laughter” or infantilizing/talking down to our players) <button>…&nbsp;Read More</button></p>
         <p>Avoid leaning into any more than sparingly or as needed into ‘Palace’ language primarily focused on the royal treatment or royal court (where’s the challenge or adventure in getting handed everything or pampered due to privilege?).</p>
         <p>Never default to ‘King’ alone — it’s gendered and we have reason to suspect the majority of our audience identifies as women (+ see guidance above).</p>
         <p>Avoid words rarely used today ((i.e Good morrow, ye, hark)</p>
@@ -252,7 +252,17 @@ import ImgERight from "@assets/PuzzlePalace/img/19_PP_cutting room floor_image.p
         setTimeout(() => setInterval(advance, 2000), dt)
         dt += 666
     })
-
   })
+
+  // clicking the Read More button in the Dos & Don'ts section displays more on mobile
+  document.querySelectorAll('.palace-rules div').forEach(elt => {
+    elt.addEventListener("click", e => {
+      if (e.target instanceof HTMLButtonElement){
+        elt.classList.remove("collapsed")
+      }
+    })
+  })
+
+
 </script>
 

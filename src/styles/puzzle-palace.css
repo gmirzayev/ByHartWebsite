@@ -113,8 +113,21 @@ img.type-kit{
 
 .palace-rules{
     h1{
-        text-transform: none;
-        letter-spacing: 0;
+        text-transform: none !important;
+        letter-spacing: 0 !important;
+    }
+
+    button{
+        display:none;
+        text-decoration: underline;
+        &:hover{ cursor:url("/images/HeartCursor.png") 16 16, pointer; }
+    }
+
+    @media (max-width: 767px) {
+        .collapsed button{ display: inline; }
+        .collapsed p ~ p{
+            display: none;
+        }
     }
 }
 
