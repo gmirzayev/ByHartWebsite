@@ -1,3 +1,11 @@
+article.project img{
+    border-radius: 3px;
+
+    @media (min-width: 768px) {
+        border-radius: 5px;
+    }
+}
+
 .section-intro{
     display: flex;
     flex-flow: column nowrap;
@@ -37,19 +45,12 @@
     }
 }
 
-#robinson-interview, #nord-interview{
-    padding-top: 56.272727%;
-
+#culture-report{
+    margin:15px 20px 45px 20px;
     @media (min-width: 768px) {
-        padding-top: calc(56.272727% / 2);
+        margin-bottom:120px;
     }
 }
-
-#culture-report{
-    padding-top: calc(56.272727% - 20px);
-    margin: 0 20px;
-}
-
 
 /* SPACING */
 .two-up + .two-up, .two-up + .one-up{
@@ -63,9 +64,3 @@
     }
 }
 
-#culture-report{
-    margin:15px 0 45px 0;
-    @media (min-width: 768px) {
-        margin-bottom:120px;
-    }
-}

@@ -28,6 +28,7 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
 import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
+import VimeoPlayer from "@components/VimeoPlayer.astro";
 
 
 import Hero from "@assets/CurveReport/img/hero.jpg"
@@ -55,17 +56,6 @@ import CultureB from "@assets/CurveReport/img/culture-2.jpg"
 import CultureC from "@assets/CurveReport/img/culture-3.jpg"
 import CultureD from "@assets/CurveReport/img/culture-4.jpg"
 import CultureBottom from "@assets/CurveReport/img/culture-footer.jpg"
-
-const vimeoAllow = "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-const vimeoOpts = "?byline=false&title=false&portrait=false"
-const vimeoRobinsonTitle = "The Curve + MSNBC interviews Evita Robinson"
-const vimeoRobinson = "https://player.vimeo.com/video/177130878" + vimeoOpts
-const vimeoNordTitle = "The Curve + MSNBC interviews James Nord"
-const vimeoNord = "https://player.vimeo.com/video/177130879" + vimeoOpts
-
-
-const vimeoCultureTitle = "The Curve Report: CultureFirst - Teaser Trailer"
-const vimeoCulture = "https://player.vimeo.com/video/177130787" + vimeoOpts
 ---
 
 <ProjectLayout hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
@@ -115,12 +105,8 @@ const vimeoCulture = "https://player.vimeo.com/video/177130787" + vimeoOpts
     </TwoUp>
 
     <TwoUp>
-        <div id="robinson-interview" class="video-player">
-            <iframe title={vimeoRobinsonTitle} src={vimeoRobinson} frameborder="0" allow={vimeoAllow}></iframe>
-        </div>
-        <div id="nord-interview" class="video-player">
-            <iframe title={vimeoNordTitle} src={vimeoNord} frameborder="0" allow={vimeoAllow}></iframe>
-        </div>
+        <VimeoPlayer video="177130878" height="56.25%" class="rc" action="unpause"/>
+        <VimeoPlayer video="177130879" height="56.25%" class="rc" action="unpause"/>
     </TwoUp>
 
 
@@ -141,8 +127,6 @@ const vimeoCulture = "https://player.vimeo.com/video/177130787" + vimeoOpts
     </TwoUp>
     <OneUp src={CultureBottom} alt=" "/>
 
-    <div id="culture-report" class="video-player">
-        <iframe title={vimeoCultureTitle} src={vimeoCulture} frameborder="0" allow={vimeoAllow}></iframe>
-    </div>
+    <VimeoPlayer id="culture-report" video="177130787" height="56.25%" class="rc" action="unmute"/>
 </ProjectLayout>
 
