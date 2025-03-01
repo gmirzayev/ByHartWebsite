@@ -1,6 +1,6 @@
 ---
 const brand = "NBCUniversal Upfronts"
-const tagline = "TKTKTKTKTK"
+const tagline = "Content + Data + Distribution as One"
 const tags=[
     'Brand Identity + Positioning',
     'Video + Photography',
@@ -26,7 +26,7 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
 import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
-
+import VimeoPlayer from "@components/VimeoPlayer.astro";
 
 import Hero from "@assets/NbcUpfronts/img/hero.png"
 import HeroMobile from "@assets/NbcUpfronts/img/hero-mobile.png"
@@ -37,20 +37,11 @@ import RightA from "@assets/NbcUpfronts/img/right-1.png"
 import RightB from "@assets/NbcUpfronts/img/right-2.png"
 import RightC from "@assets/NbcUpfronts/img/right-3.png"
 import Campaign from "@assets/NbcUpfronts/img/campaign.jpeg"
-
-const vimeoAllow = "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-const vimeoOpts = "?byline=false&title=false&portrait=false"
-const vimeoRecapTitle = "2016 Upfront Recap"
-const vimeoRecap = "https://player.vimeo.com/video/177142298" + vimeoOpts
-const vimeoReachTitle = "Reach Redefined Reveal 2016"
-const vimeoReach = "https://player.vimeo.com/video/177130853" + vimeoOpts
 ---
 
-<ProjectLayout hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
+<ProjectLayout theme="dark" hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
 
-    <div id="upfronts-recap" class="video-player">
-        <iframe title={vimeoRecapTitle} src={vimeoRecap} frameborder="0" allow={vimeoAllow}></iframe>
-    </div>
+    <VimeoPlayer video="177142298" height="56.25%" action="unpause"/>
 
     <ResponsiveTextBlock class="reach-intro">
         <div>
@@ -74,9 +65,8 @@ const vimeoReach = "https://player.vimeo.com/video/177130853" + vimeoOpts
         </div>
     </TwoUp>
 
-    <div id="reach-redefined" class="video-player">
-        <iframe title={vimeoReachTitle} src={vimeoReach} frameborder="0" allow={vimeoAllow}></iframe>
-    </div>
+
+    <VimeoPlayer video="177130853" height="56.25%" class="padded rc" action="unpause"/>
 
     <div class="campaign-intro">
         Follow-up campaign I crafted and pitched with my in-house team
