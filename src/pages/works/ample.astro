@@ -147,10 +147,10 @@ import CouldBe from "@assets/Ample/img/could-be.png"
 import HomepageMobile from "@assets/Ample/18_Ample_1.mp4"
 import HomepageDesktop from "@assets/Ample/19_Ample_2_1.mp4"
 
-import StoryA from "@assets/Ample/ample_lorenzo_1x1_piclock_1.mp4"
-import StoryB from "@assets/Ample/ample_michael_story_ad_1x1_piclock03_1.mp4"
-import StoryC from "@assets/Ample/ample_perry_story_4x5_piclock03_1.mp4"
-import StoryD from "@assets/Ample/SITE GRID_Ample_7_1.mp4"
+// import StoryA from "@assets/Ample/ample_lorenzo_1x1_piclock_1.mp4"
+// import StoryB from "@assets/Ample/ample_michael_story_ad_1x1_piclock03_1.mp4"
+// import StoryC from "@assets/Ample/ample_perry_story_4x5_piclock03_1.mp4"
+import StoryD from "@assets/Ample/Ample testimonial site animation.mp4"
 import VidGridA from "@assets/Ample/SITE GRID_Ample_1_1.mp4"
 import VidGridB from "@assets/Ample/SITE GRID_Ample_02_1.mp4"
 import VidGridC from "@assets/Ample/SITE GRID_Ample_2_1.mp4"
@@ -159,7 +159,7 @@ import VidGridE from "@assets/Ample/SITE GRID_Ample_6_1.mp4"
 import VidGridF from "@assets/Ample/SITE GRID_Ample_8_1.mp4"
 import DesktopGallery from "@assets/Ample/34_Ample_1.mp4"
 import AlopeciaVid from "@assets/Ample/Alopecia_Awareness_1.mp4"
-import LogoTicker from "@assets/Ample/Ample_Logo ticker animation.mp4"
+import LogoTicker from "@assets/Ample/Ample_Logo ticker animation_2_1.mp4"
 // import Vid from "@assets/Ample/16_Ample_Painting-inprogress_1.mp4"
 // import Vid from "@assets/Ample/Ample_social-reel-vo_9x16_4.mp4"
 // import Vid from "@assets/Ample/Doshi_video_english_vertical_9x16_1.mp4"
@@ -174,12 +174,12 @@ import LogoTicker from "@assets/Ample/Ample_Logo ticker animation.mp4"
     <VimeoPlayer id="intro-video" class="spaced rc" video="1057985795" height="56.25%" action="unmute"/>
 
     <div id="color-grid" class="two-col spaced">
-        <Image src={ColorSwatchA} widths={[2200]} alt=" " />
-        <Image src={ColorPhotoA} widths={[2200]} alt=" " />
-        <Image src={ColorSwatchB} widths={[2200]} alt=" " />
-        <Image src={ColorPhotoB} widths={[2200]} alt=" " />
-        <Image src={ColorSwatchC} widths={[2200]} alt=" " />
-        <Image src={ColorPhotoC} widths={[2200]} alt=" " />
+        <Image src={ColorSwatchA} widths={[2200]} class="rc" alt=" " />
+        <Image src={ColorPhotoA} widths={[2200]} class="rc" alt=" " />
+        <Image src={ColorSwatchB} widths={[2200]} class="rc" alt=" " />
+        <Image src={ColorPhotoB} widths={[2200]} class="rc" alt=" " />
+        <Image src={ColorSwatchC} widths={[2200]} class="rc" alt=" " />
+        <Image src={ColorPhotoC} widths={[2200]} class="rc" alt=" " />
     </div>
 
     <section>
@@ -201,19 +201,19 @@ import LogoTicker from "@assets/Ample/Ample_Logo ticker animation.mp4"
         <OneUp src={InteriorA} class="rc" max="1320px" alt=" " />
         <OneUp src={InteriorB} class="rc" max="1320px" alt=" " />
 
-        <div class="two-col spaced flush">
-            <Image src={InteriorC} widths={[2200]} alt=" " />
-            <Image src={AlopeciaPic} widths={[2200]} alt=" " />
+        <div class="two-col flush">
+            <Image src={InteriorC} widths={[2200]} class="rc" alt=" " />
+            <Image src={AlopeciaPic} widths={[2200]} class="rc" alt=" " />
         </div>
 
         <OneUp src={InteriorD} class="rc" max="1320px" alt=" " />
 
-        <div class="two-col spaced flush">
-            <Image src={InteriorE} widths={[2200]} alt=" " />
-            <Image src={InteriorF} widths={[2200]} alt=" " />
+        <div class="two-col flush">
+            <Image src={InteriorE} widths={[2200]} class="rc" alt=" " />
+            <Image src={InteriorF} widths={[2200]} class="rc" alt=" " />
         </div>
 
-        <div class="two-col inset">
+        <div class="two-col last">
             <Image src={InteriorG} class="rc" widths={[2200]} alt=" " />
             <Image src={InteriorH} class="rc" widths={[2200]} alt=" " />
         </div>
@@ -244,18 +244,18 @@ import LogoTicker from "@assets/Ample/Ample_Logo ticker animation.mp4"
     <VimeoPlayer id="testimonial-loop" class="spaced rc" video="1058009256" height="60%" />
 
     <div id="homepages">
-        <VideoLoop class="rc-big" src={HomepageMobile} max="375px" />
-        <VideoLoop class="rc-big" src={HomepageDesktop} max="800px" />
+        <VideoLoop class="rc-phone" src={HomepageMobile} max="375px" />
+        <VideoLoop class="rc-phone" src={HomepageDesktop} max="1040px" />
     </div>
 
     <div id="patient-stories-a" class="two-col">
-        <VideoLoop src={StoryA} />
-        <VideoLoop src={StoryB} />
+        <VimeoPlayer class="rc" video="1057981577" height="100%" action="unpause"/>
+        <VimeoPlayer class="rc" video="1057983997" height="100%" action="unpause"/>
     </div>
 
     <div id="patient-stories-b" class="two-col">
-        <VideoLoop src={StoryC} />
-        <VideoLoop class="mini rc-big" src={StoryD} />
+        <VimeoPlayer class="rc" video="1057976738" height="125%" action="unmute"/>
+        <VideoLoop src={StoryD} class="rc" />
     </div>
 
     <Image src={GetAhead} widths={[2200]} alt=" " />
@@ -278,7 +278,7 @@ import LogoTicker from "@assets/Ample/Ample_Logo ticker animation.mp4"
 
     <VideoLoop src={LogoTicker} />
 
-    <section>
+    <section id="booking-flow">
         <h1>Booking Flow</h1>
         <Image src={BookingFlow} widths={[2200]} alt=" " />
     </section>
@@ -336,7 +336,7 @@ import LogoTicker from "@assets/Ample/Ample_Logo ticker animation.mp4"
     </div>
 
     <div id="social-reels-b" class="spaced">
-        <VimeoPlayer video="1058009238" height="177.78%" class="rc" action="unmute"/>
+        <VimeoPlayer video="1058009238" height="177.78%" class="rc" action="unpause"/>
         <VimeoPlayer video="1059558533" height="177.78%" class="rc" action="unpause"/>
     </div>
 

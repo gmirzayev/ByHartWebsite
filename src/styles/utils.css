@@ -100,7 +100,10 @@ a[href]:hover{
 
   > *{ width:100%; }
 
-  &.flush{ padding:0; }
+  &.flush{
+    padding:0;
+    width:100%;
+  }
 
   grid-template-columns: 1fr 1fr;
   &.bias-left{ grid-template-columns: 2fr 1fr; }
@@ -126,7 +129,11 @@ a[href]:hover{
   gap: 15px;
 
   > *{ width:100%; }
-  &.flush{ padding:0; }
+  &.flush{
+    width:100%;
+    padding:0;
+  }
+
   @media (min-width: 768px) {
       margin:120px 0;
   }

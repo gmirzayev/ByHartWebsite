@@ -1,6 +1,15 @@
-#color-grid{
+.rc-phone{
+    border-radius: 10px;
+
+    @media (min-width: 768px) {
+        border-radius: 25px !important;
+    }
+  }
+
+
+  #color-grid{
     img{
-        border-radius:20px;
+        /* border-radius:20px; */
     }
 
     @media (min-width: 768px) {
@@ -32,42 +41,9 @@
         }
     }
 
-    .inset{
+    .last{
         margin:0 var(--hspace-m);
-        grid-template-columns: fit-content(512px) fit-content(512px);
     }
-}
-
-
-#barbie-production{
-    /* padding:40px 0px; */
-    overflow:hidden;
-
-    .tray{
-        position:relative;
-        display:flex;
-        flex-direction:row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 2.5vw;
-    }
-
-    img{
-        width:22.5vw;
-        animation: infinite-slide-175 12s linear infinite;
-        backface-visibility: hidden;
-        transform-style: preserve-3d;
-    }
-
-    @media (min-width: 768px) {
-        /* background-size: cover; */
-        /* padding:100px 0px; */
-    }
-}
-
-@keyframes infinite-slide-175 {
-    0%{ transform: translateX(0);}
-    100%{ transform: translateX(calc(-175vw));}
 }
 
 #painting-production-video .frame{
@@ -90,30 +66,35 @@
     flex-flow: column nowrap;
     align-items: center;
     gap:var(--vspace-m);
+    margin:0 20px;
 
     @media (min-width: 768px) {
         gap:var(--vspace-d);
     }
 }
 
-#patient-stories-a{
-    grid-template-columns: fit-content(412px) fit-content(412px);
+
+#patient-stories-a,
+#patient-stories-b{
+    display:flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap:15px;
+
+    .vimeo-player, video{
+        width:100%;
+        max-width:512px;
+    }
+
+    @media (max-width: 767px) {
+        flex-direction:column;
+    }
 }
 
 #patient-stories-b{
-    grid-template-columns: fit-content(504px) fit-content(504px);
-
-    @media (max-width: 767px) {
-        grid-template-columns: 1fr;
-    }
-
-    @media (min-width: 768px) {
-        /* gap: 120px; */
-
-        .mini{
-            margin:0 40px;
-            width:70.5%;
-        }
+    .vimeo-player, video{
+        max-width: 645px;
     }
 }
 
@@ -139,6 +120,11 @@
     }
 }
 
+#booking-flow img{
+    width:100%;
+    max-width: 1040px;
+}
+
 #painting-production,
 #headshots {
     overflow:hidden;
@@ -159,9 +145,14 @@
         transform-style: preserve-3d;
     }
 
-    @media (min-width: 768px) {
-        /* background-size: cover; */
-        /* padding:100px 0px; */
+    @media (max-width: 767px) {
+        .tray{
+            gap: 5vw;
+        }
+        img{
+            width: 45vw;
+            animation: infinite-slide-300 24s linear infinite;
+        }
     }
 }
 
@@ -170,6 +161,10 @@
     100%{ transform: translateX(calc(-150vw));}
 }
 
+@keyframes infinite-slide-300 {
+    0%{ transform: translateX(0);}
+    100%{ transform: translateX(calc(-300vw));}
+}
 
 #life-cycle{
     grid-template-columns: fit-content(652px) fit-content(652px);
@@ -208,7 +203,8 @@
 }
 
 
-#social-reels-a{
+#social-reels-a,
+#social-reels-b{
     display:flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -219,21 +215,11 @@
         width:100%;
         max-width:412px;
     }
-}
 
-#social-reels-b{
-    display:flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-    gap:15px;
-
-    .vimeo-player{
-        width:100%;
-        max-width:512px;
+    @media (max-width: 767px) {
+        flex-direction:column;
     }
 }
-
 
 #sga{
     grid-template-columns: fit-content(650px) fit-content(650px);
@@ -274,4 +260,10 @@
     grid-template-columns: repeat(4, fit-content(318px));
     justify-content: center;
     gap:15px;
+    margin-left:20px;
+    margin-right:20px;
+
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(2, fit-content(318px));
+    }
 }
