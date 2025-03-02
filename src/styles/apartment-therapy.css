@@ -46,9 +46,3 @@ article.project > div:first-child{
     }
 }
 
-#portrait{
-    padding-bottom:40px;
-    @media (min-width: 768px) {
-        padding-bottom:120px;
-    }
-}
