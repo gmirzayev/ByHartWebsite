@@ -1,7 +1,9 @@
 ---
 import "../styles/utils.css";
 import { Image } from "astro:assets";
-import SarahGlasses from "../assets/Footer/SarahGlasses.mp4";
+
+import GlassesSafari from "@assets/Navigation/eye.mov";
+import GlassesChrome from "@assets/Navigation/eye.webm";
 import Logo from "../assets/Footer/Logo.svg";
 ---
 
@@ -432,15 +434,10 @@ import Logo from "../assets/Footer/Logo.svg";
         </text>
       </svg>
     </a>
-    <!-- <div class="video-wrapper"> -->
-    <video
-      class="glasses"
-      src={SarahGlasses}
-      autoplay
-      loop
-      muted
-      playsinline></video>
-    <!-- </div> -->
+    <video loop playsinline autoplay muted class="glasses">
+      <source src={GlassesSafari} type='video/mp4; codecs="hvc1"'>
+      <source src={GlassesChrome} type="video/webm">
+    </video>
   </div>
 
   <div id="endmatter">
