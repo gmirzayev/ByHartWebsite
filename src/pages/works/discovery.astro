@@ -25,6 +25,7 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
 import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
+import VimeoPlayer from "@components/VimeoPlayer.astro";
 
 import Hero from "@assets/Discovery/01_Discovery_Hero_D.png"
 import HeroMobile from "@assets/Discovery/01_Discovery_Hero_M.png"
@@ -39,12 +40,9 @@ const vimeoUrl = "https://player.vimeo.com/video/363489186?byline=false&title=fa
 const vimeoAllow = "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
 ---
 
-<ProjectLayout hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
+<ProjectLayout theme="dark" hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
 
-    <div class="video-player">
-        <iframe title="My Visual Resumé" src={vimeoUrl} frameborder="0" allow={vimeoAllow}></iframe>
-    </div>
-
+    <VimeoPlayer video="363489186" height="56.25%" action="unpause"/>
 
     <TwoUp class="mobile-site">
         <div>

@@ -1,14 +1,5 @@
-.video-player{
-    position: relative;
-    padding-top: 56.272727%;
-
-    iframe {
-        position:absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
+.vimeo-player{
+    background:var(--charcoal);
 }
 
 .mobile-site{
@@ -18,6 +9,7 @@
         position:relative;
         display:flex;
         flex-flow:row nowrap;
+        align-items:start;
         gap:15px;
         width:100%;
 
