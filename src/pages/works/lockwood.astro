@@ -81,7 +81,7 @@ import CustomBoxB from "@assets/Lockwood/img/15_LW_CustomBox_2.png"
 import SocialA from "@assets/Lockwood/img/16_LW_Social_1.png"
 import SocialB from "@assets/Lockwood/img/16_LW_Social_2.png"
 import SocialC from "@assets/Lockwood/img/16_LW_Social_3.png"
-import Hats from "@assets/Lockwood/img/17_LW_Hats_v2.png"
+import Hats from "@assets/Lockwood/img/17_LW_Hats_v3.png"
 import PizzaVideo from "@assets/Lockwood/17_LW_Pizza.mp4"
 import GridA from "@assets/Lockwood/img/18_LW_Grid_1.png"
 import GridB from "@assets/Lockwood/img/18_LW_Grid_2.png"
@@ -89,7 +89,7 @@ import GridC from "@assets/Lockwood/img/18_LW_Grid_3.png"
 import GridD from "@assets/Lockwood/img/18_LW_Grid_4.png"
 import GridE from "@assets/Lockwood/img/18_LW_Grid_5.png"
 import GridF from "@assets/Lockwood/img/18_LW_Grid_6.png"
-import Ornaments from "@assets/Lockwood/img/19_LW_Ornaments_v2.png"
+import Ornaments from "@assets/Lockwood/img/19_LW_Ornaments_v3.png"
 import TaxiVideo from "@assets/Lockwood/19_LW_Taxi.mp4"
 
 import NeighborhoodA from "@assets/Lockwood/img/20_LW_Type_Gif/LW_Type_Gif_1.png"
@@ -186,12 +186,12 @@ import Zizmor from "@assets/Lockwood/33_LW_Zizmor.gif"
 
 
     <Image src={Box} widths={[2000]} alt=" " />
-    <OneUp id="shopping-cart" class="spaced" src={Cart} alt=" " />
+    <OneUp id="shopping-cart" class="spaced rc" src={Cart} alt=" " />
 
     <!-- TODO: LockwoodLovesYou infinite scroll -->
 
     <Image src={WindowDressing} widths={[2000]} alt=" " />
-    <OneUp id="bags" class="spaced" src={Bags} alt=" " />
+    <OneUp id="bags" class="spaced rc" src={Bags} alt=" " />
 
 
     <div id="gift-animation" class="padded">
@@ -225,30 +225,30 @@ import Zizmor from "@assets/Lockwood/33_LW_Zizmor.gif"
 
 
     <div id="custom-box" class="two-col">
-        <Image src={CustomBoxA} widths={[2200]} alt=" " />
-        <Image src={CustomBoxB} widths={[2200]} alt=" " />
+        <Image src={CustomBoxA} widths={[2200]} class="rc" alt=" " />
+        <Image src={CustomBoxB} widths={[2200]} class="rc" alt=" " />
     </div>
 
     <div id="social" class="three-col">
-        <Image src={SocialA} widths={[2200]} alt=" " />
-        <Image src={SocialB} widths={[2200]} alt=" " />
-        <Image src={SocialC} widths={[2200]} alt=" " />
+        <Image src={SocialA} widths={[2200]} class="rc" alt=" " />
+        <Image src={SocialB} widths={[2200]} class="rc" alt=" " />
+        <Image src={SocialC} widths={[2200]} class="rc" alt=" " />
     </div>
 
     <div class="two-col flush">
-        <video class="rc" loop playsinline autoplay muted>
+        <video loop playsinline autoplay muted>
             <source src={PizzaVideo} />
         </video>
         <Image src={Hats} widths={[2200]} alt=" " />
     </div>
 
     <div id="grid" class="two-col">
-        <Image src={GridA} widths={[2200]} alt=" " />
-        <Image src={GridB} widths={[2200]} alt=" " />
-        <Image src={GridC} widths={[2200]} alt=" " />
-        <Image src={GridD} widths={[2200]} alt=" " />
-        <Image src={GridE} widths={[2200]} alt=" " />
-        <Image src={GridF} widths={[2200]} alt=" " />
+        <Image src={GridA} widths={[2200]} class="rc" alt=" " />
+        <Image src={GridB} widths={[2200]} class="rc" alt=" " />
+        <Image src={GridC} widths={[2200]} class="rc" alt=" " />
+        <Image src={GridD} widths={[2200]} class="rc" alt=" " />
+        <Image src={GridE} widths={[2200]} class="rc" alt=" " />
+        <Image src={GridF} widths={[2200]} class="rc" alt=" " />
     </div>
 
     <div class="two-col flush">
@@ -259,7 +259,7 @@ import Zizmor from "@assets/Lockwood/33_LW_Zizmor.gif"
     </div>
 
     <div id="neighborhoods" class="full-bleed">
-        <div class="slideshow" data-interval="2000">
+        <div class="slideshow" data-interval="1200">
             <Image class="active" src={NeighborhoodA} widths={[2200]} loading="eager" alt=" " />
             <Image src={NeighborhoodB} widths={[2200]} loading="eager" alt=" " />
             <Image src={NeighborhoodC} widths={[2200]} loading="eager" alt=" " />
@@ -357,14 +357,15 @@ import Zizmor from "@assets/Lockwood/33_LW_Zizmor.gif"
     <Image src={Constellations} widths={[2200]} alt=" " />
     <Image src={Lizzo} widths={[2200]} alt=" " />
 
-    <div id="values" class="spaced">
+    <section id="values" class="spaced">
+        <h1>Living Values</h1>
         <div class="slideshow">
             <ResponsiveImage class="active" mobile={ValueAMobile} desktop={ValueA} />
             <ResponsiveImage mobile={ValueBMobile} desktop={ValueB} />
             <ResponsiveImage mobile={ValueCMobile} desktop={ValueC} />
             <ResponsiveImage mobile={ValueDMobile} desktop={ValueD} />
         </div>
-    </div>
+    </section>
 
     <Image src={Zizmor} widths={[2200]} alt=" " />
 </ProjectLayout>
