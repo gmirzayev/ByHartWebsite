@@ -41,15 +41,25 @@
         transform-style: preserve-3d;
     }
 
-    @media (min-width: 768px) {
-        /* background-size: cover; */
-        /* padding:100px 0px; */
+    @media (max-width: 767px) {
+        .tray{
+            gap: 5vw;
+        }
+        img{
+            width: 45vw;
+            animation: infinite-slide-350 24s linear infinite;
+        }
     }
 }
 
 @keyframes infinite-slide-175 {
     0%{ transform: translateX(0);}
     100%{ transform: translateX(calc(-175vw));}
+}
+
+@keyframes infinite-slide-350 {
+    0%{ transform: translateX(0);}
+    100%{ transform: translateX(calc(-350vw));}
 }
 
 #centered-ad-pair{
@@ -61,12 +71,17 @@
 
     .vimeo-player{
         width:100%;
-        max-width:450px;
+        max-width:calc(100% - 40px);
     }
 
     @media (min-width: 768px) {
         flex-flow: row nowrap;
         gap:150px;
+        flex-direction: row;
+
+        .vimeo-player{
+            max-width:450px;
+        }
 
     }
 }
@@ -77,7 +92,7 @@
 
 
 #kicking-legs{
-    background-color: #f3c041;
+    background-color: #dff6fe;
     background-image: url("/images/MVC/kicking-bg-left.jpg"), url("/images/MVC/kicking-bg-right.jpg");
     background-repeat: no-repeat, no-repeat;
     background-position: left, right;

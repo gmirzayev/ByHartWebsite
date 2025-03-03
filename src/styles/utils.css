@@ -8,6 +8,9 @@
   --vspace-d: 120px;
   --hspace-m: 20px;
   --vspace-m: 40px;
+
+  --radius-d: 5px;
+  --radius-m: 3px;
 }
 
 a[href]:hover{
@@ -45,10 +48,10 @@ a[href]:hover{
 }
 
 .rc{
-  border-radius: 3px;
+  border-radius: var(--radius-m);
 
   @media (min-width: 768px) {
-      border-radius: 5px;
+      border-radius: var(--radius-d);
   }
 }
 
@@ -103,6 +106,24 @@ a[href]:hover{
   &.flush{
     padding:0;
     width:100%;
+  }
+
+  &.rc-inner{
+    > *:first-child{
+      overflow: hidden;
+      border-radius: 0 var(--radius-m) var(--radius-m) 0;
+      @media (min-width: 768px) {
+        border-radius: 0 var(--radius-d) var(--radius-d) 0;
+      }
+    }
+
+    > *:last-child{
+      overflow: hidden;
+      border-radius: var(--radius-m) 0 0 var(--radius-m);
+      @media (min-width: 768px) {
+        border-radius: var(--radius-d) 0 0 var(--radius-d);
+      }
+    }
   }
 
   grid-template-columns: 1fr 1fr;
