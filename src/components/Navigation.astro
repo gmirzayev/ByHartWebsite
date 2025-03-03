@@ -202,7 +202,7 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
       position: absolute;
       left:0;
       top:1em;
-      width: 185px;
+      padding:0 20px;
       height: 38px;
       border-radius: 35px;
       color: black;
@@ -216,6 +216,7 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
       transform: translate(-1em, 1em) rotate(16deg);
       transition: opacity 333ms, transform 333ms;
       pointer-events: none;
+      white-space: nowrap;
     }
 
     .nav-link:hover::after {
@@ -224,7 +225,7 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
     }
 
     .nav-link:hover span {
-      max-width: 100%;
+      max-width: 170px;
     }
   }
 </style>
