@@ -145,6 +145,39 @@ a[href]:hover{
   }
 }
 
+.responsive-text{
+  font: 400 16px "Karla", sans-serif;
+
+  p{
+      line-height:1.5;
+      margin-bottom:1em;
+  }
+
+  h1{
+      line-height:1.2;
+      font-size:26px;
+      font-weight: 700;
+      margin:0;
+      margin-bottom:16px;
+  }
+
+  @media (min-width: 768px) {
+      > div{
+          column-gap:40px;
+          column-count: 2;
+          max-width: 880px;
+          margin:0 auto;
+      }
+
+      h1{
+          line-height: 1.2;
+          font-size: 36px;
+      }
+      p{
+          line-height: 1.625em;
+      }
+  }
+}
 
 .project > section{
   margin:45px 20px;
@@ -157,6 +190,7 @@ a[href]:hover{
       text-transform: uppercase;
       letter-spacing: 0.18em;
       margin-bottom: 45px;
+      text-align:center;
   }
 
   @media (min-width: 768px) {
