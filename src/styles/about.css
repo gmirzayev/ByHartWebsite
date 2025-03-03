@@ -60,7 +60,7 @@ header{
     }
 
     @media (min-width: 768px) {
-        max-width: var(--col-width);
+        max-width: 1040px;
 
         h1{
             font: 400 122px/.9 "Karla", sans-serif;
@@ -94,6 +94,8 @@ header{
     }
 
     #about-us{
+        /* max-width: 1040px; */
+        /* margin:0 auto; */
         display: grid;
         grid-template-columns: 1fr;
         gap: min(80px, 8vw);
@@ -336,7 +338,7 @@ header{
         .q{
             position:relative;
             font: 700 18px "Karla", sans-serif;
-            padding: 25px 0;
+            padding: 25px 32px 25px 0;
 
             &:hover{
                 cursor: url("../assets/HeartCursor.png") 16 16, pointer;
