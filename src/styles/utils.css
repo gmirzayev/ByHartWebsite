@@ -63,6 +63,16 @@ a[href]:hover{
   }
 }
 
+.rc-phone{
+  border-radius: 10px;
+
+  @media (min-width: 768px) {
+      border-radius: 25px !important;
+  }
+}
+
+
+
 .spaced{
   margin:40px 20px;
   @media (min-width: 768px) {

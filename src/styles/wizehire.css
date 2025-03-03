@@ -62,7 +62,7 @@ div:not(.flush) img{
 
     video{
         width:100%;
-        max-width: 840px;
+        max-width: 1040px;
         &:last-child{ max-width: 1040px; }
     }
 

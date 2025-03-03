@@ -50,10 +50,10 @@ import GraphA from "@assets/Wizehire/26_wizehire_bar-graph (1080p).mp4"
 import GraphB from "@assets/Wizehire/27_wizehire_circle-graph-periwize (1080p).mp4"
 import DiscVideo from "@assets/Wizehire/28_wizehire_animation-disc (1080p).mp4"
 
-import TypeKitDesktop from "@assets/Wizehire/img/02_Wizehire_type_desktop (1).svg"
+import TypeKitDesktop from "@assets/Wizehire/img/02_Wizehire_type_desktop.svg"
 import TypeKitMobile from "@assets/Wizehire/img/02_Wizehire_type_mobile (1).svg"
 // import Img from "@assets/Wizehire/img/03_Wizehire_color-palette.png"
-import ColorPalette from "@assets/Wizehire/img/03_Wizehire_color-palette.svg"
+import ColorPalette from "@assets/Wizehire/img/03_Wizehire_color-palette-b.svg"
 // import Img from "@assets/Wizehire/img/04_Wizehire_layered color.png"
 import PalettesLayer from "@assets/Wizehire/img/04_Wizehire_layered color.svg"
 // import Img from "@assets/Wizehire/img/06_Wizehire_graphic.png"
@@ -154,17 +154,17 @@ import PositioningL from "@assets/Wizehire/img/slide-deck/2.11.png"
     <VimeoPlayer id="need-to-hire" class="spaced" video="999662150" height="56.25%" action="unmute"/>
     <VimeoPlayer id="find-your-people" class="spaced" video="1057651271" height="100%" action="unmute"/>
 
-    <div id="ad-grid" class="two-col">
-        <VimeoPlayer video="1057149127" height="125%" action="unmute"/>
-        <VimeoPlayer video="1057149047" height="125%" action="unmute"/>
+    <div id="ad-grid" class="two-col rx">
+        <VimeoPlayer video="1057149127" height="125%" action="unpause"/>
+        <VimeoPlayer video="1057149047" height="125%" action="unpause"/>
 
         <VimeoPlayer video="1057176710" height="100%" action="unmute"/>
         <VimeoPlayer video="1057176541" height="100%"/>
 
+        <Image class="wide" src={AdGridFooter} widths={[2200]} alt=" " />
+
         <VimeoPlayer video="1057177457" height="100%"/>
         <VimeoPlayer video="1058303990" height="100%"/>
-
-        <Image class="wide" src={AdGridFooter} widths={[2200]} alt=" " />
     </div>
 
     <VimeoPlayer id="thirty-second-spot" class="spaced" video="999766293" height="56.25%" action="unmute"/>
@@ -181,11 +181,11 @@ import PositioningL from "@assets/Wizehire/img/slide-deck/2.11.png"
 
     <div id="phone-screens" class="padded">
         <div class="three-col flush">
-            <Image src={SitePhoneScreenA} widths={[2200]} alt=" " />
-            <video loop playsinline autoplay muted class="rc">
+            <Image src={SitePhoneScreenA} class="rc-phone" widths={[2200]} alt=" " />
+            <video loop playsinline autoplay muted class="rc-phone">
                 <source src={SitePhoneScreenB} />
             </video>
-            <Image src={SitePhoneScreenC} widths={[2200]} alt=" " />
+            <Image src={SitePhoneScreenC} class="rc-phone" widths={[2200]} alt=" " />
         </div>
     </div>
 
