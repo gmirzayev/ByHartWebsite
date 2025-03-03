@@ -81,14 +81,14 @@ const projects = [
     title: "Custom Illustrations",
     img: Illustration,
     alt: " ",
-    underConstruction: true,
+    comingSoon: true,
   },
   {
     slug: "presentations",
     title: "Presentation Magic",
     img: PresentationsAlt,
     alt: " ",
-    underConstruction: true,
+    comingSoon: true,
   },
   {
     slug: "ample",
@@ -149,14 +149,14 @@ const projects = [
     title: "Photography Direction",
     img: Photography,
     alt: " ",
-    underConstruction: true,
+    comingSoon: true,
   },
   {
     slug: "top-secret-archive",
     title: "Top Secret Archive",
     img: Archive,
     alt: " ",
-    underConstruction: true,
+    comingSoon: true,
   },
   {
     slug: "comics-kingdom",
@@ -175,7 +175,7 @@ const projects = [
     title: "Dance Party Time",
     img: DancePartyTime,
     alt: "",
-    underConstruction: true,
+    comingSoon: true,
   },
   {
     slug: "kindra",
@@ -194,7 +194,7 @@ const projects = [
     title: "Horowitz",
     img: Horowitz,
     alt: "",
-    underConstruction: true,
+    comingSoon: true,
   },
   {
     slug: "pet-dermatology-center",
@@ -213,7 +213,7 @@ const projects = [
     title: "HGTV",
     img: HGTV2,
     alt: "",
-    underConstruction: true,
+    comingSoon: true,
   },
   {
     slug: "nbc-upfronts",
@@ -226,7 +226,7 @@ const projects = [
     title: "In Words Only",
     img: WordOnly,
     alt: "",
-    underConstruction: true,
+    comingSoon: true,
   },
   {
     slug: "see-sarah-dance",
@@ -335,9 +335,9 @@ let stepCount = 4;
       wide_layout.map((slugs) => (
         <div class="column">
           {slugs.map((slug) => {
-            let { title, img, alt, underConstruction } = getProject(slug);
-            if (underConstruction) title += " — Under Construction";
-            let page = underConstruction ? null : `/works/${slug}`;
+            let { title, img, alt, comingSoon } = getProject(slug);
+            if (comingSoon) title += " — Coming Soon";
+            let page = comingSoon ? null : `/works/${slug}`;
             return (
               <div class:list={["project", `step-${counter++ % stepCount}`]}>
                 <a href={page} data-title={title}>
@@ -357,7 +357,8 @@ let stepCount = 4;
       narrow_layout.map((slugs) => (
         <div class="column">
           {slugs.map((slug) => {
-            const { title, img, alt } = getProject(slug);
+            let { title, img, alt, comingSoon } = getProject(slug);
+            if (comingSoon) title += " — Coming Soon";
             return (
               <div class:list={["project", `step-${counter++ % stepCount}`]}>
                 <a href={`/works/${slug}`} data-title={title}>
