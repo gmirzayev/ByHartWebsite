@@ -1,5 +1,5 @@
 :root{
-    --col-width: min(1400px, calc(100% - 40px));
+    --col-width: min(1170px, calc(100% - 40px));
     --faq-width: min(840px, calc(100% - 40px));
 
     --lilac: #D7C6FF;
@@ -18,7 +18,8 @@
 
 /* fix the Navigation component's positioning */
 header{
-    width:var(--col-width);
+    width:100%;
+    padding:0 25px;
     #main-nav{
         padding:25px 0;
     }
@@ -33,9 +34,8 @@ header{
         letter-spacing: 5.823px;
         text-transform: uppercase;
         z-index:1;
-        bottom: -.6em;
         left: 20px;
-        bottom: -1.666em;
+        bottom: -1.4em;
 
     }
 
@@ -49,6 +49,7 @@ header{
             grid-area: single;
             opacity:0;
             width:100%;
+            max-width:1040px;
             margin: 0 auto;
 
             &.active{
@@ -60,19 +61,18 @@ header{
     }
 
     @media (min-width: 768px) {
-        max-width: 1040px;
-
+        width:var(--col-width);
         h1{
             font: 400 122px/.9 "Karla", sans-serif;
             letter-spacing: 0;
             bottom: -.6em;
-            left: -10px;
+            left: -.1em;
         }
     }
 }
 
 #intro{
-    margin-top: 120px;
+    margin-top: 105px;
     display: grid;
     grid-template-columns: 1fr var(--col-width) 1fr;
 
@@ -168,6 +168,8 @@ header{
     #services{ display:none; }
 
     @media (min-width: 768px) {
+        margin-top:120px;
+
         #about-us{
             grid-template-columns: 2fr 1fr;
             #founder p{ font-size:36px; }
