@@ -12,7 +12,6 @@ const large = type=='image' && await getImage({src:hero, widths:[2800]})
   .scroll-container {
     position: relative;
     height: 130vh;
-    overflow: hidden;
 
     &.dark{
       color:var(--cream);
@@ -42,6 +41,7 @@ const large = type=='image' && await getImage({src:hero, widths:[2800]})
     bottom:33vh;
     width: 100%;
     text-align: center;
+    overflow: hidden;
   }
 
   #project-title h1 {
