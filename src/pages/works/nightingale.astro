@@ -51,11 +51,12 @@ import PitchMobile from "@assets/Nightingale/img/Nightingale-4-mobile.png";
         <Image src={Logo} widths={[2200]} alt=" " />
     </div>
 
-    <ResponsiveTextBlock class="text-columns">
+    <ResponsiveTextBlock class="text-columns collapsed">
         <div>
             <h1>Nightingale Vets is on a mission to transform the veterinary field’s culture of burnout. </h1>
             <p>Just like Florence Nightingale envisioned a better hospital ward, Team Nightingale envisions a different kind of veterinary practice, one where each individual team member's happiness and wellbeing are just as important as their patients’.</p>
             <p>The Nightingale Veterinary Partners logo celebrates the heart and soul of the work their veterinary teams do everyday.</p>
+            <button>Read More</button>
         </div>
         <div>
             <p>It wasn’t hard for Team By Hart—a creative collective of pet parents themselves—to recognize that the unifying premise of every veterinary practice is love—the love that connects care teams, beloved pets, and their human families. It’s a shared compassion that brings us all together. The Nightingale visual identity reminds us that caring for animals is about more than medicine—it’s about nurturing a bond with every living creature.</p>
@@ -117,5 +118,12 @@ import PitchMobile from "@assets/Nightingale/img/Nightingale-4-mobile.png";
         dt += 666
     })
 
-
+    // clicking the Read More button in the Dos & Don'ts section displays more on mobile
+    document.querySelectorAll('.text-columns').forEach(elt => {
+        elt.addEventListener("click", e => {
+        if (e.target instanceof HTMLButtonElement){
+            elt.classList.remove("collapsed")
+        }
+        })
+    })
 </script>

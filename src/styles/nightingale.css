@@ -21,6 +21,21 @@
 
 .text-columns{
     padding:40px 20px;
+
+
+    button{
+        display:none;
+        text-decoration: underline;
+        &:hover{ cursor:url("/images/HeartCursor.png") 16 16, pointer; }
+    }
+
+    @media (max-width: 767px) {
+        &.collapsed button{ display: inline; }
+        &.collapsed div ~ div{
+            display: none;
+        }
+    }
+
     @media (min-width: 768px) {
         padding: 0 20px 100px 20px;
     }
