@@ -24,6 +24,7 @@ import ProjectHead from "@components/ProjectHead.astro";
 import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
+import OneUp from "@components/OneUp.astro";
 
 import Header from "@assets/PearlyBites/img/PearlyBites_Header_Desktop.png";
 import HeaderMobile from "@assets/PearlyBites/img/PearlyBites_Header_Mobile.png";
@@ -98,9 +99,10 @@ import Carousel from "@assets/PearlyBites/img/PearlyBites_SocialCarousel.png";
       <source src={Bag} />
     </video>
   </div>
-  <div class="w-full px-[20px] md:px-[200px]">
-    <Image class="w-full h-auto" src={Site} alt="Pearly Bites" />
-  </div>
+
+  <OneUp src={Site} class="spaced" max="1040px" alt="Pearly Bites" />
+
+
   <div class="slogan">
     A Human Approach to Your Pet's Dental Care
   </div>
@@ -130,36 +132,24 @@ import Carousel from "@assets/PearlyBites/img/PearlyBites_SocialCarousel.png";
   <div class="slogan">
     Turning Growls into Grins
   </div>
-  <Image
-    class="h-auto w-full px-[77px] md:px-[420px] my-[45px] md:my-[120px]"
-    src={SocialPages}
-    alt="Pearly Bites"
-  />
-  <div class="px-[20px] md:px-[300px] w-full my-[45px] md:my-[120px]">
-    <Image
-      class="h-auto w-full rounded-md md:rounded-lg"
-      src={Tote}
-      alt="Pearly Bites"
-    />
-  </div>
+
+
+  <OneUp src={SocialPages} class="spaced" max="840px" alt="Pearly Bites" />
+  <OneUp src={Tote} class="spaced" max="840px" alt="Pearly Bites" />
+
   <Image
     class="h-auto w-full my-[45px] md:my-[120px]"
     src={Cards}
     alt="Pearly Bites"
   />
-  <div class="px-[20px] md:px-[300px] w-full my-[45px] md:my-[120px]">
-    <Image
-      class="h-auto w-full rounded-md md:rounded-lg"
-      src={SocialGrid}
-      alt="Pearly Bites"
-    />
-  </div>
+
+  <OneUp src={SocialGrid} class="spaced" max="840px" alt="Pearly Bites" />
+
   <div class="slogan">
     Teeth Cleanings without the Bite
   </div>
 
   <Image class="w-full h-auto" src={Stationary} alt="Pearly Bites" />
-  <div class="px-[20px] md:px-[200px] w-full my-[45px] md:my-[120px]">
-    <Image class="w-full h-auto" src={Carousel} alt="Pearly Bites" />
-  </div>
+
+  <OneUp src={Carousel} class="spaced" max="1040px" alt="Pearly Bites" />
 </ProjectLayout>
