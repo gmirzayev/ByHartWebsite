@@ -142,7 +142,7 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
     padding-right: 7vw;
 
     background: #a92325;
-    z-index: 0;
+    /* z-index: 0; */
 
     opacity: 0;
     transform: translateY(-100%);
@@ -153,13 +153,17 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
   .mobile-dropdown-toggle {
     display: initial;
   }
+
+  #mobile-nav{
+    z-index:8;
+  }
   #mobile-nav.dropdown-opened > .dropdown-link-container {
     opacity: 1;
     transform: translateY(0);
-    z-index: 8;
+    /* z-index: 8; */
   }
   #mobile-nav:not(.dropdown-opened) > .mobile-dropdown-toggle {
-    z-index: 0;
+    /* z-index: 0; */
   }
 
   #mobile-nav,
