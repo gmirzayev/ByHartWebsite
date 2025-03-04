@@ -14,6 +14,13 @@
     @media (min-width: 768px) {
         margin:120px 20px;
     }
+
+    @media (max-width: 767px) {
+        .two-col{
+            display:flex;
+            flex-flow: column nowrap;
+        }
+    }
 }
 
 #barbie-videos .three-col{
@@ -71,7 +78,6 @@
 
     .vimeo-player{
         width:100%;
-        max-width:calc(100% - 40px);
     }
 
     @media (min-width: 768px) {
@@ -150,14 +156,15 @@
 
 
     button.toggle{
-        background:url("/images/MVC/periscope-plus.svg") no-repeat;
+        background:url("/images/MVC/caret-down.svg") no-repeat;
         background-size:contain;
         width:20px;
         height:20px;
         margin-top:10px;
+        transition: transform .25s;
 
         .toggled &{
-            background-image:url("/images/MVC/periscope-minus.svg");
+            transform: rotate(.5turn);
         }
     }
 }
