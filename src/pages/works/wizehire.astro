@@ -37,13 +37,13 @@ import HeroMobile from "@assets/Wizehire/hero_wizehire_5x4 (1080p).mp4"
 import HeroImage from "@assets/Wizehire/img/01_HeroPreview.jpg"
 import PalettesAdA from "@assets/Wizehire/05_Wizehire_sillhoutte-ad.mp4"
 import PalettesAdB from "@assets/Wizehire/06_Wizehire_sillhouttes-outro_1.mp4"
-import PalettesAdC from "@assets/Wizehire/07_wizehire_sillhouttes (1440p).mp4"
+import PalettesAdC from "@assets/Wizehire/07_wizehire_sillhouttes_2.mp4"
 // import Vid from "@assets/Wizehire/10_Wizehire_Animation.mp4"
 // import Vid from "@assets/Wizehire/13_wizehire_ad_1080x1080 (1080p).mp4"
 // import Vid from "@assets/Wizehire/14_wizehire_ad_1080x1080 (1080p).mp4"
 // import Vid from "@assets/Wizehire/16_wizehire_ad_1080x1080.mp4"
 import DesignProcess from "@assets/Wizehire/19_Wizehire_Mindy Fimga Files_1.mp4"
-import WebsiteScrolling from "@assets/Wizehire/20_Wizehire_website scrolling_2.mp4"
+import WebsiteScrolling from "@assets/Wizehire/20_Wizehire_website scrolling_8_1.mp4"
 import SitePhoneScreenB from "@assets/Wizehire/21_wizehire_site-screen-m (1080p).mp4"
 // import Gif from "@assets/Wizehire/Comp1-ezgif.com-video-to-gif-converter copy.gif"
 import GraphA from "@assets/Wizehire/26_wizehire_bar-graph (1080p).mp4"
@@ -58,7 +58,7 @@ import ColorPalette from "@assets/Wizehire/img/03_Wizehire_color-palette-b.svg"
 import PalettesLayer from "@assets/Wizehire/img/04_Wizehire_layered color.svg"
 // import Img from "@assets/Wizehire/img/06_Wizehire_graphic.png"
 import WeAre from "@assets/Wizehire/img/08_wizehire_we are.png"
-// import Img from "@assets/Wizehire/img/15_Wizehire_ad_1080x1080.png"
+import SomeoneBetter from "@assets/Wizehire/img/15_Wizehire_ad_1080x1080.png"
 import AdGridFooter from "@assets/Wizehire/img/17_Wizehire_ad_1920x1080.png"
 import SitePhoneScreenA from "@assets/Wizehire/img/20_Wizehire_Site-Screen.png"
 import SitePhoneScreenC from "@assets/Wizehire/img/22_Wizehire_Site-Screen-M.png"
@@ -152,9 +152,9 @@ import PositioningL from "@assets/Wizehire/img/slide-deck/2.11.png"
     </div>
 
     <VimeoPlayer id="need-to-hire" class="spaced" video="999662150" height="56.25%" action="unmute"/>
-    <VimeoPlayer id="find-your-people" class="spaced" video="1057651271" height="100%" action="unmute"/>
+    {/* <VimeoPlayer id="find-your-people" class="spaced" video="1057651271" height="100%" action="unmute"/> */}
 
-    <div id="ad-grid" class="two-col rx">
+    <div id="ad-grid" class="two-col">
         <VimeoPlayer video="1057149127" height="125%" action="unpause"/>
         <VimeoPlayer video="1057149047" height="125%" action="unpause"/>
 
@@ -163,7 +163,7 @@ import PositioningL from "@assets/Wizehire/img/slide-deck/2.11.png"
 
         <Image class="wide" src={AdGridFooter} widths={[2200]} alt=" " />
 
-        <VimeoPlayer video="1057177457" height="100%"/>
+        <Image src={SomeoneBetter} widths={[2200]} alt=" " />
         <VimeoPlayer video="1058303990" height="100%"/>
     </div>
 
@@ -273,8 +273,8 @@ import PositioningL from "@assets/Wizehire/img/slide-deck/2.11.png"
         </div>
     </section>
 
-    <div id="three-minute-spot">
-        <VimeoPlayer class="flush" video="999710124" height="56.25%" action="unmute" />
+    <div id="three-minute-spot" class="spaced">
+        <VimeoPlayer video="999710124" height="56.25%" action="unmute" />
     </div>
 
 

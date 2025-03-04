@@ -43,6 +43,12 @@ div:not(.flush) img{
     .wide{
         grid-column: 1 / 3;
     }
+
+
+    @media (max-width: 767px) {
+        display:flex;
+        flex-flow: column nowrap;
+    }
 }
 
 #thirty-second-spot .frame{ max-width: 1320px; }
