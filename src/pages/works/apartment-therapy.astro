@@ -15,6 +15,8 @@ const PHOTO_CREDIT = {
     url:"https://www.apartmenttherapy.com/authors/darragh-dandurand",
 }
 
+const ARTICLE_URL = "https://www.apartmenttherapy.com/sarah-hartley-brooklyn-small-rental-apartment-tour-photos-37007179"
+
 import "@styles/utils.css";
 import "@styles/apartment-therapy.css";
 import Image from "astro/components/Image.astro";
@@ -64,15 +66,13 @@ import Portrait from "@assets/AptTherapy/09_AT_Portrait.png"
         <Image src={Couch} widths={[2200]} alt=" " />
     </div>
 
-    <ResponsiveTextBlock class="spaced">
+    <ResponsiveTextBlock class="spaced fitted">
         <div>
             <h1>“Don’t be afraid to take up space in a small space.”</h1>
         </div>
         <div>
-            <p>
-                Home is and should always be personal. I moved to my dream apartment in a Brooklyn brownstone in the midst of a global pandemic, and Apartment Therapy documented the story of my new home, largely told in my own words.<br/>
-                All Photos By: <a href={PHOTO_CREDIT.url}>{PHOTO_CREDIT.name}</a>
-            </p>
+            <p>Home is and should always be personal. I moved to my dream apartment in a Brooklyn brownstone in the midst of a global pandemic, and Apartment Therapy <a href={ARTICLE_URL}>documented the story</a> of my new home, largely told in my own words.</p>
+            <p class="credits">All Photos By: <a href={PHOTO_CREDIT.url}>{PHOTO_CREDIT.name}</a></p>
         </div>
     </ResponsiveTextBlock>
 

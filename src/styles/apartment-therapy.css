@@ -14,6 +14,20 @@ article.project > div:first-child{
     }
 }
 
+.fitted{
+    max-width: 840px !important;
+    gap:40px !important;
+
+    .credits{
+        font-style: italic;
+    }
+
+    p a{
+        text-decoration: underline;
+    }
+}
+
+
 .group-start{
     margin: 40px 0 15px 0;
     @media (min-width: 768px) {
