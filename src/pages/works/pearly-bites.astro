@@ -51,6 +51,19 @@ import Carousel from "@assets/PearlyBites/img/PearlyBites_SocialCarousel.png";
     font-family: "utile-display", sans-serif;
     color: #182241;
   }
+
+  .slogan{
+    margin: 40px 20px;
+    font: 700 26px/1.2 "Karla", sans-serif;
+    letter-spacing: -0.52px;
+    text-align:center;
+
+    @media(min-width:768px){
+      margin:120px 60px;
+      font-size:36px;
+      letter-spacing: -0.72px;
+    }
+  }
 </style>
 <ProjectLayout
   hero={Header}
@@ -64,12 +77,8 @@ import Carousel from "@assets/PearlyBites/img/PearlyBites_SocialCarousel.png";
     src={FrontDesk}
     alt="Pearly Bites"
   />
-  <div class="my-[45px] md:my-[120px] text-center">
-    <h1
-      class="karla font-semibold text-[26px] leading-[30px] md:text-[100px] md:leading-[115px]"
-    >
-      Your Pet's Teeth Cleaning Just Graduated
-    </h1>
+  <div class="slogan">
+    Your Pet's Teeth Cleaning Just Graduated
   </div>
   <div
     class="flex w-full justify-center items-center flex-col gap-[45px] md:gap-0 md:flex-row my-[45px] md:my-[120px] px-[77px] md:px-[60px]"
@@ -92,23 +101,18 @@ import Carousel from "@assets/PearlyBites/img/PearlyBites_SocialCarousel.png";
   <div class="w-full px-[20px] md:px-[200px]">
     <Image class="w-full h-auto" src={Site} alt="Pearly Bites" />
   </div>
-  <div class="my-[45px] md:my-[120px] text-center">
-    <h1
-      class="karla md:utile font-bold md:font-normal text-[26px] leading-[30px] md:text-[66px] md:leading-[75px]"
-    >
-      A Human Approach to Your Pet's Dental Care
-    </h1>
+  <div class="slogan">
+    A Human Approach to Your Pet's Dental Care
   </div>
   <Image
     class="w-full h-auto my-[45px] md:my-[120px]"
     src={ExamRoom}
     alt="Pearly Bites"
   />
-  <h2
-    class="karla font-bold text-[26px] leading-[30px] md:text-[18px] md:leading-[20px] my-[45px] md:my-[120px] text-center"
-  >
-    Interior renderings
-  </h2>
+
+  <section class="spaced">
+    <h1 style="margin-bottom:0;">Interior renderings</h1>
+  </section>
   <div
     class="w-full flex flex-col md:flex-row gap-[45px] md:gap-[15px] px-[20px] md:px-[60px] my-[45px] md:my-[120px]"
   >
@@ -123,11 +127,9 @@ import Carousel from "@assets/PearlyBites/img/PearlyBites_SocialCarousel.png";
       alt="Pearly Bites"
     />
   </div>
-  <h1
-    class="karla font-bold md:font-semibold text-[26px] leading-[30px] md:text-[100px] md:leading-[115px] my-[45px] md:my-[120px] text-center"
-  >
+  <div class="slogan">
     Turning Growls into Grins
-  </h1>
+  </div>
   <Image
     class="h-auto w-full px-[77px] md:px-[420px] my-[45px] md:my-[120px]"
     src={SocialPages}
@@ -152,11 +154,10 @@ import Carousel from "@assets/PearlyBites/img/PearlyBites_SocialCarousel.png";
       alt="Pearly Bites"
     />
   </div>
-  <div
-    class="karla font-bold md:font-semibold text-[26px] leading-[30px] md:text-[100px] md:leading-[115px] my-[45px] md:my-[120px] text-center"
-  >
-    <h1>Teeth Cleanings without the Bite</h1>
+  <div class="slogan">
+    Teeth Cleanings without the Bite
   </div>
+
   <Image class="w-full h-auto" src={Stationary} alt="Pearly Bites" />
   <div class="px-[20px] md:px-[200px] w-full my-[45px] md:my-[120px]">
     <Image class="w-full h-auto" src={Carousel} alt="Pearly Bites" />
