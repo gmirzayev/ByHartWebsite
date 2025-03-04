@@ -66,6 +66,12 @@ const large = type=='image' && await getImage({src:hero, widths:[2800]})
     #project-title h1 { font-size:72px; }
     #project-title h2 { font-size: 14px; }
   }
+
+  @media (max-width: 500px) {
+    #project-title h1 { font-size:58px; }
+    #project-title h2 { font-size: 14px; }
+  }
+
 </style>
 
 <div class:list={["scroll-container", theme]}>
