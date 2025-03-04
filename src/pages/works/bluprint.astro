@@ -70,6 +70,9 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   .karla {
     font-family: "Karla", sans-serif;
   }
+  #brand-guide{
+    background: #1d1a1a url("/images/noise.svg") repeat;
+  }
 </style>
 <ProjectLayout
   hero={Header}
@@ -345,7 +348,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     <source src={Boxes} />
   </video>
   <Image class="h-auto w-full" src={Collateral} alt="Bluprint" />
-  <div class="bg-[#242121]">
+  <div id="brand-guide">
     <div class="text-white karla py-[30px] pl-[20px] font-[16px]">
       <p class="font-[700] inline-block tracking-[3px]">BLUPRINT</p>
       <p class="inline-block ml-[20px]">Introducing [New Co]</p>

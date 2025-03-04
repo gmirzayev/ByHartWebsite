@@ -68,6 +68,10 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
   .karla {
     font-family: "Karla", sans-serif;
   }
+
+  #brand-guide{
+    background: #1d1a1a url("/images/noise.svg") repeat;
+  }
 </style>
 <ProjectLayout
   hero={SageHeroVideo}
@@ -238,8 +242,8 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
     <source src={CompVideo} type="video/mp4" />
   </video>
   <Image class="h-auto w-full" src={SageBusiness} alt="Sage Quote" />
-  <div class="bg-[#242121]">
-    <div class="karla text-[#F7F4ED] py-[30px] pl-[20px] md:pl-[30px]">
+  <div id="brand-guide">
+    <div class="karla text-[#F7F4ED] py-[30px] pl-[20px] md:pl-[45px]">
       <p class="font-bold tracking-widest inline-block">SAGE</p>
       <p class="inline-block ml-[20px]">A glimpse at the brand guide</p>
     </div>

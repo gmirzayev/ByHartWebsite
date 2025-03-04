@@ -1,5 +1,5 @@
 main {
-    background: #1d1a1a url("/images/grain-background.jpg") no-repeat !important;
+    background: #1d1a1a url("/images/noise.svg") repeat !important;
     background-size: auto;
     overflow: hidden;
 }
