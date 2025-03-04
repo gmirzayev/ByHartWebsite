@@ -29,10 +29,31 @@
     }
 }
 
+.narrative{
+    margin-left:20px !important;
+    margin-right:20px !important;
+}
+
 .color-palette{
-    img{
-        max-width: 800px;
-        margin: 0 auto;
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+
+    .swatches{
+        width:calc(100% - 40px);
+        max-width: 600px;
+    }
+
+    .swatches img{
+        width:100%;
+    }
+
+    @media (min-width: 768px) {
+        .swatches{
+            max-width: 840px;
+        }
+
     }
 
 }
