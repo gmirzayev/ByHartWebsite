@@ -138,86 +138,89 @@ const VIDEOS = [
 </div>
 
 <script>
-  const ORDER = ["story", "style", "identity", "art", "experience", "content", "design", "purpose", "creative", "sarah"],
-        PILL = document.querySelector("#pill") as HTMLElement,
-        DELAY = 4000
+  document.addEventListener("DOMContentLoaded", () => {
+    const ORDER = ["story", "style", "identity", "art", "experience", "content", "design", "purpose", "creative", "sarah"],
+          PILL = document.querySelector("#pill") as HTMLElement,
+          DELAY = 4000
 
-  let octave = 0,
-      activeIdx = 0,
-      selectionTimeout,
-      driftTimeout
+    let octave = 0,
+        activeIdx = 0,
+        selectionTimeout,
+        driftTimeout
 
-  function initialize(){
-    let video = document.querySelector("#pill video.active") as HTMLVideoElement,
-        to = parseFloat(video.dataset.offset),
-        drift = -30
-    video.play()
-    PILL.style.transition = "transform 4s linear";
-    PILL.style.transform = `rotate(${octave + to + drift}deg)`
+    function initialize(){
+      let video = document.querySelector("#pill video.active") as HTMLVideoElement,
+          to = parseFloat(video.dataset.offset),
+          drift = -30
+      video.play()
+      PILL.style.transition = "transform 4s linear";
+      PILL.style.transform = `rotate(${octave + to + drift}deg)`
 
-    selectionTimeout = setTimeout(selectNext, DELAY)
-  }
-
-  function selectNext(){
-    selectTerm(ORDER[(activeIdx + 1) % ORDER.length])
-  }
-
-  function selectTerm(term:string){
-    if (ORDER.includes(term)){
-      activeIdx = ORDER.indexOf(term)
-
-      // update text selection
-      document.querySelector("#pill a.active").classList.remove("active"),
-      document.querySelector(`#pill a[data-term=${term}]`).classList.add("active")
-
-      // hide and show videos
-      let prevVideo = document.querySelector("#pill video.active") as HTMLVideoElement
-      prevVideo.classList.remove("active")
-
-      let nextVideo = document.querySelector(`#pill video.${term}`) as HTMLVideoElement
-      nextVideo.classList.add("active")
-      nextVideo.currentTime = 0
-      nextVideo.play()
-
-      // rotate pill (followed by drift during interval)
-      let from = parseFloat(prevVideo.dataset.offset),
-          to = parseFloat(nextVideo.dataset.offset),
-          drift = -25
-
-      if (from < to) octave -= 360 // always rotate CCW
-
-      PILL.style.transition = "transform 1s ease-in-out";
-      PILL.style.transform = `rotate(${octave + to - drift/2}deg)`
-
-      clearTimeout(driftTimeout)
-      driftTimeout = setTimeout(() => {
-          PILL.style.transition = "transform 3s linear";
-          PILL.style.transform = `rotate(${octave + to + drift/2}deg)`
-      }, 1000)
-
-      // queue next transition
-      clearTimeout(selectionTimeout)
       selectionTimeout = setTimeout(selectNext, DELAY)
     }
-  }
 
-  // clicking on a term selects the video
-  document.querySelectorAll("#pill a").forEach(link => {
-    link.addEventListener("click", e => {
-      if (e.target instanceof SVGElement){
-        if (!e.target.classList.contains("active"))
-          selectTerm(e.target.dataset.term)
+    function selectNext(){
+      selectTerm(ORDER[(activeIdx + 1) % ORDER.length])
+    }
+
+    function selectTerm(term:string){
+      if (ORDER.includes(term)){
+        activeIdx = ORDER.indexOf(term)
+
+        // update text selection
+        document.querySelector("#pill a.active").classList.remove("active"),
+        document.querySelector(`#pill a[data-term=${term}]`).classList.add("active")
+
+        // hide and show videos
+        let prevVideo = document.querySelector("#pill video.active") as HTMLVideoElement
+        prevVideo.classList.remove("active")
+
+        let nextVideo = document.querySelector(`#pill video.${term}`) as HTMLVideoElement
+        nextVideo.classList.add("active")
+        nextVideo.currentTime = 0
+        nextVideo.play()
+
+        // rotate pill (followed by drift during interval)
+        let from = parseFloat(prevVideo.dataset.offset),
+            to = parseFloat(nextVideo.dataset.offset),
+            drift = -25
+
+        if (from < to) octave -= 360 // always rotate CCW
+
+        PILL.style.transition = "transform 1s ease-in-out";
+        PILL.style.transform = `rotate(${octave + to - drift/2}deg)`
+
+        clearTimeout(driftTimeout)
+        driftTimeout = setTimeout(() => {
+            PILL.style.transition = "transform 3s linear";
+            PILL.style.transform = `rotate(${octave + to + drift/2}deg)`
+        }, 1000)
+
+        // queue next transition
+        clearTimeout(selectionTimeout)
+        selectionTimeout = setTimeout(selectNext, DELAY)
+      }
+    }
+
+    // clicking on a term selects the video
+    document.querySelectorAll("#pill a").forEach(link => {
+      link.addEventListener("click", e => {
+        if (e.target instanceof SVGElement){
+          if (!e.target.classList.contains("active"))
+            selectTerm(e.target.dataset.term)
+        }
+      })
+    })
+
+    // pause inactive videos once they finish fading out
+    document.querySelector("#pill").addEventListener("transitionend", e => {
+      if (e.target instanceof HTMLVideoElement && !e.target.classList.contains("active")){
+        e.target.pause()
+        e.target.currentTime = 0
       }
     })
-  })
 
-  // pause inactive videos once they finish fading out
-  document.querySelector("#pill").addEventListener("transitionend", e => {
-    if (e.target instanceof HTMLVideoElement && !e.target.classList.contains("active")){
-      e.target.pause()
-      e.target.currentTime = 0
-    }
+    initialize()
+    console.log('init')
   })
-
-  initialize()
 </script>
