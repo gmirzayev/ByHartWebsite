@@ -11,16 +11,16 @@ import Creative from "@assets/Home/pill/BY HART SITE_CREATIVE_V04.mp4"
 import Sarah from "@assets/Home/pill/BY HART SITE_SARAH_r90.mp4"
 
 const VIDEOS = [
-  {term:"story", video:Story, offset:-95+90, rotate:true},
-  {term:"style", video:Style, offset:15-90},
-  {term:"identity", video:Identity, offset:-110+90, rotate:true},
-  {term:"art", video:Art, offset:-5-90},
-  {term:"experience", video:Experience, offset:-80+90, rotate:true},
-  {term:"content", video:Content, offset:5-90},
-  {term:"design", video:Design, offset:-100+90, rotate:true},
-  {term:"purpose", video:Purpose, offset:-10-90},
-  {term:"creative", video:Creative, offset:-85+90, rotate:true},
-  {term:"sarah", video:Sarah, offset:10-90},
+  {term:"story", video:Story, offset: -5},
+  {term:"style", video:Style, offset: -75},
+  {term:"identity", video:Identity, offset: 0},
+  {term:"art", video:Art, offset: -95},
+  {term:"experience", video:Experience, offset: 10},
+  {term:"content", video:Content, offset: -85},
+  {term:"design", video:Design, offset: -10},
+  {term:"purpose", video:Purpose, offset: -100},
+  {term:"creative", video:Creative, offset: 5},
+  {term:"sarah", video:Sarah, offset: -80},
 ]
 ---
 
@@ -44,7 +44,7 @@ const VIDEOS = [
 
     transition: transform 2s ease;
     transform-origin: center;
-    transform: rotate(-5deg);
+    transform: rotate(20deg);
   }
 
   .videos{
@@ -95,7 +95,6 @@ const VIDEOS = [
       cursor: url("/images/HeartCursor.png") 16 16, pointer;
     }
   }
-
 </style>
 
 <div id="homepage-hero">
@@ -104,10 +103,7 @@ const VIDEOS = [
       {VIDEOS.map(({term, video, offset}, i) =>
           <video muted playsinline loop
             src={video}
-            class:list={["transform",
-              term,
-              i==0 ? "active" : null,
-            ]}
+            class:list={[term, i==0 && "active"]}
             data-offset={offset}
           />
       )}
@@ -140,8 +136,8 @@ const VIDEOS = [
     </div>
   </div>
 </div>
-<script>
 
+<script>
   const ORDER = ["story", "style", "identity", "art", "experience", "content", "design", "purpose", "creative", "sarah"],
         PILL = document.querySelector("#pill") as HTMLElement,
         DELAY = 4000
@@ -154,7 +150,7 @@ const VIDEOS = [
   function initialize(){
     let video = document.querySelector("#pill video.active") as HTMLVideoElement,
         to = parseFloat(video.dataset.offset),
-        drift = -15
+        drift = -30
     video.play()
     PILL.style.transition = "transform 4s linear";
     PILL.style.transform = `rotate(${octave + to + drift}deg)`
