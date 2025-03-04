@@ -1,81 +1,93 @@
 ---
 import Story from "@assets/Home/pill/BY HART SITE_STORY_V03.mp4"
-import Style from "@assets/Home/pill/BY HART SITE_STYLE_VRT_03.mp4"
+import Style from "@assets/Home/pill/BY HART SITE_STYLE_VRT_03_r90.mp4"
 import Identity from "@assets/Home/pill/BY HART SITE_ID_V03.mp4"
-import Art from "@assets/Home/pill/BY HART SITE_ART_V03.mp4"
+import Art from "@assets/Home/pill/BY HART SITE_ART_V03_r90.mp4"
 import Experience from "@assets/Home/pill/BY HART SITE_EXPERIENCE_V04.mp4"
-import Content from "@assets/Home/pill/BY HART SITE_CONTENT_V02.mp4"
+import Content from "@assets/Home/pill/BY HART SITE_CONTENT_V02_r90.mp4"
 import Design from "@assets/Home/pill/BY HART SITE_DESIGN_V03.mp4"
-import Purpose from "@assets/Home/pill/BY HART SITE_PURPOSE_V04.mp4"
+import Purpose from "@assets/Home/pill/BY HART SITE_PURPOSE_V04_r90.mp4"
 import Creative from "@assets/Home/pill/BY HART SITE_CREATIVE_V04.mp4"
-import Sarah from "@assets/Home/pill/BY HART SITE_SARAH.mp4"
+import Sarah from "@assets/Home/pill/BY HART SITE_SARAH_r90.mp4"
 
 const VIDEOS = [
-  {term:"story", video:Story, offset:-95, rotate:true},
-  {term:"style", video:Style, offset:15},
-  {term:"identity", video:Identity, offset:-110, rotate:true},
-  {term:"art", video:Art, offset:-5},
-  {term:"experience", video:Experience, offset:-80, rotate:true},
-  {term:"content", video:Content, offset:5},
-  {term:"design", video:Design, offset:-100, rotate:true},
-  {term:"purpose", video:Purpose, offset:-10},
-  {term:"creative", video:Creative, offset:-85, rotate:true},
-  {term:"sarah", video:Sarah, offset:10},
+  {term:"story", video:Story, offset:-95+90, rotate:true},
+  {term:"style", video:Style, offset:15-90},
+  {term:"identity", video:Identity, offset:-110+90, rotate:true},
+  {term:"art", video:Art, offset:-5-90},
+  {term:"experience", video:Experience, offset:-80+90, rotate:true},
+  {term:"content", video:Content, offset:5-90},
+  {term:"design", video:Design, offset:-100+90, rotate:true},
+  {term:"purpose", video:Purpose, offset:-10-90},
+  {term:"creative", video:Creative, offset:-85+90, rotate:true},
+  {term:"sarah", video:Sarah, offset:10-90},
 ]
 ---
 
 <style>
-  #pill {
-    transition: transform 2s ease;
-    transform-origin: center;
-    transform: rotate(-95deg);
-    overflow:visible;
+  #homepage-hero{
+    -webkit-user-select: none;
+    user-select: none;
+    padding-bottom: 40px;
   }
 
-  .video-container {
-    position: absolute;
+  #pill {
+    position: relative;
     display: flex;
     justify-content: center;
-    clip-path: url(#video-mask);
+    align-items: center;
+    margin:0 auto;
 
-    video{
-      position: relative;
-      border: 0;
-      height: 860px;
-      width: 860px;
-      opacity: 0;
-      max-width: none;
-      transition: opacity 1s;
+    width:80vw;
+    max-width:80vh;
+    aspect-ratio: 1;
 
-      &.active{
-        opacity:1;
-      }
+    transition: transform 2s ease;
+    transform-origin: center;
+    transform: rotate(-5deg);
+  }
+
+  .videos{
+    display: grid;
+    grid-template-areas: single;
+    justify-content: center;
+    width:88%; /* give the text halo some space */
+
+    > video{
+        grid-area: single;
+        border-radius: 25% / 50%;
+        width:100%;
+        opacity:0;
+        transition: opacity .5s linear;
+
+        &.active{
+            opacity:1;
+        }
     }
   }
 
-  #path {
-    position: absolute;
-    transform-box: fill-box;
-    transform-origin: center;
+  .halo{
+    position:absolute;
+    width:100%;
   }
 
-  #text-path {
+  .halo textPath{
+    font-size:38px;
     font-family: "utile-display", sans-serif;
     font-style: normal;
     font-weight: 400;
     fill: var(--cream);
   }
 
-  #text-path tspan{
+  .halo a{
     transition: fill .25s;
 
-    &.active,
-    &:hover {
+    &:hover, &.active {
       fill: #ff97fd;
     }
 
-    &:hover ~ tspan.active,
-    &.active:has(~ tspan:hover){
+    &:hover ~ a.active,
+    &.active:has(~ a:hover){
       fill:var(--cream) !important;
     }
 
@@ -83,66 +95,44 @@ const VIDEOS = [
       cursor: url("/images/HeartCursor.png") 16 16, pointer;
     }
   }
+
 </style>
-<div
-  class="scale-[.4] overflow-visible md:overflow-hidden md:mb-[50px] md:scale-100"
->
-  <div
-    id="pill"
-    class="relative flex justify-center items-center w-full h-[500px] md:h-[900px]"
-  >
-    {VIDEOS.map(({term, video, rotate, offset}, i) =>
-      <div class="video-container">
-        <video muted playsinline loop
-          src={video}
-          class:list={["transform",
-            term,
-            rotate ? "rotate-90" : null,
-            i==0 ? "active" : null,
-          ]}
-          data-offset={offset}
-        />
-      </div>
-    )}
-    <svg xmlns="http://www.w3.org/2000/svg">
-      <clipPath id="video-mask" clipPathUnits="objectBoundingBox">
+
+<div id="homepage-hero">
+  <div id="pill">
+    <div class="videos">
+      {VIDEOS.map(({term, video, offset}, i) =>
+          <video muted playsinline loop
+            src={video}
+            class:list={["transform",
+              term,
+              i==0 ? "active" : null,
+            ]}
+            data-offset={offset}
+          />
+      )}
+    </div>
+    <div class="halo">
+      <svg viewBox="0 0 980 620">
         <path
+          id="text-trajectory"
           fill="none"
           stroke="none"
-          d="M 0.5 0.055 H 0.5 S 0.772 0.055 0.772 0.327 V 0.672 S 0.772 0.944 0.5 0.944 H 0.5 S 0.228 0.944 0.228 0.672 V 0.327 S 0.228 0.055 0.5 0.055 H 0.5"
+          d="M947.04331,309.99988h0s0,269.82268-269.8231,269.82268h-374.4408s-269.82295,0-269.82295-269.82268h0s0-269.82244,269.82314-269.82244h374.44082s269.8231,0,269.8231,269.82244h0s-.00022,269.82268-269.82331,269.82268h-374.4408s-269.82295,0-269.82295-269.82268h0s0-269.82244,269.82314-269.82244h374.44082s269.8231,0,269.8231,269.82244"
         ></path>
-      </clipPath>
-    </svg>
-    <div class="halo absolute w-[500px] h-[500px] z-[7]">
-      <svg
-        class="block my-0 mx-auto overflow-visible"
-        viewBox="0 80 250 100"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          id="path"
-          fill="none"
-          stroke="none"
-          d="M 126.4892 2.249 H 126.4892 S
-      250.6275 2.249 250.6275 126.3875 V 283.9355 S 250.6275 408.0739 126.4892
-      408.0739 H 126.4892 S 2.351 408.0739 2.351 283.9354 V 126.3874 S 2.351
-      2.2489 126.4892 2.2489 H 126.4892 S 250.6275 2.249 250.6275 126.3875 V
-      283.9355 S 250.6275 408.0739 126.4892 408.0739 H 126.4892 S 2.351 408.0739
-      2.351 283.9354 V 126.3874 S 2.351 2.2489 126.4892 2.2489 "
-        ></path>
-        <text id="text-parent" style="user-select: none; -webkit-user-select: none;">
-          <textPath href="#path" id="text-path" startOffset="50" style="user-select: none; -webkit-user-select: none;">
+        <text>
+          <textPath href="#text-trajectory" id="text-path">
             By Hart is a
-            <tspan data-term="story" class="active"> story </tspan> +
-            <tspan data-term="style"> style </tspan> +
-            <tspan data-term="identity"> identity </tspan> +
-            <tspan data-term="art"> art </tspan> +
-            <tspan data-term="experience"> experience </tspan> +
-            <tspan data-term="content"> content </tspan> +
-            <tspan data-term="design"> design </tspan> +
-            <tspan data-term="purpose"> purpose </tspan> +
-            <tspan data-term="creative"> actually creative studio </tspan> by
-            <tspan data-term="sarah"> Sarah Hartley</tspan>.
+            <a data-term="story" class="active"> story </a> +
+            <a data-term="style"> style </a> +
+            <a data-term="identity"> identity </a> +
+            <a data-term="art"> art </a> +
+            <a data-term="experience"> experience </a> +
+            <a data-term="content"> content </a> +
+            <a data-term="design"> design </a> +
+            <a data-term="purpose"> purpose </a> +
+            <a data-term="creative"> actually creative studio </a> by
+            <a data-term="sarah"> Sarah Hartley</a>.
             <animate attributeName="startOffset" from="50%" to="0%" begin="0s" dur="45s" repeatCount="indefinite"/>
           </textPath>
         </text>
@@ -181,8 +171,8 @@ const VIDEOS = [
       activeIdx = ORDER.indexOf(term)
 
       // update text selection
-      document.querySelector("#pill tspan.active").classList.remove("active"),
-      document.querySelector(`#pill tspan[data-term=${term}]`).classList.add("active")
+      document.querySelector("#pill a.active").classList.remove("active"),
+      document.querySelector(`#pill a[data-term=${term}]`).classList.add("active")
 
       // hide and show videos
       let prevVideo = document.querySelector("#pill video.active") as HTMLVideoElement
@@ -209,15 +199,16 @@ const VIDEOS = [
           PILL.style.transform = `rotate(${octave + to + drift/2}deg)`
       }, 1000)
 
+      // queue next transition
       clearTimeout(selectionTimeout)
       selectionTimeout = setTimeout(selectNext, DELAY)
     }
   }
 
   // clicking on a term selects the video
-  document.querySelectorAll("#pill tspan").forEach(tspan => {
-    tspan.addEventListener("click", e => {
-      if (e.target instanceof SVGTSpanElement){
+  document.querySelectorAll("#pill a").forEach(link => {
+    link.addEventListener("click", e => {
+      if (e.target instanceof SVGElement){
         if (!e.target.classList.contains("active"))
           selectTerm(e.target.dataset.term)
       }
