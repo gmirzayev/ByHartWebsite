@@ -16,19 +16,19 @@ article.project img{
     h1{
         font: 700 36px/1.2 "Karla", sans-serif;
         letter-spacing: -0.72px;
-        max-width:400px;
+        max-width:500px;
         margin:0;
     }
 
     p{
         font: 400 14px/1.6 "Karla", sans-serif;
         margin-top:1em;
-        max-width:400px;
+        max-width:500px;
     }
 
     @media (min-width: 768px) {
         width: 50%;
-        padding: 0;
+        padding: 0 20px;
     }
 }
 
@@ -60,7 +60,7 @@ article.project img{
 .welcome-intro{
     padding: 45px 20px;
     @media (min-width: 768px) {
-        padding: 120px 0;
+        padding: 120px 20px;
     }
 }
 
