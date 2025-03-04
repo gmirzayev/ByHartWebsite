@@ -126,12 +126,12 @@
         flex-direction:row;
         align-items: center;
         justify-content: space-between;
-        gap: 2.5vw;
+        gap: 3.333333333vw;
     }
 
     img{
-        width:22.5vw;
-        animation: infinite-slide-150 12s linear infinite;
+        width:30vw;
+        animation: infinite-slide-200 20s linear infinite;
         backface-visibility: hidden;
         transform-style: preserve-3d;
     }
@@ -142,14 +142,14 @@
         }
         img{
             width: 45vw;
-            animation: infinite-slide-300 24s linear infinite;
+            animation: infinite-slide-300 30s linear infinite;
         }
     }
 }
 
-@keyframes infinite-slide-150 {
+@keyframes infinite-slide-200 {
     0%{ transform: translateX(0);}
-    100%{ transform: translateX(calc(-150vw));}
+    100%{ transform: translateX(calc(-200vw));}
 }
 
 @keyframes infinite-slide-300 {
