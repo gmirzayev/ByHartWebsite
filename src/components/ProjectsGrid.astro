@@ -3,18 +3,18 @@ import "../styles/utils.css";
 import VideoLoop from "./VideoLoop.astro";
 
 import Ample from "../assets/Home/img/Ample.png";
-import ComicsKingdom from "../assets/Home/Comics_Kingdom.gif";
-import Wizehire from "../assets/Home/img/Wizehire.png";
-import Week from "../assets/Home/Week.gif";
+import ComicsKingdomVideo from "../assets/Home/Comics_Kingdom.mp4";
+import Wizehire from "../assets/Home/Wizehire.gif";
+import WeekAndVideo from "../assets/Home/WeekAnd.mp4";
 import DancePartyTime from "../assets/Home/img/Dance_Party_Time.png";
-import MetroVein from "../assets/Home/Metro_Vein.gif";
+import MetroVeinVideo from "../assets/Home/Metro_Vein.mp4";
 import Lockwood from "../assets/Home/img/Lockwood.png";
 import PuzzlePalace from "../assets/Home/img/Puzzle_Palace.png";
 import Sage from "../assets/Home/img/Sage.png";
 import SixFeet from "../assets/Home/img/6_Feet_Apart.png";
 import Bluprint from "../assets/Home/Blueprint.gif";
-import Discovery from "../assets/Home/Discovery.gif";
-import Fab from "../assets/Home/Fab.gif";
+import DiscoveryVideo from "../assets/Home/Discovery.mp4";
+import FabVideo from "../assets/Home/Fab.mp4";
 import GeniusKitchen from "../assets/Home/img/Genius_Kitchen.png";
 import Horowitz from "../assets/Home/img/Horowitz_Real_Estate.png";
 import Kindra from "../assets/Home/Kindra.gif";
@@ -25,8 +25,8 @@ import TheCurve from "../assets/Home/img/The_Curve.png";
 import SayMore from "../assets/Home/img/Say_More.png";
 import Archive from "../assets/Home/img/Archive.png";
 import Firefly from "../assets/Home/img/Firefly.png";
-import PetCenter from "../assets/Home/PetDermatologyCenter.mp4";
-import HGTV2 from "../assets/Home/HGTV_2.gif";
+import PetCenterVideo from "../assets/Home/PetDermatologyCenter.mp4";
+import HGTV2Video from "../assets/Home/HGTV_2.mp4";
 import Photography from "../assets/Home/img/Photography.png";
 import PresentationsAlt from "../assets/Home/img/Presentations_ALT.png";
 import SarahVideo from "../assets/Home/img/Sarah_Video.png";
@@ -51,7 +51,7 @@ const projects = [
   {
     slug: "week-and",
     title: "Week&",
-    img: Week,
+    vid: WeekAndVideo,
     alt: " ",
   },
   {
@@ -63,7 +63,7 @@ const projects = [
   {
     slug: "discovery",
     title: "Discovery",
-    img: Discovery,
+    vid: DiscoveryVideo,
     alt: " ",
   },
   {
@@ -101,7 +101,7 @@ const projects = [
   {
     slug: "metro-vein-centers",
     title: "Metro Vein Centers",
-    img: MetroVein,
+    vid: MetroVeinVideo,
     alt: "Pizza being made through a cutout in the shape of a face on a purple rectangle.",
   },
   {
@@ -119,7 +119,7 @@ const projects = [
   {
     slug: "fab",
     title: "Fab",
-    img: Fab,
+    vid: FabVideo,
     alt: " ",
   },
   {
@@ -163,7 +163,7 @@ const projects = [
   {
     slug: "comics-kingdom",
     title: "Comics Kingdom",
-    img: ComicsKingdom,
+    vid: ComicsKingdomVideo,
     alt: "Two speech bubbles turned vertically and having eyes so they look like faces.",
   },
   {
@@ -201,7 +201,7 @@ const projects = [
   {
     slug: "pet-dermatology-center",
     title: "Pet Dermatology Center",
-    vid: PetCenter,
+    vid: PetCenterVideo,
     alt: "",
   },
   {
@@ -213,7 +213,7 @@ const projects = [
   {
     slug: "hgtv",
     title: "HGTV",
-    img: HGTV2,
+    vid: HGTV2Video,
     alt: "",
     comingSoon: true,
   },
@@ -344,7 +344,7 @@ let stepCount = 4;
               <div class:list={["project", `step-${counter++ % stepCount}`]}>
                 <a href={page} data-title={title}>
                   {img && <img src={img.src} alt={alt} /> }
-                  {vid && <VideoLoop src={vid} /> }
+                  {vid && <VideoLoop src={vid} class="rc" /> }
                   <h2>{title}</h2>
                 </a>
               </div>
@@ -366,7 +366,7 @@ let stepCount = 4;
               <div class:list={["project", `step-${counter++ % stepCount}`]}>
                 <a href={`/works/${slug}`} data-title={title}>
                   {img && <img src={img.src} alt={alt} /> }
-                  {vid && <VideoLoop src={vid} /> }
+                  {vid && <VideoLoop src={vid} class="rc" /> }
                   <h2>{title}</h2>
                 </a>
               </div>
@@ -392,6 +392,7 @@ let stepCount = 4;
     margin-bottom: 28px;
 
     img {
+      width:100%;
       border-radius: 6px;
       margin-bottom: 10px;
     }
