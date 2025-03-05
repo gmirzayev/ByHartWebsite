@@ -72,9 +72,9 @@ for (let group in CATEGORIES){
             list-style-type: none;
             width:20%;
             li:first-child{
+                color:var(--ruby);
                 font-weight: 700;
                 text-transform: uppercase;
-                opacity:.333;
                 letter-spacing: 0.1em;
             }
 
@@ -87,9 +87,6 @@ for (let group in CATEGORIES){
         &.dark{
             color: #F7F4ED;
             background: var(--charcoal);
-            ul li:first-child{
-                opacity: .5;
-            }
         }
 
         @media (max-width: 767px) {
