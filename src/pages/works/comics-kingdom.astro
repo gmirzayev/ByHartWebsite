@@ -99,13 +99,13 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   }
 
   #we-are {
-    width: 200px;
+    width: 290px;
     height: 55px;
     font-weight: bold;
 
     li {
       position: absolute;
-      width: 200px;
+      width: 290px;
       opacity: 0;
       transition: opacity 0.666s;
 
@@ -115,7 +115,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     }
   }
 
-  #brand-guide{
+  #brand-guide {
     background: #1d1a1a url("/images/noise.svg") repeat;
   }
 </style>
@@ -141,7 +141,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     alt="Comics Kingdom"
   />
   <div
-    class="w-full columns-1 md:columns-2 gap-[90px] my-[45px] md:my-[120px] px-[25px] md:px-[245px] karla text-[#363131] leading-[26px]"
+    class="karla mx-auto my-[45px] w-full max-w-[950px] columns-1 gap-[90px] px-[25px] leading-[26px] text-[#363131] md:my-[120px] md:columns-2"
   >
     <p class="m-0">
       Every strip starts with a sketch. A gag. A storyboard. An inkling of an
@@ -161,7 +161,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
       to breathe new life, share new experiences, and reach new friends. A way
       to come together through a niche that unifies—one of the lightest ways to
       deal with heavy stuff. <br /><br />
-      <span class="text-[#DD4C42] text-lg md:text-xl font-bold"
+      <span class="text-lg font-bold text-[#DD4C42] md:text-xl"
         >For <em>those</em>, for <em>us</em>, and <em>all</em>, our mission is
         to keep the comics coming.</span
       >
@@ -184,10 +184,10 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     <TransparentVideo
       mov={CreatorSafari}
       webm={Creator}
-      class="max-h-full w-[100%] my-[40px] md:my-[100px] mx-0"
+      class="mx-0 my-[40px] max-h-full w-[100%] md:my-[100px]"
     />
     <Image
-      class="h-auto w-full px-[20px] md:px-[300px]"
+      class="mx-auto h-auto w-full max-w-[840px] px-[20px]"
       src={Home}
       alt="Comics Kingdom"
     />
@@ -196,9 +196,9 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     <source src={CKAnimation} />
   </video>
   <div
-    class="w-full flex flex-col md:flex-row md:items-center justify-center gap-[80px] md:gap-[150px] my-[45px] md:my-[120px] px-[62px] md:px-[300px]"
+    class="my-[45px] flex w-full flex-col items-center justify-center gap-[80px] px-[62px] md:my-[120px] md:flex-row md:items-center md:gap-[150px]"
   >
-    <div class="karla text-[#363131] justify-self-end">
+    <div class="karla justify-self-end text-[#363131]">
       <p class="md:text-[20px]">We are</p>
       <ul id="we-are">
         {
@@ -212,109 +212,113 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
       <source src={PhoneVibration} type="video/mp4" />
     </video>
   </div>
-  <div class="w-full friends-background py-[35px] md:py-[110px]">
+  <div class="friends-background w-full py-[35px] md:py-[110px]">
     <TransparentVideo webm={Friends} mov={FriendsSafari} class="w-screen" />
   </div>
   <div class="social-background">
     <Image
-      class="h-auto w-full px-[20px] md:px-[300px] py-[45px] md:py-[120px]"
+      class="h-auto w-full px-[20px] py-[45px] md:px-[300px] md:py-[120px]"
       src={Social}
       alt="Comics Kingdom"
     />
   </div>
-  <Image
-    class="h-auto w-full px-[20px] md:px-[300px] my-[45px] md:my-[120px]"
-    src={Email}
-    alt="Comics Kingdom"
-  />
-  <div class="flex flex-row w-full items-baseline mb-[45px] md:mb-0">
+  <div class="mx-auto my-[45px] max-w-[840px] px-[20px] md:my-[120px]">
+    <Image class="rounded-md md:rounded-lg" src={Email} alt="Comics Kingdom" />
+  </div>
+  <div class="mb-[45px] flex w-full flex-row items-baseline md:mb-0">
     <div class="w-1/2">
       <Image
-        class="h-auto w-1/2 pl-[20px] pb-[10px] md:pl-[60px] md:pb-[50px]"
+        class="h-auto w-1/2 pb-[10px] pl-[20px] md:pb-[50px] md:pl-[60px]"
         src={Mark}
         alt="Comics Kingdom"
       />
     </div>
-    <Image class="h-auto w-1/2" src={Book} alt="Comics Kingdom" />
-  </div>
-<div id="brand-guide">
-  <div class="karla text-[#F7F4ED] py-[30px] pl-[20px] md:pl-[45px]">
-    <p class="font-bold tracking-widest inline-block">COMICS KINGDOM</p>
-    <p class="inline-block ml-[20px]">A glimpse at the brand guide</p>
-  </div>
-  <div class="grid grid-cols-2 gap-[5px] md:gap-[15px] px-[20px] md:px-[45px]">
     <Image
-      class="w-full h-auto rounded"
-      src={BrandGrid1}
-      alt="Sage Brand Guide Grid 1"
-    />
-    <Image
-      class="w-full h-auto rounded"
-      src={BrandGrid2}
-      alt="Sage Brand Guide Grid 4"
-    />
-    <Image
-      class="w-full h-auto rounded"
-      src={BrandGrid3}
-      alt="Sage Brand Guide Grid 3"
-    />
-    <Image
-      class="w-full h-auto rounded"
-      src={BrandGrid4}
-      alt="Sage Brand Guide Grid 5"
-    />
-    <Image
-      class="w-full h-auto rounded"
-      src={BrandGrid5}
-      alt="Sage Brand Guide Grid 6"
-    />
-    <Image
-      class="w-full h-auto rounded"
-      src={BrandGrid6}
-      alt="Sage Brand Guide Grid 7"
-    />
-    <Image
-      class="w-full h-auto rounded"
-      src={BrandGrid7}
-      alt="Sage Brand Guide Grid 2"
-    />
-    <Image
-      class="w-full h-auto rounded"
-      src={BrandGrid8}
-      alt="Sage Brand Guide Grid 8"
-    />
-    <Image
-      class="w-full h-auto rounded"
-      src={BrandGrid9}
-      alt="Sage Brand Guide Grid 9"
-    />
-    <Image
-      class="w-full h-auto rounded"
-      src={BrandGrid10}
-      alt="Sage Brand Guide Grid 10"
-    />
-    <Image
-      class="w-full h-auto rounded"
-      src={BrandGrid11}
-      alt="Sage Brand Guide Grid 11"
-    />
-    <Image
-      class="w-full h-auto rounded"
-      src={BrandGrid12}
-      alt="Sage Brand Guide Grid 12"
-    />
-    <Image
-      class="w-full h-auto rounded"
-      src={BrandGrid13}
-      alt="Sage Brand Guide Grid 13"
-    />
-    <Image
-      class="w-full h-auto rounded"
-      src={BrandGrid14}
-      alt="Sage Brand Guide Grid 14"
+      class="md:rounded-bl-0 h-auto w-1/2 rounded-l-md md:rounded-tl-lg"
+      src={Book}
+      alt="Comics Kingdom"
     />
   </div>
-</div>
+  <div id="brand-guide">
+    <div class="karla py-[30px] pl-[20px] text-[#F7F4ED] md:pl-[45px]">
+      <p class="inline-block font-bold tracking-widest">COMICS KINGDOM</p>
+      <p class="ml-[20px] inline-block">A glimpse at the brand guide</p>
+    </div>
+    <div
+      class="grid grid-cols-2 gap-[5px] px-[20px] md:gap-[15px] md:px-[45px]"
+    >
+      <Image
+        class="h-auto w-full rounded"
+        src={BrandGrid1}
+        alt="Sage Brand Guide Grid 1"
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={BrandGrid2}
+        alt="Sage Brand Guide Grid 4"
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={BrandGrid3}
+        alt="Sage Brand Guide Grid 3"
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={BrandGrid4}
+        alt="Sage Brand Guide Grid 5"
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={BrandGrid5}
+        alt="Sage Brand Guide Grid 6"
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={BrandGrid6}
+        alt="Sage Brand Guide Grid 7"
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={BrandGrid7}
+        alt="Sage Brand Guide Grid 2"
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={BrandGrid8}
+        alt="Sage Brand Guide Grid 8"
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={BrandGrid9}
+        alt="Sage Brand Guide Grid 9"
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={BrandGrid10}
+        alt="Sage Brand Guide Grid 10"
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={BrandGrid11}
+        alt="Sage Brand Guide Grid 11"
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={BrandGrid12}
+        alt="Sage Brand Guide Grid 12"
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={BrandGrid13}
+        alt="Sage Brand Guide Grid 13"
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={BrandGrid14}
+        alt="Sage Brand Guide Grid 14"
+      />
+    </div>
+  </div>
 </ProjectLayout>
 
 <script>
