@@ -8,7 +8,7 @@ const small = type=='image' && await getImage({src:mobile ?? hero, width:1000})
 const large = type=='image' && await getImage({src:hero, width:2800})
 ---
 
-<style>
+<style is:global>
   .scroll-container {
     position: relative;
     height: 130vh;
@@ -17,61 +17,62 @@ const large = type=='image' && await getImage({src:hero, width:2800})
       color:var(--cream);
       background:var(--charcoal);
     }
-  }
-  .sticky-container {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-  }
-  .image-container {
-    margin-top:200px;
-    text-align: center;
-    position: relative;
-    z-index: 20;
-  }
 
-  #main-header {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-  }
+    .sticky-container {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    .image-container {
+      margin-top:200px;
+      text-align: center;
+      position: relative;
+      z-index: 3;
+    }
 
-  #project-title{
-    position:absolute;
-    bottom:33vh;
-    width: 100%;
-    text-align: center;
-    overflow: hidden;
-  }
+    #main-header {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: auto;
+    }
 
-  #project-title h1 {
-    font: 122px/1.0 "Karla", sans-serif;
-  }
+    #project-title{
+      position:absolute;
+      bottom:33vh;
+      width: 100%;
+      text-align: center;
+      overflow: hidden;
+    }
 
-  #project-title h2{
-    font: 700 18px/1.2 "Karla", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    margin-top:2em;
-  }
+    #project-title h1 {
+      font: 122px/1.0 "Karla", sans-serif;
+    }
 
-  #main-header{
-    /* initialize to default `updateImage` values */
-    width: 20vw;
-    margin-top: 0px;
-    transform: rotate(-3deg);
-    box-shadow: rgba(30, 30, 30, 0.5) -5px 5px 5px;
-  }
+    #project-title h2{
+      font: 700 18px/1.2 "Karla", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-top:2em;
+    }
 
-  @media (max-width: 768px) {
-    #project-title h1 { font-size:72px; }
-    #project-title h2 { font-size: 14px; }
-  }
+    #main-header{
+      /* initialize to default `updateImage` values */
+      width: 20vw;
+      margin-top: 0px;
+      transform: rotate(-3deg);
+      box-shadow: rgba(30, 30, 30, 0.5) -5px 5px 5px;
+    }
 
-  @media (max-width: 500px) {
-    #project-title h1 { font-size:58px; }
-    #project-title h2 { font-size: 14px; }
+    @media (max-width: 768px) {
+      #project-title h1 { font-size:72px; }
+      #project-title h2 { font-size: 14px; }
+    }
+
+    @media (max-width: 500px) {
+      #project-title h1 { font-size:58px; }
+      #project-title h2 { font-size: 14px; }
+    }
   }
 
 </style>

@@ -36,7 +36,7 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
     </div>
 </div>
 
-<style>
+<style is:global>
     .vimeo-player{
         display:flex;
         justify-content: space-around;
@@ -64,154 +64,158 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
             }
         }
 
-    }
-
-    .frame{
-        position:relative;
-        width:100%;
-    }
-
-    .frame .buttons{
-        position: absolute;
-        top:0;
-        left:0;
-        right:0;
-        bottom:0;
-
-        display:flex;
-        flex-direction: row-reverse;
-        gap:10px;
-
-        &.unmute{
-            padding:20px;
-            align-items:end;
-            justify-content: end;
-
-        }
-        &.unpause{
-            align-items:center;
-            justify-content: center;
-        }
-    }
 
 
-    .frame button{
-        position:relative;
-        color: var(--charcoal);
-        padding:12px;
 
-        font: 500 21px Karla, sans-serif;
-        letter-spacing: 4.2px;
-        text-transform: uppercase;
-        z-index:2;
-
-        transition: opacity 500ms;
-
-        &::after{
-            position:absolute;
-            content: " ";
-            background: #FF97FD;
-            border:1px solid var(--charcoal);
+        .frame{
+            position:relative;
             width:100%;
-            height:100%;
+        }
+
+        .frame .buttons{
+            position: absolute;
             top:0;
             left:0;
-            z-index:-1;
-            transform: rotate(-1.25deg);
-            transition: transform .25s;
+            right:0;
+            bottom:0;
+
+            display:flex;
+            flex-direction: row-reverse;
+            gap:10px;
+
+            &.unmute{
+                padding:20px;
+                align-items:end;
+                justify-content: end;
+
+            }
+            &.unpause{
+                align-items:center;
+                justify-content: center;
+            }
         }
 
-        &:hover::after{
-            transform: rotate(0);
+
+        .frame button{
+            position:relative;
+            color: var(--charcoal);
+            padding:12px;
+
+            font: 500 21px Karla, sans-serif;
+            letter-spacing: 4.2px;
+            text-transform: uppercase;
+            z-index:2;
+
+            transition: opacity 500ms;
+
+            &::after{
+                position:absolute;
+                content: " ";
+                background: #FF97FD;
+                border:1px solid var(--charcoal);
+                width:100%;
+                height:100%;
+                top:0;
+                left:0;
+                z-index:-1;
+                transform: rotate(-1.25deg);
+                transition: transform .25s;
+            }
+
+            &:hover::after{
+                transform: rotate(0);
+            }
         }
-    }
 
-    .frame button.action.unmute{
-        .sound-on{ display:none; }
+        .frame button.action.unmute{
+            .sound-on{ display:none; }
 
-        &.fired{
+            &.fired{
+                opacity:0;
+                .sound-on{ display:inline; }
+                .sound-off{ display:none; }
+            }
+
+            @media (min-width: 768px) {
+                padding-top:10px;
+                padding-bottom:10px;
+
+                svg{ display:none; }
+
+                &::before{
+                    content:"Sound On";
+                }
+                &.fired::before{
+                    content:"Sound Off"
+                }
+            }
+
+        }
+
+        .frame:hover button.action.unmute.fired,
+        .frame:hover button.action.unpause.fired,
+        .frame:hover button.action.unmute.fired + button.rewind{
+            opacity: 1;
+            pointer-events:auto;
+        }
+
+
+        button.rewind{
             opacity:0;
-            .sound-on{ display:inline; }
-            .sound-off{ display:none; }
+            display:none;
+            min-width:50px;
+            svg{
+                margin:0 auto;
+            }
         }
 
-        @media (min-width: 768px) {
+        .rewindable .frame button.rewind,
+        .frame button.action.unmute.fired + button.rewind{
+            display:inline;
+            pointer-events:none;
+        }
+
+        button.action.unpause:not(.fired) + button.rewind{
+            opacity:1;
+            pointer-events:auto;
+        }
+
+
+        .frame button.action.unpause{
             padding-top:10px;
             padding-bottom:10px;
 
             svg{ display:none; }
 
-            &::before{
-                content:"Sound On";
+            &::before{ content:"Play"; }
+
+            &.fired{
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+                transform:none;
+                &::before{ content:" " }
+                &::after{opacity:0;}
             }
-            &.fired::before{
-                content:"Sound Off"
+        }
+
+
+        .embed{
+            position:relative;
+
+            iframe {
+                position:absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
             }
+
         }
 
     }
 
-    .frame:hover button.action.unmute.fired,
-    .frame:hover button.action.unpause.fired,
-    .frame:hover button.action.unmute.fired + button.rewind{
-        opacity: 1;
-        pointer-events:auto;
-    }
-
-
-    button.rewind{
-        opacity:0;
-        display:none;
-        min-width:50px;
-        svg{
-            margin:0 auto;
-        }
-    }
-
-    .rewindable .frame button.rewind,
-    .frame button.action.unmute.fired + button.rewind{
-        display:inline;
-        pointer-events:none;
-    }
-
-    button.action.unpause:not(.fired) + button.rewind{
-        opacity:1;
-        pointer-events:auto;
-    }
-
-
-    .frame button.action.unpause{
-        padding-top:10px;
-        padding-bottom:10px;
-
-        svg{ display:none; }
-
-        &::before{ content:"Play"; }
-
-        &.fired{
-            top:0;
-            left:0;
-            right:0;
-            bottom:0;
-            transform:none;
-            &::before{ content:" " }
-            &::after{opacity:0;}
-        }
-    }
-
-
-    .embed{
-        position:relative;
-
-        iframe {
-            position:absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-    }
 </style>
 
 <script>
