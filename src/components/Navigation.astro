@@ -14,8 +14,8 @@ const { theme } = Astro.props;
 const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
 ---
 
-<style>
-  nav {
+<style is:global>
+  #main-nav{
     font-family: "Karla", sans-serif;
     font-weight: bold;
     font-size: 16px;
@@ -25,209 +25,209 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
     padding: 25px;
     display: flex;
     align-items: center;
-  }
 
-  .dark {
-    color: #faf7f4;
-  }
-  .light {
-    color: black;
-  }
-  .nav-link {
-    position: relative;
-    box-sizing: border-box;
-    display: inline-block;
-    width: 180px;
-  }
-  .nav-link span {
-    display: inline-block;
-    max-width: 0%;
-    vertical-align: bottom;
-    overflow: hidden;
-    white-space: nowrap;
-    transition: max-width 1s ease-in-out;
-  }
-  .logo {
-    width: 80px;
-    height: auto;
-    position: relative;
-  }
-  .mobile-dropdown-toggle {
-    display: none;
-    background: none;
-    padding: 0;
-    border: none;
-  }
-  .nav-link--header {
-    font-size: 34px;
-    letter-spacing: 0;
-    margin-bottom: 50px;
-  }
+    .dark {
+      color: #faf7f4;
+    }
+    .light {
+      color: black;
+    }
+    .nav-link {
+      position: relative;
+      box-sizing: border-box;
+      display: inline-block;
+      width: 180px;
+    }
+    .nav-link span {
+      display: inline-block;
+      max-width: 0%;
+      vertical-align: bottom;
+      overflow: hidden;
+      white-space: nowrap;
+      transition: max-width 1s ease-in-out;
+    }
+    .logo {
+      width: 80px;
+      height: auto;
+      position: relative;
+    }
+    .mobile-dropdown-toggle {
+      display: none;
+      background: none;
+      padding: 0;
+      border: none;
+    }
+    .nav-link--header {
+      font-size: 34px;
+      letter-spacing: 0;
+      margin-bottom: 50px;
+    }
 
-  .nav-link--email-button {
-    color: black;
-    background-color: #ff97fd;
-    padding: 10px 20px;
-    font-size: 16px;
-    width: 270px;
-    text-align: center;
-  }
+    .nav-link--email-button {
+      color: black;
+      background-color: #ff97fd;
+      padding: 10px 20px;
+      font-size: 16px;
+      width: 270px;
+      text-align: center;
+    }
 
-  .mobile-nav-link--email {
-    color: white;
-    font-size: 16px;
-    letter-spacing: 0;
-    font-weight: normal;
-    margin-top: 20px;
-  }
+    .mobile-nav-link--email {
+      color: white;
+      font-size: 16px;
+      letter-spacing: 0;
+      font-weight: normal;
+      margin-top: 20px;
+    }
 
-  .mobile-nav-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    .mobile-nav-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  .dropdown-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-  .svg-text {
-    fill: var(--cream);
-    font-size: 12px;
-    letter-spacing: 2px;
-    font-weight: 500;
-  }
-  #nav-instagram {
-    position: absolute;
-    top: 50px;
-    left: 80px;
-    rotate: 260deg;
-  }
-  /* #nav-substack {
+    .dropdown-close {
       position: absolute;
-      top: -20px;
+      top: 20px;
+      right: 20px;
+    }
+    .svg-text {
+      fill: var(--cream);
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+    #nav-instagram {
+      position: absolute;
+      top: 50px;
+      left: 80px;
+      rotate: 260deg;
+    }
+    /* #nav-substack {
+        position: absolute;
+        top: -20px;
+        left: 170px;
+        rotate: 5deg;
+      } */
+    #nav-vimeo {
+      position: absolute;
+      top: -25px;
       left: 170px;
       rotate: 5deg;
-    } */
-  #nav-vimeo {
-    position: absolute;
-    top: -25px;
-    left: 170px;
-    rotate: 5deg;
-  }
-  #nav-linkedin {
-    position: absolute;
-    top: 2px;
-    left: 250px;
-    rotate: 27deg;
-  }
-  .overflow-hidden {
-    overflow: hidden;
-  }
-  .dropdown-link-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    height: -webkit-fill-available;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding-left: 7vw;
-    padding-right: 7vw;
-
-    background: #a92325;
-    /* z-index: 0; */
-
-    opacity: 0;
-    transform: translateY(-100%);
-    transition:
-      transform .666s ease-in-out,
-      opacity .666s ease-out;
-  }
-  .mobile-dropdown-toggle {
-    display: initial;
-  }
-
-  #mobile-nav.dropdown-opened > .dropdown-link-container {
-    opacity: 1;
-    transform: translateY(0);
-    /* z-index: 8; */
-  }
-  #mobile-nav:not(.dropdown-opened) > .mobile-dropdown-toggle {
-    /* z-index: 0; */
-  }
-
-  #mobile-nav,
-  #desktop-nav{
-    .light &{ color: black; }
-    .dark &{ color: var(--cream); }
-    transition: color .5s;
-
-    .home-logo{ width:80px; }
-  }
-
-  #mobile-nav.dropdown-opened{
-      color: var(--cream);
-      z-index:8;
-  }
-
-  #mobile-nav.dropdown-opened > .home-logo,
-  .mobile-dropdown-toggle {
-    z-index: 9;
-  }
-  #dropdown-open {
-    display: block;
-  }
-  #dropdown-close {
-    display: none;
-  }
-  #mobile-nav.dropdown-opened #dropdown-open {
-    display: none;
-  }
-  #mobile-nav.dropdown-opened #dropdown-close {
-    display: block;
-  }
-  button:hover,
-  #nav-link--email-button:hover{
-    cursor: url("/images/HeartCursor.png") 16 16, pointer;
-  }
-
-  @media (min-width: 768px) {
-    .nav-link::after {
-      content: attr(data-hover);
+    }
+    #nav-linkedin {
       position: absolute;
-      left:0;
-      top:1em;
-      padding:0 20px;
-      height: 38px;
-      border-radius: 35px;
-      color: black;
-      font-size: 13px;
-      font-family: "Karla", sans-serif;
-      background-color: var(--peach);
-      text-align: center;
-      line-height: 38px;
-      opacity:0;
-      transform-origin: top left;
-      transform: translate(-1em, 1em) rotate(16deg);
-      transition: opacity 333ms, transform 333ms;
-      pointer-events: none;
-      white-space: nowrap;
+      top: 2px;
+      left: 250px;
+      rotate: 27deg;
+    }
+    .overflow-hidden {
+      overflow: hidden;
+    }
+    .dropdown-link-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      height: -webkit-fill-available;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding-left: 7vw;
+      padding-right: 7vw;
+
+      background: #a92325;
+      /* z-index: 0; */
+
+      opacity: 0;
+      transform: translateY(-100%);
+      transition:
+        transform .666s ease-in-out,
+        opacity .666s ease-out;
+    }
+    .mobile-dropdown-toggle {
+      display: initial;
     }
 
-    .nav-link:hover::after {
-      opacity:1;
-      transform: rotate(8deg);
+    #mobile-nav.dropdown-opened > .dropdown-link-container {
+      opacity: 1;
+      transform: translateY(0);
+      /* z-index: 8; */
+    }
+    #mobile-nav:not(.dropdown-opened) > .mobile-dropdown-toggle {
+      /* z-index: 0; */
     }
 
-    .nav-link:hover span {
-      max-width: 170px;
+    #mobile-nav,
+    #desktop-nav{
+      .light &{ color: black; }
+      .dark &{ color: var(--cream); }
+      transition: color .5s;
+
+      .home-logo{ width:80px; }
+    }
+
+    #mobile-nav.dropdown-opened{
+        color: var(--cream);
+        z-index:8;
+    }
+
+    #mobile-nav.dropdown-opened > .home-logo,
+    .mobile-dropdown-toggle {
+      z-index: 9;
+    }
+    #dropdown-open {
+      display: block;
+    }
+    #dropdown-close {
+      display: none;
+    }
+    #mobile-nav.dropdown-opened #dropdown-open {
+      display: none;
+    }
+    #mobile-nav.dropdown-opened #dropdown-close {
+      display: block;
+    }
+    button:hover,
+    #nav-link--email-button:hover{
+      cursor: url("/images/HeartCursor.png") 16 16, pointer;
+    }
+
+    @media (min-width: 768px) {
+      .nav-link::after {
+        content: attr(data-hover);
+        position: absolute;
+        left:0;
+        top:1em;
+        padding:0 20px;
+        height: 38px;
+        border-radius: 35px;
+        color: black;
+        font-size: 13px;
+        font-family: "Karla", sans-serif;
+        background-color: var(--peach);
+        text-align: center;
+        line-height: 38px;
+        opacity:0;
+        transform-origin: top left;
+        transform: translate(-1em, 1em) rotate(16deg);
+        transition: opacity 333ms, transform 333ms;
+        pointer-events: none;
+        white-space: nowrap;
+      }
+
+      .nav-link:hover::after {
+        opacity:1;
+        transform: rotate(8deg);
+      }
+
+      .nav-link:hover span {
+        max-width: 170px;
+      }
     }
   }
 </style>
@@ -328,24 +328,24 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
       <!-- </div> -->
     </div>
   </nav>
-
-  <script>
-    const nav = document.getElementById("mobile-nav");
-    const navButton = document.getElementById("dropdown-toggle");
-
-    navButton.addEventListener("click", (event) => {
-      nav.classList.toggle("dropdown-opened");
-      document.body.classList.toggle("overflow-hidden");
-    });
-
-    // hide dropdown if user navigates
-    document.querySelectorAll("#mobile-nav a[href^='/']").forEach(elt => {
-      elt.addEventListener("click", e => {
-        console.log("click")
-        nav.classList.remove("dropdown-opened");
-        document.body.classList.remove("overflow-hidden");
-      })
-    })
-
-  </script>
 </header>
+
+<script>
+  const nav = document.getElementById("mobile-nav");
+  const navButton = document.getElementById("dropdown-toggle");
+
+  navButton.addEventListener("click", (event) => {
+    nav.classList.toggle("dropdown-opened");
+    document.body.classList.toggle("overflow-hidden");
+  });
+
+  // hide dropdown if user navigates
+  document.querySelectorAll("#mobile-nav a[href^='/']").forEach(elt => {
+    elt.addEventListener("click", e => {
+      console.log("click")
+      nav.classList.remove("dropdown-opened");
+      document.body.classList.remove("overflow-hidden");
+    })
+  })
+
+</script>

@@ -4,14 +4,15 @@ import "../styles/utils.css";
 const {class:className} = Astro.props
 ---
 
-<style>
-    div{
+<style is:global>
+    .project-text-block{
         font: 400 16px "Karla", sans-serif;
 
         p{
             line-height:1.5;
             margin-bottom:1em;
         }
+
         h1{
             line-height:1.2;
             font-size:26px;
@@ -24,6 +25,12 @@ const {class:className} = Astro.props
             div.no-break{
                 /* compensate for graf spacing if the columns break mid-sentence */
                 margin-top:-1em;
+            }
+
+            &.rx-off{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
             }
         }
 
@@ -50,6 +57,6 @@ const {class:className} = Astro.props
 </style>
 
 
-<div class={className ?? "project-text-block"}>
+<div class:list={["project-text-block", className]}>
     <slot />
 </div>
