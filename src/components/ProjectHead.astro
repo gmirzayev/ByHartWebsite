@@ -4,8 +4,8 @@ import Navigation from "./Navigation.astro";
 
 const { brand, tagline, hero, mobile, theme } = Astro.props;
 const type = !!hero.format ? 'image' : 'video' // imported images get unpacked into ImageMetadata objects with `format` attrs, videos are just a path string
-const small = type=='image' && await getImage({src:mobile ?? hero, widths:[1800]})
-const large = type=='image' && await getImage({src:hero, widths:[2800]})
+const small = type=='image' && await getImage({src:mobile ?? hero, width:1000})
+const large = type=='image' && await getImage({src:hero, width:2800})
 ---
 
 <style>
