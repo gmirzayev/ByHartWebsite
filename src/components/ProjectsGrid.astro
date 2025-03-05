@@ -1,5 +1,6 @@
 ---
 import "../styles/utils.css";
+import Image from "astro/components/Image.astro";
 import VideoLoop from "./VideoLoop.astro";
 
 import Ample from "../assets/Home/img/Ample.png";
@@ -12,7 +13,7 @@ import Lockwood from "../assets/Home/img/Lockwood.png";
 import PuzzlePalace from "../assets/Home/img/Puzzle_Palace.png";
 import Sage from "../assets/Home/img/Sage.png";
 import SixFeet from "../assets/Home/img/6_Feet_Apart.png";
-import Bluprint from "../assets/Home/Blueprint.gif";
+import BluprintVideo from "../assets/Home/Bluprint.mp4";
 import DiscoveryVideo from "../assets/Home/Discovery.mp4";
 import FabVideo from "../assets/Home/Fab.mp4";
 import GeniusKitchen from "../assets/Home/img/Genius_Kitchen.png";
@@ -39,7 +40,7 @@ const projects = [
   {
     slug: "wizehire",
     title: "Wizehire",
-    img: Wizehire,
+    gif: Wizehire,
     alt: "Pizza being made through a cutout in the shape of a face on a purple rectangle.",
   },
   {
@@ -81,7 +82,7 @@ const projects = [
   {
     slug: "illustration",
     title: "Custom Illustrations",
-    img: Illustration,
+    gif: Illustration,
     alt: " ",
     comingSoon: true,
   },
@@ -137,7 +138,7 @@ const projects = [
   {
     slug: "bluprint",
     title: "Bluprint",
-    img: Bluprint,
+    vid: BluprintVideo,
     alt: " ",
   },
   {
@@ -182,7 +183,7 @@ const projects = [
   {
     slug: "kindra",
     title: "Kindra",
-    img: Kindra,
+    gif: Kindra,
     alt: "",
   },
   {
@@ -337,13 +338,14 @@ let stepCount = 4;
       wide_layout.map((slugs) => (
         <div class="column">
           {slugs.map((slug) => {
-            let { title, img, vid, alt, comingSoon } = getProject(slug);
+            let { title, img, gif, vid, alt, comingSoon } = getProject(slug);
             if (comingSoon) title += " — Coming Soon";
             let page = comingSoon ? null : `/works/${slug}`;
             return (
               <div class:list={["project", `step-${counter++ % stepCount}`]}>
                 <a href={page} data-title={title}>
-                  {img && <img src={img.src} alt={alt} /> }
+                  {img && <Image src={img} width={1000} alt={alt} /> }
+                  {gif && <img src={gif.src} alt={alt} /> }
                   {vid && <VideoLoop src={vid} class="rc" /> }
                   <h2>{title}</h2>
                 </a>
@@ -360,12 +362,13 @@ let stepCount = 4;
       narrow_layout.map((slugs) => (
         <div class="column">
           {slugs.map((slug) => {
-            let { title, img, vid, alt, comingSoon } = getProject(slug);
+            let { title, img, gif, vid, alt, comingSoon } = getProject(slug);
             if (comingSoon) title += " — Coming Soon";
             return (
               <div class:list={["project", `step-${counter++ % stepCount}`]}>
                 <a href={`/works/${slug}`} data-title={title}>
-                  {img && <img src={img.src} alt={alt} /> }
+                  {img && <Image src={img} width={1000} alt={alt} /> }
+                  {gif && <img src={gif.src} alt={alt} /> }
                   {vid && <VideoLoop src={vid} class="rc" /> }
                   <h2>{title}</h2>
                 </a>
