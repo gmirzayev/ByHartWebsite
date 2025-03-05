@@ -24,7 +24,7 @@ const VIDEOS = [
 ]
 ---
 
-<style>
+<style is:global>
   #homepage-hero{
     -webkit-user-select: none;
     user-select: none;
@@ -45,56 +45,57 @@ const VIDEOS = [
     transition: transform 2s ease;
     transform-origin: center;
     transform: rotate(20deg);
-  }
 
-  .videos{
-    display: grid;
-    grid-template-areas: single;
-    justify-content: center;
-    width:88%; /* give the text halo some space */
+    .videos{
+      display: grid;
+      grid-template-areas: single;
+      justify-content: center;
+      width:88%; /* give the text halo some space */
 
-    > video{
-        grid-area: single;
-        border-radius: 25% / 50%;
-        width:100%;
-        opacity:0;
-        transition: opacity .5s linear;
+      > video{
+          grid-area: single;
+          border-radius: 25% / 50%;
+          width:100%;
+          opacity:0;
+          transition: opacity .5s linear;
 
-        &.active{
-            opacity:1;
-        }
+          &.active{
+              opacity:1;
+          }
+      }
+    }
+
+    .halo{
+      position:absolute;
+      width:100%;
+    }
+
+    .halo textPath{
+      font-size:38px;
+      font-family: "utile-display", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      fill: var(--cream);
+    }
+
+    .halo a{
+      transition: fill .25s;
+
+      &:hover, &.active {
+        fill: #ff97fd;
+      }
+
+      &:hover ~ a.active,
+      &.active:has(~ a:hover){
+        fill:var(--cream) !important;
+      }
+
+      &:hover:not(.active){
+        cursor: url("/images/HeartCursor.png") 16 16, pointer;
+      }
     }
   }
 
-  .halo{
-    position:absolute;
-    width:100%;
-  }
-
-  .halo textPath{
-    font-size:38px;
-    font-family: "utile-display", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    fill: var(--cream);
-  }
-
-  .halo a{
-    transition: fill .25s;
-
-    &:hover, &.active {
-      fill: #ff97fd;
-    }
-
-    &:hover ~ a.active,
-    &.active:has(~ a:hover){
-      fill:var(--cream) !important;
-    }
-
-    &:hover:not(.active){
-      cursor: url("/images/HeartCursor.png") 16 16, pointer;
-    }
-  }
 </style>
 
 <div id="homepage-hero">
