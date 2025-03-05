@@ -266,8 +266,8 @@ const STYLE = {paddingTop:height}
             let embed = this.elt.querySelector(":scope .embed")
             if (embed instanceof HTMLElement){
                 let iframe = document.createElement("iframe")
-                iframe.allow = embed.dataset['vimeo-allow']
-                iframe.src = embed.dataset['vimeo-src']
+                iframe.allow = embed.dataset.vimeoAllow
+                iframe.src = embed.dataset.vimeoSrc
                 embed.append(iframe)
 
                 this.player = new Player(iframe)
