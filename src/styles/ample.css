@@ -82,6 +82,7 @@
         flex-direction:column;
         .vimeo-player, video{
             width:100%;
+            max-width:none;
         }
     }
 }
@@ -212,6 +213,9 @@
 
     @media (max-width: 767px) {
         flex-direction:column;
+        .vimeo-player{
+            max-width:none;
+        }
     }
 }
 
