@@ -8,7 +8,7 @@ const {bias="center", fit=true, class:classes} = Astro.props
     <slot />
 </div>
 
-<style>
+<style is:global>
     .two-up{
         /* switch b/t column on mobile and row on desktop */
         display:flex;

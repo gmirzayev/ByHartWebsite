@@ -17,14 +17,13 @@ let params = new URLSearchParams({
 }).toString()
 
 const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+const URL = `https://player.vimeo.com/video/${video}?${params}`
+const STYLE = {paddingTop:height}
 ---
 
 <div id={id} class:list={["vimeo-player", classNames]}>
     <div class="frame">
-        <div class="embed" style={{paddingTop:height}}>
-            <iframe src={`https://player.vimeo.com/video/${video}?${params}`} allow={ALLOW} />
-        </div>
-
+        <div class="embed" style={STYLE} data-vimeo-src={URL} data-vimeo-allow={ALLOW} />
         {action && <div class:list={["buttons", action]} >
             <button class:list={["action", action]} >
                 <Fragment set:html={SoundIcon} />
@@ -36,12 +35,12 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
     </div>
 </div>
 
-<style>
+<style is:global>
     .vimeo-player{
         display:flex;
         justify-content: space-around;
 
-        &.rc iframe{
+        &.rc iframe, &.rc .frame{
             border-radius: 3px;
 
             @media (min-width: 768px) {
@@ -49,7 +48,7 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
             }
         }
 
-        &.rc-big iframe{
+        &.rc-big iframe, &.rc-big .frame{
             border-radius: 3px;
 
             @media (min-width: 768px) {
@@ -57,161 +56,178 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
             }
         }
 
-        &.rc-md-only iframe{
+        &.rc-md-only iframe, &.rc-md-only .frame{
             border-radius: 0;
             @media (min-width: 768px) {
                 border-radius: 5px;
             }
         }
 
-    }
-
-    .frame{
-        position:relative;
-        width:100%;
-    }
-
-    .frame .buttons{
-        position: absolute;
-        top:0;
-        left:0;
-        right:0;
-        bottom:0;
-
-        display:flex;
-        flex-direction: row-reverse;
-        gap:10px;
-
-        &.unmute{
-            padding:20px;
-            align-items:end;
-            justify-content: end;
-
-        }
-        &.unpause{
-            align-items:center;
-            justify-content: center;
-        }
-    }
 
 
-    .frame button{
-        position:relative;
-        color: var(--charcoal);
-        padding:12px;
 
-        font: 500 21px Karla, sans-serif;
-        letter-spacing: 4.2px;
-        text-transform: uppercase;
-        z-index:2;
-
-        transition: opacity 500ms;
-
-        &::after{
-            position:absolute;
-            content: " ";
-            background: #FF97FD;
-            border:1px solid var(--charcoal);
+        .frame{
+            position:relative;
             width:100%;
-            height:100%;
+            transition:background-color 1s;
+
+            background:transparent;
+            .initialized &{
+                background:rgba(53,49,49,20%);
+            }
+        }
+
+
+        .frame .buttons{
+            position: absolute;
             top:0;
             left:0;
-            z-index:-1;
-            transform: rotate(-1.25deg);
-            transition: transform .25s;
-        }
+            right:0;
+            bottom:0;
 
-        &:hover::after{
-            transform: rotate(0);
-        }
-    }
-
-    .frame button.action.unmute{
-        .sound-on{ display:none; }
-
-        &.fired{
+            display:flex;
+            flex-direction: row-reverse;
+            gap:10px;
+            transition:opacity 1s;
             opacity:0;
-            .sound-on{ display:inline; }
-            .sound-off{ display:none; }
+
+            .initialized &{
+                opacity:1;
+            }
+
+            &.unmute{
+                padding:20px;
+                align-items:end;
+                justify-content: end;
+
+            }
+            &.unpause{
+                align-items:center;
+                justify-content: center;
+            }
         }
 
-        @media (min-width: 768px) {
+
+        .frame button{
+            position:relative;
+            color: var(--charcoal);
+            padding:12px;
+
+            font: 500 21px Karla, sans-serif;
+            letter-spacing: 4.2px;
+            text-transform: uppercase;
+            z-index:2;
+
+            transition: opacity 500ms;
+
+            &::after{
+                position:absolute;
+                content: " ";
+                background: #FF97FD;
+                border:1px solid var(--charcoal);
+                width:100%;
+                height:100%;
+                top:0;
+                left:0;
+                z-index:-1;
+                transform: rotate(-1.25deg);
+                transition: transform .25s;
+            }
+
+            &:hover::after{
+                transform: rotate(0);
+            }
+        }
+
+        .frame button.action.unmute{
+            .sound-on{ display:none; }
+
+            &.fired{
+                opacity:0;
+                .sound-on{ display:inline; }
+                .sound-off{ display:none; }
+            }
+
+            @media (min-width: 768px) {
+                padding-top:10px;
+                padding-bottom:10px;
+
+                svg{ display:none; }
+
+                &::before{
+                    content:"Sound On";
+                }
+                &.fired::before{
+                    content:"Sound Off"
+                }
+            }
+
+        }
+
+        .frame:hover button.action.unmute.fired,
+        .frame:hover button.action.unpause.fired,
+        .frame:hover button.action.unmute.fired + button.rewind{
+            opacity: 1;
+            pointer-events:auto;
+        }
+
+
+        button.rewind{
+            opacity:0;
+            display:none;
+            min-width:50px;
+            svg{
+                margin:0 auto;
+            }
+        }
+
+        .rewindable .frame button.rewind,
+        .frame button.action.unmute.fired + button.rewind{
+            display:inline;
+            pointer-events:none;
+        }
+
+        button.action.unpause:not(.fired) + button.rewind{
+            opacity:1;
+            pointer-events:auto;
+        }
+
+
+        .frame button.action.unpause{
             padding-top:10px;
             padding-bottom:10px;
 
             svg{ display:none; }
 
-            &::before{
-                content:"Sound On";
+            &::before{ content:"Play"; }
+
+            &.fired{
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+                transform:none;
+                &::before{ content:" " }
+                &::after{opacity:0;}
             }
-            &.fired::before{
-                content:"Sound Off"
+        }
+
+
+        .embed{
+            position:relative;
+
+            iframe {
+                position:absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
             }
+
         }
 
     }
 
-    .frame:hover button.action.unmute.fired,
-    .frame:hover button.action.unpause.fired,
-    .frame:hover button.action.unmute.fired + button.rewind{
-        opacity: 1;
-        pointer-events:auto;
-    }
-
-
-    button.rewind{
-        opacity:0;
-        display:none;
-        min-width:50px;
-        svg{
-            margin:0 auto;
-        }
-    }
-
-    .rewindable .frame button.rewind,
-    .frame button.action.unmute.fired + button.rewind{
-        display:inline;
-        pointer-events:none;
-    }
-
-    button.action.unpause:not(.fired) + button.rewind{
-        opacity:1;
-        pointer-events:auto;
-    }
-
-
-    .frame button.action.unpause{
-        padding-top:10px;
-        padding-bottom:10px;
-
-        svg{ display:none; }
-
-        &::before{ content:"Play"; }
-
-        &.fired{
-            top:0;
-            left:0;
-            right:0;
-            bottom:0;
-            transform:none;
-            &::before{ content:" " }
-            &::after{opacity:0;}
-        }
-    }
-
-
-    .embed{
-        position:relative;
-
-        iframe {
-            position:absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-    }
 </style>
 
 <script>
@@ -231,16 +247,42 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
             this.button = elt.querySelector(":scope button.action")
             this.rewind = elt.querySelector(":scope button.rewind")
             this.pause = elt.querySelector(":scope .buttons")
-            this.player = new Player(elt.querySelector(":scope iframe"))
             this.action = this.button?.classList.contains("unmute") ? "unmute" :
                           this.button?.classList.contains("unpause") ? "unpause" :
                           null
 
-            this.button?.addEventListener("click", e => this.handleAction(e))
-            this.rewind?.addEventListener("click", e => this.handleRewind(e))
-            this.pause?.addEventListener("click", e => this.handlePause(e))
-            this.player.on("ended", () => this.requeue())
             Vimeo.videos.push(this)
+        }
+
+        static videoForElement(elt){
+            for (const video of Vimeo.videos){
+                if (video.elt === elt) return video
+            }
+        }
+
+        initialize(){
+            if (!!this.player) return
+
+            let embed = this.elt.querySelector(":scope .embed")
+            if (embed instanceof HTMLElement){
+                let iframe = document.createElement("iframe")
+                iframe.allow = embed.dataset.vimeoAllow
+                iframe.src = embed.dataset.vimeoSrc
+                embed.append(iframe)
+
+                this.player = new Player(iframe)
+                this.player.on("ended", () => this.requeue())
+                this.elt.classList.add("initialized")
+
+                this.button?.addEventListener("click", e => this.handleAction(e))
+                this.rewind?.addEventListener("click", e => this.handleRewind(e))
+                this.pause?.addEventListener("click", e => this.handlePause(e))
+            }
+
+        }
+
+        get loaded(){
+            return !!this.player
         }
 
         get active(){
@@ -329,8 +371,21 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
 
 
     document.addEventListener("DOMContentLoaded", () => {
-        for (let elt of document.querySelectorAll('.vimeo-player')){
+
+        const vimeoPlayers = document.querySelectorAll('.vimeo-player')
+        const lazyLoader = new IntersectionObserver((entries, observer) => {
+            for (const entry of entries){
+                let video = Vimeo.videoForElement(entry.target)
+                if (entry.isIntersecting){
+                    video.initialize()
+                    observer.unobserve(entry.target)
+                }
+            }
+        }, {root: null, rootMargin: '0px', threshold: 0.0})
+
+        vimeoPlayers.forEach(elt => {
+            lazyLoader.observe(elt)
             new Vimeo(elt)
-        }
+        })
     })
 </script>

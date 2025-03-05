@@ -1,8 +1,4 @@
   #color-grid{
-    img{
-        /* border-radius:20px; */
-    }
-
     @media (min-width: 768px) {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
@@ -74,12 +70,16 @@
     gap:15px;
 
     .vimeo-player, video{
-        width:100%;
+        width:calc(50% - 7.5px);
         max-width:512px;
     }
 
     @media (max-width: 767px) {
         flex-direction:column;
+        .vimeo-player, video{
+            width:100%;
+            max-width:none;
+        }
     }
 }
 
@@ -209,6 +209,9 @@
 
     @media (max-width: 767px) {
         flex-direction:column;
+        .vimeo-player{
+            max-width:none;
+        }
     }
 }
 
