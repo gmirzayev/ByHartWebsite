@@ -1,5 +1,7 @@
 ---
 import "../styles/utils.css";
+import VideoLoop from "./VideoLoop.astro";
+
 import Ample from "../assets/Home/img/Ample.png";
 import ComicsKingdom from "../assets/Home/Comics_Kingdom.gif";
 import Wizehire from "../assets/Home/img/Wizehire.png";
@@ -23,7 +25,7 @@ import TheCurve from "../assets/Home/img/The_Curve.png";
 import SayMore from "../assets/Home/img/Say_More.png";
 import Archive from "../assets/Home/img/Archive.png";
 import Firefly from "../assets/Home/img/Firefly.png";
-import PetCenter from "../assets/Home/img/Pet_Center.png";
+import PetCenter from "../assets/Home/PetDermatologyCenter.mp4";
 import HGTV2 from "../assets/Home/HGTV_2.gif";
 import Photography from "../assets/Home/img/Photography.png";
 import PresentationsAlt from "../assets/Home/img/Presentations_ALT.png";
@@ -199,7 +201,7 @@ const projects = [
   {
     slug: "pet-dermatology-center",
     title: "Pet Dermatology Center",
-    img: PetCenter,
+    vid: PetCenter,
     alt: "",
   },
   {
@@ -335,13 +337,14 @@ let stepCount = 4;
       wide_layout.map((slugs) => (
         <div class="column">
           {slugs.map((slug) => {
-            let { title, img, alt, comingSoon } = getProject(slug);
+            let { title, img, vid, alt, comingSoon } = getProject(slug);
             if (comingSoon) title += " — Coming Soon";
             let page = comingSoon ? null : `/works/${slug}`;
             return (
               <div class:list={["project", `step-${counter++ % stepCount}`]}>
                 <a href={page} data-title={title}>
-                  <img src={img.src} alt={alt} />
+                  {img && <img src={img.src} alt={alt} /> }
+                  {vid && <VideoLoop src={vid} /> }
                   <h2>{title}</h2>
                 </a>
               </div>
@@ -357,12 +360,13 @@ let stepCount = 4;
       narrow_layout.map((slugs) => (
         <div class="column">
           {slugs.map((slug) => {
-            let { title, img, alt, comingSoon } = getProject(slug);
+            let { title, img, vid, alt, comingSoon } = getProject(slug);
             if (comingSoon) title += " — Coming Soon";
             return (
               <div class:list={["project", `step-${counter++ % stepCount}`]}>
                 <a href={`/works/${slug}`} data-title={title}>
-                  <img src={img.src} alt={alt} />
+                  {img && <img src={img.src} alt={alt} /> }
+                  {vid && <VideoLoop src={vid} /> }
                   <h2>{title}</h2>
                 </a>
               </div>
