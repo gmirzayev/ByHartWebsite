@@ -1,8 +1,4 @@
   #color-grid{
-    img{
-        /* border-radius:20px; */
-    }
-
     @media (min-width: 768px) {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;

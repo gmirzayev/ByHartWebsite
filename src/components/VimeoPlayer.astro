@@ -17,14 +17,13 @@ let params = new URLSearchParams({
 }).toString()
 
 const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+const URL = `https://player.vimeo.com/video/${video}?${params}`
+const STYLE = {paddingTop:height}
 ---
 
 <div id={id} class:list={["vimeo-player", classNames]}>
     <div class="frame">
-        <div class="embed" style={{paddingTop:height}}>
-            <iframe src={`https://player.vimeo.com/video/${video}?${params}`} allow={ALLOW} />
-        </div>
-
+        <div class="embed" style={STYLE} data-vimeo-src={URL} data-vimeo-allow={ALLOW} />
         {action && <div class:list={["buttons", action]} >
             <button class:list={["action", action]} >
                 <Fragment set:html={SoundIcon} />
@@ -41,7 +40,7 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
         display:flex;
         justify-content: space-around;
 
-        &.rc iframe{
+        &.rc iframe, &.rc .frame{
             border-radius: 3px;
 
             @media (min-width: 768px) {
@@ -49,7 +48,7 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
             }
         }
 
-        &.rc-big iframe{
+        &.rc-big iframe, &.rc-big .frame{
             border-radius: 3px;
 
             @media (min-width: 768px) {
@@ -57,7 +56,7 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
             }
         }
 
-        &.rc-md-only iframe{
+        &.rc-md-only iframe, &.rc-md-only .frame{
             border-radius: 0;
             @media (min-width: 768px) {
                 border-radius: 5px;
@@ -70,7 +69,14 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
         .frame{
             position:relative;
             width:100%;
+            transition:background-color 1s;
+
+            background:transparent;
+            .initialized &{
+                background:rgba(53,49,49,20%);
+            }
         }
+
 
         .frame .buttons{
             position: absolute;
@@ -82,6 +88,12 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
             display:flex;
             flex-direction: row-reverse;
             gap:10px;
+            transition:opacity 1s;
+            opacity:0;
+
+            .initialized &{
+                opacity:1;
+            }
 
             &.unmute{
                 padding:20px;
@@ -235,16 +247,42 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
             this.button = elt.querySelector(":scope button.action")
             this.rewind = elt.querySelector(":scope button.rewind")
             this.pause = elt.querySelector(":scope .buttons")
-            this.player = new Player(elt.querySelector(":scope iframe"))
             this.action = this.button?.classList.contains("unmute") ? "unmute" :
                           this.button?.classList.contains("unpause") ? "unpause" :
                           null
 
-            this.button?.addEventListener("click", e => this.handleAction(e))
-            this.rewind?.addEventListener("click", e => this.handleRewind(e))
-            this.pause?.addEventListener("click", e => this.handlePause(e))
-            this.player.on("ended", () => this.requeue())
             Vimeo.videos.push(this)
+        }
+
+        static videoForElement(elt){
+            for (const video of Vimeo.videos){
+                if (video.elt === elt) return video
+            }
+        }
+
+        initialize(){
+            if (!!this.player) return
+
+            let embed = this.elt.querySelector(":scope .embed")
+            if (embed instanceof HTMLElement){
+                let iframe = document.createElement("iframe")
+                iframe.allow = embed.dataset['vimeo-allow']
+                iframe.src = embed.dataset['vimeo-src']
+                embed.append(iframe)
+
+                this.player = new Player(iframe)
+                this.player.on("ended", () => this.requeue())
+                this.elt.classList.add("initialized")
+
+                this.button?.addEventListener("click", e => this.handleAction(e))
+                this.rewind?.addEventListener("click", e => this.handleRewind(e))
+                this.pause?.addEventListener("click", e => this.handlePause(e))
+            }
+
+        }
+
+        get loaded(){
+            return !!this.player
         }
 
         get active(){
@@ -333,8 +371,21 @@ const ALLOW = "autoplay; fullscreen; picture-in-picture; clipboard-write; encryp
 
 
     document.addEventListener("DOMContentLoaded", () => {
-        for (let elt of document.querySelectorAll('.vimeo-player')){
+
+        const vimeoPlayers = document.querySelectorAll('.vimeo-player')
+        const lazyLoader = new IntersectionObserver((entries, observer) => {
+            for (const entry of entries){
+                let video = Vimeo.videoForElement(entry.target)
+                if (entry.isIntersecting){
+                    video.initialize()
+                    observer.unobserve(entry.target)
+                }
+            }
+        }, {root: null, rootMargin: '0px', threshold: 0.0})
+
+        vimeoPlayers.forEach(elt => {
+            lazyLoader.observe(elt)
             new Vimeo(elt)
-        }
+        })
     })
 </script>
