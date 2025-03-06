@@ -34,7 +34,7 @@ import Paint from "@assets/Bluprint/img/Bluprint_Paint.png";
 import Colors from "@assets/Bluprint/img/Bluprint_BrandColors.jpg";
 import Ad1 from "@assets/Bluprint/img/Bluprint_Ad_1.jpg";
 import MultiCat from "@assets/Bluprint/img/Bluprint_MultiCat.jpg";
-import Cake from "@assets/Bluprint/Bluprint_Cake.mp4";
+import Cake from "@assets/Bluprint/img/Bluprint_Cake.gif";
 import Fox1 from "@assets/Bluprint/img/Bluprint_Fox.jpg";
 import HomePage from "@assets/Bluprint/img/Bluprint_Homepage.png";
 import SocialGrid from "@assets/Bluprint/Bluprint_SocialGrid.mp4";
@@ -64,6 +64,7 @@ import Grid9 from "@assets/Bluprint/img/Bluprint_Grid_9.png";
 import Grid10 from "@assets/Bluprint/img/Bluprint_Grid_10.png";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 import VimeoPlayer from "@components/VimeoPlayer.astro";
+import TwoUp from "@components/TwoUp.astro";
 ---
 
 <style>
@@ -157,21 +158,23 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   <div
     class="my-[45px] flex flex-row items-center gap-[10px] px-[20px] md:my-[120px] md:gap-[40px] md:px-[60px]"
   >
-    <div class="w-[33%] p-[.5%]">
+    <div class="w-1/3">
       <Image
-        class="w-full rounded-sm md:rounded-md"
+        class="w-full rounded-md md:rounded-lg"
         src={MultiCat}
         alt="Bluprint"
       />
     </div>
-    <div class="w-[33%] overflow-hidden rounded-sm md:rounded-md">
-      <video class="w-full" playsinline loop autoplay muted>
-        <source src={Cake} />
-      </video>
-    </div>
-    <div class="w-[33%] p-[.5%]">
+    <div class="w-1/3">
       <Image
-        class="w-full rounded-sm md:rounded-md"
+        class="w-full rounded-md md:rounded-lg"
+        src={Cake}
+        alt="Bluprint"
+      />
+    </div>
+    <div class="w-1/3">
+      <Image
+        class="w-full rounded-md md:rounded-lg"
         src={Fox1}
         alt="Bluprint"
       />
@@ -229,7 +232,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   <div
     class="mx-auto mt-[45px] flex max-w-[1200px] flex-col items-center justify-center gap-[45px] md:my-[100px] md:flex-row md:gap-[50px] md:px-[25px] lg:gap-[125px]"
   >
-    <div class="flex justify-center md:w-[35%]">
+    <div class="flex justify-center px-[20px] md:w-[35%] md:px-0">
       <Image
         class="h-auto w-full rounded-sm md:rounded-md"
         src={Ad3}
@@ -314,17 +317,17 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     alt="Bluprint"
   />
   <VimeoPlayer
-    class="rc-md-only mx-auto my-[45px] md:my-[120px] md:px-[25px]"
+    class="rc-md-only mx-auto my-[45px] max-w-[1040px] md:my-[120px] md:px-[25px]"
     video="1059965808"
     height="56.5%"
     action="unpause"
   />
-  <div
-    class="my-[45px] flex w-full flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px] md:px-[60px]"
+  <TwoUp
+    class="mx-auto my-[45px] !max-w-[1320px] !flex-row !gap-[10px] !px-0 md:my-[120px] md:!gap-[75px] md:!px-[45px]"
   >
-    <Image class="rounded-md md:w-1/2 md:rounded-lg" src={Ad4} alt="Bluprint" />
-    <Image class="rounded-md md:w-1/2 md:rounded-lg" src={Ad5} alt="Bluprint" />
-  </div>
+    <Image class="rounded-r-md md:rounded-lg" src={Ad4} alt="Bluprint" />
+    <Image class="rounded-l-md md:rounded-lg" src={Ad5} alt="Bluprint" />
+  </TwoUp>
   <Image
     class="my-[45px] h-auto w-full md:my-[120px]"
     src={Embroidery}
