@@ -78,8 +78,8 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
       <Image src={Stairs} class="grid-item" alt="" />
       <Image src={Glass} class="grid-item" alt="" />
     </div>
-    <div class="my-[45px] lg:my-[120px] px-[20px] lg:px-[300px]">
-      <h1 class="karla font-bold text-4xl text-[#F7F4ED]">This is Fab</h1>
+    <div class="mx-auto my-[45px] max-w-[840px] px-[20px] md:my-[120px]">
+      <h1 class="karla text-4xl font-bold text-[#F7F4ED]">This is Fab</h1>
       <br />
       <p class="karla text-[#F7F4ED]">
         Fab is a vibrant e-commerce community where you can discover
@@ -92,56 +92,56 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
       </p>
     </div>
     <div
-      class="my-[45px] lg:my-[120px] flex flex-col lg:flex-row px-[20px] lg:px-[300px] gap-[15px] justify-center"
+      class="mx-auto my-[45px] flex max-w-[840px] flex-col justify-center gap-[15px] px-[20px] md:my-[120px] md:flex-row"
     >
-      <Image src={MeetCute} class="w-full h-auto lg:w-1/2" alt="" />
-      <Image src={NaraPicks} class="w-full h-auto lg:w-1/2" alt="" />
+      <Image src={MeetCute} class="h-auto w-full md:w-1/2" alt="" />
+      <Image src={NaraPicks} class="h-auto w-full md:w-1/2" alt="" />
     </div>
-    <div class="flex flex-col lg:flex-row my-[45px] lg:my-[120px]">
-      <Image src={Oliver} class="w-full lg:w-1/2" alt="" />
-      <Image src={Olivia} class="w-full lg:w-1/2" alt="" />
+    <div class="my-[45px] flex flex-col md:my-[120px] md:flex-row">
+      <Image src={Oliver} class="w-full md:w-1/2" alt="" />
+      <Image src={Olivia} class="w-full md:w-1/2" alt="" />
     </div>
   </div>
   <Image
     src={Devices}
-    class="mx-auto px-[20px] lg:px-[200px] my-[45px] lg:my-[120px] w-full h-auto"
+    class="mx-auto my-[45px] h-auto w-full max-w-[840px] px-[20px] md:my-[120px]"
     alt=""
   />
   <Image
     src={Emails}
-    class="mx-auto px-[20px] lg:px-[300px] my-[45px] lg:my-[120px] w-full h-auto"
+    class="mx-auto my-[45px] h-auto w-full max-w-[840px] px-[20px] md:my-[120px]"
     alt=""
   />
   <!-- insert vimeo videos -->
   <VimeoPlayer
-    class="px-[20px] lg:px-[60px]"
+    class="px-[20px] md:px-[60px]"
     video="239898733"
     height="56.25%"
     action="unpause"
   />
-  <div class="two-col rx !my-[15px] lg:!px-[60px]">
+  <div class="two-col rx !my-[15px] md:!px-[60px]">
     <VimeoPlayer video="239880486" height="56.25%" action="unpause" />
     <VimeoPlayer video="239880443" height="56.25%" action="unpause" />
   </div>
-  <div class="two-col rx !my-[15px] lg:!px-[60px]">
+  <div class="two-col rx !my-[15px] md:!px-[60px]">
     <VimeoPlayer video="239898612" height="56.25%" action="unpause" />
     <VimeoPlayer video="239880548" height="56.25%" action="unpause" />
   </div>
   <VimeoPlayer
-    class="my-[45px] lg:my-[120px] px-[20px] lg:px-[60px]"
+    class="my-[45px] px-[20px] md:my-[120px] md:px-[60px]"
     video="241444534"
     height="56.25%"
     action="unpause"
   />
   <VimeoPlayer
-    class="my-[45px] lg:my-[120px] px-[20px] lg:px-[60px]"
+    class="my-[45px] px-[20px] md:my-[120px] md:px-[60px]"
     video="240215757"
     height="56.25%"
     action="unpause"
   />
   <Image
     src={Blogs}
-    class="my-[45px] lg:my-[120px] w-full px-[75px] lg:px-[300px]"
+    class="mx-auto my-[45px] w-full max-w-[840px] px-[77px] md:my-[120px]"
     alt=""
   />
   <video
@@ -149,11 +149,11 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
     playsinline
     autoplay
     muted
-    class="my-[45px] lg:my-[120px] w-full px-[50px] lg:px-[200px]"
+    class="mx-auto my-[45px] w-full max-w-[1040px] px-[20px] md:my-[120px]"
   >
     <source src={Social} />
   </video>
-  <div class="my-[45px] lg:my-[120px] grid-container-2">
+  <div class="grid-container-2 my-[45px] md:my-[120px]">
     <Image src={Adult1} class="grid-item-2" alt="" />
     <Image src={Adult2} class="grid-item-2" alt="" />
     <Image src={Adult3} class="grid-item-2" alt="" />
@@ -164,50 +164,88 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
   <ResponsiveTextBlock class="px-[20px]">
     <div>
       <h1>Rebranding & Replatforming Fab.com</h1>
-      <p>I was hired by Fab to nurture and grow a creative dream team, evolve the Fab brand, and lead the design of an entirely new Shopify site and app refresh. I’m proud of the work we put into dreaming up a whole new Fab, in which product and content are seamlessly intertwined.</p>
+      <p>
+        I was hired by Fab to nurture and grow a creative dream team, evolve the
+        Fab brand, and lead the design of an entirely new Shopify site and app
+        refresh. I’m proud of the work we put into dreaming up a whole new Fab,
+        in which product and content are seamlessly intertwined.
+      </p>
     </div>
     <div>
-      <p>Through qualitative research workshops I spearheaded and designed, we tested and developed our customer community understanding with a focus on how they approach their lifestyle aspirations. This work in addition to several other research and data-analytics modalities, empowered my team to craft a new platform around personalization, exclusive access, and truly of-the-moment, culturally fresh discoveries from a wide variety of inspiring sources.</p>
+      <p>
+        Through qualitative research workshops I spearheaded and designed, we
+        tested and developed our customer community understanding with a focus
+        on how they approach their lifestyle aspirations. This work in addition
+        to several other research and data-analytics modalities, empowered my
+        team to craft a new platform around personalization, exclusive access,
+        and truly of-the-moment, culturally fresh discoveries from a wide
+        variety of inspiring sources.
+      </p>
     </div>
   </ResponsiveTextBlock>
 
-
   <Image
     src={Home}
-    class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
+    class="mx-auto my-[45px] w-full max-w-[840px] px-[20px] md:my-[120px]"
     alt=""
   />
 
   <ResponsiveTextBlock class="px-[20px]">
     <div>
-      <h1>The discerning Fab customer craves authenticity, quality, and personalization.</h1>
-      <p>They are hands-on in the development of their lifestyle and place a strong emphasis on: Home, Work, Play, Passion Projects, and Relationships.</p>
+      <h1>
+        The discerning Fab customer craves authenticity, quality, and
+        personalization.
+      </h1>
+      <p>
+        They are hands-on in the development of their lifestyle and place a
+        strong emphasis on: Home, Work, Play, Passion Projects, and
+        Relationships.
+      </p>
     </div>
     <div>
-      <p>Fab lovers are both nostalgic and forward thinking—creating special moments for themselves and their loved ones is of the utmost importance. </p>
-      <p>They appreciate and respond to sincere, tested recommendations, inspiring individuality, and engaging storytelling. Their greatest aspiration is a life lived on their terms, a life well designed.</p>
+      <p>
+        Fab lovers are both nostalgic and forward thinking—creating special
+        moments for themselves and their loved ones is of the utmost importance.
+      </p>
+      <p>
+        They appreciate and respond to sincere, tested recommendations,
+        inspiring individuality, and engaging storytelling. Their greatest
+        aspiration is a life lived on their terms, a life well designed.
+      </p>
     </div>
   </ResponsiveTextBlock>
 
   <Image
     src={Tablets}
-    class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
+    class="mx-auto my-[45px] w-full max-w-[1040px] px-[20px] md:my-[120px]"
     alt=""
   />
 
   <ResponsiveTextBlock class="px-[20px]">
     <div>
-      <p>Far beyond a facelift, my charge included  revitalizing culture from the inside out.</p>
+      <p>
+        Far beyond a facelift, my charge included revitalizing culture from the
+        inside out.
+      </p>
     </div>
     <div>
-      <p><strong><em>Fab sparks the creation and curation of beautiful moments in our lives. We’re driven by self-expression. Through our work, we are able to craft experiences that uniquely speak to us, and that allow you to speak for yourself.</em></strong></p>
+      <p>
+        <strong
+          ><em
+            >Fab sparks the creation and curation of beautiful moments in our
+            lives. We’re driven by self-expression. Through our work, we are
+            able to craft experiences that uniquely speak to us, and that allow
+            you to speak for yourself.</em
+          ></strong
+        >
+      </p>
       <p><strong><em>Fab is yours, truly.</em></strong></p>
     </div>
   </ResponsiveTextBlock>
 
   <Image
     src={Product}
-    class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
+    class="mx-auto my-[45px] w-full max-w-[840px] px-[20px] md:my-[120px]"
     alt=""
   />
 
@@ -216,25 +254,24 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 
     <Image
       src={Moodboard1}
-      class="w-full px-[20px] lg:px-[200px]"
+      class="mx-auto w-full max-w-[1040px] px-[20px]"
       alt=""
     />
     <Image
       src={Moodboard2}
-      class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
+      class="mx-auto my-[45px] w-full max-w-[1040px] px-[20px] md:my-[120px]"
       alt=""
     />
     <Image
       src={Moodboard3}
-      class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
+      class="mx-auto my-[45px] w-full max-w-[1040px] px-[20px] md:my-[120px]"
       alt=""
     />
     <Image
       src={Moodboard4}
-      class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
+      class="mx-auto my-[45px] w-full max-w-[1040px] px-[20px] md:my-[120px]"
       alt=""
     />
   </section>
-
 </ProjectLayout>
 <script></script>
