@@ -346,7 +346,7 @@ let stepCount = 4;
                 <a href={page} data-title={title}>
                   {img && <Image src={img} width={1000} alt={alt} /> }
                   {gif && <img src={gif.src} alt={alt} /> }
-                  {vid && <VideoLoop src={vid} class="rc" /> }
+                  {vid && <VideoLoop src={vid} /> }
                   <h2>{title}</h2>
                 </a>
               </div>
@@ -369,7 +369,7 @@ let stepCount = 4;
                 <a href={`/works/${slug}`} data-title={title}>
                   {img && <Image src={img} width={1000} alt={alt} /> }
                   {gif && <img src={gif.src} alt={alt} /> }
-                  {vid && <VideoLoop src={vid} class="rc" /> }
+                  {vid && <VideoLoop src={vid} /> }
                   <h2>{title}</h2>
                 </a>
               </div>
@@ -381,7 +381,7 @@ let stepCount = 4;
   </div>
 </div>
 
-<style>
+<style is:global>
   .works-grid {
     padding: 0 25px;
 
@@ -394,7 +394,7 @@ let stepCount = 4;
     position: relative;
     margin-bottom: 28px;
 
-    img {
+    img, video {
       width:100%;
       border-radius: 6px;
       margin-bottom: 10px;
