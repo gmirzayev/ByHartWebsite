@@ -62,6 +62,7 @@ import SageBrandGuideGrid13 from "@assets/Sage/img/Sage_Brand_Guide_Grid_13.png"
 import SageBrandGuideGrid14 from "@assets/Sage/img/Sage_Brand_Guide_Grid_14.png";
 import ProjectHead from "@components/ProjectHead.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
+import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 ---
 
 <style>
@@ -86,48 +87,29 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
     src={SagePhoto}
     alt="Sage Collage"
   />
-  <div
-    class="karla mx-auto grid w-full max-w-[840px] grid-cols-1 gap-[40px] px-[25px] leading-[26px] text-[#363131] md:grid-cols-2 md:px-[60px]"
-  >
+
+  <ResponsiveTextBlock class="padded">
     <div>
-      <h1
-        class="text-[26px] font-bold leading-[38px] md:text-[36px] md:leading-[43px]"
-      >
+      <h1>
         Sage Integrative Health is a haven for people to dig, discover, and
         reveal.
       </h1>
-      <br />
-      <p>
-        We believe healing is a deeply personal journey that requires a
-        multifaceted and highly individualized approach. We do hard work with
-        people who have lived through hard things. We respect clients, earn
-        their trust, and let them lead their own way to mental, physical, and
-        emotional wellness via our comprehensive mind-body approach.
-      </p>
-      <br />
       <p>
         Our practice is built on clinically proven therapies—both traditional
         and emerging, Western and Eastern, innovative and of the Earth—multiple
         therapies working in concert, all in service of our clients’ safety,
-        comfort and well-being.
+        comfort, and well-being.
       </p>
-      <br />
-      <p>
-        As a team and as individuals, we are passionately curious, always eager
-        to expand our understandings of the human spirit. We guide, grow and
-        learn together.
-      </p>
-    </div>
-    <div>
       <p>
         Our mission is facilitating self-actualization: Leading a life of
         courage, confidence, and compassion. But first, we meet everyone exactly
         where they are and let them breathe and be.
       </p>
-      <br />
+    </div>
+    <div>
       <p>
         We are trauma-informed and sensitive, living in the real world, and
-        recognizing that individual struggle doesn't exist in a vacuum. We are
+        recognizing that individual struggle doesn’t exist in a vacuum. We are
         not afraid to address and confront complex inequities. We are
         sympathetic and empathic to how mental health and identity intersect, as
         many of us are trauma survivors or carry marginalized identities. Like
@@ -135,16 +117,19 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
         live fully and flourish through anything that may come in present or
         future times.
       </p>
-      <br />
       <p>
         Ultimately, we wholeheartedly believe in the power of
         interconnectedness: with each other, the world, and the universe at
-        large. Like our namesake herb, we aspire to bloom—in sunlight or in
-        shade—while staying grounded and then, just by existing, enrich the soil
-        around us so more growth can sprout.
+        large.
+      </p>
+      <p>
+        Like our namesake herb, we aspire to bloom—in sunlight or in shade—while
+        staying grounded and then, just by existing, enrich the soil around us
+        so more growth can sprout.
       </p>
     </div>
-  </div>
+  </ResponsiveTextBlock>
+
   <ResponsiveImage
     class="h-auto"
     imgClass="w-[60%] mx-auto rounded-[20px] md:rounded-md my-11"

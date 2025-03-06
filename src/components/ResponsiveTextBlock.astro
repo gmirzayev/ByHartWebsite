@@ -1,7 +1,7 @@
 ---
 import "../styles/utils.css";
 
-const {class:className} = Astro.props
+const {id, class:className} = Astro.props
 ---
 
 <style is:global>
@@ -57,6 +57,6 @@ const {class:className} = Astro.props
 </style>
 
 
-<div class:list={["project-text-block", className]}>
+<div id={id} class:list={["project-text-block", className]}>
     <slot />
 </div>

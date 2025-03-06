@@ -135,17 +135,21 @@ import NamingE from "@assets/Week+/img/naming/46_Week+_5.png"
 
     <Image src={WeAre} widths={[2200]} alt=" "/>
 
-    <div class="responsive-text spaced">
-        <div>
+    <ResponsiveTextBlock id="what-is-week-and" class="padded">
+        <div class="collapsed">
             <h1>What’s Week&?</h1>
             <p>With the word “end” literally embedded in the word "weekend," it’s no surprise the weekend often feels like a finish line in life. Week&, on the other hand, is a place to spark something new anytime your wish.</p>
             <p>Week& is your go-to guide to making the most of your free time, me time, and we time.</p>
-            <p>Week& helps you add that special shine to your next trip, pet project, or night out and presents you with the opportunity to spice up your life. Week& sees your plans and raises you fun side trips and delightful diversions. Week& is that foot kick under the table urging you to take what’s familiar and branch out to try something new and you. The “psst” that pricks your ears and inspires you to pick your bliss.</p>
+            <p>Week& sees your plans and raises you fun side trips and delightful diversions.</p>
+            <button>Read More…</button>
+        </div>
+        <div>
+            <p>Week& is that foot kick under the table urging you to take what’s familiar and branch out to try something new and you. The “psst” that pricks your ears and inspires you to pick your bliss.</p>
             <p>It’s harder to find pockets of joy when we’re all out there looking for it on our own. We believe if we share what we know and empower each other, we’ll find ours, too.</p>
             <p>This is Week&</p>
-            <p>And your weekend is just the beginning...</p>
+            <p>And your weekend is just the beginning…</p>
         </div>
-    </div>
+    </ResponsiveTextBlock>
 
     <div class="two-col rx">
         <Image src={PairA1} widths={[2200]} alt=" "/>
@@ -263,5 +267,15 @@ import NamingE from "@assets/Week+/img/naming/46_Week+_5.png"
             dt += 666
         })
     })
+
+    // clicking the Read More button in the Dos & Don'ts section displays more on mobile
+    document.querySelectorAll('#what-is-week-and div').forEach(elt => {
+        elt.addEventListener("click", e => {
+            if (e.target instanceof HTMLButtonElement){
+                elt.classList.remove("collapsed")
+            }
+        })
+    })
+
 </script>
 

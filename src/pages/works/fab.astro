@@ -56,6 +56,7 @@ import Moodboard2 from "@assets/Fab/img/Fab_Moodboard_2.png";
 import Moodboard3 from "@assets/Fab/img/Fab_Moodboard_3.png";
 import Moodboard4 from "@assets/Fab/img/Fab_Moodboard_4.png";
 import VimeoPlayer from "@components/VimeoPlayer.astro";
+import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 ---
 
 <ProjectLayout
@@ -159,98 +160,81 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     <Image src={Adult5} class="grid-item-2" alt="" />
     <Image src={Adult4} class="grid-item-2" alt="" />
   </div>
-  <div
-    class="my-[45px] lg:my-[120px] px-[25px] lg:px-[300px] grid grid-cols-1 lg:grid-cols-2 gap-4"
-  >
-    <div class="karla">
-      <h1 class="font-bold text-4xl">Rebranding & Replatforming Fab.com</h1>
-      <br />
-      <p>
-        I was hired by Fab to build a creative dream team, evolve the Fab brand,
-        and lead the design of an entirely new Shopify site and app refresh. I’m
-        proud of the work we put into dreaming up a whole new Fab, in which
-        product and content are seamlessly intertwined.
-        <br />
-      </p>
+
+  <ResponsiveTextBlock class="px-[20px]">
+    <div>
+      <h1>Rebranding & Replatforming Fab.com</h1>
+      <p>I was hired by Fab to nurture and grow a creative dream team, evolve the Fab brand, and lead the design of an entirely new Shopify site and app refresh. I’m proud of the work we put into dreaming up a whole new Fab, in which product and content are seamlessly intertwined.</p>
     </div>
-    <p>
-      In approaching how to help the brand pivot on a very tight budget, I went
-      beyond the realm of traditional creative direction and into the world of
-      trends and insights research. Through in-house focus groups I spearheaded
-      and sat in on, I developed a working hypothesis of who our ideal Fab
-      consumer is and how they approach their lifestyle aspirations. This
-      research empowered my team to craft a platform around exclusive access and
-      unexpected discoveries from a wide variety of inspiring sources.
-      <br />
-    </p>
-  </div>
+    <div>
+      <p>Through qualitative research workshops I spearheaded and designed, we tested and developed our customer community understanding with a focus on how they approach their lifestyle aspirations. This work in addition to several other research and data-analytics modalities, empowered my team to craft a new platform around personalization, exclusive access, and truly of-the-moment, culturally fresh discoveries from a wide variety of inspiring sources.</p>
+    </div>
+  </ResponsiveTextBlock>
+
+
   <Image
     src={Home}
     class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
     alt=""
   />
-  <div class="px-[25px] lg:px-[300px] columns-1 lg:columns-2 karla">
-    <p>
-      “The Fab community is comprised of discerning people like you. They crave
-      authenticity, quality, and personalization. They are hands on in the
-      development of their lifestyles and place a strong emphasis on: Home,
-      Work, Play, Passion Projects, and Relationships.
-    </p>
-    <br />
-    <p>
-      Fab lovers are both nostalgic and forward thinking—creating special
-      moments for themselves and their loved ones is of the utmost importance.
-      They appreciate and respond to sincere recommendations, inspiring
-      individuality, and engaging storytelling. Their greatest aspiration is a
-      life lived on their terms, a life well-designed.”
-    </p>
-  </div>
+
+  <ResponsiveTextBlock class="px-[20px]">
+    <div>
+      <h1>The discerning Fab customer craves authenticity, quality, and personalization.</h1>
+      <p>They are hands-on in the development of their lifestyle and place a strong emphasis on: Home, Work, Play, Passion Projects, and Relationships.</p>
+    </div>
+    <div>
+      <p>Fab lovers are both nostalgic and forward thinking—creating special moments for themselves and their loved ones is of the utmost importance. </p>
+      <p>They appreciate and respond to sincere, tested recommendations, inspiring individuality, and engaging storytelling. Their greatest aspiration is a life lived on their terms, a life well designed.</p>
+    </div>
+  </ResponsiveTextBlock>
+
   <Image
     src={Tablets}
     class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
     alt=""
   />
-  <div class="px-[25px] lg:px-[300px] columns-1 lg:columns-2 karla">
-    <p>
-      Far beyond a facelift, my charge included crafting a new culture-building
-      mission for the company, taking the creative, marketing, and business
-      strategy goals of the brand into consideration.
-    </p>
-    <br />
-    <p class="font-bold">
-      “Fab sparks the creation and curation of beautiful moments in our lives.
-      We’re driven by self-expression. Through our work, we are able to craft
-      experiences that uniquely speak to us, and that allow you to speak for
-      yourself. Fab is yours, truly.”
-    </p>
-  </div>
+
+  <ResponsiveTextBlock class="px-[20px]">
+    <div>
+      <p>Far beyond a facelift, my charge included  revitalizing culture from the inside out.</p>
+    </div>
+    <div>
+      <p><strong><em>Fab sparks the creation and curation of beautiful moments in our lives. We’re driven by self-expression. Through our work, we are able to craft experiences that uniquely speak to us, and that allow you to speak for yourself.</em></strong></p>
+      <p><strong><em>Fab is yours, truly.</em></strong></p>
+    </div>
+  </ResponsiveTextBlock>
+
   <Image
     src={Product}
     class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
     alt=""
   />
 
-  <h1 class="karla font-bold text-center">MOODBOARDS</h1>
+  <section>
+    <h1>FOUND INSPO MOODBOARDS</h1>
 
-  <Image
-    src={Moodboard1}
-    class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
-    alt=""
-  />
-  <Image
-    src={Moodboard2}
-    class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
-    alt=""
-  />
-  <Image
-    src={Moodboard3}
-    class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
-    alt=""
-  />
-  <Image
-    src={Moodboard4}
-    class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
-    alt=""
-  />
+    <Image
+      src={Moodboard1}
+      class="w-full px-[20px] lg:px-[200px]"
+      alt=""
+    />
+    <Image
+      src={Moodboard2}
+      class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
+      alt=""
+    />
+    <Image
+      src={Moodboard3}
+      class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
+      alt=""
+    />
+    <Image
+      src={Moodboard4}
+      class="w-full my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]"
+      alt=""
+    />
+  </section>
+
 </ProjectLayout>
 <script></script>

@@ -20,6 +20,7 @@ article.project > div:first-child{
 
     .credits{
         font-style: italic;
+        font-size:80%;
     }
 
     p a{

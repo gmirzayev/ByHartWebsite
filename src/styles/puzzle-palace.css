@@ -125,7 +125,7 @@ img.type-kit{
 
     @media (max-width: 767px) {
         .collapsed button{ display: inline; }
-        .collapsed p ~ p{
+        .collapsed p + p ~ p{
             display: none;
         }
     }
