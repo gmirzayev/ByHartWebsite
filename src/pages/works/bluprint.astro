@@ -139,155 +139,102 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     }
   }
 </style>
-<ProjectLayout
-  hero={Header}
-  mobile={HeaderMobile}
-  brand={brand}
-  tagline={tagline}
-  tags={tags}
->
-  <div
-    class="mx-auto mb-[45px] flex w-full max-w-[1320px] flex-col items-center md:mb-[120px] md:flex-row"
-  >
+<ProjectLayout hero={Header} mobile={HeaderMobile} brand={brand} tagline={tagline} tags={tags}>
+  <div class="mx-auto mb-[45px] flex w-full max-w-[1320px] flex-col items-center md:mb-[120px] md:flex-row">
     <div class="w-full p-[15%] md:w-[50%] md:p-[10%]">
-      <Image
-        class="h-auto w-full rounded-sm md:rounded-md"
-        src={CrochetBox}
-        alt="Bluprint"
-      />
+      <Image class="h-auto w-full rounded-sm md:rounded-md" src={CrochetBox} alt="A bluprint brand shipping box." />
     </div>
     <Image
       class="h-auto w-full px-[30px] md:w-[50%]"
       src={Quilt}
-      alt="Bluprint"
+      alt="A person holding up a large quilt in front of them."
     />
   </div>
-  <VimeoPlayer
-    class="my-[45px] md:my-[120px]"
-    video="1035014266"
-    height="56.25%"
-    action="unpause"
-  />
+  <VimeoPlayer class="my-[45px] md:my-[120px]" video="1035014266" height="56.25%" action="unpause" />
   <div class="mx-auto my-[45px] max-w-[1040px] px-[20px] md:my-[120px]">
     <Image
       class="h-auto w-full rounded-sm md:rounded-md"
       src={LifeStyle1}
-      alt="Bluprint"
+      alt="A person sitting on a couch knitting."
     />
   </div>
-  <div
-    class="mx-[25px] my-[45px] flex flex-col md:my-[120px] md:flex-row md:justify-center"
-  >
+  <div class="mx-[25px] my-[45px] flex flex-col md:my-[120px] md:flex-row md:justify-center">
     <div class="text-[#363131] md:flex md:w-[50%] md:flex-col md:items-end">
       <div>
-        <h1 class="karla text-[18px] font-[700] tracking-[18%]">
-          BRAND PROMISE
-        </h1>
-        <p
-          class="karla text-[68px] font-[700] md:text-[58px] md:text-[72px] lg:text-[98px]"
-        >
-          "I did it!"
-        </p>
+        <h1 class="karla text-[18px] font-[700] tracking-[18%]">BRAND PROMISE</h1>
+        <p class="karla text-[68px] font-[700] md:text-[58px] md:text-[72px] lg:text-[98px]">"I did it!"</p>
       </div>
     </div>
-    <p
-      class="karla text-[16px] text-[#363131] md:ml-[50px] md:w-[50%] md:pr-[5%] lg:pr-[15%]"
-    >
-      In an always-on world, we help you unwind — and create something
-      meaningful. We build confidence by supporting you with inspiration, giving
-      you expert instruction, and inviting you into a passionate community that
-      gets you (no matter where you are in your journey). Here, you can enjoy
-      the space to do more of what you love.
+    <p class="karla text-[16px] text-[#363131] md:ml-[50px] md:w-[50%] md:pr-[5%] lg:pr-[15%]">
+      In an always-on world, we help you unwind — and create something meaningful. We build confidence by supporting you
+      with inspiration, giving you expert instruction, and inviting you into a passionate community that gets you (no
+      matter where you are in your journey). Here, you can enjoy the space to do more of what you love.
     </p>
   </div>
-  <Image class="my-[45px] md:my-[120px]" src={Paint} alt="Bluprint" />
+  <Image
+    class="my-[45px] md:my-[120px]"
+    src={Paint}
+    alt="Paint splattered onto brushes and small canvases featuring various shades of pink."
+  />
   <div
     class="mx-auto my-[45px] flex max-w-[1100px] flex-col gap-[45px] md:my-[120px] md:flex-row md:items-center md:justify-center md:px-[25px] lg:gap-[160px]"
   >
     <div class="px-[77px] md:w-[30%] md:px-0">
-      <Image
-        class="h-auto w-full rounded-sm md:rounded-md"
-        src={Colors}
-        alt="Bluprint"
-      />
+      <Image class="h-auto w-full rounded-sm md:rounded-md" src={Colors} alt="The brand's color palette." />
     </div>
     <div class="px-[20px] md:w-[50%] md:px-0">
       <Image
         class="h-auto w-full rounded-sm md:rounded-md"
         src={Ad1}
-        alt="Bluprint"
+        alt="An ad featuring a person holding a quilt around them. The text reads My style is Fresh.Bright.Fun. And made by me."
       />
     </div>
   </div>
-  <div
-    class="my-[45px] flex flex-row items-center gap-[10px] px-[20px] md:my-[120px] md:gap-[40px] md:px-[60px]"
-  >
+  <div class="my-[45px] flex flex-row items-center gap-[10px] px-[20px] md:my-[120px] md:gap-[40px] md:px-[60px]">
     <div class="w-1/3">
       <Image
         class="w-full rounded-md md:rounded-lg"
         src={MultiCat}
-        alt="Bluprint"
+        alt="An assortment of arts and crafts tools and supplies laid out around a framed painting."
       />
     </div>
     <div class="w-1/3">
-      <Image
-        class="w-full rounded-md md:rounded-lg"
-        src={Cake}
-        alt="Bluprint"
-      />
+      <Image class="w-full rounded-md md:rounded-lg" src={Cake} alt="A spinning cake with lit candles." />
     </div>
     <div class="w-1/3">
-      <Image
-        class="w-full rounded-md md:rounded-lg"
-        src={Fox1}
-        alt="Bluprint"
-      />
+      <Image class="w-full rounded-md md:rounded-lg" src={Fox1} alt="Two children wearing knitted fox hats." />
     </div>
   </div>
-  <div
-    class="karla mx-auto my-[45px] max-w-[950px] px-[25px] md:my-[120px] md:columns-2 md:gap-[80px]"
-  >
-    <h1 class="mb-[40px] text-[24px] font-[700] text-[#363131]">
-      Brand Pillars
-    </h1>
-    <h2 class="font-[700] tracking-widest text-[#CF3538]">
-      WE RESPECT YOUR TIME
-    </h2>
+  <div class="karla mx-auto my-[45px] max-w-[950px] px-[25px] md:my-[120px] md:columns-2 md:gap-[80px]">
+    <h1 class="mb-[40px] text-[24px] font-[700] text-[#363131]">Brand Pillars</h1>
+    <h2 class="font-[700] tracking-widest text-[#CF3538]">WE RESPECT YOUR TIME</h2>
     <p class="mb-[40px] text-[#363131] md:pr-[20px]">
-      We help you cut through the startup hassle by curating everything you need
-      in one place and meeting you on your favorite platform. From project kits
-      designed for your skill level to step-by-step guidance, you can be assured
+      We help you cut through the startup hassle by curating everything you need in one place and meeting you on your
+      favorite platform. From project kits designed for your skill level to step-by-step guidance, you can be assured
       that you’ll make something great here.
     </p>
     <h2 class="font-[700] tracking-widest text-[#CF3538]">WE'VE BEEN THERE</h2>
     <p class="mb-[40px] text-[#363131] md:pr-[20px]">
-      We anticipate all the hills and valleys because we’ve gone through them
-      too. At every turn, it feels like there’s a real person helping you avoid
-      common mistakes and setting you up for success.
+      We anticipate all the hills and valleys because we’ve gone through them too. At every turn, it feels like there’s
+      a real person helping you avoid common mistakes and setting you up for success.
     </p>
-    <h2 class="font-[700] tracking-widest text-[#CF3538]">
-      WE'RE FOR EVERY MAKER
-    </h2>
+    <h2 class="font-[700] tracking-widest text-[#CF3538]">WE'RE FOR EVERY MAKER</h2>
     <p class="mb-[40px] text-[#363131]">
-      Whether you’re a never-crafted newbie or an accomplished maker with
-      decades of experience, we help you discover the best options for you and
-      grow your skills.
+      Whether you’re a never-crafted newbie or an accomplished maker with decades of experience, we help you discover
+      the best options for you and grow your skills.
     </p>
     <h2 class="font-[700] tracking-widest text-[#CF3538]">WE KEEP IT FRESH</h2>
     <p class="mb-[40px] text-[#363131]">
-      We’re that endlessly creative friend who’s always in the know about the
-      next incredible thing, from trends and techniques to tools and tips.
-      There’s always something new to see and try.
+      We’re that endlessly creative friend who’s always in the know about the next incredible thing, from trends and
+      techniques to tools and tips. There’s always something new to see and try.
     </p>
-    <h2 class="font-[700] tracking-widest text-[#CF3538]">
-      WE BELIEVE IN THE JOY OF CREATIVITY
-    </h2>
+    <h2 class="font-[700] tracking-widest text-[#CF3538]">WE BELIEVE IN THE JOY OF CREATIVITY</h2>
     <p class="mb-[40px] text-[#363131]">
-      You love making. We get it because we feel the same way. We understand one
-      of the greatest sources of happiness is the creative world we build.
+      You love making. We get it because we feel the same way. We understand one of the greatest sources of happiness is
+      the creative world we build.
     </p>
   </div>
-  <Image class="h-auto w-full" src={HomePage} alt="Bluprint" />
+  <Image class="h-auto w-full" src={HomePage} alt="Screenshot of the Bluprint website home page." />
   <div>
     <video playsinline loop autoplay muted class="w-full">
       <source src={SocialGrid} />
@@ -300,17 +247,11 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
       <Image
         class="h-auto w-full rounded-sm md:rounded-md"
         src={Ad3}
-        alt="Bluprint"
+        alt="An ad featuring a knitted hat and yarn with the words Your next project is waiting. Bluprint.com"
       />
     </div>
     <div class="md:w-1/2">
-      <video
-        loop
-        playsinline
-        autoplay
-        muted
-        class="rounded-0 h-auto w-full md:rounded-md md:rounded-sm"
-      >
+      <video loop playsinline autoplay muted class="rounded-0 h-auto w-full md:rounded-md md:rounded-sm">
         <source src={Ad2} />
       </video>
     </div>
@@ -320,14 +261,14 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
       <Image
         class="w-full rounded-sm md:rounded-md"
         src={Jump1}
-        alt="Bluprint"
+        alt="A smiling woman holding a bolt of fabric mid jump."
       />
     </div>
     <div class="w-[50%] p-[10%]">
       <Image
         class="w-full rounded-sm md:rounded-md"
         src={Jump2}
-        alt="Bluprint"
+        alt="A smiling woman holding multiple bolts of fabric."
       />
     </div>
   </div>
@@ -337,35 +278,17 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     height="56.25%"
     action="unpause"
   />
-  <div
-    class="mx-[10px] my-[45px] flex flex-row items-center md:mx-[40px] md:my-[120px]"
-  >
+  <div class="mx-[10px] my-[45px] flex flex-row items-center md:mx-[40px] md:my-[120px]">
     <div class="w-1/3 p-[1%]">
-      <video
-        loop
-        playsinline
-        autoplay
-        muted
-        class="h-auto w-full rounded-sm md:rounded-md"
-      >
+      <video loop playsinline autoplay muted class="h-auto w-full rounded-sm md:rounded-md">
         <source src={Disco} />
       </video>
     </div>
     <div class="w-1/3 p-[1.4%]">
-      <Image
-        class="h-auto rounded-sm md:rounded-md"
-        src={Fox2}
-        alt="Bluprint"
-      />
+      <Image class="h-auto rounded-sm md:rounded-md" src={Fox2} alt="A child wearing a knitted fox hat." />
     </div>
     <div class="w-1/3 p-[1%]">
-      <video
-        loop
-        playsinline
-        autoplay
-        muted
-        class="h-auto rounded-sm md:rounded-md"
-      >
+      <video loop playsinline autoplay muted class="h-auto rounded-sm md:rounded-md">
         <source src={MakeupBag} />
       </video>
     </div>
@@ -373,12 +296,12 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   <Image
     class="my-[45px] h-auto w-full md:my-[120px]"
     src={LifeStyle2}
-    alt="Bluprint"
+    alt="A person decorating a cake with icing in the shape of leaves."
   />
   <Image
     class="my-[45px] h-auto w-full md:my-[120px]"
     src={Patches}
-    alt="Bluprint"
+    alt="Various icon patches for the bluprint brand."
   />
   <VimeoPlayer
     class="rc-md-only mx-auto my-[45px] max-w-[1040px] md:my-[120px] md:px-[25px]"
@@ -389,13 +312,21 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   <div
     class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1320px] flex-row gap-[10px] px-[20px] md:my-[120px] md:gap-[75px]"
   >
-    <Image class="rounded-r-md md:rounded-lg" src={Ad4} alt="Bluprint" />
-    <Image class="rounded-l-md md:rounded-lg" src={Ad5} alt="Bluprint" />
+    <Image
+      class="rounded-r-md md:rounded-lg"
+      src={Ad4}
+      alt="An ad featuring a person following along with a DIY video from the Bluprint mobile app."
+    />
+    <Image
+      class="rounded-l-md md:rounded-lg"
+      src={Ad5}
+      alt="An ad featuring a woman putting a quilt onto a couch with the words There's a maker in you. Online classes and supplies to feed your inner maker."
+    />
   </div>
   <Image
     class="my-[45px] h-auto w-full md:my-[120px]"
     src={Embroidery}
-    alt="Bluprint"
+    alt="A starter emroidery kit and bluprint tote bag."
   />
   <video
     loop
@@ -406,7 +337,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   >
     <source src={Boxes} />
   </video>
-  <Image class="h-auto w-full" src={Collateral} alt="Bluprint" />
+  <Image class="h-auto w-full" src={Collateral} alt="A blueprint tote bag and a beginner's drawing guide." />
   <div id="brand-guide">
     <div class="karla py-[30px] pl-[20px] font-[16px] text-white">
       <p class="inline-block font-[700] tracking-[3px]">BLUPRINT</p>
@@ -416,52 +347,28 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
       <Image
         class="my-1 h-auto w-[49.5%] rounded md:my-1.5"
         src={Grid1}
-        alt="Bluprint"
+        alt="Cultural Context. People are seeking out opportunities to immerse themselves in the activities that make them feel most alive."
       />
-      <Image
-        class="my-1 h-auto w-[49.5%] rounded md:my-1.5"
-        src={Grid2}
-        alt="Bluprint"
-      />
-      <Image
-        class="my-1 h-auto w-[49.5%] rounded md:my-1.5"
-        src={Grid3}
-        alt="Bluprint"
-      />
-      <Image
-        class="my-1 h-auto w-[49.5%] rounded md:my-1.5"
-        src={Grid4}
-        alt="Bluprint"
-      />
+      <Image class="my-1 h-auto w-[49.5%] rounded md:my-1.5" src={Grid2} alt="Bluprint brand introduction." />
+      <Image class="my-1 h-auto w-[49.5%] rounded md:my-1.5" src={Grid3} alt="Bluprint brand description." />
+      <Image class="my-1 h-auto w-[49.5%] rounded md:my-1.5" src={Grid4} alt="Bluprint ad with paintbrushes" />
       <Image
         class="my-1 h-auto w-[49.5%] rounded md:my-1.5"
         src={Grid5}
-        alt="Bluprint"
+        alt="Bluprint ad with a woman painting on a canvas. What do you want to paint today?"
       />
       <Image
         class="my-1 h-auto w-[49.5%] rounded md:my-1.5"
         src={Grid6}
-        alt="Bluprint"
+        alt="Bluprint ad with something in the process of being knitted. What do you want to knit today?"
       />
-      <Image
-        class="my-1 h-auto w-[49.5%] rounded md:my-1.5"
-        src={Grid7}
-        alt="Bluprint"
-      />
-      <Image
-        class="my-1 h-auto w-[49.5%] rounded md:my-1.5"
-        src={Grid8}
-        alt="Bluprint"
-      />
-      <Image
-        class="my-1 h-auto w-[49.5%] rounded md:my-1.5"
-        src={Grid9}
-        alt="Bluprint"
-      />
+      <Image class="my-1 h-auto w-[49.5%] rounded md:my-1.5" src={Grid7} alt="Bluprint ad. Do anything" />
+      <Image class="my-1 h-auto w-[49.5%] rounded md:my-1.5" src={Grid8} alt="Bluprint ad. Learn anything" />
+      <Image class="my-1 h-auto w-[49.5%] rounded md:my-1.5" src={Grid9} alt="Bluprint ad. Do anything" />
       <Image
         class="my-1 h-auto w-[49.5%] rounded md:my-1.5"
         src={Grid10}
-        alt="Bluprint"
+        alt="Screenshots of the Bluprint mobile app and desktop website."
       />
     </div>
   </div>
