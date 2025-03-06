@@ -63,6 +63,7 @@ import SageBrandGuideGrid14 from "@assets/Sage/img/Sage_Brand_Guide_Grid_14.png"
 import ProjectHead from "@components/ProjectHead.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
+import TwoUp from "@components/TwoUp.astro";
 ---
 
 <style>
@@ -72,6 +73,17 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 
   #brand-guide {
     background: #1d1a1a url("/images/noise.svg") repeat;
+  }
+
+  .vertical-spacing-container {
+    width: 100%;
+    margin-top: 45px;
+    margin-bottom: 45px;
+
+    @media (min-width: 768px) {
+      margin-top: 120px;
+      margin-bottom: 120px;
+    }
   }
 </style>
 <ProjectLayout
@@ -138,32 +150,32 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
     alt="Sage Site"
   />
 
-  <div
-    class="my-[45px] flex w-full flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px] md:px-[60px]"
+  <TwoUp
+    class="mx-auto my-[45px] !max-w-[1320px] !flex-row !gap-[5px] md:my-[120px] md:!gap-[15px]"
   >
     <Image
-      class="h-auto w-1/2 rounded-sm md:rounded-md"
+      class="rounded-md md:rounded-lg"
       src={SageSocial1}
       alt="Sage Social 1"
     />
     <Image
-      class="h-auto w-1/2 rounded-sm md:rounded-md"
+      class="rounded-md md:rounded-lg"
       src={SageSocial2}
       alt="Sage Social 2"
     />
-  </div>
-  <video autoplay playsinline loop muted class="mb-[45px] w-full md:mb-[120px]">
+  </TwoUp>
+  <video autoplay playsinline loop muted class="vertical-spacing-container">
     <source src={BreatheVideo} type="video/mp4" />
   </video>
-  <div
-    class="my-[45px] flex w-full flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px] md:px-[60px]"
+  <TwoUp
+    class="mx-auto my-[45px] !max-w-[1320px] !flex-row !gap-[5px] md:my-[120px] md:!gap-[15px]"
   >
-    <Image class="h-auto w-1/2 rounded" src={SageIcon1} alt="Sage Icon 1" />
-    <Image class="h-auto w-1/2 rounded" src={SageIcon2} alt="Sage Icon 2" />
-  </div>
+    <Image class="rounded-md md:rounded-lg" src={SageIcon1} alt="Sage Icon 1" />
+    <Image class="rounded-md md:rounded-lg" src={SageIcon2} alt="Sage Icon 2" />
+  </TwoUp>
 
   <div
-    class="my-[45px] flex flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px] md:px-[60px]"
+    class="vertical-spacing-container mx-auto flex max-w-[1320px] flex-row justify-center gap-[5px] px-[20px] md:gap-[15px] md:px-[30px]"
   >
     <Image
       src={SageStorySocial1}
@@ -197,31 +209,33 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
   >
     <source src={WeAreMobile} type="video/mp4" />
   </video>
-  <div
-    class="my-[45px] flex w-full flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px] md:px-[60px]"
+  <TwoUp
+    class="mx-auto my-[45px] !max-w-[1320px] !flex-row !gap-[5px] md:my-[120px] md:!gap-[15px]"
   >
     <Image
-      class="h-auto w-[50%] rounded"
+      class="rounded-md md:rounded-lg"
       src={SageGraphic1}
       alt="Sage Graphic 1"
     />
     <Image
-      class="h-auto w-[50%] rounded"
+      class="rounded-md md:rounded-lg"
       src={SageGraphic2}
       alt="Sage Graphic 2"
     />
-  </div>
+  </TwoUp>
   <div class="flex w-full flex-row">
     <Image class="h-auto w-1/2" src={SageQuote} alt="Sage Quote" />
     <video autoplay playsinline loop muted class="w-1/2">
       <source src={SocialVideo} type="video/mp4" />
     </video>
   </div>
-  <div
-    class="flex w-full flex-col gap-[4px] bg-[#1f3333] px-[20px] py-[45px] md:gap-[32px] md:px-[200px] md:py-[120px]"
-  >
-    <Image class="h-auto w-full" src={SageBrochure1} alt="Sage Brochure 1" />
-    <Image class="h-auto w-full" src={SageBrochure2} alt="Sage Brochure 2" />
+  <div class="w-full bg-[#1f3333] px-[20px]">
+    <div
+      class="mx-auto flex max-w-[1040px] flex-col gap-[10px] py-[30px] md:gap-[120px] md:py-[120px]"
+    >
+      <Image class="h-auto w-full" src={SageBrochure1} alt="Sage Brochure 1" />
+      <Image class="h-auto w-full" src={SageBrochure2} alt="Sage Brochure 2" />
+    </div>
   </div>
   <video autoplay loop playsinline muted class="w-full">
     <source src={CompVideo} type="video/mp4" />
