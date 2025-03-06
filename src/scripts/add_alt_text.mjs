@@ -18,8 +18,7 @@ async function updateJSFiles(data) {
       let content = await fs.readFile(filePath, "utf8");
 
       const imgRegex = new RegExp(
-        `(<Image[^>]*src=\{${asset}\}).*?(alt=".*?")(.*?>)$`,
-        "mis"
+        `(<Image\s*.*\s*src=\{${asset}\}\s*.*\s*)(alt=".*")(\s*.*\s*\/>)`,
       );
 
       const updatedContent = content.replace(
@@ -27,10 +26,8 @@ async function updateJSFiles(data) {
         (match, before, altAttr, after) => {
           if (altAttr) {
             return `${before}alt="${alt}"${after}`;
-          } else {
-            return `${before} alt="${alt}"${after}`;
           }
-        }
+        },
       );
 
       if (content !== updatedContent) {

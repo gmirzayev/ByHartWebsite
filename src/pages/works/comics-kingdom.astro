@@ -133,77 +133,43 @@ import BrandGrid14 from "@assets/ComicsKingdom/img/CK_Brand_Grid_14.png";
   tags={tags}
   theme="dark"
 >
-  <VimeoPlayer
-    class="padded bg-[#363131]"
-    video="1026680777"
-    height="56.25%"
-    action="unpause"
-  />
+  <VimeoPlayer class="padded bg-[#363131]" video="1026680777" height="56.25%" action="unpause" />
 
-  <ResponsiveImage
-    mobile={LogoIllustrationMobile}
-    desktop={LogoIllustrationDesktop}
-    alt="Comics Kingdom"
-  />
+  <ResponsiveImage mobile={LogoIllustrationMobile} desktop={LogoIllustrationDesktop} alt="Comics Kingdom" />
 
   <ResponsiveTextBlock class="padded">
     <div>
       <p>
-        Every strip starts with a sketch. A gag. A storyboard. An inkling of an
-        idea, brought to life by a pencil, some paper (okay, occasionally a
-        tablet and stylus), and an altogether personal point of view. It's the
-        first step in a hero’s winding journey—both the character’s and the
-        creator’s—soon to meet the fans who will cheer them along.
+        Every strip starts with a sketch. A gag. A storyboard. An inkling of an idea, brought to life by a pencil, some
+        paper (okay, occasionally a tablet and stylus), and an altogether personal point of view. It's the first step in
+        a hero’s winding journey—both the character’s and the creator’s—soon to meet the fans who will cheer them along.
       </p>
       <p>
-        Comics Kingdom is for those who believe in limitless creativity, barely
-        contained in a bite of delight. The ones who must make, against any
-        obstacles, whether pioneers or next generation, in service of an art
-        form that nudges us all forward, eliciting chuckles, catharsis, and
-        connection.
+        Comics Kingdom is for those who believe in limitless creativity, barely contained in a bite of delight. The ones
+        who must make, against any obstacles, whether pioneers or next generation, in service of an art form that nudges
+        us all forward, eliciting chuckles, catharsis, and connection.
       </p>
     </div>
     <div>
       <p>
-        We're a haven for those who absolutely worship cartoon history and are
-        eager to preserve and transform. A community for the people who open to
-        the funnies every week or get the digital scoop any day. A place for
-        enthusiasts to support others and recognize the wonderfully human
-        lessons and observations depicted through a beloved and all too rare
-        craft. A platform for artists to breathe new life, share new
-        experiences, and reach new friends. A way to come together through a
-        niche that unifies—one of the lightest ways to deal with heavy stuff.
+        We're a haven for those who absolutely worship cartoon history and are eager to preserve and transform. A
+        community for the people who open to the funnies every week or get the digital scoop any day. A place for
+        enthusiasts to support others and recognize the wonderfully human lessons and observations depicted through a
+        beloved and all too rare craft. A platform for artists to breathe new life, share new experiences, and reach new
+        friends. A way to come together through a niche that unifies—one of the lightest ways to deal with heavy stuff.
       </p>
       <p class="red-letter">
-        For <em>those</em>, for <em>us</em>, and for <em>all</em>, our mission
-        is to keep the comics coming.
+        For <em>those</em>, for <em>us</em>, and for <em>all</em>, our mission is to keep the comics coming.
       </p>
     </div>
   </ResponsiveTextBlock>
 
-  <ResponsiveImage
-    mobile={AppMobile}
-    desktop={AppDesktop}
-    alt="Comics Kingdom"
-  />
+  <ResponsiveImage mobile={AppMobile} desktop={AppDesktop} alt="Comics Kingdom" />
 
   <div class="dark-container pt-[45px] md:pt-[120px]">
-    <ResponsiveImage
-      mobile={IconsMobile}
-      desktop={IconsDesktop}
-      class="w-1/2"
-      alt="Comics Kingdom"
-    />
-    <TransparentVideo
-      mov={CreatorSafari}
-      webm={Creator}
-      class="mx-0 my-[40px] max-h-full w-[100%] md:my-[100px]"
-    />
-    <Image
-      class="mx-auto h-auto w-full max-w-[840px] px-[20px]"
-      src={Home}
-      alt="Comics Kingdom"
-    />
+    <ResponsiveImage mobile={IconsMobile} desktop={IconsDesktop} class="w-1/2" alt="Comics Kingdom" />
+    <TransparentVideo mov={CreatorSafari} webm={Creator} class="mx-0 my-[40px] max-h-full w-[100%] md:my-[100px]" />
+    <Image class="mx-auto h-auto w-full max-w-[840px] px-[20px]" src={Home} alt="Screenshots from the home page of the mobile app featuring things like Trending comics" />
   </div>
   <video loop playsinline autoplay muted class="w-[100%]">
     <source src={CKAnimation} />
@@ -214,11 +180,7 @@ import BrandGrid14 from "@assets/ComicsKingdom/img/CK_Brand_Grid_14.png";
     <div class="karla justify-self-end text-[#363131]">
       <p class="md:text-[20px]">We are</p>
       <ul id="we-are">
-        {
-          WE_ARE.map((motto) => (
-            <li class="text-[20px] md:text-[24px]">{motto}</li>
-          ))
-        }
+        {WE_ARE.map((motto) => <li class="text-[20px] md:text-[24px]">{motto}</li>)}
       </ul>
     </div>
     <video loop playsinline autoplay muted style="max-width:300px;">
@@ -229,107 +191,37 @@ import BrandGrid14 from "@assets/ComicsKingdom/img/CK_Brand_Grid_14.png";
     <TransparentVideo webm={Friends} mov={FriendsSafari} class="w-screen" />
   </div>
   <div class="social-background">
-    <Image
-      class="h-auto w-full px-[20px] py-[45px] md:px-[300px] md:py-[120px]"
-      src={Social}
-      alt="Comics Kingdom"
-    />
+    <Image class="h-auto w-full px-[20px] py-[45px] md:px-[300px] md:py-[120px]" src={Social} alt="An instagram story from the comicskingdom instagram account displaying the company's branding." />
   </div>
   <div class="mx-auto my-[45px] max-w-[840px] px-[20px] md:my-[120px]">
-    <Image class="rounded-md md:rounded-lg" src={Email} alt="Comics Kingdom" />
+    <Image class="rounded-md md:rounded-lg" src={Email} alt="A daily comics featured newsletter page." />
   </div>
   <div class="mb-[45px] flex w-full flex-row items-baseline md:mb-0">
     <div class="w-1/2">
-      <Image
-        class="h-auto w-1/2 pb-[10px] pl-[20px] md:pb-[50px] md:pl-[60px]"
-        src={Mark}
-        alt="Comics Kingdom"
-      />
+      <Image class="h-auto w-1/2 pb-[10px] pl-[20px] md:pb-[50px] md:pl-[60px]" src={Mark} alt="A variation of the Comics Kingdom logo." />
     </div>
-    <Image
-      class="md:rounded-bl-0 h-auto w-1/2 rounded-l-md md:rounded-tl-lg"
-      src={Book}
-      alt="Comics Kingdom"
-    />
+    <Image class="md:rounded-bl-0 h-auto w-1/2 rounded-l-md md:rounded-tl-lg" src={Book} alt="The book spine of a comics kingdom book titled Popeye 100." />
   </div>
   <div id="brand-guide">
     <div class="karla py-[30px] pl-[20px] text-[#F7F4ED] md:pl-[45px]">
       <p class="inline-block font-bold tracking-widest">COMICS KINGDOM</p>
       <p class="ml-[20px] inline-block">A glimpse at the brand guide</p>
     </div>
-    <div
-      class="grid grid-cols-2 gap-[5px] px-[20px] md:gap-[15px] md:px-[45px]"
-    >
-      <Image
-        class="h-auto w-full rounded"
-        src={BrandGrid1}
-        alt="Sage Brand Guide Grid 1"
-      />
-      <Image
-        class="h-auto w-full rounded"
-        src={BrandGrid2}
-        alt="Sage Brand Guide Grid 4"
-      />
-      <Image
-        class="h-auto w-full rounded"
-        src={BrandGrid3}
-        alt="Sage Brand Guide Grid 3"
-      />
-      <Image
-        class="h-auto w-full rounded"
-        src={BrandGrid4}
-        alt="Sage Brand Guide Grid 5"
-      />
-      <Image
-        class="h-auto w-full rounded"
-        src={BrandGrid5}
-        alt="Sage Brand Guide Grid 6"
-      />
-      <Image
-        class="h-auto w-full rounded"
-        src={BrandGrid6}
-        alt="Sage Brand Guide Grid 7"
-      />
-      <Image
-        class="h-auto w-full rounded"
-        src={BrandGrid7}
-        alt="Sage Brand Guide Grid 2"
-      />
-      <Image
-        class="h-auto w-full rounded"
-        src={BrandGrid8}
-        alt="Sage Brand Guide Grid 8"
-      />
-      <Image
-        class="h-auto w-full rounded"
-        src={BrandGrid9}
-        alt="Sage Brand Guide Grid 9"
-      />
-      <Image
-        class="h-auto w-full rounded"
-        src={BrandGrid10}
-        alt="Sage Brand Guide Grid 10"
-      />
-      <Image
-        class="h-auto w-full rounded"
-        src={BrandGrid11}
-        alt="Sage Brand Guide Grid 11"
-      />
-      <Image
-        class="h-auto w-full rounded"
-        src={BrandGrid12}
-        alt="Sage Brand Guide Grid 12"
-      />
-      <Image
-        class="h-auto w-full rounded"
-        src={BrandGrid13}
-        alt="Sage Brand Guide Grid 13"
-      />
-      <Image
-        class="h-auto w-full rounded"
-        src={BrandGrid14}
-        alt="Sage Brand Guide Grid 14"
-      />
+    <div class="grid grid-cols-2 gap-[5px] px-[20px] md:gap-[15px] md:px-[45px]">
+      <Image class="h-auto w-full rounded" src={BrandGrid1} alt="A description of the brands' values." />
+      <Image class="h-auto w-full rounded" src={BrandGrid2} alt="A list of phrases representing the tone of the brand." />
+      <Image class="h-auto w-full rounded" src={BrandGrid3} alt="Values for the Comics Kingdom brand." />
+      <Image class="h-auto w-full rounded" src={BrandGrid4} alt="Analysis of the Comics Kingdom logo and safe zones." />
+      <Image class="h-auto w-full rounded" src={BrandGrid5} alt="Analysis of the Comics Kingdom logo." />
+      <Image class="h-auto w-full rounded" src={BrandGrid6} alt="Analysis of the Comics Kingdom patterned backgrounds for digital products." />
+      <Image class="h-auto w-full rounded" src={BrandGrid7} alt="Analysis of the brands' typography." />
+      <Image class="h-auto w-full rounded" src={BrandGrid8} alt="Analysis of the brands' typography." />
+      <Image class="h-auto w-full rounded" src={BrandGrid9} alt="The fonts and font colors for the Comics Kingdom brand focusing on meeting WCAG accessibility." />
+      <Image class="h-auto w-full rounded" src={BrandGrid10} alt="Analysis of the brands' typography." />
+      <Image class="h-auto w-full rounded" src={BrandGrid11} alt="A study of the possible app store icons." />
+      <Image class="h-auto w-full rounded" src={BrandGrid12} alt="A study of the possible orientations for reading comics in the mobile app." />
+      <Image class="h-auto w-full rounded" src={BrandGrid13} alt="A study of different banner designs." />
+      <Image class="h-auto w-full rounded" src={BrandGrid14} alt="Different comic layouts for social media posts." />
     </div>
   </div>
 </ProjectLayout>
