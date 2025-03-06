@@ -41,6 +41,7 @@ import Cards from "@assets/PearlyBites/img/PearlyBites_BusinessCards.jpg";
 import SocialGrid from "@assets/PearlyBites/img/PearlyBites_SocialGrid.png";
 import Stationary from "@assets/PearlyBites/img/PearlyBites_Stationary.png";
 import Carousel from "@assets/PearlyBites/img/PearlyBites_SocialCarousel.png";
+import AltLogo from "@assets/PearlyBites/img/PearlyBites_AltLogo.png";
 ---
 
 <style>
@@ -53,15 +54,27 @@ import Carousel from "@assets/PearlyBites/img/PearlyBites_SocialCarousel.png";
     color: #182241;
   }
 
-  .slogan{
-    margin: 40px 20px;
-    font: 700 26px/1.2 "Karla", sans-serif;
-    letter-spacing: -0.52px;
-    text-align:center;
+  .vertical-spacing {
+    margin-top: 45px;
+    margin-bottom: 45px;
 
-    @media(min-width:768px){
-      margin:120px 60px;
-      font-size:36px;
+    @media (min-width: 768px) {
+      margin-top: 120px;
+      margin-bottom: 120px;
+    }
+  }
+
+  .slogan {
+    margin: 40px 20px;
+    font:
+      700 26px/1.2 "Karla",
+      sans-serif;
+    letter-spacing: -0.52px;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      margin: 120px 60px;
+      font-size: 36px;
       letter-spacing: -0.72px;
     }
   }
@@ -74,18 +87,16 @@ import Carousel from "@assets/PearlyBites/img/PearlyBites_SocialCarousel.png";
   tags={tags}
 >
   <Image
-    class="w-full h-auto px-[20px] md:px-[60px]"
+    class="h-auto w-full px-[20px] md:px-[60px]"
     src={FrontDesk}
     alt="Pearly Bites"
   />
-  <div class="slogan">
-    Your Pet's Teeth Cleaning Just Graduated
-  </div>
+  <div class="slogan">Your Pet's Teeth Cleaning Just Graduated</div>
   <div
-    class="flex w-full justify-center items-center flex-col gap-[45px] md:gap-0 md:flex-row my-[45px] md:my-[120px] px-[77px] md:px-[60px]"
+    class="my-[45px] flex w-full flex-col items-center justify-center gap-[45px] px-[77px] md:my-[120px] md:flex-row md:gap-0 md:px-[60px]"
   >
     <Image
-      class="h-auto w-full md:w-[50%] rounded-md md:rounded-lg"
+      class="h-auto w-full rounded-md md:w-[50%] md:rounded-lg"
       src={BetterDental}
       alt="Pearly Bites"
     />
@@ -94,7 +105,7 @@ import Carousel from "@assets/PearlyBites/img/PearlyBites_SocialCarousel.png";
       playsinline
       autoplay
       muted
-      class="w-full md:w-[50%] md:mt-0 md:w-[45%]"
+      class="w-full md:mt-0 md:w-[45%] md:w-[50%]"
     >
       <source src={Bag} />
     </video>
@@ -103,7 +114,7 @@ import Carousel from "@assets/PearlyBites/img/PearlyBites_SocialCarousel.png";
   <OneUp src={Site} class="spaced" max="1040px" alt="Pearly Bites" />
 
   <Image
-    class="w-full h-auto my-[45px] md:my-[120px]"
+    class="my-[45px] h-auto w-full md:my-[120px]"
     src={ExamRoom}
     alt="Pearly Bites"
   />
@@ -112,40 +123,45 @@ import Carousel from "@assets/PearlyBites/img/PearlyBites_SocialCarousel.png";
     <h1 style="margin-bottom:0;">Interior refresh renderings</h1>
   </section>
   <div
-    class="w-full flex flex-col md:flex-row gap-[45px] md:gap-[15px] px-[20px] md:px-[60px] my-[45px] md:my-[120px]"
+    class="my-[45px] flex w-full flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px] md:px-[60px]"
   >
     <Image
-      class="w-full md:w-2/3 h-auto rounded-md md:rounded-lg"
+      class="h-auto w-full rounded-md md:w-2/3 md:rounded-lg"
       src={InteriorLeft}
       alt="Pearly Bites"
     />
     <Image
-      class="w-full md:w-1/3 h-auto rounded-md md:rounded-lg"
+      class="h-auto w-full rounded-md md:w-1/3 md:rounded-lg"
       src={InteriorRight}
       alt="Pearly Bites"
     />
   </div>
-  <div class="slogan">
-    Turning Growls into Grins
-  </div>
-
+  <div class="slogan">Turning Growls into Grins</div>
 
   <OneUp src={SocialPages} class="spaced" max="840px" alt="Pearly Bites" />
   <OneUp src={Tote} class="spaced" max="840px" alt="Pearly Bites" />
 
   <Image
-    class="h-auto w-full my-[45px] md:my-[120px]"
+    class="my-[45px] h-auto w-full md:my-[120px]"
     src={Cards}
     alt="Pearly Bites"
   />
 
   <OneUp src={SocialGrid} class="spaced" max="840px" alt="Pearly Bites" />
 
-  <div class="slogan">
-    Teeth Cleanings without the Bite
-  </div>
+  <div class="slogan">Teeth Cleanings without the Bite</div>
 
-  <Image class="w-full h-auto" src={Stationary} alt="Pearly Bites" />
+  <Image class="h-auto w-full" src={Stationary} alt="Pearly Bites" />
 
   <OneUp src={Carousel} class="spaced" max="1040px" alt="Pearly Bites" />
+  <div
+    class="karla vertical-spacing text-center text-[18px] font-bold tracking-[.18em]"
+  >
+    ALT LOGO CONCEPT
+  </div>
+  <Image
+    class="vertical-spacing mx-auto w-full max-w-[840px] px-[20px]"
+    src={AltLogo}
+    alt=""
+  />
 </ProjectLayout>
