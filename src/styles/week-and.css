@@ -65,7 +65,22 @@ section{
 }
 
 #what-is-week-and{
-    padding-bottom:0;
+    padding-bottom:0 !important;
+
+    button{
+        display:none;
+        text-decoration: underline;
+        &:hover{ cursor:url("/images/HeartCursor.png") 16 16, pointer; }
+    }
+
+    @media (max-width: 767px) {
+        .collapsed button{ display: inline; }
+
+        .collapsed + div{
+            display:none
+        }
+    }
+
 }
 
 #campaign-a .frame{

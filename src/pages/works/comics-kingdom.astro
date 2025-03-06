@@ -27,8 +27,11 @@ const WE_ARE = [
 
 import "../../styles/utils.css";
 import ProjectLayout from "@layouts/ProjectLayout.astro";
-import ProjectTags from "@components/ProjectTags.astro";
-import ProjectHead from "@components/ProjectHead.astro";
+import TransparentVideo from "@components/TransparentVideo.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
+import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
+import VimeoPlayer from "@components/VimeoPlayer.astro";
+
 import HeaderVideo from "@assets/ComicsKingdom/CK_Header_Desktop.mp4";
 import HeaderVideoMobile from "@assets/ComicsKingdom/CK_Header_Mobile.mp4";
 import HeaderImage from "@assets/ComicsKingdom/img/Hero.jpg";
@@ -52,7 +55,6 @@ import Social from "@assets/ComicsKingdom/img/CK_Social.png";
 import Email from "@assets/ComicsKingdom/img/CK_Email.png";
 import Mark from "@assets/ComicsKingdom/img/CK_Mark.png";
 import Book from "@assets/ComicsKingdom/img/CK_Book.png";
-import Navigation from "@components/Navigation.astro";
 import BrandGrid1 from "@assets/ComicsKingdom/img/CK_Brand_Grid_01.png";
 import BrandGrid2 from "@assets/ComicsKingdom/img/CK_Brand_Grid_02.png";
 import BrandGrid3 from "@assets/ComicsKingdom/img/CK_Brand_Grid_03.png";
@@ -67,10 +69,6 @@ import BrandGrid11 from "@assets/ComicsKingdom/img/CK_Brand_Grid_11.png";
 import BrandGrid12 from "@assets/ComicsKingdom/img/CK_Brand_Grid_12.png";
 import BrandGrid13 from "@assets/ComicsKingdom/img/CK_Brand_Grid_13.png";
 import BrandGrid14 from "@assets/ComicsKingdom/img/CK_Brand_Grid_14.png";
-import ProjectsCarousel from "@components/ProjectsCarousel.astro";
-import TransparentVideo from "@components/TransparentVideo.astro";
-import ResponsiveImage from "@components/ResponsiveImage.astro";
-import VimeoPlayer from "@components/VimeoPlayer.astro";
 ---
 
 <style>
@@ -115,6 +113,13 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     }
   }
 
+  p.red-letter{
+    color:#DD4C42;
+    font-weight:700;
+    font-size:24px;
+    line-height:27px;
+  }
+
   #brand-guide{
     background: #1d1a1a url("/images/noise.svg") repeat;
   }
@@ -140,33 +145,17 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     desktop={LogoIllustrationDesktop}
     alt="Comics Kingdom"
   />
-  <div
-    class="w-full columns-1 md:columns-2 gap-[90px] my-[45px] md:my-[120px] px-[25px] md:px-[245px] karla text-[#363131] leading-[26px]"
-  >
-    <p class="m-0">
-      Every strip starts with a sketch. A gag. A storyboard. An inkling of an
-      idea, brought to life by a pencil, some paper (okay, occasionally a tablet
-      and stylus), and an altogether personal point of view. It's the first step
-      in a hero’s winding journey—both the character’s and the creator’s—soon to
-      meet the fans who will cheer them along. <br /><br />Comics Kingdom is for
-      those who believe in limitless creativity, barely contained in a bite of
-      delight. The ones who must make, against any obstacles, whether pioneers
-      or next generation, in service of an art form that nudges us all forward,
-      eliciting chuckles, catharsis, and connection. We're a haven for those who
-      absolutely worship cartoon history and are eager to preserve and
-      transform. A community for the people who open to the funnies every week
-      or get the digital scoop any day. A place for enthusiasts to support
-      others and recognize the wonderfully human lessons and observations
-      depicted through a beloved and all too rare craft. A platform for artists
-      to breathe new life, share new experiences, and reach new friends. A way
-      to come together through a niche that unifies—one of the lightest ways to
-      deal with heavy stuff. <br /><br />
-      <span class="text-[#DD4C42] text-lg md:text-xl font-bold"
-        >For <em>those</em>, for <em>us</em>, and <em>all</em>, our mission is
-        to keep the comics coming.</span
-      >
-    </p>
-  </div>
+
+  <ResponsiveTextBlock class="padded">
+    <div>
+      <p>Every strip starts with a sketch. A gag. A storyboard. An inkling of an idea, brought to life by a pencil, some paper (okay, occasionally a tablet and stylus), and an altogether personal point of view. It's the first step in a hero’s winding journey—both the character’s and the creator’s—soon to meet the fans who will cheer them along.</p>
+      <p>Comics Kingdom is for those who believe in limitless creativity, barely contained in a bite of delight. The ones who must make, against any obstacles, whether pioneers or next generation, in service of an art form that nudges us all forward, eliciting chuckles, catharsis, and connection. </p>
+      </div>
+    <div>
+      <p>We're a haven for those who absolutely worship cartoon history and are eager to preserve and transform. A community for the people who open to the funnies every week or get the digital scoop any day. A place for enthusiasts to support others and recognize the wonderfully human lessons and observations depicted through a beloved and all too rare craft. A platform for artists to breathe new life, share new experiences, and reach new friends. A way to come together through a niche that unifies—one of the lightest ways to deal with heavy stuff.</p>
+      <p class="red-letter">For <em>those</em>, for <em>us</em>, and for <em>all</em>, our mission is to keep the comics coming.</p>
+      </div>
+  </ResponsiveTextBlock>
 
   <ResponsiveImage
     mobile={AppMobile}
