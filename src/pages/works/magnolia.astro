@@ -70,6 +70,72 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
       grid-column: span 1;
     }
   }
+
+  .two-up-copy {
+    display: flex;
+    --one-third-mobile: calc(100% * 1 / 3 - 2.5px);
+    --two-thirds-mobile: calc(100% * 2 / 3 - 2.5px);
+    --half-mobile: calc(50% - 2.5px);
+    &.bias-left-mobile {
+      img:first-child {
+        width: var(--two-thirds-mobile);
+      }
+      img:last-child {
+        width: var(--one-third-mobile);
+      }
+    }
+
+    &.bias-right-mobile {
+      img:first-child {
+        width: var(--one-third-mobile);
+      }
+      img:last-child {
+        width: var(--two-thirds-mobile);
+      }
+    }
+
+    &.bias-center-mobile {
+      img:first-child {
+        width: var(--half-mobile);
+      }
+      img:last-child {
+        width: var(--half-mobile);
+      }
+    }
+    @media (min-width: 768px) {
+      flex-flow: row nowrap;
+      --one-third: calc(100% * 1 / 3 - 7.5px);
+      --two-thirds: calc(100% * 2 / 3 - 7.5px);
+      --half: calc(50% - 7.5px);
+
+      &.bias-left {
+        img:first-child {
+          width: var(--two-thirds);
+        }
+        img:last-child {
+          width: var(--one-third);
+        }
+      }
+
+      &.bias-right {
+        img:first-child {
+          width: var(--one-third);
+        }
+        img:last-child {
+          width: var(--two-thirds);
+        }
+      }
+
+      &.bias-center {
+        img:first-child {
+          width: var(--half);
+        }
+        img:last-child {
+          width: var(--half);
+        }
+      }
+    }
+  }
 </style>
 <ProjectLayout
   hero={Header}
@@ -105,14 +171,15 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   >
     <source src={Social} />
   </video>
+
   <div
-    class="mx-auto my-[45px] grid w-full max-w-[840px] grid-cols-2 gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
+    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[840px] flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
     <Image src={AppNav1} class="rounded-md md:rounded-lg" alt="" />
     <Image src={RecipeApp} class="rounded-md md:rounded-lg" alt="" />
   </div>
   <div
-    class="mx-auto my-[45px] grid w-full max-w-[840px] grid-cols-2 gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
+    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[840px] flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
     <Image src={Article} class="rounded-md md:rounded-lg" alt="" />
     <Image src={ShopApp} class="rounded-md md:rounded-lg" alt="" />
@@ -125,16 +192,24 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     <Image src={AppNav2} class="rounded-md md:rounded-lg" alt="" />
   </div>
   <VimeoPlayer video="1060355366" height="91.5%" />
+
   <div
-    class="mx-auto my-[45px] grid w-full max-w-[1260px] grid-cols-1 gap-[45px] px-0 md:my-[120px] md:grid-cols-2 md:gap-0"
+    class="two-up-copy bias-center mx-auto my-[45px] max-w-[1320px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-0"
   >
-    <video loop playsinline autoplay muted class="w-full md:order-2">
+    <video
+      loop
+      playsinline
+      autoplay
+      muted
+      class="mx-auto w-2/3 md:order-2 md:w-1/2"
+    >
       <source src={NetworkCard} />
     </video>
-    <Image src={Table} class="px-[20px] md:px-0" alt="" />
+    <Image src={Table} class="rounded-md md:rounded-lg" alt="" />
   </div>
+
   <div
-    class="mx-auto my-[45px] grid w-full max-w-[1305px] grid-cols-1 gap-[45px] md:my-[120px] md:grid-cols-[1fr,2fr] md:gap-[15px] md:px-[20px]"
+    class="mx-auto my-[45px] grid w-full max-w-[1320px] grid-cols-1 gap-[45px] md:my-[120px] md:grid-cols-[1fr,2fr] md:gap-[15px] md:px-[20px]"
   >
     <div class="px-[20px] md:order-2 md:px-0">
       <Image src={WatchWeb2} class="h-full rounded-md md:rounded-lg" alt="" />
@@ -149,22 +224,25 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     alt=""
   />
   <div
-    class="mx-auto my-[45px] grid w-full max-w-[1305px] grid-cols-1 gap-[45px] px-0 md:my-[120px] md:grid-cols-2 md:gap-[15px] md:px-[20px]"
+    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1320] flex-row gap-[45px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
     <Image src={Joanna} class="md:order-2 md:rounded-lg" alt="" />
     <Image src={Salad} class="" alt="" />
   </div>
+
   <Image src={Cooking} class="my-[45px] h-auto w-full md:my-[120px]" alt="" />
-  <div class="container mx-auto max-w-[1010px] gap-[5px] md:gap-[15px]">
+  <div
+    class="container mx-auto max-w-[1040px] gap-[5px] px-[20px] md:gap-[15px]"
+  >
     <div class="item px-[77px] pb-[40px] md:p-0">
       <video loop playsinline autoplay muted class="rounded-md md:rounded-3xl">
         <source src={NetworkWatch} />
       </video>
     </div>
-    <div class="item pl-[20px] md:p-0">
+    <div class="item md:p-0">
       <Image src={Recipe} class="rounded-md md:rounded-3xl" alt="" />
     </div>
-    <div class="item pr-[20px] md:p-0">
+    <div class="item md:p-0">
       <Image src={Store} class="rounded-md md:rounded-3xl" alt="" />
     </div>
   </div>
@@ -175,53 +253,56 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
       alt=""
     />
   </div>
-  <div class="bg-[#B79E97] px-[15px] py-[45px] md:px-[60px] md:py-[120px]">
+  <div class="my-[45px] bg-[#B79E97] px-[15px] md:my-[120px] md:px-[60px]">
     <Image src={Tabs} class="h-auto w-full" alt="" />
   </div>
-  <!-- mx-auto my-[45px] grid w-full max-w-[840px] grid-cols-2 gap-[5px] px-[20px] md:my-[120px] md:gap-[15px] -->
   <div
-    class="my-[45px] flex w-full flex-col gap-[45px] px-0 md:my-[120px] md:flex-row md:gap-[15px] md:px-[200px]"
+    class="mx-auto my-[45px] flex max-w-[1040px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px] md:px-[20px]"
   >
     <Image
       src={MagnoliaMobile}
-      class="h-auto w-full flex-[1] px-[77px] md:px-0"
+      class="mx-auto w-2/3 rounded-md md:w-1/3 md:rounded-lg md:px-0"
       alt=""
     />
     <Image
       src={MagnoliaDesktop}
-      class="h-auto w-full flex-[2] px-[20px] md:px-0"
+      class="mx-auto w-full rounded-md md:w-2/3 md:rounded-lg md:px-0"
       alt=""
     />
   </div>
   <div
-    class="my-[45px] flex w-full flex-col gap-[45px] px-0 md:my-[120px] md:flex-row md:gap-[15px] md:px-[200px]"
+    class="mx-auto my-[45px] flex max-w-[1040px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px] md:px-[20px]"
   >
     <video
       loop
       playsinline
       autoplay
       muted
-      class="w-full flex-[2] px-[20px] md:px-0"
+      class="mx-auto w-full rounded-md md:w-2/3 md:rounded-lg md:px-0"
     >
       <source src={ShopSiteVideo} />
     </video>
-    <Image src={Shop} class="h-auto w-full flex-[1] px-[77px] md:px-0" alt="" />
+    <Image
+      src={Shop}
+      class="mx-auto w-2/3 rounded-md md:w-1/3 md:rounded-lg md:px-0"
+      alt=""
+    />
   </div>
   <div
-    class="my-[45px] flex w-full flex-col gap-[45px] px-0 md:my-[120px] md:flex-row md:gap-[15px] md:px-[200px]"
+    class="mx-auto my-[45px] flex max-w-[1040px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px] md:px-[20px]"
   >
     <video
       loop
       playsinline
       autoplay
       muted
-      class="w-full flex-[1] px-[77px] md:px-0"
+      class="mx-auto w-2/3 rounded-md md:w-1/3 md:rounded-lg md:px-0"
     >
       <source src={WatchMobile} />
     </video>
     <Image
       src={Watch}
-      class="h-auto w-full flex-[2] px-[20px] md:px-0"
+      class="mx-auto w-full rounded-md md:w-2/3 md:rounded-lg md:px-0"
       alt=""
     />
   </div>

@@ -63,7 +63,6 @@ import SageBrandGuideGrid14 from "@assets/Sage/img/Sage_Brand_Guide_Grid_14.png"
 import ProjectHead from "@components/ProjectHead.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
-import TwoUp from "@components/TwoUp.astro";
 ---
 
 <style>
@@ -83,6 +82,72 @@ import TwoUp from "@components/TwoUp.astro";
     @media (min-width: 768px) {
       margin-top: 120px;
       margin-bottom: 120px;
+    }
+  }
+
+  .two-up-copy {
+    display: flex;
+    --one-third-mobile: calc(100% * 1 / 3 - 2.5px);
+    --two-thirds-mobile: calc(100% * 2 / 3 - 2.5px);
+    --half-mobile: calc(50% - 2.5px);
+    &.bias-left-mobile {
+      img:first-child {
+        width: var(--two-thirds-mobile);
+      }
+      img:last-child {
+        width: var(--one-third-mobile);
+      }
+    }
+
+    &.bias-right-mobile {
+      img:first-child {
+        width: var(--one-third-mobile);
+      }
+      img:last-child {
+        width: var(--two-thirds-mobile);
+      }
+    }
+
+    &.bias-center-mobile {
+      img:first-child {
+        width: var(--half-mobile);
+      }
+      img:last-child {
+        width: var(--half-mobile);
+      }
+    }
+    @media (min-width: 768px) {
+      flex-flow: row nowrap;
+      --one-third: calc(100% * 1 / 3 - 7.5px);
+      --two-thirds: calc(100% * 2 / 3 - 7.5px);
+      --half: calc(50% - 7.5px);
+
+      &.bias-left {
+        img:first-child {
+          width: var(--two-thirds);
+        }
+        img:last-child {
+          width: var(--one-third);
+        }
+      }
+
+      &.bias-right {
+        img:first-child {
+          width: var(--one-third);
+        }
+        img:last-child {
+          width: var(--two-thirds);
+        }
+      }
+
+      &.bias-center {
+        img:first-child {
+          width: var(--half);
+        }
+        img:last-child {
+          width: var(--half);
+        }
+      }
     }
   }
 </style>
@@ -150,8 +215,8 @@ import TwoUp from "@components/TwoUp.astro";
     alt="Sage Site"
   />
 
-  <TwoUp
-    class="mx-auto my-[45px] !max-w-[1320px] !flex-row !gap-[5px] md:my-[120px] md:!gap-[15px]"
+  <div
+    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1320px] flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
     <Image
       class="rounded-md md:rounded-lg"
@@ -163,19 +228,20 @@ import TwoUp from "@components/TwoUp.astro";
       src={SageSocial2}
       alt="Sage Social 2"
     />
-  </TwoUp>
+  </div>
   <video autoplay playsinline loop muted class="vertical-spacing-container">
     <source src={BreatheVideo} type="video/mp4" />
   </video>
-  <TwoUp
-    class="mx-auto my-[45px] !max-w-[1320px] !flex-row !gap-[5px] md:my-[120px] md:!gap-[15px]"
+  <div
+    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1320px] flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
     <Image class="rounded-md md:rounded-lg" src={SageIcon1} alt="Sage Icon 1" />
+
     <Image class="rounded-md md:rounded-lg" src={SageIcon2} alt="Sage Icon 2" />
-  </TwoUp>
+  </div>
 
   <div
-    class="vertical-spacing-container mx-auto flex max-w-[1320px] flex-row justify-center gap-[5px] px-[20px] md:gap-[15px] md:px-[35px]"
+    class="vertical-spacing-container mx-auto flex max-w-[1320px] flex-row justify-center gap-[5px] px-[20px] md:gap-[15px] md:px-[30px]"
   >
     <Image
       src={SageStorySocial1}
@@ -209,8 +275,8 @@ import TwoUp from "@components/TwoUp.astro";
   >
     <source src={WeAreMobile} type="video/mp4" />
   </video>
-  <TwoUp
-    class="mx-auto my-[45px] !max-w-[1320px] !flex-row !gap-[5px] md:my-[120px] md:!gap-[15px]"
+  <div
+    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1320px] flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
     <Image
       class="rounded-md md:rounded-lg"
@@ -222,7 +288,7 @@ import TwoUp from "@components/TwoUp.astro";
       src={SageGraphic2}
       alt="Sage Graphic 2"
     />
-  </TwoUp>
+  </div>
   <div class="flex w-full flex-row">
     <Image class="h-auto w-1/2" src={SageQuote} alt="Sage Quote" />
     <video autoplay playsinline loop muted class="w-1/2">

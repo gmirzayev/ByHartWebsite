@@ -102,7 +102,6 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 import Lightbox from "@components/Lightbox.astro";
 import VimeoPlayer from "@components/VimeoPlayer.astro";
-import TwoUp from "@components/TwoUp.astro";
 ---
 
 <style>
@@ -250,16 +249,82 @@ import TwoUp from "@components/TwoUp.astro";
       margin-bottom: 120px;
     }
   }
+
+  .two-up-copy {
+    display: flex;
+    --one-third-mobile: calc(100% * 1 / 3 - 2.5px);
+    --two-thirds-mobile: calc(100% * 2 / 3 - 2.5px);
+    --half-mobile: calc(50% - 2.5px);
+    &.bias-left-mobile {
+      img:first-child {
+        width: var(--two-thirds-mobile);
+      }
+      img:last-child {
+        width: var(--one-third-mobile);
+      }
+    }
+
+    &.bias-right-mobile {
+      img:first-child {
+        width: var(--one-third-mobile);
+      }
+      img:last-child {
+        width: var(--two-thirds-mobile);
+      }
+    }
+
+    &.bias-center-mobile {
+      img:first-child {
+        width: var(--half-mobile);
+      }
+      img:last-child {
+        width: var(--half-mobile);
+      }
+    }
+    @media (min-width: 768px) {
+      flex-flow: row nowrap;
+      --one-third: calc(100% * 1 / 3 - 7.5px);
+      --two-thirds: calc(100% * 2 / 3 - 7.5px);
+      --half: calc(50% - 7.5px);
+
+      &.bias-left {
+        img:first-child {
+          width: var(--two-thirds);
+        }
+        img:last-child {
+          width: var(--one-third);
+        }
+      }
+
+      &.bias-right {
+        img:first-child {
+          width: var(--one-third);
+        }
+        img:last-child {
+          width: var(--two-thirds);
+        }
+      }
+
+      &.bias-center {
+        img:first-child {
+          width: var(--half);
+        }
+        img:last-child {
+          width: var(--half);
+        }
+      }
+    }
+  }
 </style>
 <ProjectLayout hero={Header} brand={brand} tagline={tagline} tags={tags}>
-  <TwoUp
-    class="mx-auto my-[45px] !max-w-[1320px] items-center !gap-0 !px-0 md:my-[120px] md:!px-[20px]"
+  <div
+    class="two-up-copy bias-center mx-auto my-[45px] max-w-[1320px] flex-col items-center gap-0 md:my-[120px] md:flex-row md:px-[20px]"
   >
     <Image class="md:order-2 md:rounded-lg" src={Body} alt="Kindra" />
     <div class="w-full">
       <Image class="md:!w-[90%] md:rounded-lg" src={Lotion} alt="Kindra" />
     </div>
-  </TwoUp>
+  </div>
 
   <div id="new-era-of-you" class="spaced">
     <div>
@@ -324,7 +389,7 @@ import TwoUp from "@components/TwoUp.astro";
   <ResponsiveImage mobile={MiddleMobile} desktop={MiddleDesktop} alt="Kindra" />
 
   <div
-    class="mx-[20px] my-[45px] flex flex-col gap-[45px] md:mx-[60px] md:my-[120px] md:flex-row md:justify-center md:gap-[60px]"
+    class="mx-[20px] my-[45px] flex flex-col items-center gap-[45px] md:mx-[60px] md:my-[120px] md:flex-row md:justify-center md:gap-[60px]"
   >
     <Image
       class="w-full rounded-md md:w-[60%] md:rounded-lg"
@@ -369,8 +434,8 @@ import TwoUp from "@components/TwoUp.astro";
     <Image class="h-auto w-1/2" src={Mist} alt="Kindra" />
     <Image class="h-auto w-1/2" src={LotionFlowers} alt="Kindra" />
   </div>
-  <TwoUp
-    class="mx-auto my-[45px] !max-w-[1015px] items-center !px-[20px] md:my-[120px]"
+  <div
+    class="two-up-copy bias-center mx-auto my-[45px] max-w-[1015px] flex-col gap-[5px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px]"
   >
     <Image
       class="h-auto w-full rounded-lg md:order-2 md:w-1/2"
@@ -382,9 +447,9 @@ import TwoUp from "@components/TwoUp.astro";
       src={Review1}
       alt="Kindra"
     />
-  </TwoUp>
-  <TwoUp
-    class="mx-auto my-[45px] !max-w-[1015px] items-center !px-[20px] md:my-[120px]"
+  </div>
+  <div
+    class="two-up-copy bias-center mx-auto my-[45px] max-w-[1015px] flex-col gap-[5px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px]"
   >
     <Image
       class="h-auto w-full rounded-lg md:w-1/2"
@@ -396,7 +461,7 @@ import TwoUp from "@components/TwoUp.astro";
       src={ThanksCard}
       alt="Kindra"
     />
-  </TwoUp>
+  </div>
   <div class="flex flex-col gap-[5px] md:gap-[15px]">
     <div
       class="mx-[20px] flex flex-col justify-center gap-[5px] md:mx-[60px] md:flex-row md:gap-[15px]"
@@ -441,8 +506,8 @@ import TwoUp from "@components/TwoUp.astro";
       />
     </div>
   </div>
-  <TwoUp
-    class="mx-auto my-[45px] !max-w-[1040px] items-center !gap-[45px] !px-[20px] md:my-[120px] md:!gap-[15px]"
+  <div
+    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1040px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px]"
   >
     <!-- do not autoplay, use custom video player -->
     <div class="relative md:w-1/2">
@@ -461,7 +526,7 @@ import TwoUp from "@components/TwoUp.astro";
         action="unmute"
       />
     </div>
-  </TwoUp>
+  </div>
   <video loop playsinline autoplay muted class="my-[45px] w-full md:my-[120px]">
     <source src={Bed} />
   </video>
@@ -593,8 +658,8 @@ import TwoUp from "@components/TwoUp.astro";
       </video>
     </div>
   </ResponsiveBackground>
-  <TwoUp
-    class="mx-auto my-[45px] !max-w-[1040px] items-center !gap-[45px] md:my-[120px] md:!gap-[60px] md:!px-[45px]"
+  <div
+    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1040px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-[60px]"
   >
     <video loop playsinline autoplay muted class="rounded-lg md:w-1/2">
       <source src={Menopause} />
@@ -602,7 +667,7 @@ import TwoUp from "@components/TwoUp.astro";
     <video loop playsinline autoplay muted class="rounded-lg md:w-1/2">
       <source src={Applicator} />
     </video>
-  </TwoUp>
+  </div>
   <div
     class="mb-[45px] flex w-full max-w-[690px] flex-row justify-center gap-[10px] px-[20px] md:mx-auto md:mb-[120px] md:gap-[50px]"
   >

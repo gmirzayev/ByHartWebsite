@@ -64,7 +64,6 @@ import Grid9 from "@assets/Bluprint/img/Bluprint_Grid_9.png";
 import Grid10 from "@assets/Bluprint/img/Bluprint_Grid_10.png";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 import VimeoPlayer from "@components/VimeoPlayer.astro";
-import TwoUp from "@components/TwoUp.astro";
 ---
 
 <style>
@@ -73,6 +72,71 @@ import TwoUp from "@components/TwoUp.astro";
   }
   #brand-guide {
     background: #1d1a1a url("/images/noise.svg") repeat;
+  }
+  .two-up-copy {
+    display: flex;
+    --one-third-mobile: calc(100% * 1 / 3 - 5px);
+    --two-thirds-mobile: calc(100% * 2 / 3 - 5px);
+    --half-mobile: calc(50% - 5px);
+    &.bias-left-mobile {
+      img:first-child {
+        width: var(--two-thirds-mobile);
+      }
+      img:last-child {
+        width: var(--one-third-mobile);
+      }
+    }
+
+    &.bias-right-mobile {
+      img:first-child {
+        width: var(--one-third-mobile);
+      }
+      img:last-child {
+        width: var(--two-thirds-mobile);
+      }
+    }
+
+    &.bias-center-mobile {
+      img:first-child {
+        width: var(--half-mobile);
+      }
+      img:last-child {
+        width: var(--half-mobile);
+      }
+    }
+    @media (min-width: 768px) {
+      flex-flow: row nowrap;
+      --one-third: calc(100% * 1 / 3 - 37.5px);
+      --two-thirds: calc(100% * 2 / 3 - 37.5px);
+      --half: calc(50% - 37.5px);
+
+      &.bias-left {
+        img:first-child {
+          width: var(--two-thirds);
+        }
+        img:last-child {
+          width: var(--one-third);
+        }
+      }
+
+      &.bias-right {
+        img:first-child {
+          width: var(--one-third);
+        }
+        img:last-child {
+          width: var(--two-thirds);
+        }
+      }
+
+      &.bias-center {
+        img:first-child {
+          width: var(--half);
+        }
+        img:last-child {
+          width: var(--half);
+        }
+      }
+    }
   }
 </style>
 <ProjectLayout
@@ -322,12 +386,12 @@ import TwoUp from "@components/TwoUp.astro";
     height="56.5%"
     action="unpause"
   />
-  <TwoUp
-    class="mx-auto my-[45px] !max-w-[1320px] !flex-row !gap-[10px] !px-0 md:my-[120px] md:!gap-[75px] md:!px-[45px]"
+  <div
+    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1320px] flex-row gap-[10px] px-[20px] md:my-[120px] md:gap-[75px]"
   >
     <Image class="rounded-r-md md:rounded-lg" src={Ad4} alt="Bluprint" />
     <Image class="rounded-l-md md:rounded-lg" src={Ad5} alt="Bluprint" />
-  </TwoUp>
+  </div>
   <Image
     class="my-[45px] h-auto w-full md:my-[120px]"
     src={Embroidery}
