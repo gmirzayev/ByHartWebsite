@@ -27,6 +27,10 @@
     padding: 45px 20px;
     @media (min-width: 768px) {
         padding: 120px 20px;
+
+        h1{
+            font-size:42px !important;
+        }
     }
 }
 
