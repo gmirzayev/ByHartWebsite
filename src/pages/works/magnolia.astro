@@ -137,124 +137,90 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     }
   }
 </style>
-<ProjectLayout
-  hero={Header}
-  mobile={HeaderMobile}
-  brand={brand}
-  tagline={tagline}
-  tags={tags}
->
-  <video
-    loop
-    playsinline
-    autoplay
-    muted
-    class="hidden w-full md:mb-[120px] md:block"
-  >
+<ProjectLayout hero={Header} mobile={HeaderMobile} brand={brand} tagline={tagline} tags={tags}>
+  <video loop playsinline autoplay muted class="hidden w-full md:mb-[120px] md:block">
     <source src={Introduction} />
   </video>
-  <video
-    loop
-    playsinline
-    autoplay
-    muted
-    class="mb-[45px] block w-full md:hidden"
-  >
+  <video loop playsinline autoplay muted class="mb-[45px] block w-full md:hidden">
     <source src={IntroductionMobile} />
   </video>
-  <video
-    loop
-    playsinline
-    autoplay
-    muted
-    class="mx-auto my-[45px] w-[220px] rounded-md md:my-[120px] md:w-[345px]"
-  >
+  <video loop playsinline autoplay muted class="mx-auto my-[45px] w-[220px] rounded-md md:my-[120px] md:w-[345px]">
     <source src={Social} />
   </video>
 
   <div
     class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[840px] flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
-    <Image src={AppNav1} class="rounded-md md:rounded-lg" alt="" />
-    <Image src={RecipeApp} class="rounded-md md:rounded-lg" alt="" />
+    <Image src={AppNav1} class="rounded-md md:rounded-lg" alt="Screenshot of Magnolia mobile app." />
+    <Image src={RecipeApp} class="rounded-md md:rounded-lg" alt="Screenshot of Magnolia mobile app recipe page." />
   </div>
   <div
     class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[840px] flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
-    <Image src={Article} class="rounded-md md:rounded-lg" alt="" />
-    <Image src={ShopApp} class="rounded-md md:rounded-lg" alt="" />
+    <Image src={Article} class="rounded-md md:rounded-lg" alt="Screenshot of Magnolia mobile app." />
+    <Image src={ShopApp} class="rounded-md md:rounded-lg" alt="Screenshot of Magnolia mobile app shop page." />
   </div>
-  <div
-    class="mx-auto my-[45px] grid w-full max-w-[1040px] grid-cols-3 gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
-  >
-    <Image src={Profile} class="rounded-md md:rounded-lg" alt="" />
-    <Image src={Birthday} class="rounded-md md:rounded-lg" alt="" />
-    <Image src={AppNav2} class="rounded-md md:rounded-lg" alt="" />
+  <div class="mx-auto my-[45px] grid w-full max-w-[1040px] grid-cols-3 gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]">
+    <Image src={Profile} class="rounded-md md:rounded-lg" alt="Screenshot of Magnolia mobile app profile page." />
+    <Image src={Birthday} class="rounded-md md:rounded-lg" alt="Screenshot of Magnolia mobile app." />
+    <Image src={AppNav2} class="rounded-md md:rounded-lg" alt="Screenshot of Magnolia mobile app." />
   </div>
   <VimeoPlayer video="1060355366" height="91.5%" />
 
   <div
     class="two-up-copy bias-center mx-auto my-[45px] max-w-[1320px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-0"
   >
-    <video
-      loop
-      playsinline
-      autoplay
-      muted
-      class="mx-auto w-2/3 md:order-2 md:w-1/2"
-    >
+    <video loop playsinline autoplay muted class="mx-auto w-2/3 md:order-2 md:w-1/2">
       <source src={NetworkCard} />
     </video>
-    <Image src={Table} class="rounded-md md:rounded-lg" alt="" />
+    <Image src={Table} class="rounded-md md:rounded-lg" alt="People sitting around a table eating." />
   </div>
 
   <div
     class="mx-auto my-[45px] grid w-full max-w-[1320px] grid-cols-1 gap-[45px] md:my-[120px] md:grid-cols-[1fr,2fr] md:gap-[15px] md:px-[20px]"
   >
     <div class="px-[20px] md:order-2 md:px-0">
-      <Image src={WatchWeb2} class="h-full rounded-md md:rounded-lg" alt="" />
+      <Image src={WatchWeb2} class="h-full rounded-md md:rounded-lg" alt="Screenshot of Magnolia desktop app." />
     </div>
     <div class="px-[77px] md:px-0">
-      <Image src={WatchWeb1} class="h-full rounded-md md:rounded-lg" alt="" />
+      <Image src={WatchWeb1} class="h-full rounded-md md:rounded-lg" alt="Screenshot of Magnolia mobile app." />
     </div>
   </div>
   <Image
     src={NetworkHome}
     class="mx-auto my-[45px] h-auto w-full max-w-[1320px] px-[20px] md:my-[120px]"
-    alt=""
+    alt="Screenshot of Magnolia network app."
   />
   <div
     class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1320px] flex-row gap-[45px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
-    <Image src={Joanna} class="rounded-md md:order-2 md:rounded-lg" alt="" />
-    <Image src={Salad} class="" alt="" />
+    <Image src={Joanna} class="rounded-md md:order-2 md:rounded-lg" alt="Joanna Gaines" />
+    <Image src={Salad} class="" alt="Screenshot of a salad recipe." />
   </div>
 
-  <Image src={Cooking} class="my-[45px] h-auto w-full md:my-[120px]" alt="" />
-  <div
-    class="container mx-auto max-w-[1040px] gap-[5px] px-[20px] md:gap-[15px]"
-  >
+  <Image src={Cooking} class="my-[45px] h-auto w-full md:my-[120px]" alt="Screenshot of Magnolia show episode." />
+  <div class="container mx-auto max-w-[1040px] gap-[5px] px-[20px] md:gap-[15px]">
     <div class="item px-[77px] pb-[40px] md:p-0">
       <video loop playsinline autoplay muted class="rounded-md md:rounded-3xl">
         <source src={NetworkWatch} />
       </video>
     </div>
     <div class="item md:p-0">
-      <Image src={Recipe} class="rounded-md md:rounded-3xl" alt="" />
+      <Image src={Recipe} class="rounded-md md:rounded-3xl" alt="Screenshot of a cake recipe." />
     </div>
     <div class="item md:p-0">
-      <Image src={Store} class="rounded-md md:rounded-3xl" alt="" />
+      <Image src={Store} class="rounded-md md:rounded-3xl" alt="Store page for a Cake stand." />
     </div>
   </div>
   <div class="mx-auto my-[45px] max-w-[1040px] px-[20px] md:my-[120px]">
     <Image
       src={Gallery}
       class="h-auto w-full rounded-md md:rounded-lg"
-      alt=""
+      alt="Multiple video layout for the Magnolia app."
     />
   </div>
   <div class="my-[45px] bg-[#B79E97] px-[15px] md:my-[120px] md:px-[60px]">
-    <Image src={Tabs} class="h-auto w-full" alt="" />
+    <Image src={Tabs} class="h-auto w-full" alt="Different dropdown designs for the mobile app." />
   </div>
   <div
     class="mx-auto my-[45px] flex max-w-[1040px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px]"
@@ -262,52 +228,36 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     <Image
       src={MagnoliaMobile}
       class="mx-auto w-2/3 rounded-md md:w-1/3 md:rounded-lg md:px-0"
-      alt=""
+      alt="Screenshot of Magnolia mobile app."
     />
     <Image
       src={MagnoliaDesktop}
       class="mx-auto w-full rounded-md md:w-2/3 md:rounded-lg md:px-0"
-      alt=""
+      alt="Screenshot of Magnolia desktop app."
     />
   </div>
   <div
     class="mx-auto my-[45px] flex max-w-[1040px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px]"
   >
-    <video
-      loop
-      playsinline
-      autoplay
-      muted
-      class="mx-auto w-full rounded-md md:w-2/3 md:rounded-lg md:px-0"
-    >
+    <video loop playsinline autoplay muted class="mx-auto w-full rounded-md md:w-2/3 md:rounded-lg md:px-0">
       <source src={ShopSiteVideo} />
     </video>
-    <Image
-      src={Shop}
-      class="mx-auto w-2/3 rounded-md md:w-1/3 md:rounded-lg md:px-0"
-      alt=""
-    />
+    <Image src={Shop} class="mx-auto w-2/3 rounded-md md:w-1/3 md:rounded-lg md:px-0" alt="Magnolia app shop page." />
   </div>
   <div
     class="mx-auto my-[45px] flex max-w-[1040px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px]"
   >
-    <video
-      loop
-      playsinline
-      autoplay
-      muted
-      class="mx-auto w-2/3 rounded-md md:w-1/3 md:rounded-lg md:px-0"
-    >
+    <video loop playsinline autoplay muted class="mx-auto w-2/3 rounded-md md:w-1/3 md:rounded-lg md:px-0">
       <source src={WatchMobile} />
     </video>
     <Image
       src={Watch}
       class="mx-auto w-full rounded-md md:w-2/3 md:rounded-lg md:px-0"
-      alt=""
+      alt="Magnolia website watch page featuring different shows."
     />
   </div>
-  <Image src={InternalBlocks} class="h-auto w-full" alt="" />
-  <Image src={Screens} class="h-auto w-full" alt="" />
+  <Image src={InternalBlocks} class="h-auto w-full" alt="People celebrating a wedding." />
+  <Image src={Screens} class="h-auto w-full" alt="Say hi to Twyla. A person using a tablet." />
   <div class="relative h-0 pb-[56.25%]">
     <iframe
       class="absolute left-0 top-0 h-full w-full"

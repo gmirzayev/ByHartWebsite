@@ -159,7 +159,11 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
   tagline={tagline}
   tags={tags}
 >
-  <Image class="my-[45px] h-auto w-full px-[20px] md:my-[120px] md:px-[60px]" src={SagePhoto} alt="A collage of photos. A mother holding her child" />
+  <Image
+    class="my-[45px] h-auto w-full px-[20px] md:my-[120px] md:px-[60px]"
+    src={SagePhoto}
+    alt="A collage of photos. A mother holding her child"
+  />
 
   <ResponsiveTextBlock class="padded">
     <div>
@@ -198,14 +202,22 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
     imgClass="w-[60%] mx-auto rounded-[20px] md:rounded-md my-11"
     mobile={SageSiteMobile}
     desktop={SageSiteDesktop}
-    alt="Sage Site"
+    alt="A screenshot of the Sage website."
   />
 
   <div
     class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1320px] flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
-    <Image class="rounded-md md:rounded-lg" src={SageSocial1} alt="A mother holding her child with the words I am resilient." />
-    <Image class="rounded-md md:rounded-lg" src={SageSocial2} alt="Text on a purple background showcasing the brand's colors and font stylings." />
+    <Image
+      class="rounded-md md:rounded-lg"
+      src={SageSocial1}
+      alt="A mother holding her child with the words I am resilient."
+    />
+    <Image
+      class="rounded-md md:rounded-lg"
+      src={SageSocial2}
+      alt="Text on a purple background showcasing the brand's colors and font stylings."
+    />
   </div>
   <video autoplay playsinline loop muted class="vertical-spacing-container">
     <source src={BreatheVideo} type="video/mp4" />
@@ -229,11 +241,19 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
   <div
     class="vertical-spacing-container mx-auto flex max-w-[1320px] flex-row justify-center gap-[5px] px-[20px] md:gap-[15px] md:px-[30px]"
   >
-    <Image src={SageStorySocial1} class="h-auto w-[33%] rounded-lg" alt="Practicing Mindfulness through Breathwork can begin in the comfort of your home or workspace. Take a moment with yourslef as you brace for the week ahead." />
+    <Image
+      src={SageStorySocial1}
+      class="h-auto w-[33%] rounded-lg"
+      alt="Practicing Mindfulness through Breathwork can begin in the comfort of your home or workspace. Take a moment with yourslef as you brace for the week ahead."
+    />
     <video class="h-auto w-[33%] rounded-lg" autoplay playsinline loop muted>
       <source src={StoryVideo} type="video/mp4" />
     </video>
-    <Image src={SageStorySocial3} class="h-auto w-[33%] rounded-lg" alt="Call attention to your lungs as they fill and empty. Scan your body from the crown of your head down to your toes." />
+    <Image
+      src={SageStorySocial3}
+      class="h-auto w-[33%] rounded-lg"
+      alt="Call attention to your lungs as they fill and empty. Scan your body from the crown of your head down to your toes."
+    />
   </div>
   <video autoplay playsinline loop muted class="my-[45px] hidden w-full md:my-[120px] md:block">
     <source src={WeAreVideo} type="video/mp4" />
@@ -244,8 +264,16 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
   <div
     class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1320px] flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
-    <Image class="rounded-md md:rounded-lg" src={SageGraphic1} alt="A purple plant. The words Nutrition and Herbalism" />
-    <Image class="rounded-md md:rounded-lg" src={SageGraphic2} alt="A person resting their hands on their navel. The words Psychiatry and Psychotherapy" />
+    <Image
+      class="rounded-md md:rounded-lg"
+      src={SageGraphic1}
+      alt="A purple plant. The words Nutrition and Herbalism"
+    />
+    <Image
+      class="rounded-md md:rounded-lg"
+      src={SageGraphic2}
+      alt="A person resting their hands on their navel. The words Psychiatry and Psychotherapy"
+    />
   </div>
   <div class="flex w-full flex-row">
     <Image
@@ -281,20 +309,60 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
       <p class="ml-[20px] inline-block">A glimpse at the brand guide</p>
     </div>
     <div class="grid grid-cols-2 gap-[5px] px-[20px] md:gap-[15px] md:px-[45px]">
-      <Image class="h-auto w-full rounded" src={SageBrandGuideGrid1} alt="The core values of Sage. We are: informed and open-minded. Holistic and integrative. Respectful and responsive. Conscious and conscientious. A relational community." />
-      <Image class="h-auto w-full rounded" src={SageBrandGuideGrid4} alt="A display of the color palette for the Sage design." />
+      <Image
+        class="h-auto w-full rounded"
+        src={SageBrandGuideGrid1}
+        alt="The core values of Sage. We are: informed and open-minded. Holistic and integrative. Respectful and responsive. Conscious and conscientious. A relational community."
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={SageBrandGuideGrid4}
+        alt="A display of the color palette for the Sage design."
+      />
       <Image class="h-auto w-full rounded" src={SageBrandGuideGrid3} alt="A list of key words" />
-      <Image class="h-auto w-full rounded" src={SageBrandGuideGrid5} alt="A display of a background gradient and background texture designed for the Sage brand." />
-      <Image class="h-auto w-full rounded" src={SageBrandGuideGrid6} alt="The fonts and font colors for the Sage brand focusing on meeting WCAG accessibility." />
+      <Image
+        class="h-auto w-full rounded"
+        src={SageBrandGuideGrid5}
+        alt="A display of a background gradient and background texture designed for the Sage brand."
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={SageBrandGuideGrid6}
+        alt="The fonts and font colors for the Sage brand focusing on meeting WCAG accessibility."
+      />
       <Image class="h-auto w-full rounded" src={SageBrandGuideGrid7} alt="An examination of the values of the brand." />
       <Image class="h-auto w-full rounded" src={SageBrandGuideGrid2} alt="Logo designs for Sage." />
-      <Image class="h-auto w-full rounded" src={SageBrandGuideGrid8} alt="A display of one of the fonts for the brand" />
-      <Image class="h-auto w-full rounded" src={SageBrandGuideGrid9} alt="An analysis of the type hierarchy for Sage's typography" />
-      <Image class="h-auto w-full rounded" src={SageBrandGuideGrid10} alt="A display of the icons that represent each service offered by Sage." />
-      <Image class="h-auto w-full rounded" src={SageBrandGuideGrid11} alt="A study of how the colors for the brand were picked" />
+      <Image
+        class="h-auto w-full rounded"
+        src={SageBrandGuideGrid8}
+        alt="A display of one of the fonts for the brand"
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={SageBrandGuideGrid9}
+        alt="An analysis of the type hierarchy for Sage's typography"
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={SageBrandGuideGrid10}
+        alt="A display of the icons that represent each service offered by Sage."
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={SageBrandGuideGrid11}
+        alt="A study of how the colors for the brand were picked"
+      />
       <Image class="h-auto w-full rounded" src={SageBrandGuideGrid12} alt="Sage staff portraits and art direction." />
-      <Image class="h-auto w-full rounded" src={SageBrandGuideGrid13} alt="A mockup of the Sage website on a laptop computer." />
-      <Image class="h-auto w-full rounded" src={SageBrandGuideGrid14} alt="A mockup of the Sage instagram page on a mobile phone." />
+      <Image
+        class="h-auto w-full rounded"
+        src={SageBrandGuideGrid13}
+        alt="A mockup of the Sage website on a laptop computer."
+      />
+      <Image
+        class="h-auto w-full rounded"
+        src={SageBrandGuideGrid14}
+        alt="A mockup of the Sage instagram page on a mobile phone."
+      />
     </div>
   </div>
 </ProjectLayout>

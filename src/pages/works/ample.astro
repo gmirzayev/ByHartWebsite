@@ -1,24 +1,24 @@
 ---
-const brand = "Ample"
-const tagline = "Get Ahead of Your Hair"
+const brand = "Ample";
+const tagline = "Get Ahead of Your Hair";
 const tags = [
-    'Brand Identity + Positioning',
-    'Video + Photography',
-    'Art + Illustration',
-    'Product Design (UX/UI)',
-    'CX',
-    'Interior Design',
-    'Original Naming',
-    'Print + Packaging',
-    'Editorial Content',
-    'Organic + Paid Social Content',
-    'Interviews',
-    'Writing + Editing',
-    'Signage + Display',
-    'Surprise + Delight',
-    'Visual Identity',
-    'Theatrics'
-]
+    "Brand Identity + Positioning",
+    "Video + Photography",
+    "Art + Illustration",
+    "Product Design (UX/UI)",
+    "CX",
+    "Interior Design",
+    "Original Naming",
+    "Print + Packaging",
+    "Editorial Content",
+    "Organic + Paid Social Content",
+    "Interviews",
+    "Writing + Editing",
+    "Signage + Display",
+    "Surprise + Delight",
+    "Visual Identity",
+    "Theatrics",
+];
 
 import "@styles/utils.css";
 import "@styles/ample.css";
@@ -36,91 +36,90 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 import VimeoPlayer from "@components/VimeoPlayer.astro";
 import VideoLoop from "@components/VideoLoop.astro";
 
-import Hero from "@assets/Ample/img/Hero_Ample_D.png"
-import HeroMobile from "@assets/Ample/img/Hero_Ample_M.png"
+import Hero from "@assets/Ample/img/Hero_Ample_D.png";
+import HeroMobile from "@assets/Ample/img/Hero_Ample_M.png";
 
-import ColorSwatchA from "@assets/Ample/img/Ample_color-palette-teal.svg"
-import ColorPhotoA from "@assets/Ample/img/stattealm_static_square-2.png"
-import ColorSwatchB from "@assets/Ample/img/Ample_color-palette-copper.svg"
-import ColorPhotoB from "@assets/Ample/img/stattealm_static_square-1.png"
-import ColorSwatchC from "@assets/Ample/img/Ample_color-palette-blonde.svg"
-import ColorPhotoC from "@assets/Ample/img/stattealm_static_square.png"
+import ColorSwatchA from "@assets/Ample/img/Ample_color-palette-teal.svg";
+import ColorPhotoA from "@assets/Ample/img/stattealm_static_square-2.png";
+import ColorSwatchB from "@assets/Ample/img/Ample_color-palette-copper.svg";
+import ColorPhotoB from "@assets/Ample/img/stattealm_static_square-1.png";
+import ColorSwatchC from "@assets/Ample/img/Ample_color-palette-blonde.svg";
+import ColorPhotoC from "@assets/Ample/img/stattealm_static_square.png";
 // import Img from "@assets/Ample/img/Ample_color-palette-blonde.png"
 // import Img from "@assets/Ample/img/Ample_color-palette-copper.png"
 // import Img from "@assets/Ample/img/Ample_color-palette-teal.png"
 
-import IconsA from "@assets/Ample/img/Ample_icons-1.svg"
-import IconsB from "@assets/Ample/img/Ample_icons-2.svg"
+import IconsA from "@assets/Ample/img/Ample_icons-1.svg";
+import IconsB from "@assets/Ample/img/Ample_icons-2.svg";
 // import Img from "@assets/Ample/img/Ample_icons-1.png"
 // import Img from "@assets/Ample/img/Ample_icons-2.png"
 
-import InteriorRender from "@assets/Ample/img/Ample Hand drawn Rendering.png"
+import InteriorRender from "@assets/Ample/img/Ample Hand drawn Rendering.png";
 
-import InteriorA from "@assets/Ample/img/10_Ample.png"
-import InteriorB from "@assets/Ample/img/11_Ample.png"
-import InteriorC from "@assets/Ample/img/12_Ample.png"
-import AlopeciaPic from "@assets/Ample/img/alopecia.png"
-import InteriorD from "@assets/Ample/img/13_Ample.png"
-import InteriorE from "@assets/Ample/img/14_Ample.png"
-import InteriorF from "@assets/Ample/img/15_Ample.png"
+import InteriorA from "@assets/Ample/img/10_Ample.png";
+import InteriorB from "@assets/Ample/img/11_Ample.png";
+import InteriorC from "@assets/Ample/img/12_Ample.png";
+import AlopeciaPic from "@assets/Ample/img/alopecia.png";
+import InteriorD from "@assets/Ample/img/13_Ample.png";
+import InteriorE from "@assets/Ample/img/14_Ample.png";
+import InteriorF from "@assets/Ample/img/15_Ample.png";
 
-import ProductionA from "@assets/Ample/img/14_Ample_Painting Ticker/1_Ample.png"
-import ProductionB from "@assets/Ample/img/14_Ample_Painting Ticker/2_Ample.png"
-import ProductionC from "@assets/Ample/img/14_Ample_Painting Ticker/3_Ample.png"
-import ProductionD from "@assets/Ample/img/14_Ample_Painting Ticker/4_Ample.png"
-import ProductionE from "@assets/Ample/img/14_Ample_Painting Ticker/5_Ample.png"
-import ProductionF from "@assets/Ample/img/14_Ample_Painting Ticker/6_Ample.png"
+import ProductionA from "@assets/Ample/img/14_Ample_Painting Ticker/1_Ample.png";
+import ProductionB from "@assets/Ample/img/14_Ample_Painting Ticker/2_Ample.png";
+import ProductionC from "@assets/Ample/img/14_Ample_Painting Ticker/3_Ample.png";
+import ProductionD from "@assets/Ample/img/14_Ample_Painting Ticker/4_Ample.png";
+import ProductionE from "@assets/Ample/img/14_Ample_Painting Ticker/5_Ample.png";
+import ProductionF from "@assets/Ample/img/14_Ample_Painting Ticker/6_Ample.png";
 
-import InteriorG from "@assets/Ample/img/16_Ample.png"
-import InteriorH from "@assets/Ample/img/voice-card.png"
-import Cards from "@assets/Ample/img/17_Ample.png"
+import InteriorG from "@assets/Ample/img/16_Ample.png";
+import InteriorH from "@assets/Ample/img/voice-card.png";
+import Cards from "@assets/Ample/img/17_Ample.png";
 // import CardsBG from "@assets/Ample/img/17_Ample_BG.png"
-import GetAhead from "@assets/Ample/img/24_Ample.png"
+import GetAhead from "@assets/Ample/img/24_Ample.png";
 
-import VidGridImgA from "@assets/Ample/img/SITE GRID_Ample_09.png"
-import VidGridImgB from "@assets/Ample/img/SITE GRID_Ample_10.png"
-import VidGridImgC from "@assets/Ample/img/SITE GRID_Ample_12.png"
+import VidGridImgA from "@assets/Ample/img/SITE GRID_Ample_09.png";
+import VidGridImgB from "@assets/Ample/img/SITE GRID_Ample_10.png";
+import VidGridImgC from "@assets/Ample/img/SITE GRID_Ample_12.png";
 
+import BookingFlow from "@assets/Ample/img/36_Ample.png";
 
-import BookingFlow from "@assets/Ample/img/36_Ample.png"
+import StaffA from "@assets/Ample/img/headshots/Ample_Headshot_01.png";
+import StaffB from "@assets/Ample/img/headshots/Ample_Headshot_02.png";
+import StaffC from "@assets/Ample/img/headshots/Ample_Headshot_03.png";
+import StaffD from "@assets/Ample/img/headshots/Ample_Headshot_04.png";
+import StaffE from "@assets/Ample/img/headshots/Ample_Headshot_05.png";
+import StaffF from "@assets/Ample/img/headshots/Ample_Headshot_06.png";
 
-import StaffA from "@assets/Ample/img/headshots/Ample_Headshot_01.png"
-import StaffB from "@assets/Ample/img/headshots/Ample_Headshot_02.png"
-import StaffC from "@assets/Ample/img/headshots/Ample_Headshot_03.png"
-import StaffD from "@assets/Ample/img/headshots/Ample_Headshot_04.png"
-import StaffE from "@assets/Ample/img/headshots/Ample_Headshot_05.png"
-import StaffF from "@assets/Ample/img/headshots/Ample_Headshot_06.png"
+import Mirror from "@assets/Ample/img/37_Ample.png";
+import LifeCycleA from "@assets/Ample/img/38_Ample.png";
+import LifeCycleB from "@assets/Ample/img/39_Ample.png";
+import MirrorConsult from "@assets/Ample/img/conultation-mirror.png";
+import SwabConsult from "@assets/Ample/img/consultation-swab.png";
+import FiveFoods from "@assets/Ample/img/five-foods.png";
 
-import Mirror from "@assets/Ample/img/37_Ample.png"
-import LifeCycleA from "@assets/Ample/img/38_Ample.png"
-import LifeCycleB from "@assets/Ample/img/39_Ample.png"
-import MirrorConsult from "@assets/Ample/img/conultation-mirror.png"
-import SwabConsult from "@assets/Ample/img/consultation-swab.png"
-import FiveFoods from "@assets/Ample/img/five-foods.png"
+import SmileConsult from "@assets/Ample/img/47_Ample.png";
+import GlassesConsult from "@assets/Ample/img/50_Ample.png";
 
-import SmileConsult from "@assets/Ample/img/47_Ample.png"
-import GlassesConsult from "@assets/Ample/img/50_Ample.png"
+import BeforeAfterA from "@assets/Ample/img/before-and-after/BAnuture_static_square.png";
+import BeforeAfterB from "@assets/Ample/img/before-and-after/BArealafter_static_square.png";
+import BeforeAfterC from "@assets/Ample/img/before-and-after/BAthisisnow_static_square.png";
+import BeforeAfterD from "@assets/Ample/img/before-and-after/BAwhodis_static_square.png";
+import BeforeAfterE from "@assets/Ample/img/before-and-after/BAyourfuture_static_square.png";
 
-import BeforeAfterA from "@assets/Ample/img/before-and-after/BAnuture_static_square.png"
-import BeforeAfterB from "@assets/Ample/img/before-and-after/BArealafter_static_square.png"
-import BeforeAfterC from "@assets/Ample/img/before-and-after/BAthisisnow_static_square.png"
-import BeforeAfterD from "@assets/Ample/img/before-and-after/BAwhodis_static_square.png"
-import BeforeAfterE from "@assets/Ample/img/before-and-after/BAyourfuture_static_square.png"
+import Nutrition from "@assets/Ample/img/nutrition.png";
+import SgaA from "@assets/Ample/img/sga-carousel/1.png";
+import SgaB from "@assets/Ample/img/sga-carousel/2.png";
+import SgaC from "@assets/Ample/img/sga-carousel/3.png";
+import SgaD from "@assets/Ample/img/sga-carousel/4.png";
+import SgaE from "@assets/Ample/img/sga-carousel/5.png";
+import SgaF from "@assets/Ample/img/sga-carousel/6.png";
 
-import Nutrition from "@assets/Ample/img/nutrition.png"
-import SgaA from "@assets/Ample/img/sga-carousel/1.png"
-import SgaB from "@assets/Ample/img/sga-carousel/2.png"
-import SgaC from "@assets/Ample/img/sga-carousel/3.png"
-import SgaD from "@assets/Ample/img/sga-carousel/4.png"
-import SgaE from "@assets/Ample/img/sga-carousel/5.png"
-import SgaF from "@assets/Ample/img/sga-carousel/6.png"
+import WarningA from "@assets/Ample/img/warningconfidenceboost_static_vertical.png";
+import WarningB from "@assets/Ample/img/warningforeplay_static_vertical.png";
+import WarningC from "@assets/Ample/img/warningmagnetism_static_vertical.png";
+import WarningD from "@assets/Ample/img/warningsparkafire_static_vertical.png";
 
-import WarningA from "@assets/Ample/img/warningconfidenceboost_static_vertical.png"
-import WarningB from "@assets/Ample/img/warningforeplay_static_vertical.png"
-import WarningC from "@assets/Ample/img/warningmagnetism_static_vertical.png"
-import WarningD from "@assets/Ample/img/warningsparkafire_static_vertical.png"
-
-import CouldBe from "@assets/Ample/img/could-be.png"
+import CouldBe from "@assets/Ample/img/could-be.png";
 
 // import Img from "@assets/Ample/img/1.png"
 // import Img from "@assets/Ample/img/40_Ample.png"
@@ -144,22 +143,22 @@ import CouldBe from "@assets/Ample/img/could-be.png"
 // import Img from "@assets/Ample/img/statblondem_static_vertical (1).png"
 // import Img from "@assets/Ample/img/statblondem_static_vertical-3.png"
 
-import HomepageMobile from "@assets/Ample/18_Ample_1.mp4"
-import HomepageDesktop from "@assets/Ample/19_Ample_2_1.mp4"
+import HomepageMobile from "@assets/Ample/18_Ample_1.mp4";
+import HomepageDesktop from "@assets/Ample/19_Ample_2_1.mp4";
 
 // import StoryA from "@assets/Ample/ample_lorenzo_1x1_piclock_1.mp4"
 // import StoryB from "@assets/Ample/ample_michael_story_ad_1x1_piclock03_1.mp4"
 // import StoryC from "@assets/Ample/ample_perry_story_4x5_piclock03_1.mp4"
-import StoryD from "@assets/Ample/Ample testimonial site animation.mp4"
-import VidGridA from "@assets/Ample/SITE GRID_Ample_1_1.mp4"
-import VidGridB from "@assets/Ample/SITE GRID_Ample_02_1.mp4"
-import VidGridC from "@assets/Ample/SITE GRID_Ample_9_1.mp4"
-import VidGridD from "@assets/Ample/SITE GRID_Ample_03_1.mp4"
-import VidGridE from "@assets/Ample/SITE GRID_Ample_6_1.mp4"
-import VidGridF from "@assets/Ample/SITE GRID_Ample_8_1.mp4"
-import DesktopGallery from "@assets/Ample/34_Ample_1.mp4"
-import AlopeciaVid from "@assets/Ample/Alopecia_Awareness_1.mp4"
-import LogoTicker from "@assets/Ample/Ample_Logo ticker animation_2_1.mp4"
+import StoryD from "@assets/Ample/Ample testimonial site animation.mp4";
+import VidGridA from "@assets/Ample/SITE GRID_Ample_1_1.mp4";
+import VidGridB from "@assets/Ample/SITE GRID_Ample_02_1.mp4";
+import VidGridC from "@assets/Ample/SITE GRID_Ample_9_1.mp4";
+import VidGridD from "@assets/Ample/SITE GRID_Ample_03_1.mp4";
+import VidGridE from "@assets/Ample/SITE GRID_Ample_6_1.mp4";
+import VidGridF from "@assets/Ample/SITE GRID_Ample_8_1.mp4";
+import DesktopGallery from "@assets/Ample/34_Ample_1.mp4";
+import AlopeciaVid from "@assets/Ample/Alopecia_Awareness_1.mp4";
+import LogoTicker from "@assets/Ample/Ample_Logo ticker animation_2_1.mp4";
 // import Vid from "@assets/Ample/16_Ample_Painting-inprogress_1.mp4"
 // import Vid from "@assets/Ample/Ample_social-reel-vo_9x16_4.mp4"
 // import Vid from "@assets/Ample/Doshi_video_english_vertical_9x16_1.mp4"
@@ -167,78 +166,148 @@ import LogoTicker from "@assets/Ample/Ample_Logo ticker animation_2_1.mp4"
 // import Vid from "@assets/Ample/Hair Restoration Quiz_1.mp4"
 // import Vid from "@assets/Ample/ample_michael_story_ad_1x1_piclock03_1.mp4"
 // import Vid from "@assets/Ample/patient1_video_english_vertical_9x16_1.mp4"
-
 ---
 
 <ProjectLayout hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
-    <VimeoPlayer id="intro-video" class="spaced rc" video="1057985795" height="56.25%" action="unmute"/>
+    <VimeoPlayer id="intro-video" class="spaced rc" video="1057985795" height="56.25%" action="unmute" />
 
     <div id="color-grid" class="two-col spaced">
-        <Image src={ColorSwatchA} widths={[2200]} class="rc" alt=" " />
-        <Image src={ColorPhotoA} widths={[2200]} class="rc" alt=" " />
-        <Image src={ColorSwatchB} widths={[2200]} class="rc" alt=" " />
-        <Image src={ColorPhotoB} widths={[2200]} class="rc" alt=" " />
-        <Image src={ColorSwatchC} widths={[2200]} class="rc" alt=" " />
-        <Image src={ColorPhotoC} widths={[2200]} class="rc" alt=" " />
+        <Image src={ColorSwatchA} widths={[2200]} class="rc" alt="Teal color." />
+        <Image
+            src={ColorPhotoA}
+            widths={[2200]}
+            class="rc"
+            alt="Person whipping their head back so their hair flies up."
+        />
+        <Image src={ColorSwatchB} widths={[2200]} class="rc" alt="Copper, Light brown, and Dark brown colors." />
+        <Image
+            src={ColorPhotoB}
+            widths={[2200]}
+            class="rc"
+            alt="Back of a person's head and they are touching their hair."
+        />
+        <Image src={ColorSwatchC} widths={[2200]} class="rc" alt=" Dark blonde and Golden rod colors." />
+        <Image src={ColorPhotoC} widths={[2200]} class="rc" alt="Person laughing." />
     </div>
 
     <section>
         <h1>Iconography</h1>
         <div id="icons" class="two-col">
-            <Image src={IconsA} alt=" " />
-            <Image src={IconsB} alt=" " />
+            <Image src={IconsA} alt="Daily Hair Growth Support and FUE Hair Transplant Care" />
+            <Image src={IconsB} alt="FUT Hair Transplant Care and Clinical Regrowth Treatments" />
         </div>
     </section>
 
     <section>
         <h1>Interior Rendering</h1>
-        <OneUp src={InteriorRender} max="1040px" alt=" " />
+        <OneUp src={InteriorRender} max="1040px" alt="Artist rendering of an office space." />
     </section>
 
     <section id="real-interior" class="flush">
         <h1>Real Interior</h1>
 
-        <OneUp src={InteriorA} class="rc" max="1320px" alt=" " />
-        <OneUp src={InteriorB} class="rc" max="1320px" alt=" " />
+        <OneUp
+            src={InteriorA}
+            class="rc"
+            max="1320px"
+            alt="The previous artist's rendering of the office in real life."
+        />
+        <OneUp src={InteriorB} class="rc" max="1320px" alt="A person in exam chair." />
 
         <div class="two-col flush rc-inner">
-            <Image src={InteriorC} widths={[2200]} alt=" " />
-            <Image src={AlopeciaPic} widths={[2200]} alt=" " />
+            <Image src={InteriorC} widths={[2200]} alt="The receptionist desk in the Ample office." />
+            <Image
+                src={AlopeciaPic}
+                widths={[2200]}
+                alt="A doctor doing a consultation with a patient about their hair."
+            />
         </div>
 
-        <OneUp src={InteriorD} class="rc" max="1320px" alt=" " />
+        <OneUp src={InteriorD} class="rc" max="1320px" alt="Exam room at the Ample office." />
 
         <div class="two-col flush rc-inner">
-            <Image src={InteriorE} widths={[2200]} alt=" " />
-            <Image src={InteriorF} widths={[2200]} alt=" " />
+            <Image
+                src={InteriorE}
+                widths={[2200]}
+                alt="A chair, wall art, and room decor in a room at the Ample office."
+            />
+            <Image src={InteriorF} widths={[2200]} alt="Waiting area cups and coffe machine." />
         </div>
 
         <div class="two-col last">
-            <Image src={InteriorG} class="rc" widths={[2200]} alt=" " />
-            <Image src={InteriorH} class="rc" widths={[2200]} alt=" " />
+            <Image src={InteriorG} class="rc" widths={[2200]} alt="Receptionist assisting a visitor." />
+            <Image src={InteriorH} class="rc" widths={[2200]} alt="A visitor taking an Ample business card." />
         </div>
     </section>
 
     <div id="painting-production">
         <div class="tray">
-            <Image src={ProductionA} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={ProductionB} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={ProductionC} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={ProductionD} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={ProductionE} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={ProductionF} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={ProductionA} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={ProductionB} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={ProductionC} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={ProductionD} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={ProductionE} class="rc" widths={[1800]} loading="eager" alt=" " />
+            <Image
+                src={ProductionA}
+                class="rc"
+                widths={[1800]}
+                loading="eager"
+                alt="Artist working on wall art for the Ample office."
+            />
+            <Image
+                src={ProductionB}
+                class="rc"
+                widths={[1800]}
+                loading="eager"
+                alt="Artist working on wall art for the Ample office."
+            />
+            <Image
+                src={ProductionC}
+                class="rc"
+                widths={[1800]}
+                loading="eager"
+                alt="Person in a chair in the waiting room."
+            />
+            <Image src={ProductionD} class="rc" widths={[1800]} loading="eager" alt="Wall art being installed." />
+            <Image
+                src={ProductionE}
+                class="rc"
+                widths={[1800]}
+                loading="eager"
+                alt="Person holding up custom made wall art."
+            />
+            <Image src={ProductionF} class="rc" widths={[1800]} loading="eager" alt="Custom made wall art." />
+            <Image
+                src={ProductionA}
+                class="rc"
+                widths={[1800]}
+                loading="eager"
+                alt="Artist working on wall art for the Ample office."
+            />
+            <Image
+                src={ProductionB}
+                class="rc"
+                widths={[1800]}
+                loading="eager"
+                alt="Artist working on wall art for the Ample office."
+            />
+            <Image
+                src={ProductionC}
+                class="rc"
+                widths={[1800]}
+                loading="eager"
+                alt="Person in a chair in the waiting room."
+            />
+            <Image src={ProductionD} class="rc" widths={[1800]} loading="eager" alt="Wall art being installed." />
+            <Image
+                src={ProductionE}
+                class="rc"
+                widths={[1800]}
+                loading="eager"
+                alt="Person holding up custom made wall art."
+            />
         </div>
     </div>
 
     <VimeoPlayer id="painting-production-video" class="spaced rc" video="1057933739" height="125%" />
 
     <div id="cards" class="padded">
-        <Image src={Cards} widths={[2200]} alt=" " />
+        <Image src={Cards} widths={[2200]} alt="Ample business card designs." />
     </div>
 
     <VimeoPlayer id="testimonial-loop" class="spaced rc" video="1058009256" height="60%" />
@@ -249,16 +318,16 @@ import LogoTicker from "@assets/Ample/Ample_Logo ticker animation_2_1.mp4"
     </div>
 
     <div id="patient-stories-a" class="two-col">
-        <VimeoPlayer class="rc" video="1057981577" height="100%" action="unpause"/>
-        <VimeoPlayer class="rc" video="1057983997" height="100%" action="unpause"/>
+        <VimeoPlayer class="rc" video="1057981577" height="100%" action="unpause" />
+        <VimeoPlayer class="rc" video="1057983997" height="100%" action="unpause" />
     </div>
 
     <div id="patient-stories-b" class="two-col">
-        <VimeoPlayer class="rc" video="1057976738" height="125%" action="unmute"/>
+        <VimeoPlayer class="rc" video="1057976738" height="125%" action="unmute" />
         <VideoLoop src={StoryD} class="rc" />
     </div>
 
-    <Image src={GetAhead} widths={[2200]} alt=" " />
+    <Image src={GetAhead} widths={[2200]} alt="Get ahead of your hair. ample state of the art hair restoration." />
 
     <div id="vid-grid" class="three-col">
         <VideoLoop src={VidGridA} />
@@ -266,10 +335,10 @@ import LogoTicker from "@assets/Ample/Ample_Logo ticker animation_2_1.mp4"
         <VideoLoop src={VidGridD} />
         <VideoLoop src={VidGridC} />
         <VideoLoop src={VidGridF} />
-        <Image src={VidGridImgC} widths={[2200]} alt=" " />
+        <Image src={VidGridImgC} widths={[2200]} alt="Grand opening of Ample office." />
         <VideoLoop src={VidGridE} />
-        <Image src={VidGridImgA} widths={[2200]} alt=" " />
-        <Image src={VidGridImgB} widths={[2200]} alt=" " />
+        <Image src={VidGridImgA} widths={[2200]} alt="Information about hair restoration." />
+        <Image src={VidGridImgB} widths={[2200]} alt="Information about hair restoration." />
     </div>
 
     <div id="desktop-gallery" class="spaced">
@@ -280,107 +349,110 @@ import LogoTicker from "@assets/Ample/Ample_Logo ticker animation_2_1.mp4"
 
     <section id="booking-flow">
         <h1>Booking Flow</h1>
-        <Image src={BookingFlow} widths={[2200]} alt=" " />
+        <Image
+            src={BookingFlow}
+            widths={[2200]}
+            alt="Screens and design for the appointment booking experience for Ample."
+        />
     </section>
 
     <div id="headshots">
         <div class="tray">
-            <Image src={StaffA} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={StaffB} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={StaffC} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={StaffD} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={StaffE} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={StaffF} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={StaffA} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={StaffB} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={StaffC} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={StaffD} class="rc" widths={[1800]} loading="eager" alt=" " />
-            <Image src={StaffE} class="rc" widths={[1800]} loading="eager" alt=" " />
+            <Image src={StaffA} class="rc" widths={[1800]} loading="eager" alt="Headshot of an Ample employee." />
+            <Image src={StaffB} class="rc" widths={[1800]} loading="eager" alt="Headshot of an Ample employee." />
+            <Image src={StaffC} class="rc" widths={[1800]} loading="eager" alt="Headshot of an Ample employee." />
+            <Image src={StaffD} class="rc" widths={[1800]} loading="eager" alt="Headshot of an Ample employee." />
+            <Image src={StaffE} class="rc" widths={[1800]} loading="eager" alt="Headshot of an Ample employee." />
+            <Image src={StaffF} class="rc" widths={[1800]} loading="eager" alt="Headshot of an Ample employee." />
+            <Image src={StaffA} class="rc" widths={[1800]} loading="eager" alt="Headshot of an Ample employee." />
+            <Image src={StaffB} class="rc" widths={[1800]} loading="eager" alt="Headshot of an Ample employee." />
+            <Image src={StaffC} class="rc" widths={[1800]} loading="eager" alt="Headshot of an Ample employee." />
+            <Image src={StaffD} class="rc" widths={[1800]} loading="eager" alt="Headshot of an Ample employee." />
+            <Image src={StaffE} class="rc" widths={[1800]} loading="eager" alt="Headshot of an Ample employee." />
         </div>
     </div>
 
-    <Image src={Mirror} class="spaced flush" widths={[2200]} alt=" " />
+    <Image src={Mirror} class="spaced flush" widths={[2200]} alt="The reflection of a person examining their hair in the mirror." />
 
     <div id="life-cycle" class="two-col spaced">
-        <Image src={LifeCycleA} class="rc" widths={[2200]} alt=" " />
-        <Image src={LifeCycleB} class="rc" widths={[2200]} alt=" " />
+        <Image src={LifeCycleA} class="rc" widths={[2200]} alt="A doctor treating the hair of a patient." />
+        <Image src={LifeCycleB} class="rc" widths={[2200]} alt="The life cycle of a hair follicle." />
     </div>
 
-    <Image src={MirrorConsult} class="spaced flush" widths={[2200]} alt=" " />
+    <Image src={MirrorConsult} class="spaced flush" widths={[2200]} alt="A doctor consulting with a patient by showing them their hair in a mirror." />
 
     <div class="two-col spaced">
-        <Image src={SwabConsult} class="rc" widths={[2200]} alt=" " />
-        <Image src={FiveFoods} class="rc" widths={[2200]} alt=" " />
+        <Image src={SwabConsult} class="rc" widths={[2200]} alt="A doctor treating a patient's hair." />
+        <Image src={FiveFoods} class="rc" widths={[2200]} alt="5 foods that promote healthy hair growth." />
     </div>
 
     <div class="two-col spaced">
-        <Image src={SmileConsult} class="rc" widths={[2200]} alt=" " />
+        <Image src={SmileConsult} class="rc" widths={[2200]} alt="A patient getting a consultation about their hair." />
         <VideoLoop src={AlopeciaVid} class="rc" />
     </div>
 
-    <Image src={GlassesConsult} class="spaced flush" widths={[2200]} alt=" " />
+    <Image src={GlassesConsult} class="spaced flush" widths={[2200]} alt="A doctor talking to a patient." />
 
     <div id="before-and-after">
         <div class="slideshow">
-            <Image class="active" src={BeforeAfterA} class="rc" widths={[2200]} alt=" " />
-            <Image src={BeforeAfterB} class="rc" widths={[2200]} alt=" " />
-            <Image src={BeforeAfterC} class="rc" widths={[2200]} alt=" " />
-            <Image src={BeforeAfterD} class="rc" widths={[2200]} alt=" " />
-            <Image src={BeforeAfterE} class="rc" widths={[2200]} alt=" " />
+            <Image class="active" src={BeforeAfterA} class="rc" widths={[2200]} alt="Before and after images of a hair restoration treatment." />
+            <Image src={BeforeAfterB} class="rc" widths={[2200]} alt="Before and after images of a hair restoration treatment." />
+            <Image src={BeforeAfterC} class="rc" widths={[2200]} alt="Before and after images of a hair restoration treatment." />
+            <Image src={BeforeAfterD} class="rc" widths={[2200]} alt="Before and after images of a hair restoration treatment." />
+            <Image src={BeforeAfterE} class="rc" widths={[2200]} alt="Before and after images of a hair restoration treatment." />
         </div>
     </div>
 
     <div id="social-reels-a" class="spaced">
-        <VimeoPlayer video="1058009217" height="177.78%" class="rc" action="unpause"/>
-        <VimeoPlayer video="1057980929" height="177.78%" class="rc" action="unmute"/>
+        <VimeoPlayer video="1058009217" height="177.78%" class="rc" action="unpause" />
+        <VimeoPlayer video="1057980929" height="177.78%" class="rc" action="unmute" />
     </div>
 
     <div id="social-reels-b" class="spaced">
-        <VimeoPlayer video="1058009238" height="177.78%" class="rc" action="unpause"/>
-        <VimeoPlayer video="1059558533" height="177.78%" class="rc" action="unpause"/>
+        <VimeoPlayer video="1058009238" height="177.78%" class="rc" action="unpause" />
+        <VimeoPlayer video="1059558533" height="177.78%" class="rc" action="unpause" />
     </div>
 
     <div id="sga" class="two-col spaced">
-        <Image src={Nutrition} class="rc" widths={[2200]} alt=" " />
+        <Image src={Nutrition} class="rc" widths={[2200]} alt="3 ways nutrition affects your hair growth." />
         <div class="slideshow">
-            <Image class="active" src={SgaA} class="rc" widths={[2200]} alt=" " />
-            <Image src={SgaB} class="rc" widths={[2200]} alt=" " />
-            <Image src={SgaC} class="rc" widths={[2200]} alt=" " />
-            <Image src={SgaD} class="rc" widths={[2200]} alt=" " />
-            <Image src={SgaE} class="rc" widths={[2200]} alt=" " />
-            <Image src={SgaF} class="rc" widths={[2200]} alt=" " />
+            <Image class="active" src={SgaA} class="rc" widths={[2200]} alt="Hair restoration can be a powerful tool for gender affirmation." />
+            <Image src={SgaB} class="rc" widths={[2200]} alt="Hair restoration for a fuller mane." />
+            <Image src={SgaC} class="rc" widths={[2200]} alt="Hairline adjustment to better reflect your gender identity." />
+            <Image src={SgaD} class="rc" widths={[2200]} alt="Facial hair transplants for beards and mustaches." />
+            <Image src={SgaE} class="rc" widths={[2200]} alt="Eyebrow enhancement for a more masculine or feminine look." />
+            <Image src={SgaF} class="rc" widths={[2200]} alt="Embrace your authentic self. Talk to a specialist about options that work for you." />
         </div>
     </div>
 
     <div id="warnings">
-        <Image src={WarningA} class="rc" widths={[2200]} alt=" " />
-        <Image src={WarningB} class="rc" widths={[2200]} alt=" " />
-        <Image src={WarningC} class="rc" widths={[2200]} alt=" " />
-        <Image src={WarningD} class="rc" widths={[2200]} alt=" " />
+        <Image src={WarningA} class="rc" widths={[2200]} alt="Warning: may cause confidence boost." />
+        <Image src={WarningB} class="rc" widths={[2200]} alt="Warning: may lead to foreplay." />
+        <Image src={WarningC} class="rc" widths={[2200]} alt="Warning: may cause magnetism." />
+        <Image src={WarningD} class="rc" widths={[2200]} alt="Warning: may spark a fire." />
     </div>
 
-    <OneUp src={CouldBe} class="spaced" alt=" " />
+    <OneUp src={CouldBe} class="spaced" alt="ample this could be your hair" />
 </ProjectLayout>
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        let dt = 0
-        document.querySelectorAll('.slideshow').forEach(elt => {
+        let dt = 0;
+        document.querySelectorAll(".slideshow").forEach((elt) => {
             let slides = elt.querySelectorAll(":scope>picture,:scope>img:not(.app"),
-                interval = elt instanceof HTMLElement && elt.dataset.interval || 2000,
+                interval = (elt instanceof HTMLElement && elt.dataset.interval) || 2000,
                 len = slides.length,
-                idx = 0
+                idx = 0;
 
             const advance = () => {
-                idx++
+                idx++;
                 slides.forEach((img, i) => {
-                    img.classList.toggle('active', i==idx%len)
-                })
-            }
+                    img.classList.toggle("active", i == idx % len);
+                });
+            };
 
-            setTimeout(() => setInterval(advance, +interval), dt)
-            dt += 666
-        })
-    })
+            setTimeout(() => setInterval(advance, +interval), dt);
+            dt += 666;
+        });
+    });
 </script>
-

@@ -345,7 +345,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   </div>
 
   <div id="color-palette" class="two-col flush">
-    <ResponsiveImage mobile={ColorMobile} desktop={ColorDesktop} alt="Kindra" />
+    <ResponsiveImage mobile={ColorMobile} desktop={ColorDesktop} alt="The brand's color palette." />
     <div class="karla">
       <h1 class="mb-[15px] font-[700] tracking-widest">COLOR PALETTE</h1>
       <p>
@@ -368,18 +368,30 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     </div>
   </div>
 
-  <ResponsiveImage mobile={CollageMobile} desktop={CollageDesktop} alt="Kindra" />
+  <ResponsiveImage
+    mobile={CollageMobile}
+    desktop={CollageDesktop}
+    alt="A collage of images that represent the brand. Soft flower petals, pink fabric, a bath, two women sitting next to each other, the brand's lotion."
+  />
 
   <Image class="w-full" src={Humectant} alt="Two pill capsules. Key ingredients. Humectants." />
 
-  <ResponsiveImage mobile={MiddleMobile} desktop={MiddleDesktop} alt="Kindra" />
+  <ResponsiveImage
+    mobile={MiddleMobile}
+    desktop={MiddleDesktop}
+    alt="Brushes of color with the quote The middle is messy, but it's also where the magic happens -brene brown"
+  />
 
   <div
     class="mx-[20px] my-[45px] flex flex-col items-center gap-[45px] md:mx-[60px] md:my-[120px] md:flex-row md:justify-center md:gap-[60px]"
   >
     <Image class="w-full rounded-md md:w-[60%] md:rounded-lg" src={Pamper} alt="Pamper your peach." />
     <div class="w-full md:w-[40%] md:py-[95px]">
-      <Image class="w-full rounded-md md:rounded-lg" src={Photography1} alt="A woman reaches down to a flower in front of her." />
+      <Image
+        class="w-full rounded-md md:rounded-lg"
+        src={Photography1}
+        alt="A woman reaches down to a flower in front of her."
+      />
     </div>
   </div>
 
@@ -409,8 +421,16 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   <div
     class="two-up-copy bias-center mx-auto my-[45px] max-w-[1015px] flex-col gap-[5px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px]"
   >
-    <Image class="h-auto w-full rounded-lg md:order-2 md:w-1/2" src={Review2} alt="Several reviews for the various Kindra products." />
-    <Image class="h-auto w-full rounded-lg md:w-1/2" src={Review1} alt="An info card for Kindra's facebook community and product assessment quiz." />
+    <Image
+      class="h-auto w-full rounded-lg md:order-2 md:w-1/2"
+      src={Review2}
+      alt="Several reviews for the various Kindra products."
+    />
+    <Image
+      class="h-auto w-full rounded-lg md:w-1/2"
+      src={Review1}
+      alt="An info card for Kindra's facebook community and product assessment quiz."
+    />
   </div>
   <div
     class="two-up-copy bias-center mx-auto my-[45px] max-w-[1015px] flex-col gap-[5px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px]"
@@ -423,7 +443,11 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
       <video loop playsinline autoplay muted class="w-full rounded-lg md:w-[41%]">
         <source src={Focus} />
       </video>
-      <Image class="h-auto w-full rounded-lg md:w-[59%]" src={Photography2} alt="A woman holding a pill capsule in her fingers." />
+      <Image
+        class="h-auto w-full rounded-lg md:w-[59%]"
+        src={Photography2}
+        alt="A woman holding a pill capsule in her fingers."
+      />
     </div>
     <div class="mx-[20px] flex flex-row justify-center md:mx-[60px] md:gap-[15px]">
       <Image class="h-auto w-2/3 rounded-lg pr-[5px]" src={Photography3} alt="A woman using the mist spray." />
@@ -435,7 +459,11 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
       <video loop playsinline autoplay muted class="w-full rounded-lg md:w-1/3">
         <source src={SerumVideo} />
       </video>
-      <Image class="h-auto w-full rounded-lg md:w-2/3" src={Serum} alt="A woman holding the Daily Vaginal Lotion bottle and applicator in her hands." />
+      <Image
+        class="h-auto w-full rounded-lg md:w-2/3"
+        src={Serum}
+        alt="A woman holding the Daily Vaginal Lotion bottle and applicator in her hands."
+      />
     </div>
   </div>
   <div
@@ -458,10 +486,26 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   <div
     class="relative flex flex-col gap-[10px] px-[20px] pt-[120px] md:flex-row md:gap-[15px] md:px-[60px] md:pt-[280px]"
   >
-    <Image class="z-5 absolute left-0 top-0 hidden h-auto w-full md:block" src={SiteBackgroundDesktop} alt="Several Kindra lotion applicator tools." />
-    <Image class="z-5 absolute left-0 top-0 block h-auto w-full md:hidden" src={SiteBackgroundMobile} alt="Several Kindra lotion applicator tools." />
-    <Image class="z-10 h-auto w-full rounded-[5px] md:w-1/2" src={ApplicatorGuide1} alt="A guide to use the Kindra applicator." />
-    <Image class="z-10 h-auto w-full rounded-[5px] md:w-1/2" src={ApplicatorGuide2} alt="A guide to use the Kindra applicator." />
+    <Image
+      class="z-5 absolute left-0 top-0 hidden h-auto w-full md:block"
+      src={SiteBackgroundDesktop}
+      alt="Several Kindra lotion applicator tools."
+    />
+    <Image
+      class="z-5 absolute left-0 top-0 block h-auto w-full md:hidden"
+      src={SiteBackgroundMobile}
+      alt="Several Kindra lotion applicator tools."
+    />
+    <Image
+      class="z-10 h-auto w-full rounded-[5px] md:w-1/2"
+      src={ApplicatorGuide1}
+      alt="A guide to use the Kindra applicator."
+    />
+    <Image
+      class="z-10 h-auto w-full rounded-[5px] md:w-1/2"
+      src={ApplicatorGuide2}
+      alt="A guide to use the Kindra applicator."
+    />
   </div>
 
   <ResponsiveTextBlock id="we-heard-you" class="collapsed padded">
