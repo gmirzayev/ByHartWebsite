@@ -170,7 +170,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   <div
     class="two-up-copy bias-center mx-auto my-[45px] max-w-[1320px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-0"
   >
-    <video loop playsinline autoplay muted class="mx-auto w-2/3 md:order-2 md:w-1/2">
+    <video loop playsinline autoplay muted class="mx-auto w-full md:order-2 md:w-1/2">
       <source src={NetworkCard} />
     </video>
     <Image src={Table} class="rounded-md md:rounded-lg" alt="People sitting around a table eating." />
@@ -192,9 +192,9 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     alt="Screenshot of Magnolia network app."
   />
   <div
-    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1320px] flex-row gap-[45px] px-[20px] md:my-[120px] md:gap-[15px]"
+    class="two-up-copy bias-center mx-auto my-[45px] max-w-[1320px] flex-col gap-[45px] md:my-[120px] md:gap-[15px] md:px-[20px]"
   >
-    <Image src={Joanna} class="rounded-md md:order-2 md:rounded-lg" alt="Joanna Gaines" />
+    <Image src={Joanna} class="md:order-2 md:rounded-lg" alt="Joanna Gaines" />
     <Image src={Salad} class="" alt="Screenshot of a salad recipe." />
   </div>
 
