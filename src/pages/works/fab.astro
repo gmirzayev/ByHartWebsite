@@ -37,8 +37,8 @@ import Stairs from "@assets/Fab/img/Fab_Stairs.png";
 import Glass from "@assets/Fab/img/Fab_Glass.png";
 import MeetCute from "@assets/Fab/img/Fab_Meet_Cute.png";
 import NaraPicks from "@assets/Fab/img/Fab_Nara_Picks.png";
-import Oliver from "@assets/Fab/img/Fab_Oliver.gif";
-import Olivia from "@assets/Fab/img/Fab_Olivia.gif";
+import Oliver from "@assets/Fab/Fab_Oliver.mp4";
+import Olivia from "@assets/Fab/Fab_Olivia.mp4";
 import Devices from "@assets/Fab/img/Fab_Devices.gif";
 import Emails from "@assets/Fab/img/Fab_Emails.png";
 import Blogs from "@assets/Fab/img/Fab_Blogs.gif";
@@ -47,7 +47,7 @@ import Adult1 from "@assets/Fab/img/Fab_Adult_1.png";
 import Adult2 from "@assets/Fab/img/Fab_Adult_2.png";
 import Adult3 from "@assets/Fab/img/Fab_Adult_3.png";
 import Adult4 from "@assets/Fab/img/Fab_Adult_4.gif";
-import Adult5 from "@assets/Fab/img/Fab_Adult_5.gif";
+import Adult5 from "@assets/Fab/Fab_Adult_5.mp4";
 import Home from "@assets/Fab/img/Fab_Home.gif";
 import Tablets from "@assets/Fab/img/Fab_Tablets.png";
 import Product from "@assets/Fab/img/Fab_Product.gif";
@@ -56,6 +56,7 @@ import Moodboard2 from "@assets/Fab/img/Fab_Moodboard_2.png";
 import Moodboard3 from "@assets/Fab/img/Fab_Moodboard_3.png";
 import Moodboard4 from "@assets/Fab/img/Fab_Moodboard_4.png";
 import VimeoPlayer from "@components/VimeoPlayer.astro";
+import VideoLoop from "@components/VideoLoop.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 ---
 
@@ -93,16 +94,8 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
       <Image src={NaraPicks} class="h-auto w-full md:w-1/2" alt="Advertisement" />
     </div>
     <div class="my-[45px] flex flex-col md:my-[120px] md:flex-row">
-      <Image
-        src={Oliver}
-        class="w-full md:w-1/2"
-        alt="Illustration of a person opening a box that shoots out rainbows and confetti."
-      />
-      <Image
-        src={Olivia}
-        class="w-full md:w-1/2"
-        alt="Illustration of a person opening a box that shoots out rainbows and confetti."
-      />
+      <VideoLoop src={Oliver} class="sized w-full md:w-1/2" />
+      <VideoLoop src={Olivia} class="sized w-full md:w-1/2" />
     </div>
   </div>
   <Image
@@ -157,7 +150,7 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
       alt="Adult toy sale ad. Picture of eggplant with words Beauty and brains."
     />
     <Image src={Adult3} class="grid-item-2" alt="Adult toy ad with various toys and words Meet the bedtime buddies." />
-    <Image src={Adult5} class="grid-item-2" alt="Illustration of animal faces on adult toys." />
+    <VideoLoop src={Adult5} class="sized grid-item-2" />
     <Image src={Adult4} class="grid-item-2" alt="Feeling sweet? Give yourself some sugar with our adult toys." />
   </div>
 

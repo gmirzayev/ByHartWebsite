@@ -102,6 +102,7 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 import Lightbox from "@components/Lightbox.astro";
 import VimeoPlayer from "@components/VimeoPlayer.astro";
+import VideoLoop from "@components/VideoLoop.astro";
 ---
 
 <style>
@@ -402,15 +403,11 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
         desktop={QuizBackgroundDesktop}
         class="py-[60px] md:py-[120px]"
       >
-        <video loop playsinline autoplay muted class="mx-auto w-1/2 rounded-lg md:w-[20%]">
-          <source src={Quiz} />
-        </video>
+        <VideoLoop src={Quiz} class="sized mx-auto w-1/2 rounded-lg md:w-[20%]" />
       </ResponsiveBackground>
     </div>
 
-    <video loop playsinline autoplay muted class="w-full">
-      <source src={Dish} />
-    </video>
+    <VideoLoop src={Dish} class="sized w-full" />
   </div>
 
   <div class="flex w-full flex-row">
@@ -439,9 +436,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   </div>
   <div class="flex flex-col gap-[5px] md:gap-[15px]">
     <div class="mx-[20px] flex flex-col justify-center gap-[5px] md:mx-[60px] md:flex-row md:gap-[15px]">
-      <video loop playsinline autoplay muted class="w-full rounded-lg md:w-[41%]">
-        <source src={Focus} />
-      </video>
+      <VideoLoop src={Focus} class="sized w-full rounded-lg md:w-[41%]" />
       <Image
         class="h-auto w-full rounded-lg md:w-[59%]"
         src={Photography2}
@@ -450,14 +445,10 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     </div>
     <div class="mx-[20px] flex flex-row justify-center md:mx-[60px] md:gap-[15px]">
       <Image class="h-auto w-2/3 rounded-lg pr-[5px]" src={Photography3} alt="A woman using the mist spray." />
-      <video loop playsinline autoplay muted class="w-1/3 rounded-lg">
-        <source src={PhotographyVideo} />
-      </video>
+      <VideoLoop src={PhotographyVideo} class="sized w-1/3 rounded-lg" />
     </div>
     <div class="mx-[20px] flex flex-col justify-center gap-[5px] md:mx-[60px] md:flex-row md:gap-[15px]">
-      <video loop playsinline autoplay muted class="w-full rounded-lg md:w-1/3">
-        <source src={SerumVideo} />
-      </video>
+      <VideoLoop src={SerumVideo} class="sized w-full rounded-lg md:w-1/3" />
       <Image
         class="h-auto w-full rounded-lg md:w-2/3"
         src={Serum}
@@ -476,9 +467,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
       <VimeoPlayer class="rc" video="1061087228" height="100%" action="unmute" />
     </div>
   </div>
-  <video loop playsinline autoplay muted class="my-[45px] w-full md:my-[120px]">
-    <source src={Bed} />
-  </video>
+  <VideoLoop src={Bed} class="sized my-[45px] w-full md:my-[120px]" />
   <div class="mx-auto mb-[50px] max-w-[850px] px-[20px] md:mb-[100px] md:px-0">
     <Lightbox baseimage={Site} lightboximage={SiteFull} id={1} />
   </div>
@@ -573,20 +562,14 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
       class="mx-auto mt-[30px] flex max-w-[840px] flex-col items-center justify-center gap-[35px] pb-[60px] pt-[60px] md:flex-row md:gap-[60px] md:px-[45px]"
     >
       <Image class="w-1/2 rounded-[10px] md:rounded-[25px]" src={SocialGrid} alt="Kindra instagram page." />
-      <video loop playsinline autoplay muted class="w-1/2 rounded-[10px] md:rounded-[25px]">
-        <source src={SocialVideo} />
-      </video>
+      <VideoLoop src={SocialVideo} class="sized w-1/2 rounded-[10px] md:rounded-[25px]" />
     </div>
   </ResponsiveBackground>
   <div
     class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1040px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-[60px]"
   >
-    <video loop playsinline autoplay muted class="rounded-lg md:w-1/2">
-      <source src={Menopause} />
-    </video>
-    <video loop playsinline autoplay muted class="rounded-lg md:w-1/2">
-      <source src={Applicator} />
-    </video>
+    <VideoLoop src={Menopause} class="sized rounded-lg md:w-1/2" />
+    <VideoLoop src={Applicator} class="sized rounded-lg md:w-1/2" />
   </div>
   <div
     class="mb-[45px] flex w-full max-w-[690px] flex-row justify-center gap-[10px] px-[20px] md:mx-auto md:mb-[120px] md:gap-[50px]"
@@ -604,26 +587,14 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   <div
     class="mx-[20px] mb-[95px] mt-[45px] grid grid-cols-2 gap-[5px] md:mx-[60px] md:my-[220px] md:grid-cols-4 md:gap-[10px]"
   >
-    <video loop playsinline autoplay muted class="relative top-[50px] h-auto w-full rounded-md md:rounded-lg">
-      <source src={Social1} />
-    </video>
-    <video loop playsinline autoplay muted class="h-auto w-full rounded-md md:rounded-lg">
-      <source src={Social2} />
-    </video>
+    <VideoLoop src={Social1} class="sized relative top-[50px] h-auto w-full rounded-md md:rounded-lg" />
+    <VideoLoop src={Social2} class="sized h-auto w-full rounded-md md:rounded-lg" />
 
-    <video loop playsinline autoplay muted class="relative top-[50px] h-auto w-full rounded-md md:rounded-lg">
-      <source src={Social3} />
-    </video>
-    <video loop playsinline autoplay muted class="relative h-auto w-full rounded-md md:top-[100px] md:rounded-lg">
-      <source src={Social4} />
-    </video>
+    <VideoLoop src={Social3} class="sized relative top-[50px] h-auto w-full rounded-md md:rounded-lg" />
+    <VideoLoop src={Social4} class="sized relative h-auto w-full rounded-md md:top-[100px] md:rounded-lg" />
   </div>
-  <video loop playsinline autoplay muted class="hidden w-full md:block">
-    <source src={BTSDesktop} />
-  </video>
-  <video loop playsinline autoplay muted class="block w-full md:hidden">
-    <source src={BTSMobile} />
-  </video>
+  <VideoLoop src={BTSDesktop} class="sized hidden w-full md:block" />
+  <VideoLoop src={BTSMobile} class="sized block w-full md:hidden" />
   <Image
     class="hidden w-full md:block"
     src={GloriaDesktop}

@@ -21,6 +21,10 @@ import ProjectTags from "@components/ProjectTags.astro";
 import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
 import ProjectLayout from "@layouts/ProjectLayout.astro";
+import ProjectHead from "@components/ProjectHead.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
+import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
+import VideoLoop from "@components/VideoLoop.astro";
 
 import SageHeroVideo from "@assets/Sage/Sage_Hero_Desktop.mp4";
 import SageHeroVideoMobile from "@assets/Sage/Hero_Sage_M_Full-Bleed.mp4";
@@ -60,9 +64,6 @@ import SageBrandGuideGrid11 from "@assets/Sage/img/Sage_Brand_Guide_Grid_11.png"
 import SageBrandGuideGrid12 from "@assets/Sage/img/Sage_Brand_Guide_Grid_12.png";
 import SageBrandGuideGrid13 from "@assets/Sage/img/Sage_Brand_Guide_Grid_13.png";
 import SageBrandGuideGrid14 from "@assets/Sage/img/Sage_Brand_Guide_Grid_14.png";
-import ProjectHead from "@components/ProjectHead.astro";
-import ResponsiveImage from "@components/ResponsiveImage.astro";
-import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 ---
 
 <style>
@@ -219,9 +220,7 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
       alt="Text on a purple background showcasing the brand's colors and font stylings."
     />
   </div>
-  <video autoplay playsinline loop muted class="vertical-spacing-container">
-    <source src={BreatheVideo} type="video/mp4" />
-  </video>
+  <VideoLoop src={BreatheVideo} class="sized vertical-spacing-container" />
   <div
     class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1320px] flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
@@ -246,21 +245,15 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
       class="h-auto w-[33%] rounded-lg"
       alt="Practicing Mindfulness through Breathwork can begin in the comfort of your home or workspace. Take a moment with yourslef as you brace for the week ahead."
     />
-    <video class="h-auto w-[33%] rounded-lg" autoplay playsinline loop muted>
-      <source src={StoryVideo} type="video/mp4" />
-    </video>
+    <VideoLoop src={StoryVideo} class="sized h-auto w-[33%] rounded-lg" />
     <Image
       src={SageStorySocial3}
       class="h-auto w-[33%] rounded-lg"
       alt="Call attention to your lungs as they fill and empty. Scan your body from the crown of your head down to your toes."
     />
   </div>
-  <video autoplay playsinline loop muted class="my-[45px] hidden w-full md:my-[120px] md:block">
-    <source src={WeAreVideo} type="video/mp4" />
-  </video>
-  <video autoplay playsinline loop muted class="my-[45px] block w-full md:my-[120px] md:hidden">
-    <source src={WeAreMobile} type="video/mp4" />
-  </video>
+  <VideoLoop src={WeAreVideo} class="sized my-[45px] hidden w-full md:my-[120px] md:block" />
+  <VideoLoop src={WeAreMobile} class="sized my-[45px] block w-full md:my-[120px] md:hidden" />
   <div
     class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1320px] flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
@@ -281,9 +274,7 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
       src={SageQuote}
       alt="It takes enormous trust and courage to allow yourself to remember. Dorothy Pitman Hughes"
     />
-    <video autoplay playsinline loop muted class="w-1/2">
-      <source src={SocialVideo} type="video/mp4" />
-    </video>
+    <VideoLoop src={SocialVideo} class="sized w-1/2" />
   </div>
   <div class="w-full bg-[#1f3333] px-[20px]">
     <div class="mx-auto flex max-w-[1040px] flex-col gap-[10px] py-[30px] md:gap-[120px] md:py-[120px]">
@@ -295,9 +286,7 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
       />
     </div>
   </div>
-  <video autoplay loop playsinline muted class="w-full">
-    <source src={CompVideo} type="video/mp4" />
-  </video>
+  <VideoLoop src={CompVideo} class="sized w-full" />
   <Image
     class="h-auto w-full"
     src={SageBusiness}

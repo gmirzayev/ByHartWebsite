@@ -6,8 +6,12 @@ if (max) style.maxWidth = max
 
 <style is:global>
     .video-loop{
-        width:100%;
         opacity:0;
+
+        &:not(.sized){
+            /* escape hatch for the tailwind-sized pages */
+            width:100%;
+        }
 
         transition: opacity 1s;
         &.initialized{
