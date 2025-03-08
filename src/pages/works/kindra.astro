@@ -128,184 +128,269 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
 </style>
 
 <style is:global>
-  #new-era-of-you div{
-    margin:0 auto;
+  #new-era-of-you div {
+    margin: 0 auto;
     max-width: 800px;
   }
-  #new-era-of-you h1{
-    font: 400 66px/1 "utile-display", sans-serif;
-    margin-bottom: .66em;
+  #new-era-of-you h1 {
+    font:
+      400 66px/1 "utile-display",
+      sans-serif;
+    margin-bottom: 0.66em;
   }
 
-  #new-era-of-you p{
+  #new-era-of-you p {
     margin-bottom: 1em;
   }
 
-  #color-palette{
+  #color-palette {
     grid-template-columns: 1fr;
-    gap:35px;
-    p, h1{
-      padding:0 20px;
+    gap: 35px;
+    p,
+    h1 {
+      padding: 0 20px;
     }
 
-    p + p{
+    p + p {
       margin-top: 1em;
     }
   }
 
-  @media(min-width:768px){
-    p, h1{ padding:0; }
+  @media (min-width: 768px) {
+    p,
+    h1 {
+      padding: 0;
+    }
 
-    #color-palette{
-      gap:80px;
+    #color-palette {
+      gap: 80px;
       grid-template-columns: fit-content(350px) fit-content(350px);
-      align-items:end;
+      align-items: end;
     }
   }
 
-  .project-text-block{
-    button{
+  .project-text-block {
+    button {
       display: none;
       text-decoration: underline;
     }
 
-    @media(max-width:767px){
-      &.collapsed button{ display: inline; }
+    @media (max-width: 767px) {
+      &.collapsed button {
+        display: inline;
+      }
     }
 
-    @media(min-width:768px){
+    @media (min-width: 768px) {
       justify-content: center;
-      div{
-        max-width:400px;
+      div {
+        max-width: 400px;
       }
     }
   }
 
-  #we-heard-you{
-    margin-top:190px;
+  #we-heard-you {
+    margin-top: 190px;
 
-    @media(max-width:767px){
+    @media (max-width: 767px) {
       &.collapsed p + p ~ p,
-      &.collapsed div + div{
-          display: none;
+      &.collapsed div + div {
+        display: none;
       }
     }
 
-    @media(min-width:768px){
-      margin-top:90px;
+    @media (min-width: 768px) {
+      margin-top: 90px;
     }
   }
 
-  #in-words-only{
-    margin:40px 20px 20px 20px;
+  #in-words-only {
+    margin: 40px 20px 20px 20px;
     text-transform: uppercase;
     letter-spacing: 3.25px;
-    font: 700 18px/32px "Karla", sans-serif;
+    font:
+      700 18px/32px "Karla",
+      sans-serif;
 
-    p{
-      border-top:1px solid var(--charcoal);
-      max-width:840px;
-      margin:0 auto;
+    p {
+      border-top: 1px solid var(--charcoal);
+      max-width: 840px;
+      margin: 0 auto;
     }
 
-    @media(min-width:768px){
-      margin-top:120px;
+    @media (min-width: 768px) {
+      margin-top: 120px;
     }
   }
 
   #radical-act-of-rest,
   #reflections-for-the-new-year,
-  #wonder-women{
-    padding-top:0;
-    padding-bottom:20px;
-    @media(max-width:767px){
-      &.collapsed div + div{
-          display: none;
+  #wonder-women {
+    padding-top: 0;
+    padding-bottom: 20px;
+    @media (max-width: 767px) {
+      &.collapsed div + div {
+        display: none;
       }
     }
   }
 
-  .hrule{
-    padding:20px 0;
-    margin:0 auto;
-    border-top:1px solid var(--charcoal);
-    width:calc(100% - 40px);
-    max-width:840px;
+  .hrule {
+    padding: 20px 0;
+    margin: 0 auto;
+    border-top: 1px solid var(--charcoal);
+    width: calc(100% - 40px);
+    max-width: 840px;
   }
 
-  #wonder-women{
-    margin-bottom:40px;
-    @media(min-width:768px){
-      margin-bottom:120px;
+  #wonder-women {
+    margin-bottom: 40px;
+    @media (min-width: 768px) {
+      margin-bottom: 120px;
     }
   }
 
+  .two-up-copy {
+    display: flex;
+    --one-third-mobile: calc(100% * 1 / 3 - 2.5px);
+    --two-thirds-mobile: calc(100% * 2 / 3 - 2.5px);
+    --half-mobile: calc(50% - 2.5px);
+    &.bias-left-mobile {
+      img:first-child {
+        width: var(--two-thirds-mobile);
+      }
+      img:last-child {
+        width: var(--one-third-mobile);
+      }
+    }
+
+    &.bias-right-mobile {
+      img:first-child {
+        width: var(--one-third-mobile);
+      }
+      img:last-child {
+        width: var(--two-thirds-mobile);
+      }
+    }
+
+    &.bias-center-mobile {
+      img:first-child {
+        width: var(--half-mobile);
+      }
+      img:last-child {
+        width: var(--half-mobile);
+      }
+    }
+    @media (min-width: 768px) {
+      flex-flow: row nowrap;
+      --one-third: calc(100% * 1 / 3 - 7.5px);
+      --two-thirds: calc(100% * 2 / 3 - 7.5px);
+      --half: calc(50% - 7.5px);
+
+      &.bias-left {
+        img:first-child {
+          width: var(--two-thirds);
+        }
+        img:last-child {
+          width: var(--one-third);
+        }
+      }
+
+      &.bias-right {
+        img:first-child {
+          width: var(--one-third);
+        }
+        img:last-child {
+          width: var(--two-thirds);
+        }
+      }
+
+      &.bias-center {
+        img:first-child {
+          width: var(--half);
+        }
+        img:last-child {
+          width: var(--half);
+        }
+      }
+    }
+  }
 </style>
 <ProjectLayout hero={Header} brand={brand} tagline={tagline} tags={tags}>
-  <div class="flex flex-col md:flex-row md:mx-[60px]">
-    <Image
-      class="h-auto w-full md:w-[50%] rounded-md md:rounded-lg md:order-2"
-      src={Body}
-      alt="Kindra"
-    />
-    <div class="w-full md:w-[50%] md:pr-[60px] md:py-[80px]">
-      <Image
-        class="h-auto w-full rounded-md md:rounded-lg"
-        src={Lotion}
-        alt="Kindra"
-      />
+  <div
+    class="two-up-copy bias-center mx-auto my-[45px] max-w-[1320px] flex-col items-center gap-0 md:my-[120px] md:flex-row md:px-[20px]"
+  >
+    <Image class="md:order-2 md:rounded-lg" src={Body} alt="The body of a woman sitting on a bed." />
+    <div class="w-full">
+      <Image class="md:!w-[90%] md:rounded-lg" src={Lotion} alt="Bottle of Kindra V Relief Serum on pink fabric." />
     </div>
   </div>
 
   <div id="new-era-of-you" class="spaced">
     <div>
       <h1>Kindra — the new era of you.</h1>
-      <p>Isn’t it about time for a change? A shift in priorities, a chance to try something new? </p>
-      <p>Maybe what would change is how you see the world — and how you see yourself. Maybe how you approach self-care would change. Maybe you’d prioritize you a little more, choose products with ingredients you trust.</p>
-      <p><strong>Embracing change isn’t easy.  It’s essential.</strong></p>
-      <p>Listen — every significant moment in your life was tough before it was terrific, right? Because you’re always learning, always growing, always becoming. And who you are right now, as you navigate menopause, will set the stage for years to come.</p>
-      <p>What’s next, you ask?  Everything.</p>
+      <p>Isn’t it about time for a change? A shift in priorities, a chance to try something new?</p>
+      <p>
+        Maybe what would change is how you see the world — and how you see yourself. Maybe how you approach self-care
+        would change. Maybe you’d prioritize you a little more, choose products with ingredients you trust.
+      </p>
+      <p><strong>Embracing change isn’t easy. It’s essential.</strong></p>
+      <p>
+        Listen — every significant moment in your life was tough before it was terrific, right? Because you’re always
+        learning, always growing, always becoming. And who you are right now, as you navigate menopause, will set the
+        stage for years to come.
+      </p>
+      <p>What’s next, you ask? Everything.</p>
     </div>
   </div>
 
   <div id="color-palette" class="two-col flush">
-    <ResponsiveImage
-      mobile={ColorMobile}
-      desktop={ColorDesktop}
-      alt="Kindra"
-    />
+    <ResponsiveImage mobile={ColorMobile} desktop={ColorDesktop} alt="The brand's color palette." />
     <div class="karla">
-      <h1 class="tracking-widest mb-[15px] font-[700]">COLOR PALETTE</h1>
-      <p><strong>Good Vintage</strong> honors the beauty of time—a reminder that aging, as with fine wine, is deeply enriching. </p>
-      <p><strong>Magic Hour</strong> glows with possibility and renewal—just like its namesake time circling sunset and sunrise. This hue embraces the in-between—the messy, magical middle of transformation. </p>
-      <p><strong>Pottery Wheel</strong>, inspired by the iconically sexy <em>(and, yes, wet!)</em> scene from Ghost, echos the strength and adaptability required to work a wheel of clay—a soft yet powerful nod to the hands-on nature of self-care.</p>
-      <p><strong>Together</strong>, our primary palette is a story of wisdom deepened by time, of transformation embraced, of resilience, sensuality, and strength—one that celebrates the power of change and the beauty of becoming.</p>
+      <h1 class="mb-[15px] font-[700] tracking-widest">COLOR PALETTE</h1>
+      <p>
+        <strong>Good Vintage</strong> honors the beauty of time—a reminder that aging, as with fine wine, is deeply enriching.
+      </p>
+      <p>
+        <strong>Magic Hour</strong> glows with possibility and renewal—just like its namesake time circling sunset and sunrise.
+        This hue embraces the in-between—the messy, magical middle of transformation.
+      </p>
+      <p>
+        <strong>Pottery Wheel</strong>, inspired by the iconically sexy <em>(and, yes, wet!)</em> scene from Ghost, echos
+        the strength and adaptability required to work a wheel of clay—a soft yet powerful nod to the hands-on nature of
+        self-care.
+      </p>
+      <p>
+        <strong>Together</strong>, our primary palette is a story of wisdom deepened by time, of transformation
+        embraced, of resilience, sensuality, and strength—one that celebrates the power of change and the beauty of
+        becoming.
+      </p>
     </div>
   </div>
 
   <ResponsiveImage
     mobile={CollageMobile}
     desktop={CollageDesktop}
-    alt="Kindra"
+    alt="A collage of images that represent the brand. Soft flower petals, pink fabric, a bath, two women sitting next to each other, the brand's lotion."
   />
 
-  <Image class="w-full" src={Humectant} alt="Kindra" />
+  <Image class="w-full" src={Humectant} alt="Two pill capsules. Key ingredients. Humectants." />
 
-  <ResponsiveImage mobile={MiddleMobile} desktop={MiddleDesktop} alt="Kindra" />
+  <ResponsiveImage
+    mobile={MiddleMobile}
+    desktop={MiddleDesktop}
+    alt="Brushes of color with the quote The middle is messy, but it's also where the magic happens -brene brown"
+  />
 
   <div
-    class="flex flex-col md:flex-row mx-[20px] gap-[45px] my-[45px] md:my-[120px] md:mx-[60px] md:gap-[60px] md:justify-center"
+    class="mx-[20px] my-[45px] flex flex-col items-center gap-[45px] md:mx-[60px] md:my-[120px] md:flex-row md:justify-center md:gap-[60px]"
   >
-    <Image
-      class="w-full rounded-md md:w-[60%] md:rounded-lg"
-      src={Pamper}
-      alt="Kindra"
-    />
+    <Image class="w-full rounded-md md:w-[60%] md:rounded-lg" src={Pamper} alt="Pamper your peach." />
     <div class="w-full md:w-[40%] md:py-[95px]">
       <Image
         class="w-full rounded-md md:rounded-lg"
         src={Photography1}
-        alt="Kindra"
+        alt="A woman reaches down to a flower in front of her."
       />
     </div>
   </div>
@@ -317,210 +402,184 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
         desktop={QuizBackgroundDesktop}
         class="py-[60px] md:py-[120px]"
       >
-        <video
-          loop
-          playsinline
-          autoplay
-          muted
-          class="w-1/2 rounded-lg md:w-[20%] mx-auto"
-        >
+        <video loop playsinline autoplay muted class="mx-auto w-1/2 rounded-lg md:w-[20%]">
           <source src={Quiz} />
         </video>
       </ResponsiveBackground>
     </div>
-    <div class="w-full bg-[#99b2c8]">
-      <video loop playsinline autoplay muted class="w-1/2 rounded-lg mx-auto">
-        <source src={Dish} />
-      </video>
-    </div>
+
+    <video loop playsinline autoplay muted class="w-full">
+      <source src={Dish} />
+    </video>
   </div>
 
-  <div class="flex flex-row w-full">
-    <Image class="w-1/2 h-auto" src={Mist} alt="Kindra" />
-    <Image class="w-1/2 h-auto" src={LotionFlowers} alt="Kindra" />
+  <div class="flex w-full flex-row">
+    <Image class="h-auto w-1/2" src={Mist} alt="The Kindra Cool Down Mist bottle surrounded by slices of cucumber." />
+    <Image class="h-auto w-1/2" src={LotionFlowers} alt="Flowers hanging over the Kindra V Relief Serum bottle." />
   </div>
   <div
-    class="flex flex-col md:flex-row gap-[5px] my-[45px] mx-[20px] md:gap-[15px] md:my-[120px] md:mx-[215px] md:justify-center"
+    class="two-up-copy bias-center mx-auto my-[45px] max-w-[1015px] flex-col gap-[5px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px]"
   >
     <Image
-      class="w-full rounded-lg h-auto md:w-1/2 md:order-2"
+      class="h-auto w-full rounded-lg md:order-2 md:w-1/2"
       src={Review2}
-      alt="Kindra"
+      alt="Several reviews for the various Kindra products."
     />
     <Image
-      class="w-full rounded-lg h-auto md:w-1/2"
+      class="h-auto w-full rounded-lg md:w-1/2"
       src={Review1}
-      alt="Kindra"
+      alt="An info card for Kindra's facebook community and product assessment quiz."
     />
   </div>
   <div
-    class="flex flex-col md:flex-row gap-[5px] my-[45px] mx-[20px] md:gap-[15px] md:my-[120px] md:mx-[215px] md:justify-center"
+    class="two-up-copy bias-center mx-auto my-[45px] max-w-[1015px] flex-col gap-[5px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px]"
   >
-    <Image
-      class="w-full rounded-lg h-auto md:w-1/2"
-      src={Thanks}
-      alt="Kindra"
-    />
-    <Image
-      class="w-full rounded-lg h-auto md:w-1/2"
-      src={ThanksCard}
-      alt="Kindra"
-    />
+    <Image class="h-auto w-full rounded-lg md:w-1/2" src={Thanks} alt="Several hands placed on a woman's shoulder." />
+    <Image class="h-auto w-full rounded-lg md:w-1/2" src={ThanksCard} alt="A thank you card from Kindra's CEO." />
   </div>
   <div class="flex flex-col gap-[5px] md:gap-[15px]">
-    <div
-      class="flex flex-col md:flex-row justify-center mx-[20px] gap-[5px] md:mx-[60px] md:gap-[15px]"
-    >
-      <video
-        loop
-        playsinline
-        autoplay
-        muted
-        class="w-full rounded-lg md:w-[41%]"
-      >
+    <div class="mx-[20px] flex flex-col justify-center gap-[5px] md:mx-[60px] md:flex-row md:gap-[15px]">
+      <video loop playsinline autoplay muted class="w-full rounded-lg md:w-[41%]">
         <source src={Focus} />
       </video>
       <Image
-        class="w-full rounded-lg md:w-[59%] h-auto"
+        class="h-auto w-full rounded-lg md:w-[59%]"
         src={Photography2}
-        alt="Kindra"
+        alt="A woman holding a pill capsule in her fingers."
       />
     </div>
-    <div
-      class="flex flex-row justify-center mx-[20px] md:mx-[60px] md:gap-[15px]"
-    >
-      <Image
-        class="w-2/3 h-auto rounded-lg pr-[5px]"
-        src={Photography3}
-        alt="Kindra"
-      />
+    <div class="mx-[20px] flex flex-row justify-center md:mx-[60px] md:gap-[15px]">
+      <Image class="h-auto w-2/3 rounded-lg pr-[5px]" src={Photography3} alt="A woman using the mist spray." />
       <video loop playsinline autoplay muted class="w-1/3 rounded-lg">
         <source src={PhotographyVideo} />
       </video>
     </div>
-    <div
-      class="flex flex-col justify-center md:flex-row mx-[20px] gap-[5px] md:mx-[60px] md:gap-[15px]"
-    >
-      <video loop playsinline autoplay muted class="w-full md:w-1/3 rounded-lg">
+    <div class="mx-[20px] flex flex-col justify-center gap-[5px] md:mx-[60px] md:flex-row md:gap-[15px]">
+      <video loop playsinline autoplay muted class="w-full rounded-lg md:w-1/3">
         <source src={SerumVideo} />
       </video>
       <Image
-        class="w-full md:w-2/3 h-auto rounded-lg"
+        class="h-auto w-full rounded-lg md:w-2/3"
         src={Serum}
-        alt="Kindra"
+        alt="A woman holding the Daily Vaginal Lotion bottle and applicator in her hands."
       />
     </div>
   </div>
   <div
-    class="flex flex-col md:flex-row gap-[45px] mx-[20px] my-[45px] md:mx-[200px] md:my-[120px] md:gap-[20px]"
+    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1040px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px]"
   >
     <!-- do not autoplay, use custom video player -->
-    <div class="md:w-1/2 relative">
-      <VimeoPlayer
-        class="rc"
-        video="1061087238"
-        height="100%"
-        action="unmute"
-      />
+    <div class="relative md:w-1/2">
+      <VimeoPlayer class="rc" video="1061087238" height="100%" action="unmute" />
     </div>
-    <div class="md:w-1/2 relative">
-      <VimeoPlayer
-        class="rc"
-        video="1061087228"
-        height="100%"
-        action="unmute"
-      />
+    <div class="relative md:w-1/2">
+      <VimeoPlayer class="rc" video="1061087228" height="100%" action="unmute" />
     </div>
   </div>
-  <video loop playsinline autoplay muted class="w-full my-[45px] md:my-[120px]">
+  <video loop playsinline autoplay muted class="my-[45px] w-full md:my-[120px]">
     <source src={Bed} />
   </video>
-  <div class="mb-[50px] md:mb-[100px] mx-[20px] md:mx-[300px]">
+  <div class="mx-auto mb-[50px] max-w-[850px] px-[20px] md:mb-[100px] md:px-0">
     <Lightbox baseimage={Site} lightboximage={SiteFull} id={1} />
   </div>
   <div
-    class="flex flex-col px-[20px] md:px-[60px] md:flex-row gap-[10px] md:gap-[15px] relative pt-[120px] md:pt-[280px]"
+    class="relative flex flex-col gap-[10px] px-[20px] pt-[120px] md:flex-row md:gap-[15px] md:px-[60px] md:pt-[280px]"
   >
     <Image
-      class="absolute z-5 top-0 left-0 w-full h-auto hidden md:block"
+      class="z-5 absolute left-0 top-0 hidden h-auto w-full md:block"
       src={SiteBackgroundDesktop}
-      alt=""
+      alt="Several Kindra lotion applicator tools."
     />
     <Image
-      class="absolute z-5 top-0 left-0 w-full h-auto block md:hidden"
+      class="z-5 absolute left-0 top-0 block h-auto w-full md:hidden"
       src={SiteBackgroundMobile}
-      alt=""
+      alt="Several Kindra lotion applicator tools."
     />
     <Image
-      class="w-full z-10 md:w-1/2 h-auto rounded-[5px]"
+      class="z-10 h-auto w-full rounded-[5px] md:w-1/2"
       src={ApplicatorGuide1}
-      alt="Kindra"
+      alt="A guide to use the Kindra applicator."
     />
     <Image
-      class="w-full z-10 md:w-1/2 h-auto rounded-[5px]"
+      class="z-10 h-auto w-full rounded-[5px] md:w-1/2"
       src={ApplicatorGuide2}
-      alt="Kindra"
+      alt="A guide to use the Kindra applicator."
     />
   </div>
-
 
   <ResponsiveTextBlock id="we-heard-you" class="collapsed padded">
     <div>
       <h1>WE HEARD YOU<br /><em>(AND YOUR OB/GYN)</em></h1>
       <p>At The Kindra Innovation Lab, we’re always learning.</p>
-      <p>Something vital we learned early on is that traditional vaginal applicators you find at your local drug store are unnecessarily invasive and wasteful. When we created our revolutionary vaginal lotion formula, we knew we had to find a better way for you to get meaningful relief where you actually need it. <button>…&nbsp;Read More</button></p>
-      <p>So we invented an entirely new applicator, designed to provide hydration directly to your most sensitive area—just inside and around your vaginal opening (AKA: your introitus, if we’re being scientific). We continue to be proud of this groundbreaking accomplishment, created by women with your comfort as our highest priority.</p>
-      <p>But the thing about learning is it never stops. In our ongoing work with renowned, field-proven OB/GYNs and leading women’s health experts, as well as our steadfast commitment to listening to you, our Kindra community, we have learned something even more vital.</p>
-      <p>The very best applicator for The Daily Vaginal Lotion is simply <em>you</em>.</p>
+      <p>
+        Something vital we learned early on is that traditional vaginal applicators you find at your local drug store
+        are unnecessarily invasive and wasteful. When we created our revolutionary vaginal lotion formula, we knew we
+        had to find a better way for you to get meaningful relief where you actually need it. <button
+          >…&nbsp;Read More</button
+        >
+      </p>
+      <p>
+        So we invented an entirely new applicator, designed to provide hydration directly to your most sensitive
+        area—just inside and around your vaginal opening (AKA: your introitus, if we’re being scientific). We continue
+        to be proud of this groundbreaking accomplishment, created by women with your comfort as our highest priority.
+      </p>
+      <p>
+        But the thing about learning is it never stops. In our ongoing work with renowned, field-proven OB/GYNs and
+        leading women’s health experts, as well as our steadfast commitment to listening to you, our Kindra community,
+        we have learned something even more vital.
+      </p>
+      <p>
+        The very best applicator for The Daily Vaginal Lotion is simply <em>you</em>.
+      </p>
     </div>
     <div>
-      <p>That’s right. Since you only apply lotion about an inch or less inside your vagina, a finger is all you need. In fact, what we’ve learned through listening to you and the experts is that fingertip application allows for better precision and results in even less product waste. As an added convenience, there’s nothing to sanitize between uses beyond simply washing your hands. And while medical-grade silicone is more sustainable than plastic, it’s not biodegradable, so putting less of it into the world is even better for our planet.</p>
+      <p>
+        That’s right. Since you only apply lotion about an inch or less inside your vagina, a finger is all you need. In
+        fact, what we’ve learned through listening to you and the experts is that fingertip application allows for
+        better precision and results in even less product waste. As an added convenience, there’s nothing to sanitize
+        between uses beyond simply washing your hands. And while medical-grade silicone is more sustainable than
+        plastic, it’s not biodegradable, so putting less of it into the world is even better for our planet.
+      </p>
       <p>Now that we know all of this, it’s time to do something about it.</p>
-      <p>Listen, we’re not going to sell you something that you just don’t need. It’s time to say goodbye to our little applicator that could. It was an innovative leap in the right direction, because it helped us get right here—to an even more empowering and straightforward solution. You are all the applicator you need to get the relief you need, which is actually pretty awesome.</p>
-      <p>We realize some of you may miss the applicator, and we feel you. It’s been our baby! But the overwhelming customer feedback and clinical counsel is that finger application is not only a good option, but—in fact—the best option. And we want nothing but the best for you. Always.</p>
+      <p>
+        Listen, we’re not going to sell you something that you just don’t need. It’s time to say goodbye to our little
+        applicator that could. It was an innovative leap in the right direction, because it helped us get right here—to
+        an even more empowering and straightforward solution. You are all the applicator you need to get the relief you
+        need, which is actually pretty awesome.
+      </p>
+      <p>
+        We realize some of you may miss the applicator, and we feel you. It’s been our baby! But the overwhelming
+        customer feedback and clinical counsel is that finger application is not only a good option, but—in fact—the
+        best option. And we want nothing but the best for you. Always.
+      </p>
       <p>Thanks for going on this journey with us. Here’s to learning, improving, and growing together.</p>
     </div>
   </ResponsiveTextBlock>
 
   <div class="flex w-full flex-col md:flex-row">
-    <Image class="w-full md:w-1/2 h-auto z-20" src={PinkLotion} alt="Kindra" />
-    <Image class="w-full md:w-1/2 h-auto z-20" src={Peach} alt="Kindra" />
+    <Image class="z-20 h-auto w-full md:w-1/2" src={PinkLotion} alt="The Kindra V Relief Serum bottle." />
+    <Image class="z-20 h-auto w-full md:w-1/2" src={Peach} alt="Half of a peach resting on a woman's underwear." />
   </div>
-  <div
-    class="grid grid-cols-2 gap-4 mx-[20px] md:grid-cols-3 my-[45px] md:my-[120px] md:mx-[60px]"
-  >
-    <Image class="w-full h-auto md:order-2" src={CoreGrid2} alt="Kindra" />
-    <Image class="w-full h-auto md:order-1" src={CoreGrid1} alt="Kindra" />
-    <Image class="w-full h-auto md:order-3" src={CoreGrid3} alt="Kindra" />
-    <Image class="w-full h-auto md:order-4" src={CoreGrid4} alt="Kindra" />
-    <Image class="w-full h-auto md:order-5" src={CoreGrid5} alt="Kindra" />
-    <Image class="w-full h-auto md:order-6" src={CoreGrid6} alt="Kindra" />
+  <div class="mx-[20px] my-[45px] grid grid-cols-2 gap-4 md:mx-[60px] md:my-[120px] md:grid-cols-3">
+    <Image class="h-auto w-full md:order-2" src={CoreGrid2} alt="Kindra Core dietary supplement." />
+    <Image class="h-auto w-full md:order-1" src={CoreGrid1} alt="Kindra applicator tool." />
+    <Image class="h-auto w-full md:order-3" src={CoreGrid3} alt="A hand holding up a pill capsule." />
+    <Image class="h-auto w-full md:order-4" src={CoreGrid4} alt="Kindra product bottle." />
+    <Image class="h-auto w-full md:order-5" src={CoreGrid5} alt="Kindra Energy Boosting Dietary supplement." />
+    <Image class="h-auto w-full md:order-6" src={CoreGrid6} alt="Kindra daily vaginal lotion and applicator." />
   </div>
-  <ResponsiveBackground
-    mobile={SocialBackgroundMobile}
-    desktop={SocialBackgroundDesktop}
-  >
+  <ResponsiveBackground mobile={SocialBackgroundMobile} desktop={SocialBackgroundDesktop}>
     <div
-      class="relative flex flex-col items-center justify-center gap-[35px] pt-[60px] mt-[30px] pb-[60px] md:flex-row md:mx-[300px] md:gap-[60px]"
+      class="mx-auto mt-[30px] flex max-w-[840px] flex-col items-center justify-center gap-[35px] pb-[60px] pt-[60px] md:flex-row md:gap-[60px] md:px-[45px]"
     >
-      <Image
-        class="w-1/2 rounded-[10px] md:rounded-[25px]"
-        src={SocialGrid}
-        alt="Kindra"
-      />
-      <video
-        loop
-        playsinline
-        autoplay
-        muted
-        class="rounded-[10px] md:rounded-[25px] w-1/2"
-      >
+      <Image class="w-1/2 rounded-[10px] md:rounded-[25px]" src={SocialGrid} alt="Kindra instagram page." />
+      <video loop playsinline autoplay muted class="w-1/2 rounded-[10px] md:rounded-[25px]">
         <source src={SocialVideo} />
       </video>
     </div>
   </ResponsiveBackground>
   <div
-    class="flex flex-col mx-[20px] md:mx-[200px] my-[45px] md:my-[120px] gap-[45px] md:gap-[60px] md:flex-row"
+    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1040px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-[60px]"
   >
     <video loop playsinline autoplay muted class="rounded-lg md:w-1/2">
       <source src={Menopause} />
@@ -530,73 +589,61 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     </video>
   </div>
   <div
-    class="flex flex-row w-full md:w-1/2 px-[20px] md:mx-auto justify-center gap-[10px] md:gap-[50px] mb-[45px] md:mb-[120px]"
+    class="mb-[45px] flex w-full max-w-[690px] flex-row justify-center gap-[10px] px-[20px] md:mx-auto md:mb-[120px] md:gap-[50px]"
   >
-    <Lightbox
-      baseimage={QuizResultsShort}
-      lightboximage={QuizResultsEmail}
-      id={2}
-    />
+    <Lightbox baseimage={QuizResultsShort} lightboximage={QuizResultsEmail} id={2} />
     <Lightbox baseimage={QuizFlowShort} lightboximage={QuizFlowFull} id={3} />
   </div>
   <div class="flex flex-col md:gap-[15px]">
     <div class="flex flex-col md:flex-row md:gap-[15px]">
-      <Image class="w-full md:w-1/2" src={ToolBox1} alt="Kindra" />
-      <Image class="w-full md:w-1/2" src={ToolBox2} alt="Kindra" />
+      <Image class="w-full md:w-1/2" src={ToolBox1} alt="Kindra toolbox shipping package box." />
+      <Image class="w-full md:w-1/2" src={ToolBox2} alt="Kindra branded package tissue paper." />
     </div>
-    <Image class="w-full" src={ToolBoxOpen} alt="Kindra" />
+    <Image class="w-full" src={ToolBoxOpen} alt="An opened Kindra toolbox package featuring various products." />
   </div>
   <div
-    class="grid grid-cols-2 md:grid-cols-4 gap-[5px] md:gap-[10px] mx-[20px] md:mx-[60px] mt-[45px] mb-[95px] md:my-[220px]"
+    class="mx-[20px] mb-[95px] mt-[45px] grid grid-cols-2 gap-[5px] md:mx-[60px] md:my-[220px] md:grid-cols-4 md:gap-[10px]"
   >
-    <video
-      loop
-      playsinline
-      autoplay
-      muted
-      class="w-full h-auto relative top-[50px] rounded-md md:rounded-lg"
-    >
+    <video loop playsinline autoplay muted class="relative top-[50px] h-auto w-full rounded-md md:rounded-lg">
       <source src={Social1} />
     </video>
-    <video
-      loop
-      playsinline
-      autoplay
-      muted
-      class="w-full h-auto rounded-md md:rounded-lg"
-    >
+    <video loop playsinline autoplay muted class="h-auto w-full rounded-md md:rounded-lg">
       <source src={Social2} />
     </video>
 
-    <video
-      loop
-      playsinline
-      autoplay
-      muted
-      class="w-full h-auto relative top-[50px] rounded-md md:rounded-lg"
-    >
+    <video loop playsinline autoplay muted class="relative top-[50px] h-auto w-full rounded-md md:rounded-lg">
       <source src={Social3} />
     </video>
-    <video
-      loop
-      playsinline
-      autoplay
-      muted
-      class="w-full h-auto relative md:top-[100px] rounded-md md:rounded-lg"
-    >
+    <video loop playsinline autoplay muted class="relative h-auto w-full rounded-md md:top-[100px] md:rounded-lg">
       <source src={Social4} />
     </video>
   </div>
-  <video loop playsinline autoplay muted class="w-full hidden md:block">
+  <video loop playsinline autoplay muted class="hidden w-full md:block">
     <source src={BTSDesktop} />
   </video>
-  <video loop playsinline autoplay muted class="w-full block md:hidden">
+  <video loop playsinline autoplay muted class="block w-full md:hidden">
     <source src={BTSMobile} />
   </video>
-  <Image class="w-full hidden md:block" src={GloriaDesktop} alt="Kindra" />
-  <Image class="w-full block md:hidden" src={GloriaMobile} alt="Kindra" />
-  <Image class="w-full hidden md:block" src={KindraCCDesktop} alt="Kindra" />
-  <Image class="w-full block md:hidden" src={KindraCCMobile} alt="Kindra" />
+  <Image
+    class="hidden w-full md:block"
+    src={GloriaDesktop}
+    alt="Portrait of Gloria Steinem. Every social justice movement i nthe world started with a conversation Gloria Steinem"
+  />
+  <Image
+    class="block w-full md:hidden"
+    src={GloriaMobile}
+    alt="Portrait of Gloria Steinem. Every social justice movement i nthe world started with a conversation Gloria Steinem"
+  />
+  <Image
+    class="hidden w-full md:block"
+    src={KindraCCDesktop}
+    alt="A screenshot of the couch conversations page from the Kindra website along with pictures of the conversation cards. A woman reading a couch conversation card. Two women hugging."
+  />
+  <Image
+    class="block w-full md:hidden"
+    src={KindraCCMobile}
+    alt="A screenshot of the couch conversations page from the Kindra website along with pictures of the conversation cards. A woman reading a couch conversation card. Two women hugging."
+  />
 
   <div id="in-words-only">
     <p>In Words Only</p>
@@ -605,73 +652,201 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   <ResponsiveTextBlock id="radical-act-of-rest" class="collapsed padded">
     <div>
       <h1>It Is the Radical Act of Rest That Brings Out True Resilience</h1>
-      <p>Today is International Women’s Day, and I can’t help thinking about how women and children bear a unique burden in troubled times.</p>
-      <p>While the world is watching Ukrainian women fighting for their families, fleeing their homes, making impossible choices, and struggling to survive, I’m reminded of working in Northern Ireland at the end of The Troubles when I was a teenager at what was called a “reconciliation center.” The idea was to bring families together from the embattled North and South of Ireland to essentially help people—war-torn and exhausted from the ongoing guerrilla violence—find common ground and greater compassion for one another. As I eagerly awaited the arrival of these families, bussed in from all over the country, I was not sure what to expect. When the doors opened, it was also not what I had imagined.</p>
-      <p>I will forever be in awe of the women and children who emerged from those buses. Whether from the North, South, East or West, the scene was always the same—weary faces of mothers and grandmothers with kids of every age in tow. The hardship and courage on their faces was like cold water splashed onto mine. It’s the same feeling I have now seeing those fleeing turmoil in Eastern Europe, including people of color and non-Ukrainian residents facing bias at the border as everyone tries to find a safe haven or get home.</p>
-      <p>Somewhere in the space between Black History Month in February and Women’s History Month in March, there sits a massive, intersecting community of wildly underserved people struggling time and again to simply live in peace. The past few years have been challenging for everyone in the world, and—I’ll be honest—in many ways it feels like the suffering is never ending. And what can we really do about it? How can we continue to move forward as individuals, as families, as nations, and as a global community when there is constant turmoil and oppression everywhere you turn?</p>
+      <p>
+        Today is International Women’s Day, and I can’t help thinking about how women and children bear a unique burden
+        in troubled times.
+      </p>
+      <p>
+        While the world is watching Ukrainian women fighting for their families, fleeing their homes, making impossible
+        choices, and struggling to survive, I’m reminded of working in Northern Ireland at the end of The Troubles when
+        I was a teenager at what was called a “reconciliation center.” The idea was to bring families together from the
+        embattled North and South of Ireland to essentially help people—war-torn and exhausted from the ongoing
+        guerrilla violence—find common ground and greater compassion for one another. As I eagerly awaited the arrival
+        of these families, bussed in from all over the country, I was not sure what to expect. When the doors opened, it
+        was also not what I had imagined.
+      </p>
+      <p>
+        I will forever be in awe of the women and children who emerged from those buses. Whether from the North, South,
+        East or West, the scene was always the same—weary faces of mothers and grandmothers with kids of every age in
+        tow. The hardship and courage on their faces was like cold water splashed onto mine. It’s the same feeling I
+        have now seeing those fleeing turmoil in Eastern Europe, including people of color and non-Ukrainian residents
+        facing bias at the border as everyone tries to find a safe haven or get home.
+      </p>
+      <p>
+        Somewhere in the space between Black History Month in February and Women’s History Month in March, there sits a
+        massive, intersecting community of wildly underserved people struggling time and again to simply live in peace.
+        The past few years have been challenging for everyone in the world, and—I’ll be honest—in many ways it feels
+        like the suffering is never ending. And what can we really do about it? How can we continue to move forward as
+        individuals, as families, as nations, and as a global community when there is constant turmoil and oppression
+        everywhere you turn?
+      </p>
       <button>Read More…</button>
     </div>
     <div>
-      <p>I don’t have all the answers, but I can tell you what I learned from the women of Ireland coming together on the fault lines of their divided homeland. Troubled times help us summon survival instincts and tremendous courage, but it is the radical act of rest that brings out true resilience. Once these women had settled into the reconciliation center and were able to take precious time and space to rest with their families, I saw those families from opposite sides of The Troubles sharing stories, laughing, playing, and giving each other such grace.</p>
+      <p>
+        I don’t have all the answers, but I can tell you what I learned from the women of Ireland coming together on the
+        fault lines of their divided homeland. Troubled times help us summon survival instincts and tremendous courage,
+        but it is the radical act of rest that brings out true resilience. Once these women had settled into the
+        reconciliation center and were able to take precious time and space to rest with their families, I saw those
+        families from opposite sides of The Troubles sharing stories, laughing, playing, and giving each other such
+        grace.
+      </p>
       <p>On this International Women’s Day, let’s #breakthebias and honestly ask ourselves:</p>
-      <p>How can I look beyond my own fears and entrenched biases to reach across to someone who might need support? Is that person really so different from me? How can I make sure I remain open minded to experiences, people, places, and paths toward reconciliation, cooperation, and peace—even in my own backyard?</p>
-      <p>I learn so much from you all every day, but one constant is that no one of us is having precisely the same experience in this great shared experience of menopause. Empathy and acceptance are a key part of journeying through challenging times while supporting one another. Realizing that you can never really know what’s happening with someone unless you listen with an open mind is so important, but it’s resting your body and soul that is essential to cultivating openness, understanding, and the resilience we all need when times get tough.</p>
-      <p>Please give yourself grace. Take time to rest and recharge (and if rest is hard-won, we’re here to help). Breathe deeply. Hug your loved ones tightly. I know we are all doing what we can to help heal this world of ours, but remember the healing starts within you.</p>
+      <p>
+        How can I look beyond my own fears and entrenched biases to reach across to someone who might need support? Is
+        that person really so different from me? How can I make sure I remain open minded to experiences, people,
+        places, and paths toward reconciliation, cooperation, and peace—even in my own backyard?
+      </p>
+      <p>
+        I learn so much from you all every day, but one constant is that no one of us is having precisely the same
+        experience in this great shared experience of menopause. Empathy and acceptance are a key part of journeying
+        through challenging times while supporting one another. Realizing that you can never really know what’s
+        happening with someone unless you listen with an open mind is so important, but it’s resting your body and soul
+        that is essential to cultivating openness, understanding, and the resilience we all need when times get tough.
+      </p>
+      <p>
+        Please give yourself grace. Take time to rest and recharge (and if rest is hard-won, we’re here to help).
+        Breathe deeply. Hug your loved ones tightly. I know we are all doing what we can to help heal this world of
+        ours, but remember the healing starts within you.
+      </p>
       <p>I see you—brave, resilient, wonderful woman. You are not alone. We are Kindra.</p>
       <p>Truly,</p>
       <p>Catherine Balsam-Schwaber, Kindra CEO</p>
     </div>
   </ResponsiveTextBlock>
 
-  <div class="hrule" />
+  <div class="hrule"></div>
 
   <ResponsiveTextBlock id="reflections-for-the-new-year" class="collapsed padded">
     <div>
       <h1>Reflections for the New Year: On Resilience in Free Fall</h1>
-      <p>I hate roller coasters. A slow buildup to a sudden drop into the terrifying unknown. That feeling of falling from a great height. The overwhelming sensation of total loss of control. It may seem cliché, but as I usher my family into 2022, I feel like I am sitting on the top of a rollercoaster teetering on the ride of my life.</p>
-      <p>From the tremendous growth of Kindra to my husband’s entrepreneurial career taking off, from my parents gracefully aging into a retirement community to my kids on the precipice of their first kisses, this next year will be one for the books. Being a good leader, partner, daughter, and mom is going to be a big role in 2022—one that I am grateful and privileged to fill for my loved ones.</p>
-      <p>Then there’s the bigger picture. 2020 was going to be our year! Remember? 2021 was to be the year we got back to normal. It was going to be ok. New Year’s 2022 is… eerily quiet. Uncertain. With each passing year, I feel the pull to try and make time stand still. But really—with all this turmoil in the world, how could I want that? The last few years have been particularly tumultuous for the world, and I imagine we all may find ourselves wanting to pause and fast-forward all at once. I wish I could skip ahead to more certain times, but somehow stay like I am now—healthy, working hard, loving strong.</p>
+      <p>
+        I hate roller coasters. A slow buildup to a sudden drop into the terrifying unknown. That feeling of falling
+        from a great height. The overwhelming sensation of total loss of control. It may seem cliché, but as I usher my
+        family into 2022, I feel like I am sitting on the top of a rollercoaster teetering on the ride of my life.
+      </p>
+      <p>
+        From the tremendous growth of Kindra to my husband’s entrepreneurial career taking off, from my parents
+        gracefully aging into a retirement community to my kids on the precipice of their first kisses, this next year
+        will be one for the books. Being a good leader, partner, daughter, and mom is going to be a big role in 2022—one
+        that I am grateful and privileged to fill for my loved ones.
+      </p>
+      <p>
+        Then there’s the bigger picture. 2020 was going to be our year! Remember? 2021 was to be the year we got back to
+        normal. It was going to be ok. New Year’s 2022 is… eerily quiet. Uncertain. With each passing year, I feel the
+        pull to try and make time stand still. But really—with all this turmoil in the world, how could I want that? The
+        last few years have been particularly tumultuous for the world, and I imagine we all may find ourselves wanting
+        to pause and fast-forward all at once. I wish I could skip ahead to more certain times, but somehow stay like I
+        am now—healthy, working hard, loving strong.
+      </p>
       <p>But we can’t bottle or manipulate time. So what do we do instead?</p>
-      <p>I speak to a lot of experts on all things change by virtue of my role at Kindra. They all talk about how finding yourself in new circumstances—good or bad—is naturally overwhelming. The uncertainty of facing and even walking toward something you’ve never experienced before is a major source of stress. It is the unknowing that makes it worse. I’ve come to the realization that these days ahead at the dawn of this new year are much like the journeys you all share with me as we navigate our changing bodies and spirits.</p>
+      <p>
+        I speak to a lot of experts on all things change by virtue of my role at Kindra. They all talk about how finding
+        yourself in new circumstances—good or bad—is naturally overwhelming. The uncertainty of facing and even walking
+        toward something you’ve never experienced before is a major source of stress. It is the unknowing that makes it
+        worse. I’ve come to the realization that these days ahead at the dawn of this new year are much like the
+        journeys you all share with me as we navigate our changing bodies and spirits.
+      </p>
       <p>And just like that (😉), I knew how to unknowingly move forward.</p>
       <button>Read More…</button>
     </div>
     <div>
-      <p>I started by taking 3 days off. As the CEO of a rapidly growing startup, that’s no small feat. But I took real time just for me and mine, and I hope you were able to carve some out, too. Because the key to closing the books on 2021 and entering into the great unknown of 2022 is taking care of ourselves. From catching up on reading (highly recommend Untamed—I listened to the audiobook, then immediately devoured her podcast) and entertainment (Succession, anyone?!) to spending time sweating to my favorite music while working out (it’s honestly been a life saver) and perfecting my homemade green juice recipe (ginger and lime, friends), I’m intentionally taking time to refill my well, so I have something to bring to you all in 2022. We have so many exciting things in store!</p>
-      <p>We’re partnering with an incredible nutritionist to share expert guidance on how to bring your gut and hormonal health in sync. I can’t wait to introduce you to her! And we’ll be soothing our bodies inside and out with an all-new formula from the Kindra Innovation Lab that has personally done wonders for my paper-thin, dry skin everywhere! We’re honored to continue our mission to support your menopause journey in these ways and more in the year ahead.</p>
-      <p>You don’t spontaneously summon resilience in the face of unexpected or difficult circumstances; you have to cultivate it. In this time of reflection and anticipation for us all, I encourage you to truly prioritize your well-being, practice gratitude, and simply love yourself a little bit more. That’s what I’m resolved to do, and I hope you’ll join me. It will give us something to hold onto and ground us when circumstances beyond our control befall us. Together we can expect the unexpected and—whenever possible—allow ourselves to enjoy the ride.</p>
-      <p>You are not alone. We are Kindra.Month in February and Women’s History Month in March, there sits a massive, intersecting community of wildly underserved people struggling time and again to simply live in peace. The past few years have been challenging for everyone in the world, and—I’ll be honest—in many ways it feels like the suffering is never ending. And what can we really do about it? How can we continue to move forward as individuals, as families, as nations, and as a global community when there is constant turmoil and oppression everywhere you turn?</p>
+      <p>
+        I started by taking 3 days off. As the CEO of a rapidly growing startup, that’s no small feat. But I took real
+        time just for me and mine, and I hope you were able to carve some out, too. Because the key to closing the books
+        on 2021 and entering into the great unknown of 2022 is taking care of ourselves. From catching up on reading
+        (highly recommend Untamed—I listened to the audiobook, then immediately devoured her podcast) and entertainment
+        (Succession, anyone?!) to spending time sweating to my favorite music while working out (it’s honestly been a
+        life saver) and perfecting my homemade green juice recipe (ginger and lime, friends), I’m intentionally taking
+        time to refill my well, so I have something to bring to you all in 2022. We have so many exciting things in
+        store!
+      </p>
+      <p>
+        We’re partnering with an incredible nutritionist to share expert guidance on how to bring your gut and hormonal
+        health in sync. I can’t wait to introduce you to her! And we’ll be soothing our bodies inside and out with an
+        all-new formula from the Kindra Innovation Lab that has personally done wonders for my paper-thin, dry skin
+        everywhere! We’re honored to continue our mission to support your menopause journey in these ways and more in
+        the year ahead.
+      </p>
+      <p>
+        You don’t spontaneously summon resilience in the face of unexpected or difficult circumstances; you have to
+        cultivate it. In this time of reflection and anticipation for us all, I encourage you to truly prioritize your
+        well-being, practice gratitude, and simply love yourself a little bit more. That’s what I’m resolved to do, and
+        I hope you’ll join me. It will give us something to hold onto and ground us when circumstances beyond our
+        control befall us. Together we can expect the unexpected and—whenever possible—allow ourselves to enjoy the
+        ride.
+      </p>
+      <p>
+        You are not alone. We are Kindra.Month in February and Women’s History Month in March, there sits a massive,
+        intersecting community of wildly underserved people struggling time and again to simply live in peace. The past
+        few years have been challenging for everyone in the world, and—I’ll be honest—in many ways it feels like the
+        suffering is never ending. And what can we really do about it? How can we continue to move forward as
+        individuals, as families, as nations, and as a global community when there is constant turmoil and oppression
+        everywhere you turn?
+      </p>
       <p>You are not alone. We are Kindra.</p>
       <p>Truly,</p>
       <p>Catherine</p>
     </div>
   </ResponsiveTextBlock>
 
-  <div class="hrule" />
+  <div class="hrule"></div>
 
   <ResponsiveTextBlock id="wonder-women" class="collapsed padded">
     <div>
       <h1>For All the Wonder Women—Then & Now—Let’s Get to Work</h1>
-      <p>I’ve worked with a lot of ‘Wonder Women’ in my career, many of whom were about my age now when I was lucky enough to learn from them at the top of their game. But now that I’m standing where they once stood—a working mom in menopause building a business in the face of a global pandemic that just won’t quit—I wonder about their silent struggles. I wonder how they hid a hot flash or worked through brain fog while I marveled at their professional prowess and seeming ability to handle everything life threw at them with dignity and grace.</p>
-      <p>Women have made so many advancements in the workplace over the last century, and yet menopause lingers as this shameful secret. A perfectly natural shared experience half the population of the planet is somehow expected to hide from the other half and, worst of all, each other.</p>
-      <p>Imagine how freeing it would be if we all owned our experience with menopause instead. Imagine how empowering it would be if we got hit with a hot flash during a meeting and instead of attempting to ignore the copious sweat and discomfort, we could just pronounce it a "hot flash moment" and choose whether to plow through or simply pause the meeting and excuse ourselves until it passed. What if it was acceptable to be a woman working while in menopause? I wonder…</p>
-      <p>But it will take more than wondering. </p>
+      <p>
+        I’ve worked with a lot of ‘Wonder Women’ in my career, many of whom were about my age now when I was lucky
+        enough to learn from them at the top of their game. But now that I’m standing where they once stood—a working
+        mom in menopause building a business in the face of a global pandemic that just won’t quit—I wonder about their
+        silent struggles. I wonder how they hid a hot flash or worked through brain fog while I marveled at their
+        professional prowess and seeming ability to handle everything life threw at them with dignity and grace.
+      </p>
+      <p>
+        Women have made so many advancements in the workplace over the last century, and yet menopause lingers as this
+        shameful secret. A perfectly natural shared experience half the population of the planet is somehow expected to
+        hide from the other half and, worst of all, each other.
+      </p>
+      <p>
+        Imagine how freeing it would be if we all owned our experience with menopause instead. Imagine how empowering it
+        would be if we got hit with a hot flash during a meeting and instead of attempting to ignore the copious sweat
+        and discomfort, we could just pronounce it a "hot flash moment" and choose whether to plow through or simply
+        pause the meeting and excuse ourselves until it passed. What if it was acceptable to be a woman working while in
+        menopause? I wonder…
+      </p>
+      <p>But it will take more than wondering.</p>
       <button>Read More…</button>
     </div>
     <div>
-      <p>We're not only imagining a long overdue future here at Kindra, we're here to make it happen. There are so many women working in industries and roles that did not allow them the privilege of working from home during the pandemic. And now as many that were able to work from home start to think about returning to the workplace, whether that's in real life, a hybrid arrangement, or simply the decision to stay firmly at home, it's time to address an issue that's laid dormant for too long. Women in their working prime are suffering in silence. It has to stop.</p>
-      <p>Let's bring our struggles into the light, offer each other support, celebrate our wins, and create a pathway for us all to feel understood, represented, and honored. Let’s get to work helping each other get to work.</p>
-      <p>Our first step towards doing just that is introducing our new Menopause in the Workplace Toolkit, complete with tips for navigating office culture as a menopausal woman or an empathetic colleague/manager, products and life hacks to help overcome your biggest productivity challenges, and restorative meditations for those moments when the best thing is just to take a moment for yourself before diving back in.</p>
-      <p>Wherever work may find you, whatever work you do, know that we see your struggles, we believe in you wholeheartedly, and we're working alongside you to make work better for us all.</p>
+      <p>
+        We're not only imagining a long overdue future here at Kindra, we're here to make it happen. There are so many
+        women working in industries and roles that did not allow them the privilege of working from home during the
+        pandemic. And now as many that were able to work from home start to think about returning to the workplace,
+        whether that's in real life, a hybrid arrangement, or simply the decision to stay firmly at home, it's time to
+        address an issue that's laid dormant for too long. Women in their working prime are suffering in silence. It has
+        to stop.
+      </p>
+      <p>
+        Let's bring our struggles into the light, offer each other support, celebrate our wins, and create a pathway for
+        us all to feel understood, represented, and honored. Let’s get to work helping each other get to work.
+      </p>
+      <p>
+        Our first step towards doing just that is introducing our new Menopause in the Workplace Toolkit, complete with
+        tips for navigating office culture as a menopausal woman or an empathetic colleague/manager, products and life
+        hacks to help overcome your biggest productivity challenges, and restorative meditations for those moments when
+        the best thing is just to take a moment for yourself before diving back in.
+      </p>
+      <p>
+        Wherever work may find you, whatever work you do, know that we see your struggles, we believe in you
+        wholeheartedly, and we're working alongside you to make work better for us all.
+      </p>
       <p>I see you, Wonder Woman. You are not alone. You are Kindra.</p>
       <p>Truly,</p>
-      <p>Catherine </p>
+      <p>Catherine</p>
     </div>
   </ResponsiveTextBlock>
-
-
-  </div>
 </ProjectLayout>
+
 <script>
   const readMoreButtons = document.getElementsByClassName("read-more");
   const readLessButtons = document.getElementsByClassName("read-less");
@@ -693,12 +868,11 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   }
 
   // clicking the Read More button in the Dos & Don'ts section displays more on mobile
-  document.querySelectorAll('.project-text-block').forEach(elt => {
-    elt.addEventListener("click", e => {
-      if (e.target instanceof HTMLButtonElement){
-        elt.classList.remove("collapsed")
+  document.querySelectorAll(".project-text-block").forEach((elt) => {
+    elt.addEventListener("click", (e) => {
+      if (e.target instanceof HTMLButtonElement) {
+        elt.classList.remove("collapsed");
       }
-    })
-  })
-
+    });
+  });
 </script>

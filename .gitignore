@@ -27,3 +27,5 @@ pnpm-debug.log*
 
 # local detritus
 /todo.txt
+
+.prettierrc

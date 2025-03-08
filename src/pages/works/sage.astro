@@ -70,8 +70,85 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
     font-family: "Karla", sans-serif;
   }
 
-  #brand-guide{
+  #brand-guide {
     background: #1d1a1a url("/images/noise.svg") repeat;
+  }
+
+  .vertical-spacing-container {
+    width: 100%;
+    margin-top: 45px;
+    margin-bottom: 45px;
+
+    @media (min-width: 768px) {
+      margin-top: 120px;
+      margin-bottom: 120px;
+    }
+  }
+
+  .two-up-copy {
+    display: flex;
+    --one-third-mobile: calc(100% * 1 / 3 - 2.5px);
+    --two-thirds-mobile: calc(100% * 2 / 3 - 2.5px);
+    --half-mobile: calc(50% - 2.5px);
+    &.bias-left-mobile {
+      img:first-child {
+        width: var(--two-thirds-mobile);
+      }
+      img:last-child {
+        width: var(--one-third-mobile);
+      }
+    }
+
+    &.bias-right-mobile {
+      img:first-child {
+        width: var(--one-third-mobile);
+      }
+      img:last-child {
+        width: var(--two-thirds-mobile);
+      }
+    }
+
+    &.bias-center-mobile {
+      img:first-child {
+        width: var(--half-mobile);
+      }
+      img:last-child {
+        width: var(--half-mobile);
+      }
+    }
+    @media (min-width: 768px) {
+      flex-flow: row nowrap;
+      --one-third: calc(100% * 1 / 3 - 7.5px);
+      --two-thirds: calc(100% * 2 / 3 - 7.5px);
+      --half: calc(50% - 7.5px);
+
+      &.bias-left {
+        img:first-child {
+          width: var(--two-thirds);
+        }
+        img:last-child {
+          width: var(--one-third);
+        }
+      }
+
+      &.bias-right {
+        img:first-child {
+          width: var(--one-third);
+        }
+        img:last-child {
+          width: var(--two-thirds);
+        }
+      }
+
+      &.bias-center {
+        img:first-child {
+          width: var(--half);
+        }
+        img:last-child {
+          width: var(--half);
+        }
+      }
+    }
   }
 </style>
 <ProjectLayout
@@ -83,22 +160,40 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
   tags={tags}
 >
   <Image
-    class="w-full h-auto px-[20px] md:px-[60px] my-[45px] md:my-[120px]"
+    class="my-[45px] h-auto w-full px-[20px] md:my-[120px] md:px-[60px]"
     src={SagePhoto}
-    alt="Sage Collage"
+    alt="A collage of photos. A mother holding her child"
   />
-
 
   <ResponsiveTextBlock class="padded">
     <div>
-      <h1>Sage Integrative Health is a haven for people to dig, discover, and reveal. </h1>
-      <p>Our practice is built on clinically proven therapies—both traditional and emerging, Western and Eastern, innovative and of the Earth—multiple therapies working in concert, all in service of our clients’ safety, comfort, and well-being.</p>
-      <p>Our mission is facilitating self-actualization: Leading a life of courage, confidence, and compassion. But first, we meet everyone exactly where they are and let them breathe and be.</p>
+      <h1>Sage Integrative Health is a haven for people to dig, discover, and reveal.</h1>
+      <p>
+        Our practice is built on clinically proven therapies—both traditional and emerging, Western and Eastern,
+        innovative and of the Earth—multiple therapies working in concert, all in service of our clients’ safety,
+        comfort, and well-being.
+      </p>
+      <p>
+        Our mission is facilitating self-actualization: Leading a life of courage, confidence, and compassion. But
+        first, we meet everyone exactly where they are and let them breathe and be.
+      </p>
     </div>
     <div>
-      <p>We are trauma-informed and sensitive, living in the real world, and recognizing that individual struggle doesn’t exist in a vacuum. We are not afraid to address and confront complex inequities. We are sympathetic and empathic to how mental health and identity intersect, as many of us are trauma survivors or carry marginalized identities. Like our clients, we also have needed to cultivate resilience, learning to live fully and flourish through anything that may come in present or future times.</p>
-      <p>Ultimately, we wholeheartedly believe in the power of interconnectedness: with each other, the world, and the universe at large.</p>
-      <p>Like our namesake herb, we aspire to bloom—in sunlight or in shade—while staying grounded and then, just by existing, enrich the soil around us so more growth can sprout.</p>
+      <p>
+        We are trauma-informed and sensitive, living in the real world, and recognizing that individual struggle doesn’t
+        exist in a vacuum. We are not afraid to address and confront complex inequities. We are sympathetic and empathic
+        to how mental health and identity intersect, as many of us are trauma survivors or carry marginalized
+        identities. Like our clients, we also have needed to cultivate resilience, learning to live fully and flourish
+        through anything that may come in present or future times.
+      </p>
+      <p>
+        Ultimately, we wholeheartedly believe in the power of interconnectedness: with each other, the world, and the
+        universe at large.
+      </p>
+      <p>
+        Like our namesake herb, we aspire to bloom—in sunlight or in shade—while staying grounded and then, just by
+        existing, enrich the soil around us so more growth can sprout.
+      </p>
     </div>
   </ResponsiveTextBlock>
 
@@ -107,40 +202,49 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
     imgClass="w-[60%] mx-auto rounded-[20px] md:rounded-md my-11"
     mobile={SageSiteMobile}
     desktop={SageSiteDesktop}
-    alt="Sage Site"
+    alt="A screenshot of the Sage website."
   />
 
   <div
-    class="w-full flex flex-row px-[20px] md:px-[60px] gap-[5px] md:gap-[15px] my-[45px] md:my-[120px]"
+    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1320px] flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
     <Image
-      class="w-1/2 h-auto rounded-sm md:rounded-md"
+      class="rounded-md md:rounded-lg"
       src={SageSocial1}
-      alt="Sage Social 1"
+      alt="A mother holding her child with the words I am resilient."
     />
     <Image
-      class="w-1/2 h-auto rounded-sm md:rounded-md"
+      class="rounded-md md:rounded-lg"
       src={SageSocial2}
-      alt="Sage Social 2"
+      alt="Text on a purple background showcasing the brand's colors and font stylings."
     />
   </div>
-  <video autoplay playsinline loop muted class="w-full mb-[45px] md:mb-[120px]">
+  <video autoplay playsinline loop muted class="vertical-spacing-container">
     <source src={BreatheVideo} type="video/mp4" />
   </video>
   <div
-    class="w-full flex flex-row px-[20px] md:px-[60px] gap-[5px] md:gap-[15px] my-[45px] md:my-[120px]"
+    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1320px] flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
-    <Image class="w-1/2 h-auto rounded" src={SageIcon1} alt="Sage Icon 1" />
-    <Image class="w-1/2 h-auto rounded" src={SageIcon2} alt="Sage Icon 2" />
+    <Image
+      class="rounded-md md:rounded-lg"
+      src={SageIcon1}
+      alt="A person sitting holding their legs to their chest. The words Today is a new beginning."
+    />
+
+    <Image
+      class="rounded-md md:rounded-lg"
+      src={SageIcon2}
+      alt="A white bedsheet suspended in air. The words Don't stress."
+    />
   </div>
 
   <div
-    class="flex flex-row px-[20px] md:px-[60px] my-[45px] md:my-[120px] gap-[5px] md:gap-[15px]"
+    class="vertical-spacing-container mx-auto flex max-w-[1320px] flex-row justify-center gap-[5px] px-[20px] md:gap-[15px] md:px-[30px]"
   >
     <Image
       src={SageStorySocial1}
       class="h-auto w-[33%] rounded-lg"
-      alt="Sage Story Social 1"
+      alt="Practicing Mindfulness through Breathwork can begin in the comfort of your home or workspace. Take a moment with yourslef as you brace for the week ahead."
     />
     <video class="h-auto w-[33%] rounded-lg" autoplay playsinline loop muted>
       <source src={StoryVideo} type="video/mp4" />
@@ -148,134 +252,116 @@ import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
     <Image
       src={SageStorySocial3}
       class="h-auto w-[33%] rounded-lg"
-      alt="Sage Story Social 3"
+      alt="Call attention to your lungs as they fill and empty. Scan your body from the crown of your head down to your toes."
     />
   </div>
-  <video
-    autoplay
-    playsinline
-    loop
-    muted
-    class="w-full my-[45px] md:my-[120px] hidden md:block"
-  >
+  <video autoplay playsinline loop muted class="my-[45px] hidden w-full md:my-[120px] md:block">
     <source src={WeAreVideo} type="video/mp4" />
   </video>
-  <video
-    autoplay
-    playsinline
-    loop
-    muted
-    class="w-full my-[45px] md:my-[120px] block md:hidden"
-  >
+  <video autoplay playsinline loop muted class="my-[45px] block w-full md:my-[120px] md:hidden">
     <source src={WeAreMobile} type="video/mp4" />
   </video>
   <div
-    class="w-full flex flex-row px-[20px] md:px-[60px] my-[45px] md:my-[120px] gap-[5px] md:gap-[15px]"
+    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[1320px] flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
     <Image
-      class="w-[50%] h-auto rounded"
+      class="rounded-md md:rounded-lg"
       src={SageGraphic1}
-      alt="Sage Graphic 1"
+      alt="A purple plant. The words Nutrition and Herbalism"
     />
     <Image
-      class="w-[50%] h-auto rounded"
+      class="rounded-md md:rounded-lg"
       src={SageGraphic2}
-      alt="Sage Graphic 2"
+      alt="A person resting their hands on their navel. The words Psychiatry and Psychotherapy"
     />
   </div>
-  <div class="w-full flex flex-row">
-    <Image class="h-auto w-1/2" src={SageQuote} alt="Sage Quote" />
+  <div class="flex w-full flex-row">
+    <Image
+      class="h-auto w-1/2"
+      src={SageQuote}
+      alt="It takes enormous trust and courage to allow yourself to remember. Dorothy Pitman Hughes"
+    />
     <video autoplay playsinline loop muted class="w-1/2">
       <source src={SocialVideo} type="video/mp4" />
     </video>
   </div>
-  <div
-    class="w-full flex flex-col py-[45px] md:py-[120px] gap-[4px] md:gap-[32px] px-[20px] md:px-[200px] bg-[#1f3333]"
-  >
-    <Image class="h-auto w-full" src={SageBrochure1} alt="Sage Brochure 1" />
-    <Image class="h-auto w-full" src={SageBrochure2} alt="Sage Brochure 2" />
+  <div class="w-full bg-[#1f3333] px-[20px]">
+    <div class="mx-auto flex max-w-[1040px] flex-col gap-[10px] py-[30px] md:gap-[120px] md:py-[120px]">
+      <Image class="h-auto w-full" src={SageBrochure1} alt="Two pages of Sage's brochure. On one" />
+      <Image
+        class="h-auto w-full"
+        src={SageBrochure2}
+        alt="Two pages of Sage's brochure. Both pages feature images of plants and discuss the services Sage offers."
+      />
+    </div>
   </div>
   <video autoplay loop playsinline muted class="w-full">
     <source src={CompVideo} type="video/mp4" />
   </video>
-  <Image class="h-auto w-full" src={SageBusiness} alt="Sage Quote" />
+  <Image
+    class="h-auto w-full"
+    src={SageBusiness}
+    alt="The backs and fronts of three business cards designed for Sage."
+  />
   <div id="brand-guide">
-    <div class="karla text-[#F7F4ED] py-[30px] pl-[20px] md:pl-[45px]">
-      <p class="font-bold tracking-widest inline-block">SAGE</p>
-      <p class="inline-block ml-[20px]">A glimpse at the brand guide</p>
+    <div class="karla py-[30px] pl-[20px] text-[#F7F4ED] md:pl-[45px]">
+      <p class="inline-block font-bold tracking-widest">SAGE</p>
+      <p class="ml-[20px] inline-block">A glimpse at the brand guide</p>
     </div>
-    <div
-      class="grid grid-cols-2 gap-[5px] md:gap-[15px] px-[20px] md:px-[45px]"
-    >
+    <div class="grid grid-cols-2 gap-[5px] px-[20px] md:gap-[15px] md:px-[45px]">
       <Image
-        class="w-full h-auto rounded"
+        class="h-auto w-full rounded"
         src={SageBrandGuideGrid1}
-        alt="Sage Brand Guide Grid 1"
+        alt="The core values of Sage. We are: informed and open-minded. Holistic and integrative. Respectful and responsive. Conscious and conscientious. A relational community."
       />
       <Image
-        class="w-full h-auto rounded"
+        class="h-auto w-full rounded"
         src={SageBrandGuideGrid4}
-        alt="Sage Brand Guide Grid 4"
+        alt="A display of the color palette for the Sage design."
       />
+      <Image class="h-auto w-full rounded" src={SageBrandGuideGrid3} alt="A list of key words" />
       <Image
-        class="w-full h-auto rounded"
-        src={SageBrandGuideGrid3}
-        alt="Sage Brand Guide Grid 3"
-      />
-      <Image
-        class="w-full h-auto rounded"
+        class="h-auto w-full rounded"
         src={SageBrandGuideGrid5}
-        alt="Sage Brand Guide Grid 5"
+        alt="A display of a background gradient and background texture designed for the Sage brand."
       />
       <Image
-        class="w-full h-auto rounded"
+        class="h-auto w-full rounded"
         src={SageBrandGuideGrid6}
-        alt="Sage Brand Guide Grid 6"
+        alt="The fonts and font colors for the Sage brand focusing on meeting WCAG accessibility."
       />
+      <Image class="h-auto w-full rounded" src={SageBrandGuideGrid7} alt="An examination of the values of the brand." />
+      <Image class="h-auto w-full rounded" src={SageBrandGuideGrid2} alt="Logo designs for Sage." />
       <Image
-        class="w-full h-auto rounded"
-        src={SageBrandGuideGrid7}
-        alt="Sage Brand Guide Grid 7"
-      />
-      <Image
-        class="w-full h-auto rounded"
-        src={SageBrandGuideGrid2}
-        alt="Sage Brand Guide Grid 2"
-      />
-      <Image
-        class="w-full h-auto rounded"
+        class="h-auto w-full rounded"
         src={SageBrandGuideGrid8}
-        alt="Sage Brand Guide Grid 8"
+        alt="A display of one of the fonts for the brand"
       />
       <Image
-        class="w-full h-auto rounded"
+        class="h-auto w-full rounded"
         src={SageBrandGuideGrid9}
-        alt="Sage Brand Guide Grid 9"
+        alt="An analysis of the type hierarchy for Sage's typography"
       />
       <Image
-        class="w-full h-auto rounded"
+        class="h-auto w-full rounded"
         src={SageBrandGuideGrid10}
-        alt="Sage Brand Guide Grid 10"
+        alt="A display of the icons that represent each service offered by Sage."
       />
       <Image
-        class="w-full h-auto rounded"
+        class="h-auto w-full rounded"
         src={SageBrandGuideGrid11}
-        alt="Sage Brand Guide Grid 11"
+        alt="A study of how the colors for the brand were picked"
       />
+      <Image class="h-auto w-full rounded" src={SageBrandGuideGrid12} alt="Sage staff portraits and art direction." />
       <Image
-        class="w-full h-auto rounded"
-        src={SageBrandGuideGrid12}
-        alt="Sage Brand Guide Grid 12"
-      />
-      <Image
-        class="w-full h-auto rounded"
+        class="h-auto w-full rounded"
         src={SageBrandGuideGrid13}
-        alt="Sage Brand Guide Grid 13"
+        alt="A mockup of the Sage website on a laptop computer."
       />
       <Image
-        class="w-full h-auto rounded"
+        class="h-auto w-full rounded"
         src={SageBrandGuideGrid14}
-        alt="Sage Brand Guide Grid 14"
+        alt="A mockup of the Sage instagram page on a mobile phone."
       />
     </div>
   </div>

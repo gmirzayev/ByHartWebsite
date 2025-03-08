@@ -1,19 +1,19 @@
 ---
-const brand = "The Curve Report"
-const tagline = "What's Now + What's Next"
+const brand = "The Curve Report";
+const tagline = "What's Now + What's Next";
 const tags = [
-    'Brand Identity + Positioning',
-    'Video + Photography',
-    'Art + Illustration',
-    'Physical Goods Development + Design',
-    'Print + Packaging',
-    'Editorial Content',
-    'Interviews',
-    'Writing + Editing',
-    'Qualitative Research',
-    'Surprise + Delight',
-    'Visual Identity',
-]
+    "Brand Identity + Positioning",
+    "Video + Photography",
+    "Art + Illustration",
+    "Physical Goods Development + Design",
+    "Print + Packaging",
+    "Editorial Content",
+    "Interviews",
+    "Writing + Editing",
+    "Qualitative Research",
+    "Surprise + Delight",
+    "Visual Identity",
+];
 
 import "@styles/utils.css";
 import "@styles/curve-report.css";
@@ -30,103 +30,134 @@ import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 import VimeoPlayer from "@components/VimeoPlayer.astro";
 
+import Hero from "@assets/CurveReport/img/hero.jpg";
+import HeroMobile from "@assets/CurveReport/img/hero-mobile.png";
 
-import Hero from "@assets/CurveReport/img/hero.jpg"
-import HeroMobile from "@assets/CurveReport/img/hero-mobile.png"
+import StoryTop from "@assets/CurveReport/img/story-header.jpg";
+import StoryA from "@assets/CurveReport/img/story-1.jpg";
+import StoryB from "@assets/CurveReport/img/story-2.jpg";
+import StoryC from "@assets/CurveReport/img/story-3.jpg";
+import StoryD from "@assets/CurveReport/img/story-4.jpg";
+import StoryE from "@assets/CurveReport/img/story-5.jpg";
+import StoryF from "@assets/CurveReport/img/story-6.jpg";
+import StoryG from "@assets/CurveReport/img/story-7.jpg";
+import StoryH from "@assets/CurveReport/img/story-8.jpeg";
+import StoryBottom from "@assets/CurveReport/img/story-footer.jpg";
 
-import StoryTop from "@assets/CurveReport/img/story-header.jpg"
-import StoryA from "@assets/CurveReport/img/story-1.jpg"
-import StoryB from "@assets/CurveReport/img/story-2.jpg"
-import StoryC from "@assets/CurveReport/img/story-3.jpg"
-import StoryD from "@assets/CurveReport/img/story-4.jpg"
-import StoryE from "@assets/CurveReport/img/story-5.jpg"
-import StoryF from "@assets/CurveReport/img/story-6.jpg"
-import StoryG from "@assets/CurveReport/img/story-7.jpg"
-import StoryH from "@assets/CurveReport/img/story-8.jpeg"
-import StoryBottom from "@assets/CurveReport/img/story-footer.jpg"
+import WelcomeA from "@assets/CurveReport/img/welcome-1.jpg";
+import WelcomeB from "@assets/CurveReport/img/welcome-2.jpg";
+import WelcomeC from "@assets/CurveReport/img/welcome-3.png";
+import WelcomeD from "@assets/CurveReport/img/welcome-4.jpg";
 
-import WelcomeA from "@assets/CurveReport/img/welcome-1.jpg"
-import WelcomeB from "@assets/CurveReport/img/welcome-2.jpg"
-import WelcomeC from "@assets/CurveReport/img/welcome-3.png"
-import WelcomeD from "@assets/CurveReport/img/welcome-4.jpg"
-
-import CultureTop from "@assets/CurveReport/img/culture-header.jpg"
-import CultureA from "@assets/CurveReport/img/culture-1.jpg"
-import CultureB from "@assets/CurveReport/img/culture-2.jpg"
-import CultureC from "@assets/CurveReport/img/culture-3.jpg"
-import CultureD from "@assets/CurveReport/img/culture-4.jpg"
-import CultureBottom from "@assets/CurveReport/img/culture-footer.jpg"
+import CultureTop from "@assets/CurveReport/img/culture-header.jpg";
+import CultureA from "@assets/CurveReport/img/culture-1.jpg";
+import CultureB from "@assets/CurveReport/img/culture-2.jpg";
+import CultureC from "@assets/CurveReport/img/culture-3.jpg";
+import CultureD from "@assets/CurveReport/img/culture-4.jpg";
+import CultureBottom from "@assets/CurveReport/img/culture-footer.jpg";
 ---
 
 <ProjectLayout hero={Hero} mobile={HeroMobile} brand={brand} tagline={tagline} tags={tags}>
     <TwoUp>
-        <Image src={StoryTop} alt=" "/>
+        <Image
+            src={StoryTop}
+            alt="The cover for the American Woman edition. A woman sitting on a desk with a laptop on her lap. She is looking down at a child on the floor pulling at her dress."
+        />
         <div class="section-intro">
             <h1>Telling The Story of What’s Next</h1>
-            <p>NBCUniversal’s The Curve Report is a curated synthesis of social shifts, industry trends, and quantitative and qualitative research that tells a story of what’s influencing consumers today, what’s shaping culture next, and the actionable insights and opportunities for marketers and brands looking to partner with NBCUniversal’s Ad Sales division.  The Americana Trilogy is the culmination of a near three year project consisting of three editions of The Curve: American Man (in partnership with Esquire Network), American Woman (in partnership with Oxygen), and Young Americans.</p>
-            <p>Responsible for both the creative direction and art direction of The Curve brand, which includes print, digital, and film divisions, I hand selected my team and together we worked tirelessly – from getting down and dirty playing with the children of a real family to perfect authentic shots to handcrafting origami ornaments, abstract American flag collages, and paper doll chains – transcending the boundaries of traditional corporate editorial layout design to bring a more personal, bespoke quality to the entire brand.</p>
+            <p>
+                NBCUniversal’s The Curve Report is a curated synthesis of social shifts, industry trends, and
+                quantitative and qualitative research that tells a story of what’s influencing consumers today, what’s
+                shaping culture next, and the actionable insights and opportunities for marketers and brands looking to
+                partner with NBCUniversal’s Ad Sales division. The Americana Trilogy is the culmination of a near three
+                year project consisting of three editions of The Curve: American Man (in partnership with Esquire
+                Network), American Woman (in partnership with Oxygen), and Young Americans.
+            </p>
+            <p>
+                Responsible for both the creative direction and art direction of The Curve brand, which includes print,
+                digital, and film divisions, I hand selected my team and together we worked tirelessly – from getting
+                down and dirty playing with the children of a real family to perfect authentic shots to handcrafting
+                origami ornaments, abstract American flag collages, and paper doll chains – transcending the boundaries
+                of traditional corporate editorial layout design to bring a more personal, bespoke quality to the entire
+                brand.
+            </p>
         </div>
     </TwoUp>
     <TwoUp>
-        <Image src={StoryA} alt=" "/>
-        <Image src={StoryB} alt=" "/>
+        <Image src={StoryA} alt="The American Man edition opened with various pages shown." />
+        <Image src={StoryB} alt="A mom and dad lay in bed as a child jumps onto the dad." />
     </TwoUp>
     <TwoUp>
-        <Image src={StoryC} alt=" "/>
-        <Image src={StoryD} alt=" "/>
+        <Image src={StoryC} alt="The American Man edition opened to a page." />
+        <Image src={StoryD} alt="The Young Americans edition opened to a page." />
     </TwoUp>
     <TwoUp>
-        <Image src={StoryE} alt=" "/>
-        <Image src={StoryF} alt=" "/>
+        <Image src={StoryE} alt="A page from one of the editions featuring gift ideas." />
+        <Image src={StoryF} alt="A page from one of the editions featuring gift ideas." />
     </TwoUp>
     <TwoUp>
-        <Image src={StoryG} alt=" "/>
-        <Image src={StoryH} alt=" "/>
+        <Image src={StoryG} alt="The American Man edition opened up to its Table of Contents page." />
+        <Image src={StoryH} alt="One of the articles featured in the American Woman edition." />
     </TwoUp>
-    <OneUp src={StoryBottom} alt=" "/>
+    <OneUp src={StoryBottom} alt="A page from one of the magazines." />
 
     <ResponsiveTextBlock class="welcome-intro">
         <div>
             <h1>Welcome to the New Mainstream</h1>
-            <p>America Now is an edition of NBCUniversal’s The Curve Report (created in partnership with MSNBC) that explores how the new American mainstream is more diverse, independent, and globally conscious than ever before. Beyond handling all the creative for the print </p>
+            <p>
+                America Now is an edition of NBCUniversal’s The Curve Report (created in partnership with MSNBC) that
+                explores how the new American mainstream is more diverse, independent, and globally conscious than ever
+                before. Beyond handling all the creative for the print
+            </p>
         </div>
         <div class="no-break">
-            <p>edition, with its striking blind embossed/debossed cover, custom photo shoots, and bespoke editorial design, my team also handled the graphics for the campaign expert interview video series (some samples above). From concepting the storytelling approach to art directing the shoots themselves, even interviewing the subjects myself in some cases, I touched every facet of the project creative.</p>
+            <p>
+                edition, with its striking blind embossed/debossed cover, custom photo shoots, and bespoke editorial
+                design, my team also handled the graphics for the campaign expert interview video series (some samples
+                above). From concepting the storytelling approach to art directing the shoots themselves, even
+                interviewing the subjects myself in some cases, I touched every facet of the project creative.
+            </p>
         </div>
     </ResponsiveTextBlock>
 
     <TwoUp>
-        <Image src={WelcomeA} alt=" "/>
-        <Image src={WelcomeB} alt=" "/>
+        <Image src={WelcomeA} alt="Five women pose for a photo." />
+        <Image src={WelcomeB} alt="An open magazine." />
     </TwoUp>
     <TwoUp bias="left">
-        <Image src={WelcomeC} alt=" "/>
-        <Image src={WelcomeD} alt=" "/>
+        <Image src={WelcomeC} alt="A page from the magazine featuring a group of women posing for a photo." />
+        <Image src={WelcomeD} alt="The back of a magazine." />
     </TwoUp>
 
     <TwoUp>
-        <VimeoPlayer video="177130878" height="56.25%" class="rc" action="unpause"/>
-        <VimeoPlayer video="177130879" height="56.25%" class="rc" action="unpause"/>
+        <VimeoPlayer video="177130878" height="56.25%" class="rc" action="unpause" />
+        <VimeoPlayer video="177130879" height="56.25%" class="rc" action="unpause" />
     </TwoUp>
 
-
     <TwoUp>
-        <Image src={CultureTop} alt=" "/>
+        <Image
+            src={CultureTop}
+            alt="The front of the curve report CultureFirst edition focused on exploring Latinx culture across America."
+        />
         <div class="section-intro">
             <h1>Exploring Latinx Culture Across America</h1>
-            <p>As creative lead on The Curve Report: CultureFirst (created in partnership with Telemundo), my team and I traveled the nation scouting, concepting, and art directing portraits of Latinx people in the vanguard of shaping American culture. The 9 month project culminated in the artful print edition and several companion videos, which I concepted and scripted to market the content.</p>
+            <p>
+                As creative lead on The Curve Report: CultureFirst (created in partnership with Telemundo), my team and
+                I traveled the nation scouting, concepting, and art directing portraits of Latinx people in the vanguard
+                of shaping American culture. The 9 month project culminated in the artful print edition and several
+                companion videos, which I concepted and scripted to market the content.
+            </p>
         </div>
     </TwoUp>
     <TwoUp>
-        <Image src={CultureA} alt=" "/>
-        <Image src={CultureB} alt=" "/>
+        <Image src={CultureA} alt="Two pages shown from the CultureFirst edition." />
+        <Image src={CultureB} alt="Two pages shown from the CultureFirst edition." />
     </TwoUp>
     <TwoUp>
-        <Image src={CultureC} alt=" "/>
-        <Image src={CultureD} alt=" "/>
+        <Image src={CultureC} alt="Two pages shown from the CultureFirst edition." />
+        <Image src={CultureD} alt="Two pages shown from the CultureFirst edition." />
     </TwoUp>
-    <OneUp src={CultureBottom} alt=" "/>
+    <OneUp src={CultureBottom} alt="Two pages shown from the CultureFirst edition." />
 
-    <VimeoPlayer id="culture-report" video="177130787" height="56.25%" class="rc" action="unmute"/>
+    <VimeoPlayer id="culture-report" video="177130787" height="56.25%" class="rc" action="unmute" />
 </ProjectLayout>
-

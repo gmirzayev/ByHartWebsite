@@ -56,7 +56,6 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
 
     @media (min-width: 768px) {
       grid-template-columns: repeat(3, 1fr);
@@ -71,171 +70,197 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
       grid-column: span 1;
     }
   }
+
+  .two-up-copy {
+    display: flex;
+    --one-third-mobile: calc(100% * 1 / 3 - 2.5px);
+    --two-thirds-mobile: calc(100% * 2 / 3 - 2.5px);
+    --half-mobile: calc(50% - 2.5px);
+    &.bias-left-mobile {
+      img:first-child {
+        width: var(--two-thirds-mobile);
+      }
+      img:last-child {
+        width: var(--one-third-mobile);
+      }
+    }
+
+    &.bias-right-mobile {
+      img:first-child {
+        width: var(--one-third-mobile);
+      }
+      img:last-child {
+        width: var(--two-thirds-mobile);
+      }
+    }
+
+    &.bias-center-mobile {
+      img:first-child {
+        width: var(--half-mobile);
+      }
+      img:last-child {
+        width: var(--half-mobile);
+      }
+    }
+    @media (min-width: 768px) {
+      flex-flow: row nowrap;
+      --one-third: calc(100% * 1 / 3 - 7.5px);
+      --two-thirds: calc(100% * 2 / 3 - 7.5px);
+      --half: calc(50% - 7.5px);
+
+      &.bias-left {
+        img:first-child {
+          width: var(--two-thirds);
+        }
+        img:last-child {
+          width: var(--one-third);
+        }
+      }
+
+      &.bias-right {
+        img:first-child {
+          width: var(--one-third);
+        }
+        img:last-child {
+          width: var(--two-thirds);
+        }
+      }
+
+      &.bias-center {
+        img:first-child {
+          width: var(--half);
+        }
+        img:last-child {
+          width: var(--half);
+        }
+      }
+    }
+  }
 </style>
-<ProjectLayout
-  hero={Header}
-  mobile={HeaderMobile}
-  brand={brand}
-  tagline={tagline}
-  tags={tags}
->
-  <video
-    loop
-    playsinline
-    autoplay
-    muted
-    class="lg:mb-[120px] hidden lg:block w-full"
-  >
+<ProjectLayout hero={Header} mobile={HeaderMobile} brand={brand} tagline={tagline} tags={tags}>
+  <video loop playsinline autoplay muted class="hidden w-full md:mb-[120px] md:block">
     <source src={Introduction} />
   </video>
-  <video
-    loop
-    playsinline
-    autoplay
-    muted
-    class="mb-[45px] block lg:hidden w-full"
-  >
+  <video loop playsinline autoplay muted class="mb-[45px] block w-full md:hidden">
     <source src={IntroductionMobile} />
   </video>
-  <video
-    loop
-    playsinline
-    autoplay
-    muted
-    class="my-[45px] lg:my-[120px] w-[220px] lg:w-[345px] rounded-md mx-auto"
-  >
+  <video loop playsinline autoplay muted class="mx-auto my-[45px] w-[220px] rounded-md md:my-[120px] md:w-[345px]">
     <source src={Social} />
   </video>
+
   <div
-    class="flex flex-row w-full px-[20px] lg:px-[300px] gap-[5px] lg:gap-[15px] my-[45px] lg:my-[120px]"
+    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[840px] flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
-    <Image src={AppNav1} class="w-full h-auto rounded-xl" alt="" />
-    <Image src={RecipeApp} class="w-full h-auto rounded-xl" alt="" />
+    <Image src={AppNav1} class="rounded-md md:rounded-lg" alt="Screenshot of Magnolia mobile app." />
+    <Image src={RecipeApp} class="rounded-md md:rounded-lg" alt="Screenshot of Magnolia mobile app recipe page." />
   </div>
   <div
-    class="flex flex-row w-full px-[20px] lg:px-[300px] gap-[5px] lg:gap-[15px] my-[45px] lg:my-[120px]"
+    class="two-up-copy bias-center bias-center-mobile mx-auto my-[45px] max-w-[840px] flex-row gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]"
   >
-    <Image src={Article} class="w-full h-auto rounded-xl" alt="" />
-    <Image src={ShopApp} class="w-full h-auto rounded-xl" alt="" />
+    <Image src={Article} class="rounded-md md:rounded-lg" alt="Screenshot of Magnolia mobile app." />
+    <Image src={ShopApp} class="rounded-md md:rounded-lg" alt="Screenshot of Magnolia mobile app shop page." />
   </div>
-  <div
-    class="flex flex-row w-full px-[20px] lg:px-[200px] gap-[5px] lg:gap-[15px] my-[45px] lg:my-[120px]"
-  >
-    <Image src={Profile} class="w-full h-auto rounded-xl" alt="" />
-    <Image src={Birthday} class="w-full h-auto rounded-xl" alt="" />
-    <Image src={AppNav2} class="w-full h-auto rounded-xl" alt="" />
+  <div class="mx-auto my-[45px] grid w-full max-w-[1040px] grid-cols-3 gap-[5px] px-[20px] md:my-[120px] md:gap-[15px]">
+    <Image src={Profile} class="rounded-md md:rounded-lg" alt="Screenshot of Magnolia mobile app profile page." />
+    <Image src={Birthday} class="rounded-md md:rounded-lg" alt="Screenshot of Magnolia mobile app." />
+    <Image src={AppNav2} class="rounded-md md:rounded-lg" alt="Screenshot of Magnolia mobile app." />
   </div>
-  <VimeoPlayer class="" video="1060355366" height="91.5%" />
-  <!-- insert video 1060355366-->
+  <VimeoPlayer video="1060355366" height="91.5%" />
+
   <div
-    class="flex flex-col lg:flex-row w-full my-[45px] lg:my-[120px] px-0 lg:px-[60px] gap-[45px] lg:gap-0"
+    class="two-up-copy bias-center mx-auto my-[45px] max-w-[1320px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-0"
   >
-    <video
-      loop
-      playsinline
-      autoplay
-      muted
-      class="w-full lg:order-2 px-[95px] lg:px-0"
-    >
+    <video loop playsinline autoplay muted class="mx-auto w-full md:order-2 md:w-1/2">
       <source src={NetworkCard} />
     </video>
-    <Image src={Table} class="w-full h-auto px-[20px] lg:px-0" alt="" />
+    <Image src={Table} class="rounded-md md:rounded-lg" alt="People sitting around a table eating." />
   </div>
-  <div
-    class="flex flex-col w-full lg:flex-row my-[45px] lg:my-[120px] px-0 lg:px-[60px] gap-[45px] lg:gap-[15px]"
-  >
-    <Image
-      src={WatchWeb2}
-      class="w-full h-auto rounded-md flex-[2] px-[20px] lg:px-0 lg:order-2 w-full"
-      alt=""
-    />
 
-    <Image
-      src={WatchWeb1}
-      class="w-full h-auto rounded-xl flex-[1] px-[77px] lg:px-0"
-      alt=""
-    />
+  <div
+    class="mx-auto my-[45px] grid w-full max-w-[1320px] grid-cols-1 gap-[45px] md:my-[120px] md:grid-cols-[1fr,2fr] md:gap-[15px] md:px-[20px]"
+  >
+    <div class="px-[20px] md:order-2 md:px-0">
+      <Image src={WatchWeb2} class="h-full rounded-md md:rounded-lg" alt="Screenshot of Magnolia desktop app." />
+    </div>
+    <div class="px-[77px] md:px-0">
+      <Image src={WatchWeb1} class="h-full rounded-md md:rounded-lg" alt="Screenshot of Magnolia mobile app." />
+    </div>
   </div>
   <Image
     src={NetworkHome}
-    class="w-full h-auto px-[20px] lg:px-[60px] my-[45px] lg:my-[120px]"
-    alt=""
+    class="mx-auto my-[45px] h-auto w-full max-w-[1320px] px-[20px] md:my-[120px]"
+    alt="Screenshot of Magnolia network app."
   />
-  <div class="flex flex-col lg:flex-row lg:px-[60px] my-[45px] lg:my-[120px]">
-    <Image src={Joanna} class="w-full h-auto lg:order-2" alt="" />
-    <Image src={Salad} class="w-full h-auto" alt="" />
+  <div
+    class="two-up-copy bias-center mx-auto my-[45px] max-w-[1320px] flex-col gap-[45px] md:my-[120px] md:gap-[15px] md:px-[20px]"
+  >
+    <Image src={Joanna} class="md:order-2 md:rounded-lg" alt="Joanna Gaines" />
+    <Image src={Salad} class="" alt="Screenshot of a salad recipe." />
   </div>
-  <Image src={Cooking} class="w-full h-auto my-[45px] lg:my-[120px]" alt="" />
-  <div class="container px-0 lg:px-[60px] my-[45px] lg:my-[120px]">
-    <div class="item px-[77px] pb-[45px] lg:p-0">
-      <video loop playsinline autoplay muted class="w-full rounded-xl">
+
+  <Image src={Cooking} class="my-[45px] h-auto w-full md:my-[120px]" alt="Screenshot of Magnolia show episode." />
+  <div class="container mx-auto max-w-[1040px] gap-[5px] px-[20px] md:gap-[15px]">
+    <div class="item px-[77px] pb-[40px] md:p-0">
+      <video loop playsinline autoplay muted class="rounded-md md:rounded-3xl">
         <source src={NetworkWatch} />
       </video>
     </div>
-    <div class="item pl-[20px] lg:p-0">
-      <Image src={Recipe} class="w-full h-auto lg:rounded-xl" alt="" />
+    <div class="item md:p-0">
+      <Image src={Recipe} class="rounded-md md:rounded-3xl" alt="Screenshot of a cake recipe." />
     </div>
-    <div class="item pr-[20px] lg:p-0">
-      <Image src={Store} class="w-full h-auto lg:rounded-xl" alt="" />
+    <div class="item md:p-0">
+      <Image src={Store} class="rounded-md md:rounded-3xl" alt="Store page for a Cake stand." />
     </div>
   </div>
-  <div class="my-[45px] lg:my-[120px] px-[20px] lg:px-[200px]">
-    <Image src={Gallery} class="w-full h-auto rounded-xl" alt="" />
+  <div class="mx-auto my-[45px] max-w-[1040px] px-[20px] md:my-[120px]">
+    <Image
+      src={Gallery}
+      class="h-auto w-full rounded-md md:rounded-lg"
+      alt="Multiple video layout for the Magnolia app."
+    />
   </div>
-  <div class="bg-[#B79E97] py-[45px] lg:py-[120px] px-[15px] lg:px-[60px]">
-    <Image src={Tabs} class="w-full h-auto" alt="" />
+  <div class="my-[45px] bg-[#B79E97] px-[15px] md:my-[120px] md:px-[60px]">
+    <Image src={Tabs} class="h-auto w-full" alt="Different dropdown designs for the mobile app." />
   </div>
   <div
-    class="w-full flex flex-col lg:flex-row my-[45px] lg:my-[120px] px-0 lg:px-[200px] gap-[45px] lg:gap-[15px]"
+    class="mx-auto my-[45px] flex max-w-[1040px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px]"
   >
     <Image
       src={MagnoliaMobile}
-      class="w-full h-auto flex-[1] px-[77px] lg:px-0"
-      alt=""
+      class="mx-auto w-2/3 rounded-md md:w-1/3 md:rounded-lg md:px-0"
+      alt="Screenshot of Magnolia mobile app."
     />
     <Image
       src={MagnoliaDesktop}
-      class="w-full h-auto flex-[2] px-[20px] lg:px-0"
-      alt=""
+      class="mx-auto w-full rounded-md md:w-2/3 md:rounded-lg md:px-0"
+      alt="Screenshot of Magnolia desktop app."
     />
   </div>
   <div
-    class="w-full flex flex-col lg:flex-row my-[45px] lg:my-[120px] px-0 lg:px-[200px] gap-[45px] lg:gap-[15px]"
+    class="mx-auto my-[45px] flex max-w-[1040px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px]"
   >
-    <video
-      loop
-      playsinline
-      autoplay
-      muted
-      class="w-full flex-[2] px-[20px] lg:px-0"
-    >
+    <video loop playsinline autoplay muted class="mx-auto w-full rounded-md md:w-2/3 md:rounded-lg md:px-0">
       <source src={ShopSiteVideo} />
     </video>
-    <Image src={Shop} class="w-full h-auto flex-[1] px-[77px] lg:px-0" alt="" />
+    <Image src={Shop} class="mx-auto w-2/3 rounded-md md:w-1/3 md:rounded-lg md:px-0" alt="Magnolia app shop page." />
   </div>
   <div
-    class="w-full flex flex-col lg:flex-row my-[45px] lg:my-[120px] px-0 lg:px-[200px] gap-[45px] lg:gap-[15px]"
+    class="mx-auto my-[45px] flex max-w-[1040px] flex-col gap-[45px] px-[20px] md:my-[120px] md:flex-row md:gap-[15px]"
   >
-    <video
-      loop
-      playsinline
-      autoplay
-      muted
-      class="w-full flex-[1] px-[77px] lg:px-0"
-    >
+    <video loop playsinline autoplay muted class="mx-auto w-2/3 rounded-md md:w-1/3 md:rounded-lg md:px-0">
       <source src={WatchMobile} />
     </video>
     <Image
       src={Watch}
-      class="w-full h-auto flex-[2] px-[20px] lg:px-0"
-      alt=""
+      class="mx-auto w-full rounded-md md:w-2/3 md:rounded-lg md:px-0"
+      alt="Magnolia website watch page featuring different shows."
     />
   </div>
-  <Image src={InternalBlocks} class="w-full h-auto" alt="" />
-  <Image src={Screens} class="w-full h-auto" alt="" />
-  <div class="relative pb-[56.25%] h-0">
+  <Image src={InternalBlocks} class="h-auto w-full" alt="People celebrating a wedding." />
+  <Image src={Screens} class="h-auto w-full" alt="Say hi to Twyla. A person using a tablet." />
+  <div class="relative h-0 pb-[56.25%]">
     <iframe
-      class="w-full h-full top-0 left-0 absolute"
+      class="absolute left-0 top-0 h-full w-full"
       loading="lazy"
       src="https://docs.google.com/presentation/d/e/2PACX-1vQS0PBccayYSClPdSHxmBU3dQzRy8Veb2JM4b-tAoUyfY2tF6XJqWW_pf-FgDKoNccSzNwPODfIV1hH/embed?start=false&loop=false&delayms=3000&rm=minimal"
       frameborder="0"></iframe>

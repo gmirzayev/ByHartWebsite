@@ -41,7 +41,7 @@ const projects = [
     slug: "wizehire",
     title: "Wizehire",
     gif: Wizehire,
-    alt: "Pizza being made through a cutout in the shape of a face on a purple rectangle.",
+    alt: "Pizzas being prepared for baking centered in a cutout in the shape of the side portrait of a person's head.",
   },
   {
     slug: "lockwood",
@@ -177,26 +177,26 @@ const projects = [
     slug: "dance-party-time",
     title: "Dance Party Time",
     img: DancePartyTime,
-    alt: "",
+    alt: "A clock with eyes and a mouth on stripes of different colors.",
     comingSoon: true,
   },
   {
     slug: "kindra",
     title: "Kindra",
     gif: Kindra,
-    alt: "",
+    alt: "Two pills on various illustrations.",
   },
   {
     slug: "curve-report",
     title: "The Curve Report",
     img: TheCurve,
-    alt: "",
+    alt: "A woman sits on a desk with her laptop in her lap looking down at a child on the floor that pulls at her dress.",
   },
   {
     slug: "horowitz-real-estate",
     title: "Horowitz",
     img: Horowitz,
-    alt: "",
+    alt: "An illustrated map that focuses on Astoria, NYC.",
     comingSoon: true,
   },
   {
@@ -209,7 +209,7 @@ const projects = [
     slug: "firefly-vets",
     title: "Firefly Vets",
     img: Firefly,
-    alt: "",
+    alt: "The hind leg and tail of a dog laying on a bed.",
   },
   {
     slug: "hgtv",
@@ -222,20 +222,20 @@ const projects = [
     slug: "nbcu-reach-redefined",
     title: "NBCU Reach Redefined",
     img: Reach,
-    alt: "",
+    alt: "Shots of a camera's monitor as a show is filmed.",
   },
   {
     slug: "in-words-only",
     title: "In Words Only",
     img: WordOnly,
-    alt: "",
+    alt: "Everyone deserves a healthy head of hair on a wall in an office.",
     comingSoon: true,
   },
   {
     slug: "see-sarah-dance",
     title: "See Sarah Dance",
     img: SarahVideo,
-    alt: "",
+    alt: "A behind the scenes photo of a rehearsal.",
   },
 ];
 
@@ -344,9 +344,9 @@ let stepCount = 4;
             return (
               <div class:list={["project", `step-${counter++ % stepCount}`]}>
                 <a href={page} data-title={title}>
-                  {img && <Image src={img} width={1000} alt={alt} /> }
-                  {gif && <img src={gif.src} alt={alt} /> }
-                  {vid && <VideoLoop src={vid} /> }
+                  {img && <Image src={img} width={1000} alt={alt} />}
+                  {gif && <img src={gif.src} alt={alt} />}
+                  {vid && <VideoLoop src={vid} />}
                   <h2>{title}</h2>
                 </a>
               </div>
@@ -367,9 +367,9 @@ let stepCount = 4;
             return (
               <div class:list={["project", `step-${counter++ % stepCount}`]}>
                 <a href={`/works/${slug}`} data-title={title}>
-                  {img && <Image src={img} width={1000} alt={alt} /> }
-                  {gif && <img src={gif.src} alt={alt} /> }
-                  {vid && <VideoLoop src={vid} /> }
+                  {img && <Image src={img} width={1000} alt={alt} />}
+                  {gif && <img src={gif.src} alt={alt} />}
+                  {vid && <VideoLoop src={vid} />}
                   <h2>{title}</h2>
                 </a>
               </div>
@@ -394,8 +394,9 @@ let stepCount = 4;
     position: relative;
     margin-bottom: 28px;
 
-    img, video {
-      width:100%;
+    img,
+    video {
+      width: 100%;
       border-radius: 6px;
       margin-bottom: 10px;
     }
