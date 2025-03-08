@@ -1,6 +1,6 @@
 ---
-const {src, class:classNames, max} = Astro.props
-const style = max ? {maxWidth:max} : {}
+const {src, class:classNames, max, style={}} = Astro.props
+if (max) style.maxWidth = max
 ---
 <video class:list={["video-loop", classNames]} style={style} loop playsinline muted data-video-source={src} />
 
