@@ -25,7 +25,7 @@ import SayMore from "../assets/Home/img/Say_More.png";
 import Firefly from "../assets/Home/img/Firefly.png";
 import PetCenter from "../assets/Home/img/Pet_Center.png";
 
-const { name } = Astro.props;
+const { slug } = Astro.props;
 const projects = [
   { slug: "wizehire", name: "Wizehire", image: Wizehire },
   { slug: "ample", name: "Ample", image: Ample },
@@ -53,7 +53,7 @@ const projects = [
 ];
 
 // pre-scroll to the project following the current page
-const nextProject = projects[1 + projects.findIndex(p => p.name==name)] ?? projects[0]
+const nextProject = projects[1 + projects.findIndex(p => p.slug==slug)] ?? projects[Math.floor(projects.length/2)]
 ---
 
 <style is:global>
@@ -163,7 +163,7 @@ const nextProject = projects[1 + projects.findIndex(p => p.name==name)] ?? proje
   </h1>
   <div id="carousel-container">
     <div id="carousel">
-      {projects.filter(p => name !== p.name).map((project) =>
+      {projects.filter(p => slug !== p.slug).map((project) =>
         <div class="item" data-slug={project.slug}>
           <a href={`/works/${project.slug}`}>
             <Image
