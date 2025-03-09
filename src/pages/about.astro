@@ -4,6 +4,7 @@ const subtitle = "Creative Services + Recognition Highlights + Testimonials + Fo
 
 import "@styles/utils.css";
 import "@styles/about.css";
+import { getImage } from "astro:assets";
 import Image from "astro/components/Image.astro";
 import InternalLayout from "@layouts/InternalLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
@@ -32,13 +33,17 @@ import HeroDMobile from "@assets/About/about/Hero_04_M.png"
 import HeroE from "@assets/About/about/Hero_05_D.png"
 import HeroEMobile from "@assets/About/about/Hero_05_M.png"
 
-const HERO_IMAGES = [
+const HERO_IMAGES = await Promise.all([
     {desktop:HeroA, mobile:HeroAMobile},
     {desktop:HeroB, mobile:HeroBMobile},
     {desktop:HeroC, mobile:HeroCMobile},
     {desktop:HeroD, mobile:HeroDMobile},
     {desktop:HeroE, mobile:HeroEMobile},
-]
+].map(async ({desktop, mobile}) => {
+  let large = await getImage({src:desktop, widths:[2800]})
+  let small = await getImage({src:mobile, widths:[1800]})
+  return {large, small}
+}))
 
 import TickerQt from "@assets/About/ticker.mov"
 import TickerWebm from "@assets/About/ticker.webm"
@@ -316,11 +321,11 @@ const FAQS = [
         <Navigation theme="dark" />
         <div id="hero">
             <h1>Know<br />By Hart</h1>
-            <div class="slideshow">{ HERO_IMAGES.map(({mobile, desktop}, i) =>
+            <div class="slideshow">{ HERO_IMAGES.map(({small, large}, i) =>
                 <picture class={i==0 ? "active" : null}>
-                    <source media="(max-width: 767px)" width={mobile.width} height={mobile.height} srcset={mobile.src} />
-                    <source media="(min-width: 768px)" width={desktop.width} height={desktop.height} srcset={desktop.src} />
-                    <img src={desktop.src} width={desktop.width} height={desktop.height} alt=" " />
+                    <source media="(max-width: 767px)" width={small.attributes.width} height={small.attributes.height} srcset={small.src} />
+                    <source media="(min-width: 768px)" width={large.attributes.width} height={large.attributes.height} srcset={large.src} />
+                    <img src={large.src} width={large.attributes.width} height={large.attributes.height} alt="Stills of a photo-shoot in production" />
                 </picture>
             )}</div>
         </div>
