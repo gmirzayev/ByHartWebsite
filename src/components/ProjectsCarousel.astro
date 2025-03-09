@@ -25,7 +25,7 @@ import SayMore from "../assets/Home/img/Say_More.png";
 import Firefly from "../assets/Home/img/Firefly.png";
 import PetCenter from "../assets/Home/img/Pet_Center.png";
 
-const { name } = Astro.props;
+const { slug } = Astro.props;
 const projects = [
   { slug: "wizehire", name: "Wizehire", image: Wizehire },
   { slug: "ample", name: "Ample", image: Ample },
@@ -34,26 +34,38 @@ const projects = [
   { slug: "metro-vein-centers", name: "Metro Vein Centers", image: MetroVein },
   { slug: "sage", name: "Sage", image: Sage },
   { slug: "puzzle-palace", name: "Puzzle Palace", image: PuzzlePalace },
-  { slug: "dance-party-time", name: "Dance Party Time", image: DancePartyTime },
+  // { slug: "dance-party-time", name: "Dance Party Time", image: DancePartyTime },
   { slug: "week-and", name: "Week&", image: Week },
   { slug: "kindra", name: "Kindra", image: Kindra },
-  { slug: "nightingale", name: "Nightingale Vets", image: Nightingale },
+  { slug: "nightingale", name: "Nightingale", image: Nightingale },
   { slug: "pearly-bites", name: "Pearly Bites", image: PearlyBites },
   { slug: "fab", name: "Fab", image: Fab },
   { slug: "curve-report", name: "The Curve Report", image: TheCurve },
   { slug: "say-more", name: "Say More", image: SayMore },
   { slug: "discovery", name: "Discovery Channel", image: Discovery },
-  { slug: "horowitz-real-estate", name: "Horowitz Real Estate", image: Horowitz },
+  // { slug: "horowitz-real-estate", name: "Horowitz", image: Horowitz },
   { slug: "magnolia", name: "Magnolia", image: Magnolia },
-  { slug: "six-feet", name: "6 Feet From You", image: SixFeet },
+  { slug: "six-feet", name: "6 Feet Apart", image: SixFeet },
   { slug: "pet-dermatology-center", name: "Pet Dermatology Center", image: PetCenter },
   { slug: "genius-kitchen", name: "Genius Kitchen", image: GeniusKitchen },
   { slug: "bluprint", name: "Bluprint", image: Blueprint },
   { slug: "firefly-vets", name: "Firefly Vets", image: Firefly },
 ];
 
-// pre-scroll to the project following the current page
-const nextProject = projects[1 + projects.findIndex(p => p.name==name)] ?? projects[0]
+// filter current page out of list and pre-scroll to next project in the sequence
+let current = projects.findIndex(p => p.slug==slug),
+    choices = projects.filter(p => p.slug != slug),
+    suggestIdx = Math.max(0, current) % choices.length
+
+    while (suggestIdx < choices.length/2){
+      choices.unshift(choices.pop())
+      suggestIdx++
+    }
+
+    while (suggestIdx > choices.length/2){
+      choices.push(choices.shift())
+      suggestIdx--
+    }
 ---
 
 <style is:global>
@@ -72,11 +84,20 @@ const nextProject = projects[1 + projects.findIndex(p => p.name==name)] ?? proje
     background: #1d1a1a url("/images/noise.svg") repeat;
     color: var(--light-text);
     font-family: var(--karla);
+    padding:45px 0 75px 0;
+
+    @media (min-width:768px){
+      padding: 80px 0 130px 0;
+    }
   }
 
   #project-carousel > h1{
-    font-family: var(--utile);
-    font-weight: 500;
+    font: 500 38px var(--utile);
+    margin-bottom: 30px;
+
+    @media (min-width:768px){
+      font-size:66px;
+    }
   }
 
   #carousel-container {
@@ -84,6 +105,7 @@ const nextProject = projects[1 + projects.findIndex(p => p.name==name)] ?? proje
     height: 555px;
     position: relative;
 
+    overflow-y: hidden;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
 
@@ -105,10 +127,17 @@ const nextProject = projects[1 + projects.findIndex(p => p.name==name)] ?? proje
   #carousel .item{
     scroll-snap-align: center;
 
+    img{
+      height:500px;
+      width:auto;
+      max-width:none;
+    }
+
     h1{
-      margin-top:5px;
+      margin-top:27px;
       height: 50px;
       font: 700 20px var(--utile);
+      line-height: 1;
       letter-spacing:0.05em;
       color: var(--background);
       transition: color 1s;
@@ -120,31 +149,31 @@ const nextProject = projects[1 + projects.findIndex(p => p.name==name)] ?? proje
     }
   }
 
-  #project-carousel a.all-projects{
-    --text-color: var(--ink);
+  #project-carousel .all-projects{
+    margin-top:30px;
+  }
+
+  #project-carousel .all-projects a{
+    --text-color: var(--charcoal);
     --stripe-color: var(--peach);
     --hover-text-color: var(--cream);
-    --hover-stripe-color: var(--ruby);
+    --hover-stripe-color: var(--pink);
 
     position:relative;
     color: var(--text-color);
     font: 16px/1.75 var(--karla);
     text-transform: uppercase;
-    letter-spacing:0.025em;
+    letter-spacing:3.2px;
     z-index: 1;
-
-    &:hover{
-      color:var(--hover-text-color);
-    }
 
     &::before {
       content: " ";
       background: var(--stripe-color);
       position:absolute;
-      top: -5px;
-      left: -5px;
-      width:calc(100% + 10px);
-      height:calc(100% + 10px);
+      top: -8px;
+      left: -20px;
+      width:calc(100% + 40px);
+      height:calc(100% + 16px);
       z-index:-1;
       transform: rotate(-2deg);
       transition: transform 250ms, background-color 250ms;
@@ -155,54 +184,78 @@ const nextProject = projects[1 + projects.findIndex(p => p.name==name)] ?? proje
       background-color: var(--hover-stripe-color);
     }
   }
+
+  @media(max-width:1040px){
+    #carousel .item img{ height: 350px }
+    #carousel-container{ height: 420px; }
+  }
+
+  @media(max-width:767px){
+    #carousel .item img{ height: 200px }
+    #carousel-container{ height: 270px; }
+  }
 </style>
 
-<div id="project-carousel" class="pt-[45px] md:pt-[90px] md:pb-[40px] h-[800px] md:h-[900px]">
-  <h1 class="text-[38px] mb-[30px] md:text-[66px]">
-    Choose your next adventure...
-  </h1>
+<div id="project-carousel">
+  <h1>Choose your next adventure...</h1>
   <div id="carousel-container">
     <div id="carousel">
-      {projects.filter(p => name !== p.name).map((project) =>
-        <div class="item" data-slug={project.slug}>
+      {choices.map((project, idx) =>
+        <div class="item" data-slug={project.slug} data-suggest={idx==suggestIdx ? "true" : null}>
           <a href={`/works/${project.slug}`}>
-            <Image
-              class="h-[500px] w-auto max-w-none rounded-md"
-              src={project.image}
-              alt="test"
-            />
+            <Image src={project.image} class="rc" alt={project.name} />
           </a>
           <h1>{project.name}</h1>
         </div>
       )}
     </div>
   </div>
-  <div class="w-full relative">
-    <a class="all-projects" href="/">See all Hart work</a>
+  <div class="all-projects" >
+    <a href="/#portfolio">See all Hart work</a>
   </div>
 </div>
 
-<script define:vars={{ nextProject }}>
+<script>
   document.addEventListener("DOMContentLoaded", () => {
+
+    let carousel = document.querySelector('#carousel-container'),
+        items = document.querySelectorAll('#carousel .item'),
+        activeItem = document.querySelector(`.item[data-suggest='true']`)
+
+    // jump the carousel to the current '.labeled' item
+    function centerActiveItem(){
+      if (activeItem instanceof HTMLElement){
+        let {offsetWidth, offsetLeft} = activeItem,
+            halfWidth = window.innerWidth / 2;
+        carousel.scrollLeft = offsetLeft - halfWidth + offsetWidth/2
+      }
+    }
+
+    // set the initial position based on the current project's position in the `projects` array,
+    // also make sure the same item stays centered when the widths change
+    setTimeout(centerActiveItem, 0)
+    window.addEventListener("resize", centerActiveItem)
 
     // hide the text labels for all but the currently centered project
     const labelOnScroll = new IntersectionObserver((items, labelOnScroll) => {
       for (const item of items){
         item.target.classList.toggle("labeled", item.isIntersecting)
+        if (item.isIntersecting) activeItem = item.target
       }
-    },{
-      rootMargin: "-49%",
-      threshold: 0.0
+    },{rootMargin: "0 -49% 0 -49%", threshold: 0.0})
+
+    items.forEach((item:HTMLElement) => {
+      labelOnScroll.observe(item)
+
+      // handle clicks on non-centered cards by centering them
+      item.querySelector(":scope a").addEventListener("click", e => {
+        if (!item.classList.contains("labeled")){
+          item.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'})
+          e.preventDefault()
+          e.stopPropagation()
+        }
+      })
     })
 
-    for (const item of document.querySelectorAll('#carousel .item')){
-      labelOnScroll.observe(item)
-    }
-
-    // set the initial position based on the current project's position in the `projects` array
-    let nextElt = document.querySelector(`.item[data-slug=${nextProject.slug}]`),
-        offset = nextElt.offsetLeft,
-        halfWidth = window.innerWidth / 2;
-    document.querySelector('#carousel-container').scrollLeft = offset - halfWidth
   })
 </script>

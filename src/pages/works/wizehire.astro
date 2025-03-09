@@ -31,6 +31,7 @@ import ResponsiveImage from "@components/ResponsiveImage.astro";
 import ResponsiveBackground from "@components/ResponsiveBackground.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 import VimeoPlayer from "@components/VimeoPlayer.astro";
+import VideoLoop from "@components/VideoLoop.astro";
 
 import HeroDesktop from "@assets/Wizehire/hero_wizehire_16x9 (1080p).mp4"
 import HeroMobile from "@assets/Wizehire/hero_wizehire_5x4 (1080p).mp4"
@@ -136,15 +137,9 @@ import PositioningL from "@assets/Wizehire/img/slide-deck/2.11.png"
 
     <div class="two-col">
         <Image src={PalettesLayer} widths={[2200]} alt="Primary: Periwize" />
-        <video loop playsinline autoplay muted class="rc">
-            <source src={PalettesAdA} />
-        </video>
-        <video loop playsinline autoplay muted class="rc">
-            <source src={PalettesAdB} />
-        </video>
-        <video loop playsinline autoplay muted class="rc" style="width:80%; align-self:center; justify-self: center;">
-            <source src={PalettesAdC} />
-        </video>
+        <VideoLoop src={PalettesAdA} class="rc" />
+        <VideoLoop src={PalettesAdB} class="rc" />
+        <VideoLoop src={PalettesAdC} class="rc" style="width:80%; align-self:center; justify-self: center;" />
     </div>
 
     <div id="rosewood" class="padded">
@@ -170,21 +165,15 @@ import PositioningL from "@assets/Wizehire/img/slide-deck/2.11.png"
     <VimeoPlayer id="thirty-second-spot" class="spaced" video="999766293" height="56.25%" action="unmute"/>
 
     <div id="periwize" class="padded">
-        <video loop playsinline autoplay muted class="rc">
-            <source src={WebsiteScrolling} />
-        </video>
+        <VideoLoop src={WebsiteScrolling} class="rc" />
         <h1>Behind the scenes</h1>
-        <video loop playsinline autoplay muted class="rc">
-            <source src={DesignProcess} />
-        </video>
+        <VideoLoop src={DesignProcess} class="rc" />
     </div>
 
     <div id="phone-screens" class="padded">
         <div class="three-col flush">
             <Image src={SitePhoneScreenA} class="rc-phone" widths={[2200]} alt="Wizehire form for requesting your personal data as part of GDPR/CCPA compliance." />
-            <video loop playsinline autoplay muted class="rc-phone">
-                <source src={SitePhoneScreenB} />
-            </video>
+            <VideoLoop src={SitePhoneScreenB} class="rc-phone" />
             <Image src={SitePhoneScreenC} class="rc-phone" widths={[2200]} alt="Tap into Wizehire's people-first team building system." />
         </div>
     </div>
@@ -197,18 +186,12 @@ import PositioningL from "@assets/Wizehire/img/slide-deck/2.11.png"
 
     <div id="graphs" class="spaced">
         <div class="two-col flush">
-            <video loop playsinline autoplay muted class="rc">
-                <source src={GraphA} />
-            </video>
-            <video loop playsinline autoplay muted class="rc">
-                <source src={GraphB} />
-            </video>
+            <VideoLoop src={GraphA} class="rc" />
+            <VideoLoop src={GraphB} class="rc" />
         </div>
     </div>
 
-    <video loop playsinline autoplay muted class="rc">
-        <source src={DiscVideo} />
-    </video>
+    <VideoLoop src={DiscVideo} class="rc" />
 
     <div id="disc-graphics" class="spaced">
         <div class="two-col">

@@ -1,15 +1,17 @@
 ---
-const {src, class:classNames, max} = Astro.props
-const style = max ? {maxWidth:max} : {}
+const {src, class:classNames, max, style={}} = Astro.props
+if (max) style.maxWidth = max
 ---
-<video class:list={["video-loop", classNames]} style={style} loop playsinline autoplay muted data-video-source={src}>
-</video>
-
+<video class:list={["video-loop", classNames]} style={style} loop playsinline muted data-video-source={src} />
 
 <style is:global>
     .video-loop{
-        width:100%;
         opacity:0;
+
+        &:not(.sized){
+            /* escape hatch for the tailwind-sized pages */
+            width:100%;
+        }
 
         transition: opacity 1s;
         &.initialized{
@@ -20,22 +22,36 @@ const style = max ? {maxWidth:max} : {}
 
 <script>
     let videoLoops = document.querySelectorAll(".video-loop")
-    const lazyLoader = new IntersectionObserver((entries, observer) => {
+
+    const loader = new IntersectionObserver((entries, observer) => {
         for (const entry of entries){
-            if (entry.isIntersecting){
-                let elt = entry.target as HTMLVideoElement,
-                    src = elt.dataset.videoSource,
+            let elt = entry.target as HTMLVideoElement,
+                active = elt.classList.contains("initialized")
+            if (entry.isIntersecting && !active){
+                let src = elt.dataset.videoSource,
                     source = document.createElement("source")
                 source.src = src
                 elt.append(source)
                 elt.classList.add("initialized")
-
-                observer.unobserve(elt)
+                elt.play()
             }
         }
-    }, {root: null, rootMargin: '0px', threshold: 0.0})
+    }, {root: null, rootMargin: '10% 0 10% 0', threshold: 0.0})
 
-    videoLoops.forEach(elt => lazyLoader.observe(elt) )
+    const unloader = new IntersectionObserver((entries, observer) => {
+        for (const entry of entries){
+            let elt = entry.target as HTMLVideoElement,
+                active = elt.classList.contains("initialized")
+            if (!entry.isIntersecting && active){
+                elt.pause()
+                elt.innerHTML = ""
+                elt.classList.remove("initialized")
+            }
+        }
+    }, {root: null, rootMargin: '66% 0 66% 0', threshold: 0.0})
 
-
+    videoLoops.forEach(elt => {
+        loader.observe(elt)
+        unloader.observe(elt)
+    })
 </script>

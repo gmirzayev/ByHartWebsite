@@ -4,6 +4,7 @@ const subtitle = "Creative Services + Recognition Highlights + Testimonials + Fo
 
 import "@styles/utils.css";
 import "@styles/about.css";
+import { getImage } from "astro:assets";
 import Image from "astro/components/Image.astro";
 import InternalLayout from "@layouts/InternalLayout.astro";
 import ProjectTags from "@components/ProjectTags.astro";
@@ -32,13 +33,17 @@ import HeroDMobile from "@assets/About/about/Hero_04_M.png"
 import HeroE from "@assets/About/about/Hero_05_D.png"
 import HeroEMobile from "@assets/About/about/Hero_05_M.png"
 
-const HERO_IMAGES = [
+const HERO_IMAGES = await Promise.all([
     {desktop:HeroA, mobile:HeroAMobile},
     {desktop:HeroB, mobile:HeroBMobile},
     {desktop:HeroC, mobile:HeroCMobile},
     {desktop:HeroD, mobile:HeroDMobile},
     {desktop:HeroE, mobile:HeroEMobile},
-]
+].map(async ({desktop, mobile}) => {
+  let large = await getImage({src:desktop, widths:[2800]})
+  let small = await getImage({src:mobile, widths:[1800]})
+  return {large, small}
+}))
 
 import TickerQt from "@assets/About/ticker.mov"
 import TickerWebm from "@assets/About/ticker.webm"
@@ -150,7 +155,7 @@ const AWARDS = [
     "medal": "OUTSTANDING ACHIEVEMENT",
     "award": "HOW Awards",
     "category": "Magazine Design",
-    "url": "[LINK TO CURVE REPORT INTERIOR PAGE]",
+    "url": "/works/curve-report",
     "client": "[ The Curve Report: American Woman ]"
   },
   {
@@ -278,22 +283,33 @@ const FAQS = [
     {
         q:"Who’s who in By Hart’s creative collective?",
         a:[
-            "Kristin, Nichelle, Nara,"
+          'Sarah Hartley’s home base is Brooklyn, but By Hart is up in the cloud, down to collaborate on zoom, and get to work everywhere in between—with team members all over the US and abroad. Our creativity isn’t a solo act. It’s a carefully orchestrated collision of talents, each bringing something essential to the workbench. ',
+          'We like to think of ourselves as a creative collective of what feels like every awesome, game, and uniquely skilled person Sarah’s ever met. Some of our collaborators are moonlighters—crafting the world’s most beloved brands and experiences by day and slipping into something special by night. Others are seasoned freelancers, specialists, and craftspeople moving fluidly across clients to bring soulful work to life.',
+          'We respect non-competes, always. We also know that the best work often comes from people who thrive stretching to do something ambitious and different. Hybrid skill sets shine and new creative muscles get flexed on the regular here. While we can’t always name names, trust us when we say: our powers combined will rock your world. Behind the scenes, you’ll find video editors, photographers, sound engineers, developers, designers, artists, writers, stylists, producers, translators, fine artists, retouchers, tailors, makeup artists, performers, and more—each playing a vital role in the magic we make.',
+          'And then, there are the ones we can name. The ones our clients know, trust, and love. ',
+          'There’s <a href="https://www.linkedin.com/in/kristin-ingram-323837112/">Kristin Ingram</a> in Knoxville + <a href="https://www.linkedin.com/in/nichelletesone/">Nichelle Tesone</a> in Denver—art direction and visual storytelling powerhouses, designing with smarts equal to their great big hearts.',
+          'There’s <a href="https://www.linkedin.com/in/naranaliagumbs/">Nara Gumbs</a> in Chicago—a wonder woman of a creative strategist, the one who sees the big picture and keeps us moving forward.',
+          'There’s <a href="https://www.instagram.com/davefridman/">David Fridman</a> in London—The drama school chum who it turns out can do a whole lot of what Sarah does—in two languages!',
+          'And there’s <strong>Michelle Beard</strong> in the great state of Massachusetts—Sarah’s childhood best friend turned operational maven. You know, just the glue, the reason we’re still in business, the only way we all get paid or stay sane-ish. ',
+          'We’ll keep shouting out our people here as we get explicit consent to do so, but you get it! We’re a collective of dreamers, makers, and doers who care deeply about the work we put into the world—and the people we make it with. Who we each are matters a lot to us, but what you can achieve when you work with us is what we find most inspiring. Every partnership and project is a chance to bring something meaningful to life, and we’re grateful for the incredible mix of talent and opportunity that makes it all possible.',
+          'If that sounds like the kind of creative energy you want to be part of, what are you waiting for? Our email’s in the footer.',
         ]
     },
     {
         q:"What can I expect to invest in working with By Hart?",
         a:[
             "Our boutique studio services are tailored to each client's unique needs. Investment varies based on the scope, scale, timeline, team, and level of customization required.",
-            "Our monthly retainer and/or video + photo shoot investment begins at $15k, while more sophisticated multi-set shoot days—designed to provide a comprehensive library of ownable content assets—currently averages $50k client investment, not including post-production editing and content creation.",
-            "Our bespoke brand identity + customer experience partnerships, spanning 5 to 9 months, usually begin at $100k with the more robust multidisciplinary packages reaching $250k.",
-            "We’d love to discuss your opportunity, so we may best provide insight on what an investment in our work looks like for your team.",
+            'Our monthly retainer and/or video + photo shoot investment begins at $15k, while more sophisticated multi-set shoot days—designed to provide a comprehensive library of ownable content assets—currently averages $50k client investment, not including post-production editing and content creation.',
+            'Our bespoke brand identity + customer experience partnerships, spanning 5 to 9 months, usually begin at $100k with the more robust multidisciplinary packages reaching $250k.',
+            'We’d love to discuss your opportunity, so we may best provide insight on what an investment in our work looks like for your team.',
         ]
     },
     {
         q:"What don’t we do?",
         a:[
-            "Boring. Factory. Spreadsheets (okay, sometimes)."
+          'We don’t do boring. We’re not keen on factory-line deliverable monotony. We never just fly in the formula, unless it’s one of our award-winning style guides. If you’re looking for a team that spends more time color-coding spreadsheets than actually making something that moves people—you’ve stumbled into the wrong studio.',
+          'We are deadline-driven, fairly neurodivergent folx who think best when we’re deep in R&D, not buried in documentation and project management software. We thrive on the unexpected, the in-between, the what if we tried this instead? Like it says at the top of the page—call on us when you need a little bit of Mary Poppins (and her bag of endless creative tricks), a dash of Olivia Pope (a fixer with gladiators who make the impossible happen), and a touch of Little Edie from <em>Grey Gardens</em> (because putting on a show—anywhere, with whatever’s on hand—is staunchly in our nature).',
+          'We’re not great at keeping our wings clipped. We like to get our hands in all the pots, stir things up, and create collaborative work that actually makes us all feel something. So if you’re after safe, predictable, and templated (though we’re all for beautiful brand consistency and gorgeous design systems)—there are plenty of other places for that. But if you want something that’s got heart and soul? Yes we said yes we will YES!',
         ]
     },
 ]
@@ -305,11 +321,11 @@ const FAQS = [
         <Navigation theme="dark" />
         <div id="hero">
             <h1>Know<br />By Hart</h1>
-            <div class="slideshow">{ HERO_IMAGES.map(({mobile, desktop}, i) =>
+            <div class="slideshow">{ HERO_IMAGES.map(({small, large}, i) =>
                 <picture class={i==0 ? "active" : null}>
-                    <source media="(max-width: 767px)" width={mobile.width} height={mobile.height} srcset={mobile.src} />
-                    <source media="(min-width: 768px)" width={desktop.width} height={desktop.height} srcset={desktop.src} />
-                    <img src={desktop.src} width={desktop.width} height={desktop.height} alt=" " />
+                    <source media="(max-width: 767px)" width={small.attributes.width} height={small.attributes.height} srcset={small.src} />
+                    <source media="(min-width: 768px)" width={large.attributes.width} height={large.attributes.height} srcset={large.src} />
+                    <img src={large.src} width={large.attributes.width} height={large.attributes.height} alt="Stills of a photo-shoot in production" />
                 </picture>
             )}</div>
         </div>
@@ -319,7 +335,8 @@ const FAQS = [
             <div id="about-us">
                 <div id="founder">
                     <h2>Meet Our Founder</h2>
-                    <p>Sarah Hartley is an award-winning executive creative director, multidisciplinary design principal, storyteller, wordsmith, curator, culture builder, and wholehearted people person. Blending deep empathy, curiosity, strategy, and craft, Sarah brings her team of dreamers and doers together to shape stories that move, experiences that inspire, brands that breathe, and art that speaks to the heart—and to Hartley, too. 😉</p>
+                    <p><a href="http://www.linkedin.com/in/sarahmariehartley">Sarah Hartley</a> is an award-winning executive creative director, multidisciplinary design principal, storyteller, wordsmith, curator, culture champion, and wholehearted people person. Blending deep empathy, curiosity, strategy, and craft, Sarah brings her team of dreamers and doers together to shape stories that move, experiences that inspire, brands that breathe, and art that speaks to the heart—and to Hartley, too. 😉</p>
+                    <p>She’ll be there when you need a little bit of Mary Poppins (and her bag of endless creative tricks), a dash of Olivia Pope (a fixer with gladiators who make the impossible happen), and a touch of Little Edie from <em>Grey Gardens</em> (because putting on a show—anywhere, with whatever’s on hand—is staunchly in her nature).</p>
                 </div>
                 <div id="services">
                     <h2>What We Do</h2>
@@ -401,7 +418,7 @@ const FAQS = [
                         </div>
                         <div class="a" id={`answer-${i+1}`} aria-labelledby={`question-${i+1}`}>
                             {a.map(graf =>
-                                <p>{graf}</p>
+                                <p set:html={graf} />
                             )}
                         </div>
                     </li>
@@ -447,11 +464,11 @@ const FAQS = [
 
         document.querySelectorAll("#faqs .q").forEach(elt =>
             elt.addEventListener("click", e => {
-                document.querySelectorAll("#faqs .q").forEach(item => {
-                    if (item==elt) return
-                    item.classList.remove("open")
-                    item.ariaExpanded = "false"
-                })
+                // document.querySelectorAll("#faqs .q").forEach(item => {
+                //     if (item==elt) return
+                //     item.classList.remove("open")
+                //     item.ariaExpanded = "false"
+                // })
                 elt.classList.toggle("open")
                 let isOpen = elt.classList.contains("open")
                 elt.ariaExpanded = isOpen ? "true" : "false"

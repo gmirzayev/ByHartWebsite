@@ -3,6 +3,12 @@ import "../styles/utils.css";
 import Image from "astro/components/Image.astro";
 import TransparentVideo from "@components/TransparentVideo.astro";
 
+const LINKS ={
+  vimeo:"https://vimeo.com/byhartstudio",
+  linkedin:"https://www.linkedin.com/company/byhartstudio/posts/?feedView=all",
+  instagram:"https://www.instagram.com/byhartstudio/",
+}
+
 import HomeLogo from "@assets/Navigation/home-logo.svg?raw"
 import HeartDropdown from "@assets/Navigation/HeartDropdown.svg";
 import HeartDropdownDark from "@assets/Navigation/HeartDropdownDark.svg";
@@ -65,7 +71,7 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
 
     .nav-link--email-button {
       color: black;
-      background-color: #ff97fd;
+      background-color: var(--pink);
       padding: 10px 20px;
       font-size: 16px;
       width: 270px;
@@ -162,6 +168,38 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
       /* z-index: 0; */
     }
 
+    #mobile-nav .dropdown-link-container .glasses{
+      width: 130vw;
+      align-self: start;
+      margin-left:8vw;
+      margin-top:20%;
+      position:relative;
+
+      @media(min-width:768px){
+        align-self: center;
+        width: 70vw;
+        max-width: 1000px;
+        margin:0;
+      }
+
+      .links{
+        position:absolute;
+        overflow:visible;
+        width:100%;
+        top:0;
+        left:0;
+
+        text{
+          font:500 2.8px "Karla", sans-serif;
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
+          fill:white;
+        }
+      }
+    }
+
+
+
     #mobile-nav,
     #desktop-nav{
       .light &{ color: black; }
@@ -247,68 +285,20 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
         <a href="/#portfolio" class="mobile-nav-link nav-link--header">SEE OUR WORK</a>
         <a href="/about" class="mobile-nav-link nav-link--header">KNOW BY HART</a>
         <a href="/#contact" class="mobile-nav-link nav-link--header">TALK TO US</a>
-        <div class="mt-[50px] relative flex w-full">
-          <a
-            id="nav-instagram"
-            class="video-link"
-            href="www.instagram.com"
-            target="_blank"
-          >
-            <svg width="100" height="20">
-              <defs>
-                <path id="curve1" d="M 0 20 Q 50 13 100 20" fill="transparent"
-                ></path>
-              </defs>
-              <text class="svg-text">
-                <textPath href="#curve1">INSTAGRAM</textPath>
-              </text>
-            </svg>
-          </a>
-          <!-- <a
-            id="nav-substack"
-            class="video-link"
-            href="www.instagram.com"
-            target="_blank"
-          >
-            <svg width="100" height="20">
-              <defs>
-                <path id="curve2" d="M 0 20 Q 50 13 100 20" fill="transparent"
-                ></path>
-              </defs>
-              <text class="svg-text">
-                <textPath href="#curve2">SUBSTACK</textPath>
-              </text>
-            </svg>
-          </a> -->
-          <a
-            id="nav-vimeo"
-            class="video-link"
-            href="www.instagram.com"
-            target="_blank"
-          >
-            <svg width="100" height="20">
-              <defs>
-                <path id="curve3" d="M 0 20 Q 50 13 100 20" fill="transparent"
-                ></path>
-              </defs>
-              <text class="svg-text">
-                <textPath href="#curve3">VIMEO</textPath>
-              </text>
-            </svg>
-          </a>
-          <a
-            id="nav-linkedin"
-            class="video-link"
-            href="www.instagram.com"
-            target="_blank"
-          >
-            <svg width="100" height="20">
-              <text class="svg-text">
-                <textPath href="#curve3">LINKEDIN</textPath>
-              </text>
-            </svg>
-          </a>
-          <TransparentVideo class="max-w-[400px] ml-[150px]" mov={GlassesSafari} webm={GlassesChrome} />
+
+        <div class="glasses">
+          <TransparentVideo mov={GlassesSafari} webm={GlassesChrome} />
+          <svg class="links" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 44">
+            <defs><style>.x{fill:none; stroke:none;}</style></defs>
+            <path id="vimeo-path" class="x" d="M2.38886.63209c4.07274-.82823,9.05408-.31439,11.96857.01404"/>
+            <path id="linkedin-path" class="x" d="M15.63854.79405c4.39074.32367,9.61146,1.22678,12.94479,2.56012"/>
+            <path id="instagram-path" class="x" d="M2.72078,20.47892C1.43086,16.40297,0,11.22273.32588,2.9503"/>
+            <text>
+              <textPath href="#vimeo-path" id="text-path"><a href={LINKS.vimeo}>Vimeo</a></textPath>
+              <textPath href="#linkedin-path" id="text-path"><a href={LINKS.linkedin}>LinkedIn</a></textPath>
+              <textPath href="#instagram-path" id="text-path"><a href={LINKS.instagram}>Instagram</a></textPath>
+            </text>
+          </svg>
         </div>
       </div>
     </div>

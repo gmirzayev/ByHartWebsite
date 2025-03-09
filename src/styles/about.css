@@ -109,6 +109,15 @@ header{
 
     #founder p{
         font: 400 24px/1.4 "utile-display", sans-serif;
+
+        a{
+            text-decoration: underline;
+            text-decoration-color: var(--ruby);
+        }
+
+        & + p{
+            margin-top: 1em;
+        }
     }
 
     #clients p,
@@ -375,6 +384,17 @@ header{
                 padding-bottom: 25px;
 
             }
+
+            a{
+                font-weight: 700;
+                text-decoration: underline;
+                text-decoration-color: var(--ruby);
+
+                &:hover{
+                    cursor: url("../assets/HeartCursor.png") 16 16, pointer;
+                }
+            }
+
         }
     }
 

@@ -27,14 +27,14 @@ import Image from "astro/components/Image.astro";
 import Navigation from "@components/Navigation.astro";
 import Header from "@assets/Bluprint/img/Bluprint_Header.png";
 import HeaderMobile from "@assets/Bluprint/img/Bluprint_Header_Mobile.png";
-import CrochetBox from "@assets/Bluprint/Bluprint_CrochetBox.gif";
+import CrochetBox from "@assets/Bluprint/Bluprint_CrochetBox.mp4";
 import Quilt from "@assets/Bluprint/img/Bluprint_Quilt.jpg";
 import LifeStyle1 from "@assets/Bluprint/img/Bluprint_Lifestyle_1.jpg";
 import Paint from "@assets/Bluprint/img/Bluprint_Paint.png";
 import Colors from "@assets/Bluprint/img/Bluprint_BrandColors.jpg";
 import Ad1 from "@assets/Bluprint/img/Bluprint_Ad_1.jpg";
 import MultiCat from "@assets/Bluprint/img/Bluprint_MultiCat.jpg";
-import Cake from "@assets/Bluprint/img/Bluprint_Cake.gif";
+import Cake from "@assets/Bluprint/Bluprint_Cake.mp4";
 import Fox1 from "@assets/Bluprint/img/Bluprint_Fox.jpg";
 import HomePage from "@assets/Bluprint/img/Bluprint_Homepage.png";
 import SocialGrid from "@assets/Bluprint/Bluprint_SocialGrid.mp4";
@@ -64,6 +64,7 @@ import Grid9 from "@assets/Bluprint/img/Bluprint_Grid_9.png";
 import Grid10 from "@assets/Bluprint/img/Bluprint_Grid_10.png";
 import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 import VimeoPlayer from "@components/VimeoPlayer.astro";
+import VideoLoop from "@components/VideoLoop.astro";
 ---
 
 <style>
@@ -142,7 +143,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
 <ProjectLayout hero={Header} mobile={HeaderMobile} brand={brand} tagline={tagline} tags={tags}>
   <div class="mx-auto mb-[45px] flex w-full max-w-[1320px] flex-col items-center md:mb-[120px] md:flex-row">
     <div class="w-full p-[15%] md:w-[50%] md:p-[10%]">
-      <Image class="h-auto w-full rounded-sm md:rounded-md" src={CrochetBox} alt="A bluprint brand shipping box." />
+      <VideoLoop src={CrochetBox} class="sized h-auto w-full rounded-sm md:rounded-md" />
     </div>
     <Image
       class="h-auto w-full px-[30px] md:w-[50%]"
@@ -199,7 +200,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
       />
     </div>
     <div class="w-1/3">
-      <Image class="w-full rounded-md md:rounded-lg" src={Cake} alt="A spinning cake with lit candles." />
+      <VideoLoop class="w-full rounded-md md:rounded-lg" src={Cake} />
     </div>
     <div class="w-1/3">
       <Image class="w-full rounded-md md:rounded-lg" src={Fox1} alt="Two children wearing knitted fox hats." />
@@ -236,9 +237,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   </div>
   <Image class="h-auto w-full" src={HomePage} alt="Screenshot of the Bluprint website home page." />
   <div>
-    <video playsinline loop autoplay muted class="w-full">
-      <source src={SocialGrid} />
-    </video>
+    <VideoLoop src={SocialGrid} class="sized w-full"/>
   </div>
   <div
     class="mx-auto mt-[45px] flex max-w-[1200px] flex-col items-center justify-center gap-[45px] md:my-[100px] md:flex-row md:gap-[50px] md:px-[25px] lg:gap-[125px]"
@@ -251,9 +250,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
       />
     </div>
     <div class="md:w-1/2">
-      <video loop playsinline autoplay muted class="rounded-0 h-auto w-full md:rounded-md md:rounded-sm">
-        <source src={Ad2} />
-      </video>
+      <VideoLoop src={Ad2} class="sized rounded-0 h-auto w-full md:rounded-md md:rounded-sm" />
     </div>
   </div>
   <div class="flex flex-row bg-[#028282]">
@@ -280,17 +277,13 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
   />
   <div class="mx-[10px] my-[45px] flex flex-row items-center md:mx-[40px] md:my-[120px]">
     <div class="w-1/3 p-[1%]">
-      <video loop playsinline autoplay muted class="h-auto w-full rounded-sm md:rounded-md">
-        <source src={Disco} />
-      </video>
+      <VideoLoop src={Disco} class="sized h-auto w-full rounded-sm md:rounded-md" />
     </div>
     <div class="w-1/3 p-[1.4%]">
       <Image class="h-auto rounded-sm md:rounded-md" src={Fox2} alt="A child wearing a knitted fox hat." />
     </div>
     <div class="w-1/3 p-[1%]">
-      <video loop playsinline autoplay muted class="h-auto rounded-sm md:rounded-md">
-        <source src={MakeupBag} />
-      </video>
+      <VideoLoop src={MakeupBag} class="sized h-auto rounded-sm md:rounded-md" />
     </div>
   </div>
   <Image
@@ -328,15 +321,7 @@ import VimeoPlayer from "@components/VimeoPlayer.astro";
     src={Embroidery}
     alt="A starter emroidery kit and bluprint tote bag."
   />
-  <video
-    loop
-    playsinline
-    autoplay
-    muted
-    class="mx-auto my-[45px] h-auto w-full rounded-sm px-[20px] md:my-[120px] md:w-[50%] md:rounded-md md:px-0"
-  >
-    <source src={Boxes} />
-  </video>
+  <VideoLoop src={Boxes} class="sized mx-auto my-[45px] h-auto w-full rounded-sm px-[20px] md:my-[120px] md:w-[50%] md:rounded-md md:px-0" />
   <Image class="h-auto w-full" src={Collateral} alt="A blueprint tote bag and a beginner's drawing guide." />
   <div id="brand-guide">
     <div class="karla py-[30px] pl-[20px] font-[16px] text-white">

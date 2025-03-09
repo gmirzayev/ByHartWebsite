@@ -1,4 +1,5 @@
 ---
+import "../styles/utils.css";
 import SoundIcon from "@assets/VimeoPlayer/sound-on-off.svg?raw"
 import RewindIcon from "@assets/VimeoPlayer/rewind.svg?raw"
 
@@ -123,7 +124,7 @@ const STYLE = {paddingTop:height}
             &::after{
                 position:absolute;
                 content: " ";
-                background: #FF97FD;
+                background: var(--pink);
                 border:1px solid var(--charcoal);
                 width:100%;
                 height:100%;
@@ -251,6 +252,10 @@ const STYLE = {paddingTop:height}
                           this.button?.classList.contains("unpause") ? "unpause" :
                           null
 
+            this.button?.addEventListener("click", e => this.handleAction(e))
+            this.rewind?.addEventListener("click", e => this.handleRewind(e))
+            this.pause?.addEventListener("click", e => this.handlePause(e))
+
             Vimeo.videos.push(this)
         }
 
@@ -261,25 +266,31 @@ const STYLE = {paddingTop:height}
         }
 
         initialize(){
-            if (!!this.player) return
+            if (!this.player){
+                let embed = this.elt.querySelector(":scope .embed")
+                if (embed instanceof HTMLElement){
+                    let iframe = document.createElement("iframe")
+                    iframe.allow = embed.dataset.vimeoAllow
+                    iframe.src = embed.dataset.vimeoSrc
+                    embed.append(iframe)
 
-            let embed = this.elt.querySelector(":scope .embed")
-            if (embed instanceof HTMLElement){
-                let iframe = document.createElement("iframe")
-                iframe.allow = embed.dataset.vimeoAllow
-                iframe.src = embed.dataset.vimeoSrc
-                embed.append(iframe)
-
-                this.player = new Player(iframe)
-                this.player.on("ended", () => this.requeue())
-                this.elt.classList.add("initialized")
-
-                this.button?.addEventListener("click", e => this.handleAction(e))
-                this.rewind?.addEventListener("click", e => this.handleRewind(e))
-                this.pause?.addEventListener("click", e => this.handlePause(e))
+                    this.player = new Player(iframe)
+                    this.player.on("ended", () => this.requeue())
+                    this.elt.classList.add("initialized")
+                }
             }
-
         }
+
+        destroy(){
+            if (this.player){
+                this.player.destroy()
+                this.player = null
+                this.elt.classList.remove("initialized")
+                this.button?.classList.remove("fired")
+                this.elt.classList.remove("rewindable")
+            }
+        }
+
 
         get loaded(){
             return !!this.player
@@ -290,6 +301,7 @@ const STYLE = {paddingTop:height}
         }
 
         handleRewind(e){
+            if (!this.player) return
             this.player.setCurrentTime(0)
             if (this.action=="unpause"){
                 this.elt.classList.remove("rewindable")
@@ -300,6 +312,7 @@ const STYLE = {paddingTop:height}
         }
 
         handlePause(e){
+            if (!this.player) return
             if (this.active){
                 if (this.action=="unpause") this.togglePlayback()
                 else if (this.action=="unmute") this.toggleAudio()
@@ -310,6 +323,7 @@ const STYLE = {paddingTop:height}
         }
 
         handleAction(e){
+            if (!this.player) return
             if (this.action=="unmute") this.toggleAudio()
             else if (this.action=="unpause") this.togglePlayback()
 
@@ -371,20 +385,29 @@ const STYLE = {paddingTop:height}
 
 
     document.addEventListener("DOMContentLoaded", () => {
-
         const vimeoPlayers = document.querySelectorAll('.vimeo-player')
-        const lazyLoader = new IntersectionObserver((entries, observer) => {
+
+        const loader = new IntersectionObserver((entries, observer) => {
             for (const entry of entries){
                 let video = Vimeo.videoForElement(entry.target)
-                if (entry.isIntersecting){
+                if (entry.isIntersecting && !video.loaded){
                     video.initialize()
-                    observer.unobserve(entry.target)
                 }
             }
-        }, {root: null, rootMargin: '0px', threshold: 0.0})
+        }, {root: null, rootMargin: '10% 0 10% 0', threshold: 0.0})
+
+        const unloader = new IntersectionObserver((entries, observer) => {
+            for (const entry of entries){
+                let video = Vimeo.videoForElement(entry.target)
+                if (!entry.isIntersecting && video.loaded){
+                    video.destroy()
+                }
+            }
+        }, {root: null, rootMargin: '66% 0 66% 0', threshold: 0.0})
 
         vimeoPlayers.forEach(elt => {
-            lazyLoader.observe(elt)
+            loader.observe(elt)
+            unloader.observe(elt)
             new Vimeo(elt)
         })
     })

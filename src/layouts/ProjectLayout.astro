@@ -6,7 +6,7 @@ import ProjectsCarousel from "@components/ProjectsCarousel.astro";
 
 const {hero, mobile, brand, tagline, tags, preview, theme="light"} = Astro.props
 const title = `${brand} (By Hart)`
-
+const slug = Astro.url.pathname.split('/').at(-1)
 ---
 
 <InternalLayout title={title} subtitle={tagline} image={preview ?? hero}>
@@ -15,6 +15,6 @@ const title = `${brand} (By Hart)`
     <article class="project">
         <slot />
     </article>
-    <ProjectsCarousel name={brand} />
+    <ProjectsCarousel slug={slug} />
     <div id="contact"></div>
 </InternalLayout>

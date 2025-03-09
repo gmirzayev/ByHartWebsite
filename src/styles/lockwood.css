@@ -39,11 +39,12 @@
     > img{
         grid-area: single;
         opacity:0;
-        transition: opacity .5s linear;
+        transition: opacity .75s linear;
         width:calc(100% - 40px);
         margin: 0 auto;
 
         &.active{
+            transition: opacity .25s linear;
             opacity:1;
         }
 
