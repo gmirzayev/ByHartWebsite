@@ -1,6 +1,7 @@
 ---
 import "../styles/utils.css";
-import { Image } from "astro:assets";
+import Image from "astro/components/Image.astro";
+import TransparentVideo from "@components/TransparentVideo.astro";
 
 const LINKS ={
   vimeo:"https://vimeo.com/byhartstudio",
@@ -221,10 +222,7 @@ import Logo from "../assets/Footer/Logo.svg";
     <h1 data-prompt="Copy our email addy"><a href="mailto:getcreative@byhart.studio">getcreative@byhart.studio</a></h1>
   </div>
   <div class="glasses">
-    <video loop playsinline autoplay muted>
-      <source src={GlassesSafari} type='video/mp4; codecs="hvc1"'>
-      <source src={GlassesChrome} type="video/webm">
-    </video>
+    <TransparentVideo mov={GlassesSafari} webm={GlassesChrome} />
     <svg class="links" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 44">
       <defs><style>.x{fill:none; stroke:none;}</style></defs>
       <path id="vimeo-path" class="x" d="M2.38886.63209c4.07274-.82823,9.05408-.31439,11.96857.01404"/>
