@@ -2,295 +2,136 @@
 import "../styles/utils.css";
 import { Image } from "astro:assets";
 
+const LINKS ={
+  vimeo:"https://vimeo.com/byhartstudio",
+  linkedin:"https://www.linkedin.com/company/byhartstudio/posts/?feedView=all",
+  instagram:"https://www.instagram.com/byhartstudio/",
+}
+
 import GlassesSafari from "@assets/Navigation/eye.mov";
 import GlassesChrome from "@assets/Navigation/eye.webm";
 import Logo from "../assets/Footer/Logo.svg";
 ---
-
-<style>
-  footer {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    max-height: 100%;
-    z-index: 0;
-    background-color: var(--cream);
-    position: fixed;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    inset: 0;
-  }
-
-  .email-header {
-    margin-top: 65px;
-  }
-
-  .email-header h1 {
-    position: relative;
-    display: inline-block;
-    padding-bottom:.2em;
-
-    font: 500 28px/1 "utile-display", sans-serif;
-    letter-spacing: 0.03em;
-    color: var(--charcoal);
-  }
-
-  .email-header h1 a:active{
-    text-decoration: underline;
-    text-decoration-color: rgba(0,0,0,.25);
-  }
-
-  .email-header h1::before{
-    content: " ";
-    position:absolute;
-    top:.05em;
-    left:-.33em;
-    width:calc(100% + .66em);
-    height:calc(100% + .1em);
-    background: var(--pink);
-    z-index:-1;
-    transform: rotate(1deg);
-    transition: transform .25s;
-  }
-
-  .email-header h1:hover::before{
-    transform: rotate(0);
-  }
-
-  .email-header h1::after {
-    content: attr(data-prompt);
-    position: absolute;
-    left:50%;
-    bottom:0;
-    width: 215px;
-    height: 38px;
-    border-radius: 35px;
-    color: black;
-    font-size: 13px;
-    font-family: "Karla";
-    background-color: var(--peach);
-    text-align: center;
-    line-height: 38px;
-    opacity:0;
-    transform-origin: top left;
-    transform: translate(-6em, 3em) rotate(16deg);
-    transition: opacity 333ms, transform 333ms;
-    pointer-events: none;
-    box-shadow: 0 0 30px rgba(0,0,0, .2);
-    text-transform: uppercase;
-  }
-
-  .email-header h1:hover::after {
-    opacity:1;
-    transform: translate(-6em, 3em) rotate(8deg);
-  }
-
-  .video-container {
-    position: relative;
-    display: flex;
-    width: 100%;
-
-    -webkit-user-select: none;
-    user-select:none;
-  }
-
-  .video-container a:hover text{
-    fill: #c8323a;
-  }
-
-  .svg-text {
-    fill: black;
-    font-size: 14px;
-    letter-spacing: 2px;
-    font-weight: 500;
-  }
-  .video-link {
-    z-index: 2;
-  }
-  #instagram {
-    position: absolute;
-    top: 130px;
-    left: -15px;
-    rotate: 265deg;
-  }
-  #substack {
-    position: absolute;
-    top: 55px;
-    left: 80px;
-    rotate: 5deg;
-  }
-  #vimeo {
-    position: absolute;
-    top: 50px;
-    left: 70px;
-    rotate: 5deg;
-  }
-  #linkedin {
-    position: absolute;
-    top: 62px;
-    left: 150px;
-    rotate: 15deg;
-  }
-  .video-wrapper {
-    /* width: 700px;
-    height: 400px; */
-  }
-  .glasses {
-    transform: translateX(50px);
-    /* transform: scale(0.9); */
-    /* position: relative; */
-    width: 600px;
-    height: 400px;
-
-    /* position: absolute; */
-    /* right: 50; */
-    /* margin-left: 50px; */
-
-    max-width: none;
-    /* overflow-y: hidden; */
-    z-index: -1;
-  }
-  #tooltip-nav {
-    position: absolute;
-    background-color: #f7eee3;
-    color: black;
-    font-family: Karla;
-    font-size: 14px;
-    letter-spacing: 2px;
-    padding: 10px 20px;
-    border-radius: 35px;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    white-space: nowrap;
-    rotate: -15deg;
-    z-index: 100;
-  }
-  @media (min-width: 678px) {
-    .glasses {
-      transform: translateX(0);
-    }
-  }
-  @media (min-width: 678px) and (max-width: 1023px) {
-    .pink-background {
-      width: 590px;
-      top: 85px;
-    }
-    .email-header h1 {
-      font-size: 46px;
-    }
-    .video-container {
-      justify-content: center;
-    }
-    #instagram {
-      /* top: 140px;
-      left: 300px; */
-      top: calc(50%);
-      left: calc(50%);
-      transform: translate(100px, -360px);
-    }
-    #substack {
-      top: calc(50%);
-      left: calc(50%);
-      transform: translate(-280px, -120px);
-    }
-    #vimeo {
-      top: calc(50%);
-      left: calc(50%);
-      transform: translate(-295px, -130px);
-    }
-    #linkedin {
-      top: calc(50%);
-      left: calc(50%);
-      transform: translate(-225px, -85px);
-    }
-  }
-  @media (min-width: 1024px) and (max-width: 1400px) {
-    .video-container {
-      justify-content: center;
-    }
-    .email-header h1 {
-      font-size: 76px;
-    }
-    .pink-background {
-      width: 950px;
-      height: 90px;
-      top: 85px;
-    }
-    svg {
-      transform: scale(1.1);
-    }
-    .glasses {
-      transform: scale(1.1);
-    }
-    #instagram {
-      /* top: 140px;
-      left: 300px; */
-      top: calc(50%);
-      left: calc(50%);
-      transform: translate(110px, -390px);
-    }
-    #substack {
-      top: calc(50%);
-      left: calc(50%);
-      transform: translate(-300px, -140px);
-    }
-    #vimeo {
-      top: calc(50%);
-      left: calc(50%);
-      transform: translate(-310px, -140px);
-    }
-    #linkedin {
-      top: calc(50%);
-      left: calc(50%);
-      transform: translate(-230px, -95px);
-    }
-  }
-  @media (min-width: 1401px) {
-    .video-container {
-      justify-content: center;
-    }
-    .email-header h1 {
-      font-size: 100px;
-    }
-    .pink-background {
-      width: 1259px;
-      height: 111px;
-      top: 80px;
-    }
-    svg {
-      transform: scale(1.1);
-    }
-    .glasses {
-      transform: scale(1.1);
-      margin-top: 20px;
-    }
-    #instagram {
-      /* top: 140px;
-      left: 300px; */
-      top: calc(50%);
-      left: calc(50%);
-      transform: translate(100px, -395px);
-    }
-    #substack {
-      top: calc(50%);
-      left: calc(50%);
-      transform: translate(-310px, -130px);
-    }
-    #vimeo {
-      top: calc(50%);
-      left: calc(50%);
-      transform: translate(-310px, -135px);
-    }
-    #linkedin {
-      top: calc(50%);
-      left: calc(50%);
-      transform: translate(-225px, -90px);
-    }
-  }
-</style>
-
 <style is:global>
+  #site-footer{
+    position: fixed;
+    overflow: hidden;
+    z-index: 0;
+    inset:0;
+
+    display:flex;
+    flex-flow: column nowrap;
+    align-items:center;
+    background: var(--cream);
+  }
+
+
+  #site-footer .email {
+    margin:60px 0 80px 0;
+    @media(min-width:768px){
+        margin:120px 0 140px 0;
+    }
+
+    h1 {
+      position: relative;
+      display: inline-block;
+      padding-bottom:.2em;
+
+      font: 500 7vw/1 "utile-display", sans-serif;
+      letter-spacing: 0.03em;
+      color: var(--charcoal);
+
+      a:active{
+        text-decoration: underline;
+        text-decoration-color: rgba(0,0,0,.25);
+      }
+
+      &::before{
+        content: " ";
+        position:absolute;
+        top:.05em;
+        left:-.33em;
+        width:calc(100% + .66em);
+        height:calc(100% + .1em);
+        background: var(--pink);
+        z-index:-1;
+        transform: rotate(-1deg);
+        transition: transform .25s;
+      }
+
+      &::after {
+        content: attr(data-prompt);
+        box-shadow: 0 0 30px rgba(0,0,0, .2);
+        background-color: var(--peach);
+        color: black;
+        opacity:0;
+
+        position: absolute;
+        left:50%;
+        bottom:0;
+        padding: 0 20px;
+        border-radius: 35px;
+
+        font: 500 13px/38px "Karla", sans-serif;
+        letter-spacing: 2.47px;
+        text-transform: uppercase;
+        text-align: center;
+        text-wrap: nowrap;
+
+        transform-origin: top left;
+        transform: translate(-6em, 3em) rotate(16deg);
+        transition: opacity 333ms, transform 333ms;
+        pointer-events: none;
+      }
+
+      &:hover{
+        &::before{
+          transform: rotate(0);
+        }
+
+        &::after {
+          opacity:1;
+          transform: translate(-6em, 3em) rotate(8deg);
+        }
+      }
+    }
+  }
+
+
+  #site-footer .glasses{
+    width: 130vw;
+    align-self: start;
+    margin-left:8vw;
+    position:relative;
+
+    @media(min-width:768px){
+      align-self: center;
+      width: 70vw;
+      max-width: 1000px;
+      margin:0;
+    }
+
+    .links{
+      position:absolute;
+      overflow:visible;
+      width:100%;
+      top:0;
+      left:0;
+
+      text{
+        font:500 2.8px "Karla", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      a:hover{
+        fill:var(--pink);
+      }
+    }
+
+  }
+
+
   #endmatter{
     position:absolute;
     width:100%;
@@ -375,72 +216,26 @@ import Logo from "../assets/Footer/Logo.svg";
 
 </style>
 
-<footer>
-  <div class="email-header">
+<footer id="site-footer">
+  <div class="email">
     <h1 data-prompt="Copy our email addy"><a href="mailto:getcreative@byhart.studio">getcreative@byhart.studio</a></h1>
   </div>
-  <div class="video-container">
-    <a
-      id="instagram"
-      class="video-link"
-      href="https://www.instagram.com/byhartstudio/"
-      target="_blank"
-    >
-      <svg width="100" height="20">
-        <defs>
-          <path id="curve1" d="M 0 20 Q 50 13 100 20" fill="transparent"></path>
-        </defs>
-        <text class="svg-text">
-          <textPath href="#curve1">INSTAGRAM</textPath>
-        </text>
-      </svg>
-    </a>
-    <!-- <a
-      id="substack"
-      class="video-link"
-      href="www.instagram.com"
-      target="_blank"
-    >
-      <svg width="100" height="20">
-        <defs>
-          <path id="curve2" d="M 0 20 Q 50 13 100 20" fill="transparent"></path>
-        </defs>
-        <text class="svg-text">
-          <textPath href="#curve2">SUBSTACK</textPath>
-        </text>
-      </svg>
-    </a> -->
-    <a
-      id="vimeo"
-      class="video-link"
-      href="https://vimeo.com/byhartstudio"
-      target="_blank"
-    >
-      <svg width="100" height="20">
-        <defs>
-          <path id="curve3" d="M 0 20 Q 50 13 100 20" fill="transparent"></path>
-        </defs>
-        <text class="svg-text">
-          <textPath href="#curve3">VIMEO</textPath>
-        </text>
-      </svg>
-    </a>
-    <a
-      id="linkedin"
-      class="video-link"
-      href="https://www.linkedin.com/company/byhartstudio/posts/?feedView=all"
-      target="_blank"
-    >
-      <svg width="100" height="20">
-        <text class="svg-text">
-          <textPath href="#curve3">LINKEDIN</textPath>
-        </text>
-      </svg>
-    </a>
-    <video loop playsinline autoplay muted class="glasses">
+  <div class="glasses">
+    <video loop playsinline autoplay muted>
       <source src={GlassesSafari} type='video/mp4; codecs="hvc1"'>
       <source src={GlassesChrome} type="video/webm">
     </video>
+    <svg class="links" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 44">
+      <defs><style>.x{fill:none; stroke:none;}</style></defs>
+      <path id="vimeo-path" class="x" d="M2.38886.63209c4.07274-.82823,9.05408-.31439,11.96857.01404"/>
+      <path id="linkedin-path" class="x" d="M15.63854.79405c4.39074.32367,9.61146,1.22678,12.94479,2.56012"/>
+      <path id="instagram-path" class="x" d="M2.72078,20.47892C1.43086,16.40297,0,11.22273.32588,2.9503"/>
+      <text>
+        <textPath href="#vimeo-path" id="text-path"><a href={LINKS.vimeo}>Vimeo</a></textPath>
+        <textPath href="#linkedin-path" id="text-path"><a href={LINKS.linkedin}>LinkedIn</a></textPath>
+        <textPath href="#instagram-path" id="text-path"><a href={LINKS.instagram}>Instagram</a></textPath>
+      </text>
+    </svg>
   </div>
 
   <div id="endmatter">
@@ -459,7 +254,7 @@ import Logo from "../assets/Footer/Logo.svg";
 </footer>
 
 <script>
-  let emailLink = document.querySelector("footer .email-header h1")
+  let emailLink = document.querySelector("footer .email h1")
   if (emailLink instanceof HTMLElement){
     emailLink.addEventListener("mouseenter", e => emailLink.dataset.prompt = "Copy our email addy")
 
