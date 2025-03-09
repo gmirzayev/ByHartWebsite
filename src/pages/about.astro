@@ -459,11 +459,11 @@ const FAQS = [
 
         document.querySelectorAll("#faqs .q").forEach(elt =>
             elt.addEventListener("click", e => {
-                document.querySelectorAll("#faqs .q").forEach(item => {
-                    if (item==elt) return
-                    item.classList.remove("open")
-                    item.ariaExpanded = "false"
-                })
+                // document.querySelectorAll("#faqs .q").forEach(item => {
+                //     if (item==elt) return
+                //     item.classList.remove("open")
+                //     item.ariaExpanded = "false"
+                // })
                 elt.classList.toggle("open")
                 let isOpen = elt.classList.contains("open")
                 elt.ariaExpanded = isOpen ? "true" : "false"
