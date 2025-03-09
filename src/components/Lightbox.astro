@@ -15,11 +15,7 @@ const { baseimage, lightboximage, basewidth = 100, id } = Astro.props;
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.5) 100%
-    );
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%);
     height: 10%;
   }
 
@@ -30,51 +26,37 @@ const { baseimage, lightboximage, basewidth = 100, id } = Astro.props;
     left: 0;
     width: 100%;
     height: 100px; /* Height of the gradient */
-    background: linear-gradient(
-      to top,
-      rgba(247, 244, 237, 1),
-      rgba(255, 255, 255, 0)
-    );
+    background: linear-gradient(to top, rgba(247, 244, 237, 1), rgba(255, 255, 255, 0));
     pointer-events: none;
     z-index: -1;
   }
 </style>
 <>
   <div class="w-full">
-    <div class="relative gradient-box">
-      <Image class="w-full h-auto rounded" src={baseimage} alt="Kindra" />
+    <div class="gradient-box relative">
+      <Image class="h-auto w-full rounded" src={baseimage} alt="Kindra" />
     </div>
-    <button
-      id=`${id}open-modal-button`
-      class="float-right border-2 border-[#363131] mt-[10px]"
-      ><Image alt="Kindra" class="w-[20px] m-[5px]" src={ExpandCross} /></button
+    <button id=`${id}open-modal-button` class="float-right mt-[10px] border-2 border-[#363131]"
+      ><Image alt="Kindra" class="m-[5px] w-[20px]" src={ExpandCross} /></button
     >
   </div>
   <div
     id=`${id}modal`
-    class="hidden fixed top-0 left-0 h-full overflow-auto w-full z-50 bg-[#F7F4ED] flex justify-center"
+    class="fixed left-0 top-0 z-50 flex hidden h-full w-full justify-center overflow-auto bg-[#F7F4ED]"
   >
-    <div class="w-full flex flex-col gap-5 items-center z-50">
-      <div
-        class="fixed top-0 h-[100px] md:h-[150px] bg-[#F7F4ED] w-[250px] md:w-[300px]"
-      >
-      </div>
+    <div class="z-50 flex w-full flex-col items-center gap-5">
+      <div class="fixed top-0 h-[100px] w-[250px] bg-[#F7F4ED] md:w-[800px]"></div>
 
-      <div
-        class="modal-image w-[220px] md:w-[270px] h-[500px] mx-auto pt-[100px] md:pt-[150px]"
-      >
-        <Image alt="Kindra" src={lightboximage} class="pb-[200px]" />
+      <div class="modal-image mx-auto h-[500px] w-[220px] pt-[100px] md:h-[600px] md:w-[750px] md:pt-[100px]">
+        <Image alt="Kindra" src={lightboximage} class="pb-[150px]" />
       </div>
       <div
-        class="modal-bottom-gradient fixed bottom-0 h-[200px] bg-[#F7F4ED] w-[250px] md:w-[300px] items-center justify-center flex flex-col
-        gap-[20px]"
+        class="modal-bottom-gradient fixed bottom-0 flex h-[150px] w-[250px] flex-col items-center justify-center gap-[20px] bg-[#F7F4ED] md:w-[800px]"
       >
-        <p class="text-12 text-bg-secondary karla">
-          Scroll down to view page layout
-        </p>
+        <p class="text-12 text-bg-secondary karla">Scroll down to view page layout</p>
         <button
           id=`${id}close-modal-button`
-          class="w-20 h-8 flex items-center justify-center bg-[#FF97FD] karla border border-solid border-black"
+          class="karla flex h-8 w-20 items-center justify-center border border-solid border-black bg-[#FF97FD]"
           >Close</button
         >
       </div>
