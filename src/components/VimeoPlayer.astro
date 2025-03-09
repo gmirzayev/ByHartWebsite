@@ -1,4 +1,5 @@
 ---
+import "../styles/utils.css";
 import SoundIcon from "@assets/VimeoPlayer/sound-on-off.svg?raw"
 import RewindIcon from "@assets/VimeoPlayer/rewind.svg?raw"
 
@@ -123,7 +124,7 @@ const STYLE = {paddingTop:height}
             &::after{
                 position:absolute;
                 content: " ";
-                background: #FF97FD;
+                background: var(--pink);
                 border:1px solid var(--charcoal);
                 width:100%;
                 height:100%;
