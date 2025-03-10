@@ -45,8 +45,10 @@ const HERO_IMAGES = await Promise.all([
   return {large, small}
 }))
 
-import TickerQt from "@assets/About/ticker.mov"
-import TickerWebm from "@assets/About/ticker.webm"
+import TickerQt from "@assets/About/ticker-d.mov"
+import TickerWebm from "@assets/About/ticker-d.webm"
+import TickerQtMobile from "@assets/About/ticker-m.mov"
+import TickerWebmMobile from "@assets/About/ticker-m.webm"
 
 import CardA from "@assets/About/hype/Cards-0.png"
 import CardB from "@assets/About/hype/Cards-1.png"
@@ -346,8 +348,10 @@ const FAQS = [
 
             <div id="motto">
                 <video loop playsinline autoplay muted>
-                    <source src={TickerQt} type='video/mp4; codecs="hvc1"'>
-                    <source src={TickerWebm} type="video/webm">
+                    <source src={TickerQtMobile} type='video/mp4; codecs="hvc1"' media="(max-width: 767px)" />
+                    <source src={TickerWebmMobile} type="video/webm" media="(max-width: 767px)" />
+                    <source src={TickerQt} type='video/mp4; codecs="hvc1"' />
+                    <source src={TickerWebm} type="video/webm" />
                 </video>
             </div>
 
