@@ -303,23 +303,12 @@
     background: url(/images/Lockwood/candle-bg.jpg) no-repeat;
     background-size: cover;
     padding: 75px;
-
-    display:flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    gap:60px;
-
-    > * {
-        width: calc(100% - 150px);
-    }
+    gap: 60px;
+    justify-items: center;
+    align-items:center;
 
     @media (min-width: 768px) {
-        video{ max-width: 390px; }
-        img{ max-width: 460px; }
-
-        flex-flow: row nowrap;
-        padding: 120px 20px;
+        grid-template-columns: fit-content(390px) fit-content(460px);
     }
 }
 
