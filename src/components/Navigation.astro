@@ -21,6 +21,10 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
 ---
 
 <style is:global>
+  .overflow-hidden {
+    overflow: hidden;
+  }
+
   #main-nav{
     font-family: "Karla", sans-serif;
     font-weight: bold;
@@ -58,32 +62,9 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
       position: relative;
     }
     .mobile-dropdown-toggle {
-      display: none;
       background: none;
       padding: 0;
       border: none;
-    }
-    .nav-link--header {
-      font-size: 34px;
-      letter-spacing: 0;
-      margin-bottom: 50px;
-    }
-
-    .nav-link--email-button {
-      color: black;
-      background-color: var(--pink);
-      padding: 10px 20px;
-      font-size: 16px;
-      width: 270px;
-      text-align: center;
-    }
-
-    .mobile-nav-link--email {
-      color: white;
-      font-size: 16px;
-      letter-spacing: 0;
-      font-weight: normal;
-      margin-top: 20px;
     }
 
     .mobile-nav-container {
@@ -92,112 +73,89 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
       align-items: center;
     }
 
-    .dropdown-close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-    .svg-text {
-      fill: var(--cream);
-      font-size: 12px;
-      letter-spacing: 2px;
-      font-weight: 500;
-    }
-    #nav-instagram {
-      position: absolute;
-      top: 50px;
-      left: 80px;
-      rotate: 260deg;
-    }
-    /* #nav-substack {
-        position: absolute;
-        top: -20px;
-        left: 170px;
-        rotate: 5deg;
-      } */
-    #nav-vimeo {
-      position: absolute;
-      top: -25px;
-      left: 170px;
-      rotate: 5deg;
-    }
-    #nav-linkedin {
-      position: absolute;
-      top: 2px;
-      left: 250px;
-      rotate: 27deg;
-    }
-    .overflow-hidden {
-      overflow: hidden;
-    }
-    .dropdown-link-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 100vh;
-      height: -webkit-fill-available;
+    #mobile-nav{
+      z-index:8;
 
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      padding-left: 7vw;
-      padding-right: 7vw;
+      .dropdown-link-container {
+        position: fixed;
+        inset:0;
+        padding: 80px 7vw 0 7vw;
 
-      background: #a92325;
-      /* z-index: 0; */
+        background: #a92325;
+        opacity: 0;
+        transform: translateY(-100%);
+        transition:
+          transform .666s ease-in-out,
+          opacity .666s ease-out;
 
-      opacity: 0;
-      transform: translateY(-100%);
-      transition:
-        transform .666s ease-in-out,
-        opacity .666s ease-out;
-    }
-    .mobile-dropdown-toggle {
-      display: initial;
-    }
 
-    #mobile-nav.dropdown-opened > .dropdown-link-container {
-      opacity: 1;
-      transform: translateY(0);
-      /* z-index: 8; */
-    }
-    #mobile-nav:not(.dropdown-opened) > .mobile-dropdown-toggle {
-      /* z-index: 0; */
-    }
-
-    #mobile-nav .dropdown-link-container .glasses{
-      width: 130vw;
-      align-self: start;
-      margin-left:8vw;
-      margin-top:20%;
-      position:relative;
-
-      @media(min-width:768px){
-        align-self: center;
-        width: 70vw;
-        max-width: 1000px;
-        margin:0;
       }
 
-      .links{
-        position:absolute;
-        overflow:visible;
-        width:100%;
-        top:0;
-        left:0;
+      &.dropdown-opened > .dropdown-link-container {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-        text{
-          font:500 2.8px "Karla", sans-serif;
-          text-transform: uppercase;
-          letter-spacing: 0.04em;
-          fill:white;
+      .dropdown-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height:100%;
+        max-height:calc(100svh - 80px);
+        align-items: center;
+        margin: 0;
+      }
+
+      .dropdown-content menu{
+        display:flex;
+        flex-flow: column nowrap;
+        gap: 25px;
+        text-align:center;
+
+        font: 700 34px/1.26 "Karla", sans-serif;
+        text-transform: uppercase;
+      }
+
+      .dropdown-content .glasses{
+        width: 130vw;
+        align-self: start;
+        margin-left:8vw;
+        position:relative;
+
+        @media(min-width:768px){
+          align-self: center;
+          width: 70vw;
+          max-width: 1000px;
+          margin:0;
+        }
+
+        .links{
+          position:absolute;
+          overflow:visible;
+          width:100%;
+          top:0;
+          left:0;
+
+          text{
+            font:500 2.8px "Karla", sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            fill:white;
+          }
         }
       }
+
     }
 
+
+    #desktop-nav{
+      display: none;
+      align-items: center;
+
+      @media(min-width: 768px){
+        display:flex;
+      }
+    }
 
 
     #mobile-nav,
@@ -206,11 +164,10 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
       .dark &{ color: var(--cream); }
       transition: color .5s;
 
-      .home-logo{ width:80px; }
-    }
-
-    #mobile-nav{
-        z-index:8;
+      .home-logo{
+        width:80px;
+        margin-right: 80px;
+      }
     }
 
     #mobile-nav.dropdown-opened{
@@ -221,20 +178,14 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
     .mobile-dropdown-toggle {
       z-index: 9;
     }
-    #dropdown-open {
-      display: block;
+
+    #dropdown-open { display: block; }
+    #dropdown-close { display: none; }
+    #mobile-nav.dropdown-opened{
+      #dropdown-open { display: none; }
+      #dropdown-close { display: block; }
     }
-    #dropdown-close {
-      display: none;
-    }
-    #mobile-nav.dropdown-opened #dropdown-open {
-      display: none;
-    }
-    #mobile-nav.dropdown-opened #dropdown-close {
-      display: block;
-    }
-    button:hover,
-    #nav-link--email-button:hover{
+    button:hover{
       cursor: url("/images/HeartCursor.png") 16 16, pointer;
     }
 
@@ -274,51 +225,46 @@ const HeartDropdownIcon = theme=='dark' ? HeartDropdown : HeartDropdownDark
 </style>
 <header>
   <nav id="main-nav" class={theme}>
+    <!-- MOBILE NAV -->
     <div id="mobile-nav" class="flex justify-between w-full md:hidden">
       <a href="/" class="home-logo"><Fragment set:html={HomeLogo} /></a>
-      <button
-        id="dropdown-toggle"
-        class="mobile-dropdown-toggle"
-        aria-hidden="true"
-      >
+      <button id="dropdown-toggle" class="mobile-dropdown-toggle">
         <Image id="dropdown-open" src={HeartDropdownIcon} alt="hearts" />
         <Image id="dropdown-close" alt="X" width="20" src={CloseButton} />
       </button>
-      <div class="dropdown-link-container">
-        <a href="/#portfolio" class="mobile-nav-link nav-link--header">SEE OUR WORK</a>
-        <a href="/about" class="mobile-nav-link nav-link--header">KNOW BY HART</a>
-        <a href="/#contact" class="mobile-nav-link nav-link--header">TALK TO US</a>
 
-        <div class="glasses">
-          <TransparentVideo mov={GlassesSafari} webm={GlassesChrome} />
-          <svg class="links" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 44">
-            <defs><style>.x{fill:none; stroke:none;}</style></defs>
-            <path id="vimeo-path" class="x" d="M2.38886.63209c4.07274-.82823,9.05408-.31439,11.96857.01404"/>
-            <path id="linkedin-path" class="x" d="M15.63854.79405c4.39074.32367,9.61146,1.22678,12.94479,2.56012"/>
-            <path id="instagram-path" class="x" d="M2.72078,20.47892C1.43086,16.40297,0,11.22273.32588,2.9503"/>
-            <text>
-              <textPath href="#vimeo-path" id="text-path"><a href={LINKS.vimeo}>Vimeo</a></textPath>
-              <textPath href="#linkedin-path" id="text-path"><a href={LINKS.linkedin}>LinkedIn</a></textPath>
-              <textPath href="#instagram-path" id="text-path"><a href={LINKS.instagram}>Instagram</a></textPath>
-            </text>
-          </svg>
+      <div class="dropdown-link-container">
+        <div class="dropdown-content">
+          <menu>
+            <li><a href="/#portfolio">See Our Work</a></li>
+            <li><a href="/about">Know By Hart</a></li>
+            <li><a href="/#contact">Talk to Us</a></li>
+          </menu>
+
+          <div class="glasses">
+            <TransparentVideo mov={GlassesSafari} webm={GlassesChrome} />
+            <svg class="links" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 44">
+              <defs><style>.x{fill:none; stroke:none;}</style></defs>
+              <path id="vimeo-path" class="x" d="M2.38886.63209c4.07274-.82823,9.05408-.31439,11.96857.01404"/>
+              <path id="linkedin-path" class="x" d="M15.63854.79405c4.39074.32367,9.61146,1.22678,12.94479,2.56012"/>
+              <path id="instagram-path" class="x" d="M2.72078,20.47892C1.43086,16.40297,0,11.22273.32588,2.9503"/>
+              <text>
+                <textPath href="#vimeo-path" id="text-path"><a href={LINKS.vimeo}>Vimeo</a></textPath>
+                <textPath href="#linkedin-path" id="text-path"><a href={LINKS.linkedin}>LinkedIn</a></textPath>
+                <textPath href="#instagram-path" id="text-path"><a href={LINKS.instagram}>Instagram</a></textPath>
+              </text>
+            </svg>
+          </div>
         </div>
       </div>
+
     </div>
     <!-- DESKTOP NAV -->
-    <div
-      id="desktop-nav"
-      class="hidden md:!flex md:items-center"
-    >
-      <a href="/" class="mr-[80px] home-logo"><Fragment set:html={HomeLogo} /></a>
-      <a href="/#portfolio" class="nav-link" data-hover="PORTFOLIO">SEE <span>BY HART</span></a>
-      <a href="/about" class="nav-link" data-hover="SARAH + SERVICES"
-        >KNOW <span>BY HART</span></a
-      >
-      <a href="/#contact" class="nav-link" data-hover="CONTACT">SPEAK <span>BY HART</span></a>
-      <!-- <div class="mobile-nav-container"> -->
-
-      <!-- </div> -->
+    <div id="desktop-nav">
+      <a class="home-logo" href="/" ><Fragment set:html={HomeLogo} /></a>
+      <a class="nav-link" href="/#portfolio"  data-hover="PORTFOLIO">SEE <span>BY HART</span></a>
+      <a class="nav-link" href="/about"  data-hover="SARAH + SERVICES">KNOW <span>BY HART</span></a>
+      <a class="nav-link" href="/#contact"  data-hover="CONTACT">SPEAK <span>BY HART</span></a>
     </div>
   </nav>
 </header>
