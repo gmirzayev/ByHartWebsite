@@ -394,7 +394,7 @@ const STYLE = {paddingTop:height}
                     video.initialize()
                 }
             }
-        }, {root: null, rootMargin: '10% 0 10% 0', threshold: 0.0})
+        }, {root: null, rootMargin: '10% 0%', threshold: 0.0})
 
         const unloader = new IntersectionObserver((entries, observer) => {
             for (const entry of entries){
@@ -403,7 +403,7 @@ const STYLE = {paddingTop:height}
                     video.destroy()
                 }
             }
-        }, {root: null, rootMargin: '66% 0 66% 0', threshold: 0.0})
+        }, {root: null, rootMargin: '66% 0%', threshold: 0.0})
 
         vimeoPlayers.forEach(elt => {
             loader.observe(elt)

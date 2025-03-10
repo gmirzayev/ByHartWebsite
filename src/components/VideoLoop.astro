@@ -36,7 +36,7 @@ if (max) style.maxWidth = max
                 elt.play()
             }
         }
-    }, {root: null, rootMargin: '10% 0 10% 0', threshold: 0.0})
+    }, {root: null, rootMargin: '10% 0%', threshold: 0.0})
 
     const unloader = new IntersectionObserver((entries, observer) => {
         for (const entry of entries){
@@ -48,7 +48,7 @@ if (max) style.maxWidth = max
                 elt.classList.remove("initialized")
             }
         }
-    }, {root: null, rootMargin: '66% 0 66% 0', threshold: 0.0})
+    }, {root: null, rootMargin: '66% 0%', threshold: 0.0})
 
     videoLoops.forEach(elt => {
         loader.observe(elt)

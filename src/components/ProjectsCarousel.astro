@@ -242,7 +242,7 @@ let current = projects.findIndex(p => p.slug==slug),
         item.target.classList.toggle("labeled", item.isIntersecting)
         if (item.isIntersecting) activeItem = item.target
       }
-    },{rootMargin: "0 -49% 0 -49%", threshold: 0.0})
+    },{rootMargin: "0% -49%", threshold: 0.0})
 
     items.forEach((item:HTMLElement) => {
       labelOnScroll.observe(item)
