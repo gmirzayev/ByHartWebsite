@@ -5,12 +5,11 @@ import Footer from "@components/Footer.astro";
 
 // optional OpenGraph data
 let {title="By Hart", subtitle, image} = Astro.props
-
-const baseURL = "https://byhartwebsite.pages.dev"
 if (image){
   image = await getImage({src:image, widths:[1200]})
 }
 
+const baseURL = "https://byhart.studio"
 const imageURL = image ? [baseURL, image.src].join("/") : ''
 
 ---
