@@ -31,9 +31,10 @@ import TransparentVideo from "@components/TransparentVideo.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
 import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
 import VimeoPlayer from "@components/VimeoPlayer.astro";
+import VideoLoop from "@components/VideoLoop.astro";
 
-import HeaderVideo from "@assets/ComicsKingdom/CK_Header_Desktop.mp4";
-import HeaderVideoMobile from "@assets/ComicsKingdom/CK_Header_Mobile.mp4";
+import HeaderVideo from "@assets/ComicsKingdom/CK_Header_Desktop_1.mp4";
+import HeaderVideoMobile from "@assets/ComicsKingdom/CK_Header_Mobile_1.mp4";
 import HeaderImage from "@assets/ComicsKingdom/img/Hero.jpg";
 import Image from "astro/components/Image.astro";
 import CKAnimation from "@assets/ComicsKingdom/CK_Animation.mp4";
@@ -188,9 +189,7 @@ import BrandGrid14 from "@assets/ComicsKingdom/img/CK_Brand_Grid_14.png";
       alt="Screenshots from the home page of the mobile app featuring things like Trending comics"
     />
   </div>
-  <video loop playsinline autoplay muted class="w-[100%]">
-    <source src={CKAnimation} />
-  </video>
+  <VideoLoop src={CKAnimation} class="w-[100%]" />
   <div
     class="my-[45px] flex w-full flex-col items-center justify-center gap-[80px] px-[62px] md:my-[120px] md:flex-row md:items-center md:gap-[150px]"
   >
@@ -200,9 +199,7 @@ import BrandGrid14 from "@assets/ComicsKingdom/img/CK_Brand_Grid_14.png";
         {WE_ARE.map((motto) => <li class="text-[20px] md:text-[24px]">{motto}</li>)}
       </ul>
     </div>
-    <video loop playsinline autoplay muted style="max-width:300px;">
-      <source src={PhoneVibration} type="video/mp4" />
-    </video>
+    <VideoLoop src={PhoneVibration} type="video/mp4" style="max-width:300px;" />
   </div>
   <div class="friends-background w-full py-[35px] md:py-[110px]">
     <TransparentVideo webm={Friends} mov={FriendsSafari} class="w-screen" />
