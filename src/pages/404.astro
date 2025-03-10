@@ -1,0 +1,100 @@
+---
+const title = "Know By Hart"
+const subtitle = "Creative Services + Recognition Highlights + Testimonials + Founder Story + More"
+
+import "@styles/utils.css";
+import "@styles/about.css";
+import { getImage } from "astro:assets";
+import Image from "astro/components/Image.astro";
+import InternalLayout from "@layouts/InternalLayout.astro";
+import ProjectTags from "@components/ProjectTags.astro";
+import ProjectHead from "@components/ProjectHead.astro";
+import OneUp from "@components/OneUp.astro";
+import TwoUp from "@components/TwoUp.astro";
+import Navigation from "@components/Navigation.astro";
+import ProjectsCarousel from "@components/ProjectsCarousel.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
+import ResponsiveBackground from "@components/ResponsiveBackground.astro";
+import ResponsiveTextBlock from "@components/ResponsiveTextBlock.astro";
+import VimeoPlayer from "@components/VimeoPlayer.astro";
+import VideoLoop from "@components/VideoLoop.astro";
+
+import HeartCursor from "@assets/heart-cursor.svg"
+
+import Preview from "@assets/About/preview.png"
+import HeroA from "@assets/About/about/Hero_01_D.png"
+import HeroAMobile from "@assets/About/about/Hero_01_M.png"
+import HeroB from "@assets/About/about/Hero_02_D.png"
+import HeroBMobile from "@assets/About/about/Hero_02_M.png"
+import HeroC from "@assets/About/about/Hero_03_D.png"
+import HeroCMobile from "@assets/About/about/Hero_03_M.png"
+import HeroD from "@assets/About/about/Hero_04_D.png"
+import HeroDMobile from "@assets/About/about/Hero_04_M.png"
+import HeroE from "@assets/About/about/Hero_05_D.png"
+import HeroEMobile from "@assets/About/about/Hero_05_M.png"
+
+const HERO_IMAGES = await Promise.all([
+    {desktop:HeroA, mobile:HeroAMobile},
+    {desktop:HeroB, mobile:HeroBMobile},
+    {desktop:HeroC, mobile:HeroCMobile},
+    {desktop:HeroD, mobile:HeroDMobile},
+    {desktop:HeroE, mobile:HeroEMobile},
+].map(async ({desktop, mobile}) => {
+  let large = await getImage({src:desktop, widths:[2800]})
+  let small = await getImage({src:mobile, widths:[1800]})
+  return {large, small}
+}))
+
+---
+
+<InternalLayout title={title} subtitle={subtitle} image={Preview}>
+    <article id="about">
+        <Navigation theme="dark" />
+        <div id="hero">
+            <h1>That’s not<br/> a thing</h1>
+            <div class="slideshow">{ HERO_IMAGES.map(({small, large}, i) =>
+                <picture class={i==0 ? "active" : null}>
+                    <source media="(max-width: 767px)" width={small.attributes.width} height={small.attributes.height} srcset={small.src} />
+                    <source media="(min-width: 768px)" width={large.attributes.width} height={large.attributes.height} srcset={large.src} />
+                    <img src={large.src} width={large.attributes.width} height={large.attributes.height} alt="Stills of a photo-shoot in production" />
+                </picture>
+            )}</div>
+        </div>
+
+
+        <div id="intro">
+            <div id="about-us">
+                <div id="founder">
+                    <h2>Four-Oh-Four</h2>
+                    <p>You’ve reached this 404, because you can’t always get what you want, but if you click <a href="/">HERE</a> + say, ‘There’s no place like home,’ you might just find you get what you need.</p>
+                </div>
+            </div>
+
+        </div>
+        <ProjectsCarousel />
+    </article>
+</InternalLayout>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let dt = 0
+        document.querySelectorAll('.slideshow').forEach(elt => {
+            let slides = elt.querySelectorAll(":scope>picture,:scope>img:not(.app"),
+                interval = elt instanceof HTMLElement && elt.dataset.interval || 2000,
+                len = slides.length,
+                idx = 0
+
+            const advance = () => {
+                idx++
+                slides.forEach((img, i) => {
+                    img.classList.toggle('active', i==idx%len)
+                })
+            }
+
+            setTimeout(() => setInterval(advance, +interval), dt)
+            dt += 666
+        })
+
+    })
+</script>
